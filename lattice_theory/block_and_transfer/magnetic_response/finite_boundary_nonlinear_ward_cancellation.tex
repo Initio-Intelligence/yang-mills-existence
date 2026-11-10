@@ -1,0 +1,127 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Exact finite-boundary cancellation before nonlinear flux power counting}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{The coefficient is a boundary functional.}
+Let $\mathcal C_R(\eta)$ be the COMPLETE first nonlinear coefficient of
+the original conditional compact partition function, as in the first original nonlinear flux coefficient calculation and the local gauge completion first nonlinear coefficient calculation.
+The boundary record $\eta$ includes all fixed tangential boundary links.
+The classical minimum, complete collars, full Haar factors and the
+nonlinear gauge Jacobian are part of its definition. This functional
+exists smoothly near the flat record for each fixed finite $R$.
+No size-uniform expansion is assumed here.
+
+For any gauge transformation $g$ on the boundary vertices, extend it to
+the interior vertices in any way and change the interior integration
+variables by the corresponding site gauge map. Product Haar is exactly
+preserved and every original plaquette is conjugated. Thus, with the
+actual fixed-only action still included,
+\[
+ Z_R(\eta^g)=Z_R(\eta),\qquad v_R(\eta^g)=v_R(\eta).
+\]
+Uniqueness of the fixed-$R$ asymptotic coefficients gives
+\[
+ \mathcal C_R(\eta^g)=\mathcal C_R(\eta).                           \tag{1}
+\]
+This uses the original finite integral, not an infinite-volume Ward
+identity or an unproved diagram cancellation. Restoring the interior
+tree gauge after the change is an exact interior gauge transformation;
+it does not alter the boundary record or its Haar normalization.
+
+\paragraph{A complete Hessian Ward identity.}
+Use right boundary logarithms $b_e$ near identity. Global color
+conjugation implies $\nabla\mathcal C_R(0)=0$: there is no invariant
+linear functional on one adjoint $SU(2)$ index. Let $\Pi_R$ be the Hessian
+of $\mathcal C_R$ at zero, including its actual minimum/frame response.
+The infinitesimal boundary gauge generator has value $D_\partial\xi$
+at zero. Differentiating (1) in an arbitrary boundary direction gives
+\[
+ \boxed{\quad \Pi_R D_\partial=0,\qquad
+                D_\partial^*\Pi_R=0.\quad}                       \tag{2}
+\]
+The derivative of the nonlinear gauge generator multiplies
+$\nabla\mathcal C_R(0)$ and hence vanishes. This is where the gauge
+acceleration is retained and eliminated honestly, rather than ignored.
+All quartic, cubic-pair, ghost, Haar and changing-covariance terms in
+the connected first nonlinear flux response calculation/the local gauge completion first nonlinear coefficient calculation must be combined for (2). It need not hold for them
+separately.
+
+Restrict to color three and let $\mathcal B_1$ be the fixed boundary
+links in direction one. The boundary gauge parameter $\xi_x=x_1i\sigma_3$
+has constant boundary difference on $\mathcal B_1$ and zero on other
+directions. Thus, for EVERY boundary row $e$,
+\[
+ \sum_{f\in\mathcal B_1}(\Pi_R)_{ef}=0.                            \tag{3}
+\]
+There are no missing opposite-face or corner rows: the parameter is
+defined on the entire original boundary. For the direction-one block,
+(3) fixes its diagonal local term by the complete off-diagonal sum.
+It is the exact cancellation of the zero-momentum boundary mass term.
+It does not assert that an isolated bulk diagram has zero mass term.
+
+\paragraph{Actual flux response as a finite-boundary difference form.}
+The physical constant-flux boundary source is
+$a_e=x_0/R^2$ on $\mathcal B_1$, zero otherwise. Symmetry of $\Pi_R$
+and (3) give the exact complete identity
+\[
+ \boxed{\quad
+ \mathcal C_R''[a,a]
+ =-\frac1{2R^4}\sum_{e,f\in\mathcal B_1}
+    (\Pi_R)_{ef}\,(x_0(e)-x_0(f))^2.\quad}                       \tag{4}
+\]
+This removes the potential-coordinate amplitude before any absolute
+Wick estimate. It retains a squared physical spatial difference and
+all original finite-boundary terms. In particular shifting the Landau
+origin $a_e\mapsto(x_0-c)/R^2$ leaves (4) unchanged for every $c$.
+The complete boundary mass and the mixed constant/flux response vanish,
+not merely their leading large-$R$ approximations.
+
+An exact rational regression shifts the original $R=2$ flux origin
+to $c=0,2,-3$, re-expands every original plaquette and all covariance,
+quartic, cubic and Haar partners. In every case the complete
+$\mathcal C_2''$ is exactly $-119/20736$.
+The finite calculation records this
+test. It checks the finite-boundary cancellation, not a growth law.
+
+\paragraph{Scale accounting after the cancellation.}
+The boundary link set has $O(R^3)$ points. For each boundary edge, the
+number of boundary edges in a Euclidean shell of radius $r$ is at most
+$Cr^2$ up to the usual unit-thickness convention; equivalently dyadic
+balls contain at most $Cr^3$. This includes distinct faces and corners
+with a fixed dimension-dependent multiplicity. Let
+\[
+ W_k=\sum_{\substack{e,f\in\mathcal B_1\\
+                 2^{k-1}\le1+|e-f|<2^k}}|(\Pi_R)_{ef}|.
+\]
+The actual identity (4) gives
+\[
+ |\mathcal C_R''[a,a]|
+       \le \frac{C}{R^4}\sum_{k\le C+\log_2R}2^{2k}W_k.           \tag{5}
+\]
+Thus a sufficient concrete next estimate is
+\[
+ W_k\le C R^3\,2^{-k}(1+k)^p.                                   \tag{6}
+\]
+It would yield $C(1+\log R)^p$, normalized by the bounded physical
+energy $E_R$, since the dyadic sum is dominated by $R(1+\log R)^p$.
+A pointwise boundary kernel bound
+$|(\Pi_R)_{ef}|\le C(1+|e-f|)^{-4}
+ (1+\log(2+|e-f|))^p$ would imply (6).
+Neither bound is proved here. They concern the COMPLETE boundary kernel,
+whose derivatives include harmonic/minimum response, not a bare bulk
+vertex covariance. The boundary dimension is three; inserting a
+four-dimensional shell count here would give the wrong target.
+
+\paragraph{What has been gained and what remains.}
+Equations (2)--(4) prove the dangerous complete zero-momentum
+cancellation with the exact finite boundary and without taking
+absolute values of the individual diagrams. They provide the
+specific second spatial moment that a scale decomposition must
+estimate. They do not bound that moment. Gauge symmetry permits
+curvature and other physical boundary responses; it does not fix a
+marginal coupling correction or imply (6). The complementary cancellation
+of longitudinal propagators must
+likewise precede, not replace, the remaining connected spatial estimate.
+The original differentiated nonlinear remainder remains a separate
+required bound. No uniform nonlinear S94 result is claimed.
+\end{document}

@@ -1,0 +1,125 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{All-mode leading kinetic stability under the original Gaussian Schur law}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Input and precise meaning.}
+The general box magnetic current bound calculation gives the general magnetic-current proof. Together
+with the actual harmonic matching of the complete harmonic kinetic matching calculation this gives, for each complete
+original relative block $B$ of side $R$, a real symmetric boundary
+quadratic form $Q_B$ satisfying
+\[
+ |Q_B(v,v)|\le a_R\,\langle v,S_Bv\rangle,
+ \qquad a_R=C\log(2+R).                                      \tag{1}
+\]
+Here $S_B$ is the ORIGINAL classical Dirichlet-to-Neumann (Schur)
+form including fixed-only boundary plaquettes. $Q_B$ is the complete
+UNCUT leading harmonic self-energy with all boundary external indices,
+not the restriction of the global internal tensor to a block.
+Both forms annihilate boundary pure gauge. Quotients and any exterior
+or global modes are retained explicitly; no artificial mass is added.
+
+On the positive energy quotient, (1) implies the actual signed operator
+bound and its bilinear consequence
+\[
+ \|S_B^{-1/2}Q_BS_B^{-1/2}\|\le a_R,
+ \quad |Q_B(u,v)|\le a_R\|u\|_{S_B}\|v\|_{S_B}.               \tag{2}
+\]
+The bilinear bound follows from self-adjoint operator norm, not from
+positivity of the signed loop coefficient.
+
+\paragraph{1. A joint form with controlled overlap.}
+Use a genuine common relative Gaussian/forest and disjoint block
+interiors $I$, with retained skeleton $Y$. The original precision $A$
+has exact Schur form
+\[
+ S=A_{YY}-A_{YI}A_{II}^{-1}A_{IY},\qquad
+ \det A=\det A_{II}\det S.                                  \tag{3}
+\]
+For a complete field $w$, let $v_B(w)$ be its literal block boundary
+restriction. Define only the DECLARED local kinetic piece
+\[
+ Q(w,z)=\sum_B Q_B(v_B(w),v_B(z)).                             \tag{4}
+\]
+Its harmonic energy is no larger than the complete block energy of
+that restriction. If complete plaquette sets overlap at most $q$, then
+\[
+ |Q(w,w)|\le a_R\sum_B\mathcal E_B(w)
+                  \le \alpha\mathcal E(w),\quad \alpha=qa_R. \tag{5}
+\]
+For the actual four-dimensional cubical tiling $q\le4$.
+This bound holds on the full energy quotient, hence also bilinearly.
+It involves no number of blocks. Distinct blocks are not independent.
+
+Let $Ey$ be the original harmonic lift of skeleton data. Then
+$\mathcal E(Ey)=y^*Sy$, and $Q(Ey,Ey)=y^*My$ for a symmetric $M$.
+Since (4) depends only on boundaries it is independent of the free
+zero-boundary Gaussian fluctuations integrated in (3). Thus
+\[
+ -\alpha S\le M\le\alpha S,
+ \quad C=S^{-1/2}MS^{-1/2},\quad\|C\|\le\alpha.               \tag{6}
+\]
+No induced action has been reset to Wilson form.
+
+\paragraph{2. Exact Gaussian stability and the raw scalar.}
+Let $y$ have the original normalized centered Schur Gaussian with
+precision $S$. For a declared insertion parameter $\lambda$ with
+$|\lambda|\alpha<1$, the modified quadratic integral exists and
+\[
+ \boxed{\frac{Z_\lambda}{Z_0}
+       =\det(I+\lambda C)^{-1/2},\quad
+ S+\lambda M>0.}                                            \tag{7}
+\]
+The raw original factor from interior integration is
+$(2\pi)^{\dim I/2}\det(A_{II})^{-1/2}$, with all original canonical
+and Haar normalization constants. It stays attached to both sides.
+The determinant in (7) may be extensive: it is retained as the live
+source-zero scalar, not replaced by one or charged by a fictitious
+physical root-count cancellation. The canonical leading insertion
+uses $\lambda=B^{-1}$, requiring $Cq\log(2+R)<B$.
+This is a Gaussian coefficient resummation, not a redefinition of the
+original bare Wilson action or an interacting stability theorem.
+
+\paragraph{3. Coherent mean, including exterior harmonic data.}
+Let $h$ be any deterministic complete field carrying the coherent
+boundary/exterior mean; it need not lie in the fluctuating skeleton
+space. Put $q_h=Q(h,h)$ and define $j_h$ by
+$Q(h,Ey)=j_h^*y$. From the full-energy form bound (5),
+\[
+ |q_h|\le\alpha\mathcal E(h),\qquad
+ j_h^*S^{-1}j_h\le\alpha^2\mathcal E(h).                       \tag{8}
+\]
+Completing the SAME Gaussian square, with the entire vacuum factor
+(7) divided out rather than dropped, gives
+\[
+ \boxed{\frac{E\exp[-\frac\lambda2 Q(Ey+\zeta h,Ey+\zeta h)]}
+ {E\exp[-\frac\lambda2 Q(Ey,Ey)]}
+ =\exp\left[-\frac{\lambda\zeta^2}{2}q_h
+       +\frac{\lambda^2\zeta^2}{2}
+          j_h^*(S+\lambda M)^{-1}j_h\right].}                 \tag{9}
+\]
+In particular the absolute logarithm of this ratio is at most
+\[
+ \frac{|\lambda|\alpha}{2(1-|\lambda|\alpha)}
+                            \zeta^2\mathcal E(h).             \tag{10}
+\]
+There is no factor equal to the number of blocks. The linear current
+has original Gaussian variance
+$\operatorname{Var}(2Q(h,Ey))\le4\alpha^2\mathcal E(h)$.
+Unlike the constant-flux special case of the original gaussian coarse kinetic interface calculation, this current need not vanish;
+(9) retains its covariance exactly. The source-zero determinant and
+the coherent classical energy are different stored quantities.
+
+\paragraph{4. The main gap is not removed by (7)--(10).}
+The local form (4) is a controlled selected piece. It is NOT proved
+equal to the global completed internal self-energy, the longest-time
+packet of the longest time completed contact packet calculation, or the original interacting output action. On actual long
+legs, the long leg harmonic residual with gauss constraint calculation supplies energy control of the zero-boundary residual, and
+(1) now supplies the complete LOCAL harmonic boundary form bound.
+Their composition still leaves global cross-block entries, the
+harmonic/residual cross terms of the global $K$, marked ghost terms,
+multiple-long-line remainders, and source derivatives of the global
+physical projector. An equality or controlled remainder between that
+packet and (4) is indispensable; summing (1) does not establish it.
+The original nonlinear size-uniform differentiated remainder remains
+separate. No physical-scale iteration or S94 conclusion is made.
+\end{document}

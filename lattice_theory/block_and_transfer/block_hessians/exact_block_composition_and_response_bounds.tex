@@ -1,0 +1,186 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Exact disjoint-block composition: scalar, current, Schur response and overlap count}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Analysis of the nonflat input.}
+Use the boundary only preparation and nonflat block calculation, with its filling multiplicity and amplitude:
+boundary-only BFS gauge, interior plaquettes used only as probability witnesses,
+canonical boundary norm $M\le CR^5$, center $CR^8$, radial gradient
+$CR^{16}/\sqrt B$, moment condition $B\gg R^{34}$, moments $E|x|^{2p}\le C_pR^{16p}$,
+variance $CR^{38}/B$, Hessian error $C(R^{14}/\sqrt B+R^{38}/B)$ and scalar
+increment error $CR^{19}/\sqrt B$. The normalized compact tail contains
+$CR^{10}$, and the scalar increment retains $v^*K_{\rm eff}b$.
+The prepared random boundary law is its actual pushforward, not Haar. The
+interior conditional integral is NOT restricted to the witness event.
+The multipoint moment proof used for its probability works for $SU(N)$ by the
+same positive Wilson transfer argument; its original $K_t$ and size regime
+remain required. No all-block good-event probability is asserted.
+
+\paragraph{1. An exact coarse action on literal retained links.}
+Partition the original periodic lattice into cubical/rectangular cells with
+complete boundaries. Keep the ORIGINAL link variables $Y$ on their skeleton;
+integrate all links $u_\alpha$ strictly belonging to one cell interior.
+Unequal final intervals may be used on the original torus; this is not a
+change to a divisible or dyadic torus. Each cell is contractible and smaller
+than the torus. A plaquette containing interior links meets only one such
+interior. Assign that plaquette to the corresponding $S_\alpha(u_\alpha;Y)$;
+assign every remaining plaquette to $S_0(Y)$. Every original plaquette is
+counted ONCE. Then exactly
+\[
+ S=S_0+\sum_\alpha S_\alpha,\qquad
+ Z_\alpha(Y)=\int e^{-S_\alpha(u_\alpha;Y)}du_\alpha,
+\]
+\[
+ d\mu_Y=Z^{-1}e^{-A_1(Y)}dY,\qquad
+ A_1(Y)=S_0(Y)-\sum_\alpha\log Z_\alpha(Y).                             \tag{1}
+\]
+All Haar factors, induced couplings and global retained loops remain.
+If a local comparison included fixed-only collar plaquettes, subtract their
+EXACT scalar from that local action and put it in $S_0$; they cannot be counted
+once per adjacent cell. Boundary preparations are evaluation charts on these
+original variables, not independent replacements of $dY$ by prepared Haar.
+
+For a nested larger cell, integrate its internal skeleton links $z$. Fubini
+and the literal plaquette assignment give
+\[
+ Z_{\rm large}(\eta)=\int e^{-S_{\rm sep}(z;\eta)}
+                    \prod_{\alpha\subset\rm large}Z_\alpha(\eta_\alpha(z,\eta))dz.
+                                                                            \tag{2}
+\]
+The right side is EXACTLY the original larger-block conditional integral,
+including its remaining fixed-only scalar convention. This is not a reset of
+$A_1$ to a Wilson action: the full induced $\log Z_\alpha$ functions were used
+inside the integral. It also avoids summing small-block Taylor errors. One
+may apply the boundary only preparation and nonflat block calculation directly to the larger original block if its actual outer
+record and larger size meet that theorem's hypotheses.
+
+\paragraph{2. Which source-zero scalars cancel.}
+Choose fixed boundary-independent reference values $c_\alpha=Z_\alpha(\eta^0_\alpha)$
+and $\Gamma_\alpha=-\log(Z_\alpha/c_\alpha)$. The product
+$\prod c_\alpha$ factors out of(2) and cancels in the EXACT ratio
+$Z_{\rm large}(\eta)/Z_{\rm large}(\eta^0)$. The ratio is still
+\[
+ \frac{\int e^{-S_{\rm sep}(z;\eta)-\sum\Gamma_\alpha(\eta_\alpha(z,\eta))}dz}
+      {\int e^{-S_{\rm sep}(z;\eta^0)-\sum\Gamma_\alpha(\eta_\alpha(z,\eta^0))}dz}.
+                                                                            \tag{3}
+\]
+If a reference is instead a live prepared boundary $\bar\eta_\alpha(z,\eta)$,
+its $Z_\alpha(\bar\eta_\alpha)$ remains INSIDE the integral as a scalar
+function. The nonflat baseline $vK_{\rm eff}b$ likewise remains in increments.
+Neither is a common constant that may be canceled. This distinction persists
+at every further scale.
+
+\paragraph{3. Complete exact derivative and current state.}
+For original retained left directions $e,f$, let $F_e=X_eS$ and let $H_{ef}$
+be the symmetric original second derivative. Differentiating(1) in ORIGINAL
+coordinates gives
+\[
+ j_e:=X_eA_1=E(F_e\mid Y),\qquad
+ (\operatorname{Hess}A_1)_{ef}=E(H_{ef}\mid Y)
+                            -\operatorname{Cov}(F_e,F_f\mid Y).         \tag{4}
+\]
+Conditionally independent interiors split the covariance into complete block
+covariances; fixed skeleton terms remain in $S_0$. They are not dropped when
+two retained links did not share an original plaquette. The interacting
+Ward--Schur/regression formula of the original covariant hessian and ward schur calculation can be applied inside each EXACT
+conditional fiber, or inside the larger original fiber in(2).
+
+For an actual retained insertion $\bar O(Y)=E(O\mid Y)$, its response is
+\[
+ X_e\bar O=E(X_eO\mid Y)-\operatorname{Cov}(O,F_e\mid Y).                \tag{5}
+\]
+Thus the inherited current contains the conditional score response and the
+original denominator. A scalar value, a current baseline and a connected
+second response are distinct pieces of the state. Equations(1),(4),(5) retain
+all of them. No hard good-record selector has been inserted into the action;
+if one is inserted later, its boundary response would be additional data.
+
+\paragraph{4. A literal overlap bound, including frame acceleration.}
+In a four-dimensional cubical skeleton, a positive-oriented retained link
+lies on at most three transverse grid hyperplanes and belongs to at most
+$2^3=8$ cell boundaries. A plaquette belongs to at most four and a vertex to
+at most sixteen. Consequently, in ONE common original-link metric,
+\[
+ \sum_\alpha\|w|_{\partial\alpha}\|^2\le8\|w\|^2.                      \tag{6}
+\]
+This is a response count, not independence of boundary records.
+
+At a fixed admitted record, freeze each actual boundary-only gauge at that
+base point. Along a declared common original path
+$Y_e(t)=e^{t\sqrt{N/B}w_e}Y_e$, let $b_\alpha(t)$ be its prepared canonical
+logs in that frozen frame. Exact gauge invariance permits this local choice;
+the random boundary law itself is unchanged. Then
+$\|\dot b_\alpha\|\le C\|w|_{\partial\alpha}\|$ and
+$\|\ddot b_\alpha\|\le C B^{-1/2}\|w|_{\partial\alpha}\|^2$ on the small
+admitted chart. The complete local Gaussian comparison along this SAME path is
+\[
+ Q_\alpha=\dot b_\alpha^*K_\alpha\dot b_\alpha
+                  +(K_\alpha b_\alpha)\cdot\ddot b_\alpha.             \tag{7}
+\]
+The second term is the baseline-current/coordinate-acceleration partner; it
+cannot be discarded by using different canonical paths for adjacent blocks.
+The boundary only preparation and nonflat block calculation bounds the Hessian and gradient errors by
+\[
+ \epsilon_2(R)=C[R^{14}/\sqrt B+R^{38}/B]+\mathcal E,
+ \qquad \epsilon_1(R)=CR^{19}/\sqrt B+\mathcal E.
+\]
+The gradient times acceleration error is at most
+$C\epsilon_1 B^{-1/2}\|w|_{\partial\alpha}\|^2$ and is absorbed into the
+stated $\epsilon_2$ after increasing constants. Therefore on this admitted
+record the COMPLETE induced Hessian satisfies
+\[
+ \left|\frac{d^2}{dt^2}A_1(Y(t))\big|_0
+       -\frac{d^2}{dt^2}S_0(Y(t))\big|_0-\sum_\alpha Q_\alpha\right|
+ \le C\epsilon_2(R)\|w\|^2.                                           \tag{8}
+\]
+The constant includes eight but not the number of cells. All exact $S_0$
+responses remain. The bound is local on an actually admitted collection of
+records; its probability has not been upgraded to an all-volume statement.
+
+By polarization/integration, (8) controls a four-term connected boundary
+difference in any common chart whose full interpolation stays admitted.
+Such a difference cancels constant and linear Taylor pieces automatically;
+those pieces must still be stored for the absolute action and current.
+A connection-dependent quadratic form such as(7) is not a new globally flat
+Gaussian action silently replacing(1).
+
+\paragraph{5. An exact invariant marginal class, with a real but unquantified contraction.}
+Let $Y_2\subset Y_1$ be nested sets of literal retained ORIGINAL links and fix
+one deterministic tangent supported on $Y_2$. For its ORIGINAL score $F$, the
+inherited scores satisfy the tower identity
+\[
+ j_2=E(F\mid Y_2)=E(j_1\mid Y_2),\qquad
+ \|j_1\|_2^2-\|j_2\|_2^2=E\operatorname{Var}(j_1\mid Y_2)\ge0.          \tag{9}
+\]
+Haar integration by parts in the original law gives the depth-independent bound
+\[
+ \|j_k\|_2^2\le (24B/N)\|w\|^2,                                      \tag{10}
+\]
+in angular units, or $24\|w\|^2$ in the canonical normalization above.
+The same fixed-exterior qualification applies when an outer record is fixed.
+Thus EXACT original marginals, their retained scores and their raw scalar
+state form an invariant class under the next integration; their Fisher norm
+cannot increase. No assumption that the induced density is Wilson is used.
+The loss in(9) can be zero, so this is NOT a uniform strict contraction for
+physical modes or a state-count bound.
+
+\paragraph{6. What one more scale does and does not establish.}
+Equation(2) proves exact composition of the full scalar/current/response state.
+For a larger side $R'=LR$ that remains in the boundary only preparation and nonflat block calculation's range, its direct theorem
+can be used once on an actually prepared outer record. Previous local errors
+are not accumulated, and original global loops remain on the retained
+skeleton. The new boundary gauge is computed from those original outer links;
+previous prepared coordinates are not mistaken for independent new Haar data.
+
+However the connected local estimate itself has
+$\epsilon_2(LR)$ growing roughly as $L^{38}\epsilon_2(R)$ at fixed $B$,
+not contracting. Comparing its norm to a physical Schur mode of energy
+$\asymp R^{-1}\|w\|^2$ adds another factor $R$. The norm bound(10) also lacks
+that wavelength factor. Neither (8) nor (9) is the desired physical-scale
+induction. The missing main estimate is a connected boundary/current norm
+with wavelength-sensitive cancellation (including live scalar and frame
+responses) that contracts, or stays uniformly summable, under this EXACT
+composition. It cannot be obtained by resetting the induced action, by
+summing unsummable per-cell errors, or by assuming all cells good. FullS94
+remains open.
+\end{document}

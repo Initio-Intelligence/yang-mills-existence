@@ -1,0 +1,143 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{Original filtered Wilson slabs: replica fidelity and a finite cumulative bound}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{The Wilson measure and the trial transform.}
+The Wilson trial transform has
+stationary density proportional to $f^2R_f$, positive self-adjoint representative
+$R_f^{-1/2}AR_f^{-1/2}$, and the closed-loop product of the row ratios retains
+$\lambda_0$ exactly. The min--max comparison follows by congruence and comparing
+nonzero spectra, not by ordering powers of operators. The SU(2) rough-row test
+counts $n^3$ bad plaquettes for even $n$ and $(n-1)n^2$ for odd $n$; the
+five-term unitary telescoping estimate and its factor $1/5$ check out. It is a
+failure of the trial's global oscillation bound, not a lower bound for purity.
+The recursion $R_{A f}=P_fR_f$ is also exact.
+
+Here $A=M Q P M$ is the ORIGINAL, unnormalized temporal Wilson transfer on
+physical spatial Haar $L^2$, $M=e^{-V/2}$, and $f=M$. Its leading eigenvalue is
+$\lambda_0$. Set
+\[
+ f_s=A^sM,\quad Z_k^{\rm open}=\langle M,A^kM\rangle,
+ \quad R_s=f_{s+1}/f_s,\qquad k,s\in\mathbb N_0.       \tag{1}
+\]
+Strict positivity at finite cutoff makes these ratios well-defined. The exact
+open slab integral for $Z_k^{\rm open}$ has $k$ temporal transfers and $k+1$
+spatial slices, each with full factor $M^2=e^{-V}$. End caps are therefore actual
+half-potential vectors, not an arbitrarily normalized boundary law. All site-gauge
+projections and temporal Haar integrations remain in this expression. It is not
+the periodic trace $\operatorname{Tr}A^k$.
+
+\paragraph{A same-Wilson replica identity.}
+Define the nonnegative defect
+\[
+ D_s=\frac{Z_{2s}^{\rm open} Z_{2s+2}^{\rm open}}
+                {(Z_{2s+1}^{\rm open})^2}-1.          \tag{2}
+\]
+Cauchy--Schwarz gives $D_s\ge0$. More explicitly, its numerator before division is
+\[
+ \frac12\int dX\,dY\,
+ [f_s(X)f_{s+1}(Y)-f_{s+1}(X)f_s(Y)]^2.                \tag{3}
+\]
+This is an exact pair of ORIGINAL open-slab overlaps glued at their end slices.
+The expression remains an integral of the actual transfer, with no change to
+spatial action, gauge projection, ground state or bath measure.
+
+Under $d\mu_s=f_s^2dX/Z_{2s}^{\rm open}$,
+\[
+ E_{\mu_s}R_s=\frac{Z_{2s+1}^{\rm open}}{Z_{2s}^{\rm open}},\qquad
+ \frac{\operatorname{Var}_{\mu_s}R_s}{(E_{\mu_s}R_s)^2}=D_s.       \tag{4}
+\]
+The trial Markov kernel instead has its genuine stationary law
+\[
+ d\nu_s=\frac{f_sf_{s+1}}{Z_{2s+1}^{\rm open}}dX.
+\]
+One must not replace it by $\mu_s$. It satisfies
+\[
+ E_{\nu_s}R_s\ E_{\nu_s}R_s^{-1}=1+D_s,
+ \qquad \operatorname{Var}_{\nu_s}(\log R_s)\le D_s.    \tag{5}
+\]
+To prove the last inequality, take two independent copies of $u=\log R_s$.
+Then $E\exp(u-u')=E\cosh(u-u')=1+D_s$ and
+$\cosh v\ge1+v^2/2$. The normalized filtered vectors have squared fidelity
+\[
+ \left|\left\langle\frac{f_s}{\|f_s\|},
+                \frac{f_{s+1}}{\|f_{s+1}\|}\right\rangle\right|^2
+       =\frac1{1+D_s}.                                \tag{6}
+\]
+No approximation to $\lambda_0$ enters (2)--(6); they measure adjacent filtered
+states, not their fidelity with the vacuum.
+
+\begin{proposition}[Actual cumulative boundary-fidelity budget]
+For every integer $S\ge1$,
+\[
+ \sum_{s=0}^{S-1}\log(1+D_s)
+ \le\log\frac{\lambda_0}{Z_1^{\rm open}/Z_0^{\rm open}}
+ \le-\log z_{\rm sp},\qquad z_{\rm sp}=\int M^2dX.    \tag{7}
+\]
+\end{proposition}
+\begin{proof}
+Let $h_k=\log Z_k^{\rm open}$ and $d_k=h_{k+1}-h_k$.
+The positive spectral measure of $M$ makes $h_k$ convex, hence
+$d_{k+1}-d_k\ge0$, while $d_k\le\log\lambda_0$.
+Each summand in (7) is $d_{2s+1}-d_{2s}$. Adding these and inserting the other
+nonnegative consecutive differences gives at most $d_{2S-1}-d_0$.
+
+For the last bound retain the original temporal scalar $c_B^L$ from the wilson transfer ground relative estimate calculation.
+The exact trial calculation gives
+$Z_1^{\rm open}/Z_0^{\rm open}\ge c_B^L z_{\rm sp}$ and
+$\lambda_0\le c_B^L$. The same $c_B^L$ cancels; it has not been dropped from
+any raw partition integral.
+\end{proof}
+
+This is a nonconditional finite-cutoff Wilson estimate. A flat-ball lower bound
+for $z_{\rm sp}$ on the compact group gives
+$-\log z_{\rm sp}\le C L\log(2+B)$ for $B\ge1$, with the fixed group constant.
+It is still a cutoff-extensive budget. For $L\asymp\operatorname{Vol}\Sigma/a^3$
+and $S\asymp t/a$, even the average defect bound obtained from (7) costs
+$C\operatorname{Vol}\Sigma\,a^{-2}\log(2+B)/t$.
+It is not a cutoff-uniform physical-time estimate. No monotonicity of the
+individual $D_s$ is asserted; monotonicity of global Collatz extrema is a separate
+fact and does not give it.
+
+\paragraph{What this does and does not say about the true vacuum.}
+The stationary mean of $\log R_s$ obeys the explicit interval
+\[
+ \log\frac{Z_{2s+1}^{\rm open}}{Z_{2s}^{\rm open}}
+ \le E_{\nu_s}\log R_s
+ \le\log\frac{Z_{2s+2}^{\rm open}}{Z_{2s+1}^{\rm open}}
+ \le\log\lambda_0.                                   \tag{8}
+\]
+Both Jensen bounds use the ACTUAL stationary law. The interval width is
+$\log(1+D_s)$, but its distance below $\log\lambda_0$ is not bounded by that
+width. A small adjacent-state defect alone does not estimate the ground bias.
+
+Indeed write $c_j=\langle M,\psi_j\rangle$ in an orthonormal transfer eigenbasis.
+The overlaps are
+\[
+ Z_k^{\rm open}=\sum_j|c_j|^2\lambda_j^k,
+\]
+whereas the desired occupied-state trace counts every eigenvalue with its
+multiplicity, $\sum_j(\lambda_j/\lambda_0)^m$.
+These are different spectral data. In the actual Wilson model $M$ is center
+neutral, so every nonneutral center sector has $c_j=0$; there can also be
+orthogonal states in the neutral sector. No estimate of the sequence of overlaps
+alone supplies a bound for all occupied states. This is an actual symmetry
+restriction, not a hypothetical free-rotor example.
+
+Finally the closed-loop law of the trial Markov kernel is not $\nu_s$ and its
+correlations are not independent copies of $\nu_s$. Thus (5) does not bound the
+loop expectation of $\exp\sum\log(R_s/\lambda_0)$ without a further genuine
+return-kernel/overlap estimate. Even an exact ground trial would leave the
+return trace of the true ground-state-transformed operator to be controlled.
+The new replica quantity is a concrete finite-slab diagnostic, not an assumed
+replacement for that remaining S94 estimate.
+
+\paragraph{Next indispensable estimate.}
+One needs an original-Wilson bound on the physical-time return kernel (including
+the compact holonomy sector), or a vacuum-matched occupied-state comparison.
+For the filtered-trial route, the needed data are the genuine loop law, the
+bias in (8), and occupation not visible in $c_j$. Equations (2)--(7) expose these
+in original open-slab quantities and provide one rigorous cumulative bound, but
+do not close them. No new R-I domain assumption or mass gap was used.
+\end{document}

@@ -1,0 +1,37 @@
+# Primitive boundary estimates
+
+The bounds involving an actual Wilson boundary derivative require the same chart, conditional law and configuration of fixed earlier innovations as the derivative being estimated. In particular, the all-history application requires the [anchored composed-response estimate](../../continuum/partial_gauge_transport.md); the [two-age estimate](../ordinary_oscillation.md) concerns the identical subtracted quantity at both endpoints. Exact finite-dimensional identities do not depend on these two application bounds.
+
+For the ordered composition argument, start with [quotient forests, §20](quotient_forests.md) and [marked atoms, §30](marked_atoms.md). The normalized component kernel, the retained mass, and the source variables held fixed play different roles.
+
+- [Curvature projection in a positive diameter norm](curvature_projection.md)
+- [Interaction phase on a stopped prefix](interaction_phase.md)
+- [Conditioning, deletion and mass factors for the retained history](history_masses.md)
+- [Physical root sums and exact rebasing](component_roots.md)
+- [Norm of a quotient with its actual normalizer](native_quotient.md)
+- [Endpoint cumulants and current derivatives](current_endpoint.md)
+- [Halo bounds on interior and boundary sectors](restricted_halo.md)
+- [Integrated covariance and retained data](integrated_covariance.md)
+- [Majorants for marked atoms and composition of prefixes](marked_atoms.md)
+- [Summation at a native root on a two-sided trajectory](native_roots.md)
+- [Age dependence of the outer reconstruction](reconstruction_age.md)
+- [A phase cone for a partially integrated prefix](prefix_phase.md)
+- [Complex radius reserve for the phase cone](phase_radius.md)
+- [Pointwise majorants before integration](pointwise_majorants.md)
+- [Slot lineage in the ordered integration](prefix_slots.md)
+- [Positive attachment bounds and the quotient forest](quotient_forests.md)
+- [Coarsened protected atoms and the positive catalog](positive_catalog_coarsening.md)
+- [The complete boundary estimate on coarsened atoms](complete_boundary_estimate.md)
+- [Proper-mesh coordinate counts, common positive domination and native jets](native_domain_count.md)
+- [Operative source domains and the ancestral dimension bound](operative_source_scope.md)
+- [Summable reserves in the native norm](summable_reserve.md)
+- [Remaining coordinate radius after localization](coordinate_reserve.md)
+- [C-05: a geometric argument after completed-component integration](geometry_and_scale_control.md)
+- [Quasilocal current pullbacks: a direct rooted scalar estimate](quasilocal_current_pullback.md)
+- [Two attachments to one normalized component: the missing physical decay](two_attachment_diagnostic.md)
+- [C-05 through normalized-kernel response and block oscillations](block_oscillation_alternative.md)
+- [C-05: normalized components and a direct rooted analytic norm](one_component_and_cauchy.md)
+- [Quasilocal normalized kernels: a connected expansion with local current supports](quasilocal_normalized_kernels.md)
+- [A direct multi-component theorem for C-05](connected_component_expansion.md)
+- [Stopped ordinary prefixes and the heterogeneous Hessian](stopped_prefix_hessian.md)
+- [Primitive interactions with shared integration slots](shared_slots.md)

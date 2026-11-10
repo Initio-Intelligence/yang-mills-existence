@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{Quadratic entropy and scalar remainder in the native all-shell flat sector}\author{}\date{}
+\begin{document}\maketitle
+This extends Section 6 of \cite{ND}. It uses exactly that fixed native record, flat relaxed minimum, original target map, forest, pins, sharp real cutoff, Haar density, and genuine denominator. Every original assigned-scale shell remains inside the energy sum. It neither estimates a new metric sum nor supplies distance decay.
+
+Let $K_0$ be the admitted real native law and set
+\[
+ E_0(B)=h^{-2}A(\zeta_0,W_B)\geq0,\quad
+ w(B)=h^{-2}A(\Delta\zeta,W_B),\quad
+ |\Delta\zeta(P)|\leq\delta\zeta_0(P).
+\]
+Then $|w|\leq\delta E_0$. Flatness makes the classical term zero, including on all lower assigned shells. Retain the original dimension $n$ and the estimates
+\[
+ E_0\leq\tfrac12\Lambda_M|B|^2+\epsilon_{\rm nl},\quad
+ f_0\leq e^{C_M}e^{-\lambda_M|B|^2/2},\quad
+ \widehat D_0\geq z_{M,n}>0.
+ \tag{1}
+\]
+These are the inputs of \cite[Section 6]{ND}; they are not inferred merely from finite dimension.
+
+Choose $\delta_0>0$ such that $\delta_0\leq\lambda_M/(4\Lambda_M)$ and
+\[
+ r_0:=\delta_0K_0[E_0e^{\delta_0E_0}]\leq\tfrac12.
+ \tag{2}
+\]
+This is possible on the fixed record by (1). Define the actual finite moments
+\[
+ M_j=K_0[E_0^je^{\delta_0E_0}],\qquad j=1,2.
+ \tag{3}
+\]
+They retain the original coordinate count and denominator. For example,
+\[
+ M_2\leq\frac{e^{C_M+\delta_0\epsilon_{\rm nl}}}{z_{M,n}}
+ \int_{\mathbb R^n}\left(\tfrac12\Lambda_M|B|^2+\epsilon_{\rm nl}\right)^2
+ e^{-3\lambda_M|B|^2/8}dB.
+ \tag{4}
+\]
+The integral is an explicit Gaussian polynomial moment; it is not called dimension independent. Extending this positive majorant does not extend the field map or change the cutoff.
+
+\begin{proposition}
+For real relative weights with $0\leq\delta\leq\delta_0$, put
+$Z_t=K_0e^{-tw}$ and $K_t=Z_t^{-1}e^{-tw}K_0$. Then
+\[
+ \operatorname{Var}_{K_t}(w)\leq 2M_2\delta^2,\qquad0\leq t\leq1,
+ \tag{5}
+\]
+\[
+ D_{\rm KL}(K_0\Vert K_1),\ D_{\rm KL}(K_1\Vert K_0)
+ \leq M_2\delta^2,
+ \tag{6}
+\]
+and the actual raw denominator ratio satisfies
+\[
+ \log(D_1/D_0)=-K_0w+R,\qquad0\leq R\leq M_2\delta^2.
+ \tag{7}
+\]
+\end{proposition}
+\begin{proof}
+The elementary exponential bound gives $|Z_t-1|\leq\delta M_1\leq r_0$, hence $Z_t\geq1/2$. Therefore
+\[
+ K_tw^2\leq2\delta^2K_0[E_0^2e^{\delta_0E_0}]=2M_2\delta^2.
+\]
+This proves (5) without a Hessian estimate for $w$. For $I(t)=\log Z_t$, exact differentiation gives $I''(t)=\operatorname{Var}_{K_t}(w)$. Integrating it with weights $1-t$ and $t$ proves (6), while Taylor's integral remainder proves (7). Original coordinate factors cancel only because the two records coincide. The scalar first-order expectation is retained.
+\end{proof}
+
+For a common carrier $F$ with finite variance along the interpolation,
+\[
+ |K_1F-K_0F|\leq\sqrt{2M_2}\,\delta
+ \int_0^1\sqrt{\operatorname{Var}_{K_t}(F)}\,dt.
+ \tag{8}
+\]
+This follows from the exact covariance derivative. It does not assume the interpolated potentials are strongly convex. A changed carrier still contributes $K_1(F_1-F_0)$. Every saved mesh coefficient and independent scalar multiplier remains in its actual carrier norm. If weighted carrier estimates are used, their exponent must fit the same Gaussian margin in (4); no second reserve is created.
+
+\section{Complex weights on the unchanged real cycle}
+For complex relative perturbations satisfying $|w|\leq\delta E_0$, the same $|Z_t-1|\leq1/2$ gives a fixed holomorphic logarithm. The complex normalized expectations obey
+\[
+ |K_tw^2|\leq2M_2\delta^2,\qquad
+ |K_tw|\leq2M_1\delta.
+\]
+Consequently
+\[
+ \left|\log(D_1/D_0)+K_0w\right|
+ \leq(M_2+2M_1^2)\delta^2.
+ \tag{9}
+\]
+This is an analytic scalar remainder estimate, not an entropy inequality for a complex measure. Positivity of the remainder is asserted only in the real case.
+
+\section{Scope and improvement}
+Equations (5)--(9) strengthen the all-shell flat relative-weight comparison of \cite[Section 6]{ND} to quadratic entropy and a quadratic scalar remainder. They do not require the top-scale Hessian bound $H_w$ of \cite[Section 4]{ND}, so they genuinely apply to its stated all-shell flat sector. They do require the actual baseline energy moment and denominator in (1). No new support is allowed where $\zeta_0=0$; changing targets, forests, selectors, or coordinate counts lies outside the theorem. An $O(\delta)$ first-order scalar remains and there is still no physical-distance gain. Thus the full microscopic root sum required by S94 is not closed.
+\begin{thebibliography}{9}
+\bibitem{ND} \emph{Nonlinear dispersion and unequal spatial weights}, \texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/nonlinear\_dispersion\_and\_unequal\_spatial\_weights.tex} in this collection.
+\end{thebibliography}
+\end{document}

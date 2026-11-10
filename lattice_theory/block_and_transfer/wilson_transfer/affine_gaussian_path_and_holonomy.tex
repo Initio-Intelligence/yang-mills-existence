@@ -1,0 +1,71 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Exact affine Gaussian chain: arbitrary forcing and retained holonomy}\author{}\date{}
+\begin{document}\maketitle
+Let $O\in SO(3)$ and consider actual Lebesgue kernels
+\[
+ K_t(x,y)=\exp[-\tfrac32(|x|^2+|y|^2)+x\cdot y+b_t\cdot x+c_t\cdot y+d_t].
+\]
+There is no smallness condition on these finite vectors. The period closes with
+$x_m=Ox_0$, and $C_Of(x)=f(O^{-1}x)$. Thus its trace is the path integral of
+$W=K_0\cdots K_{m-1}C_O$. Endpoint coefficients are interpreted literally with
+this twisted identification; covariant repetition gives the path integral of
+$W^q$, not an independent untwisted replication of the coefficients.
+
+The quadratic path action has Hessian $L=6I-S-S^*$, where $S$ is the orthogonal
+twisted cyclic shift. Hence $L\ge4I$. Its unique minimizer $z$ solves
+\[
+ 6z_t-z_{t-1}-z_{t+1}=b_t+c_{t-1},\qquad z_m=Oz_0,
+ \qquad \max_t|z_t|\le\tfrac14\max_t|b_t+c_{t-1}|.
+\]
+The last estimate follows at a maximum norm index, by taking its inner product
+with $z_t/|z_t|$; it also follows from the Neumann series for $L^{-1}$.
+All seam indices carry the appropriate orthogonal transport.
+
+Translate $x_t=z_t+y_t$. Stationarity cancels every linear term, including the
+seam. With
+\[
+ F_m=\sum_t d_t+\tfrac12\langle b+c_{-1},L^{-1}(b+c_{-1})\rangle,
+\]
+the exact period trace is
+\[
+ \operatorname{Tr}W=e^{F_m}\operatorname{Tr}(H^m C_O),\quad
+ H(x,y)=e^{-\frac32(|x|^2+|y|^2)+x\cdot y}.
+\]
+The minimizer of $q$ repeated periods is the covariant repetition of $z$:
+it is a stationary point, and strict convexity proves it is the unique minimum.
+The scalar is therefore EXACTLY $qF_m$, not a sum of approximate local vacua.
+Consequently
+\[
+ \operatorname{Tr}W^q=e^{qF_m}\operatorname{Tr}(H^{mq} C_{O^q}).                 \tag{1}
+\]
+No error depends on the size of the affine forcing.
+
+For $\ell_0=[\pi/(3/2+\sqrt2)]^{3/2}$ and $r_0=3-\sqrt8$, the Mehler spectrum
+on homogeneous oscillator excitations is $\ell_0r_0^n$ with the natural
+$SO(3)$ symmetric-power action. Summing its generating function gives
+\[
+ \operatorname{Tr}(H^L C_R)=\frac{\ell_0^L}{\det(I-r_0^L R)},\qquad R\in SO(3).
+                                                                            \tag{2}
+\]
+This identity can alternatively be obtained by completing the finite cyclic
+Gaussian integral; it retains all three oscillator coordinates and the literal
+endpoint rotation. In particular its denominator is positive and tends to one
+uniformly in $R$. Taking $q$th roots in(1), or using the positive compact kernel's
+Perron asymptotic, identifies the EXACT period eigenvalue
+\[
+ \rho(W)=e^{F_m}\ell_0^m,\qquad
+ \frac{\operatorname{Tr}W^q}{\rho(W)^q}
+       =\det(I-r_0^{mq}O^q)^{-1}.                                          \tag{3}
+\]
+An equivalent formal kernel conjugation uses $x\mapsto x-z_t$ and exponential
+linear multipliers whose neighboring factors telescope. These multipliers can
+be unbounded on full Euclidean $L^2$; (1)--(3) were instead justified by finite
+Gaussian integrals and their exact traces, so no bounded-similarity claim is
+needed. On a compact group the corresponding finite-cutoff multipliers are
+bounded, though not uniformly in the cutoff.
+
+This calculation identifies what can cancel for a path-centered compact
+comparison: the classical path scalar and the linear forces. It does not by
+itself prove a Wilson estimate or a probability bound for any bath class.
+\end{document}

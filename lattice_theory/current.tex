@@ -1,0 +1,104 @@
+\section{Conditional current estimates}
+\label{rt:target}
+
+Work on the periodic four-dimensional \(n^4\) lattice, with fixed \(SU(N)\), \(N\ge2\), and the original positive compact law
+\begin{equation}
+ \dd\mu_\beta=Z_\beta^{-1}e^{-\beta S}\dd\lambda,\qquad
+ S=\sum_p s_p,\qquad s_p=N-\Re\Tr U_p .
+ \label{rt:law}
+\end{equation}
+The original invariant product-group metric and Casimir convention are fixed throughout. For a positive oriented link \(b\), let \(X_b^A\) denote the original color derivatives and set
+\[
+ F_b^A=X_b^AS,\qquad
+ F_{b;\mu}^A=X_b^AS_{\mu\nu_b},\qquad
+ D_b=\sum_{\mu\ne\nu_b,A}(F_{b;\mu}^A)^2,\qquad
+ P_b=\sum_A(F_b^A)^2,\qquad
+ \ell_b=\sum_A(X_b^A)^2S.
+\]
+All original roots, pointing shifts, neighboring affected roots and Casimir rows are kept. Equivalently, split the six plaquette orientations into the three perfect matchings
+\[
+ \{12,34\},\qquad \{13,24\},\qquad \{14,23\},
+\]
+and write \(S=\sum_{i=1}^3S_i\); at a given original link each matching contributes its unique directional force. For deterministic real marks \(f\), define
+\begin{equation}
+ r_f=\beta D[f]-\ell[f]/3,\quad
+ h_f=\beta\{D[f]-P[f]/3\},\quad
+ t_f=h_f-r_f=\{\ell[f]-\beta P[f]\}/3 .
+ \label{rt:source}
+\end{equation}
+Write \(M_f=\sum_bf_b^2\) and \(b_f=\norm f_\infty\). Multiplication of an ordinary source by its original physical factor \(c_\beta^{-1}a^{-2}\) multiplies every stated variance by \(c_\beta^{-2}a^{-4}\).
+
+Where an original local force or plaquette moment is invoked, retain the established periodic regime
+\begin{equation}
+ n\ge3,\qquad \beta\ge1,\qquad
+ n\ge c_*\log(2+N\beta).
+ \label{rt:momentregime}
+\end{equation}
+The relevant input from \texttt{block\_and\_transfer/wilson\_transfer/original\_sparse\_bath\_records.tex} (restated in the subsection ``The actual multiplaquette input'' of \texttt{innovation.tex}) is the original marked-plaquette exponential moment, in particular
+\[
+ \E_\mu e^{t\beta s_p}\le K_t,\qquad
+ \E_\mu\beta\sum_i|F_{b,i}|^2\le C
+\]
+for a fixed admitted \(t>0\). These are full-law averaged estimates. They do not assert the same bounds for every frozen nonflat boundary.
+
+\subsection{The actual retained susceptibility}
+
+For an actual unrestricted coordinate integration \(K\), let \(\nu\) be its induced marginal and put \(\Phi_f=Kr_f\). For a disjoint family of cubes this marginal will be
+\begin{equation}
+ \dd\nu(b)=Z_\beta^{-1}e^{-\beta S_{\rm out}(b)}
+                 \prod_j Z_j(b)\,\dd\lambda_B(b),\qquad
+ Z_j(b)=\int e^{-\beta S_j(u,b)}\dd\lambda_{I_j}(u).
+ \label{rt:raw}
+\end{equation}
+Every raw normalizer occurs exactly once. Other actual coordinate observations use their own exact marginal, with no assertion that it is another Wilson measure.
+
+On the retained original product metric, define the canonical weighted operators
+\[
+ \mathcal L_0=d_\nu^*d,\qquad
+ \mathcal L_1=dd_\nu^*+d_\nu^*d,\qquad
+ \mathcal A f=d\Phi_f.
+\]
+At finite volume the positive smooth compact density permits inverses on centered functions and exact one-forms. The intertwining \(\mathcal L_1d=d\mathcal L_0\) gives
+\begin{equation}
+ \Cov_\nu(\Phi_f,\Phi_g)
+   =\inner{\mathcal Af}{\mathcal L_1^{-1}\mathcal Ag}_{L^2(\nu)} .
+ \label{rt:resolvent}
+\end{equation}
+The missing uniform source-space bound remains
+\begin{equation}
+ \boxed{\mathcal A^*\mathcal L_1^{-1}\mathcal A\le CI.}
+ \label{rt:missing}
+\end{equation}
+No theorem below asserts this inequality for the complete ordinary mean. A bound on \(\E|d\Phi_f|^2\), a representation of \(\Phi_f\) as a divergence, or a bound for a different reference law does not imply it without the relevant inverse or covariance estimate.
+
+For an independent random packing offset \(T\), equations~\eqref{rt:raw}--\eqref{rt:resolvent} are applied fiberwise to \(\nu_T\), and the resulting quadratic forms are averaged over \(T\). Since the original source and \(\mu\) are independent of \(T\), \(\E_\mu K_T r_f=\E_\mu r_f\) for every \(T\). The between-offset first mean is therefore retained and is exactly constant.
+
+\subsection{The unchanged heat-pressure formulation}
+
+The section ``A positive heat path for the unchanged ordinary source'' of \texttt{ward\_heat.tex} constructs, for nonnegative marks \(f\), the original positive interpolation
+\[
+ \Delta_f=\sum_{b,A}f_b(X_b^A)^2,\qquad
+ P_t^f=e^{t\Delta_f/(3\beta)},\qquad
+ q_i(t)=P_t^f e^{-3\beta S_i},\qquad
+ Z_f(t)=\int\bigl(q_1(t)q_2(t)q_3(t)\bigr)^{1/3}\dd\lambda .
+\]
+Its first logarithmic density derivative at zero is the unchanged \(r_f\). With
+\(\psi_f(t)=\log Z_f(t)-\log Z_f(0)\), its exact second derivative is
+\begin{equation}
+ \psi_f''(0)=\Var_\mu r_f+\E_\mu J_f,\qquad
+ \E_\mu|J_f|\le CM_f .
+ \label{rt:heat}
+\end{equation}
+The full acceleration \(J_f\), including its original Casimir and directional partners, is derived in the subsection ``The generated acceleration under the actual Wilson law'' of \texttt{ward\_heat.tex}. Thus the desired upper bound on \(\psi_f''(0)\) is equivalent, up to an extensive correction, to the ordinary variance bound. The positive interpolation, its endpoint and its monotonicity give no upper second-derivative bound. Signed marks can be split into positive and negative parts for a variance conclusion; positivity of the heat evolution is not asserted for a signed generator.
+
+\subsection{The results established in this section}
+
+The new statements address three different laws and must retain that distinction.
+
+\begin{enumerate}
+ \item Under the actual compact law~\eqref{rt:law}, an explicitly transported, nonlocal Ward observable \(T_f\) satisfies \(\Var T_f\le CM_f\), an inverse-form bound \(CM_f/\beta\), and complete original source-contact bounds. Its actual separator-conditioned mean has variance \(CM_f/R\); the field-dependent transport and raw conditional responses are included.
+ \item For an explicitly constructed coordinate observation with retained collars and complete cube packets, the actual averaged internal ordinary variance is \(CM_f\), and the added good/bad-label variance is exponentially small in the stated mesoscopic range. The proof uses a pointwise full-row gradient inequality and full-law averaging, with no flat-boundary centering.
+ \item In the separately named Maxwell Gaussian reference, the full separator mean has variance \(C\upsilon^2 d_GM_f/R\), with every cross-block contraction and arbitrary signed marks. This reference result extends uniformly to commuting flat holonomies after paying their common mean. Random-offset averaging does not automatically preserve the corresponding higher-source bound.
+\end{enumerate}
+
+Theorem~\ref{tr:separator} and Section~\ref{rt:closing} combine the first two statements into a paid covariance comparison for the actual retained nonlinear excess. Its covariance is the remaining issue.

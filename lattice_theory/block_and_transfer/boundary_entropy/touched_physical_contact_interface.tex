@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{A touched physical contact at the first original numerator map}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Exact scope.}
+This is the algebraic interface for one genuinely unprotected physical coefficient, not a proof of AE8/LM47. The source is (R12.7)--(R12.8) of \cite[p.~1223]{W}. The first numerator representation is original R-II (1.60), printed p.372, following (1.50)--(1.51). Its three subsequent preparations are (1.61)--(1.63), pp.373--374. The latter retain a boundary gauge and the determining block read by it. The final range invokes R-I (1.64)--(1.69), which is not used here. No inequalities from that range are assumed here.
+
+Fix the old birth mesh $a_j$, coupling $\beta_j=c_\beta g_j^{-2}$, $\sigma_j=g_j^{-2}a_j^{-2}$, original completed tests $f,h$, and any saved prefactor $\Gamma_j$. Let $F_i=X_i S_0$ denote the original force, with its original directional pieces, and set
+\[
+ P[f]=\sum_i f_iF_i^2,\quad D[f]=\sum_i f_i\sum_\mu F_{i;\mu}^2,
+ \quad\ell[f]=\sum_i f_iX_i^2S_0,\quad W_f=\sum_i f_iF_iX_i.
+\]
+Choose overlapping tests whose complete force stars meet the active region $\Lambda$ and are not composed entirely of common retained rows. The coefficient to transport is
+\[
+ C_j(U)=\Gamma_j\frac{\sigma_j^2}{9\beta_j}\left\{
+ \tfrac12(W_fP[h]+W_hP[f])-3(W_fD[h]+W_hD[f])
+ +(2\beta_j)^{-1}(W_f\ell[h]+W_h\ell[f])\right\}(U).
+\]
+This is the physical generated degree-two contact, not a freely chosen bare mixed counterterm. It is a test of the immediate contact row only: after a prior exact integration, the saved stable representative $R_j$ of LM42 must be used instead. Replacing that representative by this fine polynomial would lose the regular age gain and is not authorized by this proposition. Each completed pointing and test offset is kept. Its complete carrier is the union of the plaquette words appearing after these derivatives are expanded; visible test support alone is insufficient.
+
+For a finite word $P$, complexify its original real Wilson trace by
+$\operatorname{Re}\operatorname{Tr}P\rightsquigarrow\tfrac12(\operatorname{Tr}P+\operatorname{Tr}P^{-1})$.
+This agrees on $SU(N)$ and is holomorphic on $SL(N,\mathbb C)$.
+Left invariant Lie derivatives insert fixed matrices into words and do not increase their link-occurrence count. Consequently $C_j$ is a finite sum of products of such traces, of total link-occurrence length at most twelve: the force-square responses have length at most $4+8$, and the Casimir response at most $4+4$. There is no branch of a logarithm in this physical polynomial.
+
+Let $\mathcal I$ denote its actual finite interaction pairs $(i,l)$, including color, directional and pointed labels, for which $X_i$ differentiates a word in the $l$ row. Define $Q(f,h)=\sum_{(i,l)\in\mathcal I}(|f_i h_l|+|h_i f_l|)$. Incidence and color constants are absorbed only into $C_N$, not into $Q$.
+
+\begin{proposition}
+For any actual domain of the first R-II numerator map, with outer data $\xi$ fixed, write its original representation as
+\[
+ \Phi_b(B,\xi)=\exp\{i\eta H'_{k,b}(g_k B;\xi)\}\,U^0_{k,b}(\xi).
+\]
+The physical inherited contact on this shared realization is exactly $F_j(B,\xi)=C_j(\Phi(B,\xi))$. If $J_b[v]=(D_B\Phi_b[v])\Phi_b^{-1}$, then
+\[
+ D_B F_j[v]=\sum_b(d_b C_j)_{\Phi}[J_b[v]].
+\]
+On a complex domain with $\|\Phi_b^{\pm1}\|\le K$, $K\ge1$, on every complete carrier link,
+\[
+ |F_j|\le C_N|\Gamma_j|\frac{\sigma_j^2}{\beta_j}(1+\beta_j^{-1})Q(f,h)K^{12},
+\]
+\[
+ |D_BF_j[v]|\le C_N|\Gamma_j|\frac{\sigma_j^2}{\beta_j}(1+\beta_j^{-1})Q(f,h)K^{12}
+ \max_{b\ {
+m in\ carrier}}\|J_b[v]\|.
+\]
+All old powers, prefactors and test offsets are unchanged. No bound on $K$ or on $J$ for all actual histories is included in this assertion.
+\end{proposition}
+\begin{proof}
+The first equality is substitution of the actual numerator field in the saved coefficient, exactly the same substitution used for inherited action terms in (1.60). The differential is the ordinary chain rule, expressed in right logarithmic coordinates. For an inverse link its variation is $-\Phi_b^{-1}J_b$, so both orientations have the same bound. Each trace product is bounded by its coefficient times $C_NK^{12}$; its derivative is a sum of at most twelve insertion terms. The original finite plaquette incidences yield $Q$ and the stated constants. This proof also retains all contact and scalar partners because the full displayed $C_j$, rather than one term, is substituted.
+\end{proof}
+
+For fixed $\xi$ put $A_b=\eta H'_{k,b}(g_kB;\xi)$. Its exact Jacobian is
+\[
+ J_b[v]=\int_0^1 e^{itA_b}\,iD_BA_b[v]\,e^{-itA_b}\,dt.
+\]
+On a real branch on which $A_b$ is Hermitian, conjugation is unitary, giving $\|J_b[v]\|\le\eta g_k\|D H'_{k,b}(g_kB)[v]\|$. On a complex branch the exact exponential conjugation factor must instead be retained. This is a bound for the actual numerator response $H'_k$, not the auxiliary native reference response.
+
+\paragraph{What this closes, and what it does not.}
+For this explicit nonprotected contact, the physical readout and first pullback identity are now specified without changing its source prescription or discarding its Casimir row. Holomorphy of the finite polynomial is automatic wherever the actual preparation is holomorphic; this avoids a gratuitous new logarithm branch for this one coefficient. It does not prove that the old graded core norm survives, nor that a weak-chart coefficient from a later integration admits the same representation.
+
+To apply an identified-native covariance/current theorem, one must still establish that the exact selected numerator law is the claimed native law, or retain its actual multiplier. In full notation it is
+\[
+ D_\omega^{-1}\,\chi_{\omega}(B,\xi)\,\rho_\omega(B,\xi)\,d\lambda_{\omega}(B;\xi).
+\]
+Its gauge/constraint coarea, live reference, original denominator, and every $B$-dependent inherited selector are part of the measure. A normalized auxiliary reference with convex sharp cutoff is not this law merely by notation. If a ratio to the reference is used, its scalar, derivative and sharp boundary terms must be supplied.
+
+The single next indispensable map lemma is the simultaneous original-domain bound for the complete prepared field and its Jacobian on this touched carrier, with all three wall sets active and the actual selector retained. The needed constants are a history-uniform carrier link bound $K$, the correct old-to-current Jacobian norm, the original analytic-radius margin, and the full selected-law comparison. Original (1.65) names a range space but does not spell out its defining inequalities; that reference cannot be silently replaced by the manuscript's weak ball. A native Neumann current also does not identify the old physical current: a lift would have to satisfy $D\Phi W=V_j\circ\Phi$ together with all external/constraint responses.
+
+\begin{thebibliography}{9}
+\bibitem{W} Wilson-source estimates, volumes 1--10 (\texttt{lattice\_theory/source\_estimates} in this collection), cited by source page.
+\end{thebibliography}
+\end{document}

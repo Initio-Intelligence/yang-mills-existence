@@ -1,0 +1,111 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Cov}{\operatorname{Cov}}
+\title{A local degree-two extension with an exact full-fiber transition}\author{}\date{}
+\begin{document}\maketitle
+Use the definitions and hypotheses of the orthogonal contact calculation (\texttt{orthogonal\_contact.tex}). Let $\mathcal B$ be
+all links outside the packed pairs, and write $G_i=R_i+S_i$, where $R_i$ is the sum
+of the double-centered pair residues and $S_i=G_i-R_i$. Here $G_i$ must consistently
+be the physical $O_H(f_i)$ or the ordinary $r_H(f_i)$; these are different sources.
+Let $\mathcal K$ denote the original normalized conditional integration of all free links.
+This is a genuine finite Wilson integration with its original product one-link density.
+
+\paragraph{Stronger conditional orthogonality.}
+Conditioned on $\mathcal B$, the observable is a sum of two-variable block observables.
+In each block, removing its double-centered part leaves a constant and two additive
+single-variable functions. Thus, directly under the product conditional law,
+\[
+ \mathcal K R_i=0,\qquad \mathcal K(R_iS_j)=0,\qquad
+ \mathcal K(R_1R_2)=V_{12}(\mathcal B).
+\]
+For the physical source the exact local coefficient is
+\[
+ V_{12}(\mathcal B)=\frac{16}{9}\sigma^2
+ \sum_{j} (f_1)_{b_{0,j}}(f_2)_{b_{0,j}}\operatorname{tr}(C_{j,-}C_{j,+}).
+\]
+The ordinary source has factor $4\sigma^2$ in place of $16\sigma^2/9$.
+All finite pointed completions require the original double average, not a common-root
+replacement. Each coefficient depends on a fixed local bath and its actual one-link
+conditional denominators. It is independent of total torus size once the local patch embeds:
+this locality statement concerns the FUNCTION $V_{12}$, unlike its full-measure expectation.
+For equal real tests it is pointwise nonnegative.
+
+\paragraph{Exact, explicitly changed source.}
+In the squarefree degree-two algebra, define
+\[
+ A^{\rm loc}=\eta_1G_1+\eta_2G_2-\eta_1\eta_2V_{12}(\mathcal B).
+\]
+Then the exact identity is
+\[
+ \mathcal K e^{A^{\rm loc}}=\mathcal K e^{\eta_1S_1+\eta_2S_2}.
+\]
+Proof: the constant coefficients are one, the linear coefficients agree because
+$\mathcal K R_i=0$, and the mixed coefficients agree because
+$\mathcal K(G_1G_2)-V_{12}=\mathcal K(S_1S_2)$.
+This equality also holds for the unnormalized original Wilson integration, multiplied by
+its actual bath density and conditional normalizer. Subsequent original linear operations
+on the bath preserve it. A selector depending only on the bath factors unchanged; no
+integration by parts has been used and no boundary partner has been discarded.
+The identity need not hold for a selector, readout or kernel depending on the free links.
+It is a verified transition for a specified full compact fiber, not identification with all
+mixed maps in the manuscript. For the original XP3 source, $A_{12}=0$, the additional
+$V_{12}$ is PRESENT in the output; the identity does not authorize deleting it.
+
+\paragraph{Deterministic versus local field-dependent subtraction.}
+Put $K_{12}=\E V_{12}$. A deterministic extension $A_{12}=-K_{12}$ produces the
+same terminal scalar but differs before full integration. For any output $q$ measurable
+with respect to the bath,
+\[
+ A_{12}^{\rm out,det}
+ =\Cov(S_1,S_2\mid q)+\E(V_{12}\mid q)-\E V_{12},
+ \qquad
+ A_{12}^{\rm out,loc}=\Cov(S_1,S_2\mid q).
+\]
+The fluctuating zero-mean scalar in the first formula is a real generated coefficient.
+It cannot be declared absent because its final expectation vanishes. If $q$ depends on
+free links, all conditional mixed terms involving $R_i$ must be retained as well.
+This gives a concrete limitation on transporting terminal covariance subtractions backward
+through an arbitrary readout.
+
+\paragraph{Actual real compact derivative bounds.}
+For each fixed order $m$, and every ordered string $\mathcal D^m$ of invariant bath-link
+derivatives in the finite determining patch,
+\[
+ |\mathcal D^m V_{12,j}|\le C_m\sigma^2(1+\beta)^m
+ |(f_1)_{b_{0,j}}(f_2)_{b_{0,j}}|.
+\]
+These are real compact bounds without a small denominator assumption. To prove them,
+write each conditional moment as a ratio of finite Haar integrals. A bath derivative obeys
+\[
+ D\langle H\rangle_b=\langle DH\rangle_b
+ -\beta\{\langle H DS_b\rangle_b-\langle H\rangle_b\langle DS_b\rangle_b\}.
+\]
+Every fixed derivative of the finite plaquette action and force function is uniformly
+bounded on the compact group. Repeatedly apply this identity and Leibniz: derivatives
+of order $m$ are finite sums of normalized moments of bounded derivatives, with at most
+$m$ factors of $\beta$. The same applies to the covariance matrices and their product.
+This proof retains the derivative of the genuine conditional denominator explicitly as a
+centered score. No complex zero-free domain or uniform inherited-score estimate follows.
+
+On the good baths of the preceding note, conditional concentration implies
+$\|C_\pm\|\le C\beta^{-1}$, hence
+$|V_{12,j}|\le Ca^{-4}|(f_1)_{b_0}(f_2)_{b_0}|$.
+Globally the weaker bound is $C\sigma^2=Cc_\beta^{-2}\beta^2a^{-4}$ per block.
+The averaged bound proved previously is $Ca^{-4}\beta\log(2+\beta)$ per block.
+None of these estimates supplies the required inherited graded MT36 norm.
+A physical current acting on $V_{12}$ must differentiate this local function, including
+its conditional denominators; it is not an independent field-free scalar. Its current
+companion and all live-reference/readout responses must be retained by the manuscript's
+full weak transport rules. No pair of boundary distributions is multiplied here.
+
+\paragraph{Normalization and unresolved issue.}
+The extension is constructed at the original mesh. Saved field-independent factors enter
+as $\Gamma_1\Gamma_2$; subsequent output meshes never replace its original $\sigma^2$.
+Raw numerators and independent absolute scalars remain unchanged except for the explicitly
+added mixed-source coefficient. The extension supplies a local finite-cutoff prescription
+for a particular positive contact component. It has not removed or bounded the remaining
+$\Cov(S_1,S_2)$, supplied a universal continuum normalization, or proved reflection
+positivity and higher-degree consistency. The original manuscript must still bound its
+unchanged source, or explicitly adopt and analyze a renormalized prescription.
+\end{document}

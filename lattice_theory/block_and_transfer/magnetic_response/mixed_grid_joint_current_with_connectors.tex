@@ -1,0 +1,148 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{A common-gauge mixed-grid current estimate with original relative boundaries}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Original grids and precisely allowed connectors.}
+Use the original scalar grids of the mixed boundary magnetic loop bound calculation: one Neumann coordinate and
+three Dirichlet coordinates, or four Dirichlet coordinates, with the
+literal nearest-neighbor killed/reflected kernels $p_t^{(\mu)}$.
+Their staggered origins and side lengths are retained. A connector is a
+fixed translation between overlapping subsets of two grids, of bounded
+length, or a composition of a bounded number of such maps.
+Its matrix is a partial permutation: row and column sums are at most one.
+The reverse connector is its adjoint. A finite sum of the original local
+vertex choices changes constants only by their fixed multiplicity.
+The current along a connector is the line integral of the SAME constant
+Landau field along a fixed bounded axis path. No transition probability
+is replaced by a new bath law.
+
+All component scalar phases are first put into the same ambient Landau
+gauge $a_1=b x_0$, $b=2/R^2$, by the exact component gauge gradients of
+the mixed boundary magnetic loop bound calculation. The corresponding endpoint phases are retained in the
+connectors. Paths can have different component grids; their actual
+Neumann coordinates need not coincide.
+
+\paragraph{1. A common-gauge open-current moment.}
+Fix an ambient starting point $x$ and use the common centered gauge
+$a_1=b(z_0-x_0)$. On one grid, let
+\[
+ J_t=\int_0^t b(Z_{s-}-x_0)\,dY_s,\qquad Z=X^0,\quad Y=X^1,
+\]
+on surviving paths. If coordinate one is Dirichlet, the stopped-current
+argument of the mixed boundary magnetic loop bound calculation gives $E[J_t^2;\tau>t]\le Cb^2t^2$.
+
+If coordinate one is Neumann, coordinate zero MUST be Dirichlet.
+Discrete integration by parts (there are no simultaneous coordinate
+jumps) gives, on each surviving path,
+\[
+ J_t=-\int_0^t b(Y_{s-}-x_1)\,dZ_s
+                  +b(Z_t-x_0)(Y_t-x_1).                         \tag{1}
+\]
+The first term, stopped INCLUDING the possible killing jump, is a
+martingale with second moment at most $2b^2t^2$.
+For the endpoint term extend the coordinate processes past killing.
+They are independent; the reflected coordinate is the same Lipschitz
+fold used in the mixed boundary magnetic loop bound calculation, and each displacement second moment is at
+most $2t$. Dropping the survival event gives
+\[
+ E[(Z_t-x_0)^2(Y_t-x_1)^2;\tau>t]\le4t^2.
+\]
+Thus in the SAME gauge for EVERY component grid,
+\[
+ \boxed{E_x[J_t^2;\tau>t]\le12b^2t^2.}                            \tag{2}
+\]
+The endpoint product in (1) is retained, not silently declared a
+martingale. Equation (2) is an unnormalized moment, not a bridge estimate.
+
+\paragraph{2. Piecewise paths and reversed mixed loops.}
+Consider a path consisting of a fixed bounded number of original
+semigroup segments, interspersed with the allowed connectors.
+Its total positive duration is $t$.
+The common-gauge current on a segment equals its current centered at
+that segment's start, plus
+$b(z_{\rm start}-x_0)\Delta y$.
+Conditional displacement moments on each next segment are bounded by
+$2t_j$ uniformly in its starting state; connector translations add
+bounded deterministic displacements. Repeated conditioning, (2), and
+Cauchy--Schwarz for a fixed number of summands therefore give
+\[
+ E[J_{\rm piecewise}^2;\text{survival}]
+                      \le Cb^2(1+t)^2.                           \tag{3}
+\]
+For example the change-of-center term has second moment at most
+$Cb^2(t_{\rm previous}+1)t_j$. A bounded connector contributes at most
+$Cb^2(t_{\rm previous}+1)$. These estimates use the actual substochastic
+path measures, not independence across conditioned bridges.
+
+Each piecewise kernel is still substochastic in BOTH rows and columns.
+Among a bounded number of time segments one has duration at least a
+fixed fraction of $t$. Bounding that factor by its original heat-kernel
+supremum and summing all other factors proves
+\[
+ \sup K_{\rm piecewise}\le C k(t),\qquad
+ k(t)=(1+t)^{-2}e^{-ct/R^2}.                                      \tag{4}
+\]
+Constants absorb the bounded segment count and connector offsets.
+
+Now concatenate a path on one grid with the reverse of a path on a
+different grid, including their endpoint connectors. Cut the resulting
+loop after half its total positive duration and reverse the second
+half. Both halves start at the SAME ambient anchor; the reversed
+connectors are adjoints. Their currents subtract in the same centered
+gauge. Bounding the other half by (4), using (3), and summing the
+$O(R^4)$ initial anchors gives the replacement for a same-grid
+semigroup loop identity:
+\[
+ \boxed{\mathcal A_{\rm mixed\,loop}(t)
+       \le C R^4 b^2(1+t)^2 k(t).}                               \tag{5}
+\]
+Reversibility is used separately on each original grid. No fictitious
+single-grid semigroup is inserted. The $1+t$ accommodates bounded
+connector areas at zero positive time.
+
+\paragraph{3. Three different component grids.}
+Take two oppositely charged and one neutral path between two common
+ambient vertex anchors, each on any original component or ghost grid.
+Their bounded endpoint connectors make the currents comparable.
+Assign the neutral path its geometric current only as an auxiliary
+variable. This changes no path weight.
+If the neutral path is shortest, use
+$J_1-J_2=(J_1-J_3)+(J_3-J_2)$.
+Otherwise use the two charged paths directly.
+Bound the unused path kernel by its original supremum and apply (5)
+to each pair. For sorted times $m\le M\le T$ this proves
+\[
+ \mathcal A_{\theta,\rm mixed}
+ \le CR^4b^2(1+T)^2 k(M)k(T).                                   \tag{6}
+\]
+This is the mixed-grid version of the theta network joint magnetic current calculation; it also handles
+arbitrarily unbalanced times. Consequently
+\[
+ \int\frac{\mathcal A_{\theta,\rm mixed}}{1+T}\,dt_1dt_2dt_3
+               \le CR^4b^2[\log(2+R)]^2.                        \tag{7}
+\]
+For small times the harmless added constant is integrable.
+For large times the ordered integration is the same as the theta network joint magnetic current calculation.
+The factor $1/(1+T)$ in (7) remains EXPLICITLY UNPAID.
+
+\paragraph{Actual-model scope and the remaining join.}
+These estimates use the original component/ghost scalar kernels and
+bounded local connector choices. They cover the geometric current of
+their charge-conserving path networks even when the reflected
+coordinates differ. A field-dependent arbitrary connector, a long
+tree path, or a nonlocal projection is outside the stated lemma.
+The actual Wilson curl and ghost finite-difference vertices must still
+supply the derivative weight, with their differentiated endpoint,
+spin and gauge-projection partners retained. The full coefficient also
+requires the finite-boundary mass and longitudinal cancellations;
+(6) does not replace them.
+
+A finite-state regression checks (2) on every starting point of the
+$R=3$ grids with Neumann coordinate zero, one or two and on the all-
+Dirichlet ghost grid. It confirms the common-gauge moment including
+the case where the current coordinate reflects. This regression is
+not the proof of (5)--(7).
+No bound on the complete nonlinear coefficient, its original remainder,
+or S94 is claimed. The mixed-grid current comparison is the closed
+join; the current-weighted derivative estimate remains open.
+\end{document}

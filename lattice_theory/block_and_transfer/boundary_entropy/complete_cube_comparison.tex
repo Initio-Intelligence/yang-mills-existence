@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{A quantitative nearby-bath comparison with the original cube denominator}\author{}\date{}
+\begin{document}\maketitle
+This note carries the complete conditional block of the complete conditional cube calculation and the induced boundary coupling calculation one step toward the S94 comparison. It uses the same twelve free links, 54 incident plaquettes, and nearby-bath set. The number of bath coordinates and all original staples remain fixed.
+
+Let $b_0,b_1$ lie in a smaller convex bath-coordinate neighborhood, and let $b_t$ be their straight coordinate path. Write $\delta=|b_1-b_0|$, $K_t=K_{\beta,b_t}$, and $D_t=D_\beta(b_t)$. All constants below concern this fixed complete record and fixed $SU(N)$.
+
+\section{An actual normalized response bound}
+The exact full-fiber score identity is
+\[
+ \partial_tK_t(dU)=-\beta\big[\dot S_t(U)-K_t\dot S_t\big]K_t(dU).
+ \tag{1}
+\]
+No cutoff-boundary term occurs because these are full compact Haar fibers. The smooth action derivative satisfies
+\[
+ |\dot S_t(U)-\dot S_t(U_*(b_t))|
+ \leq C\delta\,\operatorname{dist}(U,U_*(b_t))
+\]
+on the minimum chart, and is bounded by $C\delta$ on the compact complement. The actual denominator and uniform gap estimates of the complete conditional cube calculation give
+\[
+ K_t\operatorname{dist}(U,U_*(b_t))\leq C\beta^{-1/2},
+ \quad K_t(\text{chart complement})\leq Ce^{-c\beta}.
+\]
+Subtract the constant value of $\dot S_t$ at the minimum before taking absolute values in (1). This yields
+\[
+ \|K_1-K_0\|_{\rm TV}\leq
+ C\min\{1,\sqrt\beta\,\delta\}.
+ \tag{2}
+\]
+The factor $\sqrt\beta$ is real: a generic bath change shifts the minimum, while the conditional fluctuation width is $\beta^{-1/2}$. Centering a source does not remove this score response.
+
+\section{Raw and completed scalar differences are distinct}
+Write $s_*(b)=S_b(U_*(b))$ and retain $H_b$, the full $12d_G$-coordinate Hessian. The fixed-order parametric form of the complete conditional cube calculation gives
+\[
+ \log\frac{D_1}{D_0}
+ =-\beta[s_*(b_1)-s_*(b_0)]
+ -\frac12\log\frac{\det H_{b_1}}{\det H_{b_0}}
+ +O(\beta^{-1/2}\delta).
+ \tag{3}
+\]
+The factors $\beta^{-6d_G}$ and the original Haar-coordinate scalar cancel here only because both endpoints integrate the identical number of original coordinates with the identical Haar convention. If those records differ, that cancellation is not available.
+
+The exact local classical-completion identity is
+\[
+ C_\beta(b):=\frac{e^{-\beta s_*(b)}}{D_\beta(b)},\qquad
+ K_{\beta,b}(dU)=C_\beta(b)e^{-\beta[S_b(U)-s_*(b)]}dU.
+\]
+Therefore
+\[
+ \log\frac{C_\beta(b_1)}{C_\beta(b_0)}
+ =\frac12\log\frac{\det H_{b_1}}{\det H_{b_0}}
+ +O(\beta^{-1/2}\delta),\qquad
+ \left|\log\frac{C_\beta(b_1)}{C_\beta(b_0)}\right|\leq C\delta.
+ \tag{4}
+\]
+This is a constructive estimate for a complete paired factor. It does not delete $-\beta s_*$ from the raw partial integral $D$, and it does not control an independent old scalar multiplier. The induced boundary coupling of \texttt{induced\_boundary\_coupling.tex} is contained precisely in that retained classical term.
+
+\section{A complete bounded carrier and the remaining scale sum}
+For any original bounded carriers $F_0,F_1$ on the same fiber and any constant $A$ independent of its free links,
+\[
+ K_1F_1-K_0F_0=K_1(F_1-F_0)+(K_1-K_0)(F_0-A).
+\]
+Hence, with the usual total-variation convention,
+\[
+ \|K_1F_1-K_0F_0\|
+ \leq\|F_1-F_0\|_\infty+
+ C\min\{1,\sqrt\beta\delta\}\|F_0-A\|_\infty.
+ \tag{5}
+\]
+Every old mesh factor and independent multiplier already present in these norms remains present. A weighted-carrier variant requires an actual envelope along the common path; it is not inferred just from the bounded-kernel comparison.
+
+For exactly copied full records, $\delta=0$ and (3)--(5) become exact equalities, including the scalar. If a later, separately justified construction supplied $\delta\leq C\beta^r e^{-c\ell_*/a}$ with matched records, (2) and (4) would have the requisite exponential physical-distance factor. This last input has not been proved by the local cube estimate. Summing only its unweighted $O(\beta^{-1/2})$ residual over $O(a^{-4})$ cubes diverges along $\beta\asymp\log(1/a)$. The output bath action, its gauge/harmonic modes, and the original mixed-selector admission remain the obstacles to closing S94.
+\end{document}

@@ -1,0 +1,136 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{The signed gauge quotient and the remaining nonlinear wavelength current}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{The relative block and its boundary.}
+For the two-link signed transverse trace,
+its eigenvalues give the stated determinant, the Haar prefactor is
+$(2\pi)^3/(2\pi^2)^2 B^{-3}=2/(\pi B^3)$, and differentiation gives
+$-412/(343B)$ versus classical curvature $20/7$. This is a signed leading
+quadratic test; it does not estimate the nonlinear growing-block remainder.
+Here all interiors are those of the admitted complete relative block in
+the exact minimum flow connected response and relative green improved connected bound calculations. The exterior, including all global holonomies, stays fixed or
+moves along the declared boundary path. No periodic zero mode is inverted.
+
+\paragraph{1. Exact critical-background gauge quotient.}
+At the actual conditional ACTION minimum let $H$ be the canonical Hessian
+on all free links before tree fixing. Let $D$ be the covariant infinitesimal
+interior gauge action, with zero boundary gauge parameter. Criticality and
+exact gauge invariance give $HD=0$. The relative forest meets every interior
+vertex and is rooted at fixed boundary vertices. If $L$ selects its tree
+rows, $LD$ is triangular after ordering the vertices, with diagonal adjoint
+rotations of determinant one (up to orientation signs). Thus
+$|\det LD|=1$. Let $E$ insert independent chord variations with tree rows zero,
+and put $H_{\rm tr}=E^*HE$. Define
+\[
+ \Delta_0=D^*D,\qquad \Delta_1=H+DD^*.
+\]
+For the admitted minimum both operators are positive on their respective
+relative spaces. The linear change $a=Ex+D\phi$ has absolute determinant
+one. Since $HD=0$, its quadratic energy is $x^*H_{\rm tr}x$.
+Integrating the gauge-fixing term $|D^*a|^2/2$ in $\phi$ gives
+$(2\pi)^{g/2}/\det\Delta_0$, where $g$ is the dimension of the interior
+gauge space. Comparing the resulting two Gaussian integrals proves
+\[
+ \boxed{\det H_{\rm tr}=\frac{\det\Delta_1}{(\det\Delta_0)^2}.}       \tag{1}
+\]
+This is a finite-dimensional identity at the actual critical background,
+not a replacement of its compact Wilson integral by a Gaussian. Constant
+canonical/Haar factors still multiply the raw Gaussian normalizer.
+A different nonunit tree-coordinate Jacobian must be retained explicitly.
+
+Consequently its signed quadratic fluctuation action is
+\[
+ F_{\rm quad}=\tfrac12\log\det\Delta_1-\log\det\Delta_0+\text{constant}.
+                                                                    \tag{2}
+\]
+For either operator $A$ write
+$\mathcal T(A)=\operatorname{Tr}(A^{-1}\ddot A-
+ A^{-1}\dot A A^{-1}\dot A)$. The complete response is
+$F_{\rm quad}''=\mathcal T(\Delta_1)/2-\mathcal T(\Delta_0)$.
+It contains both second-derivative and covariance terms and the full
+interior gauge determinant. Changes of right/left minimum frame contribute
+their commutators and accelerations to these derivatives. Under a complete
+site-gauge conjugation both determinants are invariant. In particular a
+positive minimum-frame Fisher term alone is not the physical response.
+At a flat reference color conjugation makes the first derivative of (2)
+zero, but does not set its Hessian or its transport vertices to zero.
+
+\paragraph{2. An exact original-law residual, not Gaussian promotion.}
+Use the actual right fluctuation coordinates
+$U_j=U_j^*(t)\exp(\alpha z_j)$ on every independent chord. A fixed exponential
+fundamental domain can be used almost everywhere; its Haar density
+$j(\alpha z)$ is independent of $t$. Equivalently use the admitted chart
+and retain its already controlled complementary integral. With the former
+convention write, by definition on the entire integration domain,
+\[
+ S_t(z)=V(t)+\tfrac12 z^*H_tz+R_t(z),\qquad
+ d\mu_t=Z_t^{-1}j(\alpha z)e^{-z^*H_tz/2-R_t(z)}dz.                  \tag{3}
+\]
+Here $H_t=H_{{\rm tr},t}$ and $V$ is the exact classical minimum. All raw
+canonical/Haar constants are independent of $t$ and remain in $Z$.
+All derivatives below are at fixed RIGHT fluctuation $z$, so include the
+actual minimum velocity and acceleration. Set $q=z^*\dot H z/2$ and
+$F=-\log Z_{\rm original}-V$. Direct differentiation of the ORIGINAL
+integral gives
+\[
+ F''=E_\mu[\tfrac12 z^*\ddot H z+\ddot R]
+           -\operatorname{Var}_\mu(q+\dot R).                       \tag{4}
+\]
+Let $\gamma$ be the centered full Gaussian with covariance $H^{-1}$.
+Subtracting its exact signed determinant response yields the identity
+\begin{align}
+ F''-F_{\rm quad}''={}&\tfrac12\operatorname{Tr}
+   [\ddot H(E_\mu zz^*-H^{-1})]+E_\mu\ddot R\\
+ &-[\operatorname{Var}_\mu q-\operatorname{Var}_\gamma q]
+   -2\operatorname{Cov}_\mu(q,\dot R)-\operatorname{Var}_\mu\dot R.
+                                                                    \tag{5}
+\end{align}
+Thus domain, Haar and nonlinear effects have not disappeared: they occur
+in actual second and fourth moments and in the last three current terms.
+A restriction to the convex chart must restore its boundary/annulus and
+complement contributions to (5). The expectation-only Haar identity
+$E F_J=0$ does not justify deleting acceleration terms inside $q$ or
+$\ddot R$. The live nonflat baseline $F'(0)$ is still part of the stored
+scalar/current pair; a centered second difference alone does not store it.
+
+\paragraph{3. Exactly what would produce a logarithmic wavelength bound.}
+A useful checkable kernel mechanism is the following finite elementary
+lemma. Suppose a symmetric, componentwise kernel $\Pi(x,y)$ on a complete
+four-dimensional domain has zero row sums, and
+\[
+ |\Pi(x,y)|\le {C\over B}(1+|x-y|)^{-6}.                            \tag{6}
+\]
+Suppose also that the declared boundary extension obeys the literal
+translation estimate
+$\sum_x|h(x+r)-h(x)|^2\le C|r|^2\|\nabla h\|_2^2$.
+Then the row-sum identity rewrites its quadratic form as minus one half
+the corresponding difference form. Summing shells of $O(r^3)$ sites gives
+\[
+ |\langle h,\Pi h\rangle|
+ \le {C\log(2+R)\over B}\|\nabla h\|_2^2.                         \tag{7}
+\]
+The shell summand is $r^3r^{-6}r^2=r^{-1}$, not a volume factor.
+If the complete physical transverse extension has the required Hodge
+boundary identity, its gradient energy can be replaced by its curl energy;
+for the harmonic extension this is $v^*K_{\rm eff}v$.
+
+Neither (6) nor its row-sum/boundary completion is proved here for (2),
+and (7) is not asserted for (5). Gauge Ward identities annihilate complete
+pure-gauge directions; they do NOT by themselves establish the componentwise
+zero-row-sum representation on a partial boundary chart. The actual
+nonabelian transport vertices, second-derivative partners and interior
+gauge determinant must first be combined to prove it. The actual-law
+remainder (5) would then need its own bound by the SAME physical energy,
+with a summable coupling correction. The relative green improved connected bound calculation only controls their
+combined response by $CR^{14}/B$ times the canonical mass norm, plus its
+explicit tail. It supplies no such relative curl bound.
+
+\paragraph{Checkpoint.}
+Equation (1) closes the finite critical-background gauge/normalization
+bookkeeping for the proposed signed-trace route. Equation (5) isolates the
+precise original-law current which cannot be replaced by a Wick estimate.
+The outstanding main clause is a combined boundary/covariant kernel bound
+for (2) and a wavelength-relative bound for (5). No strict coarse-scale
+contraction, physical-slab occupation estimate, or S94 result follows yet.
+\end{document}

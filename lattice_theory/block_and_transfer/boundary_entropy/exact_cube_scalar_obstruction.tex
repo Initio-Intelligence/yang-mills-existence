@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{The exact six-face cube scalar after one-plaquette normalization}\author{}\date{}
+\begin{document}\maketitle
+This calculation tests a concrete extension of the full Wilson strong coupling comparison to weak coupling. It uses an actual six-plaquette cube embedded in the four-dimensional Wilson lattice, with its twelve original links and normalized Haar measures. It does not replace an original mixed-history selector or establish a contradiction to S94.
+
+\section{The proposed first reorganization is exact but not small}
+Let $G=SU(N)$, $d_G=N^2-1$, and put
+\[
+ k_\beta(U)=e^{-\beta[1-N^{-1}\operatorname{Re}\operatorname{tr}U]},\qquad
+ z_\beta=\int_Gk_\beta(U)dU,\qquad p_\beta=k_\beta/z_\beta.
+\]
+The exact lattice factorization is
+\[
+ Z=z_\beta^{\#P}\int\prod_P[1+f_P]\,dU,\qquad f_P=p_\beta(U_P)-1.
+ \tag{1}
+\]
+The scalar $\#P\log z_\beta$ is retained. It cancels per volume between the two periodic lattices because both have exactly six plaquettes per site, not because it is bounded.
+
+Let $\Gamma$ be the six boundary faces of an elementary cube. For every nonempty proper subset $A\subsetneq\Gamma$ there is an edge incident to exactly one selected face. Integrating that edge gives zero since $\int f_PdU_e=0$, with other links fixed. Thus
+\[
+ \int\prod_{P\in A}f_P\,dU=0\quad
+ (\varnothing\ne A\subsetneq\Gamma).
+ \tag{2}
+\]
+The full cube activity therefore is
+\[
+ w_\Gamma=\int\prod_{P\in\Gamma}f_P\,dU
+ =\int\prod_{P\in\Gamma}p_\beta(U_P)\,dU-1
+ =p_\beta^{*6}(I)-1.
+ \tag{3}
+\]
+Here convolution uses normalized Haar measure. To verify the last equality, fix a maximal tree of the cube graph by successive Haar changes of variables; this costs exactly one. The complementary dual edges form a tree of its six faces. Integrate those edges successively, merging neighboring central face weights by
+\[
+ \int_G f(AU)g(U^{-1}B)dU=(f*g)(AB).
+\]
+The final sphere face has trivial boundary word, leaving the sixfold convolution at $I$. The central weights obey $p_\beta(U^{-1})=p_\beta(U)$, so orientation choices do not alter the result. The twelve link variables, seven tree gauges, and five remaining integrations are all accounted for.
+
+\begin{proposition}
+There are positive group-dependent constants and $\beta_0$ such that
+\[
+ c\beta^{d_G/2}\leq1+w_\Gamma\leq C\beta^{d_G/2},\qquad\beta\geq\beta_0.
+ \tag{4}
+\]
+\end{proposition}
+\begin{proof}
+The Wilson plaquette action has its unique minimum at $I$ and a positive quadratic Hessian in exponential coordinates. Compactness and the local Haar Jacobian give
+$c\beta^{-d_G/2}\leq z_\beta\leq C\beta^{-d_G/2}$. Consequently $\|p_\beta\|_\infty\leq C\beta^{d_G/2}$ and $p_\beta(U)\geq c\beta^{d_G/2}$ on a fixed-radius multiple of the group ball of radius $\beta^{-1/2}$. Young's elementary $L^1$--$L^\infty$ convolution bound, with $\int p_\beta=1$, proves the upper bound.
+
+For the lower bound write the convolution as an integral over $g_1,\ldots,g_5$. Restrict each $g_i$ to a sufficiently small ball of radius $c_0\beta^{-1/2}$. Their product and its inverse then belong to the ball on which the same lower bound for $p_\beta$ holds. The six density factors contribute $c\beta^{3d_G}$; the five Haar-ball volumes contribute $c\beta^{-5d_G/2}$. Their product is $c\beta^{d_G/2}$.
+\end{proof}
+
+\section{An exact $SU(2)$ finite-coupling check}
+For $SU(2)$ write its class angle as $\theta$. The normalized class Haar measure is $(2/\pi)\sin^2\theta\,d\theta$ and $s=1-\cos\theta$. Direct integration gives
+\[
+ z_\beta=e^{-\beta}\frac{2I_1(\beta)}{\beta},\qquad
+ p_\beta(U)=\sum_{d=1}^{\infty}
+ d\frac{I_d(\beta)}{I_1(\beta)}\chi_d(U),
+ \tag{5}
+\]
+where $\chi_d$ is the dimension-$d$ irreducible character. Character convolution then yields the exact nonnegative series
+\[
+ w_\Gamma=\sum_{d=2}^{\infty}d^2
+ \left[\frac{I_d(\beta)}{I_1(\beta)}\right]^6.
+ \tag{6}
+\]
+These formulas can be derived without a Bessel asymptotic: expand $e^{\beta\cos\theta}$ in its Fourier series and use $\sin\theta\sin(d\theta)=\frac12[\cos((d-1)\theta)-\cos((d+1)\theta)]$, followed by the series recurrence $I_{d-1}-I_{d+1}=2dI_d/\beta$.
+
+At the exact value $\beta=10$, already the $d=2$ term is greater than one. A finite calculation verifies this with rational arithmetic: the positive defining series
+\[
+ I_\nu(10)=\sum_{k=0}^{\infty}\frac{5^{2k+\nu}}{k!(k+\nu)!}
+\]
+is truncated after $k=40$, bounding the tail above by a geometric series whose successive ratio is at most $25/[(42)(42+\nu)]$. With $S_2$ the lower partial sum for $I_2$ and $U_1$ the rigorous upper sum for $I_1$, it checks $4S_2^6>U_1^6$. Thus $w_\Gamma>1$ at this finite original Wilson coupling, without a numerical integration assumption.
+
+\section{What cannot be continued and what remains viable}
+The absolute logarithmic Mayer expansion for a gas retaining this cube as one self-incompatible polymer contains the repeated-cube subseries
+\[
+ \sum_{r\geq1}\frac{|w_\Gamma|^r}{r}.
+ \tag{7}
+\]
+Indeed the subgas containing only this polymer has partition function $1+w_\Gamma$. For $w_\Gamma\geq1$, (7) diverges. Thus the centered plaquette polymer expansion cannot be continued as an absolutely convergent expansion at sufficiently large $\beta$; at $SU(2),\beta=10$ the obstruction already occurs. This is stronger than the failure of a sufficient convergence criterion. It is an actual local scalar term of the unchanged Wilson integral.
+
+Regrouping the whole cube into $\log(1+w_\Gamma)$ is possible, but this produces an absolute increment of order $(d_G/2)\log\beta$. Its overlap with neighboring cube integrations prevents assigning independent copies freely. To use a block reorganization for S94, one must specify disjoint or conditionally compatible blocks, retain its actual denominator, and prove that the full resulting scalar and residual carriers match between tori before taking absolute sums. Exact nonwrapping equality would cancel the local scalar per volume; a normalized-kernel identity alone does not establish that equality.
+
+This leaves the correct constructive target: a block or multiscale expansion controlling complete absolute carriers at weak coupling. Neither (4) nor (7) is a counterexample to such a reorganization, to Yang--Mills existence, or to S94. No continuum or mass-gap assertion is made.
+\end{document}

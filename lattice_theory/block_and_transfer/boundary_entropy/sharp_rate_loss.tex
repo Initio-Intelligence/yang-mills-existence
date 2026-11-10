@@ -1,0 +1,99 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{A sharp finite-cutoff consequence of NM12, and the missing collar constant}\author{}\date{}
+\begin{document}\maketitle
+This note does not establish AE8, LM47, or S94. It quantifies precisely the loss in the available native geometry estimate. The manuscript's equations NM12.4 and NM12.12 have rates $\beta=\delta_0/2$ and $c=\delta_0/8=\beta/4$, respectively. Here $\beta$ denotes the decay rate, not the Wilson coupling.
+
+\section{An unconditional consequence of the displayed weighted sum}
+Fix an allowed top-scale anchor $x$. Let $y$ run over the actual once-assigned native cells, with length $h\leq\sigma_y\leq1$, and retain the actual sums
+\[
+ S=\sum_y(1+d_y)\sigma_y^{-1}e^{-\beta d_y},\qquad
+ V=\sum_y\sigma_y^4,\qquad d_y=d(x,y).
+\]
+The definition of $V$ counts every cell, including multiplicities if the index list repeats one. No uniform physical-volume bound on $V$ is assumed.
+
+\begin{proposition}
+For $0<t<1$, put $r=t/(1-t)$. Then
+\[
+ \sum_y e^{-t\beta d_y}
+ \leq S^t\left[\sum_y\left(\frac{\sigma_y}{1+d_y}\right)^r\right]^{1-t}.
+ \tag{1}
+\]
+In particular, if $0<t\leq4/5$,
+\[
+ \sum_y e^{-t\beta d_y}\leq S^tV^{1-t}h^{-4+5t}.
+ \tag{2}
+\]
+For $0<u<t\leq4/5$ and $D\geq0$,
+\[
+ \sum_{d_y\geq D}e^{-t\beta d_y}
+ \leq e^{-(t-u)\beta D}S^uV^{1-u}h^{-4+5u}.
+ \tag{3}
+\]
+\end{proposition}
+\begin{proof}
+Write each summand as
+\[
+ \big[(1+d_y)\sigma_y^{-1}e^{-\beta d_y}\big]^t
+ \big[\sigma_y/(1+d_y)\big]^t
+\]
+and use Holder with exponents $1/t$ and $1/(1-t)$. If $r\leq4$, then $\sigma_y^r\leq h^{r-4}\sigma_y^4$. Since $(r-4)(1-t)=5t-4$, this proves (2). For (3), extract $e^{-(t-u)\beta D}$ before applying (2) at $u$.
+\end{proof}
+
+At the literal nonlinear-response rate, the resulting estimate is
+\[
+ \sum_y e^{-c d_y}\leq S^{1/4}V^{3/4}h^{-11/4}.
+ \tag{4}
+\]
+For a pointwise square of that kernel the available estimate is
+\[
+ \sum_y e^{-2c d_y}\leq S^{1/2}V^{1/2}h^{-3/2}.
+ \tag{5}
+\]
+Equation (5) applies to a sum of pointwise squares; it must not be substituted for the square of a row sum or for a full operator norm without the requisite cross-term estimate.
+
+For NM12.6, $v_{Q_y}^{1/2}\sigma_y^{-2}\leq\sqrt\nu$, hence (4) gives an actual finite-cutoff row bound $C r_{\rm or}\sqrt\nu S^{1/4}V^{3/4}h^{-11/4}$. The original orientation/Lie-component convention, stencil multiplicity $\nu$, and reference-coordinate count are unchanged. This is not uniform in $h$ and does not close UW12's mixed-shell row.
+
+\section{Sharpness as an implication from the available scalar data}
+Take $h=L^{-k}$, $N=L^{4k}$ cells of size $h$, and give all of them the same formal distance
+\[
+ d_h=\beta^{-1}\left(5\log(1/h)+\log\log(1/h)\right)
+\]
+for $k$ sufficiently large. Then $V=1$ and
+\[
+ S=\frac{1+d_h}{\log(1/h)}=O(1),\qquad
+ \sum_y e^{-t\beta d_h}=h^{-4+5t}[\log(1/h)]^{-t}.
+ \tag{6}
+\]
+Thus no smaller power of $h^{-1}$ than $4-5t$ follows uniformly from bounded $S,V$ and the assigned lengths alone. This is an information-theoretic obstruction to that inference, not a counterexample to the native metric or to a realized mixed history. At $t=1/4$ it improves NM12's divergence example to a sharp power-loss test.
+
+\section{The exact geometric certificate still needed}
+Here is a quantitative certificate which would remove the loss if verified in the original metric. It is stated separately to prevent an unverified identification. Let depth $j$ mean $\sigma_y=L^{-j}$. Suppose the original metric and its actual center set satisfy, for all $r\geq0$:
+\begin{enumerate}
+\item $d(x,y)\leq r$ implies $j\leq J+r/A$;
+\item $d(x,y)\leq r$ implies that $y$ lies in a physical ball of radius $C(1+r)$ about $x$;
+\item at depth $j$, the number of centers in such a ball is at most $C_0(1+r)^4L^{4j}$.
+\end{enumerate}
+The constants include the original center/stencil multiplicity. A geometric series then proves
+\[
+ N_x(r)\leq C_1(1+r)^4\exp(\kappa r),\qquad
+ \kappa=4\log L/A,
+ \tag{7}
+\]
+where $C_1$ retains $L^{4J}$. Splitting into unit distance shells proves, for $\gamma>\kappa$,
+\[
+ \sum_y e^{-\gamma d(x,y)}\leq
+ C_1 e^\kappa\sum_{m\geq0}(m+2)^4e^{-(\gamma-\kappa)m}<\infty.
+ \tag{8}
+\]
+If $\kappa<\gamma<c$, the tail at rate $c$ is bounded by the right side of (8) times $e^{-(c-\gamma)D}$. Thus a sufficient numerical threshold for the literal nonlinear rate is
+\[
+ A>32\log L/\delta_0.
+ \tag{9}
+\]
+Merely saying that a collar is ``large'' does not verify (9). One must read the original metric and establish the depth-crossing constant $A$, including shortcuts, both directions of crossing, lattice offsets $J$, and torus wrapping. In particular the separation in NM12.3 cannot be substituted for $A$ until the path-length convention has been checked. No selector, buffer, gauge, or assigned length is changed here.
+
+\section{Sources and scope}
+The primary source cited in Section 159 of the manuscript is Balaban, \emph{Propagators and renormalization transformations for lattice gauge theories II}, CMP 96 (1984), 223--250, DOI 10.1007/BF01240221. Its original definition, (2.47)--(2.51), and Lemma 2.1 are not used or verified here. Equations (1)--(6) are proved from explicit finite sums; (7)--(9) identify the exact unverified geometric certificate.
+\end{document}

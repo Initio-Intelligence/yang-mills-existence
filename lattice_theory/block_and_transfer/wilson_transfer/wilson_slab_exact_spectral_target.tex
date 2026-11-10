@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{The exact original-Wilson spectral target behind slab purity}\author{}\date{}
+\begin{document}\maketitle
+Fix an actual spatial torus $\Sigma_a$. Use normalized link Haar measure, site-gauge projection $P$, central Wilson temporal convolution $Q_a$ and spatial half-potential multiplier $M_a$. The operator
+\[
+ A_a=M_a Q_a P M_a
+\]
+is the positive gauge-projected Wilson transfer of the independent transfer estimate calculation. It commutes with $P$ and is considered on its physical range; no gauge orbit volume is divided out. The temporal-link integrations, including Polyakov holonomy, are retained. Its original normalization gives
+\[
+ Z_a(m;\Sigma)=\operatorname{Tr}A_a^m
+\]
+exactly, with no omitted scalar. Writing a transfer without $P$ and then taking $(TP)^m$ gives this same operator on the physical space.
+
+Let $\lambda_0=\|A_a\|>0$, and list all positive eigenvalues $\lambda_j$ with multiplicity. Define
+\[
+ \varepsilon_j=-a^{-1}\log(\lambda_j/\lambda_0),\quad
+ Q_a(t)=\sum_j e^{-t\varepsilon_j},\quad t=ma.
+\]
+Zero eigenvalues contribute zero. Then $Z_a(m)=\lambda_0^m Q_a(t)$ exactly, and
+\[
+ \mathcal P_a(t)=\frac{\operatorname{Tr}A_a^{2m}}{(\operatorname{Tr}A_a^m)^2}
+ =\frac{Q_a(2t)}{Q_a(t)^2}.
+\]
+The scalar $\lambda_0^m$ cancels in this ratio, not in the original partition function.
+
+\begin{proposition}[Equivalent thermal occupation target]
+At every fixed cutoff,
+\[
+ \log Q_a(t)\le-\log\mathcal P_a(t)\le2\log Q_a(t).
+\]
+Thus a cutoff-uniform extensive slab-purity bound is equivalent, up to a factor two, to a cutoff-uniform extensive ground-relative thermal trace bound. All global/harmonic sectors and ground multiplicities occur in $Q_a$.
+\end{proposition}
+\begin{proof}
+Every eigenvalue ratio is in $[0,1]$, so $1\le Q_a(2t)\le Q_a(t)$. Insert these inequalities into $2\log Q_a(t)-\log Q_a(2t)$.
+\end{proof}
+
+\paragraph{Direct physical-slab comparison.}
+Put $p_j=\lambda_j^m/Z_a(m)$. For integer $q\ge2$, Jensen with probability weights $p_j$ applied to the convex function $x^{q-1}$ gives
+$\sum_jp_j^q\ge(\sum_jp_j^2)^{q-1}$; also $\sum_jp_j^q\le1$. Hence, with every raw normalization still present,
+\[
+ -(q-1)[-\log\mathcal P_a(t)]\le
+ \log Z_a(qm)-q\log Z_a(m)\le0.                         \tag{1}
+\]
+In physical pressure units this is
+\[
+ 0\le\frac{\log Z_a(m)}{t\operatorname{Vol}\Sigma}
+ -\frac{\log Z_a(qm)}{qt\operatorname{Vol}\Sigma}
+ \le\frac{q-1}{q}\frac{-\log\mathcal P_a(t)}{t\operatorname{Vol}\Sigma}. \tag{2}
+\]
+A uniform purity bound at thickness $t_*$, uniformly over the actual transverse geometries, therefore yields a uniform comparison under integer elongation in any coordinate direction. Iterating at most four such comparisons gives the corresponding original rectangular-torus Wilson pressure comparison. Any genuinely identical extensive counterterm cancels in (1); independent nonextensive or inherited scalar terms are not declared equal by this argument. Application to the full S94 ledger additionally needs its exact source-zero partition representation and the stated uniformity over transverse geometries.
+
+\paragraph{Actionable interacting comparison, without replacing the model.}
+The free calculation in the physical slab free spectrum calculation controls the nonzero transverse excitation trace with the exact time-discrete dispersion. To transfer its conclusion to Wilson it would suffice, for example, to prove a ground-relative spectral counting comparison against that oscillator space times an ACTUAL controlled global-sector space, with a volume cost uniform in cutoff. This means eigenvalues/counting multiplicities, not merely a quadratic Hessian at one flat saddle. A schematic sufficient counting statement is
+\[
+ N_a(E)\le e^{C\operatorname{Vol}\Sigma}\,
+ N_{\rm osc+global}((E+C\operatorname{Vol}\Sigma)/c),
+\]
+where the reference global trace is itself uniformly extensive. No such comparison is proved here. A bare rotor with diffusion tending to zero is not an adequate global reference, as the physical slab free spectrum calculation quantifies.
+
+There is also an exact same-Wilson formulation requiring no chosen reference. Positivity of the finite-cutoff transfer kernel gives a strictly positive leading eigenfunction $\psi_0$, normalized in original Haar $L^2$. Define its ground-state Markov operator by
+\[
+ ({\cal M}_af)(X)=\frac1{\lambda_0\psi_0(X)}
+ \int A_a(X,Y)\psi_0(Y)f(Y)dY.
+\]
+It is reversible for $\psi_0^2dX$, and its nonzero eigenvalues are $\lambda_j/\lambda_0$. Thus
+$Q_a(ma)=\operatorname{Tr}{\cal M}_a^m$. Its exact one-step Dirichlet form is
+\[
+ \langle f,(1-{\cal M}_a)f\rangle_{\psi_0^2}
+ =\frac1{2\lambda_0}\iint A_a(X,Y)\psi_0(X)\psi_0(Y)|f(X)-f(Y)|^2dX\,dY.
+\]
+This preserves gauge projection and all compact sectors, but controlling its physical-time heat trace uniformly requires estimates of the actual ground-state-weighted geometry. A local Wilson moment, an unshifted kinetic bound, or a normalized conditional kernel does not by itself provide that estimate.
+
+\paragraph{Scope.}
+Equations (1)--(2) and the equivalence with $Q_a$ are exact statements for the ORIGINAL interacting Wilson transfer. The physical slab free spectrum calculation proves its proposed thermal target only for the free nonzero-mode reference. The remaining indispensable estimate is the interacting ground-relative occupied-mode bound, including the global sector, uniformly on the transverse tori used by (2). No mass gap is required by this target and none is claimed; no interacting purity or complete S94 bound has yet been proved.
+\end{document}

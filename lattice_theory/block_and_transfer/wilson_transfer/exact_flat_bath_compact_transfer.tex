@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{Uniform ground-relative occupation for an actual flat-bath compact Wilson chain}\author{}\date{}
+\begin{document}\maketitle
+This concerns a literal conditional sector of the ORIGINAL $SU(2)$ Wilson lattice. Condition all other links to the identity, including temporal links, and retain one spatial-link trajectory. Its four incident spatial plaquettes each have action $s(u)=1-\frac12\operatorname{Re}\operatorname{Tr}u$. The exact positive symmetric one-step transfer on normalized $SU(2)$ Haar measure is
+\[
+ T_B(u,v)=e^{-2Bs(u)}e^{-Bs(uv^{-1})}e^{-2Bs(v)},\qquad B>0.\tag{1}
+\]
+No raw scalar is divided out of this kernel. Its periodic conditional normalization is $\operatorname{Tr}T_B^m$. Arbitrary frustrated temporal twists with the same onsite center are NOT included. In particular no nontrivial Polyakov holonomy is gauged away. Conditioning to this exact bath is a well-defined regular conditional kernel evaluated at a specified bath; no positive probability for that point bath is asserted.
+
+\begin{proposition}
+Let $\lambda_0(B)\ge\lambda_1(B)\ge\cdots\ge0$ be the eigenvalues of(1), with the ORIGINAL leading scalar. For any fixed $r$ with $3-\sqrt8<r<1$, there are finite $B_0,C$ such that for all $B\ge B_0$ and every integer $m\ge1$,
+\[
+ 1\le\frac{\operatorname{Tr}T_B^m}{\lambda_0(B)^m}
+ \le1+C r^{m-1}.                                    \tag{2}
+\]
+Thus the conditional purity cost is at most $2\log(1+C r^{m-1})$, uniformly in trajectory length and weak coupling. This is an actual compact-transfer estimate, not substitution of a Gaussian partition function for the original one.
+\end{proposition}
+\begin{proof}
+Use global principal exponential coordinates
+$u=\cos\theta\,I+i\sin\theta\,\widehat x\cdot\sigma$, $0\le\theta<\pi$, and put $x=\sqrt B\,\theta\widehat x$. The omitted cut locus is Haar null. Normalized Haar measure becomes
+\[
+ du=c_B j_B(x)\,dx,\quad
+ c_B=(2\pi^2)^{-1}B^{-3/2},\quad
+ j_B(x)=\left(\frac{\sin(|x|/\sqrt B)}{|x|/\sqrt B}\right)^2,
+ \quad |x|<\pi\sqrt B.                              \tag{3}
+\]
+This $c_B$ denotes only the coordinate scalar in this note, not the trivial temporal Fourier eigenvalue. Under the exact unitary coordinate map, $c_B^{-1}T_B$ has kernel on the expanding ball
+\[
+ H_B(x,y)=\sqrt{j_B(x)j_B(y)}\,T_B(u(x),u(y)),          \tag{4}
+\]
+extended by zero to $L^2(\mathbb R^3)$. The additional eigenvalues from this extension are zero. Pointwise, (4) converges to
+\[
+ H_\infty(x,y)=\exp[-\tfrac32(|x|^2+|y|^2)+x\cdot y].\tag{5}
+\]
+Indeed $Bs(u(x))\to|x|^2/2$ and $Bs(u(x)u(y)^{-1})\to|x-y|^2/2$.
+
+The elementary compact bound $1-\cos\theta\ge2\theta^2/\pi^2$ and $0\le j_B\le1$ give the global majorant
+\[
+ 0\le H_B(x,y)\le\exp[-4(|x|^2+|y|^2)/\pi^2].        \tag{6}
+\]
+Thus dominated convergence proves Hilbert--Schmidt, hence operator-norm convergence to(5). It also proves convergence of the diagonal integrals. The operators are positive: Wilson temporal convolution has nonnegative representation coefficients, and the exterior factors form a positive congruence. Their continuous compact-group kernels have trace equal to the diagonal integral. Consequently
+\[
+ \operatorname{Tr}(c_B^{-1}T_B)\longrightarrow
+ \int e^{-2|x|^2}dx=(\pi/2)^{3/2}.                   \tag{7}
+\]
+There is no need to claim convergence of arbitrarily high powers from a per-step asymptotic.
+
+For completeness, the Gaussian kernel(5) is a tensor product of three one-dimensional Mehler operators. Its ground function is $e^{-\sqrt2 x^2}$ in one dimension: completing the square gives leading eigenvalue
+\[
+ \ell_0=\left(\frac\pi{3/2+\sqrt2}\right)^{3/2},
+ \quad \frac{\ell_1}{\ell_0}=q=3-\sqrt8.             \tag{8}
+\]
+The other eigenvalues have ratios $q^{n_1+n_2+n_3}$. These follow by the Hermite generating function or direct Gaussian integration of its polynomial coefficients. Operator-norm convergence of compact self-adjoint operators implies convergence of the first two ordered eigenvalues; (7) controls their total sum. Hence for sufficiently large $B$,
+\[
+ \lambda_1(B)/\lambda_0(B)\le r,\qquad
+ \operatorname{Tr}T_B/\lambda_0(B)\le C+1.            \tag{9}
+\]
+Every nonleading ratio is at most $r$. Multiplying each ratio by its $(m-1)$st power and summing proves(2). The exact leading eigenvalue, not $c_B\ell_0$, is used for EVERY $m$. The coordinate scalar therefore cancels exactly, with no error multiplied by trajectory length.
+\end{proof}
+
+\section*{What this advances and what still must be proved}
+At physical $m\asymp t_*/a$, (2) has exponential decay in $1/a$ with a rate independent of $B$ in this compatible flat conditional sector, improving the worst-bath $\tanh B$ rate. It controls the whole conditional compact-chain spectrum, not just one low mode. Multiplying the error by a polynomial number of such independent trajectories remains summable. This does not promote a zero-measure flat bath to an estimate in the original bath law.
+
+The next concrete extension is a quantitative comparison for actual nearby compatible onsite centers and temporal twists, with their exact leading scalar retained. A time-varying nonflat bath produces a product of distinct transfers rather than powers of(1); a per-step perturbation bound multiplied by $t_*/a$ is insufficient unless its errors are controlled or its common scalar cancels. The global bath-affinity factor from the conditioned wilson chain affinity calculation remains. No conclusion about the full physical-torus S94 bound or a Yang--Mills mass gap follows from(2).
+\end{document}

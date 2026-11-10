@@ -1,0 +1,192 @@
+\section{Exterior law for the retained gauge integral}
+\label{bp:section}
+
+This section makes the remaining exterior observable explicit for an original $SU(2)$ link integral. It uses the full ordinary source in \eqref{eq:r18sources}, including neighboring roots and its Casimir row. The physical and saved factors remain those in \eqref{eq:r18physical}. These finite-dimensional formulas neither identify an arbitrary mixed operation with this integral nor establish the covariance of its retained mean.
+
+\subsection{A complete affected packet is an exact quadratic polynomial}
+
+Identify $SU(2)$ with the unit quaternions $u\in S^3$, with normalized spherical Haar measure. Keep the original metric factor
+\[
+ k=\cF/3,\qquad \sum_A(X_s^A)^2=k\Delta_{S^3}.
+\]
+Fix a link $s$ to be integrated and retain every other link as the bath $\eta$. Let $\mathcal B_s$ contain \emph{all} source roots whose literal determining stencil reads $s$. Write
+$r_f=F_{\rm out}(\eta)+F_s(u,\eta)$, with $F_s=\sum_{b\in\mathcal B_s}f_br_b$.
+
+Every original directional force and Casimir row at such a root has the exact form
+\begin{equation}
+ F_{b;\mu}^A=p_{b\mu A}+q_{b\mu A}\cdot u,
+ \qquad \ell_b=e_b+e'_b\cdot u.
+ \label{bp:affineforces}
+\end{equation}
+Indeed, a plaquette reads $s$ at most once, and its trace is linear in the four quaternion components. A derivative at another root preserves that linearity. At $s$ itself an invariant derivative acts by a fixed linear map on $u$; orientation reversal is quaternion conjugation, also linear. Other plaquettes supply the constant terms. The exact identity $\ell_b=\cF\sum_{p\ni b}\Re\Tr U_p$ proves the second assertion. Thus
+\begin{equation}
+ F_s=c_s+d_s\cdot u+u^TM_su,
+ \label{bp:quadratic}
+\end{equation}
+where all sums below retain the complete affected roots and their directional/color indices:
+\begin{align}
+ M_s&=\beta\sum_{b\in\mathcal B_s}f_b\sum_{\mu,A}q_{b\mu A}q_{b\mu A}^T,\notag\\
+ d_s&=2\beta\sum_bf_b\sum_{\mu,A}p_{b\mu A}q_{b\mu A}
+             -\tfrac13\sum_bf_be'_b,\notag\\
+ c_s&=\beta\sum_bf_b\sum_{\mu,A}p_{b\mu A}^2
+             -\tfrac13\sum_bf_be_b.
+ \label{bp:coefficients}
+\end{align}
+These are polynomial identities, with no small-field expansion. Signed $f$ is allowed, so $M_s$ need not be positive. The Casimir scalar remains in $c_s$. A representation on $S^3$ can move a multiple of $u^Tu=1$ between $c_s$ and $M_s$; the formulas below preserve their sum and are unaffected by that ambiguity.
+
+\subsection{The raw compact integral and its analytic retained mean}
+
+For an interior link on the original periodic four-dimensional lattice, the six staples give
+\begin{equation}
+ S_s(u,\eta)=12-2H\cdot u,
+ \qquad H=\sum_{i=1}^6a_i,\quad |a_i|=1,\quad
+ \kappa=2\beta|H|,\quad n_H=H/|H|.
+ \label{bp:star}
+\end{equation}
+For $H\ne0$, define
+\begin{align}
+ z(\kappa)
+ &=\frac2\pi\int_{-1}^{1}e^{\kappa x}\sqrt{1-x^2}\,\dd x
+ =\sum_{j\ge0}\frac{(\kappa^2/4)^j}{j!(j+1)!}
+ =\frac{2I_1(\kappa)}{\kappa},\notag\\
+ m(\kappa)&=\frac{z'(\kappa)}{z(\kappa)}
+            =\frac{I_2(\kappa)}{I_1(\kappa)},
+ \qquad b(\kappa)=\frac{m(\kappa)}{\kappa}.
+ \label{bp:bessel}
+\end{align}
+Here $I_j$ denotes the modified Bessel function; the displayed integral and series also define every quantity needed. The \emph{original raw} normalizer and conditional law are
+\begin{equation}
+ Z_s(\eta)=e^{-12\beta}z(\kappa),\qquad
+ K_s(\dd u\mid\eta)=z(\kappa)^{-1}e^{\kappa n_H\cdot u}\dd\omega(u).
+ \label{bp:rawstar}
+\end{equation}
+Rotational symmetry and the identity $z''+3z'/\kappa-z=0$, obtained by integration by parts in \eqref{bp:bessel}, give
+\begin{equation}
+ \mu_s:=K_su=mn_H,\qquad
+ T_s:=K_s(uu^T)=bI_4+(1-4b)n_Hn_H^T,\qquad
+ \Sigma_s=T_s-\mu_s\mu_s^T.
+ \label{bp:moments}
+\end{equation}
+In particular, the complete affected mean and its raw numerator are
+\begin{align}
+ K_sF_s&=c_s+m\,d_s\cdot n_H+b\Tr M_s
+                     +(1-4b)n_H^TM_sn_H,\notag\\
+ N_s(r_f;\eta)&=e^{-12\beta}z(\kappa)
+                  \bigl[F_{\rm out}(\eta)+K_sF_s(\eta)\bigr].
+ \label{bp:completeone}
+\end{align}
+At $H=0$, use $z(0)=1$, $m(0)=0$, $b(0)=1/4$; the mean is $c_s+\Tr M_s/4$. These expressions are real analytic through $H=0$: $m/\kappa=1/4-\kappa^2/96+O(\kappa^4)$ and $(1-4m/\kappa)/\kappa^2=1/24+O(\kappa^2)$ remove the apparent singular directions. This real analyticity of the complete compact integral is not a uniform complex zero-free domain or simultaneous-wall admission.
+
+\subsection{A product integration keeps genuine source cross terms}
+
+Let $C$ be an actual link set with at most one member in each original plaquette, and retain $\eta=U_{C^c}$. Then exactly
+\begin{align}
+ S&=S_{\rm out}(\eta)+\sum_{s\in C}S_s(u_s,\eta),
+ &K_C&=\bigotimes_{s\in C}K_s,\notag\\
+ Z_C(\eta)&=\prod_{s\in C}Z_s(\eta),
+ &\dd\nu_C(\eta)&=Z_\beta^{-1}e^{-\beta S_{\rm out}(\eta)}Z_C(\eta)
+                                  \dd\lambda_{C^c}(\eta).
+ \label{bp:outside}
+\end{align}
+Every normalizer in the exterior law is retained. If a boundary star has fewer plaquettes, its actual incidence replaces six in \eqref{bp:star}; it is not artificially completed.
+
+Each directional force is now an affine sum of terms involving individual active quaternions. Hence the \emph{whole} ordinary packet is an exact polynomial of total degree at most two:
+\begin{equation}
+ P(u_C,\eta)=c+\sum_s d_s\cdot u_s+\sum_su_s^TQ_{ss}u_s
+                         +2\sum_{s<t}u_s^TQ_{st}u_t.
+ \label{bp:batchpolynomial}
+\end{equation}
+The matrices follow by expanding the original squared forces as in \eqref{bp:coefficients}. Mixed $Q_{st}$ generally survive: two parallel active links two lattice units apart transversely share no plaquette, yet the force at the intervening parallel root reads both. Conditional independence in \eqref{bp:outside} therefore gives
+\begin{equation}
+ m_f(\eta):=K_Cr_f
+   =P\bigl((\mu_s)_{s\in C},\eta\bigr)
+                  +\sum_{s\in C}\Tr(Q_{ss}\Sigma_s).
+ \label{bp:batchmean}
+\end{equation}
+The mixed terms become $2\mu_s^TQ_{st}\mu_t$ and remain in the retained source. The same polynomial argument applies to $h_f$ with its original total-force-square term included; it does not identify the two source exponentials.
+
+For the original complete source, the actual deformed fiber integral is
+\begin{equation}
+ Z_C(t,\eta)=\int
+ e^{-\beta\sum_sS_s(u_s,\eta)+tP(u_C,\eta)}\dd\lambda_C(u_C).
+ \label{bp:sourceintegral}
+\end{equation}
+It factors at $t=0$ as in \eqref{bp:outside}; for $t\ne0$ the source cross terms generally prevent factorization. Exact differentiation yields
+\begin{equation}
+ \partial_t\log Z_C(0,\eta)=m_f(\eta),\qquad
+ \partial_t^2\log Z_C(0,\eta)=v_f(\eta):=\Var_{K_C}(r_f).
+ \label{bp:jets}
+\end{equation}
+For two sources the mixed coefficient is their full conditional covariance. These coefficients are finite contractions of the original polynomial coefficients with moments of order at most four, obtained by differentiating $z(|a_s|)$ in $a_s=2\beta H_s$. Thus no neighboring-root or contact companion is omitted.
+
+Writing $Z(t)=\int e^{-\beta S_{\rm out}(\eta)}Z_C(t,\eta)\dd\lambda_{C^c}$ gives
+\begin{equation}
+ \partial_t^2\log Z(0)=\E_{\nu_C}v_f+\Var_{\nu_C}m_f.
+ \label{bp:pressuredecomposition}
+\end{equation}
+The first term is a generated source coefficient and remains part of the original prescription. The second concerns the actual density \eqref{bp:outside}.
+
+\subsection{Exterior responses and a useful fixed-bath estimate}
+
+For an exterior invariant derivative $Y$, the compact integration domain is unchanged, so
+\begin{align}
+ YK_CF&=K_C(YF)-\beta\Cov_{K_C}(F,YS),\notag\\
+ Y\log\nu_C&=-\beta K_C(YS),\notag\\
+ Y^2[-\log\nu_C]&=\beta K_C(Y^2S)-\beta^2\Var_{K_C}(YS).
+ \label{bp:responses}
+\end{align}
+The score is relative to the original exterior Haar measure. The last identity is along the actual one-parameter flow of $Y$; mixed covariant derivatives retain their connection terms. The exterior part of $YS$ drops out of the covariance in the first line and remains in the score. The negative variance term in the last line is explicit, so internal gaps supply no convexity assertion for $\nu_C$.
+
+For completeness, \eqref{bp:quadratic} gives a nonasymptotic estimate at every unselected bath. Put $g=d_s+2M_sn_H$ and $P_{n_H}=I-n_Hn_H^T$. Then
+\begin{equation}
+ \Var_{K_s}F_s\le
+ \frac{C|P_{n_H}g|^2}{1+\kappa}
+ +\frac{C[(n_H\cdot g)^2+\norm{M_s}_{\rm op}^2]}{(1+\kappa)^2}.
+ \label{bp:anisotropicvariance}
+\end{equation}
+To prove it, set $\delta=1-n_H\cdot u$. Its density on $[0,2]$ is proportional to $e^{-\kappa\delta}\sqrt{\delta(2-\delta)}$, so $K_s\delta^p\le(Cp)^p(1+\kappa)^{-p}$. For $\kappa\ge1$, integrate the denominator over $[0,1/\kappa]$ and bound the numerator by a gamma integral; bounded $\kappa$ follows by compactness. Expand
+$F_s(u)-F_s(n_H)=g\cdot(u-n_H)+(u-n_H)^TM_s(u-n_H)$ and use $|u-n_H|^2=2\delta$. The tangential linear part has second moment $O((1+\kappa)^{-1})$; the remaining terms are bounded by $(|n_H\cdot g|+2\norm{M_s}_{\rm op})\delta$. At $H=0$ any unit $n_H$ gives the same valid bound. The tangential response, not just the internal gap, matters.
+
+\subsection{An explicit rooted mean and a nonflat good-bath test}
+
+Pair the six staples at one integrated root into the three directional sums $H_j=a_{j,+}+a_{j,-}$. Define
+\begin{equation}
+ H=\sum_{j=1}^3H_j,\qquad
+ B=\sum_{j=1}^3H_jH_j^T-\tfrac13HH^T\ge0.
+ \label{bp:Bmatrix}
+\end{equation}
+The original root source and its exact unselected mean are
+\begin{align}
+ h_s(u)&=4k\beta[\Tr B-u^TBu],\notag\\
+ K_sh_s&=4k\beta[(1-b)\Tr B-(1-4b)n_H^TBn_H],
+ \qquad K_sr_s=K_sh_s.
+ \label{bp:rootmean}
+\end{align}
+The last equality is compact integration by parts at the integrated root, with the full Casimir row. It is not a statement for only the good branch or for the complete affected packet with other weighted roots. At $H=0$ the mean is $3k\beta\Tr B$. In general it depends on the transverse disagreement of the plane staples and has to be controlled in the actual exterior law.
+
+Here is a fixed nonflat bath test even inside the literal good star. Set
+$a_\theta=(\cos\theta,\sin\theta,0,0)$, take both plane-1 staples equal to $a_\theta$, and the other four equal to $e_0$. These values are realizable by the distinct exterior plaquette paths. Then
+\[
+ H=2(a_\theta+2e_0),\qquad
+ B=\tfrac83(a_\theta-e_0)(a_\theta-e_0)^T.
+\]
+For any fixed $c<1$, choose a fixed sufficiently small $\theta>0$. The maximum $n_H$ lies strictly inside all six caps $u\cdot a_i\ge c$, with a positive margin, and $P_{n_H}Bn_H\ne0$. The latter follows since
+$(a_\theta-e_0)\cdot n_H=(\cos\theta-1)/\sqrt{5+4\cos\theta}\ne0$ and $a_\theta-e_0$ is not parallel to $n_H$.
+
+Let $\rho=|H|$. Tangent coordinates at $n_H$ give
+$\sqrt{2\beta\rho}\,P_{n_H}u\Longrightarrow N(0,I_3)$ with all fixed moments: rescale $u=\sqrt{1-|z|^2}\,n_H+z$ in the exact density, and bound the compact complement of that chart exponentially. Expanding \eqref{bp:rootmean}, the linear fluctuation is $-8k\beta\langle P_{n_H}Bn_H,z\rangle$; the quadratic remainder has bounded second moment. Hence
+\begin{equation}
+ \lim_{\beta\to\infty}\frac{\Var_{K_s}h_s}{\beta}
+ =\lim_{\beta\to\infty}\frac{\Var_{K_s}r_s}{\beta}
+ =\frac{32k^2}{\rho}|P_{n_H}Bn_H|^2>0.
+ \label{bp:goodbathcounterexample}
+\end{equation}
+For $r_s$, use $r_s=h_s-t_s$ and the global Ward estimate $\Var t_s\le C$, which applies to this exact one-link compact law. Its cross covariance is $O(\sqrt\beta)$ and vanishes after division by $\beta$.
+
+The good cap contains the maximum with fixed margin. Its excluded probability is a polynomial times $e^{-c_1\beta}$, while the compact source is $O(\beta)$. Thus restricting to the normalized literal good-star kernel changes the first two moments by only polynomial times exponential errors, and \eqref{bp:goodbathcounterexample} remains true there. A gap of order $\beta$ therefore does not imply a uniformly bounded fixed-bath ordinary covariance. This does not contradict the averaged gradient input or the actual-law innovation theorem, and is no obstruction to a different mixed operation or to existence.
+
+\subsection{Finite verification and the unresolved exterior covariance}
+
+A finite quaternion check used a $5^4$ torus, $\beta=2.3$, and the explicitly declared test convention $k=1$, $\cF=3$. Two parallel active links shared no plaquette; every one of the $37$ affected original roots was retained. The cross-block source matrix had norm $7.0093393$, so this was not an additive test. Direct force/Casimir evaluation and \eqref{bp:batchpolynomial} differed by at most $3.41\times10^{-13}$. The raw Bessel normalization agreed with $S^3$ quadrature to relative error $7.77\times10^{-16}$. Formula \eqref{bp:batchmean} gave $511.13959962178234$, versus $511.13959962178217$ from product sphere quadrature, an absolute error $1.71\times10^{-13}$. These are algebra and normalization checks, not uniform proofs.
+
+Fixed-depth product-fiber covariance and first retained-mean gradient estimates are proved in \texttt{block\_and\_transfer/local\_contacts/local\_moments\_fixed\_depth.tex} and \texttt{block\_and\_transfer/local\_contacts/odd\_torus\_transfer\_moment.tex}; they are not new claims here. Equations \eqref{bp:batchmean} and \eqref{bp:outside} specify the complete observable and measure whose centered covariance remains. Raw good/bad recombination returns these analytic unselected expressions; individual sharp shape terms are not discarded. The source's continuous retained mean, simultaneous domains, saved currents/anchors and reserve ownership still require their original estimates.

@@ -1,0 +1,106 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Cov}{\operatorname{Cov}}
+\title{History-independent carriers from the actual eliminated Wilson components}\author{}\date{}
+\begin{document}\maketitle
+This note replaces a crude dependence on elimination-step count by an exact geometric
+certificate. It concerns coordinate elimination under the original positive Wilson law,
+not an unidentified nonlinear mixed observation. Use the local row moments of the local moments fixed depth calculation and the odd torus transfer moment calculation
+on the explicit physical regime $n\ge c_*\log(2+N\beta)$.
+
+\paragraph{Exact component factorization.}
+Fix ANY set $E$ of eliminated links and retain $R=E^c$.
+On $E$ join two links precisely when they share an ORIGINAL plaquette, and let
+$\mathfrak C(E)$ be its connected components. Each plaquette touching $E$ meets exactly
+one such component. Therefore
+\[
+ S_0(U)=S_{\rm out}(U_R)+\sum_{C\in\mathfrak C(E)}S_C(U_C,U_{\partial C}),
+\]
+where $\partial C\subset R$ is the retained plaquette-neighbor boundary of $C$.
+The actual conditional probability and marginal density are exactly
+\[
+ \mu(dU_E\mid U_R)=\prod_C K_C(dU_C\mid U_{\partial C}),\qquad
+ \rho_R=Z^{-1}e^{-\beta S_{\rm out}}\prod_C Z_C(U_{\partial C}).
+\]
+Every $K_C$ and $Z_C$ is its full compact original Wilson integral. No assumption of
+independence inside a component, no minimum subtraction, and no spectral gap is used.
+This factorization depends only on the final eliminated set, not its elimination history.
+
+\paragraph{Exact conditional-mean carrier.}
+Let $D(c)$ be the nineteen-bond determining set of a literal $H/r_H$ row $g_c$.
+Let $\mathfrak C_c=\{C:C\cap D(c)\ne\varnothing\}$. Then
+\[
+ \overline g_c=\E(g_c\mid U_R)
+\quad\hbox{depends only on}\quad
+ (D(c)\cap R)\cup\bigcup_{C\in\mathfrak C_c}\partial C.
+\]
+Indeed all untouched component kernels integrate to one BEFORE any division is changed;
+touched kernels use precisely their original boundary and normalizer.
+At most nineteen components can occur in $\mathfrak C_c$.
+If every touched component has original-graph diameter at most $r$, the carrier lies in
+an original-graph ball of radius at most $r+2$ about $c$. There is no extra factor for the
+number of preceding coordinate eliminations.
+
+\begin{theorem}[Component-weighted actual covariance]
+Define the literal row set $\mathcal R(C)=\{c:D(c)\cap C\ne\varnothing\}$ and
+$M_E=\max_C\#\mathcal R(C)$, with $M_E=0$ if $E$ is empty.
+For $G(f)=\sum_cf_cg_c$, with $g_c$ physical H or its actual ordinary $r_H$ row,
+\begin{align}
+ \|\Cov(G(f),G(h)\mid U_R)\|_{L^p(\nu_R)}
+ &\le C_pa^{-4}\sum_C
+       \left(\sum_{c\in\mathcal R(C)}|f_c|\right)
+       \left(\sum_{d\in\mathcal R(C)}|h_d|\right)\label{weighted}\\
+ &\le C_pa^{-4}M_E\|f\|_{\ell^2}\|h\|_{\ell^2}.\label{maxbound}
+\end{align}
+The fixed factor nineteen and the original pointing/color multiplicities are included in
+$C_p$, not in a growing target dimension. In particular
+$M_E\le19\max_C\#C$; if all eliminated components have diameter at most $r$,
+then $M_E\le C(r+1)^4$ on the four-dimensional lattice.
+These are bounds on the actual conditional covariance for INTERACTING blocks as well as
+independent links, uniform in the number of earlier eliminations.
+\end{theorem}
+\begin{proof}
+Given $U_R$, $g_c$ is a function only of the independent component variables indexed by
+$\mathfrak C_c$. Thus its conditional covariance with $g_d$ vanishes if these two component
+sets are disjoint. For every remaining pair, conditional Holder/Jensen and the original
+row moments give
+$\|\Cov(g_c,g_d\mid U_R)\|_p\le2\|g_c\|_{2p}\|g_d\|_{2p}\le C_pa^{-4}$.
+Bound the indicator of a shared component by the sum of its component indicators, and
+sum the actual test coefficients; this proves \eqref{weighted}.
+Cauchy--Schwarz within each row set gives
+$(\sum_{\mathcal R(C)}|f_c|)^2\le\#\mathcal R(C)\sum_{\mathcal R(C)}|f_c|^2$.
+A row belongs to at most nineteen component row sets. Cauchy--Schwarz over components
+therefore proves \eqref{maxbound}. Finally $\mathcal R(C)=\bigcup_{e\in C}D(e)$,
+so its size is at most $19\#C$. The diameter statement uses the actual four-dimensional
+lattice ball count, with wrapping bounded by the full torus size.
+\end{proof}
+
+\paragraph{Depth-uniform content and exact limit.}
+An arbitrarily long coordinate-elimination schedule whose eliminated components have a
+uniform geometric bound satisfies the same carrier and covariance estimates, regardless
+of step count. This is a genuine history-independent certificate, stronger than assigning
+radius $2^k$ merely because $k$ operations occurred.
+However eliminating almost all links can create a macroscopic component. Its row set
+contains the original fine BULK rows, not just its retained boundary coordinates.
+Replacing $\#\mathcal R(C)$ by a boundary-target count would be wrong.
+The theorem does not prove that the manuscript's actual mixed histories satisfy a bounded
+component or summably weighted component certificate.
+
+For separated source supports that touch no common eliminated component,
+$\Cov(G(f),G(h)\mid U_R)=0$ exactly and all separated covariance remains in
+$\Cov_{\nu_R}(\overline G(f),\overline G(h))$.
+For an identical real source, the law of total variance retains this nonnegative stopped
+mean term. Neither it nor the absolute raw scalar factors are bounded by calling a large
+component one normalized kernel. Actual native Poincare can control that term only after
+the same native carrier/measure identification of the native stopped covariance current calculation is verified.
+
+\paragraph{Selectors, graphs and original records.}
+The eliminated set is fixed here, or is selected by a genuinely retained-measurable branch
+for which the same conditional law is verified. A selector depending on the integrated
+variables changes the component law and cannot be dropped. All original finite pointed
+stencils are included before taking $D(c)$ unions; source meshes and saved factors do not
+change with component size. The complete current and boundary/reference responses remain
+separate obligations. This is not a replacement of AE8/LM47 by a bare graph argument.
+\end{document}

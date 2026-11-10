@@ -1,0 +1,130 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Harmonic remainders and retained heat-equation contacts}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Scope.}
+Use the original flat relative SU(2) complex, with its complete boundary
+and the same normalization as the complete shortest time contact packet calculation, the internal ward and heat regulator contacts calculation and the complete harmonic kinetic matching calculation. Let $H=d_1^*d_1$ on free
+links, $P$ its physical projection and $H^+$ its inverse on $P$.
+Gauge zero modes are quotiented, not supplied with artificial mass.
+The harmonic matching of the complete harmonic kinetic matching calculation and the complete constant curvature coarse sector calculation fixes a scalar $c_R$ on the
+18-dimensional constant-curvature boundary sector,
+$|c_R|\le C\log(2+R)$. It supplies no form bound on arbitrary internal
+fields. The identities below expose exactly the missing terms.
+
+\paragraph{1. Original harmonic decomposition and the current it leaves.}
+For retained boundary data $v$ write the physical field
+$x=h(v)+(r,0)$, where $h(v)$ solves the original interior Maxwell
+problem and $r$ has zero boundary. The classical energy splits
+orthogonally, with its original Schur energy on $v$. For the COMPLETE
+uncut extended tensor $\widehat K$ of the complete harmonic kinetic matching calculation, however,
+\[
+ x^*\widehat Kx=h^*\widehat Kh+2\langle r,j(v)\rangle
+                         +r^*P\widehat K_{JJ}Pr,
+ \qquad j(v)=P(\widehat Kh)_J.                         \tag{1}
+\]
+All fixed-only boundary terms belong to the first term, not to the
+interior tensor. Let $k(v)=H^+j(v)$. Then the exact cross term is
+$2\langle r,Hk(v)\rangle$. Harmonicity of $h$ does NOT imply $j=0$.
+The original gaussian coarse kinetic interface calculation controls the declared constant-curvature kinetic piece on
+retained subblock boundaries; it does not bound $k(v)$ or the last term.
+
+For a time-dependent current $k_s$ and a physical test $f$,
+\[
+ \langle e^{-sH}f,Hk_s\rangle
+ =-\partial_s\langle e^{-sH}f,k_s\rangle
+                       +\langle e^{-sH}f,\partial_s k_s\rangle. \tag{2}
+\]
+Integration keeps the $s=0$ endpoint $\langle f,k_0\rangle$ and the
+second term. This is the equation-of-motion contact for an actual cut
+leg. It is not an uncut Ward identity applied at each proper time.
+If a background source varies $H,P,k_s$, all their derivatives must
+also be differentiated in (2); no fixed-projector simplification is
+made for that source response.
+
+\paragraph{2. An exact kinetic add-and-subtract with its full remainder.}
+Use the completed transverse packet of the exact completed transverse shortest time packet calculation:
+\[
+ C=\int_0^\infty\left\{\tfrac12\operatorname{Tr}_P
+             (e^{-sH}K_s^\perp)+\operatorname{Tr}
+             (e^{-s\Delta_0}J_s^\perp)\right\}\,ds.             \tag{3}
+\]
+Here $K_s^\perp=PK(G_s^\perp,g_s)P$,
+$G_s^\perp=H^+e^{-sH}P$, and the ghost marking is retained.
+The longitudinal total-time subtraction of the exact completed transverse shortest time packet calculation has endpoints zero only
+after the full coefficient is assembled. Its differentiated versions
+remain part of any background-source calculation.
+
+One may subtract the DECLARED uncut matched value $c_R$ algebraically:
+\[
+ B_s=H^+(K_s^\perp-c_RH)H^+,
+ \qquad K_s^\perp=c_RH+HB_sH.                              \tag{4}
+\]
+This definition does not assert that $c_R$ is the kinetic coefficient
+of every cut packet or of every internal mode. Rather it fixes the
+subtraction by the known harmonic matching and stores ALL mismatch in
+$B_s$. At every finite box,
+\[
+ \int_0^\infty\operatorname{Tr}_P(e^{-sH}HB_sH)\,ds
+ =\operatorname{Tr}_P(HB_0)
+       +\int_0^\infty\operatorname{Tr}_P(He^{-sH}B_s')\,ds       \tag{5}
+\]
+and, equivalently,
+\[
+ =\operatorname{Tr}_P(HB_0+B_0')
+       +\int_0^\infty\operatorname{Tr}_P(e^{-sH}B_s'')\,ds.    \tag{6}
+\]
+The proof is two finite-dimensional integrations by parts. Heat decay
+makes the upper endpoints zero, although $B_s$ itself need not decay.
+The original packet is polynomial in the decaying covariances, so all
+needed derivatives exist and are integrable at fixed size.
+The kinetic contribution is $c_R\dim(P)/2$ in this particular flat
+trace channel. It is stored as a scalar, not discarded. Neither this
+scalar nor the endpoint tensors in (5)--(6) are separately a source
+response: the marked ghost, source changes, and longitudinal endpoint
+identities still have to be combined. In particular, replacing (5) by
+zero would lose the short-line contact under investigation.
+
+\paragraph{3. A concrete limitation of an energy-squared remainder bound.}
+The full tensor of the complete shortest time contact packet calculation includes the free Haar term $2I/3$. When both
+covariances tend to zero all other terms vanish. Hence, on the physical
+space,
+\[
+ K_s^\perp\longrightarrow\tfrac23P,\qquad
+ B_s\longrightarrow\tfrac23(H^+)^2-c_RH^+.                    \tag{7}
+\]
+The relative four-dimensional box has physical eigenvalues of order
+$R^{-2}$. This follows directly from its product complex: take the
+lowest nonzero sine frequency in every coordinate; the four edge
+components have the common eigenvalue
+$\lambda_R=16\sin^2(\pi/(2R))$, and the three coefficient combinations
+orthogonal to the scalar-gradient combination are co-closed physical
+modes. On them $d_1^*d_1=\Delta_1$.
+Consequently, for sufficiently large $R$,
+\[
+ \|B_\infty\|\ge
+ \left|\frac{2}{3\lambda_R^2}-\frac{c_R}{\lambda_R}\right|
+ \ge cR^4.                                                   \tag{8}
+\]
+Thus a uniform-in-time $O(\log R)$ bound on this unweighted
+energy-squared remainder is FALSE for the actual completed tensor.
+This is not divergence of the full coefficient: the tensor is
+heat-weighted in (3), its source susceptibility must be completed with
+all partners, and cancellation may occur between times or markings.
+It does rule out proving the desired estimate merely by attaching two
+inverse classical energies to the internal remainder and taking its
+operator norm.
+
+\paragraph{4. The remaining precise interface.}
+For the constant-flux source, the useful still-unproved quantity is the
+second source derivative of the COMBINED right side of (3), or its
+exact form (4)--(6), including marked ghost and projector/minimum
+partners. A bound must control the heat-weighted transverse remainder
+and its zero-time contacts jointly, in physical curl norm. Source Ward
+identities and the 18-mode harmonic matching do not do this alone:
+whole-block zero-boundary heat legs have zero projection onto those
+18 modes by literal Stokes. Genuine retained subblock boundaries can
+use the original gaussian coarse kinetic interface calculation, with its exact Schur determinant and joint covariance, but the
+residual currents (1) and internal terms (4) remain.
+No complete nonlinear, physical-scale or S94 assertion follows.
+\end{document}

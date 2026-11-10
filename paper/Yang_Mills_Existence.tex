@@ -1,0 +1,1066 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype}
+\usepackage[letterpaper,top=1.02in,bottom=1.04in,left=1.13in,right=1.13in,headheight=15pt,headsep=18pt,footskip=30pt]{geometry}
+\usepackage{xcolor,fancyhdr}
+\usepackage[unicode,hidelinks,bookmarksnumbered=true]{hyperref}
+\hypersetup{pdftitle={A conditional construction of four-dimensional Yang--Mills fields from the Wilson measure},pdfauthor={Initio Intelligence},pdfsubject={Conditional existence for the gauge-invariant curvature-bilinear sector}}
+\definecolor{quiet}{gray}{0.32}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\itshape Wilson Yang--Mills fields}
+\fancyhead[R]{\small Initio Intelligence}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.25pt}
+\renewcommand{\sectionmark}[1]{}
+\raggedbottom
+\setlength{\parindent}{1.15em}
+\setlength{\emergencystretch}{1.6em}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{1}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+% The final argument of each openclaim is reserved for its proof.
+% A nonempty proof produces a proposition heading and typesets the proof below it.
+\NewDocumentCommand{\openclaim}{m m +m +m}{%
+  \par\addvspace{0.68\baselineskip}\phantomsection\label{prop:#1}%
+  \noindent\textbf{\IfBlankTF{#4}{Open proposition}{Proposition} #1.}\enspace\textit{#2.}\enspace
+  #3\par\IfBlankTF{#4}{}{\begin{proof}#4\end{proof}}}
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+{\LARGE\bfseries A conditional construction of four-dimensional\\[3pt] Yang--Mills fields from the Wilson measure\par}
+\vspace{10pt}
+{\large Initio Intelligence\par}
+\end{center}
+\vspace{2pt}
+\begin{abstract}
+We formulate a conditional existence theorem for the gauge-invariant curvature bilinears of four-dimensional \(SU(N)\) Wilson lattice theory. The lattice fields have 21 components and share one physical normalization. Exact conditional transport of their sources gives a representation of their joint moments. Uniform bounds on these moments and on the rotation defects would yield a common Euclidean limit. Ultraviolet and energy estimates would identify a vacuum phase of the reconstructed fields. The unresolved analytic and representation hypotheses are stated explicitly below.
+\end{abstract}
+
+\section{The continuum statement}
+
+Fix \(G=SU(N)\), \(N\ge2\), and give its Hermitian generators the normalization
+\(\operatorname{Tr}(T^aT^b)=\delta^{ab}/2\). Let
+\[
+ E=\operatorname{Sym}^2(\Lambda^2\mathbb R^4),\qquad
+ D(R)A=(\Lambda^2 R)A(\Lambda^2 R)^t .
+\]
+The fields considered below take values in this real, 21-dimensional space.
+Its scalar, pseudoscalar, traceless Ricci and Weyl summands under orthogonal
+coordinate changes have dimensions \(1,1,9,10\).
+
+Write \(X=(x_1,\ldots,x_m)\).
+Let \(\mathcal S_0((\mathbb R^4)^m)\) be the Schwartz functions all of whose
+derivatives vanish on every partial diagonal \(x_i=x_j\), \(i\ne j\). For
+an \(E^{\otimes m}\)-valued test set
+\[
+ \nu_s(F)=\max_{|\alpha|\le s}\sup_X
+ (1+|X|^2)^{s/2}|\partial^\alpha F(X)| .
+\]
+A fixed component norm is understood. At order one there is no diagonal condition.
+
+\medskip\noindent\textbf{Conditional existence theorem.}
+Assume GC, CL, the analytic estimates and the reconstruction and phase hypotheses
+stated below, excluding the final identification A-03 from the hypotheses,
+with their stated uniformity for the same Wilson action,
+physical normalization and cofinal sequence.
+There is a subsequence along which all full moments of the normalized
+curvature bilinears converge on \(\mathcal S_0\). For constants \(C,p,q\)
+independent of \(m\), the limits satisfy
+\[
+       |S_m(F)|\le C^{m+1}(m!)^p\,\nu_{qm}(F).
+\]
+They satisfy Euclidean covariance with tensor action \(D\), permutation
+symmetry and reflection positivity. Corrected Osterwalder--Schrader
+reconstruction yields relativistic local fields with the spectrum condition.
+There is a pure vacuum phase with the stipulated connected and disconnected
+symmetries, a unique vacuum up to scalars, clustering in the stated
+vacuum-phase sense, and polynomial energy bounds for the 21 fields.
+In this phase the scalar has the separated two-point asymptotic and
+nonzero connected three-point asymptotic specified below. The theorem
+concerns the Wilson continuum hierarchy and a phase of its reconstruction.
+A-01 and A-02 specify the common subsequence and the reconstruction on its test space. A-03 is the final identification to be verified by these implications. No positive spectral gap is asserted.
+
+\section{Wilson measure and physical scale}
+
+On the torus \(\Lambda_{a,T}=(a\mathbb Z/T\mathbb Z)^4\), give each positive
+link \(\ell\) a matrix \(U_\ell\in G\) and set \(U_{-\ell}=U_\ell^\dagger\)
+for the reversed link. Let \(U_p\) be the ordered product around \(p\).
+Counting each positive plaquette once, put
+\[
+ s(U)=N-\operatorname{Re}\operatorname{Tr}U,\qquad
+ d\mu_{a,T}=\frac{1}{Z_{a,T}}\exp\!\left(-\beta_a\sum_p s(U_p)\right)
+                     \prod_\ell dU_\ell .
+\]
+Here \(dU_\ell\) is probability Haar measure. For the bare parameter
+\(x_{0,a}\) the convention is \(\beta_a=2Nx_{0,a}\). The inverse coupling
+in the source-free renormalization is \(Y_0=N\beta_a=2N^2x_{0,a}\).
+Use an admitted odd blocking factor \(L\), fixed reference length
+\(\ell_0\), and cubic tori with
+\[
+ a_n=L^{-K_n}\ell_0,\qquad T_n=2L^{M_n}\ell_0,\qquad K_n,M_n\longrightarrow\infty .
+\]
+At physical intermediate scale \(h=a_nL^j\), the period and each retained
+block grid must be compatible.
+
+On the admitted source-free domains of Ba\l aban
+\cite{Bal119,BalLFR2}, let \(Y_j\) be the inverse coupling determined by
+the marginal curvature projection of the homogeneous Wilson action. The Gaussian coefficient must be calibrated in this same marginal projection.
+Let \(C_n\) be the curvature projection of the composite constrained Gaussian
+log density after \(n\) steps, and let \(d_j^G\) be the projected Gaussian
+increment at step \(j\). Both use the original coarea, gauge and block
+average, relative to coarse-link Haar measure.
+
+\openclaim{GC}{Uniform Gaussian calibration}{
+For these objects the projection commutes with the finite compositions and
+the required infinite-volume limit, and
+\[
+ C_n=\sum_{j<n}d_j^G,\qquad
+ \sup_n\left|C_n-\frac{11N^2\log L}{12\pi^2}n\right|<\infty .
+\]
+The equalities and uniform bound hold with the background derivatives and
+spatial moments defining the marginal coordinate. In the Schur decomposition
+of the composite Gaussian, the transverse blocked-covariance remainder is
+uniformly bounded in depth.
+}{%
+% Proof of GC
+}
+A logarithmic asymptotic with an \(o(n)\) remainder would identify the
+slope but would not supply the bounded correction used here. We retain
+the full estimate in GC as a hypothesis.
+
+Conditional on GC and the common native-chart and reset-comparison
+hypotheses, the weak-step estimate through the weak stopping depth
+\cite[Apps.~F and G]{boundary} has the form
+\[
+  Y_j-Y_{j+1}=d_j^{G}+e_j,\qquad |e_j|\le A/Y_j,\qquad
+  \sum_{i<j}d_i^{G}=dj+q_j,\quad |q_j|\le Q,\quad
+  d=\frac{11N^2}{12\pi^2}\log L .
+\]
+To see where the error bound enters, multiply the complete mature reset
+insertions by a common complex parameter while keeping the numerical
+couplings fixed. At each earlier homogeneous integration subtract the
+curvature projection of that same integration. On the admitted source
+charts the common parameter disc has radius of order \(g_j^{-D}\), where
+\(g_j=Y_j^{-1/2}\) and \(D>4\) is fixed. One Cauchy estimate for the
+terminal projection, including the native two-derivative cost, bounds
+the change between parameters zero and one by \(O(g_j^{D-2})\) up to
+the retained logarithmic factors. At zero the even fluctuation-amplitude
+expansion on the fixed physical chart differs from the calibrated
+Gaussian projection by \(O(g_j^2)\). At one, installing the outgoing
+coupling after the raw integration reproduces the Wilson recursion.
+This comparison controls the effect of mature resets on all intervening
+homogeneous terms \cite[BP.17--34, DE.1--15]{boundary}.
+
+The bounded correction \(Z_j=Y_j+q_j\) gives
+\(Z_j-Z_{j+1}=d+e_j\). In the ultraviolet direction
+\(u_s=1/Z_{K-s}\) therefore satisfies
+\(u_{s+1}=u_s-du_s^2+O(u_s^3)\). In particular the sign comes from
+reversing the blocking direction. As long as \(Y_j\) is sufficiently
+large, \(Z_j\) has strictly positive decrement. Stopping at a weak
+threshold then gives trajectories with positive subsequential terminal
+coupling. A specified terminal normalization at \(\ell_0\) imposes a
+further equation on the bare data.
+
+A useful common choice of depths can be made before fixing those data.
+Let \(G_j=\sum_{i<j}d_i^G\), take the weak floor \(F\) with
+\(\varepsilon=A/F<d\), and fix \(0<b<d-\varepsilon\). Choose \(K\)
+to be a running maximum of \(G_j-(b+\varepsilon)j\). Since the latter
+equals \((d-b-\varepsilon)j+q_j\), these depths have bounded gaps.
+On any admitted trajectory reaching such a depth, summation gives
+\[
+  Y_j-Y_K=G_K-G_j+\sum_{i=j}^{K-1}e_i\ \ge\ b(K-j).
+\]
+Thus the lower comparison holds at the same depths for different bare
+parameters. Obtaining \(Y_K=Y_*\) also requires that the terminal
+readout attain its prescribed value across changes of the incoming block grid.
+
+\openclaim{B-05}{Matching at the physical scale}{
+For the prescribed weak inverse coupling \(Y_*\) at \(\ell_0\), there is a single cofinal family of bare Wilson coefficients \(\beta_n\) and depths \(K_n\) such that \(Y_{K_n}=Y_*\). Every intermediate step satisfies the source-free chart, cutoff and scale-comparison bounds. The readouts at different cutoffs admit the same physical prescription and compatible limiting data.
+}{%
+% Proof of B-05
+}
+
+
+\section{Local fields and their normalization}
+
+Index the two-forms by \(A\in\{01,02,03,12,13,23\}\). For the plaquette
+\(P_{u,v}(x)\) traversed first in direction \(u\) and then \(v\), let
+\(\pi_0 H=H-\operatorname{Tr}(H)I/N\), and define
+\[
+ C_{\mu\nu}(x)=\frac{1}{8i}\sum_{\sigma,\tau=\pm1}\sigma\tau\,
+   \pi_0\!\left(P_{\sigma e_\mu,\tau e_\nu}(x)
+                 -P_{\sigma e_\mu,\tau e_\nu}(x)^\dagger\right),
+ \qquad q_{AB}=a^{-4}\operatorname{Tr}(C_A C_B).
+\]
+The vertex average \(w_a\) fixes the scalar component by
+\[
+ w_a(x)=\frac{1}{4a^4}\sum_{\mu<\nu}\sum_{\sigma,\tau=\pm1}
+            s(P_{\sigma e_\mu,\tau e_\nu}(x)),\qquad
+ \widetilde q=q+\frac{I_6}{6}\big(2w_a-\operatorname{Tr}q\big).
+\]
+Gauge conjugations at the rooted vertex disappear under the trace.
+Each unoriented elementary plaquette occurs at its four vertices with the
+same value of \(s\). Hence
+\(\tfrac12\operatorname{Tr}\widetilde q=w_a\) and
+\(a^4\sum_xw_a(x)=\sum_p s(U_p)\).
+
+Let \(P_h\) denote the orthogonal projectors for the signed permutations
+on \(E\). In the diagonal plane entries there are a scalar, a traceless
+Ricci diagonal and a Weyl diagonal, of dimensions \(1,3,2\). The entries
+with a shared index split into symmetric and antisymmetric combinations
+of the two complementary choices (dimensions \(6,6\)). The entries with
+disjoint indices split into a pseudoscalar and its orthogonal complement
+(dimensions \(1,2\)). In these decompositions pair antisymmetry supplies
+the orientation signs. Write \(e_S=I_6/\sqrt6\). Use
+\[
+   \Phi_a=Z_a\widetilde q-c_a e_S,\qquad Z_a=\sum_h z_{h,a}P_h .
+\]
+The coefficients depend on the mesh, torus and fixed physical scale \(\mu\).
+
+For time reflection \(\theta\), write \(r_0=\operatorname{diag}(-1,1,1,1)\).
+Take the radial bump \(\eta(x)\propto\exp[-1/(1-|x|^2)]\) for
+\(|x|<1\), zero outside, with unit integral. With \(\epsilon=1/64\), use
+\(f_\mu(x)=(\mu/\epsilon)^4\eta((\mu x-e_0)/\epsilon)\). In each channel let \(n_h\) be the mean
+square in the Wilson reflection inner product of the smeared centered
+components of \(P_h\widetilde q\), averaged over an orthonormal basis of
+that channel. The reflected tensor carries \(D(r_0)\). Let \(\lambda_h\)
+be the same pairing for the unit-coupling free Wick bilinears. Their
+separated covariance operator on \(E\) is
+\[
+ \frac{N^2-1}{2\pi^4|x|^8}\,D(I-2\widehat x\,\widehat x^{\,t}) .
+\]
+In the reflected integral the direction differs from the time axis by
+\(O(1/64)\). The tensor factor differs from the identity after multiplication
+by \(D(r_0)\) by at most \(8/63\) in operator norm. This proves
+\(\lambda_h>0\). Reflection positivity gives \(n_h\ge0\).
+On the domain where all seven \(n_h>0\), the positive normalization and
+the scalar mean subtraction are uniquely
+\[
+ z_{h,a}=\sqrt{\lambda_h/n_h},\qquad
+ c_a=z_{S,a}\,\mathbb E_{\mu_{a,T}}\langle e_S,\widetilde q\rangle.
+\]
+To see the role of the first mixing coefficients, write the seven
+orthogonal channel projectors as \(P_h\), and let
+\(\Gamma=\sum_h\gamma_hP_h\). For a weak step with
+\(M_j=I+u_j\Gamma+O(u_j^2)\) in this commuting algebra, write
+\(M_j=\sum_h m_{h,j}P_h\). On a sufficiently weak tail,
+\[
+ \log m_{h,j}=u_j\gamma_h+O(u_j^2),\qquad
+ \prod_{j=k}^{l}m_{h,j}
+ =\exp\!\left(\gamma_h\sum_{j=k}^{l}u_j
+                   +O\!\left(\sum_{j=k}^{l}u_j^2\right)\right).
+\]
+The square error has finite sum along the ultraviolet tail. After removal
+of the displayed leading exponential, each product converges to a finite
+nonzero factor. The same calculation controls its inverse. The actual
+matrix estimate and the data at the finite normalization scale enter
+separately in F-03--F-05.
+
+\openclaim{F-03}{First-order mixing}{
+In the seven hypercubic channels of the fixed clover basis, projection of the exact regular one-field transport gives a matrix \(M_j\) with first-order part \(I+u_j\Gamma\). Each of the seven entries of \(\Gamma\) is identified by an explicit coefficient or invariant integral with its trace, field and coupling normalization evaluated.
+}{%
+% Proof of F-03
+}
+
+\openclaim{F-04}{Uniform mixing remainder}{
+On the regular histories under consideration, \(\|M_j-I-u_j\Gamma\|\le C u_j^2\), uniformly in cutoff, carrier, and retained background, or the remainder obeys a uniform summable bound sufficient for the same running product. The bound includes all derivatives contributing to the exact matrix.
+}{%
+% Proof of F-04
+}
+
+\openclaim{F-05}{Running field and identity coefficients}{
+Along the matched cofinal sequence, the finite normalization equations at \(\mu\) have solutions with nondegenerate normalization determinant. The field matrices, their inverses and the scalar identity coefficient obey the logarithmic bounds obtained from the channel products of \(M_j\), in the same seven measurements and identity convention.
+}{%
+% Proof of F-05
+}
+
+\openclaim{F-06}{Compatible local products}{
+The collision coefficients of the exact source jets define real, reflection-compatible tensor distributions carried by point jets or by stencils of vanishing physical diameter. Restriction to lower source degree agrees with the lower-order construction. Their distribution orders grow at most linearly with the number of insertions and their norms obey the uniform hierarchy bounds.
+}{%
+% Proof of F-06
+}
+
+\openclaim{F-07}{Weighted additive terms}{
+Write \(T_{j+1}\) for the running linear product through the indicated step and \(R_j\) for its additive response, including identity and collision terms. The sum \(\sum_j\|T_{j+1}^{-1}R_j\|\) is uniformly finite in the joint observable norm, with source-order growth bounded by a fixed exponential and factorial power sufficient for S-06.
+}{%
+% Proof of F-07
+}
+
+
+\section{Conditional measure and derivatives of its action}
+
+Use a single positive augmented Wilson law throughout the conditional
+construction. Its retained sigma-field contains the variables of the source
+normal form which have not been integrated. Normal-form history labels
+are retained until their stipulated integration. A primitive label
+already summed in forming the normal form is integrated at that operation.
+For a second-class component, its internal coordinates are retained until
+the containing successful operation or the terminal integration, unless
+the entire normalized component kernel is integrated at its birth with
+all its outer factors retained. A projection to a coarser sigma-field is
+then a separate conditional expectation.
+
+\openclaim{CL}{Compatibility of the conditional representation}{
+Choose either the literal source construction or a specified localized
+component construction, including its block tests, coordinate charts,
+gauge frames and cutoffs. Its finite integral has the original Wilson
+marginal. The complete conditional densities, their current domains and
+the complex reconstruction maps satisfy the uniform source identities and
+bounds used below on that same retained sigma-field. All completed
+component masses, Haar and coarea factors and changes of gauge frame
+are assigned to their actual conditional or outer densities. Any local
+replacement of a test satisfies the support, reflection covariance,
+admission and decay estimates for its added terms. Exact transport of
+the marked numerator and the spatial reset estimates hold for this
+chosen representation, including marks depending on earlier
+preparation-stage variables.
+}{%
+% Proof of CL
+}
+The local component variant additionally requires the multilinear
+response estimates on the walk tiling, the necessary buffer layers for
+its box problems, and the enlarged construction constants to be
+compatible with one common coupling ceiling. These requirements enter
+CL. Equality of unmarked partition functions alone does not imply them.
+
+
+Assuming CL, at any finite cutoff retain the gauge data, inactive exterior variables and
+discrete history variables needed to continue the source-free construction.
+Disintegrate the positive joint law over these variables. For independent
+interior coordinates \(z\) of an admitted regular block the conditional
+law has density proportional to its positive weight on the actual product
+of free-coordinate balls. Its precision is the constrained principal block
+\(K_{II}\). The term \(-z^tK_{IO}y\) in the exponent retains the exterior
+coordinate \(y\). The rest contains the constrained classical remainder,
+Haar and coarea terms, regular activities, and boundary terms including
+responses of the older Gaussian and Schur coefficients. Completed-component
+integrations carry their normalizing masses in the outer weight.
+
+For example, write \(V\) for the full negative log density on such a
+block and \(P\) for the current real cutoff. The unperturbed precision has
+an admitted positive spectral lower bound \(\lambda_0\). A sufficient
+boundary input includes a bound \(C/P\) on its score at the origin and
+a Hessian with row norm \(C/P^2\) in the exponentially weighted block
+distance, uniformly on the requisite chart. An entrywise majorant at a
+strictly smaller exponential rate follows by summing four-dimensional
+distance shells. Together with the separate regular and local bounds this
+retains a positive lower Hessian bound \(\lambda\). A linear tilt leaves
+the Hessian unchanged. For a linear functional \(t\cdot z\), integrating
+the tilted variance bound gives
+\[
+  \mathbb E\exp\{t\cdot(z-\mathbb Ez)\}\le
+          \exp\{|t|^2/(2\lambda)\}.
+\]
+The bound yields centered \(L^p\) estimates of order \(\sqrt p\). The mean
+requires the exterior force as well as the score. The complete boundary
+estimate must hold uniformly through repeated components.
+
+For an old local term, denote its birth scale by \(b\), its evaluation
+layer by \(n\), and the integration stage by \(j\), with \(b\le n<j\).
+Set \(a=n-b\) and \(c=j-n\). Suppose the same Wilson-subtracted
+difference on both stopped reconstructions has a Ward bound proportional
+to \(L^{-\lambda a}\) and a response bound proportional to
+\(e^{-\Gamma c}\), up to fixed polynomial factors. For \(0<\eta<1\),
+the geometric mean of the two bounds gives a finite root sum whenever
+\[
+ \eta\lambda>4,\qquad (1-\eta)\Gamma>4\log L .
+\]
+Indeed, the four-dimensional count contributes \(L^{4(a+c)}\), and the
+two residual geometric series absorb fixed powers of \(1+a+c\).
+This calculation isolates the required response. It is the derivative
+of the composed stopped reconstruction at fixed earlier innovations.
+Varying the determining data of a single minimizing field also moves
+those innovations under a gauge change. Equivariance cancels that
+extra term in a complete gauge integral under simultaneous transport;
+the partially integrated density retains a fixed-exterior response.
+The required uniform estimate for that response on the joint chart
+remains an input.
+
+\openclaim{C-05}{Boundary activity derivatives}{
+On the common physical current support and smaller native chart, the complete boundary action, including collars, constraints and responses induced by earlier component operations, satisfies the local native and current derivative bounds of the bulk activity estimate. The weighted current Hessian is small relative to the principal coercivity gap. The first current derivatives have the uniform score bound needed for the conditional means. Constants are independent of volume, depth and distances inside the activity supports.
+}{%
+% Proof of C-05
+}
+
+\openclaim{C-06}{Coercivity in heterogeneous blocks}{
+For every admitted retained background and layer geometry on the common chart, the full regular potential has a uniformly positive Hessian on independent interior coordinates and a uniformly exponentially decaying inverse in the current spatial metric. The local derivative estimates hold with uniform weighted norms and domain margins, retaining the actual exterior force.
+}{%
+% Proof of C-06
+}
+
+\openclaim{C-08}{Regular conditional moments}{
+For the exact regular conditional law, the field and its covariant finite gradients satisfy the current-scale mean bounds including the exterior force, centered moment estimates at every finite moment order, and spatially decaying cumulant estimates with a fixed factorial power. The constants are uniform in the admitted geometry and volume.
+}{%
+% Proof of C-08
+}
+
+
+On a fixed product of convex cutoff balls, write \(A=K_{II}\),
+\(B=K_{IO}\) and let \(W\) be the smooth inner perturbation. Suppose
+\(A\succeq\lambda_0 I\) and
+\(\|W_{zz}\|,\|W_{zy}\|\le\varepsilon<\lambda_0/2\). For fixed
+exterior \(y\), the complete inner score is \(S=-B^tz+W_y\).
+The convex-domain variance inequality applied to \(u^tS\) gives
+\[
+ \operatorname{Cov}_{\nu_y}(S,S)
+ \preceq B^tA^{-1}B+
+ \left(\frac{\|B\|^2\varepsilon}{\lambda_0(\lambda_0-\varepsilon)}
+       +\frac{2\|B\|\varepsilon+\varepsilon^2}
+              {\lambda_0-\varepsilon}\right)I .
+\]
+To obtain this estimate, bound the variance by the inverse Hessian
+form with gradient \((-B+W_{zy})u\), then expand the two mixed terms
+and use the resolvent identity. Only the upper comparison is required.
+The outer density retains its own potential and its support; these
+must be controlled to deduce concentration for the full law.
+
+\section{Transport of insertions and averaging of histories}
+
+On the source-free joint probability space let \(Q_j\) take conditional
+expectation from the complete state at one cut to the next retained state.
+Attach distinct commuting variables \(s_i\) with \(s_i^2=0\) to finitely
+many microscopic insertions \(\Phi_i\). With \(Q_{0:j}\) the composed
+conditional kernel, put
+\[
+ \mathcal Z_j(s)=Q_{0:j}\prod_i(1+s_i\Phi_i),\qquad
+ W_j(s)=\log\mathcal Z_j(s).
+\]
+Both are finite polynomials, since \(\mathcal Z_j(0)=1\). The tower
+identity gives \(\mathcal Z_{j+1}=Q_j\mathcal Z_j\) and
+\(W_{j+1}=\log Q_j e^{W_j}\). In particular the coefficient of
+\(\prod_{i\in I}s_i\) in \(\mathcal Z_j\) is the conditional moment
+of the original product at its original source positions. For \(I=\{1,2\}\),
+\[
+ W_{j+1,12}=Q_j W_{j,12}
+       +\operatorname{Cov}_{Q_j}(W_{j,1},W_{j,2}).
+\]
+For general \(I\), sum over set partitions of \(I\) the corresponding
+conditional cumulants of the lower coefficients. Thus a change of history
+which erases a variable creates genuine connected sources of higher order.
+
+For real retained parameter \(v\), a smooth density \(p_v=w_v/\int w_v\)
+on fixed support obeys
+\[
+ \partial_v Q_v f=Q_v(\partial_v f)
+        +\operatorname{Cov}_{Q_v}(f,\partial_v\log w_v).
+\]
+Changes of support require the signed variation of the kernel on a common
+raw space. This distinction enters the localization norm for a marked
+coefficient. At scale \(h\), order \(m\), its physical prefactor is \(h^{4m}\).
+A carrier containing the source anchors is charged its size and the
+length of its connecting tree. Its value, its direct retained-coordinate
+differences and the differences generated by the kernel are controlled
+separately, in the moment and weighted supremum norms. In particular,
+\(L^p\) contraction alone leaves \((h/a)^{4m}\) if it is applied only to
+a microscopic bound of order \(a^{-4m}\).
+
+For precision, let \(X\) be a carrier in the block graph at mesh \(h\),
+enlarged to contain the insertion anchors and all blocks on which its
+coordinates depend. Let \(t_h(X)\) be the minimum number of block edges in
+a connected subgraph containing \(X\). The regulator on this carrier is
+\[
+ R_X=1+\sum_{p:\,\mathrm{foot}(p)\subset X}\beta_p s(V_p)
+          +\sum_{i:\,\mathrm{foot}(i)\subset X}|z_i|^2 .
+\]
+Only retained plaquettes and free coordinates occur in these sums.
+For a group coordinate use left multiplication by
+\(\exp(tT/\sqrt{1+\beta_e})\), with \(T\) an orthonormal Lie algebra
+direction and \(0<|t|\le1\). Use translation by \(t\) in a free coordinate
+and replacement in a discrete label. Continuous differences are divided by
+\(t\). Write \(A_X^\sharp\) for the supremum of the absolute value over the
+identity and these one-coordinate perturbations, and put
+\(\widehat R_X=R_X+R_X^\sharp\). Decompose the difference as
+\(\delta A_X=B_X+J_X\), with \(B_X\) the direct insertion variation and
+\(J_X\) the signed response of the conditional kernel. For either response,
+the superscript \(\natural\) denotes the sum over coordinate directions of the
+suprema over the allowed perturbation sizes. At degree \(d>0\) set
+\[
+ D_{d,X}(G)=
+ \sup_{p\ge1}(dp)^{-d}\|G\|_{L^p(\mu_h)}
+       +d^{-d}\sup_x\frac{|G(x)|}{\widehat R_X(x)^d} .
+\]
+The norm for a localized connected mark with \(m\) insertions is the sum
+over its carriers of
+\[
+ e^{\kappa(|X|+t_h(X))}h^{4m}
+ \big[D_{m,X}(A_X^\sharp)+D_{m+1/2,X}(B_X^\natural)
+                         +D_{m+1/2,X}(J_X^\natural)\big].
+\]
+Here \(\mu_h\) is the normalized outer law, and the suprema use the fixed
+ambient versions of the retained coordinates. Bounds are uniform in the
+choice of the first anchor. Disconnected pieces carry the product of the
+weights of their connected components.
+
+At three fixed regular blocking layers the microscopic scalar admits
+a more detailed decomposition. In a fixed physical tube the local Ward
+projection removes the marginal Wilson completion from its smooth
+quadratic jet. Simultaneous dilation gives the leading coefficient
+\(\alpha(g_3/g_0)^2\); the separate current estimates retain the
+responses of the innovation kernels and of the insertion itself.
+These statements concern the specified three-layer input. Iteration
+requires uniform transfer of the whole quadratic function in the
+physical carrier norm, as well as the contributions of complementary
+histories.
+
+\openclaim{M-04}{Scalar transport in the incoming basis}{
+For inputs satisfying the one-step current-scale budget, the conditional expectation of the incoming scalar decomposes exactly into the current scalar basis element, an identity coefficient and a spatially localized remainder bounded uniformly in the current-scale mark norm. The coefficients include the constrained background, bulk, boundary, remainder and coarea responses.
+}{%
+% Proof of M-04
+}
+
+\openclaim{M-05}{Tensor transport}{
+The corresponding one-step identity holds for each of the 21 curvature bilinears in the fixed reference basis, including both Weyl sectors under the connected rotation group. The retained-field responses obey the same current-scale norm and the coefficients intertwine the appropriate hypercubic tensor actions.
+}{%
+% Proof of M-05
+}
+
+\openclaim{M-06}{Local source jets}{
+For every source degree \(m\), conditional integration of the incoming jet has an exact expansion into localized output vertices. It includes all collisions, resets and remainders. The sum over carriers obeys uniform bounds with fixed factorial power and derivative order linear in \(m\). The expansions agree upon truncation in source degree.
+}{%
+% Proof of M-06
+}
+
+\openclaim{M-07}{Uniform iterated matching}{
+The successive one-step expansions along the full normalized history law represent each transported jet by current-scale local fields, their response kernels and a terminal remainder. The irrelevant contributions are summable in scale, including the outer retained-data responses, with constants independent of volume and total depth.
+}{%
+% Proof of M-07
+}
+
+
+The same law gives the outer covariance identity, with \(\xi\) denoting a
+retained state,
+\[
+ \operatorname{Cov}(F,G)=
+  \mathbb E\,\operatorname{Cov}(F,G\mid\xi)
+ +\operatorname{Cov}(\mathbb E[F\mid\xi],\mathbb E[G\mid\xi]).
+\]
+For the conditional reset of successful components, spatial cumulant
+decay is measured between complete component footprints, including the
+random geometry inside the conditional average. This estimate controls
+that conditional law. To iterate the marked identity one must also
+integrate its bounds against the true probabilities of the low-margin and
+unreplaced sectors and estimate the second term above. The corresponding
+requirements at all orders are the following.
+
+For retained bad-sector events an integrated estimate may be stated
+without taking a supremum over field configurations conditioned to lie
+inside the event. For example, if \(E_{Y,b}\) specifies a component \(Y\)
+at scale \(j\) with oldest birth \(b\), a useful joint hypothesis is
+\[
+ \mathbb P\!\left(\bigcap_i E_{Y_i,b_i}\right)\le
+       \prod_i a(Y_i,b_i),\qquad
+ \sup_x\sum_{b\le j}\sum_{Y\ni x}
+       L^{4(j-b)}e^{\sigma |Y|_\natural}a(Y,b)\le\delta<1
+\]
+for the specified disjoint components, in the actual normalized joint law.
+Such a bound must be combined with the physical insertion and
+multi-anchor costs. To use it in place of a pointwise carrier estimate,
+one must prove the resulting integrated marked bounds, their stability
+under reset, and their attribution to the exact physical shells in
+S-04--S-05. A rare-event bound gives no bound on a supremum taken
+after conditioning on that event.
+
+\openclaim{H-02}{Inherited low-margin and unreplaced events}{
+The joint law of inherited low-margin and unreplaced events, or its directly marked version, obeys bounds conditional on the specified retained data that include all overlaps. Its decay pays the geometric size and the actual insertion losses of each affected carrier in the current-scale norm.
+}{%
+% Proof of H-02
+}
+
+\openclaim{H-04}{One step in the full history law}{
+For incoming jets satisfying the one-step hypotheses of M-06, summing regular, repaired, residual and inherited sectors in the normalized law preserves all output responses and gives a uniform current-scale estimate of fixed factorial order. The bound includes the full conditional normalizers and is uniform in volume, scale and retained history.
+}{%
+% Proof of H-04
+}
+
+\openclaim{H-05}{Cumulants of the retained means}{
+The retained-data variations of the conditional means and their higher joint cumulants obey the required spatial estimates at intermediate scales and the terminal distribution bounds at \(\ell_0\). In particular these estimates apply to the outer covariance in the law of total covariance.
+}{%
+% Proof of H-05
+}
+
+
+\section{From a connected kernel to a Schwinger distribution}
+
+Let \(C_{m,n}\) be the connected distribution and \(S_{m,n}\) the full
+distribution of the prescribed fields. In this section enumerate the
+shells from the reference scale toward short distances, so that
+\(h_j=\ell_0 L^{-j}\). On compactly supported tests in a central torus
+chart, the needed connected identity consists of a terminal distribution,
+a sum of physical kernels over the shells, and the prescribed contact
+contributions. A contact supported strictly on a partial diagonal and
+having finite differential order pairs to zero with \(F\in\mathcal S_0\).
+An extended lattice stencil needs its own estimate as the mesh tends
+to zero.
+
+\openclaim{S-03}{Terminal and one-point distributions}{
+At \(\ell_0\), the one-point functions have the prescribed identity subtraction and the normalized terminal terms of all orders act on joint tests with bounds \(C^{m+1}(m!)^p\nu_{qm}\), uniformly along the expanding tori, for the same fields and coefficients as in F-05.
+}{%
+% Proof of S-03
+}
+
+\openclaim{S-04}{Exact physical shells}{
+At every finite cutoff the connected Wilson correlations equal the sum of the localized physical shell kernels and the terminal distribution on joint tests, with the explicitly identified contact and approximation terms. The identity includes outer means, source collisions, history resets and the chosen normalization.
+}{%
+% Proof of S-04
+}
+
+\openclaim{S-05}{Full-law tree estimate}{
+Let \(h_j\) denote shell mesh and \(\tau\) the minimal tree length of the insertion points in physical units. The absolute shell kernels are bounded by\[ A^{m+1}(m!)^{p_0} h_j^{-4m}w_j \exp\!\left[-c\tau/((m+d_0)h_j)\right]. \]There is a cutoff-independent sequence \(\bar w_j\ge w_j\ge0\), indexed from the reference scale towards the ultraviolet, with \(\sum_{j\ge0}h_j\bar w_j<\infty\). All constants apply to the complete normalized law at every cutoff and volume. A replacement kernel estimate suffices if its shell sum is proved with the same uniform fixed-factorial growth and linear test order.
+}{%
+% Proof of S-05
+}
+
+\openclaim{S-06}{Contact and approximation error}{
+Stencil, normalization and contact errors, including those on partial diagonals, admit one vanishing cofinal error estimate or a summable error with a controlled terminal contribution, of fixed factorial power and test order linear in \(m\). It is compatible with the positive-time algebra. Conversion between full and connected errors preserves these budgets by partition inversion.
+}{%
+% Proof of S-06
+}
+
+
+Here is the estimate which turns the shell hypotheses into an all-order
+bound. Suppose the order-\(m\) kernel on a shell \(h\), \(m\ge2\), is
+bounded by
+\[
+ A^{m+1}(m!)^{p_0}h^{-4m}w_j
+       \exp[-c\,\tau(X)/((m+d_0)h)],
+ \qquad \sum_{j\ge0} h_j w_j<\infty ,
+\]
+where \(\tau\) is the minimum spanning-tree length of the insertion
+positions. Taylor expand a flat test from \((x_1,\ldots,x_1)\) to \(X\)
+through order four. Its magnitude is bounded by
+\(C\nu_{6m}(F)(1+|x_1|^2)^{-3}(\sum_i|x_i-x_1|_1)^5\).
+Every displacement is bounded by a fixed multiple of \(\tau\). Half the
+exponential pays the fifth moment and contributes \(h^5\) times a
+polynomial in \(m\). Bound the remaining exponential by the sum over
+the \(m^{m-2}\) labeled trees. Each successive leaf integration contributes
+at most \(C(m+d_0)^4h^4\). The identical estimate holds for lattice sums
+with cell measure \(a_n^4\) and \(a_n\le h\). The integral in \(x_1\) is
+bounded by the displayed integrable weight. Since
+\(h^{-4m}h^5 h^{4(m-1)}=h\), Stirling's inequality gives a shell bound
+\[
+ C_1^{m+1}(m!)^{p_0+5}\,\nu_{6m}(F)\,h_j w_j.
+\]
+Its ultraviolet tail tends to zero uniformly at every fixed order.
+
+For the isolated regular conditional block one can use sixth-order
+flatness at a single pair of coincident points. Under the spatial
+conditional cumulant bound and the native field-size bound \(P(h)\),
+the resulting joint test estimate is
+\[
+ |\mathcal K_{m,h,v}(F)|
+ \le C^{m+1}(m!)^7 h^2 P(h)^m\,\nu_{6m}(F),\qquad m\ge2.
+\]
+The sixth-order zero pays \(h^6\), the root sum costs \(h^{-4}\),
+and summation over relative locations costs at most \(C^m(m!)^5\).
+The conditional moment factors supply the other two factorial powers.
+The normalized microscopic hierarchy also contains outer cumulants
+of conditional expectations and residual terms from other histories.
+Those terms are among the full-law hypotheses above.
+
+Include the terminal distribution and the one-point normalization.
+The partition identity is
+\[
+       S_{m,n}=\sum_{\pi\in\mathcal P([m])}
+              \bigotimes_{D\in\pi} C_{|D|,n}
+\]
+with arguments restored to their original order. One can apply the block
+distributions successively to disjoint groups of variables of a joint
+test. Flatness in the other variables is preserved. A change of extension
+on any internal diagonal acts by zero. The allocated derivative orders
+add to at most \(qm\), while the product of block Schwartz weights is
+bounded by the joint weight of that order. For \(p\ge1\),
+\(\sum_\pi\prod_{D\in\pi}(|D|!)^p\le 2^{m-1}(m!)^p\):
+order the blocks, group by compositions of \(m\), and use the multinomial
+coefficient to count placements. Powers of the fixed constants incurred
+at each block cost at most \(C^m\). This gives the full-moment bound of
+the theorem on joint tests.
+
+\section{Limits, reflection and rotations}
+
+For each fixed order and label tuple, take a countable dense set of flat
+smooth compact tests in the norm controlling its moments. Compact cutoffs
+preserve flatness and approximate Schwartz tests after increasing the
+weight order by one. The moment bounds give a convergent diagonal
+subsequence on the union of these sets over all orders. Linearity,
+estimated on the same subsequence, extends the limits to their test spaces.
+Use growing central cutoffs on expanding tori, so that the coincidence
+diagonals on every fixed compact test are the physical ones.
+
+Take positive-time polynomials whose joint tests stay a fixed distance
+from the reflection plane and are flat at coincidences within each term.
+Their reflected products are then flat across both halves. The real local
+Wilson insertion and its tensor reflection give
+\(\mu_{a,T}[(\Theta P)P]\ge0\) whenever all the stencils fit on their
+respective sides. Terms concentrated on true coincidences give zero on
+these tests. All finite-width errors must tend to zero by the contact
+bound. Convergence of the finitely many moments in this quadratic form
+passes its nonnegativity to the limit.
+
+\openclaim{P-01}{Positive-time splitting}{
+The actual field normalization and local product subtractions are real, local and compatible with time reflection including tensor Wick phases. On products with the two time supports separated, they split into reflected and positive-time substitutions, preserving the Wilson Gram form.
+}{%
+% Proof of P-01
+}
+
+\openclaim{P-02}{Translations and permutations}{
+The full moments are symmetric under simultaneous permutations of insertions and labels. Fine-lattice translations preserve them exactly or have a vanishing error in a common joint-test seminorm, including any dependence introduced by the block grids.
+}{%
+% Proof of P-02
+}
+
+
+Translation by a fixed vector is approximated by lattice translations
+at distance \(O(a_n)\). The mean-value theorem and the common Schwartz
+bound make the resulting test error tend to zero. Permutations pass
+directly on the same hierarchy. To prove covariance under general
+rotations one needs a bound on the full defect. The signed-permutation representation supplies the finite lattice subgroup. For \(R\in SO(4)\)
+let \(R\cdot F\) denote simultaneous rotation of arguments with tensor
+action \(D(R)^{\otimes m}\). Integrating the infinitesimal defect along a
+smooth path from \(1\) to \(R\), under the next uniform estimates, gives
+\(S_m(R\cdot F)=S_m(F)\). The reflected component transformation and
+the action of a fixed coordinate reflection extend this relation to
+\(O(4)\).
+
+\openclaim{R-02}{Angular variations of the action}{
+For each infinitesimal rotation, the angular defect of the normalized action is a sum of local insertions and a controlled remainder. Their contribution in the complete law tends to zero on each fixed physical test, including the contributions from spatial tails and inherited histories.
+}{%
+% Proof of R-02
+}
+
+\openclaim{R-03}{Angular variations of the fields}{
+For the same infinitesimal generators the combined defects of the matched tensor fields, running matrices and contact terms tend to zero on joint tests, for all 21 labels and all source degrees in the physical normalization.
+}{%
+% Proof of R-03
+}
+
+\openclaim{R-04}{Uniformity along rotation paths}{
+For each fixed rotation and joint test the combined action and observable defects are bounded along its generating paths by an integrable error tending to zero with the cutoff. The bound is uniform over the intermediate rotations required for each such path.
+}{%
+% Proof of R-04
+}
+
+\openclaim{R-05}{Orthogonal covariance}{
+Integration of the angular estimates for the limiting hierarchy, followed by the exact lattice reflection with its tensor action, yields full \(O(4)\) covariance of those same limiting distributions.
+}{%
+% Proof of R-05
+}
+
+
+\section{The separated ultraviolet coefficients}
+
+Let \(d_G=N^2-1\), \(b_0=11/(48\pi^2)\), and use the canonical scalar
+\[
+ Q=\tfrac12\sum_{\mu<\nu,a}(F^a_{\mu\nu})^2,\qquad g^2=N g_{\rm YM}^2 .
+\]
+For the free curvature, each color has the same two-form covariance
+\[
+ K(x)=\frac{\Lambda^2R_x}{\pi^2|x|^4},
+ \qquad R_x=I-2\widehat x\widehat x^{t}.
+\] Wick pairing at distinct points
+gives \(\langle Q(x)Q(0)\rangle=3d_G/(\pi^4|x|^8)\).
+At three points the connected Wick term is a trace of a product of
+three such two-form matrices. The Hodge star anticommutes with
+\(\Lambda^2R_x\), since \(R_x\) reverses orientation. Conjugating this
+product by the Hodge star changes its sign, so its trace vanishes.
+The coefficient to be identified in the interacting scalar three-point function is the term of order \(g^2\).
+
+In the stated convention the separated perturbative coefficient for
+\(Q=F^2/4\) is \(3d_G b_0/\pi^6\), using the scalar two-point normalization
+and the \(F^2\) Wilson coefficient in the separated three-point function
+\cite{BB,BP}. Its identification in the Wilson limit is an independent
+estimate. Put
+\[
+ \begin{aligned}
+ c_2&=\frac{3d_G}{\pi^4},&
+ c_3&=\frac{3d_G b_0}{\pi^6}=\frac{11d_G}{16\pi^8},\\
+ K_2(u,v)&=|u-v|^{-8},&
+ K_3(u,v,w)&=(|u-v|\,|v-w|\,|w-u|)^{-4}.
+ \end{aligned}
+\]
+For separated unit-scale tests let \(I_m=\int K_m\prod_i f_i\) and
+\(f_{i,\rho}(x)=\rho^{-4}f_i((x-x_*)/\rho)\). The physically normalized
+scalar at scale \(\mu\) has matching factor \(z_\rho\) relative to \(Q\)
+at scale \(1/\rho\), with coupling \(g_\rho\) on the same trajectory.
+The ultraviolet assertions below must identify this factor from the
+finite normalization and yield
+\[
+\begin{aligned}
+ \rho^8 z_\rho^{-2} S_2^c(f_{1,\rho},f_{2,\rho})
+      &= c_2 I_2+o(1),\\
+ \rho^{12} z_\rho^{-3}g_\rho^{-2}
+       S_3^c(f_{1,\rho},f_{2,\rho},f_{3,\rho})
+      &= c_3 I_3+o(1).
+\end{aligned}
+\]
+At each fixed \(\rho>0\) take \(a_n/\rho\to0\) and \(\rho/T_n\to0\)
+before sending \(\rho\downarrow0\). Cutoff and volume errors must tend
+to zero after the displayed rescalings. For a scalar readout with
+leading factor \(g_\rho^2 Q\) the three-point function has coupling
+power eight, including the \(g_\rho^2\) in the canonical three-point
+coefficient.
+
+An explicit witness uses a smooth unit-mass bump \(\eta\). Set
+\(\eta_\epsilon(u)=\epsilon^{-4}\eta(u/\epsilon)\) and
+\(f_i(u)=-\partial_0\eta_\epsilon(u-t_i e_0)\) for
+\((t_1,t_2,t_3)=(0,1,3)\). For sufficiently small \(\epsilon\) the supports
+are disjoint. Three integrations by parts show
+\[
+ \lim_{\epsilon\downarrow0}I_3
+ =\left.\partial_{t_1}\partial_{t_2}\partial_{t_3}
+       \prod_{i<j}(t_i-t_j)^{-4}\right|_{(0,1,3)}
+ =\frac{25}{729}.
+\]
+Thus the specified profile has nonzero coefficient. Zero integrals of
+its individual tests remove translation-invariant one-point terms.
+
+\openclaim{U-01}{Two-point coefficient}{
+For the prescribed separated profiles and scalar or tensor projections, the first ultraviolet two-point distribution of the exactly matched fields has the prescribed coefficient, including logarithmic running and the fixed physical normalization.
+}{%
+% Proof of U-01
+}
+
+\openclaim{U-02}{Connected three-point coefficient}{
+There exists an explicit admissible separated profile and field contraction for which the prescribed leading connected three-point coefficient, evaluated in the same normalization as U-01, has an explicitly identified nonzero value.
+}{%
+% Proof of U-02
+}
+
+\openclaim{U-03}{Interacting ultraviolet remainder}{
+The two- and three-point asymptotics have remainders uniform under cutoff removal and increasing volume before the short-distance limit. Exact matching, outer means and all history terms are included. In this order of limits the coefficient in U-02 retains its nonzero value.
+}{%
+% Proof of U-03
+}
+
+\openclaim{U-04}{Reflected block variances}{
+For each of the two positive-time ultraviolet block observables of degrees two and three, the vacuum norm of the block minus its prescribed scalar coefficient has the summable logarithmic-scale error required for phase transfer. The reflected products have degrees four and six and obey the same test-space control.
+}{%
+% Proof of U-04
+}
+
+\openclaim{U-05}{Scale and profile regularity}{
+The logarithmic scale derivative of each centered ultraviolet block obeys the integrable norm estimate required for continuous-scale phase transfer. The block estimates extend uniformly to the stipulated bounded profile sets with the required modulus of continuity.
+}{%
+% Proof of U-05
+}
+
+
+\section{Reconstruction, energy and a vacuum phase}
+
+The corrected Osterwalder--Schrader reconstruction theorem uses regularity
+on coincidence-flat tests, Euclidean covariance, symmetry, reflection
+positivity and the linear-order growth condition \cite{OS2}. The fixed factorial power and linear derivative budget give the required growth. Tensor reflection and the indexed-field extension are taken in the conventions of \cite[\S6]{OS1}. Applying reconstruction without a clustering assumption initially
+allows a translation-invariant vacuum subspace of dimension greater
+than one. All energy and phase assertions concern the fields of this
+same reconstruction.
+
+For a closed smeared field \(\phi(f)\), suppose
+\(e^{-tH}\mathcal H\subset D(\phi(f))\) and
+\(\|\phi(f)e^{-tH}\|\le C\nu_s(f)t^{-r}\) for \(0<t\le1\),
+where \(H\ge0\) is the reconstructed Hamiltonian. The large-time bound
+follows by contractivity. For \(R>r\), the identity
+\[
+ (1+H)^{-R}=\frac{1}{\Gamma(R)}\int_0^\infty
+                   t^{R-1}e^{-t} e^{-tH}\,dt
+\]
+converges also after applying \(\phi(f)\), by closedness and absolute
+integrability in the graph norm. It gives
+\(\|\phi(f)(1+H)^{-R}\|\le C_R\nu_s(f)\), an arbitrary-vector bound.
+At finite periodic cutoff a sufficient insertion estimate has the
+following form. Let \(P\) be a fixed positive-time polynomial, \(\tau_t\)
+a positive time shift, \(p_n(P)^2=S_n((\Theta P)P)\), \(g\) a spatial
+Schwartz test, and \(\chi_\epsilon\) a nonnegative even time mollifier
+with \(\epsilon<t/8\). For each physically normalized seed \(Q_n\), require
+\[
+ \left|S_n\!\left((\Theta\tau_tP)
+       Q_n(\chi_\epsilon\otimes g)(\tau_tP)\right)\right|
+ \le C t^{-\kappa}\nu_s(g)\,p_n(P)^2+o_n(1),\qquad 0<t\le1 .
+\]
+The error tends to zero at fixed tests, \(t\) and \(\epsilon\). The
+constant on the right is independent of the degree of \(P\) and the
+mollifier width. Removing the cutoff, identifying the time-zero field
+and extending from the common core are part of E-05--E-06. Covariance and the finite
+Lorentz orbit of the scalar, pseudoscalar and off-diagonal magnetic
+seeds propagate these estimates to the full tensor family.
+
+\openclaim{E-02}{Scalar energy bound}{
+The physically normalized scalar insertion, including its identity term, satisfies a cutoff-uniform arbitrary-vector heat or graph estimate on the common field domain, through its transfer response or its periodic reflection-positive insertion.
+}{%
+% Proof of E-02
+}
+
+\openclaim{E-03}{Pseudoscalar energy bound}{
+The physically normalized pseudoscalar, with its electric and magnetic components and time-reflection convention, satisfies the corresponding operator estimate on the same domain with a uniform energy weight and Schwartz seminorm.
+}{%
+% Proof of E-03
+}
+
+\openclaim{E-04}{Magnetic tensor energy bound}{
+The renormalized off-diagonal magnetic seed \(B_1B_2\), with its physical scaling, mixing factors and temporal admixtures, obeys the required cutoff-uniform arbitrary-vector estimate.
+}{%
+% Proof of E-04
+}
+
+There is a finite-volume reduction of one sufficient state criterion.
+Let \(Q\) be the positive physical Wilson transfer operator on a spatial
+torus with \(Lm\) sites per direction, \(\lambda_0>0\) its top eigenvalue,
+and \(H=-a^{-1}\log(Q/\lambda_0)\). For
+\(f(t)=\log\operatorname{Tr}e^{-tH}\) and \(T=Lma\), set
+\[
+ \Gamma=f(T/2)-f(T),\qquad
+ \Phi=L^4\log Z_{\rm cube}(m)-\log Z_{\rm cube}(Lm).
+\]
+Whenever the indicated lattice times are integral,
+\[
+             0\le\Gamma\le f(T/L)-f(T)\le \Phi/L,\qquad \Phi\ge0 .
+\]
+Indeed \(H\ge0\) makes \(f\) decreasing. The top-eigenvalue bound
+\(\lambda_0^{Lm}\le\operatorname{Tr}Q^{Lm}\) gives
+\(f(T/L)-f(T)\le\log\operatorname{Tr}Q^m
+ -L^{-1}\log\operatorname{Tr}Q^{Lm}\).
+The physical trace is the Wilson integral on the corresponding
+rectangular torus. Successively in each of the other three directions,
+\(\operatorname{Tr}A^{Lr}\le(\operatorname{Tr}A^r)^L\) for \(A\ge0\)
+bounds its partition function by \(Z_{\rm cube}(m)^{L^3}\).
+The same trace inequality in all four directions gives \(\Phi\ge0\).
+Any one-link scalar normalization of \(Q\) cancels in these differences.
+For application one still needs the quantitative bound on this same
+matched family, with the required insertion norms and operator domains.
+
+\openclaim{E-05}{Periodic state comparison}{
+Along the matched cofinal cubic sequence, local periodic state comparison, the thermal trace-increment criterion, or a direct periodic reflection-positive insertion estimate holds for the physically normalized hierarchy at every fixed polynomial degree, with the rates required to pass the seed bounds.
+}{%
+% Proof of E-05
+}
+
+\openclaim{E-06}{Common field domain}{
+The limits of the three seed estimates act on the reconstructed fields on a common graph core. Their Lorentz transforms span the 21 components and yield polynomial energy bounds for the actual fields with the stated smearing norms on the common domain.
+}{%
+% Proof of E-06
+}
+
+
+Apply field decomposition on the separable observable algebra when its
+spectral, localization, domain and measurability hypotheses hold
+\cite{DS}. For a positive-time block \(A_{m,\rho}(F)\) of degree
+\(m=2,3\), with the appropriate centering and ultraviolet rescaling, the
+vacuum norm
+\[
+ \big\|(A_{m,\rho}(F)-c_m(F))\Omega\big\|^2
+\]
+is a reflected correlation of order at most \(2m\). In a direct-integral decomposition with normalized vacuum
+vectors \(\Omega_\lambda\), Cauchy--Schwarz gives
+\[
+ \int |\langle\Omega_\lambda,A_{m,\rho}(F)\Omega_\lambda\rangle
+          -c_m(F)|^2\,d\pi(\lambda)
+ \le \big\|(A_{m,\rho}(F)-c_m(F))\Omega\big\|^2 .
+\]
+If the right-hand side is summable on a sequence of logarithmic scales,
+Tonelli's theorem gives convergence for almost every phase on that
+sequence. For continuous scales, let \(t=-\log\rho\) and let
+\(v_t(F)\) be the centered block vector. On each compact off-diagonal
+profile set the required estimates take the form
+\[
+ \|v_t(F)\|\le e_0(t)\|F\|_{C^r},\qquad
+ \|\partial_t v_t(F)\|\le e_1(t)\|F\|_{C^r},\qquad
+ \int_{t_0}^{\infty}(e_0^2+e_1^2)\,dt<\infty .
+\]
+Expanding compact profiles in a sufficiently high Sobolev basis gives
+a square-summable bound on the corresponding dual Sobolev norm and its
+time derivative. In almost every fiber this yields an \(H^1\) function
+of logarithmic scale with values in that dual space. Its norm tends to
+zero at infinity by the one-dimensional Sobolev inequality on tails.
+One first intersects the full-measure sets for a countable dense set
+of profiles and the finite field family. This argument transfers a
+coefficient to the same phases as the fields and energy bounds.
+
+For a required disconnected symmetry \(\gamma\) and bounded algebra
+element \(A\), the translation-invariant projection \(P_0\) satisfies,
+in a translation-ergodic decomposition of the state,
+\[
+ \|P_0(\alpha_\gamma(A)-A)\Omega\|^2
+  =\int|\omega_\lambda(\alpha_\gamma(A))-\omega_\lambda(A)|^2\,
+                   d\pi(\lambda)
+\]
+for the bounded symmetry action in the stated convention. Anti-linear
+actions require the corresponding conjugation of the scalar expectation.
+Vanishing of the central defects on a countable determining algebra
+gives the required symmetry almost everywhere. Intersect this set with
+the full-measure sets for the field domain, energy bound and ultraviolet
+limits to select a single component.
+
+\openclaim{V-02}{Decomposition into phases}{
+The reconstructed fields and symmetry representation satisfy the field phase-decomposition hypotheses, including the requisite generalized energy bounds or intrinsic locality. They have a measurable field decomposition with common phasewise energy domains, proper-orthochronous covariance, a unique translation-invariant vacuum in each selected fiber, and clustering.
+}{%
+% Proof of V-02
+}
+
+\openclaim{V-03}{Phasewise ultraviolet limits}{
+The reflected block estimates and continuous-scale control transfer both prescribed ultraviolet coefficients to one common full-measure set of phases, simultaneously for the required profiles in the fixed normalization.
+}{%
+% Proof of V-03
+}
+
+\openclaim{V-04}{Disconnected symmetries in a phase}{
+The central defects of each required disconnected symmetry vanish on a common full-measure set, or a phase-selection theorem supplies the corresponding implementation for the selected phase and the given fields.
+}{%
+% Proof of V-04
+}
+
+\openclaim{V-05}{Selection of one phase}{
+One phase satisfies simultaneously the field energy bounds on their common domain, proper-orthochronous covariance, the stipulated disconnected symmetries, uniqueness of the translation-invariant vacuum, clustering and both normalized ultraviolet coefficients.
+}{%
+% Proof of V-05
+}
+
+
+\section{Identification of the continuum theory}
+
+The final identifications concern a single subsequence and its selected
+phase. In particular, a weak limit of moments of the original microscopic
+insertions and a separately reconstructed hierarchy can be identified
+only when the coupling, seven normalization measurements, tensor signs
+and local product prescription agree.
+
+\openclaim{A-01}{Common continuum subsequence}{
+All orders and field tuples converge on one cofinal subsequence on the coincidence-flat Schwartz spaces. The joint-test bounds extend convergence from countable dense families and preserve the finite normalization, reflection positivity and the symmetries established at this stage.
+}{%
+% Proof of A-01
+}
+
+\openclaim{A-02}{Reconstruction}{
+The full mixed moments satisfy the corrected Osterwalder--Schrader reconstruction hypotheses, including linear growth and the required tensor covariance. The reconstructed relativistic fields have the identified common domains. Initial reconstruction uses the mixed hierarchy before phase selection.
+}{%
+% Proof of A-02
+}
+
+\openclaim{A-03}{Identification of the constructed theory}{
+The Wilson subsequence, limiting moments, reconstructed fields and selected phase appearing in the preceding assertions obey the conclusions of the main theorem with the same cutoff sequence, field normalization, energy domains and ultraviolet coefficients. Every identification between these objects holds on the specified test spaces and domains.
+}{%
+% Proof of A-03
+}
+
+
+Under the stated analytic hypotheses the shell bounds give the common
+full hierarchy. The symmetry and positivity estimates identify its
+Euclidean transformations and reflection form. The reconstruction and
+domain identifications transfer the three seed estimates to local fields.
+The phase selection above retains their ultraviolet coefficients and
+symmetries on one component. This proves the stated implication, subject to the open estimates and the common-sequence identifications.\hfill\(\square\)
+
+\begingroup\small
+\begin{thebibliography}{9}
+\setlength{\itemsep}{2pt}
+\bibitem{Bal119} T. Ba\l aban, \emph{Convergent renormalization expansions for lattice gauge theories}, Communications in Mathematical Physics \textbf{119} (1988), 243--285. \href{https://doi.org/10.1007/BF01217741}{doi:10.1007/BF01217741}.
+\bibitem{BalLFR2} T. Ba\l aban, \emph{Large field renormalization. II. Localization, exponentiation, and bounds for the R operation}, Communications in Mathematical Physics \textbf{122} (1989), 355--392.
+\bibitem{BB} M. Becchetti and M. Bochicchio, \emph{OPE and a low-energy theorem in QCD-like theories}, Journal of High Energy Physics \textbf{03} (2019), 088. \href{https://arxiv.org/abs/1810.08527}{arXiv:1810.08527}.
+\bibitem{BP} M. Bochicchio and E. Pallante, \emph{Low-energy theorem revisited and OPE in massless QCD}, Journal of High Energy Physics \textbf{08} (2024), 145. \href{https://arxiv.org/abs/2402.16490}{arXiv:2402.16490}.
+\bibitem{DS} W. Driessler and S. J. Summers, \emph{On the decomposition of relativistic quantum field theories into pure phases}, Helvetica Physica Acta \textbf{59} (1986), 331--348.
+\bibitem{OS1} K. Osterwalder and R. Schrader, \emph{Axioms for Euclidean Green's functions}, Communications in Mathematical Physics \textbf{31} (1973), 83--112, especially \S6.
+\bibitem{OS2} K. Osterwalder and R. Schrader, \emph{Axioms for Euclidean Green's functions II}, Communications in Mathematical Physics \textbf{42} (1975), 281--305, especially Remark 5 and \S IV.1.
+\bibitem{boundary} Initio Intelligence, \emph{Homogeneous curvature projection and the weak coupling trajectory}, Appendices E--I in the accompanying mathematical notes. The homogeneous comparison is conditional on the native-chart and Gaussian-calibration hypotheses stated in the text.
+\end{thebibliography}
+\endgroup
+\end{document}

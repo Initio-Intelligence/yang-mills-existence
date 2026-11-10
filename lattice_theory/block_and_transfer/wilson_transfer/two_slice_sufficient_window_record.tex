@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{Exact temporal compression of the interior bath window to two full boundary slices}\author{}\date{}
+\begin{document}\maketitle
+Let $A$ be the ORIGINAL positive gauge-projected Wilson transfer on normalized spatial Haar space, $K_j$ its original kernel, and $Z_m=\operatorname{Tr}A^m$. The temporal link integrations are those of the original compact Wilson measure; no temporal gauge or Polyakov variable is removed. Let $X$ be the initial spatial slice on a periodic chain of length $m=2s+h$, $s\ge1$, $h\ge1$. Let $H=(U,V)$ be the full slices at times $s$ and $s+h$. Choose these just outside the collars of the thin interior bath window $\Omega$ from the interior window affinity lift calculation.
+
+\section*{An actual smaller sufficient record}
+Original finite temporal range implies that conditional on $H$, the interior Wilson slab, including every interior temporal link, is independent of $X$ and of the exterior slab. Integrating this ORIGINAL interior bridge to the chosen partial window gives a probability kernel $R_H(d\omega)$ independent of $X$. Its normalizer is exactly $K_h(U,V)$, including all half-action factors and gauge averages. In particular
+\[
+ \nu_X(d\omega)=\int\gamma_X(dU,dV)R_{U,V}(d\omega),  \tag{1}
+\]
+where the normalized ORIGINAL two-slice conditional density is
+\[
+ \gamma_X(U,V)=
+ \frac{K_s(X,U)K_h(U,V)K_s(V,X)}{K_m(X,X)}.           \tag{2}
+\]
+The semigroup identity proves its normalization. Equation(1) concerns a genuine conditional bridge, not a projection of the previous whole-path bath density that reverses an inequality.
+
+Affinity increases under the COMMON probability kernel $R$, giving
+\[
+ \operatorname{Aff}(\nu_X,\nu_{X'})
+ \ge\operatorname{Aff}(\gamma_X,\gamma_{X'}).         \tag{3}
+\]
+If instead the entire interior path together with its two boundary slices is retained, its affinity is EXACTLY the right side of(3): disintegrate over $H$ and the conditional bridge has affinity one with itself. Thus two full boundary slices are a sufficient statistic for the dependence of a complete interior path on the distant initial slice. This is an exact factorization of the original measure, not an approximation in physical window thickness.
+
+The retained record now has two full spatial slices instead of $O(w)$ complementary spatial slices and temporal layers. For $w\asymp\log(1/a)$ this is a strict reduction in temporal coordinate count. It includes the selected colors at its endpoints and all global spatial modes. No spatial coarse-graining or second-color independence is claimed.
+
+\section*{Explicit original two-slice overlap with all normalizers}
+The true initial marginal is $p(X)=K_m(X,X)/Z_m$. Define
+\[
+ \mathcal P_{s,h}^{(2)}
+ =E_{X,X'\ {\rm iid}\ p}\operatorname{Aff}(\gamma_X,\gamma_{X'})^2.
+\]
+The exact boundary denominators in(2) cancel against this initial marginal, yielding
+\[
+ \mathcal P_{s,h}^{(2)}=\frac1{Z_m^2}\int dX\,dX'
+ \left[\int dU\,dV\ K_h(U,V)
+ \sqrt{K_s(X,U)K_s(X',U)K_s(V,X)K_s(V,X')}\right]^2.   \tag{4}
+\]
+Every $K$ is the ORIGINAL kernel. A common scalar multiplying $A$ contributes the same power $2m$ to numerator and denominator in(4), and cancels only there. The short central bridge has not been replaced by a delta function or normalized reference density.
+
+Combining(3) with the thin-window lower bound of the interior window affinity lift calculation gives the actual comparison
+\[
+ \mathcal P_{\rm full}
+ \ge(1-16\delta^2)^{N_I}
+       [\mathcal P_{s,h}^{(2)}-2\mathbb P(\mathcal G^c)].                \tag{5}
+\]
+The original sparse-record bound still controls $\mathbb P(\mathcal G^c)$; no new probability law was introduced. Importantly, (5) does not replace its bracket by an output midpoint purity.
+
+For an equivalent operator expression, set
+\[
+ F_{X,X'}(U)=\sqrt{K_s(X,U)K_s(X',U)}.
+\]
+The inner integral in(4) is $\langle F_{X,X'},A^h F_{X,X'}\rangle$. This is a positive quadratic form in the ACTUAL central transfer and makes the still-needed comparison explicit. At the formal zero-width case $h=0$, (4) reduces by the semigroup identity to $Z_{4s}/Z_{2s}^2$, the original full-slice purity. For $h>0$ there is an additional boundary correlation to estimate; continuity at fixed cutoff is not uniform control as $a\to0$.
+
+\section*{Precise next estimate}
+The result removes temporal layers using exact locality, with their entire raw bridge normalizer retained. What remains is two full spatial boundary fields coupled by $K_h$, and their response to the two distant $K_s$ factors. Neither the original one-color chain theorem nor a shrinking physical thickness bounds(4) from below. The two full endpoint slices also reintroduce the previously selected colors; hence this compression alone is not a spatial iteration of the first-color elimination.
+
+A constructive next step is a spatial block response estimate for this two-boundary effective kernel, or a selective boundary record whose conditional bridge remains sufficiently insensitive to $X$. The already derived actual-output $L^p$ induced-Hessian bound $O(B)$ and temporal decay must be used with its joint measure, not as uniform convexity. The exceptional $B^2$ Hessian example rules out that shortcut. No fullS94, existence or mass-gap conclusion is made.
+\end{document}

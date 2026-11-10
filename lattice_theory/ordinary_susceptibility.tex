@@ -1,0 +1,763 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{hypothesis}{Imported input}
+\renewcommand{\thehypothesis}{I\arabic{hypothesis}}
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\renewcommand{\Re}{\operatorname{Re}}
+\newcommand{\lam}{\lambda_{\max}}
+\newcommand{\supp}{\operatorname{supp}}
+
+\title{Ordinary susceptibility and the structure factor}\author{}\date{}
+\begin{document}
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\textbf{Status: INCOMPLETE.} The target inequality $\Var_{\mu_\beta}(r_f)\le C M_f$ of \cite{cur} is \emph{not} proved here, and no claim below should be read as a
+proof of it. What this note proves, with complete proofs, is: (i) the target is
+\emph{exactly} equivalent to a uniform bound on the momentum-space symbol (structure factor) of
+the root covariance of the \emph{frustration} observable $h_b=\tfrac{\beta}{3}\sum_{i<j}|F_{b,i}-F_{b,j}|^2$,
+so that plane-wave marks suffice; (ii) the symbol is bounded on average over the Brillouin zone and the
+target can fail on at most a small fraction of momenta; (iii) indicator marks control all marks up to a
+logarithm of the support; (iv) a \emph{mixture obstruction}: a law satisfying every imported averaged moment
+input, and which is a convex combination of two laws each satisfying the Ward, contact, innovation and
+heat inputs, has superextensive ordinary variance, so any proof must use the exact Wilson score at the
+coupling of the source in a way that is not convex in the law; (v) the standing regime and the
+absolute lower bound $\beta\ge\beta_0$ used in the missing inequality cover the logarithmic continuum
+trajectory, while any polynomial lower bound $\beta\ge n^{\kappa}$ does not. The missing
+inequality is isolated in Section~\ref{sec:missing} as a single explicit statement (MI), and the
+deduction of the target from (MI) is given with all constants. Section~\ref{sec:fixedvolume} adds: (vi) a conditional
+theorem giving the target on the fixed reference torus $T^*$ from the complex-source analyticity clause of the
+interface I-1, with the exact required strengthening; and (vii) a proof that the volume-uniform form of
+the target is an infrared clustering statement, not implied by uniformly bounded correlation functions and not needed
+for Osterwalder--Schrader reconstruction, so that the actual requirement of the existence argument is the fixed-volume form.}}
+\end{center}
+
+\section{Setting, definitions and the imported inputs}\label{sec:setting}
+
+\subsection{Lattice, law and sources}
+
+Let $n\ge 3$, $\Lambda_n=(\mathbb Z/n\mathbb Z)^4$, $G=SU(N)$ with $N\ge 2$ fixed. Positively oriented links
+are $b=(x,\nu)$, $x\in\Lambda_n$, $\nu\in\{1,2,3,4\}$, with origin $o(b)=x$ and direction $\nu_b=\nu$.
+Plaquettes are $p=(x;\mu\nu)$, $\mu<\nu$, with boundary links $\partial p=\{(x,\mu),(x+e_\mu,\nu),(x+e_\nu,\mu),(x,\nu)\}$,
+and $U_p=U_{x,\mu}U_{x+e_\mu,\nu}U_{x+e_\nu,\mu}^{-1}U_{x,\nu}^{-1}$. Put $s_p=N-\Re\Tr U_p\in[0,2N]$,
+$S=\sum_p s_p$, and
+\begin{equation}\label{eq:law}
+d\mu_\beta=Z_\beta^{-1}e^{-\beta S}\,d\lambda,\qquad \lambda=\text{normalized product Haar measure on }G^{\text{links}}.
+\end{equation}
+The original invariant product-group metric, orthonormal generators $T_A$ and the Casimir constant $C_F$ are those
+fixed by the standing conventions; $X_b^A$ denotes the original left-invariant derivative in link $b$ and color $A$.
+The three plane matchings are
+$\mathcal A_1=\{12,34\}$, $\mathcal A_2=\{13,24\}$, $\mathcal A_3=\{14,23\}$, and
+$S_i=\sum_{p:\ \text{plane}(p)\in\mathcal A_i}s_p$, so $S=S_1+S_2+S_3$. Each matching contains exactly one plane
+through each direction, so $F_{b,i}:=(X_b^AS_i)_A$ is the original directional force of the unique plane of
+$\mathcal A_i$ containing $\nu_b$; the set $\{F_{b,i}\}_{i=1,2,3}$ coincides with $\{F_{b;\mu}\}_{\mu\neq\nu_b}$ of
+\cite[definition of the sources]{cur}. Define, for every positively oriented link $b$,
+\begin{equation}\label{eq:rows}
+\begin{gathered}
+F_b=\sum_{i=1}^3F_{b,i},\qquad D_b=\sum_{i=1}^3|F_{b,i}|^2,\qquad P_b=|F_b|^2,\qquad
+\ell_b=\sum_A (X_b^A)^2S,\\
+r_b=\beta D_b-\tfrac13\ell_b,\qquad h_b=\beta\big(D_b-\tfrac13 P_b\big),\qquad t_b=h_b-r_b .
+\end{gathered}
+\end{equation}
+Thus $t_b=\tfrac13(\ell_b-\beta P_b)$. For deterministic real marks $f=(f_b)$ put
+$r_f=\sum_bf_br_b$, $h_f=\sum_b f_bh_b$, $t_f=\sum_bf_bt_b$, and
+\[
+M_f=\sum_b f_b^2,\qquad \|f\|_1=\sum_b|f_b|,\qquad b_f=\|f\|_\infty .
+\]
+These are literally the sources $r_f,h_f,t_f$ of \cite[definition of the sources]{cur} and \cite[definition of the unchanged sources]{bhi}; every original
+root, affected neighboring root, pointing shift and Casimir coefficient is kept, because nothing in
+\eqref{eq:rows} has been altered. The exact Casimir identity (\cite[Casimir and physical-factor display]{bhi}) reads
+\begin{equation}\label{eq:casimir}
+\ell_b=C_F\sum_{p\ni b}\Re\Tr U_p=C_F\sum_{p\ni b}(N-s_p),\qquad\text{hence}\qquad |\ell_b|\le 6C_FN=:C_\ell .
+\end{equation}
+
+\paragraph{Stencils.} Let $D(b)$ be the set of links lying in some plaquette containing $b$; $|D(b)|=19$ and
+$b\in D(b)$. Write $b\sim c$ if $c\in D(b)$; this relation is symmetric (it means that $b,c$ lie in a common
+plaquette). Each of $r_b,h_b,t_b$ is a smooth function of $(U_c)_{c\in D(b)}$ only.
+
+\paragraph{Translations.} The law \eqref{eq:law} and the maps $U\mapsto r_{(x,\nu)}(U)$ are covariant under the
+translation group $\Lambda_n$: $r_{(x+z,\nu)}(U)=r_{(x,\nu)}(\tau_zU)$, and $\mu_\beta\circ\tau_z^{-1}=\mu_\beta$.
+The same holds for $h$ and $t$.
+
+\paragraph{Regime.} Throughout, $(n,\beta)$ ranges over the periodic moment regime of \cite[periodic regime display]{cur}:
+\begin{equation}\label{eq:regime}
+\mathcal R=\{(n,\beta):\ n\ge3,\ \beta\ge1,\ n\ge c_*\log(2+N\beta)\}.
+\end{equation}
+Constants $C,c,C_1,\dots$ depend only on $N$, $c_*$, the fixed metric and derivative conventions; never on
+$n$, $\beta$, $f$ or $\supp f$. The physical source is $r_H(f)=c_\beta^{-1}a^{-2}r_f$ (\cite[Casimir and physical-factor display]{bhi});
+every variance bound below is multiplied by $c_\beta^{-2}a^{-4}$ for it.
+
+\subsection{The imported inputs, with their checked scope}
+
+The following inputs are used as black boxes. Each is stated in exactly the form used below, with its location
+and hypotheses.
+
+\begin{hypothesis}[Marked-set exponential moment]\label{I1}
+There are $t_*\in(0,1)$ and $K_*<\infty$ such that for all $(n,\beta)\in\mathcal R$ and every set $A$ of
+plaquettes,
+\[
+\E_{\mu_\beta}\exp\Big(\frac{t_*\beta}{6}\sum_{p\in A}s_p\Big)\le K_*^{|A|/6}.
+\]
+Source: \cite[subsection ``The actual multiplaquette input'']{inn}, which restates the positive transfer
+argument of \cite{sbr}, including the $SU(N)$ remark there. The regime \eqref{eq:regime} is exactly where $K_*$ is
+uniformly bounded.
+\end{hypothesis}
+
+\begin{hypothesis}[Finite-stencil force inequality]\label{I2}
+There is $C_X<\infty$ with $\sum_A|X_b^As_p|^2\le C_Xs_p$ pointwise, for every link $b$ and plaquette $p\ni b$.
+Source: \cite[after the moment display of the section]{cub}; \cite[proof of the directional-current Bernstein estimate]{dmn}.
+\end{hypothesis}
+
+\begin{hypothesis}[Ward concentration]\label{I3}
+There is $C_3$ such that for all $n\ge3$, $\beta\ge1$ and all real marks $f$, $\Var_{\mu_\beta}(t_f)\le C_3M_f$.
+Source: \cite[theorem on global concentration of the unchanged Ward difference]{wwa}; no regime restriction is needed.
+\end{hypothesis}
+
+\begin{hypothesis}[First-layer innovation, variance form]\label{I5}
+There is $C_5$ such that for all $(n,\beta)\in\mathcal R$, every link set $\mathcal C$ containing at most one link of
+each plaquette, $\eta=U_{\mathcal C^c}$, and every real mark $f$:
+$\E_{\mu_\beta}\Var_{\mu_\beta}(r_f\mid\eta)\le C_5M_f$, and the same for $h_f$ and for the Casimir row
+$\ell[f]=\sum_bf_b\ell_b$. Source: \cite[corollary on ordinary and physical innovations]{inn}; the Casimir row satisfies the
+joint factorial moment hypothesis of \cite{inn} trivially since it is bounded.
+\end{hypothesis}
+
+\begin{hypothesis}[Heat-pressure curvature]\label{I6}
+For nonnegative marks $f$, with $\psi_f(t)=\log Z_f(t)-\log Z_\beta$ the heat pressure of \cite[subsection ``The unchanged heat-pressure formulation'']{cur},
+one has $\psi_f''(0)=\Var_{\mu_\beta}(r_f)+\E_{\mu_\beta}J_f$ and $\E|J_f|\le C_6M_f$ on $\mathcal R$.
+Source: \cite[proposition on extensive actual-law acceleration and the heat-curvature identities]{whe}; \cite[heat-pressure display]{cur}.
+\end{hypothesis}
+
+\begin{hypothesis}[Equivalence of objectives]\label{I8}
+\cite[proposition in subsection ``Equivalence of the remaining quantitative objectives'']{rsc} together with the
+uncontrolled-mean display of \cite{cub}, the discarded-norm and paid-comparison displays of \cite{rsc} and the
+resolvent displays of \cite{cur}: in the common
+regime of the periodic moment input and the embedded-cube hypotheses, uniform extensive control of any one of
+(1) $\Var_\mu r_f$, (2) the cube-marginal mean variance, (3) the excess-mean variance (2.42), (4) the resolvent bound
+(1.6) for the first coordinate layer, (5) the heat curvature $\psi_f''(0)\le CM_f$ for $f\ge0$, implies control of all.
+\end{hypothesis}
+
+The tilt-averaged bound (T17) of \cite[Part~VI]{csj} and the Gaussian reference kernel of
+\cite[Part~III, (2.7)--(2.10)]{csj} are cited in Section~\ref{sec:missing} for comparison only.
+
+\subsection{Elementary consequences of \ref{I1}--\ref{I2}}
+
+\begin{lemma}\label{lem:moments}
+On $\mathcal R$, with $\sigma_b:=\sum_{p\ni b}s_p$ (six plaquettes):
+\begin{enumerate}
+\item[(a)] $\E_{\mu_\beta}[\beta s_p]\le C_1:=t_*^{-1}\log K_*$ for every plaquette $p$;
+\item[(b)] $D_b\le 2C_X\sigma_b$ and $P_b\le 3D_b\le 6C_X\sigma_b$; hence, with $C_0=\max\{2C_X,2C_FN\}$,
+\[
+|r_b|\le C_0(1+\beta\sigma_b),\qquad |h_b|\le C_0\beta\sigma_b,\qquad |t_b|\le C_0(1+\beta\sigma_b);
+\]
+\item[(c)] for every $q\ge1$, $\|r_b\|_{L^q(\mu_\beta)}+\|h_b\|_{L^q(\mu_\beta)}+\|t_b\|_{L^q(\mu_\beta)}\le C'\,q$;
+in particular there is $C_2$ with $\Var(r_b)\vee\Var(h_b)\vee\Var(t_b)\le C_2$ and
+$|\Cov(r_b,r_c)|\vee|\Cov(h_b,h_c)|\le C_2$ for all $b,c$;
+\item[(d)] $0\le \E_{\mu_\beta}h_b\le C_h:=12C_XC_1$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(a) Apply \ref{I1} with $A=\{p\}$ and Jensen: $\exp(\tfrac{t_*\beta}{6}\E s_p)\le K_*^{1/6}$.
+(b) $F_{b,i}$ is the sum of $X_bs_p$ over the two plaquettes $p\ni b$ of plane $\mathcal A_i$ through $b$, so
+$|F_{b,i}|^2\le 2\sum_{p}|X_bs_p|^2\le2C_X\sum_ps_p$ by \ref{I2}; summing over $i$ gives $D_b\le2C_X\sigma_b$.
+$P_b=|\sum_iF_{b,i}|^2\le3D_b$ by Cauchy--Schwarz. Then use \eqref{eq:casimir}.
+(c) By \ref{I1} with $A=\{p\ni b\}$, $\E e^{t_*\beta\sigma_b/6}\le K_*$, so $\beta\sigma_b$ has all moments with
+$\|\beta\sigma_b\|_q\le (6/t_*)qK_*^{1/q}$; combine with (b).
+(d) $h_b\ge0$ is Lemma~\ref{lem:frustration} below; $\E h_b\le\beta\E D_b\le 2C_X\E[\beta\sigma_b]\le 12C_XC_1$ by (a).
+\end{proof}
+
+\section{The frustration form of the ordinary source and exact locality}\label{sec:frustration}
+
+\begin{lemma}[Frustration identity]\label{lem:frustration}
+For every link $b$,
+\begin{equation}\label{eq:frustration}
+3D_b-P_b=\sum_{1\le i<j\le3}|F_{b,i}-F_{b,j}|^2,\qquad\text{hence}\qquad
+h_b=\frac{\beta}{3}\sum_{i<j}|F_{b,i}-F_{b,j}|^2\ \ge 0 .
+\end{equation}
+Consequently, for $f\ge0$: $h_f\ge0$, $\E_{\mu_\beta}r_f=\E_{\mu_\beta}h_f\in[0,C_h\|f\|_1]$, and pointwise
+$r_f\ge-\tfrac13\ell[f]\ge-2C_FN\|f\|_1$.
+\end{lemma}
+\begin{proof}
+$\sum_{i<j}|F_i-F_j|^2=2\sum_i|F_i|^2-2\sum_{i<j}F_i\cdot F_j=2\sum_i|F_i|^2-\big(|\sum_iF_i|^2-\sum_i|F_i|^2\big)
+=3\sum_i|F_i|^2-|\sum_iF_i|^2$. The mean statement uses $\E t_f=0$ (\ref{I3}, or the divergence identity
+\eqref{eq:div} below) and Lemma~\ref{lem:moments}(d). The pointwise bound uses $D_b\ge0$ and \eqref{eq:casimir}.
+\end{proof}
+
+\begin{remark}
+Identity \eqref{eq:frustration} says that, up to the Ward divergence $t_f$ (which has extensive variance by
+\ref{I3}), the ordinary source is the total \emph{frustration} between the three matching forces at each root.
+In the continuum normalization $F_{b,i}\leftrightarrow a^3D_{\nu_i}F_{\nu_i\mu}$ (no sum), so $h_b$ is a
+dimension-six density; this is why the Gaussian reference covariance of $r$ decays like $\mathrm{dist}^{-12}$
+(\cite[Part~III, (2.7)]{csj}), and it is the quantity whose nonlinear structure factor is at issue below.
+\end{remark}
+
+\begin{lemma}[Divergence form of $t_b$ and exact locality of the contacts]\label{lem:locality}
+For every link $b$ and every smooth $G$,
+\begin{equation}\label{eq:div}
+t_b\,e^{-\beta S}=\tfrac13\,\mathrm{div}_\lambda\big(e^{-\beta S}\textstyle\sum_AF_b^AX_b^A\big),\qquad
+\Cov_{\mu_\beta}(t_b,G)=-\tfrac13\,\E_{\mu_\beta}\Big[\sum_AF_b^AX_b^AG\Big].
+\end{equation}
+Hence $\Cov(t_b,t_c)=\Cov(t_b,h_c)=\Cov(t_b,r_c)=0$ whenever $b\not\sim c$, and for all such pairs
+\begin{equation}\label{eq:rh}
+\Cov_{\mu_\beta}(r_b,r_c)=\Cov_{\mu_\beta}(h_b,h_c)\qquad (b\not\sim c).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The left-invariant fields $X_b^A$ are divergence-free for Haar measure, so
+$\sum_AX_b^A(e^{-\beta S}F_b^A)=e^{-\beta S}\sum_A(-\beta F_b^AF_b^A+X_b^AF_b^A)=e^{-\beta S}(\ell_b-\beta P_b)=3t_be^{-\beta S}$,
+which is the first identity. Integrating $G$ against it and integrating by parts on the compact group gives
+$\E[t_bG]=-\tfrac13\E[F_b\cdot X_bG]$; taking $G\equiv1$ shows $\E t_b=0$, which gives the covariance form.
+If $b\not\sim c$ then $t_c,h_c,r_c$ do not depend on $U_b$, so $X_bG=0$ for these $G$. Finally
+$\Cov(r_b,r_c)=\Cov(h_b-t_b,h_c-t_c)$ and the three terms containing $t$ vanish.
+This is the content of \cite[subsection ``Local Ward moments and the finite-range contact matrix'']{wwa}, reproduced for completeness.
+\end{proof}
+
+\section{The structure-factor form of the target}\label{sec:symbol}
+
+\begin{definition}\label{def:symbol}
+For $\nu,\nu'\in\{1,\dots,4\}$ and $z\in\Lambda_n$ put
+\[
+c_{\nu\nu'}(z)=\Cov_{\mu_\beta}\big(r_{(x+z,\nu)},r_{(x,\nu')}\big),\qquad
+c^h_{\nu\nu'}(z)=\Cov_{\mu_\beta}\big(h_{(x+z,\nu)},h_{(x,\nu')}\big),
+\]
+which are independent of $x$ by translation covariance. For $p\in\Lambda_n^*=\frac{2\pi}{n}\Lambda_n$ define the
+$4\times4$ matrices (\emph{symbols}, or structure factors)
+\[
+\hat c(p)=\sum_{z\in\Lambda_n}c(z)e^{-ip\cdot z},\qquad \hat c^{\,h}(p)=\sum_zc^h(z)e^{-ip\cdot z}.
+\]
+For complex marks $f$ set $\Var(r_f):=\E|r_f-\E r_f|^2$. Define the finite-volume susceptibility constants
+\[
+\Sigma(n,\beta)=\sup_{f\ne0}\frac{\Var_{\mu_\beta}(r_f)}{M_f},\qquad
+\Sigma^h(n,\beta)=\sup_{f\ne0}\frac{\Var_{\mu_\beta}(h_f)}{M_f},
+\]
+the suprema over real marks (equivalently complex marks, see the proof below).
+\end{definition}
+
+\begin{theorem}[Exact structure-factor form]\label{thm:symbol}
+For every $(n,\beta)$ with $n\ge3$, $\beta\ge1$:
+\begin{enumerate}
+\item[(a)] Each $\hat c(p)$ is Hermitian positive semidefinite, and
+$\hat c(p)_{\nu\nu'}=n^{-4}\,\E\big[\overline{(R_{p,\nu}-\E R_{p,\nu})}\,(R_{p,\nu'}-\E R_{p,\nu'})\big]$ with
+$R_{p,\nu}=\sum_{x}e^{ip\cdot x}r_{(x,\nu)}$.
+\item[(b)] For every complex mark $f$, with $\hat f(p,\nu)=n^{-2}\sum_xe^{-ip\cdot x}f(x,\nu)$,
+\[
+\Var_{\mu_\beta}(r_f)=\sum_{p\in\Lambda_n^*}\hat f(p)^*\,\hat c(p)\,\hat f(p),\qquad M_f=\sum_p|\hat f(p)|^2 .
+\]
+\item[(c)] $\displaystyle \Sigma(n,\beta)=\max_{p\in\Lambda_n^*}\lam\big(\hat c(p)\big)
+=\max_{p,\ |v|=1}\ n^{-4}\Var_{\mu_\beta}\Big(\sum_{x,\nu}v_\nu e^{ip\cdot x}r_{(x,\nu)}\Big).$
+\end{enumerate}
+The same statements hold with $r$ replaced by $h$ (or by $t$), with $\hat c^{\,h}$ and $\Sigma^h$.
+\end{theorem}
+\begin{proof}
+(a) Writing $\tilde R_{p,\nu}=R_{p,\nu}-\E R_{p,\nu}$ and using translation covariance,
+\[
+\E\big[\overline{\tilde R_{p,\nu}}\,\tilde R_{p',\nu'}\big]=\sum_{x,y}e^{-ip\cdot x}e^{ip'\cdot y}c_{\nu\nu'}(x-y)
+=\sum_ze^{-ip\cdot z}c_{\nu\nu'}(z)\sum_ye^{-i(p-p')\cdot y}=n^4\,\delta_{pp'}\,\hat c(p)_{\nu\nu'} .
+\]
+At $p=p'$ this exhibits $\hat c(p)$ as a Gram matrix, hence Hermitian positive semidefinite.
+(b) Fourier inversion gives $f(x,\nu)=n^{-2}\sum_pe^{ip\cdot x}\hat f(p,\nu)$, hence
+$r_f-\E r_f=n^{-2}\sum_{p,\nu}\hat f(p,\nu)\tilde R_{p,\nu}$; expand $\E|r_f-\E r_f|^2$ and use the
+display in (a) for all pairs $p,p'$. Plancherel for the unitary normalization $n^{-2}$ gives $M_f=\sum_p|\hat f(p)|^2$.
+(c) By (b), $\sup_f\Var(r_f)/M_f$ over complex $f$ equals $\max_p\lam(\hat c(p))$, and the supremum is attained at
+$f(x,\nu)=v_\nu e^{ip\cdot x}$ with $v$ a top eigenvector; for this $f$, $M_f=n^4|v|^2$, giving the last expression. The quadratic form
+$f\mapsto\sum_{b,c}\bar f_bf_cC_{bc}$ with $C_{bc}=\Cov(r_b,r_c)$ real symmetric positive semidefinite has the same
+supremum over real and complex vectors (split $f$ into real and imaginary parts, which contribute additively).
+\end{proof}
+
+\begin{proposition}[Ward reduction of the symbol]\label{prop:ward-symbol}
+For all $(n,\beta)\in\mathcal R$ and all $p\in\Lambda_n^*$,
+\[
+\hat c(p)=\hat c^{\,h}(p)+\hat e(p),\qquad \|\hat e(p)\|_{\mathrm{op}}\le C_W:=38\,C_2,
+\]
+where $\hat e$ is the symbol of $E_{bc}=\Cov(r_b,r_c)-\Cov(h_b,h_c)$, a matrix supported on pairs $b\sim c$.
+Consequently
+\[
+|\Sigma(n,\beta)-\Sigma^h(n,\beta)|\le C_W .
+\]
+\end{proposition}
+\begin{proof}
+By \eqref{eq:rh}, $E_{bc}=0$ unless $b\sim c$, and $|E_{bc}|\le 2C_2$ by Lemma~\ref{lem:moments}(c). Each row and
+column of $E$ has at most $|D(b)|=19$ nonzero entries, so Schur's test gives $\|E\|_{\mathrm{op}}\le 38C_2$.
+Since $E$ is translation covariant, its symbol satisfies $\|\hat e(p)\|\le\|E\|_{\mathrm{op}}$ for every $p$ (the
+symbol at $p$ is the compression of $E$ to the plane waves at $p$). The last claim follows from
+Theorem~\ref{thm:symbol}(c) applied to $r$ and to $h$.
+\end{proof}
+
+\begin{corollary}[Plane-wave marks suffice]\label{cor:planewave}
+The target $\Var_{\mu_\beta}(r_f)\le CM_f$ for all real marks $f$ and all $(n,\beta)\in\mathcal R'\subset\mathcal R$ holds
+if and only if
+\[
+\sup_{(n,\beta)\in\mathcal R'}\ \max_{p\in\Lambda_n^*,\ |v|=1}\ n^{-4}\,
+\Var_{\mu_\beta}\Big(\sum_{x,\nu}v_\nu e^{ip\cdot x}h_{(x,\nu)}\Big)<\infty ,
+\]
+and then the two constants differ by at most $C_W$.
+\end{corollary}
+
+\begin{corollary}[The symbol is bounded on average over momenta]\label{cor:mean}
+For all $(n,\beta)\in\mathcal R$,
+\[
+\frac1{n^4}\sum_{p\in\Lambda_n^*}\Tr\hat c^{\,h}(p)=\sum_{\nu=1}^4\Var_{\mu_\beta}\big(h_{(0,\nu)}\big)\le 4C_2,
+\]
+hence, for every $K>0$,
+\[
+\#\{p\in\Lambda_n^*:\ \lam(\hat c^{\,h}(p))>K\}\le \frac{4C_2}{K}\,n^4,
+\]
+and the same for $\hat c$. In particular the target can fail, for a given $(n,\beta)$ and a given constant $K$,
+on at most a fraction $4C_2/K$ of the Brillouin zone.
+\end{corollary}
+\begin{proof}
+$n^{-4}\sum_p\hat c^{\,h}(p)_{\nu\nu}=c^h_{\nu\nu}(0)$ by Fourier inversion, and
+$c^h_{\nu\nu}(0)=\Var(h_{(0,\nu)})\le C_2$. Since $\hat c^{\,h}(p)\ge0$, $\lam\le\Tr$, and Markov's inequality
+applies to the nonnegative sequence $p\mapsto\Tr\hat c^{\,h}(p)$.
+\end{proof}
+
+\begin{proposition}[Summable kernels are sufficient]\label{prop:schur}
+If $\sum_{z\in\Lambda_n}\|c^h(z)\|_{\mathrm{op}}\le K_S$ (operator norm of the $4\times4$ block), then
+$\Sigma^h(n,\beta)\le K_S$ and $\Sigma(n,\beta)\le K_S+C_W$. Conversely, $\Sigma^h\le C$ for all $(n,\beta)$ does not
+imply any decay of $c^h(z)$ in $z$; the two conditions coincide only in the sense of
+Theorem~\ref{thm:symbol}(c).
+\end{proposition}
+\begin{proof}
+$\|\hat c^{\,h}(p)\|\le\sum_z\|c^h(z)\|$ for every $p$; apply Theorem~\ref{thm:symbol}(c) and Proposition~\ref{prop:ward-symbol}.
+The converse statement is the trivial remark that an operator bound constrains only the symbol, not the
+pointwise kernel; see also \cite[Part~III, subsection ``An actual observation can make conditional-mean covariance \dots'']{csj} for an exact example in which a positive
+observation destroys pointwise decay while preserving the operator bound.
+\end{proof}
+
+\section{Reductions among classes of marks}\label{sec:marks}
+
+\begin{proposition}[Signed marks]\label{prop:signed}
+For every real mark $f=f^+-f^-$: $\Var(r_f)\le2\Var(r_{f^+})+2\Var(r_{f^-})$ and
+$M_{f^+}+M_{f^-}=M_f$. Hence any bound $\Var(r_g)\le KM_g$ valid for all nonnegative marks $g$ implies
+$\Var(r_f)\le 2KM_f$ for all real marks.
+\end{proposition}
+\begin{proof}
+$\Var(X-Y)\le2\Var X+2\Var Y$, and $f^+,f^-$ have disjoint supports.
+\end{proof}
+
+\begin{proposition}[Indicator marks control all marks up to a logarithm]\label{prop:indicator}
+Fix $(n,\beta)$ and suppose $\Var_{\mu_\beta}(r_{\mathbf 1_A})\le K|A|$ for every set $A$ of links. Then for every
+real mark $f$ supported on $m$ links,
+\[
+\Var_{\mu_\beta}(r_f)\le 2K\,(1+\log m)\,M_f .
+\]
+The same implication holds for $h$ in place of $r$.
+\end{proposition}
+\begin{proof}
+Let $C_{bc}=\Cov(r_b,r_c)$; $\langle g,Cg\rangle=\Var(r_g)$ is a positive semidefinite form. By
+Proposition~\ref{prop:signed} it suffices to treat $u\ge0$ supported on $m$ links with $M_u=\sum u_b^2$.
+Layer-cake gives $u=\int_0^\infty\mathbf 1_{\{u>s\}}\,ds$, and by Cauchy--Schwarz for the form $C$,
+\[
+\begin{aligned}
+\langle u,Cu\rangle&=\int_0^\infty\!\!\int_0^\infty\langle\mathbf 1_{\{u>s\}},C\mathbf 1_{\{u>t\}}\rangle\,ds\,dt\\
+&\le\Big(\int_0^\infty\langle\mathbf 1_{\{u>s\}},C\mathbf 1_{\{u>s\}}\rangle^{1/2}ds\Big)^2
+\le K\Big(\int_0^\infty|\{u>s\}|^{1/2}ds\Big)^2 .
+\end{aligned}
+\]
+Let $u^*_1\ge\dots\ge u^*_m$ be the decreasing rearrangement, $u^*_{m+1}=0$. Then
+$\int_0^\infty|\{u>s\}|^{1/2}ds=\sum_{k=1}^m(u^*_k-u^*_{k+1})k^{1/2}=\sum_{k=1}^mu^*_k\big(k^{1/2}-(k-1)^{1/2}\big)
+\le\sum_ku^*_kk^{-1/2}\le M_u^{1/2}\big(\sum_{k\le m}k^{-1}\big)^{1/2}\le M_u^{1/2}(1+\log m)^{1/2}$.
+Hence $\langle u,Cu\rangle\le K(1+\log m)M_u$, and Proposition~\ref{prop:signed} gives the factor $2$.
+\end{proof}
+
+\begin{remark}
+For indicator marks $M_f=\|f\|_1=|A|$ and $h_{\mathbf 1_A}\ge0$ (Lemma~\ref{lem:frustration}). The
+tilt-averaged estimate (T17) of \cite[Part~VI]{csj} reads for these marks
+$\int_{-\delta/2}^{\delta/2}\Var_{\mu_\eta}(r_{\mathbf 1_A})\,d\eta\le C|A|$ with $d\mu_\eta\propto e^{\eta r_{\mathbf 1_A}}d\mu_\beta$,
+i.e.\ the target holds for most tilts $\eta$ in a fixed window; it does not give $\eta=0$, exactly as stated there.
+Proposition~\ref{prop:indicator} shows that nothing beyond a logarithm of the support is lost by restricting a
+future proof to indicator marks.
+\end{remark}
+
+\section{A mixture obstruction: the averaged inputs cannot imply the target}\label{sec:mixture}
+
+The following theorem makes precise which of the imported inputs are \emph{convex in the law} and therefore
+cannot, by themselves, imply an extensive susceptibility.
+
+\begin{theorem}[Mixture obstruction]\label{thm:mixture}
+Let $C_D:=12C_XC_1$ and $\Lambda_0:=2(C_D+2C_FC_1)/(C_FN)$. Fix $\Lambda\ge\max\{\Lambda_0,1\}$ and
+$(n,\beta)$ with $n\ge3$, $\beta\ge1$, $n\ge c_*\log(2+N\Lambda\beta)$ (so that both $(n,\beta)$ and
+$(n,\Lambda\beta)$ lie in $\mathcal R$). Let
+\[
+\tilde\mu=\tfrac12\mu_\beta+\tfrac12\mu_{\Lambda\beta}
+\]
+and keep the sources $r_f,h_f,t_f$ of \eqref{eq:rows} with the coupling $\beta$. Then:
+\begin{enumerate}
+\item[(i)] $\tilde\mu$ satisfies \ref{I1} with the same $t_*$ and with $K_*$ replaced by
+$\max\{K_*(\beta),K_*(\Lambda\beta)\}$, hence every conclusion of Lemma~\ref{lem:moments}, the joint factorial
+moment bound (\cite[lemma on joint factorial moments]{inn}) and the tilt-averaged estimate (T17), all with constants depending only on
+the stated data.
+\item[(ii)] Each component $\mu_\gamma$, $\gamma\in\{\beta,\Lambda\beta\}$, satisfies \ref{I3}, \ref{I5},
+\ref{I6} and Lemma~\ref{lem:locality} with its own coupling $\gamma$ and sources; moreover each component satisfies
+the variance-form innovation bound \ref{I5} for the $\beta$-sources $r_f,h_f$.
+\item[(iii)] Nevertheless, for every nonnegative mark $f$,
+\[
+\Var_{\tilde\mu}(r_f)\ \ge\ \tfrac{9}{16}\,C_F^2N^2\,\|f\|_1^2,\qquad
+\Var_{\tilde\mu}(t_f)\ \ge\ \tfrac14\,C_F^2\big(1-\tfrac1\Lambda\big)^2\big(N-\tfrac{C_1}{\Lambda}\big)^2\|f\|_1^2 .
+\]
+In particular, for $f=\mathbf 1_A$, $\Var_{\tilde\mu}(r_f)\ge c|A|^2$ while $M_f=|A|$: the target and the Ward
+concentration \ref{I3} both fail for $\tilde\mu$ at the coupling $\beta$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+(i) For any plaquette set $A$ and the $\mu_{\Lambda\beta}$ component, since $s_p\ge0$ and $\Lambda\ge1$,
+\[
+\E_{\Lambda\beta}\exp\Big(\tfrac{t_*\beta}{6}\sum_{p\in A}s_p\Big)\le\E_{\Lambda\beta}\exp\Big(\tfrac{t_*\Lambda\beta}{6}\sum_{p\in A}s_p\Big)
+\le K_*(\Lambda\beta)^{|A|/6};
+\]
+average the two components. Lemma~\ref{lem:moments}, the joint factorial moment lemma of \cite{inn} and
+(T17) of \cite{csj} are derived from \ref{I1} and the pointwise stencil bounds alone, so their proofs apply
+verbatim.
+
+(ii) \ref{I3}, \ref{I6} and Lemma~\ref{lem:locality} are theorems about the single Wilson law $\mu_\gamma$ and its own
+sources. For \ref{I5} at coupling $\beta$ under $\mu_{\Lambda\beta}$ write
+$r_f=\Lambda^{-1}r^{(\Lambda\beta)}_f-(1-\Lambda^{-1})\tfrac13\ell[f]$ with $r^{(\Lambda\beta)}_f=\Lambda\beta D[f]-\tfrac13\ell[f]$,
+and use \ref{I5} for $r^{(\Lambda\beta)}_f$ and for the Casimir row, with $\Var(X+Y\mid\eta)\le2\Var(X\mid\eta)+2\Var(Y\mid\eta)$.
+The same decomposition handles $h_f$.
+
+(iii) For a two-point mixture, $\Var_{\tilde\mu}X=\tfrac12\Var_\beta X+\tfrac12\Var_{\Lambda\beta}X+\tfrac14(\E_\beta X-\E_{\Lambda\beta}X)^2
+\ge\tfrac14(\E_\beta X-\E_{\Lambda\beta}X)^2$. We bound the two means of $r_b$.
+
+Under $\mu_\beta$: $\E_\beta r_b=\E_\beta h_b\ge0$ by Lemma~\ref{lem:frustration}.
+
+Under $\mu_{\Lambda\beta}$: by Lemma~\ref{lem:moments}(b),(a) applied at coupling $\Lambda\beta$,
+$\E_{\Lambda\beta}[\beta D_b]=\Lambda^{-1}\E_{\Lambda\beta}[\Lambda\beta D_b]\le\Lambda^{-1}\cdot2C_X\cdot6C_1=C_D/\Lambda$,
+and by \eqref{eq:casimir} and Lemma~\ref{lem:moments}(a),
+$\tfrac13\E_{\Lambda\beta}\ell_b=\tfrac{C_F}{3}\sum_{p\ni b}(N-\E_{\Lambda\beta}s_p)\ge2C_F\big(N-\tfrac{C_1}{\Lambda\beta}\big)
+\ge2C_FN-\tfrac{2C_FC_1}{\Lambda}$. Hence
+\[
+\E_{\Lambda\beta}r_b\le\frac{C_D+2C_FC_1}{\Lambda}-2C_FN\le-\tfrac32C_FN\qquad(\Lambda\ge\Lambda_0).
+\]
+Therefore $\E_\beta r_b-\E_{\Lambda\beta}r_b\ge\tfrac32C_FN$ for every $b$, and for $f\ge0$,
+$\E_\beta r_f-\E_{\Lambda\beta}r_f\ge\tfrac32C_FN\|f\|_1$, which gives the first bound.
+
+For $t_f$: $\E_\beta t_f=0$ by Lemma~\ref{lem:locality}, while under $\mu_{\Lambda\beta}$ the same divergence identity at
+coupling $\Lambda\beta$ gives $\E_{\Lambda\beta}[\Lambda\beta P_b]=\E_{\Lambda\beta}\ell_b$, so
+$\E_{\Lambda\beta}t_b=\tfrac13\E_{\Lambda\beta}[\ell_b-\beta P_b]=\tfrac13(1-\Lambda^{-1})\E_{\Lambda\beta}\ell_b
+\ge2C_F(1-\Lambda^{-1})(N-C_1/\Lambda)$, using $\beta\ge1$. Then $\E_{\Lambda\beta}t_f\ge2C_F(1-\Lambda^{-1})(N-C_1/\Lambda)\|f\|_1$ for
+$f\ge0$ and the mixture variance bound gives the second inequality.
+\end{proof}
+
+\begin{corollary}\label{cor:obstruction}
+No inequality of the form $\Var(r_f)\le CM_f$ can be deduced from \ref{I1}, \ref{I2}, the local structure of the
+rows \eqref{eq:rows}, the tilt-averaged estimate, and the validity of \ref{I3}, \ref{I5}, \ref{I6} and
+Lemma~\ref{lem:locality} for the component laws of a convex combination. Any proof of the target must use the
+exact Wilson score $\beta\nabla S$ of the single law $\mu_\beta$, at the coupling $\beta$ of the source
+\eqref{eq:rows}, through an input that is not stable under convex combinations of laws; the Ward concentration
+\ref{I3} is such an input (it fails for $\tilde\mu$), and so is the resolvent identity of \cite[subsection ``The actual retained susceptibility'']{cur}.
+\end{corollary}
+\begin{proof}
+If such a deduction existed it would apply to $\tilde\mu$ by Theorem~\ref{thm:mixture}(i)--(ii) and contradict (iii).
+\end{proof}
+
+\begin{remark}
+Theorem~\ref{thm:mixture} sharpens the model of \cite[subsection ``Why these linear estimates leave the ordinary susceptibility open'']{dmn}, which separates linear-probe
+concentration from quadratic susceptibility: here the obstruction law is itself a mixture of two actual Wilson laws,
+so every \emph{averaged} full-law moment statement is inherited. The theorem does not say that the target is false
+for $\mu_\beta$; it says which inputs a proof must use. It also explains why the residual analysis of
+\cite[final subsection]{tra} could not close by adding further averaged moment estimates for the excess $E_f$: an averaged
+moment bound is linear in the law.
+\end{remark}
+
+\section{The regime and the continuum trajectory}\label{sec:regime}
+
+\begin{proposition}\label{prop:trajectory}
+Let $(n_k,\beta_k)$ be a sequence with $n_k\to\infty$ and $b\log n_k\le\beta_k\le B\log n_k$ for some constants
+$0<b\le B<\infty$ and all large $k$ (logarithmic running $\beta(a)\asymp\log(1/a)$ with $n=L/a$; \cite[subsection ``Mesoscopic scales remain mesoscopic'']{rsc}
+and \cite{stp}). Then:
+\begin{enumerate}
+\item[(a)] $(n_k,\beta_k)\in\mathcal R$ for all large $k$;
+\item[(b)] for every absolute constant $\beta_0$, $\beta_k\ge\beta_0$ for all large $k$; hence a hypothesis of the form
+``$\beta\ge\beta_0$'' covers the trajectory;
+\item[(c)] for every $\kappa>0$ and $C>0$, the hypothesis $\beta\ge Cn^{\kappa}$ fails along the trajectory for all large
+$k$. In particular the flat-block threshold $\beta\ge C_0R^{14}\log(2+R)$ of \cite[block theorem of Section~2]{spw},
+and the cube thresholds $\beta\ge CR^4$, $R\le(N\beta)^{1/48}$ of \cite[geometry-regime display and theorem on the complete averaged internal error]{cub}, permit only
+$R\le C(\log n_k)^{1/14}$ and $R\le C(\log n_k)^{1/48}$ respectively, so that $aR\to0$: neither covers a fixed
+physical block, as stated in \cite[subsection ``Mesoscopic scales remain mesoscopic'']{rsc}.
+\end{enumerate}
+No result proved in this note introduces any lower bound on $\beta$ beyond $\beta\ge1$. The missing inequality
+(MI) below is stated with an absolute $\beta_0$, which is the only form compatible with (b)--(c).
+\end{proposition}
+\begin{proof}
+(a) $c_*\log(2+N\beta_k)\le c_*\log(2+NB\log n_k)=o(n_k)$. (b) is immediate. (c) $Cn_k^\kappa>B\log n_k$ for large $k$.
+The block-size statements follow by solving $C_0R^{14}\log(2+R)\le B\log n$ and $R^{48}\le NB\log n$ for $R$.
+\end{proof}
+
+\section{The isolated missing inequality and the deduction of the target}\label{sec:missing}
+
+\subsection{Statement}
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\textbf{(MI) Frustration structure-factor bound.} There exist constants $C_{\mathrm{MI}}<\infty$ and $\beta_0\ge1$,
+depending only on $N$, $c_*$ and the fixed conventions, such that for all $(n,\beta)\in\mathcal R$ with
+$\beta\ge\beta_0$, all $p\in\Lambda_n^*=\frac{2\pi}{n}\Lambda_n$ and all $v\in\mathbb C^4$ with $|v|=1$,
+\[
+\frac1{n^4}\,\E_{\mu_\beta}\Big|\sum_{x\in\Lambda_n}\sum_{\nu=1}^4v_\nu e^{ip\cdot x}\big(h_{(x,\nu)}-\E_{\mu_\beta}h_{(x,\nu)}\big)\Big|^2
+\ \le\ C_{\mathrm{MI}},\qquad h_{(x,\nu)}=\frac{\beta}{3}\sum_{i<j}\big|F_{(x,\nu),i}-F_{(x,\nu),j}\big|^2 .
+\]}}
+\end{center}
+
+(MI) is \emph{not} proved in this note. It is the exact content of the target, in the following sense.
+
+\begin{theorem}[Deduction of the target from (MI)]\label{thm:deduction}
+Assume (MI). Then for all $(n,\beta)\in\mathcal R$ with $\beta\ge\beta_0$ and all real marks $f$ (arbitrary sign and
+support),
+\[
+\Var_{\mu_\beta}(r_f)\le\big(C_{\mathrm{MI}}+C_W\big)M_f,\qquad C_W=38C_2,
+\]
+and for the physical source $\Var_{\mu_\beta}\big(r_H(f)\big)\le c_\beta^{-2}a^{-4}(C_{\mathrm{MI}}+C_W)M_f$.
+Conversely, if $\Var_{\mu_\beta}(r_f)\le CM_f$ for all real marks and all $(n,\beta)\in\mathcal R$ with
+$\beta\ge\beta_0$, then (MI) holds with $C_{\mathrm{MI}}=C+C_W$.
+\end{theorem}
+\begin{proof}
+(MI) says $\lam(\hat c^{\,h}(p))\le C_{\mathrm{MI}}$ for all $p$ (Theorem~\ref{thm:symbol}(a),(c) for $h$). By
+Proposition~\ref{prop:ward-symbol}, $\lam(\hat c(p))\le C_{\mathrm{MI}}+C_W$, and Theorem~\ref{thm:symbol}(c) for $r$ gives
+the first bound for all complex, hence all real, marks. The physical statement is the multiplication by
+$c_\beta^{-2}a^{-4}$. The converse is the same argument in the other direction.
+\end{proof}
+
+\begin{corollary}[Closure of the other objectives under (MI)]\label{cor:closure}
+Assume (MI). Then, in the common regime of \ref{I8} (periodic moment regime, embedded-cube hypotheses of
+\cite[geometry-regime display]{cub} and its admitted range), each of the following holds with a constant depending only on
+$C_{\mathrm{MI}},C_W$ and the constants of \ref{I8}:
+\begin{enumerate}
+\item[(1)] $\Var_{\mathcal B}\E(r_f\mid\mathcal B)\le CM_f$ for the constructed unrestricted cube observation
+(uncontrolled-mean display of \cite{cub} and discarded-norm display of \cite{rsc});
+\item[(2)] $\Var_{\tau,\mu}(K_\tau E_f)\le CM_f$ for the exact excess of \cite[residual display]{tra}, i.e.\ \cite[missing-bound display]{tra}, via the paid comparison of \cite{rsc};
+\item[(3)] the source-space resolvent bound $A^*L_1^{-1}A\le CI$ of \cite[missing-bound display]{cur} for the specified first coordinate layer of
+\cite[subsection ``An exact source-specific operator target'']{rsc}, via the resolvent identity of \cite{cur} and the complete innovation estimate \ref{I5};
+\item[(4)] $\psi_f''(0)\le(C+C_6)M_f$ for all nonnegative marks, by \ref{I6}; conversely a curvature bound for
+nonnegative marks gives the target for signed marks by Proposition~\ref{prop:signed} with constant $2(C+C_6)$.
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+Theorem~\ref{thm:deduction} gives item~(1) of \ref{I8}; the remaining items are the equivalences of \ref{I8},
+whose proofs (\cite[subsection ``Equivalence of the remaining quantitative objectives'']{rsc}) use only the exact variance decompositions, the paid comparison, the resolvent identity and \ref{I6}.
+The signed-mark direction in (4) is Proposition~\ref{prop:signed}.
+\end{proof}
+
+\subsection{What is known about the symbol, and what is not}
+
+\begin{proposition}\label{prop:known}
+On $\mathcal R$:
+\begin{enumerate}
+\item[(a)] (Average.) $n^{-4}\sum_p\Tr\hat c^{\,h}(p)\le4C_2$ and $\#\{p:\lam(\hat c^{\,h}(p))>K\}\le4C_2n^4/K$
+(Corollary~\ref{cor:mean}). The missing statement is the \emph{maximum} over $p$, not the mean.
+\item[(b)] (Diagonal and near-diagonal.) $|c^h_{\nu\nu'}(z)|\le C_2$ for all $z$; and $c(z)=c^h(z)$ unless the
+roots $(z,\nu),(0,\nu')$ share a plaquette, which requires $|z|_\infty\le1$ (Lemma~\ref{lem:locality}).
+\item[(c)] (Tilt average.) For indicator marks, $\int_{-\delta/2}^{\delta/2}\Var_{\mu_\eta}(r_{\mathbf 1_A})d\eta\le C|A|$
+(\cite[Part~VI, (T17)]{csj}); the value at $\eta=0$ is not controlled.
+\item[(d)] (Gaussian reference.) In the Maxwell reference law of \cite[Part~III]{csj}, the kernel obeys
+$|c^{(0)}(z)|\le C(1+|z|)^{-12}$ (\cite[Part~III, (2.7)]{csj}), hence its symbol is bounded by Proposition~\ref{prop:schur}; this is a
+reference-law computation and not an actual-law comparison (\cite[subsection ``Relation to the unresolved compact susceptibility'']{gau}).
+\item[(e)] (Flat block.) For the relative block law with identity tangential boundary and
+$\beta\ge C_0R^{14}\log(2+R)$, \cite[block theorem of Section~2]{spw} gives $\Var(r_f)\le Cm_f$; by
+Proposition~\ref{prop:trajectory}(c) this regime does not contain the periodic trajectory.
+\item[(f)] (Obstruction.) By Theorem~\ref{thm:mixture}, (MI) is not a consequence of (a)--(c) together with the
+component-wise Ward, contact, innovation and heat inputs.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+(a),(b) were proved above; (c)--(e) are citations with their stated scopes; (f) is Corollary~\ref{cor:obstruction}.
+\end{proof}
+
+\begin{remark}[What (MI) demands]
+By Theorem~\ref{thm:symbol}(c), (MI) is the statement that the plane-wave frustration observables
+$n^{-2}\sum_{x,\nu}v_\nu e^{ip\cdot x}(h_{(x,\nu)}-\E h_{(x,\nu)})$ have uniformly bounded second moment for every
+momentum, including $p=0$ (the bulk susceptibility $n^{-4}\Var(\sum_{x}h_{(x,\nu)})$) and the soft momenta
+$|p|\asymp n^{-1}$ singled out by the flat-toron calculation of \cite[proposition on a nonzero quadratic defect at a flat toron]{tra}. Under the exact score
+identity, $\Cov(h_f,h_g)$ is a four-point force correlation whose Gaussian value is extensive; the nonlinear
+control of its low-momentum part is exactly what \cite[Part~III, subsection ``What a nonlinear upgrade would have to \dots'']{csj} calls the missing
+annealed low-spectral estimate. This note does not supply it.
+\end{remark}
+
+\section{The fixed-physical-volume form, the sourced pressure, and what the existence argument needs}\label{sec:fixedvolume}
+
+The fixed-volume susceptibility criterion is needed only on the fixed reference torus $T^*$ of physical side $t^*$, i.e.\ for
+$n=n^*(a)=t^*/a$ and $\beta=\beta(a)$ along the trajectory, as a corollary of the renormalization-group transport
+of inserted observables (I-3(iv)). The volume-uniform formulation requires it for every $n\ge c_*\log(2+N\beta)$. This section
+separates the two statements. Labels: (P) proved here, (L) literature, (C) conditional on a
+displayed hypothesis, (O) open.
+
+\subsection{The fixed-volume target from complex-source analyticity}
+
+\begin{center}
+\fbox{\parbox{0.92\textwidth}{
+\textbf{Hypothesis $(\mathrm A_{T^*})$ (fixed-volume analyticity of the frustration-sourced pressure).}
+There are $r_0>0$ and $C_A<\infty$ such that, for every lattice spacing $a$ on the admitted trajectory, with
+$n=n^*(a)$ and $\beta=\beta(a)$, and for every \emph{real} mark $f$ on $\Lambda_{n}$ with $\|f\|_\infty\le1$, the entire
+function $\varepsilon\mapsto Z_f(\varepsilon)=\E_{\mu_\beta}e^{\varepsilon h_f}$ has no zero in the closed disc
+$\{|\varepsilon|\le r_0\}\subset\mathbb C$, and its logarithm (the branch with $\log Z_f(0)=0$) satisfies
+$|\log Z_f(\varepsilon)|\le C_An^4$ there.}}
+\end{center}
+
+$(\mathrm A_{T^*})$ is the last clause of interface I-1 (``$p_{a,T^*}[J]$ analytic in $J$ on a fixed polydisc'')
+specialized to the bare source $J=\varepsilon\sum_bf_bh_b$; it is also the ``zero-free complex source disc with
+$|\log Z_H|\le Cn^4$'' named as a sufficient substitute in \cite[section ``A narrower route to the main susceptibility, and its current limit'']{rsm}.
+It is a Lee--Yang-type statement and is \textbf{(O)}.
+
+\begin{theorem}[(C) on $(\mathrm A_{T^*})$: the fixed-volume target]\label{thm:fixedvolume}
+Assume $(\mathrm A_{T^*})$. Then for every $a$ on the trajectory, with $n=n^*(a)$, $\beta=\beta(a)$,
+\[
+\max_{p\in\Lambda_n^*}\lam\big(\hat c^{\,h}(p)\big)\le\frac{4C_A}{r_0^2},\qquad
+\Var_{\mu_\beta}(r_f)\le\Big(\frac{4C_A}{r_0^2}+C_W\Big)M_f\quad\text{for every real mark }f,
+\]
+and $\Var(r_H(f))\le c_\beta^{-2}a^{-4}(4C_A/r_0^2+C_W)M_f$ for the physical source. No lower bound on $\beta$ beyond the
+trajectory itself is used.
+\end{theorem}
+\begin{proof}
+Fix a real mark with $\|f\|_\infty\le1$. On the finite lattice $h_f$ is bounded, so $Z_f$ is entire; under
+$(\mathrm A_{T^*})$, $g=\log Z_f$ is analytic on $|\varepsilon|<r_0$ with $g(0)=0$, $g'(0)=\E h_f$ and
+$g''(0)=\Var_{\mu_\beta}(h_f)$. Cauchy's estimate on the circle $|\varepsilon|=r_0$ gives
+$\Var(h_f)=|g''(0)|\le 2r_0^{-2}\sup_{|\varepsilon|=r_0}|g(\varepsilon)|\le 2C_An^4/r_0^2$.
+For a plane wave $f_{p,v}(x,\nu)=v_\nu e^{ip\cdot x}$ with $|v|=1$, both $\Re f_{p,v}$ and $\Im f_{p,v}$ are real marks with
+sup norm at most one, and for complex marks $\Var(h_f)=\Var(h_{\Re f})+\Var(h_{\Im f})$ because the covariance form is
+real symmetric. Hence $n^{-4}\Var(h_{f_{p,v}})\le4C_A/r_0^2$, which is the first bound by Theorem~\ref{thm:symbol}(c)
+for $h$. Proposition~\ref{prop:ward-symbol} and Theorem~\ref{thm:symbol}(c) for $r$ give the second; the physical
+statement is the multiplier.
+\end{proof}
+
+\begin{remark}[Interface change request on I-1]\label{rem:ICR}
+Interface I-1 as written concerns smeared bare observables at the physical scale $\ell_0$ and chessboard-replicated
+sources. Theorem~\ref{thm:fixedvolume} needs the analyticity clause for the \emph{bare lattice-scale} source
+$\varepsilon\sum_bf_bh_b$ with arbitrary bounded real marks, including marks oscillating at the lattice scale, on the
+polydisc $|\varepsilon|\le r_0$ with the bound $C_An^4$. This is the exact extra statement to be added to I-1
+(\textbf{ICR-1}). It cannot be replaced by a bound for replicated or smooth marks alone, because
+Theorem~\ref{thm:symbol}(c) requires every momentum $p$.
+\end{remark}
+
+\begin{remark}[Why reflection positivity does not supply $(\mathrm A_{T^*})$]
+The chessboard estimate bounds $|Z_f(\varepsilon)|$ from above by replicated-source pressures, for complex
+$\varepsilon$ as well (with conjugation in odd cells). An upper bound on $|Z_f|$ does not control $g''(0)$: Cauchy applied
+to $Z_f$ instead of $\log Z_f$ gives only $|Z_f''(0)|\le2e^{C n^4}/r_0^2$. The content of $(\mathrm A_{T^*})$ is the
+\emph{lower} bound $|Z_f(\varepsilon)|\ge e^{-C_An^4}$ on the complex disc, i.e.\ zero-freeness, and for real
+$\varepsilon$ convexity of $\log Z_f$ with bounded values permits a narrow peak of $g''$ at zero (\cite[Part~VI, remark after (T17)]{csj}). This is the precise sense in which
+``RP + local moments + real pressure stability'' do not suffice, and it is why $(\mathrm A_{T^*})$ is an
+output of the renormalization-group transport (I-1) and not of the functional inequalities among the imported inputs.
+\end{remark}
+
+\subsection{The volume-uniform target is an infrared clustering statement that the existence argument does not need}
+
+For $T=qT^*$ write $n=qn^*$ and let $\{c\}$ be the $q^4$ cells of side $t^*$ (lattice side $n^*$). For a fixed
+orientation $\nu$ put $R_c=\sum_{x\in c}r_{(x,\nu)}$, the ordinary source summed over a cell.
+
+\begin{theorem}[(P)]\label{thm:IR}
+\begin{enumerate}
+\item[(a)] (Cell structure factor.) If $\Sigma(qn^*,\beta)\le K$ then the $q^4\times q^4$ cell covariance matrix
+$G_{cc'}=\Cov(R_c,R_{c'})$ satisfies $0\le G\le K\,n^{*4}\,I$ as a quadratic form on $\ell^2(\text{cells})$; in particular
+$\Var(\sum_cg_cR_c)\le Kn^{*4}\sum_cg_c^2$ for all cell weights $g$, uniformly in $q$.
+\item[(b)] (Bounded correlations do not imply (a).) Let $\mathcal L$ be any class of probability laws on the link
+configurations of $T=qT^*$ that is closed under convex combinations and contains the Wilson laws $\mu_\beta$ and
+$\mu_{\Lambda\beta}$ of Theorem~\ref{thm:mixture}; for example, the class of laws satisfying, for all $m$, bounds
+$|\E\prod_{j=1}^mA_j|\le C^mm!\prod_j\|A_j\|$ for cell-supported insertions $A_j$ with constants independent of $q$.
+Then $\mathcal L$ contains a law $\tilde\mu$ for which $\Var_{\tilde\mu}(\sum_cR_c)\ge\tfrac9{16}C_F^2N^2\,n^8$, so that
+(a) fails for $\tilde\mu$ with any $K$ independent of $q$.
+\item[(c)] (Not needed for reconstruction.) The Osterwalder--Schrader reconstruction in its corrected form requires
+E0$'$--E3 and not the cluster property E4 (Osterwalder--Schrader II, CMP 42 (1975), Introduction Remark~6 and Section~IV;
+Osterwalder--Schrader I, CMP 31 (1973), Remark~3, p.~89), and the Driessler--Summers decomposition (Helv.\ Phys.\ Acta 59
+(1986), Theorem~2.3) produces components with unique vacuum without a rate of clustering. Hence no interface of the
+the stated hypotheses requires $\Sigma(qn^*,\beta(a))$ to be bounded uniformly in $q$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(a) For cell weights $g$ take the mark $f(x,\nu)=g_c$ for $x\in c$ (one orientation); then $M_f=n^{*4}\sum_cg_c^2$ and
+$\Var(r_f)=\sum_{c,c'}g_cg_{c'}G_{cc'}$. Apply the definition of $\Sigma$.
+(b) Bounds of the displayed type are linear in the law and hold for $\tilde\mu=\frac12\mu_\beta+\frac12\mu_{\Lambda\beta}$
+whenever they hold for both components, so $\tilde\mu\in\mathcal L$. Theorem~\ref{thm:mixture}(iii) with the mark
+$f\equiv1$ on one orientation ($\|f\|_1=n^4$) gives $\Var_{\tilde\mu}(\sum_cR_c)=\Var_{\tilde\mu}(r_f)\ge\tfrac9{16}C_F^2N^2n^8$.
+(c) is the cited literature.
+\end{proof}
+
+\begin{remark}
+Theorem~\ref{thm:IR}(a) says that the volume-uniform target of \cite{cur} contains a uniform bound on the structure
+factor of the \emph{ordinary source summed over cells of fixed physical size}, i.e.\ the absence of superextensive
+fluctuations of block energies in arbitrarily large volumes: a weak infrared clustering property. (For Wilson laws
+$\Sigma$ and $\Sigma^h$ differ by at most $C_W$, Proposition~\ref{prop:ward-symbol}; for the mixture law of (b) the
+Ward reduction is not available, which is why (a) and (b) are stated for $r$.) No theorem in the literature gives this for
+four-dimensional Yang--Mills at weak coupling, and by (b) it is not a consequence of uniformly bounded correlation
+functions. By (c) it is also not required for Theorem YM-E of the stated hypotheses, which needs only the fixed-volume
+statement, i.e.\ (MI) with $n=n^*(a)$. Accordingly, the fixed-volume target follows from
+$(\mathrm A_{T^*})$, the strengthening ICR-1 of I-1, by Theorem~\ref{thm:fixedvolume}, and the
+volume-uniform statement is a separate open problem.
+\end{remark}
+
+\subsection{Interface statement}
+
+\emph{Assumed.} For Sections~\ref{sec:frustration}--\ref{sec:missing} and
+Theorem~\ref{thm:IR}, only the imported inputs \ref{I1}--\ref{I8} with their stated locations. Hypothesis
+$(\mathrm A_{T^*})$, equal to I-1's analyticity clause for bare lattice-scale frustration sources (ICR-1), for
+Theorem~\ref{thm:fixedvolume} only.
+
+\emph{Proved.} (P): Lemmas~\ref{lem:moments}--\ref{lem:locality}, Theorem~\ref{thm:symbol},
+Proposition~\ref{prop:ward-symbol}, Corollaries~\ref{cor:planewave}--\ref{cor:mean},
+Propositions~\ref{prop:schur}--\ref{prop:indicator}, Theorem~\ref{thm:mixture}, Corollary~\ref{cor:obstruction},
+Proposition~\ref{prop:trajectory}, Theorems~\ref{thm:deduction} and~\ref{thm:IR}. (C): Theorem~\ref{thm:fixedvolume}
+on $(\mathrm A_{T^*})$. (O): (MI), both in its fixed-volume form and in its volume-uniform form; $(\mathrm A_{T^*})$.
+
+\emph{Required strengthening.} ICR-1 on I-1: analyticity and the bound $|\log Z_f(\varepsilon)|\le C_An^4$ on
+$|\varepsilon|\le r_0$ for the bare source $\varepsilon\sum_bf_bh_b$, all real marks with $\|f\|_\infty\le1$, on $T^*$,
+uniformly along the trajectory.
+
+\section{Status}
+
+\begin{itemize}
+\item The target $\Var_{\mu_\beta}(r_f)\le CM_f$ is \textbf{not proved}. Its exact remaining content is (MI).
+On the fixed reference torus it follows from hypothesis $(\mathrm A_{T^*})$ (Theorem~\ref{thm:fixedvolume}), which is
+the analyticity clause of interface I-1 for bare frustration sources (ICR-1) and is open. Uniformly in the volume it
+contains an infrared clustering statement (Theorem~\ref{thm:IR}) that the existence argument does not need.
+\item Proved here, unconditionally and with constants depending only on $N$, $c_*$ and the fixed conventions:
+Lemmas~\ref{lem:moments}--\ref{lem:locality}, Theorem~\ref{thm:symbol}, Proposition~\ref{prop:ward-symbol},
+Corollaries~\ref{cor:planewave}--\ref{cor:mean}, Propositions~\ref{prop:schur}--\ref{prop:indicator},
+Theorem~\ref{thm:mixture}, Corollary~\ref{cor:obstruction}, Proposition~\ref{prop:trajectory}, the
+deduction Theorem~\ref{thm:deduction} with Corollary~\ref{cor:closure}, and Theorem~\ref{thm:IR}.
+\item No additional lower bound on $\beta$ is introduced by the proved results. (MI) is formulated with an absolute
+$\beta_0$; Proposition~\ref{prop:trajectory} shows this is the only admissible form along the logarithmic trajectory.
+\item The flat-block restriction $\beta\ge CR^{14}\log(2+R)$, the separate cube restrictions, all raw normalizers
+$Z_s,Z_j$, the raw-denominator responses, directional exterior curl, moving transports and shared-history means of
+\cite{bhi,wwa,inn,whe,dmn,cur,tra,cub,gau,rsc} remain in force and untouched. Physical variance bounds carry $c_\beta^{-2}a^{-4}$. No physical-scale
+induction by tiling is claimed, and no part of the Yang--Mills existence theorem beyond the stated reductions is
+claimed.
+\end{itemize}
+
+\begin{thebibliography}{99}
+\bibitem{cur} \emph{Conditional current estimates}, \texttt{lattice\_theory/current.tex} in this collection.
+\bibitem{tra} \emph{Transport of the ordinary source}, \texttt{lattice\_theory/transport.tex} in this collection.
+\bibitem{cub} \emph{Cube estimates for the ordinary law}, \texttt{lattice\_theory/cubes.tex} in this collection.
+\bibitem{gau} \emph{Gaussian comparison of ordinary fluctuations}, \texttt{lattice\_theory/gaussian.tex} in this collection.
+\bibitem{rsc} \emph{Conditional variance and the retained susceptibility},
+\texttt{lattice\_theory/block\_and\_transfer/ordinary\_law/retained\_susceptibility\_criteria.tex} in this collection.
+\bibitem{whe} \emph{Ward identities for the heat bath}, \texttt{lattice\_theory/ward\_heat.tex} in this collection.
+\bibitem{dmn} \emph{Directional means and temporal sources}, \texttt{lattice\_theory/directional\_mean.tex} in this collection.
+\bibitem{bhi} \emph{Boundary histories and conditional covariance}, \texttt{lattice\_theory/boundary\_history.tex} in this collection.
+\bibitem{wwa} \emph{Ward identities for ordinary sources}, \texttt{lattice\_theory/ward\_ward.tex} in this collection.
+\bibitem{inn} \emph{Innovation derivatives in boundary coordinates}, \texttt{lattice\_theory/innovation.tex} in this collection.
+\bibitem{csj} \emph{Projected cross terms and compact retained-source jets},
+\texttt{lattice\_theory/block\_and\_transfer/ordinary\_law/compact\_source\_jets.tex} in this collection.
+\bibitem{spw} \emph{Spatial estimates for the original Wilson sources},
+\texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/spatial\_estimates\_for\_the\_original\_wilson\_sources.tex} in this collection.
+\bibitem{rsm} \emph{Rare selector means and inherited coefficients},
+\texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/rare\_selector\_means\_and\_inherited\_coefficients.tex} in this collection.
+\bibitem{sbr} \emph{Actual multi-plaquette Wilson tails and a sparse exceptional-slice record},
+\texttt{lattice\_theory/block\_and\_transfer/wilson\_transfer/original\_sparse\_bath\_records.tex} in this collection.
+\bibitem{stp} \emph{Original-law probability of an all-time staple tube},
+\texttt{lattice\_theory/block\_and\_transfer/wilson\_transfer/original\_law\_small\_tube\_probability.tex} in this collection.
+\end{thebibliography}
+
+\end{document}

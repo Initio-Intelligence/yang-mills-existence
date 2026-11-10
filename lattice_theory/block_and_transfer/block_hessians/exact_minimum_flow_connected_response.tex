@@ -1,0 +1,195 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{Exact-minimum alignment: a sharper connected response under original block composition}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Input class.}
+Use the shared face posterior and common background calculation: the actual shared-face posterior, all-integer radial recursion,
+common-forest harmonic naturality and retained $R^{15}$ compact-tail cost.
+We work in its COMMON relative forest, with actual nonflat boundary $b_t=b+tv$,
+$\|v\|\le1$, $\alpha=\sqrt{N/B}$. The admitted block data are
+\[
+ \|b_t\|\le CR^8,\quad \|m_t\|\le CR^8,\quad E_{\rm quad}(b_t)\le CR^{10},
+ \quad K_{JJ}\ge cR^{-6},\quad n_J\le CR^4.                              \tag{1}
+\]
+The original outer prepared blocks of the boundary only preparation and nonflat block calculation are included. Every compact
+interior is integrated without a witness selector. The chart radius is
+$cR^{-6}$ in joint angular norm. The original normalized complement satisfies
+\[
+ q\le\exp[-cBR^{-18}+CR^{15}+CR^4\log(2+BR)].                            \tag{2}
+\]
+All boundary-only preparation frames are fixed from the starting record and
+are not recomputed from the integration variables.
+
+\paragraph{1. The actual minimum exists uniquely in this admitted class.}
+The original ACTION, not a reference density, is strongly convex in the local
+canonical chart with floor $cR^{-6}$. At its quadratic harmonic center $m_t$
+its gradient is at most $CR^{16}/\sqrt B$. Consequently its local critical
+point $x_t^*$ obeys
+\[
+ \|x_t^*-m_t\|\le CR^{22}/\sqrt B.                                     \tag{3}
+\]
+For $B\gg R^{34}$ this is at most $CR^5$, much smaller than the available
+chart radius. Existence follows, for example, by strong convexity on a ball
+about $m_t$ whose outward radial derivative is positive; uniqueness follows
+from the same strict convexity.
+The action at $m_t$ is at most $CR^{10}$, including its actual cubic remainder
+$CR^{24}/\sqrt B$. Outside the chart the geometric action bound is
+$cBR^{-18}-CR^{15}$. For $B\gg R^{34}$ this is larger than that reference
+value. Hence the critical point is the UNIQUE GLOBAL compact minimum.
+It depends smoothly on $t$ by the nonsingular interior Hessian. Write its
+actual group links as $U^*(t)$ and its exact classical action as
+\[
+ V(t)=S_B(U^*(t);\eta(t)).                                               \tag{4}
+\]
+This is not a Gaussian vacuum approximation.
+
+The actual original law has centered moments around this action minimum:
+\[
+ E\|z\|^{2p}\le C_pR^{10p}+\text{compact tail},\qquad
+ U_j=e^{\alpha z_j}U_j^*(t).                                            \tag{5}
+\]
+Indeed the shared face posterior and common background calculation gives the same moment bound around $m_t$, (3) is at most $CR^5$,
+and the two near-identity group coordinate systems have uniformly comparable
+distances. The true Haar density remains in the law; its minimum need not
+coincide with the action minimum.
+
+\paragraph{2. An explicit Haar flow following that minimum.}
+Set
+\[
+ \Phi_t(U)_j=U_j^*(t)U_j^*(0)^{-1}U_j,\qquad
+ \dot U_j^*(t)U_j^*(t)^{-1}=\alpha w_j^*(t).                             \tag{6}
+\]
+At each fixed time this is a product of literal left Haar translations,
+with Jacobian one and divergence zero. The reconstructed fine-link and
+observable maps are their actual compositions with the common forest; the
+boundary output is the declared $\eta(t)=\exp(\alpha b_t)$.
+The canonical left boundary velocity is
+$q_b(t)=\operatorname{dexp}_{\alpha b_t}v$; its norm is bounded and
+$\|\dot q_b\|\le C\alpha$ for unit $v$.
+
+Differentiating the interior stationarity equations at $U^*$ gives
+\[
+ H^*_{JJ}w^*+H^*_{Jb}q_b=0.                                             \tag{7}
+\]
+Here $H^*$ is the ACTUAL canonical left Hessian at the minimum. Interior
+commutator ambiguities vanish because its interior gradient is zero.
+The full Hessian differs from the flat complete incidence by operator norm
+at most $C\alpha R^8$. Since $B\gg R^{28}$, this is smaller than half the
+interior floor $cR^{-6}$. Also $\|H^*\|\le C$ and the full form is bounded
+below by $-C\alpha R^8 I$. Apply this lower bound to $(q_b,w^*)$ and use(7):
+\[
+ \|w^*\|\le CR^3.                                                      \tag{8}
+\]
+Explicitly, $\kappa\|w^*\|^2\le w^{*T}H^*_{JJ}w^*
+\le C+C\alpha R^8\|w^*\|^2$, so the last term is absorbed. Thus the actual
+minimum-following flow has the same norm scale as the quadratic extension,
+without assuming their velocities identical.
+
+\paragraph{3. Exact removal of the linear fluctuation score.}
+Let $D=\partial_t+W_t$, with $W_t=\alpha\sum w_j^*(t)X_j$, and $G_t=DS_B$.
+The flow divergence is zero. The envelope theorem and differentiated
+stationarity give the EXACT identities
+\[
+ G_t(U^*)=V'(t),\qquad \nabla_{\rm interior}G_t(U^*)=0.                  \tag{9}
+\]
+The second statement follows directly from(7), not from bounding separate
+plaquette Hessians or discarding covariance terms.
+
+On the common chart all third canonical derivatives of the original local
+plaquette action have operator norm $CB^{-1/2}$, with finite incidence and
+$N$ fixed. Differentiating the actual exponential-product coordinates adds
+terms of the same size; their interior-force contribution vanishes at the
+minimum. With (8), Taylor's integral formula around $z=0$ gives
+\[
+ |G_t(U)-V'(t)|\le C B^{-1/2}R^3\|z\|^2.                              \tag{10}
+\]
+This is the improvement over estimating $G$ by the absolute large background
+norm $\|x\|^2\sim R^{16}$. Equations(5),(10) imply
+\[
+ \operatorname{Var}_tG_t\le CR^{26}/B+\mathcal E,\qquad
+ |E_tG_t-V'(t)|\le CR^{13}/\sqrt B+\mathcal E,                           \tag{11}
+\]
+where one may take $\mathcal E=CBR^{16}q$ after increasing constants.
+Global original group derivative bounds control the compact complement;
+it is not removed from the fiber. The normalized pullback affinity is at least
+$1-\frac18[CR^{26}/B+\mathcal E]$.
+
+\paragraph{4. A connected free-energy norm relative to the EXACT classical state.}
+Let
+\[
+ \Gamma(t)=-\log[Z(\eta(t))/Z(\eta(0))],\qquad
+ F(t)=\Gamma(t)-[V(t)-V(0)].                                            \tag{12}
+\]
+Both normalizers and both classical actions are exact. Define $h=(q_b,w^*)$.
+In $DG_t$, the time derivative of the interior velocity contributes
+$\sum\dot w_j^*F_j$, with $F_j=\alpha X_jS_B$. Its expectation is ZERO by
+original interior Haar integration by parts; its value at $U^*$ is also zero.
+It has not been omitted pointwise or bounded by a large inverse-mode factor.
+The remaining terms are the same-field Hessian $H(U)[h,h]$ and the boundary
+acceleration term $\dot q_b\cdot F_b(U)$. Their differences from their values
+at $U^*$ are at most $CB^{-1/2}R^6\|z\|$ and
+$CB^{-1/2}\|z\|$, respectively, on the chart.
+Using the exact identity $\Gamma''=E DG-\operatorname{Var}G$ and
+$V''=DG(U^*)$, we obtain the sharper CONNECTED bound
+\[
+ |F''(t)|\le C[R^{11}/\sqrt B+R^{26}/B]+\mathcal E.                     \tag{13}
+\]
+The fluctuation current $F'(0)$ need not vanish at a nonflat record. It is
+retained, with $|F'(t)|\le CR^{13}/\sqrt B+\mathcal E$ from(11).
+Thus the four-term/centered remainder, or equivalently
+$F(t)-tF'(0)$, has bound one half of(13) times $t^2$; it is not legitimate to
+erase the current baseline when reporting the raw action.
+The nonlinear classical Hessian $V''$ contains its exact Schur term and the
+boundary acceleration/current partner. Comparing it to the flat Gaussian
+form still costs $CR^{14}/\sqrt B$ in this admitted nonflat class.
+
+\paragraph{5. Compatibility with the actual shared-face composition.}
+If a union has a unique global minimum, fixing its shared face at that
+minimum makes each conditional subblock minimum its literal restriction.
+This is NONLINEAR minimum naturality, by the variational definition and
+uniqueness, in the same common forest. The shared face admitted in the shared face posterior and common background calculation
+lies within $CR^5$ of this actual minimum as well: use(3) and its original
+posterior fluctuation bound. Along the connecting face path, (7)--(8) bound
+the local minimum response by $CR^3$, preserving a local mean norm $CR^8$.
+The joint classical action is stationary in the face at the union minimum;
+its face Schur Hessian is bounded above by $C$ on this chart, with the small
+coordinate-acceleration correction retained. Its energy increase is therefore
+at most $C\|\delta F\|^2$, preserving the $CR^{10}$ energy class.
+
+More generally the exact classical state composes by minimizing, and the
+fluctuation state composes by integrating:
+\[
+ V_{\mathcal U}(\eta)=\min_F\{S_\Sigma(F;\eta)+V_1(F)+V_2(F)\},
+\]
+\[
+ e^{-F_{\mathcal U}(\eta)}=
+ \int e^{-[S_\Sigma+V_1+V_2-V_{\mathcal U}]}e^{-F_1(F)-F_2(F)}dF.         \tag{14}
+\]
+Here in(14) the absolute fluctuation state is $F_i=-\log Z_i-V_i$;
+relative differences are formed only afterwards as in(12).
+Equation(14) retains raw Haar factors, live classical/current terms and every
+normalizer. It is not an independent-block Gaussian product. The earlier
+exact covariance formula for the face integral remains necessary when
+calculating the new current or Hessian.
+
+\paragraph{6. New local range and the remaining physical obligation.}
+The admission, uniqueness, centered-moment and tail requirements above only
+need the conservative $B\gg R^{34}$. Thus, for example,
+\[
+ R\le B^{1/36}                                                        \tag{15}
+\]
+is valid for this exact-classical-relative class for large $B$.
+The variance in(11) is then $O(B^{-5/18})$, the connected curvature in(13)
+is $O(B^{-7/36})$, and the raw fluctuation-current/increment error is
+$O(B^{-5/36})$. The compact tail is negligible. These claims do NOT extend
+the old absolute Gaussian scalar-increment approximation to this range:
+its live nonlinear classical baseline has deliberately been retained exactly.
+
+The improvement from $R^{38}/B$ to $R^{26}/B$ is a genuine cancellation in an
+ACTUAL common realization, not a new reference-law assumption. Nevertheless
+(13) still grows under $R\mapsto LR$ at fixed $B$. It is not a strict
+physical-scale contraction, and physical radius $aB^{1/36}$ still vanishes
+when $B\asymp\log(1/a)$. No all-volume good-event, summable tiling error,
+noncontractible holonomy replacement or fullS94 conclusion follows.
+\end{document}

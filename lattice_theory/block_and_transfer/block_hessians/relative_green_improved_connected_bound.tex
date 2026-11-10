@@ -1,0 +1,200 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Relative axial-tree Green bounds and a sharper actual connected estimate}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Input and objective.}
+In the centered fluctuation trace and nonlinear bound calculation, the convex-chart Poincare inequality concerns the verified
+actual density, its cutoff Haar--Stein mean retains the annulus, and the
+fourth-derivative/frame estimate for $J=DG-\dot w\cdot F_J$ has the stated
+$O(\alpha^2\|h\|^2)$ size. The interior acceleration is removed only in
+expectation by exact Haar Ward. Here the worst coordinate floor/count is
+replaced by the ACTUAL relative-cube Green operator. This yields an additional
+power improvement, not a physical-wavelength Schur estimate.
+
+\paragraph{1. Complete relative incidence and the actual forest map.}
+Use the complete four-dimensional relative cube of side $R$, with zero
+linearized tangential boundary data for its interior covariance. Let $D_0$
+be its interior-vertex gradient and $D_1$ its full plaquette incidence on all
+free links BEFORE relative gauge fixing. They satisfy $D_1D_0=0$.
+The relative Hodge Laplacian is
+\[
+ \Delta_1=D_1^*D_1+D_0D_0^*.
+\]
+There is no relative harmonic one-form on this contractible box. All global
+compact modes outside it remain in the exterior record; this operator is
+not inverted on a periodic harmonic sector.
+
+Let $P$ take a free link field to its sums along the specified temporal axial
+forest paths from the lower boundary. Its vertex value is zero on ALL boundary
+vertices. If $E$ restricts links to the non-tree chords, the literal gauge
+quotient map is
+\[
+ T=E(I-D_0P),\qquad P D_0=I,\qquad T D_0=0.                             \tag{1}
+\]
+A chord row consists of its own edge and at most two straight forest paths,
+so its absolute row sum is at most $CR$. A temporal input edge occurs in
+at most $CR$ such rows (spatial chords above it in its own/adjacent columns,
+and the last temporal chord); a spatial input edge occurs in its own row.
+Hence
+\[
+ \|T\|_{\infty\to\infty}\le CR,\quad
+ \|T\|_{1\to1}\le CR,\quad \|T\|_{2\to2}^2\le CR^2.                   \tag{2}
+\]
+These bounds are for this actual forest, not an arbitrary spanning tree.
+
+Write $K_{\rm tr}=D_{1,\rm chord}^*D_{1,\rm chord}$ for the full quadratic
+Maxwell matrix in those independent chord coordinates. Its normalized
+Gaussian covariance has the EXACT identity
+\[
+ K_{\rm tr}^{-1}=T\Delta_1^{-1}T^*.                                    \tag{3}
+\]
+Indeed orthogonal Hodge decomposition splits a free field into its transverse
+part and an interior gradient. The Gaussian with precision $\Delta_1$
+factorizes along that decomposition, $T$ kills the gradient, and on the
+transverse part it is a bijection to chord coordinates preserving
+$\|D_1a\|^2$. Its constant linear Jacobian affects the raw Gaussian normalizer,
+not this normalized covariance identity. No original Wilson normalizer is
+replaced by(3).
+
+\paragraph{2. A uniform diagonal Green bound in FOUR dimensions.}
+Expanding commuting differences shows that $\Delta_1$ is componentwise a
+product Laplacian: for an edge component in direction $\mu$, there are $R$
+edge positions with Neumann difference in that direction and $R-1$ interior
+positions with Dirichlet differences in each of the other THREE directions.
+Its eigenvalues are sums of
+$4\sin^2(\pi k_\nu/(2R))$, with $k_\mu=0,\ldots,R-1$ and
+$k_\nu=1,\ldots,R-1$ for $\nu\ne\mu$.
+The normalized product sine/cosine eigenfunctions have squared pointwise size
+at most $CR^{-4}$. Thus
+\[
+ \|\Delta_1^{-1}\|\le CR^2,
+\quad (\Delta_1^{-1})_{ee}
+ \le CR^{-4}\sum_k\frac{R^2}{|k|^2}\le C.                              \tag{4}
+\]
+The last shell sum is $O(R^2)$ in dimension four; the three nonzero Dirichlet
+coordinates exclude the zero mode. Positivity gives
+$|(\Delta_1^{-1})_{ef}|\le
+\sqrt{(\Delta_1^{-1})_{ee}(\Delta_1^{-1})_{ff}}\le C$.
+Equations(2)--(4) therefore yield
+\[
+ \boxed{\quad\|K_{\rm tr}^{-1}\|\le CR^4,\qquad
+        (K_{\rm tr}^{-1})_{jj}\le CR^2,\qquad
+        \operatorname{Tr}K_{\rm tr}^{-1}\le CR^6.\quad}                 \tag{5}
+\]
+The number of chords is $O(R^4)$. In particular the TRUE coordinate floor is
+at least $cR^{-4}$ by this argument, improving the earlier crude filling floor
+$cR^{-6}$. Bounded-aspect rectangular unions have the same estimates.
+
+\paragraph{3. Transfer this Green information to the ACTUAL admitted chart.}
+Keep the admitted nonflat class of the exact minimum flow connected response calculation, the shared face posterior and common background calculation and the centered fluctuation trace and nonlinear bound calculation, with $B\gg R^{34}$,
+the same common forest, canonical action minimum $x^*$ of norm at most $CR^8$,
+and original compact tail
+\[
+ q\le e^{-cBR^{-18}+CR^{15}+CR^4\log(2+BR)}.
+\]
+No event or law is changed. On the established angular chart $cR^{-6}$,
+the Hessian of the ACTUAL potential $S_B-\log J_{\rm Haar}$ differs from
+$K_{\rm tr}$ by at most $CR^{-6}+C/B$. After choosing the original chart
+constant small, (5) gives the matrix comparison
+\[
+ \nabla^2(S_B-\log J_{\rm Haar})\ge cK_{\rm tr}.                         \tag{6}
+\]
+The chart is convex in these ORIGINAL canonical coordinates. A linear change
+by $K_{\rm tr}^{1/2}$ and the same convex-domain Poincare theorem therefore
+imply the anisotropic bound
+\[
+ \operatorname{Var}_{\rm chart}f
+ \le C E_{\rm chart}\nabla f^*K_{\rm tr}^{-1}\nabla f,
+\quad \operatorname{Cov}_{\rm chart}(x)\le C K_{\rm tr}^{-1}.           \tag{7}
+\]
+This is a bound for the original chart law, not a Gaussian substitution.
+
+The centered fluctuation trace and nonlinear bound calculation's already established cutoff mean estimate gives
+$\|E(x-x^*)\|\le CR^{16}/\sqrt B+\text{tail}$. Combining it with the trace
+in(5) proves
+\[
+ E\|x-x^*\|^2\le C[R^6+R^{32}/B]+\text{tail}\le CR^6+\text{tail}.       \tag{8}
+\]
+Here $B\gg R^{34}$ is more than sufficient; conditioned/full means differ
+only by the retained compact-tail terms. This first use of the older mean
+bound avoids a circular bootstrap.
+
+Now repeat the actual cutoff Stein equation of the centered fluctuation trace and nonlinear bound calculation. The action Hessian at
+its minimum has inverse norm at most $CR^4$ by(5)--(6), and its gradient Taylor
+remainder is at most $C\alpha\|x-x^*\|^2$, $\alpha=\sqrt{N/B}$.
+The original Haar gradient is bounded by $CB^{-1}\|x\|$.
+Using(8), the mean improves to
+\[
+ \|E(x-x^*)\|\le C R^4[R^6/\sqrt B+R^8/B]+\text{tail}
+                    \le CR^{10}/\sqrt B+\text{tail}.                  \tag{9}
+\]
+The cutoff annulus is retained exactly as in the centered fluctuation trace and nonlinear bound calculation. Neither strong convexity
+nor a spectral gap on the entire compact fiber is asserted.
+
+\paragraph{4. Sharper minimum-flow velocity and connected response.}
+The actual canonical Hessian at the minimum differs from the flat incidence
+by at most $C\alpha R^8$. This is smaller than half the improved interior
+floor $cR^{-4}$ when $B\gg R^{24}$. Repeating the actual minimum-stationarity
+Schur argument now gives
+\[
+ \|w^*(t)\|\le CR^2                                                    \tag{10}
+\]
+for unit canonical boundary direction, instead of $CR^3$. This is the SAME
+explicit minimum-aligning Haar map, not a new hypothetical flow.
+The exact score still obeys $\nabla G(x^*)=0$, while its local Hessian has
+norm at most $C\alpha R^2$. Equations(5),(7),(8) give
+\[
+ \operatorname{Var}_{\rm chart}G
+ \le CR^4\,\alpha^2R^4 E\|x-x^*\|^2\le CR^{14}/B.                     \tag{11}
+\]
+The complete original compact complement adds only its explicit polynomial
+tail factor.
+
+For $J=DG-\dot w^*\cdot F_J$, retain the same exact expectation-only Ward
+cancellation of the removed acceleration force. The local derivatives improve
+to $\|\nabla J(x^*)\|\le C\alpha R^4$ and
+$\|\nabla^2J\|\le C\alpha^2R^4$. The signed mean(9) and variance(8) therefore
+give
+\[
+ |EJ-J(x^*)|\le C\alpha R^4(R^{10}/\sqrt B)
+                    +C\alpha^2R^4R^6+\text{tail}\le CR^{14}/B+\text{tail}.
+\]
+For the EXACT classical-relative state
+$F=-\log[Z(\eta(t))/Z(\eta(0))]-[V(t)-V(0)]$, the resulting actual bounds are
+\[
+ \boxed{\operatorname{Var}G\le CR^{14}/B+\mathcal E,\qquad
+        |F''|\le CR^{14}/B+\mathcal E,\qquad
+        |F'|\le CR^8/\sqrt B+\mathcal E.}                              \tag{12}
+\]
+The current bound follows from the quadratic score remainder and(8); its
+nonflat baseline is not discarded. A safe unchanged choice is
+$\mathcal E=CB^3R^{40}e^{-cBR^{-18}+CR^{15}+CR^4\log(2+BR)}$.
+For the already admitted $R\le B^{1/36}$, connected curvature and variance
+are $O(B^{-11/18})$, and current is $O(B^{-5/18})$. No enlarged admission
+range is asserted here.
+
+\paragraph{5. The finite Gaussian trace and the precise remaining loss.}
+The leading centered Gaussian Fisher trace in the correctly transported
+minimum frame also improves by these actual Green estimates:
+\[
+ \tfrac12\operatorname{Tr}[(H^{-1}\dot H)^2]
+ \le C\|\dot H\|^2\operatorname{Tr}H^{-2}
+ \le C\alpha^2R^4\,\|K_{\rm tr}^{-1}\|
+                            \operatorname{Tr}K_{\rm tr}^{-1}
+ \le CR^{14}/B.                                                       \tag{13}
+\]
+Trace/eigenvalue inequalities here do not assume that $H$ commutes with
+$\dot H$ or that matrix squaring preserves order. All gauge/chart determinant
+partners and the true classical action stay in the original state. Equation(12)
+was proved directly from the nonlinear law, not inferred from(13).
+
+The improvement $R^{22}\to R^{14}$ removes an artifact of treating every mode
+as the worst axial-tree mode and uses the four-dimensional Green diagonal.
+It still bounds the transported Hessian variation by its operator norm, and
+it is NOT a curl/physical Dirichlet-to-Neumann energy estimate. Thus the
+connected error still grows with $R$ at fixed $B$. A covariance/curvature
+cancellation or a localized estimate relative to the actual physical boundary
+direction is still required for a scale-uniform S94 bound. Relative-block
+identities here do not remove compact global/holonomy modes, justify an
+all-volume good cover or permit tiling polynomial errors over physical volume.
+\end{document}

@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\title{Difference entropy on the full cube fiber without a false convexity claim}\author{}\date{}
+\begin{document}\maketitle
+The sharp convex native domain in \cite[Section 3]{ND} differs from the complete compact Wilson fiber in the complete conditional cube calculation. This note proves a nearby-bath difference estimate on the latter and shows explicitly why a uniform global Poincare claim cannot be imported from the former.
+
+\section{Differences are controlled by actual conditional moments}
+Take two baths in the fixed admitted neighborhood of the complete conditional cube calculation, with coordinate distance $\delta$. Put $\Delta S=S_{b_1}-S_{b_0}$ and interpolate the actual actions on the same compact cycle:
+\[
+ S_t=S_{b_0}+t\Delta S,\qquad
+ K_t=D_t^{-1}e^{-\beta S_t}dU,\qquad w=\beta\Delta S.
+\]
+Although $S_t$ need not equal the action at a linearly interpolated bath, it remains uniformly close to the flat action in every fixed derivative norm. Thus the same unique-global-minimum, local Hessian and compact exterior-gap proof applies uniformly in $t$. In particular, for its actual minimum $U_t^*$,
+\[
+ K_t\operatorname{dist}(U,U_t^*)^2\leq C/\beta.
+ \tag{1}
+\]
+Smooth dependence of the 54 fixed plaquette words on the bath gives
+$\|\nabla_U\Delta S\|_\infty\leq C\delta$. Subtracting its value at the minimum proves
+\[
+ \operatorname{Var}_{K_t}(w)
+ \leq K_t|w-w(U_t^*)|^2
+ \leq C\beta\delta^2.
+ \tag{2}
+\]
+This uses neither global convexity nor a spectral-gap estimate.
+
+Exact exponential-family identities now yield
+\[
+ D_{\rm KL}(K_0\Vert K_1),\ D_{\rm KL}(K_1\Vert K_0)
+ \leq C\beta\delta^2,
+ \tag{3}
+\]
+\[
+ \log(D_1/D_0)=-\beta K_0\Delta S+R,
+ \qquad0\leq R\leq C\beta\delta^2.
+ \tag{4}
+\]
+The complete first-order scalar remains. It includes the order-$\beta$ induced bath action found in the induced boundary coupling calculation. Entropy controls its nonlinear remainder, not the absolute action.
+
+For an actual common carrier globally Lipschitz in the free group variables with constant $L_F$, (1) gives $\operatorname{Var}_{K_t}F\leq CL_F^2/\beta$. Covariance Cauchy--Schwarz and (2) therefore imply
+\[
+ |K_1F-K_0F|\leq CL_F\delta.
+ \tag{5}
+\]
+This is sharper than the total-variation bound for such a regular carrier. A changed carrier contributes its full $K_1(F_1-F_0)$, and old mesh factors remain in $L_F$. These estimates compare changes; they do not treat the whole boundary interaction as small.
+
+\section{An explicit obstruction to transferring native global convexity}
+For $N\geq5$ let $z=e^{2\pi i/N}$ and fix the literal flat bath. Set every free cube link equal to $zI$. Each internal plaquette is the identity, while the 48 exterior single-link plaquettes have action $1-\cos(2\pi/N)$. This is a stationary point of the complete conditional action with positive energy
+\[
+ E_z=48[1-\cos(2\pi/N)].
+\]
+Its exact Hessian is
+\[
+ H_z=N^{-1}[4\cos(2\pi/N)I_{12}+d^Td]\otimes I_{d_G}>0.
+ \tag{6}
+\]
+Hence it is a secondary strict local minimum. The identity configuration remains the unique global minimum; there is no contradiction with the Laplace estimate of the complete conditional cube calculation.
+
+Choose a smooth function equal to one near this secondary minimum and zero outside a slightly larger small ball. Strict local convexity supplies a fixed barrier $b>0$ on the support of its gradient. The variance is bounded below by $cD_\beta^{-1}e^{-\beta E_z}\beta^{-n_i/2}$, while its Dirichlet form is bounded above by $CD_\beta^{-1}e^{-\beta(E_z+b)}$. Therefore the optimal full-fiber Poincare constant obeys
+\[
+ C_P(\beta)\geq c\beta^{-n_i/2}e^{\beta b},\qquad n_i=12d_G,
+ \tag{7}
+\]
+for sufficiently large $\beta$. The normalized mass of this well is exponentially small, but the relaxation out of it is also exponentially slow. Thus a good approximation in probability by one Gaussian does not prove a uniform spectral gap for arbitrary full-fiber observables.
+
+The native law of \cite[Section 3]{ND} is restricted to its original sharp convex small-field coordinate domain and has a verified pointwise Hessian floor there. The secondary well in (6) lies outside that domain. Its Poincare theorem is not contradicted; the example identifies the domain hypothesis that must be preserved. Equations (2)--(5) remain valid on the full compact fiber because they estimate the specified smooth action differences by actual distance moments, rather than arbitrary observables by a global gap.
+
+\section{Implication for S94}
+If an original complete-record comparison supplied a small bath mismatch $\delta$, (3)--(4) would control the entropy and second-order scalar remainder with the actual factor $\beta\delta^2$. No distance decay is generated here. Generic fluctuation-sized mismatches $\delta\asymp\beta^{-1/2}$ leave order-one entropy, and the first-order scalar remains. Matching copied records and controlling the induced bath action and wrapped records are still required for the full pressure comparison.
+\begin{thebibliography}{9}
+\bibitem{ND} \emph{Nonlinear dispersion and unequal spatial weights}, \texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/nonlinear\_dispersion\_and\_unequal\_spatial\_weights.tex} in this collection.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,167 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{One good run, arbitrary bad complement, and the original sparse record}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Inputs and fixed-threshold clarification.}
+The estimates of the path centered growing bath tubes calculation extend to a FIXED sufficiently small angular threshold
+$\epsilon_0>0$: its centered Hessian differs from the flat one by
+$O(\epsilon_0)+o_B(1)$, its tails have the same uniform Gaussian bound, and its
+operator distance can therefore be made $<1/20$ by first choosing $\epsilon_0$
+small and then $B$ large. Literal convergence to the flat kernel is not claimed
+at fixed $\epsilon_0$. All subsequent cone constants remain unchanged.
+We use only this fixed-threshold version. The exact bath criterion in the original sparse bath records calculation
+puts a good interval into its required frame by left/right Haar transport;
+all endpoint rotations are retained.
+
+In the original sparse bath records calculation, arbitrary marked sets of one
+orientation disseminate by positive Schatten H\"older through the two
+transverse and two in-plane directions, with the original denominator at each
+step. H\"older over six orientations and the six-witness, multiplicity-two
+ledger give the ORIGINAL bound
+\[
+ \mathbb P(D\subset\mathcal B)\le p_B^{|D|},\quad
+ p_B=6K_t^{1/12}e^{-tB(1-\cos\epsilon_0)/108}.                            \tag{1}
+\]
+It is unconditional, or averaged under the true initial-slice marginal, not
+uniform in the fixed initial slice. This exact scope is used below.
+
+\paragraph{1. Good-run spectral approximation in original coordinates.}
+Take a consecutive good interval with $L+2$ transfer steps, $L\ge2$.
+Transport it exactly to the small-bath frame. For its middle $L$ steps, replace
+ONLY the two outermost half-onsite multipliers by the flat multiplier
+$M_*(u)=e^{-2Bs(u)}$. Denote this auxiliary middle product by $A_L$.
+This is an algebraic endpoint factorization: the original interval equals
+$G=A_- A_L A_+$, with the removed positive endpoint ratios absorbed in $A_-$
+and $A_+$. No integral or bath law has been replaced. The auxiliary product
+closes with consistent flat endpoint data and satisfies the fixed-threshold
+version of the path centered growing bath tubes calculation. Its exact Perron eigenvalue is $\lambda$, with positive
+right/left vectors $v,l$, $\|v\|_2=1$, $l(v)=1$.
+
+In path-centered coordinates the cone proof gives a complementary restriction
+norm $\le\lambda r^L$, $r=2/5$, and a Perron projection norm $\le17/15$.
+The full remainder includes $I-\Pi$, and is bounded by
+$(32/15)\lambda r^L$. Returning to original coordinates multiplies this bound
+by the norm of the exact exponential similarity. Its exponent is
+$p\cdot x$, where $|p|\le3\sqrt B$ (four half-onsite gradients and one temporal
+gradient, each unit angular derivative bounded by one) and
+$|x|<\pi\sqrt B$. Thus its condition number is at most $e^{6\pi B}$:
+\[
+ \|A_L-\lambda v\otimes l\|\le(32/15)\lambda e^{6\pi B}r^L.             \tag{2}
+\]
+Haar translations are unitary and do not change this estimate.
+
+\paragraph{2. Positivity upgrades(2) to a pointwise relative estimate.}
+For any original chain product, its dependence on the first endpoint consists
+of its first half-onsite multiplier (log oscillation at most $4B$) and one
+temporal factor (at most $2B$). Its positive kernel therefore has endpoint
+row ratio at most $e^{6B}$, independently of the number of factors. The same
+holds at the last endpoint. The eigenfunction equations imply
+\[
+ \sup v/\inf v\le e^{6B},\quad \sup l/\inf l\le e^{6B},\quad
+ \|v\|_1\ge e^{-6B},\quad \|l\|_1\ge e^{-6B}\|l\|_2\ge e^{-6B}.          \tag{3}
+\]
+All Haar measures are normalized. The endpoint ratios used in $A_\pm$ each
+have log oscillation at most $8B$, so their relevant row/column oscillations
+are at most $14B$. Hence
+\[
+ (A_-v)(x)\ge e^{-20B}\|A_-(x,\cdot)\|_2,
+ \quad (lA_+)(y)\ge e^{-20B}\|A_+(\cdot,y)\|_2.                         \tag{4}
+\]
+Cauchy--Schwarz applied to(2), and then(4), yield
+\[
+ (1-\delta)\lambda a(x)b(y)\le G(x,y)
+       \le(1+\delta)\lambda a(x)b(y),\quad
+ \delta=3e^{64B}(2/5)^L,                                                \tag{5}
+\]
+where $a=A_-v$, $b=lA_+$ are positive. The constant $64$ safely exceeds
+$6\pi+40$. Endpoint frame unitaries only change the positive functions and
+preserve(5). This bound does not assert that $\lambda$ is the ground scalar
+of the full period.
+
+\paragraph{3. An arbitrary positive complement costs nothing further.}
+Left or right multiplication by ANY positive integral kernels preserves the
+relative rank-one inequalities(5). In particular the rest of a period may
+contain arbitrarily many and arbitrarily bad original Wilson slices. Write
+$W$ for the resulting whole-period operator and $t>0$ for the eigenvalue of
+the resulting rank-one comparison kernel. Positivity gives
+\[
+ (1-\delta)t\le\rho(W)\le(1+\delta)t,
+\quad
+ (1-\delta)^q t^q\le\operatorname{Tr}W^q\le(1+\delta)^q t^q.             \tag{6}
+\]
+The first statement follows by testing the positive rank-one right function
+in the eigenvalue comparison; the second follows by multiplying kernels
+around the exact closed cycle. Thus, for $\delta\le1/2$,
+\[
+ e^{-4q\delta}\le\operatorname{Tr}W^q/\rho(W)^q\le e^{4q\delta}.          \tag{7}
+\]
+There is NO factor $e^{CB}$ per bad slice or per bad cluster. Only the single
+good-run upgrade cost in(5) has been paid. The exact whole-period Perron scalar
+is retained in(7); every raw scalar of the original complement is included.
+
+\paragraph{4. A good run in each half-period controls the selected midpoint.}
+For fixed bath, suppose each of the two length-$\ell$ arcs contains a good
+run as above. Each full arc kernel then has relative rank-one error $\delta$,
+regardless of its other slices. The conditional midpoint density with initial
+selected link $x$ is proportional to the product of these two arc kernels.
+For any two initial values $x,x'$, its projective density distance is at most
+\[
+ 4\log\frac{1+\delta}{1-\delta}\le16\delta\quad(\delta\le1/2).
+\]
+Normalization constants cancel in projective distance. The elementary
+Hellinger bound consequently gives
+\[
+ \operatorname{Aff}(p_x,p_{x'})^2\ge\operatorname{sech}^2(4\delta)
+                  \ge1-16\delta^2.                                   \tag{8}
+\]
+This is uniform in initial values and retains actual arbitrary bath twists.
+It controls selected conditional fibers, not the full bath affinity.
+
+\paragraph{5. Price the run requirement with the proved original record.}
+Partition an arc into $J=\lfloor\ell/(L+4)\rfloor$ disjoint blocks, each of
+$L+4$ candidate good labels. The inner $L+2$ transfer steps then have all
+required endpoint onsite and temporal labels. If none is entirely good, choose a bad label in
+each block. The selected labels are distinct, so(1) and a union bound imply
+\[
+ \mathbb P\{\hbox{no good block in an arc}\}
+       \le[(L+4)p_B]^J.                                                \tag{9}
+\]
+No independence is used. For $N_I$ plaquette-disjoint selected trajectories,
+the probability that some trajectory lacks a good block in either arc is at
+most $2N_I[(L+4)p_B]^J$. All such bounds remain averaged under the original initial-slice law.
+
+For example choose
+\[
+ L=\max\{2,\lceil[64B+10\log(2+\ell)]/\log(5/2)\rceil\}.              \tag{10}
+\]
+Then $\delta\le3(2+\ell)^{-10}$. If $B\sim b\log\ell$ with ANY fixed
+$b>0$, $K_t$ is uniformly bounded in its stated physical torus regime,
+$L=O(B+\log\ell)$ and $(L+4)p_B\to0$. Equation(9) decays as $e^{-c\ell}$
+for some fixed $c>0$ depending on $b,\epsilon_0,t$. This pays the deterministic
+$e^{64B}$ cost by good-run length, rather than by a defective-slice exponential
+moment. It permits many exceptional slices, whose total expected upper count
+can diverge.
+
+\paragraph{6. The remaining full-bath factor is explicit.}
+Let $\eta_X$ be the ACTUAL bath law conditioned on the full initial slice,
+including all selected-chain normalizers, and $p(X)$ its original marginal.
+On the good-record event the selected conditional affinities multiply, giving
+squared factor at least $a^2=(1-16\delta^2)^{N_I}$. Lift to the joint bath and
+selected midpoint, then project. Writing
+$\mathcal P_{\rm bath}=E_{X,Y\ {
+m iid}\ p}\operatorname{Aff}(\eta_X,\eta_Y)^2$,
+the original physical midpoint purity obeys the valid lower comparison
+\[
+ \mathcal P_{\rm full}\ge a^2\left[\mathcal P_{\rm bath}
+                   -4N_I[(L+4)p_B]^J\right].                           \tag{11}
+\]
+Indeed the excluded overlap mass averaged in $X,Y$ is at most its unconditional
+probability, and $(A-b)^2\ge A^2-2b$ for $0\le b\le A\le1$.
+For polynomial $N_I$ in $1/a$, fixed physical arc length and
+$B\sim b\log(1/a)$, both losses in(11) vanish. This extends conditional
+microscopic decoupling beyond the earlier worst-bath $b<1/2$ restriction.
+It does NOT bound $\mathcal P_{\rm bath}$ from below. Induced short-time spatial
+interactions and the true remaining global modes remain in that law. No
+spatial iteration, full S94 closure or mass gap is claimed.
+\end{document}

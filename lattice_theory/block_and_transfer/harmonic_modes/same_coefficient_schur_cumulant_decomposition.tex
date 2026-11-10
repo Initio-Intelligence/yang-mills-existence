@@ -1,0 +1,171 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{The same original coefficient under exact block conditioning}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Input and scope.}
+Use the signed Schur norm, overlap, raw determinant
+and coherent-mean ratio of the all mode dtn gaussian stability calculation. The following separates its local
+piece from the SAME original coefficient, in a common tree gauge.
+Equality to the completed vector/ghost representation is exact;
+ghost effects are not omitted from the scalar coefficient or harmonic
+boundary response. This equality does NOT identify arbitrary internal
+fixed-log insertion tensors across nonlinear gauge coordinates.
+No uniform nonlinear remainder is claimed.
+
+Retain all shared-face links and frames on skeleton $Y$. Use a tree
+made from an interior tree anchored on each block boundary and a tree
+on the skeleton. No original plaquette touches two distinct interiors.
+The exact original flat Gaussian disintegration is
+\[
+ z=Hy+\eta,\quad H=\binom{-A_{II}^{-1}A_{IY}}1,\quad
+ C_I=A_{II}^{-1}=\bigoplus_B C_B^{(0)},\quad
+ S=A_{YY}-A_{YI}A_{II}^{-1}A_{IY}. \tag{1}
+\]
+Only conditionally on $y$ are interiors independent. The skeleton
+has the actual joint covariance $S^{-1}$. The raw Gaussian factor is
+$(2\pi)^{(\dim I+\dim Y)/2}\det A_{II}^{-1/2}\det S^{-1/2}$,
+with original canonical, Haar and gauge constants attached.
+True zero modes are treated on their original quotient.
+
+Write $S=\frac12z^*Az+\alpha T_3+\alpha^2T_4+\cdots$ and
+$\log j=\alpha^2J_2+\cdots$. Then the original flat coefficient is
+\[
+ {\cal C}=E_G(T_4-J_2)-\tfrac12E_GT_3^2,\quad G=A^{-1}. \tag{2}
+\]
+For $h=Hy$, define
+\[
+ m_3=E_\eta T_3(h+\eta),\quad
+ m_4=E_\eta(T_4-J_2)(h+\eta)
+                   -\tfrac12\operatorname{Var}_\eta T_3(h+\eta).
+\]
+Total variance gives ${\cal C}=E_y m_4-\frac12\operatorname{Var}_y m_3$.
+At flat SU(2), color-diagonal covariance and antisymmetric cubic color
+tensor give $t_{abc}(C_I)_{bc}=0$, with all spatial indices retained.
+Thus $m_3=T_3(Hy)=:T_3^{\rm eff}(y)$. This zero tadpole is NOT assumed
+at a nonflat background.
+
+\paragraph{Exact conditional degree separation.}
+The conditional classical minimizer is
+$\eta_*=-\alpha C_I\nabla_I T_3(Hy)+O(\alpha^2)$. Define the ACTUAL
+reduced quartic
+\[
+ T_4^{\rm eff}(y)=T_4(Hy)-\tfrac12
+ \langle\nabla_I T_3(Hy),C_I\nabla_I T_3(Hy)\rangle . \tag{3}
+\]
+The exchange term cannot be erased by a Wilson reset.
+Let ${\cal C}_B$ be the local original flat vacuum coefficient and
+$Q_B$ its COMPLETE uncut harmonic self-energy, with all boundary
+external indices and only genuine interior Haar variables. Then
+\[
+ m_4=\sum_B{\cal C}_B+\tfrac12\sum_B Q_B(v_B,v_B)
+                        +T_4^{\rm eff}-J_{2,Y}. \tag{4}
+\]
+Here $v_B$ is the literal boundary restriction of $Hy$. Skeleton-only
+plaquettes are assigned once to the classical action; they do not
+enter a local fluctuation determinant.
+
+For an explicit check, write $T_3=t z^3/6$, $T_4=u z^4/24$, and
+$L=t(h,h,\eta)/2$, $P=t(h,\eta,\eta)/2$, $C=T_3(\eta)$.
+The degree-two part of $m_4$ is
+\[
+ \tfrac14 u(h,h,C_I)-J_{2,I}(h)
+                      -\tfrac12E_\eta P^2-E_\eta LC.
+\]
+This is half the full fixed-log harmonic self-energy. The last term
+is retained here; at the flat color-diagonal background it vanishes
+by the tadpole identity. The degree-zero part is $\sum_B{\cal C}_B$,
+and degree four is (3). Conditional independence removes only the
+cross-interior conditional covariances, not the skeleton contractions.
+
+We obtain the exact SAME-coefficient identity
+\[
+ \boxed{\begin{split}
+ {\cal C}={}&\sum_B{\cal C}_B+\tfrac12 E_y\sum_B Q_B(v_B,v_B)\\
+ &+E_y(T_4^{\rm eff}-J_{2,Y})-\tfrac12 E_y(T_3^{\rm eff})^2 .
+ \end{split}} \tag{5}
+\]
+The last term retains ALL cross-block cubic contractions through the
+actual $S^{-1}$. The source-zero trace and constants stay stored.
+In the local FP representation these expressions have all ghost and
+Jacobian partners, by equality with this original tree integral.
+
+\paragraph{Actual harmonic boundary response.}
+For an original exterior source let $h_0$ be its global harmonic
+extension. Replace $Hy$ by $Hy+\zeta h_0$. The quadratic cross term
+with every global zero-boundary fluctuation vanishes, and the field
+remains harmonic in each local interior. Taking the second derivative
+at $\zeta=0$ gives
+\[
+ Q_{\rm global}(h_0,h_0)=\sum_B Q_B(h_0|_{\partial B},h_0|_{\partial B})
+                              +{\cal R}_{\rm coarse}''(0), \tag{6}
+\]
+with the exact remainder
+\[
+ \begin{split}
+ {\cal R}_{\rm coarse}(\zeta)={}&E_y[
+ T_4^{\rm eff}(Hy+\zeta h_0)-J_{2,Y}(y+\zeta h_{0,Y})]\\
+ &-\tfrac12\operatorname{Var}_y T_3^{\rm eff}(Hy+\zeta h_0).
+ \end{split} \tag{7}
+\]
+The effective vertices in (7) mean the displayed formulas evaluated
+on that harmonic field, not another application of $H$. Only genuinely
+integrated skeleton variables enter $J_{2,Y}$. The local constants
+have no canonical-source dependence at this order.
+
+Equivalently the original nearby critical Hessian obeys
+$\det A(\epsilon)=\det A_{II}(\epsilon)\det S(\epsilon)$.
+In a common left-Haar frame the remaining leading response is the
+coarse Schur determinant curvature; any frame Jacobian stays attached.
+Formula (7) exhibits its fixed-coordinate exchange and current partners.
+
+\paragraph{Arbitrary internal marked legs: the exact unbounded terms.}
+Define the global COMMON-TREE uncut fixed-log tensor on ANY deterministic field $w$
+by the second derivative of
+$E_G(T_4-J_2)(z+\zeta w)-\frac12\operatorname{Var}_G T_3(z+\zeta w)$.
+This is a vertex insertion, not a claim that a translated integration
+variable changes the original partition function. Repeating (4)--(5)
+with $Hy+\zeta w$ gives the exact identity
+\[
+ K_G^{\rm tree}[w,w]=\sum_B K_{B,C_I^{(B)}}^{\rm tree,ext}[w_B,w_B]
+                         +{\cal R}_{\rm coarse,w}''(0). \tag{8}
+\]
+Every tensor in (8)--(9) is in this SAME common-tree frame. It is not
+identified with the FP/vector-ghost marked tensor of the longest time completed contact packet calculation without
+transporting its source, including nonlinear coordinate and Jacobian
+partners. Equality of scalar coefficients alone is insufficient.
+The local tensor is computed with the ACTUAL conditional covariance
+$C_I^{(B)}$, and extended action indices on every local link; its Haar
+indices are only the genuine interior variables. The remainder is
+(7) with $h_0$ replaced by $w$, and the polynomial (3) evaluated at
+$Hy+\zeta w$. For nonharmonic $w$ this is an algebraic polynomial,
+not a classical minimizing-background interpretation.
+
+Let $h_B$ be the true local harmonic extension of $w|_{\partial B}$
+and $r_B=w_B-h_B$. The exact first term of (8) is
+\[
+ \sum_B\left\{Q_B(h_B,h_B)
+   +2K_{B,C_I^{(B)}}^{\rm tree,ext}(h_B,r_B)
+   +K_{B,C_I^{(B)}}^{\rm tree,ext}(r_B,r_B)\right\}. \tag{9}
+\]
+Only the first term is bounded by the general box magnetic current bound calculation. The other two and the
+coarse remainder are explicitly retained. This is an exact global-to-local
+decomposition through conditioning, not replacement of $G$ by local
+covariances without its compensation. The long leg harmonic residual with gauss constraint calculation's long-leg residual
+energy gain applies after the actual linear gauge map to this tree
+frame, which preserves classical energy; no tree Euclidean norm or
+nonlinear source identification is inferred. It does not by itself
+bound either remaining tensor in (9).
+
+\paragraph{Remaining estimate.}
+The general box magnetic current bound calculation and the all mode dtn gaussian stability calculation control only the declared local quadratic
+piece of (5). Equations (5)--(7) retain a joint induced cubic/quartic
+coefficient, not independent Wilson blocks. No logarithmic bound on
+(7) follows from the identity alone. Arbitrary internal legs of the
+global self-energy are not harmonic boundary insertions: the residual
+and cross terms of the long leg harmonic residual with gauss constraint calculation remain. Nor may the flat tadpole identity
+be differentiated at a nonflat source without restoring its mean and
+all covariance derivatives. The next estimate must control the complete
+induced vertices (3),(7) with their original Schur covariance and scalar.
+The complete two-loop background curvature, uniform original nonlinear
+remainder, and S94 remain open.
+\end{document}

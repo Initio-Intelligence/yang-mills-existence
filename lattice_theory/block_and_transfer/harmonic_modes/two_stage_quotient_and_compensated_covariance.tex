@@ -1,0 +1,112 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Two-stage original quotient and the complete covariance compensation}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{An exact finite check.}
+The actual $R=2$ direct tree
+quartic/Haar Hessian has terms $-5G_{ii}/6$, $-3G_{jj}/2$,
+$-5s_is_jG_{ij}/3$, and Haar $2/3$. The incoming/outgoing original
+tree words give the stated BCH signs. Rerunning the three selected
+chords reproduces exactly $K_{\rm tree}=K_{\rm FP}-53/96$ for chords
+zero/six, and $K_{\rm tree}=K_{\rm FP}-23/32$ for chord three.
+This is a genuine original-fiber check, not only a word-series check.
+
+\paragraph{1. The actual two-stage tree quotient.}
+Use the SAME compatible forest as the same coefficient schur cumulant decomposition calculation: each interior vertex $v$ is
+connected by an interior tree path to a retained skeleton anchor
+$a(v)$, and a second tree fixes the skeleton. In the first gauge
+transformation $g^I$, every skeleton vertex is fixed. Thus every
+skeleton link stays its original link. Let $g^Y$ be the skeleton
+tree gauge, extended to an interior vertex by its anchor value.
+The complete transformation is exactly
+\[
+ g_v^{\rm full}(U)=g^Y_{a(v)}(U_Y)g^I_v(U),\qquad
+ U_b^{\rm full}=g_s^{\rm full}U_b(g_t^{\rm full})^{-1}. \tag{1}
+\]
+The product is the ordered path along the union tree. Boundary roots
+and every retained frame remain fixed as originally assigned.
+Haar invariance gives the original gauge quotient in either order;
+no fresh independent Haar law is assigned to the skeleton.
+
+Let $\Phi^I_\alpha$ and $\Phi^Y_\alpha$ be the canonical logarithmic
+maps of these literal group transformations. Their composition is
+the single original quotient, not merely an endpoint equality.
+Writing each map as $Lz+\alpha b(z)+\alpha^2c(z)+\cdots$, its jets are
+\[
+ \begin{split}
+ L&=L_YL_I,\\
+ b&=L_Yb_I+b_Y(L_Iz),\\
+ c&=L_Yc_I+Db_Y(L_Iz)b_I+c_Y(L_Iz).
+ \end{split} \tag{2}
+\]
+The mixed derivative in the last line is indispensable. It is exactly
+the additional second-stage source contact needed by the internal source tree to fp transport calculation. The $b^2$
+term in the covariance also contains its cross terms. There is no
+justification for dropping these or bounding them as independent
+stage errors. Equation (1) makes the completed source observable
+identical before any expansion, including its original Haar/FP factors.
+
+\paragraph{2. Keep the original interacting conditional normalizers.}
+In the final tree coordinates write $q=(q_I,y)$ and let $\mu_\alpha$
+be the ORIGINAL local physical-chart measure, with cutoff
+$\chi_{\rm phys}(\alpha q)$ and its full action/Haar density.
+Its exact disintegration is
+\[
+ \mu_\alpha(dq_I,dy)=\mu_{I,\alpha}(dq_I\mid y)\nu_\alpha(dy),
+ \quad \nu_\alpha(dy)=Z_\alpha^{-1}\rho_{Y,\alpha}(y)
+                            Z_{I,\alpha}(y)\,dy. \tag{3}
+\]
+All conditional $Z_I(y)$, any cutoff dependence, and the raw total
+normalizer remain in (3). Conditional independence is not required
+for the following identity. The flat Gaussian conditional covariance
+is block diagonal only because of the original geometry of the same coefficient schur cumulant decomposition calculation.
+
+For an INTERNAL source $w$, put $k=Aw$, $e=w^*Aw$ and
+$\ell=k^*q$. In the FP representation $q$ is the FULL nonlinear
+two-stage quotient (1), not $Lz$. Define
+$m_\alpha(y)=E_{I,\alpha}(\ell\mid y)$ and
+$v_\alpha(y)=\operatorname{Var}_{I,\alpha}(\ell\mid y)$.
+The source identity of the internal source tree to fp transport calculation and total variance give
+\[
+ \boxed{K_{\rm tree}[w,w]=-[\alpha^2]
+  \left\{E_{\nu_\alpha}v_\alpha
+             +\operatorname{Var}_{\nu_\alpha}m_\alpha-e\right\}.} \tag{4}
+\]
+This is the complete compensated internal/coarse covariance. It
+contains the induced quartic exchange and coarse cubic variance of the same coefficient schur cumulant decomposition calculation
+through the expansion of the SAME measures in (3). It contains every
+source-coordinate contact of the internal source tree to fp transport calculation through the ACTUAL observable.
+No equality with an untransported FP marked tensor is asserted.
+
+\paragraph{3. Exact connection to the physical residual energy.}
+At $\alpha=0$, $q_I=H_Iy+\eta$, with
+$C_I=A_{II}^{-1}$ and the original Schur precision $S$.
+Then
+\[
+ \ell=k_I^*\eta+j^*y,\quad j=k_Y+H_I^*k_I=S w_Y,
+ \quad r_I=C_Ik_I=w_I-H_Iw_Y. \tag{5}
+\]
+Consequently
+\[
+ e=e_I+e_Y,\quad e_I=k_I^*C_Ik_I=r_I^*A_{II}r_I,
+ \quad e_Y=j^*S^{-1}j=w_Y^*Sw_Y. \tag{6}
+\]
+The score energy in the conditional residual score contacts calculation is exactly $e_I$, after the genuine
+linear tree map. It is the residual energy paid by the long leg harmonic residual with gauss constraint calculation; there is no
+Euclidean-coordinate substitution. Formula (4) can equivalently use
+$E_{\nu_\alpha}(v_\alpha-e_I)+
+\operatorname{Var}_{\nu_\alpha}m_\alpha-e_Y$.
+Both corrections are generally nonzero. Differentiating the marginal
+must retain $Z_I(y)$ and its mean/current response.
+
+\paragraph{Exact remaining object, not an estimate.}
+Equations (1)--(6) eliminate artificial two-stage source discrepancies
+by exact composition. They do NOT make the residual or coarse terms
+of (4) vanish. A scale-uniform bound must control their SUM under
+the actual joint marginal, or an equivalent completed tensor with
+all contacts, rather than separate path-length norms of $b,c$.
+The fixed physical cutoff permits fixed-volume coefficient comparison;
+its boundary errors are not estimated uniformly here. Heat-cut
+regulator transport, full nonlinear background curvature, and the
+original S94 comparison remain open.
+\end{document}

@@ -1,0 +1,136 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{The connected first nonlinear response, including its original Haar partner}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Input and current scope.}
+The mixed boundary magnetic loop bound calculation gives the full mixed-boundary loop proof.
+Thus the complete signed leading constant-flux estimate is logarithmic,
+not merely a conjecture from finite-size data. In the first original nonlinear flux coefficient calculation, the differentiated
+fixed-$R$ Laplace expansion is justified: compactness, the unique tree-fixed
+minimum, its positive Hessian and the fixed-dimensional action gap justify
+its two parameter derivatives, but all constants may depend on $R$.
+Its cubic-current test is not the complete nonlinear coefficient. Here
+that coefficient is kept connected and evaluated exactly on the COMPLETE
+original $R=2$ cube.
+
+\paragraph{1. The connected formula before any size estimate.}
+Use the original right-minimum tensors of the first original nonlinear flux coefficient calculation and its Gaussian
+$\gamma_\epsilon$ with covariance $H_\epsilon^{-1}$. Write
+\[
+ T=T_{3,\epsilon},\quad W=T_{4,\epsilon}-J_2,\quad
+ Y=W-\tfrac12 T^2,\quad
+ q=\tfrac12 z^*H' z,\quad r=\tfrac12 z^*H''z,
+ \qquad J_2=-\tfrac13\sum_j|z_j|^2.
+\]
+Then $\mathcal C_R=E_\gamma Y$. Differentiating the NORMALIZED Gaussian
+expectation twice gives the exact finite-dimensional identity
+\[
+ \boxed{\mathcal C_R''=
+ E Y''-2\operatorname{Cov}(Y',q)
+       +\operatorname{cum}_3(Y,q,q)-\operatorname{Cov}(Y,r).}       \tag{1}
+\]
+Here
+$\operatorname{cum}_3(Y,q,q)=E[(Y-EY)(q-Eq)^2]$.
+Indeed $\partial E A=E A'-\operatorname{Cov}(A,q)$ and
+$\partial\operatorname{Cov}(A,q)=\operatorname{Cov}(A',q)
++\operatorname{Cov}(A,r)-\operatorname{cum}_3(A,q,q)$.
+All derivatives are in the actual right minimum frame; its velocity and
+acceleration enter $H,T,W$. The Haar polynomial has no explicit parameter
+derivative, but its expectation has covariance derivatives and cannot be
+removed. Equation(1) removes disconnected vacuum products only through
+actual cumulants; it does not prove their spatial summability.
+
+On the complete $R=2$ cube every plaquette has at most two free links.
+At zero background $T=0$ identically, so (1) becomes
+\[
+ \mathcal C_2''= E W''-E(T')^2
+ -2\operatorname{Cov}(W',q)+\operatorname{cum}_3(W,q,q)
+ -\operatorname{Cov}(W,r).                                        \tag{2}
+\]
+The cubic-source variance must be combined with all four other terms.
+For larger cubes $T$ generally does not vanish, and (1), not (2), is required.
+
+\paragraph{2. Exact complete-cube arithmetic.}
+Take the physical constant-flux path of the complete cube abelian signed incidence calculation,
+$a_{(x,\mu)}=\mathbf1_{\mu=1}x_0/4$, on $R=2$.
+There are 216 original plaquettes, eight free links before gauge fixing,
+and seven independent chords (21 real fluctuation coordinates).
+The actual Cartan minimum is exactly this linear field for small physical
+angle $\epsilon$. The tree edge is zero. All fixed-only plaquettes remain
+in the action and the exact classical minimum.
+
+The finite calculation expands each ORIGINAL ordered factor
+\[
+ U_e^*(\epsilon)\exp(i z_e\cdot\sigma)\quad(s_e=+1),\qquad
+ \exp(-i z_e\cdot\sigma)U_e^*(\epsilon)^{-1}\quad(s_e=-1)
+\]
+to degree four in $z$ and degree two in $\epsilon$, using rational quaternion
+products. It sums all plaquettes before taking Gaussian expectations.
+The Hessian coefficients $H_0,H_1,H_2$ in
+$H=H_0+\epsilon H_1+\epsilon^2H_2+\cdots$ give covariance coefficients
+\[
+ G_0=H_0^{-1},\quad G_1=-G_0H_1G_0,\quad
+ G_2=-G_0(H_1G_1+H_2G_0).                                        \tag{3}
+\]
+Every inverse recurrence and covariance symmetry is checked exactly.
+Wick pairing is used only to evaluate the finite Gaussian coefficient
+already justified by the fixed-$R$ original Laplace expansion.
+The twelve nonzero monomials of $T'_{3,0}$ are retained, not just a single
+sample fluctuation.
+
+The complete rational results are
+\[
+ \left(E_{\gamma_\epsilon}T_{4,\epsilon}\right)''_0
+       =-{203\over5184},\qquad
+ \left(-E_{\gamma_\epsilon}J_2\right)''_0={289\over6912},\qquad
+ E_{\gamma_0}(T'_{3,0})^2={29\over3456}.
+\]
+Therefore
+\[
+ \boxed{\mathcal C_2''(0)=-{119\over20736},\qquad
+        {\mathcal C_2''(0)\over E_2}=-{119\over46656},\quad
+        E_2={9\over4}.}                                          \tag{4}
+\]
+The leading signed determinant computed by the same exact product jet is
+$-71/576$, independently matching the complete cube abelian signed incidence calculation. A separate evaluation uses the
+actual trigonometric minimum factors at nonzero $\epsilon$, expands only
+in the fluctuations, and evaluates the entire Gaussian coefficient.
+It gives $\mathcal C_2(0)=-3/8$ and centered second differences
+\[
+\begin{array}{c|r|r}
+\epsilon&\text{second difference of }\mathcal C_2&\text{error from (4)}\\\hline
+.04&-.00573868736045&1.244\,10^{-7}\\
+.02&-.00573878063959&3.109\,10^{-8}\\
+.01&-.00573880395538&7.773\,10^{-9}
+\end{array}
+\]
+These checks verify the finite formula; they are not a proof of uniform
+perturbation theory.
+
+\paragraph{3. Consequence for the ORIGINAL fixed-block response.}
+With $\epsilon=\zeta/\sqrt B$, the fixed-$R$ differentiated expansion gives
+for this actual complete cube
+\[
+ F_{2,\zeta\zeta}(0)
+   =-{71\over576B}-{119\over20736B^2}+O_{R=2}(B^{-3}).              \tag{5}
+\]
+Here $F=-\log Z-Bv$ is the explicitly classically-subtracted scalar.
+The raw original $Z$ still has its full Haar/canonical normalization,
+all fixed-only plaquette action, and the exact minimum $Bv$; those are not
+reset or silently discarded. The complete tree Gaussian prefactor is
+$(2\pi^2)^{-7}(2\pi/B)^{21/2}(\det H)^{-1/2}$ times $e^{-Bv}$.
+There is no additional ghost factor in this already gauge-fixed tree
+integral. Global modes remain outside the fixed relative cube.
+
+\paragraph{What has and has not been closed.}
+Equation(4) proves that the full first nonlinear response need not vanish
+after its cubic, quartic and Haar partners are combined. It also shows why
+the cubic variance alone predicts neither its size nor its sign: the
+quartic and Haar responses largely cancel before that variance is subtracted.
+The main remaining bound is on the connected combination(1), normalized
+by physical boundary energy, together with a growing-$R$ differentiated
+remainder or an actual-law resummation. The fixed-$R$ expansion(5) supplies
+no such uniform control. The exact original-law residual (5) of the signed gauge quotient and unsummed current calculation remains the
+nonperturbative formulation of that gap. No physical-scale iteration,
+random-history admission or S94 conclusion follows from this coefficient.
+\end{document}

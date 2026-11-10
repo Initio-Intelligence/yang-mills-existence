@@ -1,0 +1,125 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{A quantitative harmonic approximation for original long heat legs}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Input and scope.}
+Use the original gaussian coarse kinetic interface calculation and the harmonic remainder and heat equation contacts calculation. In the longest time completed contact packet calculation, the
+longest-time packet differentiates $C(G-G_s,g-g_s)$; its difference
+from the shortest packet is the stated total derivative with zero
+endpoints. The ghost difference has the correct signs, and the
+Euler weights are $C_1+2C_2+3C_3$ for the uncut insertion and
+$-C_2-2C_3$ for the remainder. Thus the isolated late Haar tensor of the harmonic remainder and heat equation contacts calculation
+is combined with its ultraviolet partners in this rearrangement.
+This does not prove a form bound for the resulting full tensor.
+
+The following new estimate concerns the ORIGINAL flat relative
+one-form complex, before any tree-coordinate norm substitution.
+It quantifies an actual long-leg approximation; no nonlinear measure
+or generic effective density is substituted. Color copies are direct
+sums and change constants only by their literal multiplicity.
+
+\paragraph{1. Complete subblock residual with the Gauss constraint.}
+Let $H=d^*d$ on the global cube of side $L$, with relative tangential
+boundary conditions. Let $P$ be its physical projection, and take a
+family of complete subblocks of side $\ell$ with disjoint free
+interiors $J_B$ and retained complete boundary skeleton. All original
+plaquettes incident to an interior link belong to its block.
+For any global field $w$, define
+\[
+ q_B=(Hw)|_{J_B},\qquad r_B=H_B^+q_B,\qquad h_B=w|_B-r_B.       \tag{1}
+\]
+Here $r_B$ has zero boundary and $H_B$ is the complete original
+relative Maxwell operator of that block. Crucially $q_B$ is in its
+physical range: an interior gauge gradient $D_B\xi$ extends by zero
+to a global gauge gradient, so
+\[
+ \langle D_B\xi,q_B\rangle=\langle D\widetilde\xi,Hw\rangle=0.
+\]
+Consequently $H_Br_B=q_B$, and $h_B$ is the true local harmonic
+extension of the retained boundary, modulo harmless pure gauge.
+Its energy is orthogonal to that of $r_B$. No gauge mode is inverted.
+
+On the original relative product complex the completed Laplacian
+$\Delta_{1,B}=H_B+D_BD_B^*$ has one Neumann and three Dirichlet
+coordinate factors in each edge component. Its smallest eigenvalue
+is at least $12\sin^2(\pi/(2\ell))\ge12/\ell^2$.
+On co-closed vectors it equals $H_B$. Hence
+\[
+ \boxed{\sum_B\|dr_B\|^2
+ =\sum_B\langle q_B,H_B^+q_B\rangle
+ \le\frac{\ell^2}{12}\sum_B\|q_B\|^2
+ \le\frac{\ell^2}{12}\|Hw\|^2.}                              \tag{2}
+\]
+The last inequality uses disjoint interiors, not independent random
+blocks. All norms are literal full-link angular norms. Tree coordinates
+can be used to compute the same quotient, but their Euclidean norm
+cannot replace these norms silently.
+
+\paragraph{2. Actual long covariance and the gained time factor.}
+Let $W_s$ be the centered physical Gaussian with covariance
+$T_s=H^+e^{-sH}P$. This is the original infrared covariance appearing
+in the completed transverse packet, not a new Wilson law.
+Since $HT_sH=He^{-sH}P$, (2) proves
+\[
+ E\sum_B\|dr_B(W_s)\|^2
+ \le\frac{\ell^2}{12}\operatorname{Tr}_P(He^{-sH}).             \tag{3}
+\]
+The product spectrum and the elementary eigenvalue estimate
+$\lambda e^{-s\lambda}\le C(1+s)^{-1}e^{-s\lambda/2}$
+(the lattice spectrum is bounded) give the uniform estimate
+\[
+ \boxed{E\sum_B\|dr_B(W_s)\|^2
+ \le C\ell^2\,L^4(1+s)^{-3}e^{-cs/L^2}.}                     \tag{4}
+\]
+The same constants apply to rectangular boxes of bounded aspect ratio,
+with the evident volume and longest-side replacement. The ordinary
+long-leg energy count is bounded by
+$CL^4(1+s)^{-2}e^{-cs/L^2}$. Thus (4) contains one additional
+$\ell^2/(1+s)$ factor in the upper bound. This is not a claim that the
+ratio of the exact two traces is bounded by $C/(1+s)$ for arbitrarily
+late times; their exponential rates can be adjusted as displayed.
+For meaningful approximation use blocks shorter than the diffusion
+length. No physical-volume root-count multiplication was used.
+
+\paragraph{3. What this does and does not buy for the completed insertion.}
+The global tensor in the longest time completed contact packet calculation remains the SAME global uncut tensor;
+it is not a collection of independent block tensors. For any linear
+assembly $\mathcal H w$ of the actual local harmonic pieces and the
+retained skeleton, write $w=\mathcal H w+r$, with $r$ supported in the
+disjoint interiors. Then the exact quadratic insertion is
+\[
+ w^*Kw=(\mathcal H w)^*K\mathcal H w
+             +2(\mathcal H w)^*Kr+r^*Kr.                      \tag{5}
+\]
+The assembled $r$ need not be globally co-closed: local normal currents
+can end on retained skeleton vertices. Formula(5) is a full-link
+identity. For a physically projected insertion use $Pr$ and
+$P\mathcal H w$ instead; their sum is $w$ for physical $w$, and their
+curl energies are unchanged, but the global projection is nonlocal.
+It cannot be treated as a bounded local connector.
+
+Equation(4) controls the classical energy of $r$, not $K$ acting on it.
+The harmonic piece retains ALL boundary modes, not only the 18
+constant-curvature modes. The bound of the complete harmonic kinetic matching calculation and the complete constant curvature coarse sector calculation cannot be applied to it
+without a further estimate. A self-energy form bound or a completed
+signed current identity is still required for the cross and residual
+terms in (5). Nonlocal cross-block entries of $K$, ghost marking and
+the multiple-long-line remainder of the longest time completed contact packet calculation stay present.
+
+The underlying exact Gaussian skeleton transition is the Schur law of the original gaussian coarse kinetic interface calculation,
+with its raw determinant and inherited global/exterior data. Estimate
+(2) uses the same original local Maxwell problem; it neither changes
+that law nor removes its scalar. Background source derivatives of
+$P,H$, the harmonic map and its boundary data remain separate partners.
+No bound on those differentiated versions is inferred from (4).
+
+\paragraph{4. Verification.}
+The finite calculation uses a literal global $L=4$ original relative complex and
+its 16 side-2 blocks. On full (not tree-deleted) link spaces, exact
+rational arithmetic checks $D_B^*q_B=0$, $H_Br_B=q_B$, $D_B^*r_B=0$,
+and (2) for a nontrivial rational field. Local inversion uses
+$H_B+D_BD_B^*$ and the range identity, so no singular gauge inverse is
+hidden. This checks the incidence/interface, while the product-spectrum
+argument proves the stated size dependence. It is not a check of a
+nonlinear two-loop remainder or S94 closure.
+\end{document}

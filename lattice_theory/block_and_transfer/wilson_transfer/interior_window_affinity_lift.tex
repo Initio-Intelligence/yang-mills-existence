@@ -1,0 +1,148 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{An exact interior-window lift: integrate the boundary-adjacent bath first}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Original law, not the previous whole-path projection inequality.}
+Let $X$ be the entire initial spatial slice and $Y$ the midpoint slice of the
+original periodic Wilson slab of temporal length $2\ell$. Its true marginal
+is $p(dX)$. Retain a plaquette-disjoint set $I$ of spatial-link trajectories,
+$N_I=|I|$, as in the one-color argument. The original purity identity is
+$\mathcal P_{\rm full}=E_{X,X'\ iid\ p}\operatorname{Aff}(p_X^Y,p_{X'}^Y)^2$.
+
+Choose a window $[\ell-w,\ell+w]$ with $w<\ell$, disjoint from the initial
+slice. Define $\Omega$ to contain all complementary spatial and temporal links
+needed in plaquettes touching the selected trajectories inside this window,
+and all complementary midpoint spatial links. For simplicity one may retain
+all complementary spatial slices and temporal links in that window, including
+its two bounding collars. No boundary-adjacent path outside the window is
+retained. Let
+\[
+ \nu_X(d\omega)=\mathbb P(d\Omega=\omega\mid X)
+\]
+be its EXACT marginal under the original Wilson law. All outside variables,
+including boundary-adjacent bath paths and selected variables, have already
+been integrated in this definition; no conditional chain normalizer is dropped.
+Let $\alpha=(u_i(\ell-w),u_i(\ell+w))_{i\in I}$ be the selected endpoint vector.
+
+\paragraph{Exact finite-range disintegration.}
+Conditional on $(X,\Omega=\omega,\alpha)$, the selected paths strictly inside
+the window have the independent original conditional-chain laws, with endpoints
+$\alpha$ and the literal bath $\omega$. To see this, assign every original
+plaquette containing a selected interior link to its selected chain. All its
+other links lie in the retained collar record or in that same chain. Distinct
+selected chains share no plaquette. Every remaining action term is independent
+of all selected interior links; it can affect only the posterior of $\omega$
+and $\alpha$. Integrating that remainder therefore gives the exact identity
+\[
+ p_X^{U\mid\omega}=\int\sigma_X(d\alpha\mid\omega)
+                              \bigotimes_{i\in I}q_{i,\omega}^{\alpha_i}, \tag{1}
+\]
+where $U=(u_i(\ell))_{i\in I}$ and $\sigma_X$ is the ACTUAL endpoint posterior.
+It can be arbitrarily correlated across $i$ and depend arbitrarily on $X$.
+The normalized chain laws $q$ in(1) are independent of $X$ once their endpoints
+and the bath window are fixed. Their normalization factors are part of the
+posterior $\sigma_X$ and marginal $\nu_X$, not canceled out of the full measure.
+This is the new disintegration needed to shrink the lift; it does not follow
+by simply projecting the previous whole-path bath affinity.
+
+\paragraph{Good runs remove endpoint dependence before taking mixtures.}
+Use the actual bath criterion and sparse-record parameter of the original sparse bath records calculation,
+\[
+ p_B=6K_t^{1/12}\exp[-tB(1-\cos\epsilon_0)/108].
+\]
+For $L\ge2$, $h=L+4$, and $\delta=3e^{64B}(2/5)^L\le1/2$, let $\mathcal G$
+be the window-measurable event that each selected trajectory has an all-good
+candidate block of $h$ labels on EACH side of the midpoint. Candidate blocks
+are chosen inside the collars so that their inner $L+2$ steps have all onsite
+and temporal labels present. The good-run argument of the good run arbitrary complement calculation gives, uniformly
+in arbitrary pairs of endpoint values,
+\[
+ \operatorname{Aff}(q_{i,\omega}^{\alpha_i},
+                    q_{i,\omega}^{\beta_i})^2\ge1-16\delta^2,
+ \qquad\omega\in\mathcal G.                                            \tag{2}
+\]
+Only original positive kernels lie outside the good runs, including the
+rest of the window. Thus no endpoint or exterior bound is assumed here.
+
+Affinities multiply for the product laws in(1). They are jointly concave under
+ANY coupling of mixing distributions: pointwise Cauchy--Schwarz gives
+$\sqrt{(\int f\,d\pi)(\int g\,d\pi)}\ge\int\sqrt{fg}\,d\pi$.
+Use $\pi=\sigma_X\otimes\sigma_{X'}$, without assuming the components of
+$\alpha$ independent. Equations(1)--(2) yield
+\[
+ \operatorname{Aff}(p_X^{U\mid\omega},p_{X'}^{U\mid\omega})
+       \ge a_I:=(1-16\delta^2)^{N_I/2},\qquad\omega\in\mathcal G.         \tag{3}
+\]
+Assume $16\delta^2\le1$, as holds in the application below.
+
+\paragraph{A new, genuinely thinner bath factor.}
+The pair $(\Omega,U)$ projects to the full midpoint $Y$, since the complementary
+midpoint links were retained in $\Omega$. Integrating conditional affinities
+and then applying this projection gives
+\[
+ \operatorname{Aff}(p_X^Y,p_{X'}^Y)
+   \ge a_I\int_{\mathcal G}\sqrt{d\nu_Xd\nu_{X'}}.                       \tag{4}
+\]
+Define the actual window factor
+\[
+ \mathcal P_{\rm win}=E_{X,X'\ iid\ p}\operatorname{Aff}(\nu_X,\nu_{X'})^2.
+\]
+Averaged excluded overlap is at most the ORIGINAL probability of the bad window,
+by Fubini and Cauchy--Schwarz. Thus the same elementary square estimate as in
+the good run arbitrary complement calculation now proves the NEW inequality
+\[
+ \mathcal P_{\rm full}\ge(1-16\delta^2)^{N_I}
+                  [\mathcal P_{\rm win}-2\mathbb P(\mathcal G^c)].       \tag{5}
+\]
+The whole-path bath factor has been replaced by the actual window factor using
+(1)--(3), not by reversing the direction of a projection inequality.
+
+\paragraph{Original probability and a vanishing physical window thickness.}
+Put $J$ disjoint candidate blocks on each side, so $w=Jh+O(1)$ suffices.
+If no block for one side is entirely good, choose a bad label from each block.
+The original subset bound, followed by a union bound over the two sides and
+$N_I$ trajectories, gives
+\[
+ \mathbb P(\mathcal G^c)\le2N_I(hp_B)^J.                               \tag{6}
+\]
+This is an unconditional bound, precisely the one required in(5). No uniform
+estimate conditional on a fixed rough $X$ has been introduced.
+
+For a concrete choice let
+\[
+ L=\max\{2,\lceil[64B+10\log(2+\ell)]/\log(5/2)\rceil\},\qquad
+ J=\max\{1,\lceil\log[2N_I(2+\ell)^{10}]/\log[1/(hp_B)]\rceil\},       \tag{7}
+\]
+when $hp_B<1$. Then $\delta\le3(2+\ell)^{-10}$ and
+$\mathbb P(\mathcal G^c)\le(2+\ell)^{-10}$.
+On the original regime $B\sim b\log\ell$, fixed $b>0$, bounded $K_t$, and
+polynomial $N_I$ in $\ell$, the denominator defining $J$ is of order
+$\log\ell$. Hence $J=O(1)$, $w=O(\log\ell)$, and $w<\ell$ eventually.
+At fixed physical half-slab time, $\ell\asymp a^{-1}$, this window has physical
+thickness $O(a\log(1/a))\to0$. Both errors in(5) vanish for the usual
+$N_I=O(a^{-3})$ spatial count.
+
+\paragraph{What has and has not been reduced.}
+The retained record no longer contains paths near the initial boundary.
+It contains a thin interior bath window with original posterior density,
+including all induced interactions, all normalizers and global sectors.
+Its affinity is generally smaller than the affinity of its projection to the
+remaining midpoint slice. Consequently $\mathcal P_{\rm win}$ is STILL NOT
+an output midpoint purity. A new continuity/coarse-response estimate would
+be required to discard the remaining window information, or a spatial
+iteration must retain this actual window law. Neither follows merely because
+its physical thickness tends to zero. Equation(5) is a constructive reduction
+of the former overly informative lift, not a lower bound for
+$\mathcal P_{\rm win}$ or a full S94/mass-gap proof.
+
+\paragraph{The second color induced interaction calculation and the next step.}
+The exact output density $e^{-S_{\rm rest}}\prod_i\mathcal Z_i/Z$, its
+conditional covariance Hessian, the cancelled-staple example with induced
+mixed derivative $-B^2/4$, and the original-law $L^p$ bound $C_pB$ are
+verified directly. The last bound uses $|\partial s|^2\le2s$, same-Wilson moments,
+conditional Cauchy--Schwarz and outer H\"older. The two-arc averaged temporal
+decay estimate also holds, with no uniform rough-boundary assertion. None
+of these alone identifies the window law here as a Wilson or independent-chain
+law for a second spatial color.
+\end{document}

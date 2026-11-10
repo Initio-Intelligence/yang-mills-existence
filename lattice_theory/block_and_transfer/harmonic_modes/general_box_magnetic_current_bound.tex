@@ -1,0 +1,203 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{General magnetic currents on the original mixed-boundary box}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Claim and scope.}
+Let $\Omega=\prod_{i=0}^3\{0,\ldots,n_i-1\}$ be one of the actual
+scalar component or ghost grids of a relative cube of side $R$.
+Thus $n_i\asymp R$, the component has one Neumann and three Dirichlet
+directions, and the ghost has four Dirichlet directions. Let $a$
+be ANY real antisymmetric connection on its internal nearest-neighbor
+edges. The magnetic Laplacian $L_\epsilon$ has hopping phases
+$e^{i\epsilon a}$, the original diagonal and original killing rates.
+Then the proposed bound is
+\[
+ 0\le(\log\det L_\epsilon)''_0
+                   \le C\log(2+R)\sum_{\square\subset\Omega}|da|^2 .
+                                                               \tag{1}
+\]
+No harmonicity, own-coordinate independence, or imposed boundary
+value of $a$ is assumed. Tiny grids with singleton factors are included
+by omission of their absent edges. The proof below uses an auxiliary
+gauge and a positive path domination, not replacement of the original
+determinant or its Dirichlet boundary.
+
+\paragraph{1. An exact auxiliary Coulomb gauge and reflection extension.}
+Minimize $\|a-d\chi\|_{\ell^2(E)}^2$ over all vertex functions on the
+INTERNAL graph, modulo constants. Put $b=a-d\chi$. Then
+$d^*b=0$ at EVERY graph vertex, including its boundary.
+This is merely a scalar unitary gauge of $L_\epsilon$; original
+killing diagonals and every closed-loop current remain unchanged.
+In particular $db=da$.
+
+Let $F_i:\mathbb Z\to\{0,\ldots,n_i-1\}$ be the period-$2n_i$ fold
+\[
+ F_i(z)=z\quad(0\le z<n_i),\qquad
+ F_i(z)=2n_i-1-z\quad(n_i\le z<2n_i).
+\]
+Pull back $b$ to oriented edges of the periodic lattice:
+$B(z,z+\hat i)$ is $b(Fz,F(z+\hat i))$ when these endpoints differ,
+and zero when they coincide. The latter edges are the genuine
+self-loop steps of the folded walk. $B_i$ is odd in its own edge
+coordinate and even in the transverse vertex coordinates.
+Literal incidence gives
+\[
+ d^*B(z)=d^*b(Fz)=0,\qquad
+ \|dB\|_{\rm per}^2=16\|db\|^2.
+\]
+The periodic discrete Fourier identity therefore gives
+\[
+ \sum_{i,j}\|\delta_jB_i\|_{\rm per}^2
+       =\|dB\|_{\rm per}^2+\|d^*B\|_{\rm per}^2
+       =16\|da\|^2.                                         \tag{2}
+\]
+This is a finite exact identity. It keeps the normal zero edges
+at reflection planes, rather than discarding their boundary energy.
+
+\paragraph{2. Centered open currents on the folded walk.}
+Let $Z_t$ be the ordinary continuous-time nearest-neighbor walk on
+$\mathbb Z^4$, rate one for each oriented step, started at $x\in\Omega$,
+and $Y_t=FZ_t$. $Y$ is the all-reflecting graph walk.
+Its $b$-current is EXACTLY the $B$-current on $Z$.
+Fix $c_i(x)=B_i(x)$ and let
+\[
+ M_t=J_t-\sum_i c_i(x)(Z_t^i-x_i).
+\]
+By $d^*B=0$, this is a martingale. For the periodic walk, translation
+and the spectral inequality $1-e^{-s\lambda}\le s\lambda$ give
+\[
+ \sum_{x\in\Omega}E_x M_t^2
+ \le C\int_0^t(1+s)\,ds\sum_{i,j}\|\delta_jB_i\|_{\rm per}^2
+ \le Ct(1+t)\|da\|^2.                                      \tag{3}
+\]
+Indeed the two directional coefficients in the bracket are
+$B_i(Z_s)-B_i(x)$ and $B_i(Z_s-\hat i)-B_i(x)$.
+Sum over the whole periodic cell to dominate the original start set.
+The first difference costs $Cs\|\nabla B_i\|^2$ and the unit shifted
+one costs $C(1+s)\|\nabla B_i\|^2$. No pointwise coefficient bound
+or fourth moment of the connection is used.
+
+The endpoint gauge needed for a closed loop is defined on the
+ORIGINAL graph: $\phi_x(y)=\sum_i c_i(x)(y_i-x_i)$. Thus
+\[
+ J_t-\phi_x(Y_t)
+       =M_t+\sum_i c_i(x)(Z_t^i-Y_t^i).                       \tag{4}
+\]
+The folding term is essential. Dropping it would silently discard
+the reflected boundary drift.
+
+\paragraph{3. Normal-edge Hardy control of that folding term.}
+Write $d_i(x)=\min(x_i,n_i-1-x_i)$.
+The fold is one-Lipschitz and fixes $x$, so
+$|Z_t^i-Y_t^i|\le2|Z_t^i-x_i|$, and the difference can be nonzero only
+after the unfolded endpoint has crossed one of the bounding planes.
+The elementary symmetric-walk Chernoff estimate and
+$E|Z_t^i-x_i|^4\le C(t+t^2)$ imply, for $t\ge1$,
+\[
+ E_x|Z_t^i-Y_t^i|^2
+ \le Ct\exp[-c\min(d_i(x)^2/t,d_i(x))].                       \tag{5}
+\]
+For $0<t\le1$, the bound $Ct e^{-c d_i(x)}$ follows directly by
+dominating the displacement by the Poisson jump count and summing
+its factorial tail. These bounds remain valid for multiple folds.
+
+For each fixed transverse coordinate, $B_i$ has a ZERO normal edge
+at either bounding plane. Telescoping from the nearer such edge gives
+\[
+ |c_i(x)|^2\le C(d_i(x)+1)
+       \sum_{\text{normal segment from that plane to }x}
+                                      |\delta_i B_i|^2 .
+\]
+After multiplication by (5), reverse the segment sum. The elementary
+one-dimensional shell sums are
+\[
+ \sum_{d\ge0}(d+1)e^{-c\min(d^2/t,d)}\le C(1+t)\quad(t\ge1),
+ \qquad
+ \sum_{d\ge0}(d+1)e^{-cd}<\infty .
+\]
+Consequently
+\[
+ \sum_{x\in\Omega}\sum_i |c_i(x)|^2
+              E_x|Z_t^i-Y_t^i|^2
+             \le Ct(1+t)\|da\|^2.                           \tag{6}
+\]
+This pays the normal boundary correction with the SAME original
+curl energy through (2), uniformly in every boundary value.
+
+Combining (3)--(6) yields
+\[
+ \sum_x E_x|J_t-\phi_x(Y_t)|^2
+                         \le Ct(1+t)\|da\|^2.                \tag{7}
+\]
+
+\paragraph{4. Return to the original killed/reflected loops.}
+The original process is the all-reflecting graph walk weighted by
+$\exp[-\int_0^t V_{\rm kill}(Y_s)ds]$, where $V_{\rm kill}\ge0$
+is the ORIGINAL missing-edge killing potential.
+Thus (7) also dominates its surviving centered-current moment.
+No altered boundary current on a killing jump is needed here:
+only surviving paths contribute to the loop.
+
+Split a closed original path of length $t$ into two halves and reverse
+the second half. Both now start at $x$ and end at the same $y$.
+The same $\phi_x(y)$ cancels between their currents.
+The original positive return kernel satisfies
+\[
+ \sup_{x,y}p_{t/2}(x,y)\le
+             C(1+t)^{-2}e^{-ct/R^2}.
+\]
+The exact half-loop argument and (7) therefore show
+\[
+ {\cal A}(t):=\sum_x E_x[J_t^2;Y_t=x,\ {\rm survival}]
+ \le Ct(1+t)(1+t)^{-2}e^{-ct/R^2}\|da\|^2.                    \tag{8}
+\]
+The magnetic Feynman--Kac expansion gives
+$-\partial_\epsilon^2\operatorname{Tr}e^{-tL_\epsilon}|_0
+={\cal A}(t)$, and hence
+\[
+ (\log\det L_\epsilon)''_0=\int_0^\infty {\cal A}(t)\frac{dt}{t}.
+\]
+Bound (8) is integrable at zero and yields (1).
+The proof has kept the actual return kernel and its Dirichlet gap;
+the auxiliary reflecting walk was used only for the nonnegative
+open-moment estimate.
+
+\paragraph{5. Proposed leading full-harmonic implication.}
+For an actual Cartan Maxwell-harmonic boundary tangent $h$, the
+same-component scalar phases of the full Wilson charged Hessian,
+after its exact scalar gradient gauge, are
+$a^\mu_\nu(x)=h_\nu(x)+h_\nu(x+\hat\mu)$.
+Their literal plaquette curvatures are
+$(dh)_{\nu\rho}(x)+(dh)_{\nu\rho}(x+\hat\mu)$.
+The ghost connection is $2h$. Bounded incidence therefore gives
+$\sum_\mu\|da^\mu\|^2+\|d(2h)\|^2\le C E(h)$,
+including the available original boundary plaquettes.
+
+Applying (1) to these scalar operators, and the
+local spin/neutral/diagonal estimates of the harmonic shear leading kinetic bound calculation, would give
+\[
+ |F_{\rm quad}''[h,h]|=|h^*\widehat K h|
+                 \le C\log(2+R)E(h)                         \tag{9}
+\]
+for GENERAL actual harmonic boundary data, including the explicit
+outside-shear field of the mixed harmonic shear gauge quotient calculation. Canonical source units contribute
+$B^{-1}$. All determinant multiplicities and raw source-zero scalars
+remain retained. Global color symmetry then supplies all three
+infinitesimal colors.
+
+The unfolding, the normal-edge boundary term and the full scalar-phase
+interface of this extension still require independent verification.
+Even if (9) holds, it is an UNCUT leading kinetic statement. It does
+not estimate the complete two-loop coefficient $C_R''$, the matched
+cutoff packet, or the original nonlinear remainder, and does not
+close S94.
+\paragraph{Finite checks (not substitutes for the bounds).}
+The finite algebraic calculation verifies exact boundary
+co-closedness, the factor-sixteen Gaffney identity, and three hundred
+unfolded/folded current endpoint identities on three original finite
+rectangles. The finite algebraic calculation
+checks the actual full charged Wilson incidence on $R=2,3$ for an
+outside-shear harmonic cubic: the original force and the general
+scalar-phase residual both vanish exactly. These test the finite
+interfaces; the uniform Hardy and moment estimates are proved above.
+\end{document}

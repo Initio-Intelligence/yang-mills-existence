@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{The literal Wilson cubic vertex and its signed endpoint minor}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Original flat plaquette, no continuum replacement.}
+Use a fixed quaternion product convention for
+$SU(2)$. Let the four oriented fluctuation vectors in a plaquette
+be $v_1,v_2,v_3,v_4$. Fixed links have zero fluctuation; inverse
+occurrences include their original sign and insertion order.
+The cubic coefficient of $1-\frac12\operatorname{ReTr}\prod_i
+\exp(i t v_i\cdot\sigma)$, with the corresponding quaternion convention,
+is
+\[
+ T_{3,p}=\sum_{i<j<k}(v_i\times v_j)\cdot v_k
+       =F\cdot C,\quad
+ F=\sum_i v_i,\quad C=\sum_{i<j}v_i\times v_j .
+\]
+A simultaneous reversal of the Lie-algebra convention reverses this
+cubic sign but not any of the paired identities below.
+Put
+\[
+ a=(v_1-v_3)/2,\quad b=(v_2-v_4)/2,\quad
+ c=v_1+v_3,\quad d=v_2+v_4,\quad F=c+d .
+\]
+Direct expansion gives
+\[
+ C=2a\times b+(a+b)\times F+\tfrac12c\times d.
+\]
+Both last terms are orthogonal to $F$. Hence the ORIGINAL lattice
+identity is
+\[
+ \boxed{T_{3,p}=2F\cdot(a\times b).}                              \tag{1}
+\]
+For a $\mu\nu$ plaquette this says exactly
+\[
+ F=\delta_\mu z_\nu-\delta_\nu z_\mu,\quad
+ a=\operatorname{Av}_\nu z_\mu,\quad
+ b=\operatorname{Av}_\mu z_\nu,
+\]
+with the two-point averages on the literal opposite links.
+There is no higher-difference remainder. Zero extension of fixed
+tangential links retains all boundary plaquettes. When a plaquette
+has fewer than three free links the cubic polynomial vanishes by this
+same identity; no boundary term is appended by hand.
+
+\paragraph{All-cross Wick contraction before absolute values.}
+At the flat covariant gauge with penalty one, the full relative vector
+Green operator is diagonal in component and color. Consider the
+$\delta_\mu z_\nu$ sector of (1) at plaquettes $x$ and $y$ of the same
+orientation. Write $D=\delta_\mu$, $A=\operatorname{Av}_\mu$ on the
+$\nu$ component grid. The unique $\mu$-component leg at each vertex
+is averaged in direction $\nu$. Its kernel is denoted $G_\mu^{\rm av}$.
+
+The two ways to pair the remaining $\nu$ legs have opposite signs from
+the antisymmetric color tensor. Summing ALL cross-vertex pairings gives
+\[
+ \boxed{24G_\mu^{\rm av}(x,y)
+ \left[(D_xD_yG_\nu)(A_xA_yG_\nu)
+             -(D_xA_yG_\nu)(A_xD_yG_\nu)\right].}                \tag{2}
+\]
+The factor is $2^2$ from the two original vertices times six color
+contractions. The two sectors of the curl have different component
+multiplicities, so their cross pairing vanishes at this flat
+component-diagonal reference. Different unordered plaquette
+orientations likewise cannot match those component multiplicities.
+This statement concerns the all-cross cubic graph; the completed
+mean-current/tadpole, quartic, ghost and Haar terms remain separate
+partners in the COMPLETE coefficient.
+
+Let the $2$-by-$2$ matrix of endpoint Green values be
+\[
+ M=\begin{pmatrix}
+ G_\nu(x,y)&G_\nu(x,y+\hat\mu)\\
+ G_\nu(x+\hat\mu,y)&G_\nu(x+\hat\mu,y+\hat\mu)
+ \end{pmatrix}.
+\]
+The two-point difference/average change has determinant minus one.
+Therefore the bracket in (2) is EXACTLY
+\[
+ (D_xD_yG)(A_xA_yG)-(D_xA_yG)(A_xD_yG)=\det M.                    \tag{3}
+\]
+In particular the derivative-free and singly differentiated pieces
+cancel algebraically before spatial bounds. This is an endpoint
+minor, not automatically the fully contracted scalar $\Gamma$ of
+the derivative network contact and boundary defect calculation. Treating it as that scalar energy without the remaining
+index sums would be an unsupported step.
+
+\paragraph{What changes at the actual constant-flux background.}
+For one original background plaquette, move its background factors to
+the right while retaining every prefix transport and the correct
+before/after inverse insertion. The product becomes
+\[
+ \left[\prod_{i=1}^4\exp(i t\,\widetilde v_i\cdot\sigma)\right]
+                    U_p^*,\qquad U_p^*=\exp(i\epsilon f_p\sigma_3).
+\]
+Each $\widetilde v_i$ is the ORIGINAL signed fluctuation parallel
+transported along a prefix of at most four local links.
+Let $V_3(\widetilde v)$ be the vector part of the coefficient of $t^3$
+in the bracketed product. Direct scalar-vector multiplication gives
+the exact local decomposition
+\[
+ T_{3,p,\epsilon}
+ =2\cos(\epsilon f_p)\,
+       \widetilde F\cdot(\widetilde a\times\widetilde b)
+       +\sin(\epsilon f_p)\,[V_3(\widetilde v)]_3,                 \tag{4}
+\]
+with the consistent quaternion orientation.
+Here $|V_3|\le C(\sum_i|\widetilde v_i|)^3$.
+For the actual flux family, $f_p=R^{-2}$ on 01 plaquettes and zero
+otherwise. Formula (4) retains a local explicit curvature vertex
+alongside the transported curl vertex. It does not replace the
+prefix transports by identity. Their background derivatives are
+actual endpoint-current partners.
+
+These prefix paths belong to the bounded local connector class of
+the mixed grid joint current with connectors calculation. Thus the geometric scalar currents from this local transport
+have a proved mixed-grid comparison. But the spin part of the
+propagator, background derivatives of (4), changing ghost/projection
+vertices, and the signed endpoint minor must still be combined.
+The fact that the explicit sine amplitude has one factor $R^{-2}$
+does not authorize dropping its mixed transport derivatives.
+
+\paragraph{Verified cancellation and next quantitative join.}
+The finite calculation
+checks 200 exact original plaquette identities (1), the complete
+color/component Wick factor (2), and 100 exact endpoint-minor identities.
+These are algebraic regression checks, not a flux-response bound.
+The unvaried graph now visibly contains two genuine derivative
+differences. If the required current-weighted finite-boundary estimates
+for their SIGNED combination were proved, this is the literal vertex
+to which they would apply; derivatives may not simply be assigned to
+the longest proper time.
+
+The remaining main join is either a summation of (2)--(4) and the
+ghost/spin contacts into the exact scalar energy cancellation of
+the derivative network contact and boundary defect calculation plus controlled remainders, or a direct current-weighted
+endpoint-minor estimate retaining those partners. The complete
+boundary mass Ward and longitudinal cancellation remain in force.
+No size-uniform bound on $\mathcal C_R''$, on the original remainder,
+or on S94 is claimed by the vertex grouping alone.
+\end{document}

@@ -1,0 +1,657 @@
+\section{Ward identities for the heat bath}
+\label{rsm:section}
+
+This section first extends the exact compact Ward identity to deterministic nonlocal coefficient matrices. It then controls the actual projected \(h/r\) cross term for the canonical generator of an original coordinate marginal. Neither result supplies the common ordinary susceptibility. The original sources remain those in \eqref{rs:sources}.
+
+\subsection{Deterministic matrices in the original invariant frame}
+
+Index the original free link and color components by \(i\), and write
+\(F_i=X_iS\), \(H_{ij}=X_iF_j\). The matrix \(H\) consists of ordered derivatives. Bounded original plaquette incidence and compactness give
+\[
+ \norm H_{\rm op}\le C.
+\]
+Let \(Q\) be any real deterministic symmetric matrix on this component space. It may couple distant original links. Define
+\begin{equation}
+ V_Q=\sum_i(QF)_iX_i,\qquad
+ a_Q=\sum_{i,j}Q_{ij}X_iF_j,\qquad
+ T_Q=\beta F^TQF-a_Q=-\operatorname{div}_\mu V_Q.
+ \label{rsm:matrixward}
+\end{equation}
+The original product Haar divergence is used before weighting by \(e^{-\beta S}\). Compact integration by parts gives
+\begin{equation}
+ \E T_Q=0,\qquad
+ \E(T_QG)=\E(V_QG).
+ \label{rsm:matrixibp}
+\end{equation}
+No raw scalar or source normalizer has been changed.
+
+\begin{theorem}[Original-law Ward concentration for a nonlocal matrix]
+\label{rsm:matrixthm}
+On any finite original compact Wilson geometry with bounded plaquette incidence and arbitrary fixed unitary boundary values, for \(\beta\ge1\),
+\begin{equation}
+ \log\E e^{\lambda T_Q}\le C\lambda^2\norm Q_{\HS}^2,
+ \qquad |\lambda|\norm Q_{\rm op}\le\delta.
+ \label{rsm:matrixmgf}
+\end{equation}
+For the canonical original Langevin generator
+\[
+ L_\mu=-\sum_iX_i^2+\beta\sum_iF_iX_i,
+ \qquad {\cal E}_\mu(G,G)=\E\sum_i|X_iG|^2,
+\]
+one also has
+\begin{equation}
+ \inner{T_Q}{L_\mu^{-1}T_Q}_\mu
+ \le C\beta^{-1}\norm Q_{\HS}^2.
+ \label{rsm:matrixhinverse}
+\end{equation}
+The constants depend only on the fixed group, derivative convention and original incidence.
+\end{theorem}
+
+\begin{proof}
+Although \(Q\) may be nonlocal, the trace row \(a_Q\) only reads entries \(Q_{ij}\) for which \(i,j\) meet an original plaquette. Its derivative satisfies
+\begin{equation}
+ \sum_k|X_ka_Q|^2\le C\norm Q_{\HS}^2.
+ \label{rsm:tracegradient}
+\end{equation}
+Indeed, \(X_ka_Q=\sum_{i,j}Q_{ij}X_kX_iX_jS\). For each \(k\), only boundedly many ordered pairs \(i,j\) occur; the same is true of the reverse incidence. The individual third derivatives are bounded. Cauchy in each finite sum proves \eqref{rsm:tracegradient}. No same-link invariant derivatives have been commuted.
+
+Set \(E_Q=\beta|QF|^2\). Differentiating the quadratic force term gives
+\[
+ V_Q(\beta F^TQF)=2\beta(QF)^TH(QF).
+\]
+Together with \eqref{rsm:tracegradient}, this yields
+\begin{align}
+ |V_QT_Q|
+ &\le C(E_Q+\beta^{-1}\norm Q_{\HS}^2),\notag\\
+ |V_{Q^2}T_Q|
+ &\le C\norm Q_{\rm op}
+              (E_Q+\beta^{-1}\norm Q_{\HS}^2).
+ \label{rsm:matrixderivatives}
+\end{align}
+For the second line use \(|Q^2F|\le\norm Q_{\rm op}|QF|\) in both terms. These estimates do not divide by an eigenvalue of \(Q\).
+
+Let \(\E_\lambda\) denote the true compact tilt by \(e^{\lambda T_Q}\). Apply \eqref{rsm:matrixibp} with the matrix \(Q^2\):
+\[
+ \E_\lambda E_Q
+ =\E_\lambda a_{Q^2}
+       +\lambda\E_\lambda(V_{Q^2}T_Q).
+\]
+Since \(Q^2\) is positive semidefinite,
+\[
+ |a_{Q^2}|=|\Tr(Q^2H)|
+ \le C\Tr(Q^2)=C\norm Q_{\HS}^2.
+\]
+The symmetric part of \(H\) suffices in this trace. Absorbing the last \(E_Q\) term using \eqref{rsm:matrixderivatives}, for small \(|\lambda|\norm Q_{\rm op}\), gives
+\[
+ \E_\lambda E_Q\le C\norm Q_{\HS}^2.
+\]
+If \(\psi(\lambda)=\log\E e^{\lambda T_Q}\), the same original identity gives
+\[
+ \psi'(\lambda)=\lambda\E_\lambda(V_QT_Q),
+ \qquad
+ |\psi'(\lambda)|\le C|\lambda|\norm Q_{\HS}^2.
+\]
+Integration in either direction from zero proves \eqref{rsm:matrixmgf}.
+
+For the inverse-form estimate, original compact integration by parts gives
+\(\beta\E(F_iF_j)=\E(X_iF_j)\). Hence
+\[
+ \E|QF|^2\le C\beta^{-1}\norm Q_{\HS}^2.
+\]
+Cauchy in \eqref{rsm:matrixibp} bounds its right side by
+\(C\beta^{-1/2}\norm Q_{\HS}{\cal E}_\mu(G,G)^{1/2}\).
+The variational inverse-form identity proves \eqref{rsm:matrixhinverse}.
+\end{proof}
+
+This is a statement about real exponential moments under the original law. It does not assert a common complex logarithm domain or a pressure-Hessian bound under arbitrary joint source tilts.
+
+\subsection{Exact compression to the actual coordinate marginal}
+
+Split the original free links into integrated \(I\) and retained \(B\), without assuming a product kernel. Keep the exact compact conditional expectation \(K\) and marginal
+\[
+ \dd\nu_B=e^{-V_{\rm eff}}\dd\lambda_B,\qquad
+ e^{-V_{\rm eff}(\eta)}
+ =Z_\beta^{-1}\int e^{-\beta S(u_I,\eta)}\dd\lambda_I.
+\]
+The raw conditional normalizer is inside this density. Compact integration by parts in \(I\), and differentiation in \(B\), give
+\[
+ KF_I=0,\qquad KF_B=\beta^{-1}\nabla_BV_{\rm eff}.
+\]
+The conditional expectation of the integrated divergence vanishes. The retained component of \(KV_Q\) is therefore
+\(\beta^{-1}Q_{BB}\nabla_BV_{\rm eff}\), so
+\begin{equation}
+ KT_Q
+ =\frac1\beta\left[
+   (\nabla_BV_{\rm eff})^TQ_{BB}\nabla_BV_{\rm eff}
+   -\operatorname{div}_B(Q_{BB}\nabla_BV_{\rm eff})
+ \right].
+ \label{rsm:compression}
+\end{equation}
+Every integrated and mixed block cancels exactly. In particular \(KT_Q=0\) if \(Q_{BB}=0\).
+
+The expression in \eqref{rsm:compression} also equals \(KT_{\widetilde Q}\), where \(\widetilde Q\) embeds \(Q_{BB}\) and is zero elsewhere. Conditional Jensen consequently gives \eqref{rsm:matrixmgf} for \(KT_Q\) with the norms of \(Q_{BB}\). Pairing with a retained test and using the actual marginal Dirichlet form gives
+\begin{equation}
+ \inner{KT_Q}{L_B^{-1}KT_Q}_{\nu_B}
+ \le C\beta^{-1}\norm{Q_{BB}}_{\HS}^2,\qquad
+ L_B=-\Delta_B+\nabla_BV_{\rm eff}\cdot\nabla_B.
+ \label{rsm:compressedinverse}
+\end{equation}
+This is the canonical generator of the actual marginal. It is not a remaining bare Wilson action with a renamed coupling.
+
+\subsection{The original source contact and field-dependent coefficients}
+
+Write \(h_f=\beta G_f\). Two original compact integrations by parts give the exact contact
+\begin{equation}
+ \Cov_\mu(T_Q,h_f)
+ =\sum_{i,j}Q_{ij}\E(X_jX_iG_f).
+ \label{rsm:matrixcontact}
+\end{equation}
+Every \(G_b=D_b-P_b/3\) has a complete bounded determining stencil and uniformly bounded derivatives. Thus
+\[
+ \norm{\Hess_{\rm ordered}G_f}_{\HS}\le C\sqrt{M_f},
+ \qquad
+ |\Cov(T_Q,h_f)|\le C\norm Q_{\HS}\sqrt{M_f}.
+\]
+If \(\norm{Q_f}_{\HS}^2\le CM_f\), the analysis decomposition
+\(h_f=T_{Q_f}+(h_f-T_{Q_f})\) changes the variance by at most \(CM_f\), because both the Ward variance and the actual cross term are controlled. The generated contact is retained. This does not replace the prescribed source in its exponential.
+
+A deterministic \(Q\) is constant in the specified original invariant frame. A nonlocal choice need not be gauge invariant. For a genuinely field-dependent symmetric matrix \(Q(U)\), the identity is instead
+\begin{equation}
+ -\operatorname{div}_\mu(QF)
+ =\beta F^TQF
+  -\sum_{i,j}Q_{ij}X_iF_j
+  -\sum_{i,j}(X_iQ_{ij})F_j.
+ \label{rsm:movingmatrix}
+\end{equation}
+A reference tree, parallel transport or moving gauge can produce the last term. Theorem~\ref{rsm:matrixthm} does not bound it.
+
+For example, write \(\mathcal F_{\rm dir}\) for the array of the original directional forces, to distinguish it from their squared row \(D_b\). An actual reconstruction \(\mathcal F_{\rm dir}=AF+R\) would give, with the original directional source matrix \(P_f\),
+\[
+ \beta\mathcal F_{\rm dir}^TP_f\mathcal F_{\rm dir}
+ =\beta F^T(A^TP_fA)F
+       +2\beta F^TA^TP_fR+\beta R^TP_fR.
+\]
+The cross term, residual and, for variable \(A\), coefficient responses remain. No such nonlinear reconstruction estimate has been proved here.
+
+\subsection{The actual first-layer retained gradient}
+
+Return to the original periodic moment regime \eqref{rs:momentregime}. Let \(\mathcal C\) contain at most one link in every original plaquette and let \(\eta=U_{\mathcal C^c}\) be the complete complement. Its exact conditional kernel is \(K_{\mathcal C}=\bigotimes_{s\in\mathcal C}K_s\), and its exterior law retains \(\prod_sZ_s(\eta)\).
+
+Use centered retained means
+\[
+ m_h(f)=K_{\mathcal C}h_f-\E h_f,\qquad
+ m_r(f)=K_{\mathcal C}r_f-\E r_f,\qquad
+ g_f=K_{\mathcal C}t_f.
+\]
+Since \(\E t_f=0\), \(m_h(f)-m_r(f)=g_f\).
+
+For an original retained derivative \(Y\) at \(b\), compact differentiation gives
+\begin{equation}
+ YK_{\mathcal C}h_f
+ =K_{\mathcal C}(Yh_f)
+       -\beta\Cov_{K_{\mathcal C}}(h_f,YS).
+ \label{rsm:meanresponse}
+\end{equation}
+Only a bounded complete neighborhood \(\mathcal N(b)\) of source roots contributes. For the direct term these are roots whose original stencil reads \(b\). For the covariance, \(YS\) reads a bounded set of active links, and roots with disjoint complete free-coordinate readsets have zero conditional covariance under the actual product kernel. The graph \(b\leftrightarrow\mathcal N(b)\) has bounded row and column incidence.
+
+The original local moments and bounded ordered Hessians give
+\[
+ \norm{Yh_f}_2\le C\sqrt\beta\sum_{c\in\mathcal N(b)}|f_c|.
+\]
+For the other term, conditional H\"older and restoration of the original full law give
+\begin{align*}
+ &\beta\norm{
+ \Cov_{K_{\mathcal C}}\left(
+       \sum_{c\in\mathcal N(b)}f_ch_c,YS\right)}_2\\
+ &\hspace{18pt}\le
+ 2\beta\norm{\sum_{c\in\mathcal N(b)}f_ch_c}_4\norm{YS}_4
+ \le C\sqrt\beta\sum_{c\in\mathcal N(b)}|f_c|.
+\end{align*}
+Here \(\norm{h_c}_4\le C\) and \(\norm{YS}_4\le C\beta^{-1/2}\) are original-law estimates. Squaring, summing the original derivative directions, and using bounded incidence yields the previously established first-layer response estimate
+\begin{equation}
+ {\cal E}_{\nu_{\mathcal C}}(m_h(f),m_h(f))
+ =\E_{\nu_{\mathcal C}}|dm_h(f)|^2
+ \le C\beta M_f.
+ \label{rsm:meanenergy}
+\end{equation}
+This proof retains the direct source derivative, conditional score and full packet. It is an actual outside average, not a uniform fixed-bath estimate.
+
+\subsection{The projected cross term itself}
+
+Let \(L_{\nu_{\mathcal C}}\) be the canonical nonnegative Langevin generator of this actual coordinate marginal, with the original product-group metric. Taking \(Q=-\frac13\operatorname{diag}(f)\) in \eqref{rsm:compression} recovers \(g_f\), and \eqref{rsm:compressedinverse} gives
+\[
+ \norm{L_{\nu_{\mathcal C}}^{-1/2}g_f}_2^2
+ \le C\beta^{-1}M_{f|_{\mathcal C^c}},
+ \qquad
+ \norm{g_f}_2^2\le CM_{f|_{\mathcal C^c}}.
+\]
+
+\begin{theorem}[Actual-marginal spectral covariance comparison]
+\label{rsm:projectedcomparison}
+Let \(\Pi\) be a spectral projection of \(L_{\nu_{\mathcal C}}\) on a Borel subset of \((0,\infty)\). Then
+\begin{equation}
+ |\inner{\Pi m_h(f)}{\Pi g_g}|
+ \le C\sqrt{M_fM_{g|_{\mathcal C^c}}},
+ \label{rsm:projectedcross}
+\end{equation}
+and
+\begin{equation}
+ \left|
+ \inner{\Pi m_h(f)}{\Pi m_h(g)}
+ -
+ \inner{\Pi m_r(f)}{\Pi m_r(g)}
+ \right|
+ \le C\sqrt{M_fM_g}.
+ \label{rsm:projecteddifference}
+\end{equation}
+In particular, the difference of the two projected squared variances is bounded by \(CM_f\). The identity projection on centered functions is included.
+\end{theorem}
+
+\begin{proof}
+Spectral contraction, \eqref{rsm:meanenergy} and the actual marginal inverse-form bound give
+\begin{align*}
+ |\inner{\Pi m_h(f)}{\Pi g_g}|
+ &=
+ \left|\inner{
+ L_{\nu_{\mathcal C}}^{1/2}\Pi m_h(f)}
+ {L_{\nu_{\mathcal C}}^{-1/2}\Pi g_g}\right|\\
+ &\le
+ C\sqrt{\beta M_f}\sqrt{\beta^{-1}M_{g|_{\mathcal C^c}}},
+\end{align*}
+proving \eqref{rsm:projectedcross}. Now retain the exact cross terms:
+\begin{align}
+ &\inner{\Pi m_h(f)}{\Pi m_h(g)}
+ -
+ \inner{\Pi m_r(f)}{\Pi m_r(g)}\notag\\
+ &\quad=
+ \inner{\Pi m_h(f)}{\Pi g_g}
+ +\inner{\Pi g_f}{\Pi m_h(g)}
+ -\inner{\Pi g_f}{\Pi g_g}.
+ \label{rsm:exactprojecteddifference}
+\end{align}
+The first two terms use \eqref{rsm:projectedcross}; the last uses the Ward \(L^2\) bound. This proves \eqref{rsm:projecteddifference}.
+\end{proof}
+
+The same proof applies to bounded real spectral multipliers of modulus at most one. More generally an orthogonal projection with a proved comparison
+\({\cal E}_\nu(\Pi u,\Pi u)\le C_\Pi{\cal E}_\nu(u,u)\) gives a cross bound with \(\sqrt{C_\Pi}\), using
+\(\inner{\Pi m_h}{\Pi g}=\inner{\Pi m_h}{g}\).
+Such a comparison is not automatic for an arbitrary history projection.
+
+There is also an input-law version: original local moments give
+\(\E_\mu|dh_f|^2\le C\beta M_f\), so the same comparison holds for spectral projections of the original canonical Langevin generator. These conclusions control the difference while retaining the projected cross term. They do not bound the common ordinary variance. A sharp selected output or different history generator still needs its actual domain and Dirichlet-form response comparison.
+
+\section{A positive heat path for the unchanged ordinary source}
+\label{rsm:heatsection}
+
+The following path realizes the directional ordinary source itself. Its first derivative is exact, and its generated second coefficient has an extensive actual-law bound. The remaining pressure-curvature estimate is stated separately.
+
+\subsection{Three plane matchings and one common semigroup}
+
+Partition the six unoriented coordinate planes in four dimensions into
+\[
+ {\cal A}_1=\{(1,2),(3,4)\},\qquad
+ {\cal A}_2=\{(1,3),(2,4)\},\qquad
+ {\cal A}_3=\{(1,4),(2,3)\}.
+\]
+Let \(S_i\) be the sum of all original plaquette actions in matching \({\cal A}_i\). Then \(S=S_1+S_2+S_3\). Each original link belongs to exactly one plane in each matching, and therefore
+\begin{equation}
+ \sum_{i=1}^3|\nabla_bS_i|^2=D_b.
+ \label{rsm:matchingidentity}
+\end{equation}
+
+Fix deterministic \(f_b\ge0\). Put
+\[
+ \Delta_f=\sum_bf_b\Delta_b,\qquad
+ \Gamma_f(A,B)=\sum_{b,A'}f_b(X_b^{A'}A)(X_b^{A'}B),
+ \qquad P_t^f=\exp[t\Delta_f/(3\beta)].
+\]
+Write \(\Gamma_f(A)=\Gamma_f(A,A)\). The original Casimir Laplacians commute between different links. Thus \(P_t^f\), \(t\ge0\), is a positive Haar-preserving Markov semigroup; zero weights simply leave those coordinates untouched.
+
+Define the positive raw factors and full raw integral
+\begin{equation}
+ q_i(t,U)=P_t^f e^{-3\beta S_i}(U),\qquad
+ w_f(t,U)=\prod_{i=1}^3q_i(t,U)^{1/3},\qquad
+ Z_f(t)=\int w_f(t,U)\dd\lambda(U).
+ \label{rsm:heatpath}
+\end{equation}
+The integration domain is the original complete compact link product. At zero,
+\[
+ w_f(0,U)=e^{-\beta S(U)},\qquad Z_f(0)=Z_\beta.
+\]
+There is no auxiliary replacement of the original marginal.
+
+Let \(u_i=\log q_i\). The heat equation gives
+\[
+ u_i'=\frac{\Delta_fu_i+\Gamma_f(u_i)}{3\beta},
+ \qquad
+ u_i'(0)=-\Delta_fS_i+3\beta\Gamma_f(S_i).
+\]
+Using \eqref{rsm:matchingidentity},
+\begin{equation}
+ \boxed{\quad
+ \left.\partial_t\log w_f(t,U)\right|_{t=0}
+ =
+ \beta\sum_i\Gamma_f(S_i)-\frac13\Delta_fS
+ =r_f(U).
+ \quad}
+ \label{rsm:ordinaryheatjet}
+\end{equation}
+This has the original Casimir coefficient \(1/3\). Each derivative at zero is a right derivative of a smooth positive heat path. No analytic continuation to negative or complex heat time is asserted.
+
+The path at finite \(t\) is not \(e^{tr_f}e^{-\beta S}\). Its higher generated coefficients must remain in any comparison with the prescribed source exponential. In particular its acceleration below is not identified with a primitive higher physical source grade. Positive heat time does not supply a complex neighborhood of \(t=0\).
+
+\subsection{Exact monotonicity and its limitation}
+
+H\"older for the same positive Markov kernel gives pointwise
+\[
+ P_s^f\!\left(\prod_iq_i(t)^{1/3}\right)
+ \le\prod_i(P_s^fq_i(t))^{1/3}
+ =w_f(t+s).
+\]
+After Haar integration,
+\begin{equation}
+ Z_f(t+s)\ge Z_f(t),\qquad
+ Z_f(t)\le\prod_i
+       \left(\int e^{-3\beta S_i}\dd\lambda\right)^{1/3}.
+ \label{rsm:heatmonotonicity}
+\end{equation}
+The upper bound is ordinary H\"older and preservation of each raw factor's mass. If every \(f_b>0\), convergence of the compact heat semigroup to constants gives equality with that upper bound in the limit \(t\to\infty\).
+
+On the original periodic \(n^4\) lattice, each matching \(S_i\) consists of \(2n^2\) disjoint original two-dimensional \(n\times n\) plane systems. Let \(Z_{2,n}(\lambda)\) denote their original two-dimensional Wilson partition function at coupling \(\lambda\), with normalized product Haar measure and all raw action scalars retained. Then, for all-positive weights,
+\begin{equation}
+ \lim_{t\to\infty}Z_f(t)=Z_{2,n}(3\beta)^{2n^2},\qquad
+ \int_0^\infty\partial_t\log Z_f(t)\,\dd t
+ =2n^2\log Z_{2,n}(3\beta)-\log Z_\beta.
+ \label{rsm:planarendpoint}
+\end{equation}
+This is an exact endpoint identity. It does not factor the original four-dimensional law at finite heat time or bound its initial pressure curvature.
+
+For a differential expression, set
+\[
+ \bar u=\frac13\sum_i u_i,\qquad
+ {\cal V}_t=\frac13\sum_i\Gamma_f(u_i-\bar u)\ge0.
+\]
+The exact equation for the product is
+\[
+ \partial_tw_f=\frac1{3\beta}
+                 \bigl(\Delta_fw_f+{\cal V}_t w_f\bigr).
+\]
+Consequently
+\begin{equation}
+ \partial_t\log Z_f(t)=\frac1{3\beta}\E_t{\cal V}_t,
+ \qquad {\cal V}_0=3\beta h_f.
+ \label{rsm:heatentropy}
+\end{equation}
+At zero this recovers \(\E_\mu r_f=\E_\mu h_f\), including the complete original Ward compensation.
+
+Monotonicity and the endpoint bound in \eqref{rsm:heatmonotonicity} do not imply an upper bound on the second derivative at zero. The counterexample below makes that distinction explicit.
+
+\subsection{The generated acceleration under the actual Wilson law}
+
+Set
+\[
+ J_f(U)=\left.\partial_t^2\log w_f(t,U)\right|_{t=0}.
+\]
+A second differentiation gives the exact ordered-derivative formula
+\begin{equation}
+ \begin{split}
+ J_f={}&-\frac{\Delta_f^2S}{9\beta}\\
+ &+\frac13\sum_{i=1}^3\left[
+       \Delta_f\Gamma_f(S_i)
+       +2\Gamma_f(S_i,\Delta_fS_i)
+       -6\beta\Gamma_f(S_i,\Gamma_f(S_i))
+                    \right].
+ \end{split}
+ \label{rsm:acceleration}
+\end{equation}
+Indeed, the differentiated heat equation is
+\[
+ u_i''=\frac1{3\beta}
+          \left[\Delta_fu_i'+2\Gamma_f(u_i,u_i')\right].
+\]
+Substitution of \(u_i(0)=-3\beta S_i\) and
+\(u_i'(0)=-\Delta_fS_i+3\beta\Gamma_f(S_i)\) gives
+\eqref{rsm:acceleration}. No selected boundary is integrated by parts.
+
+Equivalently, the exact product-group Bochner identity gives
+\[
+ \begin{split}
+ J_f={}&-\frac{\Delta_f^2S}{9\beta}
+      +\frac43\sum_i\Gamma_f(S_i,\Delta_fS_i)
+      +\frac23\sum_i\Gamma_{2,f}(S_i)\\
+      &\hspace{40pt}-2\beta\sum_i
+                          \Gamma_f(S_i,\Gamma_f(S_i)),
+ \end{split}
+\]
+where
+\(\Gamma_{2,f}(A)=\frac12\Delta_f\Gamma_f(A)
+-\Gamma_f(A,\Delta_fA)\). Its connection and Ricci terms are retained. Formula \eqref{rsm:acceleration} can be used without commuting invariant derivatives.
+
+\begin{proposition}[Extensive actual-law acceleration]
+\label{rsm:accelerationbound}
+On the original periodic moment regime \eqref{rs:momentregime},
+\begin{equation}
+ \E_\mu|J_f|\le CM_f.
+ \label{rsm:accelerationestimate}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The terms \(\Delta_f^2S\), \(\Delta_f\Gamma_f(S_i)\) and
+\(\Gamma_f(S_i,\Delta_fS_i)\) are sums with coefficients \(f_bf_c\) on a fixed bounded-degree graph of original roots. Every required unscaled force and ordered derivative is pointwise bounded on the compact group. Their absolute values are therefore at most
+\[
+ C\sum_{b\sim c}|f_bf_c|\le CM_f,
+\]
+with an additional \(\beta^{-1}\) for the first term.
+
+For the last term write \(F_{b,i}=\nabla_bS_i\). The actual ordered Hessian of \(S_i\) has bounded entries and bounded stencil degree. Direct differentiation gives
+\[
+ |\Gamma_f(S_i,\Gamma_f(S_i))|
+ \le C\sum_{b\sim c}|f_bF_{b,i}|\,
+                             |f_cF_{c,i}|
+ \le C\sum_b f_b^2|F_{b,i}|^2.
+\]
+The original averaged directional moment
+\(\E_\mu\beta|F_{b,i}|^2\le C\) proves
+\eqref{rsm:accelerationestimate}.
+\end{proof}
+
+Put \(\psi_f(t)=\log Z_f(t)\). Differentiating the original compact integral gives
+\begin{equation}
+ \psi_f'(0)=\E_\mu r_f,\qquad
+ \psi_f''(0)=\Var_\mu r_f+\E_\mu J_f.
+ \label{rsm:pressurecurvature}
+\end{equation}
+Thus
+\begin{equation}
+ \boxed{\quad
+ |\Var_\mu r_f-\psi_f''(0)|\le CM_f.
+ \quad}
+ \label{rsm:curvaturereduction}
+\end{equation}
+The covariance version uses the commuting generators \(\Delta_f,\Delta_g\). Its mixed acceleration satisfies
+\(\E|J_{f,g}|\le C\norm f_2\norm g_2\), by the same bounded-incidence bilinear estimates. The mixed pressure Hessian is the original ordinary covariance plus this bounded contact.
+
+The pressure Hessian consequently has an extensive lower operator bound at zero. Its extensive upper bound remains equivalent to the missing susceptibility, up to the correction in \eqref{rsm:curvaturereduction}. No upper bound is concluded here.
+
+For signed \(f\), the zero-time algebraic jets polarize, but negative heat time is not used. A future variance theorem for every \(f\ge0\) would imply one for arbitrary real \(f\) by \(f=f_+-f_-\) and
+\(\Var(X-Y)\le2\Var X+2\Var Y\). This observation supplies no missing estimate by itself.
+
+\subsection{A restricted curvature criterion and its unverified hypothesis}
+\label{rsm:curvaturecriterionsection}
+
+Here is one sufficient criterion for an upper pressure-curvature bound. It is useful for identifying the missing geometric input, but it is not a hypothesis established for the original weak-coupling Wilson law.
+
+Assume \(f_b>0\). Equip the original closed compact product group with the rescaled product metric \(g_f\), equal to \(f_b^{-1}\) times the original metric in link \(b\). Then its Laplace operator is exactly \(\Delta_f\), its gradient norm is \(\Gamma_f\), and its normalized volume measure is still product Haar. Its Ricci tensor \(\operatorname{Ric}_f\) is nonnegative. All tensors in this subsection use this metric. Put \(\gamma=(3\beta)^{-1}\), \(\zeta_i=u_i-\bar u\), and let an overline denote the average over the three matchings.
+
+The following identity holds without a curvature assumption:
+\begin{equation}
+\begin{split}
+ \psi_f''(t)=\gamma^2\bigg[
+ &\Var_t(\mathcal V_t)
+ +4\E_t\overline{
+       \Hess_f u_i(\nabla_f\zeta_i,\nabla_f\zeta_i)}\\
+ &-2\E_t\overline{
+       \norm{\Hess_f\zeta_i}_{\HS}^2
+       +\operatorname{Ric}_f(\nabla_f\zeta_i,\nabla_f\zeta_i)}
+ \bigg].
+\end{split}
+ \label{rsm:exactheatcurvature}
+\end{equation}
+To verify it, the relative log factors satisfy
+\[
+ \gamma^{-1}\partial_t\zeta_i
+ =\Delta_f\zeta_i
+     +2\inner{\nabla_f\bar u}{\nabla_f\zeta_i}
+     +|\nabla_f\zeta_i|^2-\mathcal V_t.
+\]
+Differentiate \(\mathcal V_t=\overline{|\nabla_f\zeta_i|^2}\) and use the product-group Bochner identity. Since \(\overline{\nabla_f\zeta_i}=0\), this gives
+\[
+\begin{split}
+ \gamma^{-1}\partial_t\mathcal V_t
+ ={}&\Delta_f\mathcal V_t
+   +2\inner{\nabla_f\bar u}{\nabla_f\mathcal V_t}\\
+ &+4\overline{\Hess_fu_i(\nabla_f\zeta_i,\nabla_f\zeta_i)}
+   -2\overline{\Gamma_{2,f}(\zeta_i)}.
+\end{split}
+\]
+Differentiate \eqref{rsm:heatentropy} against the normalized density \(e^{\bar u}/Z_f\). Weighted integration by parts cancels the displayed Laplacian and drift terms, leaving \eqref{rsm:exactheatcurvature}.
+
+\begin{proposition}[Conditional heat-pressure concavity criterion]
+\label{rsm:curvaturecriterion}
+At a heat time under consideration, suppose
+\[
+ A_i=-\Hess_f u_i+\tfrac12\operatorname{Ric}_f\ge0
+ \quad(i=1,2,3),\qquad
+ \bar A=\tfrac13\sum_iA_i>0
+\]
+pointwise as bilinear forms. Then
+\begin{equation}
+ \psi_f''(t)\le
+ -2\gamma^2\E_t\overline{\norm{\Hess_f\zeta_i}_{\HS}^2}
+ \le0.
+ \label{rsm:conditionalconcavity}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For the probability density proportional to \(e^{\bar u}\), its weighted Ricci tensor is
+\[
+ B=-\Hess_f\bar u+\operatorname{Ric}_f
+   =\bar A+\tfrac12\operatorname{Ric}_f
+   \ge\bar A>0.
+\]
+The weighted Bochner identity implies, for a smooth scalar \(H\),
+\[
+ \Var_tH\le
+ \E_t\inner{\nabla_fH}{B^{-1}\nabla_fH}.
+\]
+Indeed solve the centered weighted Poisson equation \(L_t\phi=H-\E_tH\).
+Weighted integration by parts followed by matrix Cauchy gives
+\[
+ (\Var_tH)^2
+ \le
+ \E_t\inner{\nabla_fH}{B^{-1}\nabla_fH}\,
+ \E_t B(\nabla_f\phi,\nabla_f\phi).
+\]
+Bochner bounds the second factor by \(\E_t(L_t\phi)^2=\Var_tH\), proving the assertion.
+
+Because \(\overline{\nabla_f\zeta_i}=0\),
+\[
+ \nabla_f\mathcal V_t
+ =2\overline{(\Hess_fu_i)\nabla_f\zeta_i}
+ =-2\overline{A_i\nabla_f\zeta_i}.
+\]
+Pointwise matrix Cauchy for the positive \(A_i\) gives
+\[
+ \left|
+     \overline{A_i\nabla_f\zeta_i}
+ \right|_{\bar A^{-1}}^2
+ \le
+ \overline{A_i(\nabla_f\zeta_i,\nabla_f\zeta_i)}.
+\]
+Using \(B^{-1}\le\bar A^{-1}\) in the preceding variance bound yields
+\[
+ \Var_t\mathcal V_t
+ \le4\E_t\overline{
+        A_i(\nabla_f\zeta_i,\nabla_f\zeta_i)}.
+\]
+Substitute \(A_i=-\Hess_fu_i+\frac12\operatorname{Ric}_f\) into
+\eqref{rsm:exactheatcurvature}. Both the Hessian-force and Ricci-force terms cancel, proving \eqref{rsm:conditionalconcavity}.
+\end{proof}
+
+In Euclidean space the same argument, when the stated integrations and Poisson estimate are justified, reduces to convexity of each \(-u_i\), with a positive definite averaged Hessian. It applies in particular to Gaussian factors whose combined density is nondegenerate. No centering of their individual Gaussian means is required.
+
+At the original Wilson density the condition in Proposition~\ref{rsm:curvaturecriterion} is
+\begin{equation}
+ 3\beta\Hess_fS_i+\tfrac12\operatorname{Ric}_f\ge0
+ \quad\hbox{for each matching }i.
+ \label{rsm:unprovedfactorcondition}
+\end{equation}
+It is not proved and is generally false globally in the weak-coupling regime. A nonconstant smooth \(S_i\) on a compact product group has a negative Hessian direction somewhere: otherwise its nonnegative Laplacian would integrate to zero and force constancy. For large \(\beta\), the fixed Ricci term cannot compensate that direction. Convexity of a total small chart potential would not, by itself, establish the separate matching conditions. No convex induced next layer or replacement exterior law is inferred. An averaged or localized substitute with the actual responses would require a further argument.
+
+\subsection{A literal fixed-bath counterexample to generic log-concavity}
+
+Consider one original \(SU(2)\) link \(u\in S^3\), with \(z=u_0\) and \(k=C_F/3\). Choose actual exterior staple data
+\[
+ H_1=2e_0,\qquad H_2=-2e_0,\qquad H_3=0.
+\]
+The first two pairs can be taken equal to \(e_0\) and \(-e_0\), respectively, and the third pair opposite. These are realizable fixed-bath plaquette paths. Their partial actions are
+\[
+ S_1=4-4z,\qquad S_2=4+4z,\qquad S_3=4,\qquad S=12.
+\]
+The original conditional law is exactly uniform on \(S^3\).
+
+For \(f=1\), the common heat path uses \(k\Delta_{S^3}/(3\beta)\).
+While computing logarithmic derivatives, suppress only the common constant raw factors:
+\[
+ q_1(0)=e^{az},\qquad q_2(0)=e^{-az},\qquad q_3(0)=1,
+ \qquad a=12\beta.
+\]
+The unit spherical Laplacian and normalized Haar moments are
+\[
+ \Delta_{S^3}v(z)=(1-z^2)v''(z)-3zv'(z),\qquad
+ \E z^2=\frac14,\quad \E z^4=\frac18.
+\]
+For unscaled unit heat time, direct differentiation gives
+\[
+ r_{\rm heat}=\frac23a^2(1-z^2),\qquad
+ J_{\rm heat}=-\frac{16}3a^2+\frac{28}3a^2z^2.
+\]
+Hence
+\[
+ \E J_{\rm heat}=-3a^2,\qquad
+ \Var(r_{\rm heat})=\frac{a^4}{36},\qquad
+ (\log Z)''(0)=\frac{a^4}{36}-3a^2.
+\]
+Restoring the original time factor \(k/(3\beta)\) yields
+\begin{equation}
+ r_s=32k\beta(1-z^2),\qquad
+ \Var(r_s)=64k^2\beta^2,\qquad
+ \E J_s=-48k^2,
+ \label{rsm:frustratedmoments}
+\end{equation}
+and therefore
+\begin{equation}
+ \boxed{\qquad
+ \psi_s''(0)=k^2(64\beta^2-48)>0
+ \quad\hbox{for }\beta\ge1.
+ \qquad}
+ \label{rsm:positivecurvature}
+\end{equation}
+The original raw scalar \(e^{-12\beta}\) is independent of heat time and does not alter this calculation.
+
+This example disproves a generic inference of log-concavity from positive common heat flow or H\"older-affinity monotonicity. It is a frustrated \emph{fixed bath}. It does not decide the curvature sign for the full compatible periodic Wilson matching factors, and does not refute an extensive upper bound averaged in that original law.
+
+For comparison, common-center scalar Gaussian factors with precisions \(k_i\ge0\) have initial common-heat log curvature
+\[
+ 2\left[\frac{m_2^2}{m_1^2}+m_2-\frac{2m_3}{m_1}\right]\le0,
+ \qquad m_j=\frac13\sum_i k_i^j,\quad m_1>0.
+\]
+The sign follows from \(m_3m_1\ge m_2^2\) and \(m_2\ge m_1^2\). The nonlinear periodic Wilson law has not been compared to this Gaussian expression with the required uniform source and boundary responses.
+
+\subsection{Scope of the new interfaces}
+
+The matrix Ward theorem provides extensive original-law divergence estimates for deterministic total-force quadratic forms. The canonical-marginal theorem controls the actual projected \(h/r\) cross term and the difference of projected squared variances. The common heat path realizes the directional ordinary source with its exact raw mass and an extensively bounded acceleration correction.
+
+The missing continuous ordinary susceptibility has not disappeared. It is the unbounded upper curvature in \eqref{rsm:curvaturereduction}, or the source-specific inverse-form target stated elsewhere in the current synthesis. Field-dependent reconstruction coefficients, sharp domains, inherited history generators, actual current and anchor comparisons, higher source grades, saved radii, reserve ownership and S94 retain their original obligations. A positive auxiliary heat path is not itself mixed-domain or complex-source admission.

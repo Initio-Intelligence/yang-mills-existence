@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{An exact initial seam-variance bound for the original Wilson gluing}\author{}\date{}
+\begin{document}\maketitle
+We use precisely the same-variable gluing in manuscript Section 92, equations SV1--SV12. The group is $SU(N)$, $N\geq2$, links have normalized Haar measure, and $s(U)=1-N^{-1}\operatorname{Re}\operatorname{tr}U$. The same Wilson coefficient $\beta$ is used in both systems. This note proves a new finite-cutoff variance statement; it does not prove the signed integral required by S94.
+
+Write $n=\ell_*/a\geq3$, $q\geq3$, $M=q^4$, and $\mu_0=\mu_{a,T_*}^{\otimes M}$. Every link retains its original label $(b,x,\mu)$, where $b\in(\mathbb Z/q\mathbb Z)^4$, $x\in\{0,\ldots,n-1\}^4$. Set $\Delta S=S_{\rm big}-S_{\rm per}$ as in SV5. No gauge is fixed.
+
+\section{Orthogonality under the original product gauge group}
+The probability $\mu_0$ is invariant under independent site gauge transformations in each small periodic torus. Call a new big-torus plaquette \emph{singly rewired} if exactly one of its two directional coordinates is $n-1$. The exact number is
+\[
+ N_1=12M(n-1)n^2.
+ \tag{1}
+\]
+Indeed each positive orientation has $2(n-1)n^2$ such starts, and there are six orientations. This count includes each plaquette once.
+
+Suppose the crossed direction is $\mu$ and the tangential direction is $\nu$. Put $y=x+e_\mu$ reduced within the small block, so $y_\mu=0$. After the factors which cancel within the old link products are canceled, the new plaquette trace has four unmatched original gauge vertices:
+\[
+ (b,y),\quad(b,y+e_\nu),\quad
+ (b+e_\mu,y),\quad(b+e_\mu,y+e_\nu).
+ \tag{2}
+\]
+Each occurs once in the matrix word, in the fundamental or its dual representation. Integrating any one of these gauge variables annihilates the trace. Thus for
+$X_P=N^{-1}\operatorname{Re}\operatorname{tr}U_P^{\rm big}$,
+\[
+ E_0X_P=0.
+\]
+Holding all other gauge transformations and links fixed, that same gauge variable makes the plaquette matrix Haar-distributed, up to fixed left and right unitary factors. Elementary fundamental-representation Haar orthogonality gives
+\[
+ E_0X_P^2=\kappa_N,\qquad
+ \kappa_N=\begin{cases}1/4,&N=2,\\1/(2N^2),&N\geq3.\end{cases}
+ \tag{3}
+\]
+For completeness, $\int|\operatorname{tr}U|^2dU=1$. Also $\int(\operatorname{tr}U)^2dU=0$ for $N\geq3$, by the nontrivial center character (including $N=3$), whereas for $SU(2)$ the trace is real. These prove (3).
+
+For distinct singly rewired plaquettes the four-vertex sets (2) are different when $q,n\geq3$. The adjacent block pair determines the crossed direction and initial block, and the unordered tangential nearest-neighbor pair determines the tangential direction and start. The restrictions $q,n\geq3$ exclude the two-cycle ambiguity. A vertex belonging to one set and not the other appears only once in their product, so gauge averaging gives
+\[
+ E_0X_PX_Q=0\quad(P\ne Q,\ P,Q\hbox{ singly rewired}).
+ \tag{4}
+\]
+A doubly rewired plaquette has six unmatched gauge vertices in three small blocks: two in $b$, two in $b+e_\mu$, and two in $b+e_\nu$. These are distinct for $q,n\geq3$. Its vertex set differs from (2); if the four-vertex set were contained in it, one of its extra vertices could instead be integrated. Thus every singly rewired $X_P$ is orthogonal to every doubly rewired trace as well. It is also orthogonal to every old plaquette action or any other old gauge-invariant integrable function.
+
+\section{An actual Wilson variance lower bound}
+\begin{proposition}
+For every $\beta\geq0$ and every $q,n\geq3$,
+\[
+ \operatorname{Var}_{\mu_0}(\Delta S)\geq
+ \kappa_N\,12M(n-1)n^2.
+ \tag{5}
+\]
+\end{proposition}
+\begin{proof}
+Let $Y=\sum_{P\ {
+m singly\ rewired}}X_P$. In $\Delta S$ every such trace has coefficient $-1$. All remaining new traces and all old action terms are orthogonal to $Y$, by the gauge averages above. Constants are orthogonal as well since $E_0Y=0$. Hence $\Delta S=-Y+R$ with $\operatorname{Cov}_0(Y,R)=0$. Equations (3)--(4) give
+$\operatorname{Var}_0(\Delta S)=\kappa_NN_1+\operatorname{Var}_0(R)$.
+\end{proof}
+This is a same-Wilson statement for the literal gluing, with no weak-field approximation, selector modification, or new normalization. It does not assert that the variance remains this large away from $t=0$.
+
+\section{The exact cancellation scale required by S94}
+On the same compact Haar space let
+$d\mu_t=Z_t^{-1}e^{-\beta(S_{\rm per}+t\Delta S)}dU$.
+Differentiation under the finite integral gives
+\[
+ \frac{d}{dt}E_t\Delta S=-\beta\operatorname{Var}_t(\Delta S),
+\]
+and Taylor's integral formula for $\log Z_t$ yields
+\[
+ G:=M\log Z_{a,T_*}-\log Z_{a,qT_*}
+ =\beta E_0\Delta S-
+ \beta^2\int_0^1(1-t)\operatorname{Var}_t(\Delta S)\,dt.
+ \tag{6}
+\]
+Here $E_0\Delta S=N_{\rm seam}(1-\bar s)$ with
+$N_{\rm seam}=M(12n^3-6n^2)$ and the original small-torus plaquette expectation $\bar s$. Consequently the already available $G\geq0$ implies
+\[
+ \int_0^1(1-t)\operatorname{Var}_t(\Delta S)\,dt
+ \leq \frac{N_{\rm seam}(1-\bar s)}{\beta}.
+ \tag{7}
+\]
+Conversely the desired uniform upper bound $G\leq C M\ell_*^4$ is equivalent, for $\beta>0$, to
+\[
+ \int_0^1(1-t)\operatorname{Var}_t(\Delta S)\,dt
+ \geq \frac{N_{\rm seam}(1-\bar s)}{\beta}
+ -\frac{CM\ell_*^4}{\beta^2}.
+ \tag{8}
+\]
+Equation (5) identifies an initial variance of order $Mn^3$, whereas (7) bounds its weighted integrated mass by order $Mn^3/\beta$. Thus at weak coupling its initial size cannot persist on a fixed interpolation interval. This is an exact restriction on any proposed uniform-in-$t$ approximation. It is not a proof of (8): a value at one endpoint does not control the required integrated cancellation. In particular, replacing the seam energy by a local small-plaquette estimate under $\mu_0$ fails both at the mean and at the variance level.
+
+All independent absolute scalar factors of the original RG construction remain outside this normalized expectation calculation. The relation to its vacuum $V$ uses the original stability comparison SV3 only. No absolute scalar increment or inherited carrier has been canceled by (5)--(8). Full cross-torus S94 remains open.
+\end{document}

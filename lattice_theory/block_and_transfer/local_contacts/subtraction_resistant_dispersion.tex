@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,hyperref}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newcommand{\E}{\mathbb E}
+\title{Two-link dispersion after arbitrary single-plaquette subtractions}\author{}\date{}
+\begin{document}\maketitle
+This strengthens the bare-source dispersion argument in \cite[Section~2]{ND}
+using the two-link geometry of the orthogonal contact calculation. It concerns the original real positive
+Wilson law and explicitly delimits the subtraction class. It changes no source prescription.
+
+\begin{lemma}[Four-corner band deficit]
+Let $Q$ be smooth on $[-r,r]^d\times[-r,r]^d$, and suppose
+$\partial_{z_1}\partial_{w_1}Q\ge\kappa>0$ there.
+For arbitrary measurable real functions $A(z),B(w)$ and every interval $I$ of length
+$h_0=\kappa r^2/4$, the complement of
+$\{Q-A-B\in I\}$ has Lebesgue volume at least one sixteenth of the whole product cube.
+If the probability density is at least $m_0$ on that cube, its probability is at least
+$p_0=m_0(2r)^{2d}/16$.
+\end{lemma}
+\begin{proof}
+Choose $z_1^-,w_1^-\in[-r,-r/2]$ and $z_1^+,w_1^+\in[r/2,r]$, with all four
+coordinates independently uniform on their intervals; choose common transverse coordinates
+$z',w'$ uniformly on their cubes. Write $F=Q-A-B$.
+The alternating rectangle difference of $F$ equals that of $Q$, since both additive
+terms cancel. Double integration of the mixed derivative shows this difference is at
+least $\kappa r^2$.
+If all four corner values of $F$ belonged to $I$, their alternating difference would have
+absolute value at most $2h_0<\kappa r^2$. Hence at least one corner is outside the band.
+Each corner is uniformly distributed on one of four disjoint subcubes of volume exactly
+$(2r)^{2d}/16$. Taking expectations and summing the four failure probabilities proves
+that the total outside volume in these subcubes is at least that amount.
+No derivative, boundedness, or moment assumption on $A,B$ is used.
+\end{proof}
+
+\begin{theorem}[Dispersion survives arbitrary plaquette counterterms]
+Let $f$ be a fixed real bounded physical test equal to one on a positive-volume box, with
+its original finite pointed completion. Let
+\[
+ \mathcal L_a(U)=c_a+\sum_p h_{a,p}(U_p)
+\]
+be any deterministic real single-plaquette subtraction, with finite measurable summands
+and square-integrability under the original finite Wilson law. Coefficients and functions
+may depend arbitrarily on the cutoff and coupling. For $G_a=O_H(f)$ or the specified
+ordinary $r_H(f)$, there are uniform constants such that
+\[
+ \sup_c\Pr\{|G_a-\mathcal L_a-c|\le R\}
+ \le\min\{1,C_f[\log(2+\beta)/\beta+a^2+a^4R]\},
+ \qquad\beta\ge\beta_0, a<a_0, R\ge0.
+\]
+In particular, if $\beta(a)\to\infty$, no such subtraction makes the resulting bare
+random variable tight. Tightness after an additional deterministic real multiplier $z_a$
+requires $|z_a|=O(a^4)$. This is necessary only, not a sufficient normalization prescription.
+\end{theorem}
+\begin{proof}
+Pack $m_a\ge c_fa^{-4}$ separated two-link blocks inside the plateau, with complete
+pointed determining stencils in its interior. Condition on all other links. Every actual
+source summand meets at most one block, and the original Wilson law factors over the
+free links. No plaquette contains both free links of a block, so every summand of
+$\mathcal L_a$ is either a bath term or a function of a single free link.
+
+The good-bath construction of the orthogonal contact calculation and PD12 gives probability of a bad bath at each
+block at most $C\log(2+\beta)/\beta$. Markov therefore bounds the probability that
+more than half the blocks are bad by twice this number; no independence of bath events
+is assumed. On a good bath use the exact conditional minima to write
+$z=\sqrt\beta(u-u_*)$, $w=\sqrt\beta(v-v_*)$. The joint conditional density is bounded
+below on a fixed product cube.
+For the dimensionless local source $G_j^0$, its rescaling $Q=\beta G_j^0$ has mixed
+coordinate derivative bounded below by a fixed $\kappa>0$: the flat values are $4/3$
+for H and $2$ for D, and the Casimir single-plaquette companion has zero mixed derivative.
+Continuity on the finite good-bath chart supplies the uniform lower bound.
+The physical block variable is $\sigma G_j^0-\mathcal L_{j,-}-\mathcal L_{j,+}$,
+$\sigma=g^{-2}a^{-2}$. Multiplying by $\beta/\sigma$ gives exactly
+$Q-A(z)-B(w)$. The lemma proves a fixed concentration deficit $1-p_0$ at radius $h_0$,
+uniformly in all subtraction functions and their sizes.
+
+Apply the equal-radius Kolmogorov--Rogozin inequality to the at least $m_a/2$ good,
+conditionally independent block variables. Convolution with the other blocks cannot
+increase concentration. An interval of length $h$ has conditional probability at most
+$C(1+h)m_a^{-1/2}$. Since $\beta/\sigma=c_\beta a^2$, a physical interval of radius
+$R$ has scaled length $2c_\beta a^2R$. Average over the bath and use the bad-count bound.
+This gives the theorem. The tightness and multiplier conclusions follow exactly by
+applying the interval estimate along a subsequence with $|z_a|/a^4\to\infty$.
+\end{proof}
+
+\paragraph{Sharper bad-bath error on the physical regime.}
+The same-measure local exponential moment of the odd torus transfer moment calculation bounds the probability that any plaquette
+in a fixed determining cube exceeds its fixed near-flat threshold by $Ce^{-c\beta}$
+when $n\ge c_*\log(2+N\beta)$. The same bath-measurable existence implication used
+above therefore replaces the first error term by $Ce^{-c\beta}$ on that regime, including
+original odd tori. No change to the conditional source or denominator is made.
+
+\paragraph{Scope.}
+This result includes the literal Casimir companion and arbitrary identity/action mixing,
+but not arbitrary multi-plaquette operators or field-dependent coefficients multiplying
+several plaquettes. In particular it does not rule out the explicit local degree-two
+source extension of the local source transition calculation, whose terminal covariance subtraction changes the coincident
+product rather than the individual bare random variable. It also does not prove that
+all divergence is local or construct a continuum hierarchy. The full original scalar/current
+pairs and their responses remain required in every later operation.
+
+\begin{thebibliography}{1}
+\bibitem{ND} \emph{Nonlinear dispersion and unequal spatial weights}, \texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/nonlinear\_dispersion\_and\_unequal\_spatial\_weights.tex} in this collection.
+\bibitem{KR} T. Ju\v{s}kevi\v{c}ius, \emph{The sharp form of the Kolmogorov--Rogozin
+inequality and a conjecture of Leader--Radcliffe}, Theorem~1.1,
+\url{https://arxiv.org/pdf/2201.09861}.
+\end{thebibliography}
+\end{document}

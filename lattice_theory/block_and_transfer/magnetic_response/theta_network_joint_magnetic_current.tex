@@ -1,0 +1,128 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{A joint theta-network magnetic-current bound with unbalanced times}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Main-gap interface.}
+The finite boundary nonlinear ward cancellation calculation gives the complete finite-boundary mass cancellation
+and its three-dimensional shell accounting. The local noise ward and longitudinal cancellation calculation gives the local
+coefficient cancellation of longitudinal vector powers. The remaining
+cubic-pair graph has a genuinely joint path current. This note proves an
+estimate on that current for ONE of the original scalar mixed-boundary
+grids in the mixed boundary magnetic loop bound calculation, including arbitrarily unbalanced proper times. It does
+not identify different staggered component grids, and does not assign an
+unproved derivative factor to the original cubic vertices.
+
+\paragraph{1. Exact original scalar network.}
+Let $p_t$ be the original real killed/reflected kernel on one edge grid
+(one Neumann and three Dirichlet directions) or the original ghost grid
+(four Dirichlet directions). All THREE paths below use this same grid.
+Use its actual constant-flux connection of strength $b=2/R^2$. For
+surviving paths $\omega_i:x\to y$ of durations $t_i$, write $J_i$ for
+the oriented magnetic current, with the same gauge for all paths.
+The third path is neutral in the magnetic product; assigning it a
+geometric current as an auxiliary variable does not change its measure.
+Define the unnormalized joint current
+\[
+ \mathcal A_\theta(t_1,t_2,t_3)=
+ \sum_{x,y}\int dP^{t_1}_{xy}(\omega_1)dP^{t_2}_{xy}(\omega_2)
+                  dP^{t_3}_{xy}(\omega_3)\,(J_1-J_2)^2 .           \tag{1}
+\]
+It is exactly minus the second background derivative at zero of
+$\sum_{x,y}p_{t_1}^{\epsilon}(x,y)
+ p_{t_2}^{\epsilon}(y,x)p_{t_3}(x,y)$.
+There is no normalization by return probability and no bath-law change.
+
+Let $\mathcal A_{\rm loop}(s)$ denote the complete single-loop quantity
+of the mixed boundary magnetic loop bound calculation. Its proof and the original product heat kernel give
+\[
+ \sup_{x,y}p_t(x,y)\le C k(t),\quad
+ \mathcal A_{\rm loop}(s)\le C|\Omega|b^2 s^2 k(s),\quad
+ k(t)=(1+t)^{-2}e^{-ct/R^2}.                                      \tag{2}
+\]
+Constants can be decreased in the exponential when combining bounds.
+
+\paragraph{2. Use the shortest path as the current reference.}
+If path three is not the shortest, bound its kernel by its supremum and
+concatenate path one with the reversal of path two. Summing their common
+endpoint produces EXACTLY a loop of length $t_1+t_2$. Thus
+\[
+ \mathcal A_\theta\le (\sup p_{t_3})
+                        \mathcal A_{\rm loop}(t_1+t_2).           \tag{3}
+\]
+If path three IS shortest, do not take its possibly large kernel supremum.
+Instead insert its geometric current before estimating:
+\[
+ J_1-J_2=(J_1-J_3)+(J_3-J_2).
+\]
+The square is bounded by twice the sum of the two squares. In each term
+bound the UNUSED path kernel by its supremum; the other two paths again
+concatenate to an exact loop. Consequently
+\[
+ \mathcal A_\theta\le2(\sup p_{t_2})\mathcal A_{\rm loop}(t_1+t_3)
+             +2(\sup p_{t_1})\mathcal A_{\rm loop}(t_2+t_3).       \tag{4}
+\]
+This reference-path identity is valid even though path three is neutral:
+only the algebraic current comparison changes, not its probability weight.
+It uses no independent bridge-area estimate or assumption of comparable
+times. Reversal is legitimate for the original real reversible kernel.
+
+Sort the times as $m\le M\le T$. In (3)--(4) every nontrivial pair consists
+of the shortest time and either $M$ or $T$. Their sums are comparable to
+the longer member. Equations(2)--(4) therefore prove
+\[
+ \boxed{\mathcal A_\theta(t_1,t_2,t_3)
+ \le C|\Omega|b^2\,
+ \frac{T^2}{(1+M)^2(1+T)^2}
+             e^{-c(M+T)/R^2}.}                                   \tag{5}
+\]
+This is a uniform-in-$R$ bound on the actual scalar joint current. It
+retains both return factors of the two longer paths in the unbalanced
+region, where a naive neutral-kernel supremum would lose the estimate.
+
+\paragraph{3. The precise remaining derivative weight.}
+The bound already gives two useful, distinct integral estimates:
+\[
+ \int_{(0,\infty)^3}\mathcal A_\theta\,dt_1dt_2dt_3
+       \le C|\Omega|b^2 R^2\log(2+R),                             \tag{6}
+\]
+\[
+ \boxed{\int_{(0,\infty)^3}
+       {\mathcal A_\theta\over1+\max(t_1,t_2,t_3)}\,dt_1dt_2dt_3
+       \le C|\Omega|b^2[\log(2+R)]^2.}                            \tag{7}
+\]
+Indeed on each of six ordering regions integrate $m$ first, producing
+$M$, and then use
+$\int_0^T M(1+M)^{-2}dM\le C\log(2+T)$.
+For (7) the remaining integral is bounded by
+$C\int_0^\infty T^2(1+T)^{-3}\log(2+T)e^{-cT/R^2}dT$,
+which is $O(\log^2(2+R))$. Without the additional denominator it is
+$O(R^2\log(2+R))$, proving (6).
+Since $|\Omega|b^2\le4$, (7) has no volume factor for the actual physical
+constant-flux source. However its denominator is an EXPLICIT UNPAID
+vertex-derivative weight. It must not be inserted into a Wilson graph
+without deriving it from the original covariant curl/ghost vertices and
+all differentiated endpoint partners. The literal cubic Wilson vertex has
+one plaquette curl; two such derivatives suggest this weight, but this
+note does not prove the required current-weighted derivative estimate.
+
+\paragraph{4. Verification and exact remaining joins.}
+A finite-state recursion keeps all three original path
+measures on the $R=3$ mixed grid with reflected coordinate one. It computes
+first and second path-current moments without sampling. For durations
+$(2,5,1),(1,2,7),(8,1,3),(16,2,1),(4,4,4),(1,24,2)$ in uniformized steps,
+the exact inequalities (3)--(4) pass; the largest observed ratio to their
+right side is $0.965$. These diagnostics verify algebra, not the analytic
+asymptotic bounds.
+
+The actual full vector/ghost coefficient also couples DIFFERENT staggered
+component grids at plaquette vertices. Those kernels are not silently
+identified here; a neutral auxiliary path on another grid cannot be used
+in (4) without a proved common realization or an equivalent mixed-kernel
+estimate. The component boundary conditions, local endpoint connectors,
+spin insertions and changing physical projections remain part of that
+join. The complete boundary Ward of the finite boundary nonlinear ward cancellation calculation and longitudinal cancellation
+of the local noise ward and longitudinal cancellation calculation must also remain in force when supplying the derivative weight.
+Thus (5) is a genuine joint-current building block; (7) quantifies the
+specific marginal weight still needed. It is not a bound on the full
+$\mathcal C_R''$, on the original nonlinear remainder, or on S94.
+\end{document}

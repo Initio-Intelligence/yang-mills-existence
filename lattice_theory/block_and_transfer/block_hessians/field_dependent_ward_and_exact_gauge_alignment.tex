@@ -1,0 +1,140 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Field-dependent block response: the exact divergence term and a complete gauge cancellation}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Input and the nonlinear gauge distinction.}
+In the fixed-coefficient Ward--Schur identity of the original covariant hessian and ward schur calculation, interior Haar
+integration by parts gives the original covariance blocks, their pseudoinverse
+regression formula retains the exact residual variance, and the oriented
+prefix-transport plaquette Hessian is correct. Its pseudoinverse handles true
+null directions of the deterministic interior-score covariance matrix.
+An ACTUAL nonabelian gauge vector, however, has left-frame coefficient
+$w_b(U)=\xi_{s(b)}-\operatorname{Ad}_{U_b}\xi_{t(b)}$. It is field-dependent
+and need not be a deterministic null vector of that covariance matrix. The
+following identities handle that distinction without a gauge chart.
+
+\paragraph{An exact common realization for a changing exterior.}
+Let $S_t(u)=S(u;\eta(t))$ be the ORIGINAL compact Wilson block action on a
+fixed product of interior Haar spaces, with every incident plaquette/collar
+included. Let $\Phi_t$ be a smooth interior diffeomorphism flow with Eulerian
+velocity $W_t$, and $J_t$ its Haar Jacobian. Then exactly
+\[
+ Z_t=\int e^{-S_t(\Phi_tu)}J_t(u)du.
+\]
+Define $D_t=\partial_t+W_t$ and the corrected score
+\[
+ G_t=D_tS_t-\operatorname{div}_{\rm Haar}W_t.                            \tag{1}
+\]
+Its pullback along the flow is the derivative of
+$S_t(\Phi_tu)-\log J_t(u)$. With expectations in the SAME original fiber at
+time $t$, the boundary effective action $\Gamma_t=-\log(Z_t/Z_0)$ obeys
+\[
+ \Gamma'_t=E_tG_t,\qquad
+ \Gamma''_t=E_t(D_tG_t)-\operatorname{Var}_tG_t.                          \tag{2}
+\]
+All time derivatives of the chosen velocity, its divergence and the boundary
+path occur in $D_tG_t$. In particular no boundary acceleration or Jacobian
+term is omitted. The normalized pullback density has score
+$-G_t+E_tG_t$ and Fisher information
+\[
+ \mathcal I_t^{\Phi}=\operatorname{Var}_tG_t.                            \tag{3}
+\]
+Consequently its affinity with the initial density satisfies the rigorous
+path bound
+\[
+ \operatorname{Aff}(\widetilde\mu_0,\widetilde\mu_1)
+ \ge1-\frac18\left(\int_0^1\sqrt{\operatorname{Var}_tG_t}\,dt\right)^2. \tag{4}
+\]
+This follows by differentiating the normalized square-root density in $L^2$;
+its speed is $\frac12\sqrt{\mathcal I_t^{\Phi}}$. The possibly negative lower
+bound in(4) is simply vacuous. An observable/output comparison requires the
+flow to induce the intended actual output map or commute with its projection;
+an arbitrary measure transport does not provide that identification.
+
+\paragraph{What a field-dependent harmonic extension must pay.}
+At a base point extend a chosen smooth interior field $W$ constantly in $t$,
+write $F=\partial_tS_t|_0$, $H=\partial_t^2S_t|_0$, and set
+$L_W=WS-\operatorname{div}W$. Haar integration by parts gives
+\[
+ E L_W=0,\qquad E(Wf)=E(fL_W).
+\]
+Thus the exact expected second term in(2) is
+\[
+ E(DG)=E H+2E(F L_W)+E L_W^2
+      =\Gamma''+\|F-EF+L_W\|_{L^2(\mu)}^2.                            \tag{5}
+\]
+Equation(5) extends the constant-coefficient score regression of the original covariant hessian and ward schur calculation to
+actual field-dependent vector fields, with the divergence retained. If $W_t$
+varies, its extra Stein term has zero mean but remains present pointwise in(2).
+No estimate for a covariant harmonic extension follows merely by writing(5).
+It must have a proved local/coarse geometric meaning, controlled divergence,
+and a compatible output map. Allowing arbitrary global transport would hide
+the original problem in the construction of that transport.
+
+\paragraph{A complete nonabelian block cancellation that DOES hold.}
+Take fixed site generators $\xi_x$ and act on every original oriented link by
+\[
+ U_b(t)=g_{s(b)}(t)U_bg_{t(b)}(t)^{-1},\qquad g_x(t)=e^{t\xi_x}.
+\]
+Transform the prescribed exterior/collar record by the SAME site gauges, or
+set the gauges to identity on its incident vertices when that record is held
+fixed. On free links this is a product of left and right Haar translations:
+$\operatorname{div}W=0$ and $J_t=1$ exactly. Every original plaquette transforms
+by conjugation at its base point. Therefore
+\[
+ D_tS_t=0,\qquad G_t=0,\qquad Z(\eta(t))=Z(\eta(0)),\qquad
+ \widetilde\mu_t=\widetilde\mu_0.                                      \tag{6}
+\]
+The exact affinity after this actual gauge alignment is one, independent of
+block size, coupling and exterior roughness. This is a genuine changing-frame
+comparison of original measures with all raw normalizers retained. It handles
+only gauge-equivalent exteriors; it cannot change gauge-invariant curvature
+or the eigenvalues of a noncontractible holonomy.
+
+The left-trivialized link velocity and acceleration are
+\[
+ v_b=\xi_s-\operatorname{Ad}_{U_b}\xi_t,\qquad
+ \dot v_b=-[\xi_s,\operatorname{Ad}_{U_b}\xi_t].                         \tag{7}
+\]
+Thus the ordinary left-geodesic Hessian in direction $v$ alone need NOT vanish
+along a curved gauge orbit. For the boundary effective action its correct
+identity is $\operatorname{Hess}_{\rm left}\Gamma(v,v)+d\Gamma(\dot v)=0$.
+At a flat stationary reference the acceleration contribution vanishes and
+one recovers the usual linearized longitudinal null directions.
+
+At each plaquette the full gauge path is
+$P(t)=e^{t\xi_x}Pe^{-t\xi_x}$, so
+$P''(0)=[\xi_x,[\xi_x,P]]$ and $\operatorname{ReTr}P''(0)=0$.
+This explicitly cancels the signed prefix-commutator/curvature terms of
+the original covariant hessian and ward schur calculation TOGETHER WITH the acceleration contributions in(7). Setting those
+terms separately to zero, or replacing the field-dependent gauge vector by
+one fixed Euclidean gradient on arbitrary links, would miss this cancellation.
+
+\paragraph{The actual block Gauss identity.}
+For interior vertices whose exterior gauges are fixed, let $F_b$ denote the
+left-link gradient of the complete original action. Differentiating the
+pointwise gauge invariance and collecting arbitrary $\xi_x$ gives
+\[
+ \sum_{b:s(b)=x}F_b-
+ \sum_{b:t(b)=x}\operatorname{Ad}_{U_b^{-1}}F_b=0.                       \tag{8}
+\]
+This exact covariant divergence identity includes every incident plaquette.
+If only a selected color or an incomplete collar is retained, the omitted
+links supply boundary currents; they cannot be erased from(8).
+Exact marginals obey the corresponding gauge Ward identity whenever both the
+integrated domain and the retained/exterior transformation are the actual
+common gauge action. Arbitrary holonomy or physical transverse modes are not
+removed by this statement.
+
+\paragraph{What remains after this cancellation.}
+The gauge part of an actual frame alignment is now controlled with ZERO cost,
+not the extensive norm cost of a generic translation bound. This is a real
+improvement for longitudinal/gauge directions and is compatible with the Gauss
+reduction of the complete Gaussian block in the complete block schur and physical stiffness calculation. The physical transverse
+Dirichlet-to-Neumann stiffness is still unproved in the interacting law.
+A covariant extension for a transverse/coarse exterior change must be specified
+as an actual field-dependent flow. Its corrected score(1), variance(3),
+divergence and action on the retained record need bounds at the physical block
+scale. Neither exact gauge cancellation nor the earlier same-law plaquette
+moments supplies those bounds. No full S94 or mass-gap conclusion is made.
+\end{document}

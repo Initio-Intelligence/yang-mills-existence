@@ -1,0 +1,196 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{The complete shortest-time contact packet and its unmatched transverse tensor}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Scope.}
+The per-minor longest-time gain fails by the short line contact before current decay calculation. Here the shortest
+proper-time line is marked only AFTER collecting the complete original
+first coefficient: cubic, quartic, Haar, nonlinear gauge Jacobian and
+all scalar-ghost partners. The result is an exact finite-lattice
+add-and-subtract representation and an explicit full internal tensor.
+Its boundary-source mass Ward is proved at each marked scale. This is
+NOT the missing cancellation of the internal transverse self-energy:
+that stronger distinction is stated explicitly below.
+
+\paragraph{1. Original tensors, with both propagators retained.}
+At the actual conditional minimum let
+$\Delta_1=H+DD^*$ and $\Delta_0=D^*D$. Keep all relative boundary incidences.
+Write the original action and Jacobian tensors as
+\[
+ T_3={1\over6}t_{abc}z_a z_b z_c,\quad
+ T_4={1\over24}u_{abcd}z_a z_b z_c z_d,\quad
+ M_1(z)=z_a A_a,\quad M_2(z)=z_a z_b B_{ab},
+\]
+with symmetric $t,u,B_{ab}$ in their field indices. For arbitrary positive
+vector and ghost covariances $G,g$ define
+\[
+ l_a=\operatorname{Tr}(gA_a),\quad
+ \ell_2=z_a z_b\left[\operatorname{Tr}(gB_{ab})
+                    -\tfrac12\operatorname{Tr}(gA_agA_b)\right],
+\]
+\[
+ Q_3=T_3-\ell_1,\quad Q_4=T_4-J_2-\ell_2,\qquad
+ \mathcal C(G,g)=E_G Q_4-\tfrac12 E_G Q_3^2.                       \tag{1}
+\]
+At $G=\Delta_1^{-1},g=\Delta_0^{-1}$ this is the COMPLETE original
+finite-block Laplace coefficient. At other covariances it is an explicit
+polynomial tensor contraction, not an asserted original probability law.
+No ghost line is left implicit in a numerical constant.
+
+\paragraph{2. Full marked-vector and marked-ghost kernels.}
+Gaussian differentiation gives
+\[
+ \delta_G\mathcal C=\tfrac12\operatorname{Tr}(\delta G\,\mathsf K),
+ \quad
+ \mathsf K_{ab}=E_G[\partial_{ab}Q_4
+       -\partial_aQ_3\partial_bQ_3-Q_3\partial_{ab}Q_3].           \tag{2}
+\]
+Set $\tau_a=t_{abc}G_{bc}$, $b_a=l_a-\tau_a/2$, and
+\[
+ v_{ab}={2\over3}\delta_{ab}-2\operatorname{Tr}(gB_{ab})
+                                    +\operatorname{Tr}(gA_agA_b).
+\]
+Then the FULL unmatched internal tensor is
+\[
+ \boxed{\mathsf K_{ab}=v_{ab}+\tfrac12u_{abcd}G_{cd}
+ -\tfrac12t_{acd}G_{ce}G_{df}t_{bef}
+ -b_ab_b+t_{abc}G_{cd}b_d.}                                      \tag{3}
+\]
+The $2\delta/3$ is the original $SU(2)$ Haar term, not an optional mass
+counterterm. Both completed mean-current terms are retained.
+
+Cyclic trace differentiation of every occurrence of $g$ gives
+\[
+ \delta_g\mathcal C=\operatorname{Tr}(\delta g\,\mathsf J),\quad
+ \mathsf J=-E_GM_2+E_G(M_1gM_1)+E_G(Q_3M_1),
+\]
+\[
+ \boxed{\mathsf J=-G_{ab}B_{ab}+G_{ab}A_agA_b-(Gb)_aA_a.}        \tag{4}
+\]
+Only its symmetric part contributes against symmetric $\delta g$.
+Equations(3)--(4) include the ghost-marked graphs as well as the
+vector-marked graphs; keeping only (3)'s cubic bubble would repeat the
+uncompleted contact problem of the short line contact before current decay calculation.
+
+\paragraph{3. Mark the SHORTEST proper time exactly.}
+Define the actual spectral tails
+\[
+ G_s=\int_s^\infty e^{-t\Delta_1}dt,\qquad
+ g_s=\int_s^\infty e^{-t\Delta_0}dt,
+ \qquad \mathcal C_s=\mathcal C(G_s,g_s).
+\]
+Every unmarked propagator now has proper time at least $s$. The vertices
+are unchanged original tensors. Equations(2)--(4) imply
+\[
+ \boxed{\mathcal C_R=\int_0^\infty\mathcal I_s\,ds,\qquad
+ \mathcal I_s=\tfrac12\operatorname{Tr}(e^{-s\Delta_1}\mathsf K_s)
+                   +\operatorname{Tr}(e^{-s\Delta_0}\mathsf J_s).} \tag{5}
+\]
+Indeed $\mathcal I_s=-\partial_s\mathcal C_s$ and
+$\mathcal C_\infty=0$. This marks each possible shortest vector or ghost
+line with its correct multiplicity. There is no missing factorial from
+choosing a line and no independent rescaling of the two ghost propagators
+inside a Jacobian term. For each fixed block the positive relative gaps
+justify the integral and two background derivatives. No uniform growing-
+block interchange is being asserted.
+
+The scalar state $\mathcal I_s(\eta)$ and its actual first background
+current are retained, not set to zero when a second difference is taken.
+At nonflat records their baseline currents need not vanish. The original
+raw normalization and classical scalar remain those of the starting
+compact integral; (5) changes neither the finite-cutoff action nor its
+coupling. In canonical source units the Hessian of (5) contributes at
+order $B^{-2}$, as in the first original nonlinear flux coefficient calculation and the connected first nonlinear flux response calculation.
+
+\paragraph{4. What the finite-boundary Ward DOES cancel at every scale.}
+Under a gauge change of the complete boundary record, extend the gauge
+map to the interior and transform the actual minimum. The vector and
+interior-gauge spaces transform orthogonally, so $H,D,A,t,u$ and both heat
+operators conjugate covariantly. Therefore each polynomial $\mathcal C_s$
+and each COMPLETE packet $\mathcal I_s$ is background-gauge invariant.
+This does not require interpreting the cut covariances as a new measure.
+Global color symmetry makes its first derivative vanish at the flat
+record. Hence its complete source Hessian $\Pi_s$ obeys
+\[
+ \Pi_s D_\partial=0.                                             \tag{6}
+\]
+All derivatives of the actual minimum, $D$, the heat kernels, the
+Jacobian and original vertices are included in $\Pi_s$. In particular
+source differentiation of $\Delta_1$ retains the spin and diagonal
+curvature pieces of the constant flux spin and magnetic reduction calculation automatically.
+
+Let $\mathcal B_1$ be all original fixed boundary links in direction one.
+The same complete boundary gauge parameter as the finite boundary nonlinear ward cancellation calculation gives
+$\sum_{f\in\mathcal B_1}(\Pi_s)_{ef}=0$. Thus the physical flux source
+$a_e=x_0(e)/R^2$ has the exact scale-by-scale difference form
+\[
+ \mathcal I_s''[a,a]=-{1\over2R^4}
+       \sum_{e,f\in\mathcal B_1}(\Pi_s)_{ef}[x_0(e)-x_0(f)]^2.     \tag{7}
+\]
+No infinite-volume translation identity is imposed on faces or corners.
+
+\paragraph{5. Exact local subtraction with the kinetic term left visible.}
+Choose ANY symmetric local selector $\chi_{ef}$ on boundary pairs, for
+example a fixed function of distance at a declared scale. On the
+$\mathcal B_1$ block retain off-diagonal entries
+$\chi_{ef}(\Pi_s)_{ef}$ and set the diagonal to minus their row sum.
+Do the same with $1-\chi$. Their sum is EXACTLY the original block by
+(6). This is an algebraic add-and-subtract, not an extra selector in the
+original probability measure. For an affine source
+$a_e=\sum_i F_i x_i(e)$, the local piece is exactly
+\[
+ F_i\mathsf Z^{\rm loc}_{ij}(s)F_j,\qquad
+ \mathsf Z^{\rm loc}_{ij}(s)=-\tfrac12
+ \sum_{e,f}\chi_{ef}(\Pi_s)_{ef}
+          [x_i(e)-x_i(f)][x_j(e)-x_j(f)].                         \tag{8}
+\]
+The complementary expression with $1-\chi$ is retained in full.
+Equation(8) is the explicit local kinetic/marginal tensor. It may be
+nonzero, signed and boundary dependent. It is NOT silently absorbed
+into a changed Wilson coupling or discarded as a common scalar.
+Neither choosing a scale such as $\sqrt{1+s}$ nor naming this tensor
+proves its locality estimate.
+
+\paragraph{6. The exact remaining transverse matching problem.}
+Equations(6)--(8) cancel the constant BOUNDARY-SOURCE mass component of
+the complete packet. They do NOT prove that the INTERNAL transverse
+self-energy (3), together with (4), has canceled the short-line energy
+in the short line contact before current decay calculation. Background gauge covariance alone is insufficient: even an
+inverse-Laplacian trace is background-gauge covariant but its curvature
+susceptibility can have power-sensitive infrared behavior. Thus no
+longest-time gain follows merely from (6).
+
+A sufficient next estimate is the physical-energy control of the signed
+integral of (8) plus its complement, or a suitable absolute weighted
+boundary moment AFTER complete packet grouping. The actual tensor that
+must be matched is explicitly (3)--(4), with source derivatives of ALL
+its entries and heat factors. The scalar contact identity of the derivative network contact and boundary defect calculation and
+the local gauge-sector identities of the local action ghost haar contact identities calculation can be applied to this
+packet, but an identification of its remaining transverse contact with
+a canceled mass term has not been established here. An estimate on an
+isolated cubic term cannot replace that missing equality.
+
+\paragraph{7. Original finite-block verification.}
+On the complete $R=2$ flat cube, the vector heat blocks have eigenvalues
+6 and8, and the original ghost eigenvalue is8. A direct original
+quartic/Haar/Jacobian contraction with both spectral tails gives
+\[
+\begin{array}{c|r|r|r}
+s&\mathcal C_s&\text{marked vector}&\text{marked ghost}\\\hline
+0&-.375&-14.875&1.5833333333\\
+.025&-.1100116363&-9.4503781953&1.1982954386\\
+.1&.1949067988&-1.7820923608&.4626540049\\
+.3&.1272908669&.6288446750&.0276639101
+\end{array}
+\]
+The packet is the sum of its last two columns. Analytic derivatives agree
+with direct finite differences, and integration through $s=4$ agrees
+with $\mathcal C_0-\mathcal C_4$ within $10^{-11}$.
+The scale-dependent sign changes are retained; no positivity or
+termwise cancellation is presumed. This test verifies the exact packet
+identity, not an $R$-uniform bound.
+
+The original differentiated nonlinear remainder is a separate open
+requirement. No full nonlinear coefficient bound, physical-scale
+iteration or S94 conclusion is claimed.
+\end{document}

@@ -1,0 +1,332 @@
+\section{Ward identities for ordinary sources}
+\label{ww:section}
+
+This section uses the original compact Wilson law on any finite free-link set, with arbitrary fixed unitary values on the other links. Periodic volumes are included. Constants depend only on $SU(N)$, the original derivative convention and bounded plaquette incidence. There is no flat-boundary hypothesis or restriction relating $\beta$ to the volume. We take $\beta\ge1$.
+
+\subsection{The exact divergence and its ordered local derivatives}
+
+For the sources in \eqref{eq:r18sources}, put
+\begin{equation}
+ Z_f=-3t_f=\beta P[f]-\ell[f],\qquad
+ P[f]=\sum_bf_bP_b,\qquad
+ U_f=\sum_{b,A}f_bF_b^AX_b^A.
+ \label{ww:definitions}
+\end{equation}
+Haar integration by parts gives the raw identity and its normalized consequence
+\begin{equation}
+ Z_fe^{-\beta S}=-\operatorname{div}_{\lambda}(e^{-\beta S}U_f),
+ \qquad
+ \E[Z_fG]=\E[U_fG].
+ \label{ww:ibp}
+\end{equation}
+In particular $\E t_f=0$. No scalar or normalizer has been changed.
+
+Write $b\sim c$ when $b,c$ occur in one original plaquette, including the diagonal. This graph has uniformly bounded degree. Compactness, bounded word length and actual incidence imply
+\begin{align}
+ |\ell_b|&\le C,&
+ \norm{X_bX_cS}_{\mathrm{op}}+|X_b\ell_c|
+     &\le C\mathbf1_{b\sim c},&
+ \sum_{b,A}|X_b^A\ell[f]|^2&\le CM_f.
+ \label{ww:local}
+\end{align}
+The middle expression denotes the finite color matrix or vector of \emph{ordered} invariant derivatives. The last bound follows by the row and column degree bounds applied to $\sum_cf_cX_b\ell_c$. No same-link derivatives have been commuted, so no Lie-bracket or Ricci correction is omitted.
+
+\begin{theorem}[Global concentration of the unchanged Ward difference]
+\label{ww:theorem}
+There are fixed $C,c,\delta>0$ such that, for every real deterministic scalar root test $f$,
+\begin{equation}
+ \log\E e^{s t_f}\le CM_fs^2,
+ \qquad |s|b_f\le\delta.
+ \label{ww:mgf}
+\end{equation}
+Consequently
+\begin{align}
+ \Pr(|t_f|>u)&\le
+ 2\exp\!\left[-c\min\left\{\frac{u^2}{M_f},\frac{u}{b_f}\right\}\right],
+ \label{ww:tail}\\
+ \norm{t_f}_{L^p}&\le C\bigl(\sqrt p\,\sqrt{M_f}+p b_f\bigr),
+ \qquad p\ge1,\qquad
+ \Var(t_f)\le CM_f.
+ \label{ww:moments}
+\end{align}
+The zero test is interpreted separately. In the convention
+$\norm X_{\psi_1}=\inf\{A>0:\E e^{|X|/A}\le2\}$, one also has
+$\norm{t_f}_{\psi_1}\le C\sqrt{M_f}$.
+\end{theorem}
+
+\begin{proof}
+It suffices to work with $Z_f$. Let
+\[
+ \dd\mu_\lambda
+ =\frac{e^{\lambda Z_f}\dd\mu}{\E e^{\lambda Z_f}},
+ \qquad
+ Q_f=\beta\sum_bf_b^2P_b\ge0,
+ \qquad V_f=U_{f^2}.
+\]
+All these finite-volume real integrals exist on the compact link space. The required pointwise estimates are
+\begin{equation}
+ |U_fZ_f|\le C(Q_f+M_f/\beta),\qquad
+ |V_fZ_f|\le Cb_f(Q_f+M_f/\beta).
+ \label{ww:twoderivatives}
+\end{equation}
+Indeed the quadratic-force derivative is
+\[
+ U_fP[f]
+ =2\sum_{b,c,A,B}f_bf_cF_b^A
+      (X_b^AX_c^BS)F_c^B.
+\]
+Only $b\sim c$ contribute. Equation~\eqref{ww:local} and
+$2|f_bF_b||f_cF_c|\le f_b^2|F_b|^2+f_c^2|F_c|^2$ give
+$\beta|U_fP[f]|\le CQ_f$. For the lower row,
+\[
+ |U_f\ell[f]|
+ \le (Q_f/\beta)^{1/2}
+       \left(\sum_{b,A}|X_b^A\ell[f]|^2\right)^{1/2}
+ \le C(Q_f+M_f/\beta).
+\]
+For $V_fP[f]$, its coefficient satisfies
+\[
+ |f_b|^2|f_c||F_b||F_c|
+ \le \frac{b_f}{2}
+       \bigl(f_b^2|F_b|^2+f_c^2|F_c|^2\bigr).
+\]
+The same degree estimate applies. Also $|V_f|\le b_f|U_f|$ in the product tangent norm, proving the second assertion of \eqref{ww:twoderivatives}. There is no division by a neighboring weight.
+
+Apply \eqref{ww:ibp} with root test $f^2$ and scalar test
+$e^{\lambda Z_f}$. The exact tilted identity is
+\begin{align}
+ \E_\lambda Q_f
+ &=\E_\lambda\ell[f^2]
+      +\lambda\E_\lambda[V_fZ_f]\notag\\
+ &\le CM_f+C|\lambda|b_f
+                  (\E_\lambda Q_f+M_f/\beta).
+ \label{ww:closure}
+\end{align}
+Choose $|\lambda|b_f$ smaller than a fixed constant so that the last $Q_f$ term is absorbed. Since $\beta\ge1$,
+\begin{equation}
+ \E_\lambda Q_f\le CM_f.
+ \label{ww:tiltedenergy}
+\end{equation}
+For $\psi(\lambda)=\log\E e^{\lambda Z_f}$, a second application of the \emph{same} original identity gives
+\[
+ \psi'(\lambda)=\E_\lambda Z_f
+       =\lambda\E_\lambda[U_fZ_f],
+ \qquad |\psi'(\lambda)|\le C|\lambda|M_f.
+\]
+Since $\psi(0)=\psi'(0)=0$, integration in either direction proves
+\eqref{ww:mgf} after rescaling $Z_f=-3t_f$.
+Chernoff with $|s|$ the smaller of $cu/M_f$ and $\delta/(2b_f)$ proves
+\eqref{ww:tail}. Integrating that tail gives \eqref{ww:moments}.
+Finally $b_f\le\sqrt{M_f}$ implies
+$\norm{t_f}_p\le Cp\sqrt{M_f}$; the exponential series and
+$p!\ge(p/e)^p$ give the stated $\psi_1$ bound.
+\end{proof}
+
+This proves an exponential moment under the original law. A uniform pressure Hessian under arbitrary joint Ward tilts, or a common complex zero-free domain, is not inferred from \eqref{ww:mgf}.
+
+\subsection{Local Ward moments and the finite-range contact matrix}
+
+For one root, \eqref{ww:ibp} gives
+\begin{equation}
+ \beta\E P_b=\E\ell_b\le C.
+ \label{ww:force2}
+\end{equation}
+Integrating the divergence of $P_b^{m-1}\nabla_bS$, for an integer $m\ge2$, gives
+\begin{align}
+ \beta\E P_b^m
+ &=\E[P_b^{m-1}\ell_b]
+   +2(m-1)\E\!\left[
+       P_b^{m-2}\sum_{A,B}F_b^AF_b^BX_b^AX_b^BS\right]\notag\\
+ &\le Cm\,\E P_b^{m-1}.
+ \label{ww:recursion}
+\end{align}
+Thus $\E(\beta P_b)^m\le C^mm!$ and $\E|t_b|^m\le C^mm!$.
+The ordered derivative matrix is bounded as in \eqref{ww:local}; its antisymmetric part also vanishes in the displayed symmetric contraction.
+
+If $b$ does not belong to the original determining star of $t_c$, then $X_bt_c=0$. Hence
+\begin{equation}
+ \Cov(t_b,t_c)
+ =-\frac13\E\sum_AF_b^AX_b^At_c=0.
+ \label{ww:finitecov}
+\end{equation}
+This is exact covariance locality, not independence or finite-range higher cumulants.
+
+There is a stronger source comparison which retains the physical contact. Set
+$G_c=D_c-P_c/3$, so $h_c=\beta G_c$, and
+$\Delta_b=\sum_A(X_b^A)^2$. Two original compact integrations by parts give
+\begin{equation}
+ \Cov(t_b,h_c)
+ =-\frac{\beta}{3}\E\sum_AF_b^AX_b^AG_c
+ =-\frac13\E\Delta_bG_c.
+ \label{ww:contact}
+\end{equation}
+The last observable is uniformly bounded and vanishes outside a fixed original determining stencil. All its Wilson derivatives have bounded word length. Therefore bounded row and column incidence, together with Theorem~\ref{ww:theorem}, imply
+\begin{align}
+ |\Cov(t_f,h_g)|&\le C\norm f_2\norm g_2,\notag\\
+ |\Cov(h_f,h_g)-\Cov(r_f,r_g)|
+ &\le C\norm f_2\norm g_2.
+ \label{ww:covdifference}
+\end{align}
+For the second line use the exact identity
+\[
+ \Cov(h_f,h_g)-\Cov(r_f,r_g)
+ =\Cov(t_f,h_g)+\Cov(h_f,t_g)-\Cov(t_f,t_g).
+\]
+In particular $|\Var(h_f)-\Var(r_f)|\le CM_f$. More precisely the difference matrix on original roots is finite range and uniformly bounded in operator norm. Its complete coefficient remains in the source prescription; this estimate does not authorize a Ward-completed replacement of the source.
+
+After an arbitrary history projection, conditional and between-history cross covariances can compensate, so the finite-range assertion is not copied to each term separately. If both tests are supported on a literal integrated coordinate set, the same compact-fiber proof gives a uniform conditional contact bound and equal conditional $h/r$ means. This case is made explicit next.
+
+\subsection{Input and genuine marginal low-frequency estimates}
+
+Fix the nonnegative input generator and its coefficient convention:
+\begin{equation}
+ L_\mu=-\sum_{b,A}(X_b^A)^2
+          +\beta\sum_{b,A}F_b^AX_b^A,
+ \qquad
+ \mathcal E_\mu(v,v)=\E\sum_{b,A}|X_b^Av|^2.
+ \label{ww:generator}
+\end{equation}
+Equations~\eqref{ww:ibp} and \eqref{ww:force2} give
+\begin{equation}
+ |\inner{t_f}{v}_\mu|
+ \le \frac13
+       \left(\E\sum_bf_b^2P_b\right)^{1/2}
+           \mathcal E_\mu(v,v)^{1/2}
+ \le C\sqrt{M_f/\beta}\,\mathcal E_\mu(v,v)^{1/2}.
+ \label{ww:duality}
+\end{equation}
+The finite compact law has positive smooth density; constants are the zero eigenspace. The variational inverse-form formula and spectral calculus therefore yield
+\begin{equation}
+ \inner{t_f}{L_\mu^{-1}t_f}_\mu\le CM_f/\beta,
+ \qquad
+ \norm{P_{(0,\Lambda]}^{L_\mu}t_f}_2^2
+       \le C\min\{1,\Lambda/\beta\}M_f.
+ \label{ww:inputlow}
+\end{equation}
+Indeed the spectral mass on $(0,\Lambda]$ is bounded by $\Lambda$ times its inverse-weighted mass; the other bound is \eqref{ww:moments}. No volume-uniform spectral gap is used.
+
+Now split the original free links into integrated $I$ and retained $B$, write $U=(u_I,\eta)$, and keep the exact marginal
+\begin{equation}
+ \rho_B(\eta)=Z_\beta^{-1}
+       \int e^{-\beta S(u_I,\eta)}\dd\lambda_I,
+ \qquad
+ \dd\nu_B=\rho_B\dd\lambda_B,\qquad
+ V_{\mathrm{eff}}=-\log\rho_B.
+ \label{ww:marginal}
+\end{equation}
+The actual conditional normalizer is inside $\rho_B$. Compact integration by parts only in $I$ gives, for every bath,
+\begin{equation}
+ \E[t_{f_I}\mid\eta]=0,\qquad
+ g_f(\eta):=\E[t_f\mid\eta]=\E[t_{f_B}\mid\eta].
+ \label{ww:coordinatezero}
+\end{equation}
+This uses neither flatness nor conjugation. Theorem~\ref{ww:theorem} also applies to the unselected compact conditional law on $I$ itself, with its arbitrary fixed bath.
+
+For each retained root, differentiating the original compact integral gives
+\begin{align}
+ X_b^AV_{\mathrm{eff}}&=\beta\E[F_b^A\mid\eta],\notag\\
+ \Delta_bV_{\mathrm{eff}}
+ &=\beta\E[\ell_b\mid\eta]
+       -\beta^2\sum_A\Var(F_b^A\mid\eta).
+ \label{ww:effectivescore}
+\end{align}
+Consequently there is the exact marginal Ward formula
+\begin{equation}
+ g_f=\frac1{3\beta}\sum_{b\in B}f_b
+       \left[\Delta_bV_{\mathrm{eff}}
+               -\sum_A|X_b^AV_{\mathrm{eff}}|^2\right].
+ \label{ww:effectiveward}
+\end{equation}
+The conditional score covariance in \eqref{ww:effectivescore} is essential. $V_{\mathrm{eff}}$ is not the remaining bare Wilson action.
+
+Jensen and \eqref{ww:mgf} give
+\begin{equation}
+ \log\E_{\nu_B}e^{s g_f}\le Cs^2M_{f_B},
+ \qquad |s|b_{f_B}\le\delta.
+ \label{ww:marginalmgf}
+\end{equation}
+There is also a genuine output-generator estimate. Define
+\[
+ L_B=-\Delta_B+\nabla_BV_{\mathrm{eff}}\cdot\nabla_B,
+ \qquad
+ \mathcal E_B(v,v)=\E_{\nu_B}|\nabla_Bv|^2.
+\]
+For a retained test $v(\eta)$, the exact original pairing is
+\[
+ \inner{g_f}{v}_{\nu_B}
+ =-\frac13\E_\mu\sum_{\substack{b\in B\\A}}
+                   f_bF_b^AX_b^Av.
+\]
+Cauchy--Schwarz and \eqref{ww:force2} bound this by
+$C\sqrt{M_{f_B}/\beta}\,\mathcal E_B(v,v)^{1/2}$. Thus
+\begin{equation}
+ \inner{g_f}{L_B^{-1}g_f}_{\nu_B}\le CM_{f_B}/\beta,
+ \qquad
+ \norm{P_{(0,\Lambda]}^{L_B}g_f}_2^2
+       \le C\min\{1,\Lambda/\beta\}M_{f_B}.
+ \label{ww:marginallow}
+\end{equation}
+This concerns the canonical Langevin generator of the \emph{actual coordinate marginal}, with its full effective score. It requires no induced convexity, product decomposition or exterior gap. A different history generator requires its own Dirichlet-form response comparison.
+
+Since $r_f=h_f-t_f$, equation~\eqref{ww:coordinatezero} implies
+$\E(r_f\mid\eta)=\E(h_f\mid\eta)$ when every weighted root is integrated. Then \eqref{ww:contact} holds inside each compact fiber, so the global covariance difference lies entirely in its expected internal contact. The variance of the common mean remains unbounded by this argument. If neighboring weighted roots are retained, their $f_B$ contribution and \eqref{ww:effectivescore} remain.
+
+\subsection{Complete positive histories and a single rare budget}
+
+Let
+$\Pi(\dd U,\dd Y)=\mu(\dd U)K(\dd Y\mid U)$ be any actual complete positive source-free realization with the original Wilson marginal. Put $m_Y=\E(t_f\mid Y)$. The exact variance decomposition and Jensen give
+\begin{equation}
+ \E\Var(t_f\mid Y)+\Var(m_Y)=\Var(t_f)\le CM_f,
+ \qquad
+ \log\E e^{s m_Y}\le CM_fs^2
+ \quad (|s|b_f\le\delta).
+ \label{ww:history}
+\end{equation}
+Both variance terms are controlled, including between-history means, for this unchanged Ward channel. The residual also has a complete-law exponential bound: for $|s|b_f\le\delta/2$,
+\begin{align}
+ \E e^{s(t_f-m_Y)}
+ &\le
+   (\E e^{2st_f})^{1/2}(\E e^{-2s m_Y})^{1/2}\notag\\
+ &\le e^{CM_fs^2}.
+ \label{ww:historyresidual}
+\end{align}
+The first step is Cauchy--Schwarz; the second uses conditional Jensen and \eqref{ww:mgf}. These are averaged statements, not pointwise conditional exponential estimates.
+
+For any actual weight $0\le H\le1$ of mass $p=\E H$, tail integration gives
+\begin{equation}
+ \E[H t_f^2]\le
+ Cp\left[M_f\log(e/p)+b_f^2\log^2(e/p)\right],
+ \label{ww:rare}
+\end{equation}
+At $p=0$ the right side is zero. Integrate
+$2u\min\{p,\Pr(|t_f|>u)\}$ using the threshold
+$C(\sqrt{M_f\log(e/p)}+b_f\log(e/p))$.
+Their exponential estimates give the same bound for $m_Y$ and $t_f-m_Y$, with adjusted constants.
+
+For an actual increasing filtration, let $M_i=\E(t_f\mid\mathcal F_i)$.
+If $A\in\mathcal F_b$ is known at birth, weighted martingale orthogonality gives
+\begin{align}
+ \sum_{i=b+1}^{T}\E[\mathbf1_A(M_i-M_{i-1})^2]
+ &=\E[\mathbf1_A(M_T-M_b)^2]\notag\\
+ &\le\E[\mathbf1_A(t_f-M_b)^2]
+ \le\E[\mathbf1_A t_f^2].
+ \label{ww:lineage}
+\end{align}
+Thus \eqref{ww:rare} supplies one predictable lineage budget without a residence-depth factor. Its birth increment, actual ownership and packet completion must still be identified; overlapping lineages cannot charge the same budget repeatedly.
+
+\subsection{Physical factors and the exact scope of the gain}
+
+All bounds retain the source convention \eqref{eq:r18physical}. Multiplication by a real field-independent factor $\lambda_0=\cG^{-1}a^{-2}\Gamma_0$ multiplies variances, rare budgets and inverse-form bounds by $|\lambda_0|^2$, and changes the real parameter condition to $|s\lambda_0|b_f\le\delta$. A complex constant has the same absolute-value $L^p$ scaling; this does not supply a complex analytic domain. A rescaling of the generator also rescales the spectral cutoff in \eqref{ww:inputlow} or \eqref{ww:marginallow}.
+
+A live factor has its actual response. In particular
+\[
+ \Gamma\,t_f
+ =\frac13\operatorname{div}_\mu(\Gamma U_f)
+       -\frac13U_f\Gamma,
+ \qquad
+ \operatorname{div}_\mu U
+ =e^{\beta S}\operatorname{div}_{\lambda}(e^{-\beta S}U).
+\]
+The second term cannot be frozen. On a sharp selected domain, integration by parts also retains its actual boundary/shape flux. Equation~\eqref{ww:coordinatezero} is not copied to an individual selected normalized kernel; raw complementary recombination is required. A signed localized term is not a positive history to which \eqref{ww:history} applies.
+
+The theorem controls the original Ward difference and its genuine marginal responses globally. It identifies a bounded finite-range contact difference between the original $h$ and $r$ covariances. The common non-Ward susceptibility, simultaneous analytic admission, physical current/anchor norms and actual reserve aggregation remain separate requirements.

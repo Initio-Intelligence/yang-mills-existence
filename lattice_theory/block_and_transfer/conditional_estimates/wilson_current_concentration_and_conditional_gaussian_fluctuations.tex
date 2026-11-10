@@ -1,0 +1,1892 @@
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  11pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Latin Modern Roman}
+  \setsansfont[]{DejaVu Sans}
+  \setmonofont[]{DejaVu Sans Mono}
+  \setmathfont[]{Latin Modern Math}
+\fi
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[letterpaper,margin=0.84in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{american}
+\ifPDFTeX
+\else
+\babelfont{rm}[]{Latin Modern Roman}
+\fi
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+
+\usepackage{fancyhdr}
+
+\usepackage{microtype}
+\usepackage{longtable,booktabs,array}
+\definecolor{Ink}{HTML}{173345}
+\definecolor{Accent}{HTML}{176B77}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{3em}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
+\allowdisplaybreaks[2]
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+
+
+
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\title{Wilson current concentration and conditional Gaussian fluctuations}\author{}\date{}
+\begin{document}\maketitle
+\hypertarget{part-a.-exact-wilson-current-concentration-and-the-extensive-bridge}{%
+\section{Part A. Exact Wilson current concentration and the extensive
+bridge}\label{part-a.-exact-wilson-current-concentration-and-the-extensive-bridge}}
+
+\hypertarget{source-and-scope}{%
+\subsection{Source and scope}\label{source-and-scope}}
+
+Use the original compact product Haar Wilson law
+
+\[
+ d\mu_\beta=Z_\beta^{-1}e^{-\beta S}\,d\lambda,
+ \qquad S=\sum_{p\in\mathcal P}(N-\operatorname{Re}\operatorname{Tr}U_p),
+ \qquad \beta\ge1.
+\]
+
+The isotropic periodic lattice is four dimensional; all elementary
+plaquettes have four distinct links. Use the product bi-invariant
+Riemannian metric whose orthonormal invariant derivatives are the
+original source derivatives. Write \(P=\#\mathcal P\), \(F=\nabla S\),
+and let \(\Delta\) have the convention
+\(\Delta\operatorname{Re}\operatorname{Tr}U=-C_F\operatorname{Re}\operatorname{Tr}U\).
+The rank \(N\), metric normalization, and lattice dimension remain
+fixed. Define
+
+\[
+ T=\Delta S-\beta|\nabla S|^2=3\tau_1^0.
+\]
+
+This is exactly the current in [RS], equations (3)--(4), before its physical factor
+\(c_\beta^{-1}a^{-2}\). The ordinary source is still
+\(R_1^0=\beta D-\ell/3\), and \(h_1^0=R_1^0+\tau_1^0\).
+
+\hypertarget{main-weighted-theorem-conditional-scores-and-finite-colour-holder}{%
+\subsection{Main weighted theorem: conditional scores and finite-colour
+Holder}\label{main-weighted-theorem-conditional-scores-and-finite-colour-holder}}
+
+For deterministic real weights \(f_e\), constant across the original
+colour derivatives at each link, define
+
+\[
+ T_e=\Delta_eS-\beta|\nabla_eS|^2,\quad
+ T_f=\sum_e f_eT_e,\quad M_f=\sum_e f_e^2,\quad b_f=\max_e|f_e|.
+\]
+
+There are constants \(v_0,c_0\), depending only on the fixed group and
+metric, and an absolute lattice colour count \(K\le19\), such that
+
+\[
+ \boxed{\quad
+ \log\mathbb E e^{tT_f}
+ \le \frac{K v_0 M_f t^2}{2(1-Kc_0b_f|t|)},
+ \qquad Kc_0b_f|t|<1.
+ \quad} \tag{W1}
+\]
+
+No good-bath condition, gauge fixing, spectral gap, large-volume
+approximation, or local Wilson energy-moment premise is used.
+
+\hypertarget{proof-at-one-arbitrary-conditioned-link}{%
+\subsubsection{Proof at one arbitrary conditioned
+link}\label{proof-at-one-arbitrary-conditioned-link}}
+
+Fix \textbf{every} other original link. The conditional law of \(U_e\)
+is the genuine one-link Wilson density with its actual normalizer. Let
+\(S_e\) be its incident action, up to the unchanged exterior constant.
+Set \(F_e=\nabla_eS\) and \(\ell_e=\Delta_eS\). The complete compact
+identity is
+
+\[
+ \mathbb E(T_e\mid\text{bath})=0,
+ \quad \nabla_e\ell_e=-C_FF_e,
+ \quad \ell_e\le A_*:=6C_FN,
+ \quad \|\operatorname{Hess}_{ee}S\|_{op}\le H_*.
+\]
+
+The last two bounds hold uniformly for every real bath, including
+cancelled staples. With \(A_e=\beta|F_e|^2=\ell_e-T_e\),
+
+\[
+ |\langle F_e,\nabla_eT_e\rangle|
+ \le (C_F/\beta+2H_*)A_e\le c_0A_e,
+ \quad A_e\le A_*-T_e.
+\]
+
+Apply the exponential integration-by-parts proof of the uniform-current
+argument below, conditionally, with \(A_0=A_*\), \(c=c_0\). It yields
+
+\[
+ \log\mathbb E(e^{sT_e}\mid\text{bath})
+ \le A_*\left[s-c_0^{-1}\log(1+c_0s)\right]
+ \le\frac{v_0s^2}{2(1-c_0|s|)},\qquad v_0=A_*c_0. \tag{W2}
+\]
+
+\hypertarget{product-within-each-colour-then-holder-across-colours}{%
+\subsubsection{Product within each colour, then Holder across
+colours}\label{product-within-each-colour-then-holder-across-colours}}
+
+Join two original links if a plaquette contains both. Each link is in
+six plaquettes and sees at most eighteen other links, so a deterministic
+proper colouring uses \(K\le19\) colours \(\mathcal C_j\). No plaquette
+reads two links of one colour. Conditional on the complement of
+\(\mathcal C_j\), the original Wilson density is exactly a product and
+each \(T_e\), \(e\in\mathcal C_j\), reads only its own free link and
+that bath. Therefore (W2) gives
+
+\[
+ \mathbb E\exp\left(t\sum_{e\in\mathcal C_j}f_eT_e\right)
+ \le\exp\left\{\frac{v_0t^2\sum_{e\in\mathcal C_j}f_e^2}{2(1-c_0b_f|t|)}\right\}. \tag{W3}
+\]
+
+The bound is independent of the conditioned bath, so the outer
+expectation costs nothing. Generalized Holder, with all exponents \(K\),
+gives
+
+\[
+ \mathbb E e^{t\sum_jT_{f,j}}
+ \le\prod_j[\mathbb E e^{KtT_{f,j}}]^{1/K},
+\]
+
+and substitution of (W3) proves (W1). The colours themselves need not be
+independent.
+
+\hypertarget{complete-rare-history-consequences}{%
+\subsubsection{Complete rare-history
+consequences}\label{complete-rare-history-consequences}}
+
+For \(0\le H\le1\), \(\mathbb EH=p\),
+
+\[
+ \boxed{\quad
+ \mathbb E[H T_f^2]
+ \le Cp\{M_f\log(e/p)+b_f^2\log^2(e/p)\}.
+ \quad} \tag{W4}
+\]
+
+Furthermore
+
+\[
+ \|T_f\|_q\le C\{\sqrt{qM_f}+qb_f\},\qquad q\ge2. \tag{W5}
+\]
+
+For every actual completed positive source-free observation, conditional
+Jensen preserves (W1) for its conditional mean. The
+single-ordinary-label rare refinement and its whole predictably owned
+later martingale lineage have an L2 norm squared bounded by the right
+side of (W4), with a fixed enlarged constant. A final orthogonal
+projection contracts the L2 norm of that already rare refinement or
+lineage. Such a projection does not automatically preserve the
+exponential bound or a newly rare-weighted tail for an arbitrary
+projected variable. The proof is exactly the rare-history argument below
+with \(P\) replaced by \(M_f\) and the unit Bernstein scale replaced by
+\(b_f\). Multiple common labels keep their separate
+between-common-history term. A source-dependent or outcome-selected
+weight is outside the deterministic-weight theorem unless separately
+justified.
+
+The original current is \(\tau_f=T_f/3\); its physical factor is still
+\(c_\beta^{-1}a^{-2}\). A coefficient deterministic on the complete
+probability space multiplies the bound by its squared modulus. The
+complete parent mass multiplies it once, with the rare factor already
+included. A coefficient depending on history needs its own envelope or
+must stay inside the actual weighted sum. No independently extracted
+vacuum scalar has been normalized away.
+
+This is an \(\ell^2\) spatial bound for the \textbf{complete current}
+through arbitrary actual positive history observations. It does not
+apply to the ordinary \(\beta D+kS-C_0\): its directional-square terms
+are not conditional one-link scores and have nonzero bath means.
+
+\hypertarget{admitted-live-coefficient-extension}{%
+\subsubsection{Admitted live-coefficient
+extension}\label{admitted-live-coefficient-extension}}
+
+The deterministic-weight proof extends to certain live coefficients. For
+each colour \(\mathcal C_j\), require every \(f_e\),
+\(e\in\mathcal C_j\), to be measurable with respect to the original
+links outside that \textbf{whole colour}. Suppose, almost surely,
+\(\sum_e f_e^2\le M\) and \(\max_e|f_e|\le b\), with deterministic
+\(M,b\). Conditional product still applies with these now-fixed
+coefficients, and the same Holder proof yields (W1) with \(M_f,b_f\)
+replaced by \(M,b\). The weighted sum is centered since each conditional
+score is centered. A bounded finite determining stencil for the
+coefficients can be accommodated by a finer fixed colouring; its actual
+degree must be counted. An inherited coefficient with growing/nonlocal
+readset does not automatically have such a fixed colouring or a
+deterministic quadratic budget.
+
+\hypertarget{uniform-global-sub-gamma-theorem-for-the-current}{%
+\subsection{Uniform global sub-gamma theorem for the
+current}\label{uniform-global-sub-gamma-theorem-for-the-current}}
+
+There are constants \(C_\Delta,C_H,c\), depending only on the fixed
+group and incidence, such that
+
+\[
+ \Delta S=4C_F(NP-S),\quad \nabla\Delta S=-4C_F\nabla S,
+ \quad \|\operatorname{Hess}S\|_{\mathrm{op}}\le C_H,
+ \quad A_0:=4C_FNP=C_\Delta P.
+\]
+
+The Hessian bound has \textbf{no volume factor}. Each single-plaquette
+Hessian is bounded on a fixed compact four-link space; summing its
+quadratic-form bound counts each link only six times. This argument
+concerns the Riemannian Hessian, including its connection terms, not an
+unqualified matrix of noncommuting invariant derivatives.
+
+Set \(A=\beta|F|^2\) and choose
+
+\[
+ c\ge 4C_F+2C_H>0,\qquad v=cA_0.
+\]
+
+Then \(T\le A_0\), \(\mathbb E T=0\), and for every real \(t>-1/c\),
+
+\[
+ \boxed{\quad
+ \log\mathbb E e^{tT}
+ \le A_0\left[t-\frac1c\log(1+ct)\right].
+ \quad} \tag{1}
+\]
+
+Consequently, for \(|t|<1/c\),
+
+\[
+ \log\mathbb E e^{tT}\le\frac{vt^2}{2(1-c|t|)}, \tag{2}
+\]
+
+and for every \(x\ge0\),
+
+\[
+ \Pr(T\ge\sqrt{2vx})\le e^{-x},\qquad
+ \Pr(T\le-\sqrt{2vx}-cx)\le e^{-x}. \tag{3}
+\]
+
+In particular \(\operatorname{Var}T\le v=CP\), and for \(q\ge2\),
+
+\[
+ \|T\|_q\le C\left(\sqrt{Pq}+q\right). \tag{4}
+\]
+
+\hypertarget{proof}{%
+\subsubsection{Proof}\label{proof}}
+
+For the original compact boundaryless product group, weighted
+integration by parts is
+
+\[
+ \mathbb E[T f]=-\mathbb E\langle F,\nabla f\rangle.
+\]
+
+All finite-cutoff functions are smooth and bounded, so exponential
+testing and differentiation require no limiting argument. Moreover
+
+\[
+ \nabla T=-4C_FF-2\beta(\operatorname{Hess}S)F,
+ \qquad |\langle F,\nabla T\rangle|\le cA.
+\]
+
+Let \(M(t)=\mathbb Ee^{tT}\) and \(u(t)=(\log M)'(t)\). The exact
+identity gives
+
+\[
+ M'(t)=-t\,\mathbb E[\langle F,\nabla T\rangle e^{tT}],
+ \qquad |u(t)|\le c|t|\,\mathbb E_tA\le c|t|(A_0-u(t)). \tag{5}
+\]
+
+For \(t\ge0\), (5) implies \(u(t)\le A_0ct/(1+ct)\). For \(-1/c<t<0\),
+it implies \(u(t)\ge A_0ct/(1+ct)\). Integrating from 0 to \(t\), with
+the reversed integration direction when \(t<0\), yields (1). The
+elementary bounds on \(x-\log(1+x)\) give (2), while the positive
+half-axis even gives \(\log M(t)\le vt^2/2\) for all \(t\ge0\). Chernoff
+optimization proves (3), and tail integration proves (4).
+
+The argument uses neither a spectral gap nor convexity of the Wilson
+action. In particular it permits all global modes and history means.
+
+\hypertarget{an-extensive-rare-history-current-budget}{%
+\subsection{An extensive rare-history current
+budget}\label{an-extensive-rare-history-current-budget}}
+
+For any random weight \(0\le H\le1\) with \(\mathbb EH=p\), (3) and
+layer cake imply
+
+\[
+ \boxed{\quad
+ \mathbb E[H T^2]
+ \le C p\left[P\log(e/p)+\log^2(e/p)\right].
+ \quad} \tag{6}
+\]
+
+The expression is zero at \(p=0\). One way to prove (6) is to use
+\(\Pr(|T|>C[\sqrt{Px}+x])\le2e^{-x}\), split the layer-cake integral at
+\(x=\log(2/p)\), and integrate the remaining exponential tail. This
+retains one factor \(p\) and the literal original root count \(P\).
+
+Any complete positive source-free augmentation retaining the Wilson
+marginal has the same result. For an arbitrary actual observation \(Y\),
+conditional Jensen preserves the exponential bound for
+\(\mathbb E(T\mid Y)\). Centered differences \(T-\mathbb E(T\mid W)\)
+have the same type of bound with fixed enlarged constants: use the
+triangle inequality and the two tail bounds, or Hölder on the two
+exponential moments. Therefore the rare-refinement proof in [RS],
+Theorem 2.2, yields
+
+\[
+ \|\mathbb E(T\mid W,\alpha)-\mathbb E(T\mid W)\|_2^2
+ \le Cp\left[P\log(e/p)+\log^2(e/p)\right] \tag{7}
+\]
+
+when the refinement has one ordinary label and rare complementary labels
+of total mass \(p\). If there are several common labels, their
+between-common-history variance remains, exactly as in [RS].
+
+For a rare birth event \(E\in\mathcal F_b\),
+\(M_t=\mathbb E(T\mid\mathcal F_t)\), and predictable ownership masks
+\(a_t\in\{0,1\}\), \(a_t\le1_E\), martingale orthogonality gives
+
+\[
+ \left\|\sum_{t>b}a_t(M_t-M_{t-1})\right\|_2^2
+ \le\mathbb E[1_ET^2]
+ \le Cp\left[P\log(e/p)+\log^2(e/p)\right]. \tag{8}
+\]
+
+The birth increment adds once, with (7). Every subsequent actual
+conditional expectation and every orthogonal output projection,
+including zero-energy or low-spectral projections, contracts this bound.
+No inverse spectral threshold appears. The corresponding absolute
+integrated two-current connected-increment sum follows by
+Cauchy--Schwarz in probability and time, retaining deterministic
+physical coefficients; random history coefficients require their own
+identified envelopes.
+
+The stronger weighted result in the main weighted theorem improves the
+generic \((\sum_e|f_e|)^2\) estimate for the \textbf{complete
+total-current row} to its extensive \(M_f\) scale. It does not make the
+same improvement for \(R_1^0\), nor for an arbitrarily weighted
+directional source. Separate signed localized representatives still need
+identification with the complete pushed current; all effective-score,
+cutoff, live-reference and original denominator terms needed for that
+identification remain.
+
+\hypertarget{exact-covariance-locality-for-individual-current-roots}{%
+\subsection{Exact covariance locality for individual current
+roots}\label{exact-covariance-locality-for-individual-current-roots}}
+
+Let
+
+\[
+ T_e=\Delta_eS-\beta|\nabla_eS|^2,
+ \quad T_f=\sum_e f_eT_e,
+ \quad M_f=\sum_e|f_e|^2,
+\]
+
+with field-independent real weights constant in the color index. Then
+
+\[
+ \mathbb ET_e=0,
+ \qquad \mathbb E T_eT_d=0
+ \quad\text{if no original plaquette contains both }e,d, \tag{9}
+\]
+
+and
+
+\[
+ \mathbb ET_e^2\le C,
+ \qquad \|T_f\|_2^2\le C M_f. \tag{10}
+\]
+
+Proof of (9):
+\(\mathbb E(T_eg)=-\mathbb E\langle\nabla_eS,\nabla_eg\rangle\), while
+\(T_d\) reads only the original plaquettes incident to \(d\). If none
+contains \(e\), its \(e\)-derivative vanishes identically. This is exact
+covariance locality of current roots, not independence or mixing of the
+Wilson law.
+
+For (10), the one-link identity is \(\nabla_e\Delta_eS=-C_F\nabla_eS\).
+Consequently
+
+\[
+ \mathbb ET_e^2
+ =C_F\mathbb E|\nabla_eS|^2
+ +2\beta\mathbb E\operatorname{Hess}_{ee}S(\nabla_eS,\nabla_eS).
+\]
+
+The absolute Hessian bound is uniform, and
+\(\beta\mathbb E|\nabla_eS|^2=\mathbb E\Delta_eS\le C\). Thus
+\(\mathbb ET_e^2\le C\). The bounded number of plaquette-neighbor roots
+and \(2|f_ef_d|\le f_e^2+f_d^2\) prove (10).
+
+Equivalently, the current covariance matrix on the literal original
+source space satisfies \(\operatorname{Cov}(T_e,T_d)\preceq CI\). Every
+actual completed positive observation \(Y\) preserves this operator
+bound for
+\(\operatorname{Cov}(\mathbb E(T_e\mid Y),\mathbb E(T_d\mid Y))\), by
+conditional-expectation contraction. Thus the extensive arbitrary-weight
+current bound propagates through every such observation including
+history means.
+
+\hypertarget{independent-proof-of-the-extensive-bridge}{%
+\subsection{A direct proof of the extensive
+bridge}\label{independent-proof-of-the-extensive-bridge}}
+
+This subsection uses the local original Wilson action-moment premise
+stated in [RS], equation (2), which is the local-moment theorem of
+\texttt{local\_contacts/odd\_torus\_transfer\_moment.tex}: on every fixed literal plaquette record \(Y\),
+\(\|\beta\sum_{p\in Y}s_p\|_q\le Cq\#Y\). It does not reprove the
+reflection-positivity input.
+
+Write \(h_f=\sum_b f_bh_b\), where
+\(h_b=\beta\sum_A[\sum_\mu F_{bA;\mu}^2-F_{bA}^2/3]\), including the
+fixed original pointing/averaging incidence. Compact Wilson force bounds
+imply
+
+\[
+ |h_b|\le C\beta\sum_{p\in Y_b}s_p,
+ \quad \|h_b\|_2\le C, \tag{11}
+\]
+
+where \(Y_b\) is a fixed-size complete determining record.
+
+Choose any deterministic family \(\mathcal F\) of free links separated
+sufficiently far that no complete \(h_b\) stencil reads two free links,
+and condition on all other links, denoting that observation by \(X\).
+The Wilson conditional law is exactly a product on \(\mathcal F\). The
+source splits exactly as
+
+\[
+ h_f=h_{f,0}(X)+\sum_{e\in\mathcal F}H_{f,e}(U_e;X),
+\]
+
+where each \(H_{f,e}\) is the sum of \textbf{all} rooted terms whose
+original stencil reads \(e\). Conditional independence gives
+
+\[
+ \mathbb E\operatorname{Var}(h_f\mid X)
+ =\sum_e\mathbb E\operatorname{Var}(H_{f,e}\mid X)
+ \le\sum_e\mathbb EH_{f,e}^2
+ \le C M_f. \tag{12}
+\]
+
+The last inequality uses finite-stencil Cauchy--Schwarz and bounded
+original incidence. No native target dimension substitutes for this
+literal count.
+
+Let \(R_f=h_f-\tau_f\), with \(\tau_f=T_f/3\), and
+\(R_{X,f}=\mathbb E(R_f\mid X)\). Define
+
+\[
+ \epsilon_h=(I-P_X)h_f+P_X\tau_f,
+ \qquad \epsilon_R=\epsilon_h-\tau_f=(I-P_X)R_f.
+\]
+
+Then exactly
+
+\[
+ h_f=R_{X,f}+\epsilon_h,
+ \qquad R_f=R_{X,f}+\epsilon_R,
+ \qquad \mathbb E\epsilon_h=\mathbb E\epsilon_R=0,
+ \qquad \|\epsilon_h\|_2^2+\|\epsilon_R\|_2^2\le C M_f. \tag{13}
+\]
+
+Here the two summands in \(\epsilon_h\) are orthogonal; (10) and (12)
+supply the bound. For any later actual positive observation \(Y\), even
+if it reads original eliminated variables, and every orthogonal output
+projection \(Q_Y\),
+
+\[
+ \|Q_Y\mathbb E(\epsilon_h\mid Y)\|_2^2+
+ \|Q_Y\mathbb E(\epsilon_R\mid Y)\|_2^2\le C M_f. \tag{14}
+\]
+
+This is proved here from the inputs listed in the source locators. It requires no screening condition between \(X\) and \(Y\).
+Its error remains an \(L^2\)-norm error; it cannot be converted into a
+bounded difference of squared retained norms without controlling the
+ordinary retained energy.
+
+\hypertarget{why-this-does-not-solve-the-ordinary-problem}{%
+\subsection{Why this does not solve the ordinary
+problem}\label{why-this-does-not-solve-the-ordinary-problem}}
+
+For the uniform test,
+
+\[
+ R=\beta D+kS-C_0,\qquad k=4C_F/3.
+\]
+
+The new argument closes for \(T\) because it is an exact
+\(\mu_\beta\)-divergence and because the Wilson Laplacian closes on
+\(S\): \(\nabla\Delta S=-4C_F\nabla S\). Replacing \(\beta|\nabla S|^2\)
+by \(\beta D\) breaks this identity. Separate directional forces are not
+the score of the complete Wilson density. The rooted ordinary
+conditional mean in equation (23) of [RS] is the nonzero transverse-staple
+quantity, so it cannot be erased by an invocation of the total-current
+Ward identity.
+
+The missing estimate is still an extensive bound for the actual retained
+ordinary part (or its specified low-spectrum projection).
+Between-history ordinary means remain. The current sub-gamma theorem
+therefore supplies a real improvement to the complete error/current
+sector and its rare-history propagation, while leaving the exact
+ordinary obstruction exposed.
+
+There is an actual SU(2) star demonstrating why the conditional-score
+theorem cannot simply be applied to the ordinary mean. In the quaternion
+convention of equation (23) of [RS], take the realizable directional
+staple pairs \(h_1=2e_1\), \(h_2=-2e_1\), \(h_3=0\). The six individual
+staples may be \(e_1,e_1,-e_1,-e_1,e_2,-e_2\), realized by the original
+neighboring links as described in [RS], Section 5.4. Their total staple
+is zero, so the conditional central-link action is constant and
+\(T_e\equiv0\). Nevertheless the ordinary rooted mean is
+
+\[
+ \Phi_e=\frac34c_X^2\beta\sum_{\mu}|h_\mu|^2=6c_X^2\beta.
+\]
+
+This is a counterexample to a bathwise identification or uniform
+domination by the central conditional score, not a counterexample to
+extensive global susceptibility. Such stars have exponentially small
+actual Wilson mass. Their aggregation, and especially the nonzero
+ordinary good-star transverse means, remain additional questions.
+
+\newpage
+
+\hypertarget{part-b.-exact-flat-current-transfer-anchor-moments-and-its-locality-limit}{%
+\section{Part B. Exact flat current transfer, anchor moments, and its
+locality
+limit}\label{part-b.-exact-flat-current-transfer-anchor-moments-and-its-locality-limit}}
+
+\hypertarget{what-this-adds-to-the-uniform-averaging-rows}{%
+\subsection{What this adds to the uniform averaging
+rows}\label{what-this-adds-to-the-uniform-averaging-rows}}
+
+The note [UA] proves that on a complete uniform old plaquette hierarchy
+the literal flat differential has
+
+\[
+(Q_2F)_{\mu\nu}=Q_0L_\mu L_\nu F_{\mu\nu},
+\qquad D_{r,\rho}^{+}Q_2F=Q_2L_\rho D_{a,\rho}^{+}F.
+\]
+
+As [UA] notes, a bound on the already summed fine divergence
+alone cannot simply be applied to the separately filtered directional
+terms. The cancellation below supplies a uniform operator estimate for
+that summed current on the complete periodic uniform flat channel. It
+also retains an arbitrary flat Bianchi defect. It is not an estimate for
+the boundary/junction remainder (equation (2.12) of [UA]), the nonlinear averaging
+remainders (equations (4.1)--(4.2) of [UA]), or the old constrained minimum.
+
+The exact raw averaging map, the input/output meshes and physical
+counting measures are unchanged. No reassociation of nonlinear means is
+used.
+
+\hypertarget{definitions-and-theorem}{%
+\subsection{Definitions and theorem}\label{definitions-and-theorem}}
+
+Work first on a periodic d-dimensional cubical lattice of spacing a and
+side T, where r=Ba, B is an odd positive integer, and r divides T. All
+forms below have values in a fixed finite-dimensional real/complex
+normed vector space; Lie algebra components are handled componentwise.
+Cochain components are represented at their base vertex. Antisymmetry
+fixes other orientations.
+
+Write tau\_\{s mu\} for translation by s e\_mu, and set
+
+\[
+D_\mu^+=(\tau_{a\mu}-I)/a,\quad
+D_\mu^-=(I-\tau_{-a\mu})/a,\quad
+H=-\sum_\mu D_\mu^-D_\mu^+,
+\]
+
+\[
+L_\mu=B^{-1}\sum_{j=0}^{B-1}\tau_{ja\mu},\quad
+M_\mu=L_\mu^*L_\mu,\quad
+D_{r,\mu}^+=L_\mu D_\mu^+,\quad
+D_{r,\mu}^-=L_\mu^*D_\mu^-.
+\]
+
+Let Q\_0 be the normalized centered B\^{}d block average. In particular
+its coordinate factor in direction rho is a fixed translation of L\_rho.
+Let
+
+\[
+H_r=-\sum_\mu D_{r,\mu}^-D_{r,\mu}^+
+    =-\sum_\mu M_\mu D_\mu^-D_\mu^+.
+\]
+
+For an arbitrary antisymmetric 2-cochain F define its \textbf{flat}
+current and Bianchi defect by
+
+\[
+J_\nu=-\sum_\mu D_\mu^-F_{\mu\nu},
+\]
+
+\[
+K_{\rho\mu\nu}
+=D_\rho^+F_{\mu\nu}-D_\mu^+F_{\rho\nu}+D_\nu^+F_{\rho\mu}.
+\]
+
+Finally set
+
+\[
+(J_r)_\nu=-\sum_\mu D_{r,\mu}^-(Q_0L_\mu L_\nu F_{\mu\nu}),
+\]
+
+evaluated on the actual r-grid.
+
+\textbf{Theorem.} For each 0 \textless= eta \textless{} 2 there are
+translation-invariant matrix kernels T\^{}J and T\^{}K, depending on
+a,r,T and the actual block filters but not F, such that
+
+\[
+J_r=T^J J+T^K K,
+\]
+
+and, with torus distance,
+
+\[
+\sup_x\sum_y (1+\operatorname{dist}_T(x,y)/r)^\eta
+ (|T^J(x,y)|+|T^K(x,y)|)\le C_{d,\eta}.
+\tag{MA1}
+\]
+
+The kernels are written as coefficients of a counting-measure
+convolution. The corresponding physical column bound is
+
+\[
+r^d\sup_y\sum_{x\in r\mathbb Z^d/T\mathbb Z^d}
+ (1+\operatorname{dist}_T(x,y)/r)^\eta
+ (|T^J(x,y)|+|T^K(x,y)|)
+\le C_{d,\eta}a^d.
+\tag{MA2}
+\]
+
+Consequently, for every 1 \textless= p \textless= infinity,
+
+\[
+\|J_r\|_{L_r^p}\le C_d(\|J\|_{L_a^p}+\|K\|_{L_a^p}).
+\tag{MA3}
+\]
+
+For closed F, K=0. In particular an actual bound sup\textbar J\textbar{}
+\textless= A in this channel gives sup r\^{}3\textbar J\_r\textbar{}
+\textless= C r\^{}3 A in d=4. There is no loss r\^{}\{-1\} and no need
+to estimate each directional current separately. The theorem does not
+infer that the actual mixed selected fields satisfy
+sup\textbar J\textbar{} \textless= C g\_k q.
+
+\hypertarget{exact-algebra-including-zero-momentum}{%
+\subsection{Exact algebra, including zero
+momentum}\label{exact-algebra-including-zero-momentum}}
+
+Let G=H\^{}\{-1\} on mean-zero cochains and zero on constant cochains.
+With the above cochain conventions, the flat Hodge identity gives
+
+\[
+F_{\mu\nu}=D_\mu^+GJ_\nu-D_\nu^+GJ_\mu
+ -\sum_\rho D_\rho^-GK_{\rho\mu\nu}+(P_0F)_{\mu\nu}.
+\tag{MA4}
+\]
+
+One may check this by the identity d delta + delta d = H componentwise.
+Every derivative commutes with H. Harmonic 2-forms on the periodic
+cubical lattice are precisely constant components; the coarse current
+kills them. Each J component has mean zero and satisfies sum\_mu
+D\_mu\^{}- J\_mu=0. Thus no zero-mode inverse is introduced.
+
+Substituting (MA4) into the literal coarse current gives
+
+\[
+(J_r)_\nu=Q_0L_\nu\left\{
+ H_r GJ_\nu
+ +D_\nu^+\sum_\mu M_\mu D_\mu^-GJ_\mu
+ +\sum_{\mu,\rho}M_\mu D_\mu^-D_\rho^-GK_{\rho\mu\nu}
+\right\}.
+\tag{MA5}
+\]
+
+This formula includes the staggered forward/backward factors exactly. In
+particular the same M\_mu = L\_mu\^{}*L\_mu, not L\_mu\^{}2, occurs in
+every term.
+
+The second term in braces can replace M\_mu by M\_mu-I because delta
+J=0. Antisymmetry of K in rho,mu gives
+
+\[
+\sum_{\mu,\rho}M_\mu D_\mu^-D_\rho^-K_{\rho\mu\nu}
+=\frac12\sum_{\mu,\rho}(M_\mu-M_\rho)
+D_\mu^-D_\rho^-K_{\rho\mu\nu}.
+\tag{MA6}
+\]
+
+The identity component cancels in (MA6). This cancellation supplies two
+additional low-frequency derivatives and is the reason the endpoint
+L-infinity bound is possible.
+
+\hypertarget{heat-estimates-with-all-scales-explicit}{%
+\subsection{Heat estimates with all scales
+explicit}\label{heat-estimates-with-all-scales-explicit}}
+
+Let E\_t=exp(-tH), first on the infinite a-grid. For a fixed derivative
+word D\^{}alpha of length m, and 0 \textless= eta \textless= 2,
+
+\[
+\sum_z(1+|z|/\sqrt t)^\eta
+ |D^\alpha E_t(z)|\le C_{d,m}t^{-m/2},\qquad t\ge a^2.
+\tag{MA7}
+\]
+
+Also, for 0 \textless= t \textless= r\^{}2 and a \textless= r, E\_t is a
+probability kernel with
+
+\[
+\sum_z(1+|z|/r)^\eta E_t(z)\le C_d,\qquad 0\le\eta\le2.
+\tag{MA8}
+\]
+
+Here is an elementary verification sufficient for this note. The
+one-dimensional kernel at u=t/a\^{}2 is symmetric and unimodal. This
+follows by taking the Euler-product limit of convolution powers of the
+symmetric unimodal probability kernel (u/n,1-2u/n,u/n), with n large
+enough, and using closure of symmetric unimodal sequences under
+convolution. Its mass at zero satisfies p\_u(0) \textless=
+C(1+u)\^{}(-1/2), directly from the Fourier integral of exp(-4u
+sin\^{}2(theta/2)). Telescoping yields sum\_k
+\textbar p\_u(k+1)-p\_u(k)\textbar=2p\_u(0). A second telescoping gives
+
+\[
+\sum_{k\in\mathbb Z}k^2|p_u(k+1)-p_u(k)|
+=p_u(0)+2\mathbb E|X_u|
+\le1+2\sqrt{2u}.
+\]
+
+For u \textgreater= 1 these imply the first derivative version of (MA7),
+with exponent eta=2. Product structure gives the d-dimensional result.
+Fixed higher derivatives follow by splitting the heat time into m equal
+parts and using weighted convolution; the bounded interval a\^{}2
+\textless= t \textless= m a\^{}2 follows directly from the
+difference-operator norm. Smaller eta are dominated by eta=2 at the same
+sqrt(t) scale. The second moment E\textbar a X\textbar\^{}2=2dt proves
+(MA8). Periodizing an infinite-lattice kernel cannot increase these
+weighted norms when torus distance is used, because dist\_T(z)
+\textless= \textbar z+nT\textbar. Thus the bounds are uniform in finite
+torus size, including times larger than T\^{}2.
+
+Each M\_mu is a symmetric probability average supported at distances
+less than r in direction mu. The exact discrete second-difference
+identity expresses
+
+\[
+M_\mu-I=\sum_q c_{\mu,q}\tau_{qa\mu}D_\mu^-D_\mu^+,
+\quad c_{\mu,q}\ge0,\quad\sum_qc_{\mu,q}\le C r^2,
+\quad |qa|\le r.
+\tag{MA9}
+\]
+
+For example tau\_\{sa\}+tau\_\{-sa\}-2I = a\^{}2
+sum\_\{q=-(s-1)\}\^{}\{s-1\}(s-\textbar q\textbar) tau\_\{qa\}
+D\textsuperscript{-D}+. Averaging this identity with the symmetric
+triangular weights of M proves (MA9).
+
+\hypertarget{construction-and-bound-of-the-kernels}{%
+\subsection{Construction and bound of the
+kernels}\label{construction-and-bound-of-the-kernels}}
+
+Use G=int\_0\^{}infinity(E\_t-P\_0)dt only after its derivative factors;
+those factors annihilate P\_0. Split the integral at r\^{}2.
+
+For the J channel define a matrix kernel by the sum of
+
+\[
+Q_0L_\nu E_{r^2}\,\delta_{\nu\mu},
+\tag{MA10a}
+\]
+
+\[
+\int_0^{r^2}Q_0L_\nu
+\{H_r\delta_{\nu\mu}+D_\nu^+M_\mu D_\mu^-\}E_t\,dt,
+\tag{MA10b}
+\]
+
+and
+
+\[
+\int_{r^2}^\infty Q_0L_\nu
+\{(H_r-H)\delta_{\nu\mu}+D_\nu^+(M_\mu-I)D_\mu^-\}E_t\,dt.
+\tag{MA10c}
+\]
+
+Summed against divergence-free, mean-zero J this is exactly its part of
+(MA5). The missing P\_0 in (MA10a) acts as zero on J.
+
+For the K channel use its original integrand in (MA5) over
+{[}0,r\^{}2{]} and its antisymmetrized integrand (MA6) over
+{[}r\^{}2,infinity{]}. These formulas define linear kernels on arbitrary
+inputs, although their agreement with (MA5) only requires the actual
+compatibility conditions already proved for J and K.
+
+Short-time J terms have kernel norm at most C/r\^{}2: H\_r is a sum of
+products of two coarse differences, and
+
+\[
+L_\nu D_\nu^+M_\mu D_\mu^-
+=D_{r,\nu}^+L_\mu D_{r,\mu}^-.
+\]
+
+Every coarse difference has counting kernel norm 2/r, all remaining
+averaging factors have norm one and support O(r). Formula (MA8) gives
+the same bound in the weighted norm of (MA1).
+
+For short-time K terms, rho and mu are distinct whenever K\_rho mu nu is
+nonzero. Use M\_mu D\_mu\^{}-=L\_mu D\_\{r,mu\}\^{}-. The rho-coordinate
+factor of Q\_0 times D\_rho\^{}- is a translated coarse difference times
+an averaging operator in the other directions. Hence there are again two
+coarse differences, and the weighted norm is at most C/r\^{}2. This is
+where a \textbf{complete} Q\_0 block, including every coordinate,
+matters.
+
+Integrating the short-time estimate over a time interval r\^{}2 gives
+O(1). The heat term (MA10a) is O(1) by (MA8).
+
+Each long-time integrand contains an M\_mu-I (or a difference of two
+such terms), two further derivatives, and therefore, by (MA9), four
+lattice derivatives with total coefficient O(r\^{}2) and translations
+O(r). By (MA7), for t \textgreater= r\^{}2,
+
+\[
+\|\text{integrand}\|_{\ell^1((1+|z|/r)^\eta)}
+\le C_{d,\eta}r^2t^{-2}(\sqrt t/r)^\eta.
+\]
+
+Consequently
+
+\[
+\int_{r^2}^\infty C_{d,\eta}r^{2-\eta}t^{-2+\eta/2}dt
+\le C_{d,\eta},\qquad \eta<2.
+\]
+
+This proves (MA1). At eta=2 the displayed integral is logarithmic; no
+eta=2 or exponential localization is claimed.
+
+For (MA2), keep Q\_0 factored on the left. For any fine-grid
+displacement z,
+
+\[
+\sum_{x\in r\mathbb Z^d/T\mathbb Z^d}Q_0(x-y-z)=B^{-d}.
+\]
+
+For the J channel and all long-time terms, apply this identity to the
+absolute value of the kernel before Q\_0; its weighted norm has already
+been bounded. Transporting the weight across Q\_0 costs a fixed factor,
+because Q\_0 has support O(r). This gives (MA2) for those terms.
+
+The short-time K channel requires a separate column calculation, because
+one coordinate factor of Q\_0 was used to regularize a derivative. This
+factor cannot be counted twice. Let q\_rho be the one-dimensional
+normalized B-point average in that direction. Its derivative is exactly
+a difference of two shifted point masses divided by r. The
+one-dimensional heat kernel, sampled on a spacing-r sublattice,
+satisfies for 0 \textless= t \textless= r\^{}2
+
+\[
+\sup_y\sum_{x\in r\mathbb Z}(1+|x-y|/r)^\eta E_t^{(1)}(x-y)
+\le C_\eta\min\{1,a/\sqrt t\},
+\tag{MA12}
+\]
+
+with the right side interpreted as C\_eta at t=0. For t \textless=
+a\^{}2 the unrestricted heat-kernel moment proves this. For a\^{}2
+\textless= t \textless= r\^{}2, the elementary bound
+
+\[
+E_t^{(1)}(ak)\le C(a/\sqrt t)\exp(-c|ak|/\sqrt t)
+\]
+
+proves it by a geometric series on the spacing-r grid, uniformly in the
+residue y. To justify this heat bound directly, split the time in half,
+use the previously proved supremum bound C a/sqrt(t), and bound the tail
+of the other half by exponential Markov with parameter c/sqrt(t). Its
+moment generating function is exp(2(t/a\^{}2)(cosh(ca/sqrt(t))-1)),
+bounded uniformly when t \textgreater= a\^{}2. Periodization preserves
+the bound with torus distance.
+
+In the rho direction, D\_rho\^{}- q\_rho is a pair of point masses
+divided by r, so (MA12) bounds its sampled heat convolution by C
+r\^{}\{-1\} min(1,a/sqrt(t)). In the mu direction the other coarse
+difference costs 2/r, while its Q\_0 average and those in every other
+direction retain the exact B\^{}\{-1\} column factors. Here mu != rho,
+since the corresponding K component is zero otherwise. Remaining L
+filters shift by at most r and have mass one. Thus the entire short-time
+K integrand has weighted coarse column sum at most
+
+\[
+C_{d,\eta}B^{-(d-1)}r^{-2}\min\{1,a/\sqrt t\}.
+\]
+
+Its time integral is bounded by
+
+\[
+C B^{-(d-1)}r^{-2}\left(a^2+\int_{a^2}^{r^2}a t^{-1/2}dt\right)
+\le C B^{-(d-1)}a/r=C B^{-d}.
+\]
+
+This supplies the missing column count without changing the operator or
+inserting an extra average. Product weights dominate the Euclidean
+weight, so the coordinate calculation proves the stated d-dimensional
+weighted column bound. Multiplying by r\^{}d gives (MA2). The endpoint
+p=1 and p=infinity bounds now imply (MA3), by interpolation or the
+weighted Schur argument.
+
+\hypertarget{finite-parameter-jets-and-original-anchor-measures}{%
+\subsection{Finite parameter jets and original anchor
+measures}\label{finite-parameter-jets-and-original-anchor-measures}}
+
+All these operators are fixed linear maps, so they commute with every
+fixed parameter derivative. For an m-th response kernel keep its
+original anchor sets and original counting measures, and define
+A\_eta\^{}(m) as in equation (3.4) of [UA], with old physical metric dist/r.
+Entrywise triangle inequality and
+
+\[
+1+d(x,z)\le(1+d(x,y))(1+d(y,z))
+\]
+
+give
+
+\[
+A_\eta^{(m)}(J_r;x)
+\le\sum_y |T^J(x,y)|(1+d(x,y))^{m\eta}A_\eta^{(m)}(J;y)
+ +\sum_y |T^K(x,y)|(1+d(x,y))^{m\eta}A_\eta^{(m)}(K;y).
+\tag{MA11}
+\]
+
+For m eta \textless{} 2, (MA1) proves a uniform sup bound by the two
+corresponding input sup norms. It does not manufacture an input anchor
+sum from a directional norm. For a mixed native metric the literal
+weighted kernel sum must replace (MA1); an old Euclidean range does not
+imply bounded mixed-metric diameter.
+
+\hypertarget{the-second-moment-threshold-is-a-genuine-limitation}{%
+\subsection{The second-moment threshold is a genuine
+limitation}\label{the-second-moment-threshold-is-a-genuine-limitation}}
+
+For d \textgreater= 3 and B \textgreater{} 1, no convolution
+representation of this current map on all compatible closed 2-forms can
+have a uniformly finite absolute second spatial moment (and hence none
+can have uniform exponential locality). The statement concerns
+dependence on the \textbf{total fine current alone}; it does not deny
+the finite stencil of the original map as a function of F.
+
+Here is a direct multiplier proof. Choose a component nu and Fourier
+momenta p with p\_nu=0 and two other momenta free. For every nonzero
+such momentum, J=e\_nu j(p) is divergence free and mean zero. It is
+realized by the closed cochain F=dH\^{}\{-1\}J. Since D\_nu\^{}+=0,
+(MA5) reduces exactly to
+
+\[
+(J_r)_\nu(p)=q_0(p)\frac{h_r(p)}{h_a(p)}j(p),\qquad
+h_s(p)=\sum_\mu\frac{4}{s^2}\sin^2(sp_\mu/2).
+\tag{MA13}
+\]
+
+The L\_nu factor equals one. For physical Fourier momentum p tending to
+zero,
+
+\[
+\frac{h_r(p)}{h_a(p)}
+=1-\frac{r^2-a^2}{12}\,
+ \frac{\sum_\mu p_\mu^4}{\sum_\mu p_\mu^2}
+ +O(|p|^4).
+\tag{MA14}
+\]
+
+The centered block filter has
+q\_0(p)=1-(r\textsuperscript{2-a}2)\textbar p\textbar{}\textsuperscript{2/24+O(\textbar p\textbar{}}4).
+Its quadratic part is analytic and cannot remove the non-polynomial
+homogeneous degree-two term in (MA14). In the plane of two nonzero
+momentum coordinates,
+(x\textsuperscript{4+y}4)/(x\textsuperscript{2+y}2) takes the value
+t\^{}2 at (t,0), (0,t), (t,t), and (t,-t). No quadratic form can agree
+with those four directional limits. Thus the multiplier is not C\^{}2 at
+zero.
+
+A convolution kernel with finite absolute second moment has a C\^{}2
+Fourier transform by differentiation under an absolutely summable
+series, contradicting (MA13)--(MA14). Uniform finite-torus second-moment
+bounds would yield such an infinite-volume kernel by a subsequence and
+Fatou; the finite-torus compatible Fourier modes become dense and
+identify its restriction (MA13). Taking paired opposite momenta gives
+real fields if desired. Removing the zero Fourier coefficient of J does
+not remove the obstruction, which uses nonzero momenta approaching zero.
+
+Consequently eta\textless2 is not merely an artifact of the long-time
+integral. This theorem supplies uniform current amplitude and finite
+polynomial anchor moments within that range; it does not supply the
+saved exponential anchor estimates for a general source packet.
+Additional structure of the actual packet would have to establish those
+estimates.
+
+\hypertarget{remaining-admission-obligations-and-interpretation}{%
+\subsection{Remaining admission obligations and
+interpretation}\label{remaining-admission-obligations-and-interpretation}}
+
+The result is a cancellation for the exact flat complete uniform old
+channel. For a family of closed linearized curvatures it controls the
+old total current from the fine total current with no scale-ratio loss.
+For an arbitrary Lie-algebra curvature cochain it exposes the flat
+Bianchi defect as a separate input. A genuinely nonabelian discrete
+Bianchi identity, with actual transports and their derivatives, is not
+supplied by simply writing dF=0.
+
+To apply to the actual incoming representative of [UA], one still has to
+identify the same real and simultaneous complex wall chart; bound the
+fine physical current versus its flat counterpart and the Bianchi
+defect; bound every nonlinear averaging/reference remainder and
+boundary/junction row; prove the old minimum's Maxwell/current/anchor
+responses on its saved radius; retain quadratic/cubic covariant
+completion; and attach an unused reserve on the same complete selected
+body. Nothing here enlarges the admitted domain or changes any
+source/scalar prescription.
+
+\newpage
+
+\hypertarget{part-c.-actual-wilson-conditional-gaussian-fluctuations}{%
+\section{Part C. Actual-Wilson conditional Gaussian
+fluctuations}\label{part-c.-actual-wilson-conditional-gaussian-fluctuations}}
+
+\hypertarget{inputs-and-exact-scope}{%
+\subsection{Inputs and exact scope}\label{inputs-and-exact-scope}}
+
+The original conventions, from [ND], equations (1.1)--(1.3), are
+
+\[
+ d\mu_{a,\beta}=Z_{a,\beta}^{-1}e^{-\beta S_0}\,d\lambda,
+ \qquad O_{H,a}(f)=c_\beta^{-1}a^{-2}\beta G_{H,a}(f),
+ \qquad \beta=c_\beta g^{-2}.
+\]
+
+Here \texttt{c\_beta} is the fixed convention constant, not a variable
+depending on beta. The complete pointed/hypercubic test average remains
+in \texttt{G\_H}. This note writes each completed rooted contribution as
+a finite sum of terms \texttt{f(x\_alpha)\ h\_alpha}, with all the
+literal shifts retained and with boundedly many shifts within
+\texttt{C\ a} of the root. The local nonnegative quadratic directional
+residual is
+
+\[
+ h_b=\sum_A\left[\sum_{\mu\ne\nu_b}(F^A_{b;\mu})^2
+             -\frac13\left(\sum_{\mu\ne\nu_b}F^A_{b;\mu}\right)^2\right]\ge0.
+\]
+
+For every fixed literal plaquette record \texttt{Q}, the
+local-moment theorem of \texttt{local\_contacts/odd\_torus\_transfer\_moment.tex} gives
+
+\[
+ \sup_a E\exp\left(\theta_Q\beta\sum_{p\in Q}s_p\right)<\infty
+ \tag{1}
+\]
+
+on its explicitly stated physical regime
+
+\[
+ n_a\ge c_*\log(2+N\beta_a),\qquad n_a\ge3,
+\]
+
+where the original isotropic torus has \texttt{n\_a\^{}4} sites. Its partition-power input is
+taken from the manuscript (Lemma 10.1); that partition theorem is not
+reproved here. A
+more general version retains \texttt{K\_a=1+log(2+N\ beta\_a)/n\_a} in
+all local moments. The uniform-moment theorem below uses the displayed
+physical regime. It does not assert a running-coupling trajectory.
+
+The second input is the same original Wilson one-link good-bath
+calculation in [ND], Sections 2.1--2.3: the complete
+free-link contribution at a flat bath is
+
+\[
+ G_{e,\mathrm{flat}}(U)=12|\nabla s(U)|^2+\text{constant},
+\]
+
+and its rescaled variable \texttt{beta\ G\_e} has a fixed concentration
+deficit on every sufficiently good bath. The bad-bath probability is at
+most
+
+\[
+ \epsilon_a=C\frac{\log(2+\beta_a)}{\beta_a}\longrightarrow0
+ \tag{2}
+\]
+
+if \texttt{beta\_a\ -\textgreater{}\ infinity}. Under (1), the same
+finite-record event gives the stronger \texttt{C\ exp(-c\ beta\_a)}
+bound, but that strengthening is not needed.
+
+\hypertarget{complete-independent-stencils-and-unchanged-source-decomposition}{%
+\subsection{Complete independent stencils and unchanged source
+decomposition}\label{complete-independent-stencils-and-unchanged-source-decomposition}}
+
+Fix a bounded physical cube \texttt{Omega} whose closure embeds in the
+original torus, and choose one fixed link orientation. Select a
+deterministic sublattice of links \texttt{F\_a} with spacing
+\texttt{K\ a}, where \texttt{K} is a fixed integer larger than twice the
+diameter, in fine lattice units, of every complete determining stencil.
+Keep only selected links whose full determining stencil and entire
+packing cell lie in \texttt{Omega}. The omitted boundary strip has
+physical volume O(a). Changing this deterministic set does not change
+the measure. No plaquette reads two selected links, and no completed
+rooted \texttt{H} contribution reads two selected links.
+
+Let \texttt{B\_a} be the sigma algebra generated by all original links
+outside \texttt{F\_a}. Assign to \texttt{G\_\{a,e\}(f)} every complete
+rooted summand that reads \texttt{e}, and assign all remaining summands
+to \texttt{G\_\{a,0\}(f)}. This assignment is unique because of stencil
+separation. Thus
+
+\[
+ G_{H,a}(f)=G_{a,0}(f)+\sum_{e\in F_a}G_{a,e}(f),
+ \tag{3}
+\]
+
+where \texttt{G\_\{a,0\}} is \texttt{B\_a} measurable, and the actual
+conditional Wilson law of the free links is a product. Every neighboring
+root that varies with \texttt{e} is included. In particular this is not
+the zero residual at the selected link alone.
+
+Define
+
+\[
+ X_{a,e}(f)=\beta_aG_{a,e}(f),\quad
+ Y_{a,e}(f)=X_{a,e}(f)-E(X_{a,e}(f)\mid B_a),
+\]
+
+\[
+ S_a(f)=a^2\sum_{e\in F_a}Y_{a,e}(f),\qquad
+ V_a(f,g)=a^4\sum_{e\in F_a}
+ E(Y_{a,e}(f)Y_{a,e}(g)\mid B_a).
+ \tag{4}
+\]
+
+The exact relationship to the unchanged physical source is
+
+\[
+ \boxed{S_a(f)=c_\beta a^4\big[O_{H,a}(f)-E(O_{H,a}(f)\mid B_a)\big].}
+ \tag{5}
+\]
+
+There is no assertion that the bath conditional mean is a deterministic
+subtraction or an admissible renormalization of the full physical field.
+
+\hypertarget{actual-law-local-moment-bound}{%
+\subsection{Actual-law local moment
+bound}\label{actual-law-local-moment-bound}}
+
+For the compact group \texttt{SU(N)} and the fixed invariant metric,
+
+\[
+ |\nabla s(U)|^2\le C_Ns(U)
+\]
+
+globally. Near the identity this follows from the positive quadratic
+minimum of \texttt{s}; away from the identity it follows from
+compactness and positivity of \texttt{s}. Each force reads a bounded
+number of plaquettes. Consequently
+
+\[
+ |X_{a,e}(f)|\le C\|f\|_{\infty,\,\mathrm{stencil}(e)}
+                  \beta_a\sum_{p\in Q_e}s_p,
+ \tag{6}
+\]
+
+where \texttt{Q\_e} has uniformly bounded cardinality and is the actual
+enlarged stencil. Equation (1), Holder's inequality, and conditional
+Jensen yield, at every fixed \texttt{p\textgreater{}=1},
+
+\[
+ E|Y_{a,e}(f)|^p
+ \le C_p\|f\|_{\infty,\,\mathrm{stencil}(e)}^p.
+ \tag{7}
+\]
+
+These are averaged same-Wilson moments. They do \textbf{not} assert a
+uniform conditional moment on every bath or history.
+
+\hypertarget{conditional-gaussian-approximation-with-a-quantitative-rate}{%
+\subsection{Conditional Gaussian approximation with a quantitative
+rate}\label{conditional-gaussian-approximation-with-a-quantitative-rate}}
+
+\hypertarget{lemma-1-independent-centered-triangular-arrays-retaining-random-variances}{%
+\subsubsection{Lemma 1: independent centered triangular arrays,
+retaining random
+variances}\label{lemma-1-independent-centered-triangular-arrays-retaining-random-variances}}
+
+Let \texttt{Y\_e} be independent conditional on a sigma algebra
+\texttt{B}, with conditional means zero and finite third moments. Set
+\texttt{v\_e=E(Y\_e\^{}2\textbar{}B)}. For every real \texttt{t} and
+\texttt{s\textgreater{}=0},
+
+\[
+ \left|E\left(e^{it s\sum_eY_e}\mid B\right)
+       -\exp\left(-\frac{t^2s^2}{2}\sum_ev_e\right)\right|
+ \le C|t|^3s^3\sum_eE(|Y_e|^3\mid B).
+ \tag{8}
+\]
+
+\textbf{Proof.} For each factor, Taylor's formula gives
+
+\[
+ |E(e^{iuY_e}\mid B)-(1-u^2v_e/2)|
+ \le |u|^3E(|Y_e|^3\mid B)/6.
+\]
+
+For \texttt{z\textgreater{}=0},
+\texttt{\textbar{}exp(-z)-1+z\textbar{}\ \textless{}=\ C\ z\^{}(3/2)}.
+Also
+\texttt{v\_e\^{}(3/2)\ \textless{}=\ E(\textbar{}Y\_e\textbar{}\^{}3\textbar{}B)}.
+Therefore the difference between that characteristic factor and
+\texttt{exp(-u\^{}2v\_e/2)} is at most
+\texttt{C\ \textbar{}u\textbar{}\^{}3\ E(\textbar{}Y\_e\textbar{}\^{}3\textbar{}B)}.
+Both types of factors have modulus at most one. Telescope their
+products. No maximum conditional-variance hypothesis is needed. QED.
+
+Applying (8) to (4), using \texttt{s=a\^{}2}, (7), and
+\texttt{\#F\_a=O(a\^{}-4)}, proves
+
+\[
+ \boxed{
+ E\left|E(e^{itS_a(f)}\mid B_a)-e^{-t^2V_a(f,f)/2}\right|
+ \le C_f|t|^3a^2.
+ }
+ \tag{9}
+\]
+
+For a finite list of real smooth tests \texttt{f\_1,...,f\_m} and real
+\texttt{t\_i}, the same result gives
+
+\[
+ E\left|E\left(e^{i\sum_it_iS_a(f_i)}\mid B_a\right)
+ -\exp\left(-\tfrac12\sum_{i,j}t_it_jV_a(f_i,f_j)\right)\right|
+ \le C a^2\left(\sum_i|t_i|\|f_i\|_\infty\right)^3.
+ \tag{10}
+\]
+
+The constants may depend on the fixed compact common test support. In
+the version with \texttt{K\_a} moments, the right side of (9)--(10) is
+\texttt{C\ a\^{}2\ K\_a\^{}3}.
+
+For every bounded \texttt{B\_a}-measurable random variable
+\texttt{Z\_a}, (9) also gives
+
+\[
+ \left|E[Z_ae^{itS_a(f)}]-E[Z_ae^{-t^2V_a(f,f)/2}]\right|
+ \le C_f\|Z_a\|_\infty|t|^3a^2.
+ \tag{11}
+\]
+
+This is the crucial retained-bath statement. It does not replace the
+variance by its expectation and does not assert mixing of the bath.
+
+\hypertarget{conditional-cumulants}{%
+\subsubsection{Conditional cumulants}\label{conditional-cumulants}}
+
+At each fixed order \texttt{r\textgreater{}=3}, conditional independence
+and the moment-cumulant formula give
+
+\[
+ E\left|\kappa_r(S_a(f_1),...,S_a(f_r)\mid B_a)\right|
+ \le C_{r,f_1,...,f_r}a^{2r-4}.
+ \tag{12}
+\]
+
+To check the bound, each conditional cumulant is a fixed finite sum of
+products of conditional moments. Conditional Holder followed by ordinary
+Holder bounds the expectation of each product by a fixed \texttt{r}th
+absolute moment. Equation (7) bounds that moment. Sum the
+\texttt{O(a\^{}-4)} independent contributions and retain
+\texttt{a\^{}(2r)}. The first conditional cumulant is zero exactly; the
+second is (4). For disjoint supports separated by more than the stencil
+diameter, a mixed conditional cumulant involving both supports is zero
+exactly, since no selected-link variable reads both.
+
+\hypertarget{the-limiting-covariance-is-a-random-local-intensity-not-a-guessed-constant}{%
+\subsection{The limiting covariance is a random local intensity, not a
+guessed
+constant}\label{the-limiting-covariance-is-a-random-local-intensity-not-a-guessed-constant}}
+
+Write
+
+\[
+ X_{a,e}^0=\beta_aG_{a,e}(1),\qquad
+ v_{a,e}=\operatorname{Var}(X_{a,e}^0\mid B_a),
+ \qquad \nu_a=a^4\sum_{e\in F_a}v_{a,e}\delta_{x_e}.
+ \tag{13}
+\]
+
+The notation \texttt{G\_e(1)} means the sum of the complete rooted terms
+assigned to that selected link, with every test coefficient replaced by
+one. It does not add roots assigned elsewhere.
+
+The actual pointed test offsets satisfy
+
+\[
+ E|Y_{a,e}(f)-f(x_e)Y_{a,e}(1)|^2
+ \le C_fa^2.
+ \tag{14}
+\]
+
+Indeed each coefficient difference is at most
+\texttt{C\ a\ \textbar{}\textbar{}grad\ f\textbar{}\textbar{}\_infty},
+and (6)--(7) control the entire finite local row. Conditional
+independence then gives
+
+\[
+ \left\|S_a(f)-a^2\sum_ef(x_e)Y_{a,e}(1)\right\|_{L^2(\mu)}
+ \le C_fa,
+ \tag{15}
+\]
+
+and Cauchy--Schwarz gives
+
+\[
+ E\left|V_a(f,g)-\int fg\,d\nu_a\right|\le C_{f,g}a.
+ \tag{16}
+\]
+
+Thus the characteristic-function approximation with \texttt{V\_a(f,g)}
+replaced by \texttt{int\ f\ g\ d\ nu\_a} has error \texttt{O(a)} for
+fixed smooth tests. This error comes from the \textbf{actual} shifted
+tests, not from changing their definition.
+
+For complete packing cells \texttt{C\_\{a,e\}} of volume
+\texttt{(K\ a)\^{}4}, define
+
+\[
+ w_a(x)=K^{-4}v_{a,e}\quad(x\in C_{a,e}),
+\]
+
+and put zero on the boundary strip not covered by complete cells. For
+every \texttt{1\textless{}p\textless{}infinity},
+
+\[
+ E\int_\Omega w_a(x)^p\,dx\le C_{p,\Omega}.
+ \tag{17}
+\]
+
+This follows from conditional Jensen and
+\texttt{E\textbar{}X\_e\^{}0\textbar{}\^{}(2p)\textless{}=C\_(2p)}. The
+atomic measure \texttt{nu\_a} and \texttt{w\_a\ dx} differ against a
+fixed Lipschitz function by at most
+\texttt{C\ a\ \textbar{}\textbar{}grad\ f\textbar{}\textbar{}\_infty\ nu\_a(Omega)}.
+Their expected total masses are uniformly bounded.
+
+Consequently their laws are tight as positive measures on compact
+subsets. Every subsequential weak limit \texttt{nu} has an almost surely
+locally \texttt{L\^{}p} density \texttt{w}, for every finite \texttt{p},
+with the corresponding integrated moment bounds. One precise proof uses
+the lower semicontinuity on measures of
+
+\[
+ \mathcal F_p(\nu)=
+ \begin{cases}
+ \int|w|^p dx,&\nu=w\,dx,\\
+ +\infty,&\text{otherwise},
+ \end{cases}
+\]
+
+which follows from its convex dual formula. Apply this to
+\texttt{w\_a\ dx}, not to the atomic approximations. A diagonal
+extraction over integer \texttt{p\textgreater{}=2} gives all finite
+\texttt{p}. Merely bounding \texttt{E\ nu\_a} would not suffice to rule
+out a singular random intensity.
+
+\hypertarget{nondegenerate-intensity}{%
+\subsubsection{Nondegenerate intensity}\label{nondegenerate-intensity}}
+
+The good-bath concentration deficit of [ND] has constants
+\texttt{h\_0,p\_0\textgreater{}0} such that every interval of length
+\texttt{h\_0} carries conditional probability at most \texttt{1-p\_0}
+for \texttt{X\_e\^{}0}. Taking the interval centered at its conditional
+mean yields
+
+\[
+ v_{a,e}\ge v_*:=p_0h_0^2/4
+ \tag{18}
+\]
+
+on every good bath. The expected physical volume of bad packing cells is
+\texttt{O(epsilon\_a)}. The uncovered physical boundary strip has volume
+\texttt{O(a)}. The empirical selected-link measure
+\texttt{a\^{}4\ sum\_e\ delta\_(x\_e)} tends to \texttt{K\^{}-4\ dx} in
+the interior. Therefore every limiting density obeys
+
+\[
+ \boxed{w(x)\ge K^{-4}v_*>0\quad\text{for almost every }x\in\Omega,\text{ almost surely}.}
+ \tag{19}
+\]
+
+For example, to justify passage to the limit, test against a countable
+dense set of nonnegative smooth functions compactly supported in
+\texttt{Omega}; the negative defect from bad cells tends to zero in
+\texttt{L\^{}1}. Equation (19) follows by density. No independence of
+the good-bath events is used.
+
+\hypertarget{actual-source-subsequential-limit-and-what-it-does-not-prove}{%
+\subsection{Actual-source subsequential limit and what it does not
+prove}\label{actual-source-subsequential-limit-and-what-it-does-not-prove}}
+
+For every fixed \texttt{s\textgreater{}2}, the conditional-centering
+identity and (7) give a uniform second-moment bound for \texttt{S\_a} in
+\texttt{H\^{}\{-s\}} on a compact interior cube or torus: test against a
+bounded Fourier/eigenfunction basis and sum
+\texttt{(1+\textbar{}k\textbar{}\^{}2)\^{}(-s)}. Taking any stronger
+negative index gives compact containment. Hence the fluctuation fields
+have distributional subsequential limits. Equivalently, one can first
+extract finite-dimensional laws on a countable dense test family and use
+the same moment bound for the random-distribution realization.
+
+Along a joint subsequential limit of the fluctuation fields, intensity
+measures, and retained bath variables, where \texttt{Z\_a} is a
+bath-measurable random element in a fixed Polish space and the joint
+laws are tight, (10)--(11) and (16) imply the joint characteristic
+functional
+
+\[
+ E\left[e^{i\sum_it_iS(f_i)}\mid\nu,Z\right]
+ =\exp\left(-\frac12\int\left(\sum_it_if_i(x)\right)^2w(x)\,dx\right).
+ \tag{20}
+\]
+
+Here \texttt{Z} stands for retained bath observables in the chosen joint
+limit. Thus the limit is \textbf{conditionally Gaussian white noise with
+a random intensity density}. Conditional on the retained bath,
+disjoint-support tests are independent. They need not be independent
+without conditioning. The distribution can be realized as
+\texttt{sqrt(w)\ W} with an auxiliary white noise independent of
+\texttt{(w,Z)}; this is a representation of the proved limit kernel, not
+a claim of independence at finite cutoff.
+
+The full original centered field still satisfies the exact decomposition
+
+\[
+ a^4[O_{H,a}(f)-EO_{H,a}(f)]
+ =c_\beta^{-1}S_a(f)
+  +a^4[E(O_{H,a}(f)\mid B_a)-EO_{H,a}(f)].
+ \tag{21}
+\]
+
+This note gives no tightness, susceptibility estimate, Gaussian limit,
+or physical identification for the second term. Nor does it identify
+\texttt{w} with a constant. Those are precisely spatial/low-spectral
+questions, rather than consequences of one-link conditional
+independence. The random local intensity is a retained bath response; it
+cannot be replaced by a field-independent scalar contact counterterm
+without a separate argument.
+
+The theorem proves an extensive actual conditional noise energy:
+
+\[
+ E\operatorname{Var}(\beta G_{H,a}(f)\mid B_a)=O(a^{-4}),
+\]
+
+with a matching lower bound for plateau tests, and identifies its
+conditional higher cumulants at their exact scales. It does not bound
+the between-bath variance. Consequently it does not close all-history
+MT36, AE8/LM47, S94, or the common interacting continuum hierarchy. It
+should be used to isolate a genuine ultraviolet contact component while
+continuing to study the unchanged retained ordinary mean.
+
+\hypertarget{flat-bath-normalization-check}{%
+\subsection{Flat-bath normalization
+check}\label{flat-bath-normalization-check}}
+
+Let the metric convention give
+\texttt{s(exp(x))=(kappa/2)\textbar{}x\textbar{}\^{}2+O(\textbar{}x\textbar{}\^{}4)}
+in an orthonormal Lie basis, and put \texttt{d=dim\ SU(N)}. In the
+exactly flat one-link bath, the conditional action is \texttt{6\ s(U)},
+so \texttt{z=sqrt(beta)\ x} tends to a centered Gaussian with covariance
+\texttt{(6\ kappa)\^{}-1\ I}. Therefore
+
+\[
+ \beta G_{e,\mathrm{flat}}(U)-\text{constant}
+ \Longrightarrow 2\kappa\,\chi_d^2,
+\]
+
+\[
+ \lim_{\beta\to\infty}v_{e,\mathrm{flat}}=8\kappa^2d.
+ \tag{22}
+\]
+
+This checks the positive variance and normalization. It is a single
+exactly conditioned flat bath, not a claim that the actual bath variance
+converges to this constant. A nonflat bath can contribute a rescaled
+linear term in the complete local source, so retaining the random
+intensity in (20) is necessary until that response is controlled.
+
+\hypertarget{stronger-version-joint-physical-and-ordinary-noises-from-two-link-blocks}{%
+\subsection{Stronger version: joint physical and ordinary noises from
+two-link
+blocks}\label{stronger-version-joint-physical-and-ordinary-noises-from-two-link-blocks}}
+
+The complete ordinary row can also be retained in the same theorem.
+Define its dimensionless source by
+
+\[
+ h_a(f)=\beta_aG_{H,a}(f),\qquad
+ R_a(f)=\beta_aD_a[f]-\ell_a[f]/3.
+ \tag{23}
+\]
+
+Thus \texttt{O\_H=c\_beta\^{}-1\ a\^{}-2\ h} and the literal specified
+ordinary partner is \texttt{r\_H=c\_beta\^{}-1\ a\^{}-2\ R}. The
+identity and field-dependent Casimir terms are both kept.
+
+Replace each selected one-link site by the exact pair from the companion
+two-link theorem (source locator 4):
+
+\[
+ b_-=(x-e_\mu,\nu),\qquad b_+=(x+e_\mu,\nu),\qquad\mu\ne\nu.
+\]
+
+No plaquette reads both links. Their stars meet only at the middle bond
+\texttt{(x,nu)}. Separate the pair centers by a fixed large lattice
+spacing so every complete rooted source summand reads at most one pair.
+Conditional on all other links, the free links are independent, hence
+the two-link blocks are independent. For each block, retain the
+\textbf{entire} variable contributions to both (23), and conditionally
+center each. Call the resulting vector
+\texttt{Y\_\{a,e\}=(Y\^{}h\_\{a,e\},Y\^{}R\_\{a,e\})}.
+
+The scalar lemma applies to every real linear combination of these
+vectors. Equations (9)--(17), with a symmetric positive 2 by 2
+covariance matrix in place of the scalar variance, follow verbatim.
+Local moments for the \texttt{R} row follow from the force-square energy
+bound and the exact local Casimir formula
+
+\[
+ \ell[f]=C_F\sum_pf_p(N-s_p),
+\]
+
+with its original finite incidences. The local Casimir row is bounded
+even before conditional centering; its constant drops from the variance
+only because variance is invariant under this \textbf{explicit}
+centering, not because it has been removed from (23).
+
+The useful improvement is a uniformly \textbf{positive definite}
+limiting covariance matrix. This requires a two-source variance lemma,
+not a scalar variance lower bound applied separately to the two fields.
+
+\hypertarget{lemma-2-variance-from-a-finite-family-of-second-derivative-tests}{%
+\subsubsection{Lemma 2: variance from a finite family of second
+derivative
+tests}\label{lemma-2-variance-from-a-finite-family-of-second-derivative-tests}}
+
+Suppose a probability density \texttt{p} is bounded below by
+\texttt{m\_0\textgreater{}0} on a fixed coordinate box \texttt{Q}.
+Suppose a smooth real function \texttt{q} has, on all of \texttt{Q}, one
+of the finitely many second derivatives \texttt{L\_j\ q} of constant
+sign and magnitude at least \texttt{kappa\textgreater{}0}, where
+\texttt{L\_j} is either a pure or mixed coordinate second derivative.
+Then
+
+\[
+ \operatorname{Var}_p(q)\ge
+ \frac{m_0\kappa^2}{\|L_j\varphi\|_{L^2(Q)}^2}>0,
+ \tag{24}
+\]
+
+for any fixed nonnegative \texttt{varphi\ in\ C\_c\^{}infinity(Q)} of
+integral one.
+
+\textbf{Proof.} Reverse the sign of \texttt{L\_j} if needed. Integration
+by parts gives
+\texttt{int\ q\ L\_j\ varphi=int\ (L\_j\ q)\ varphi\textgreater{}=kappa}.
+Since \texttt{int\ L\_j\ varphi=0}, one can subtract \texttt{E\_p\ q}.
+Cauchy--Schwarz and \texttt{p\textgreater{}=m\_0} imply (24). No density
+derivative or bound on the linear term of \texttt{q} is used. QED.
+
+In the companion two-link theorem's orthonormal convention
+\texttt{-tr(T\^{}A\ T\^{}B)=delta\_AB}, the exact nonlinear sources have
+flat quadratic jets
+
+\[
+ G_H^{(2)}(u,v)=12(|u|^2+|v|^2)+\frac43\langle u,v\rangle,
+\]
+
+\[
+ D^{(2)}(u,v)=30(|u|^2+|v|^2)+2\langle u,v\rangle.
+ \tag{25}
+\]
+
+For any fixed generator coordinate, the two relevant derivative rows are
+therefore
+
+\[
+ \begin{pmatrix}
+ \partial_{u_A}^2G_H&\partial_{u_A}^2D\\
+ \partial_{u_A}\partial_{v_A}G_H&\partial_{u_A}\partial_{v_A}D
+ \end{pmatrix}_{(0,0)}
+ =\begin{pmatrix}24&60\\4/3&2\end{pmatrix},
+ \qquad \det=-32\ne0.
+ \tag{26}
+\]
+
+Use the actual conditional minima and canonical variables
+\texttt{z=sqrt(beta)(u-u\_*)}, \texttt{w=sqrt(beta)(v-v\_*)}. A
+canonical second derivative of \texttt{beta\ G} is exactly the
+corresponding physical second derivative of \texttt{G}. For the Casimir
+companion its canonical second derivative is \texttt{-1/(3\ beta)} times
+the corresponding physical derivative of \texttt{ell}; those physical
+derivatives are uniformly bounded on the fixed chart. Its mixed
+derivative is in fact zero because no plaquette reads both free links.
+Thus (26), finite-word continuity, and sufficiently small fixed
+good-bath radius imply the following uniform fact: for every unit vector
+\texttt{theta=(theta\_h,theta\_R)}, at least one of the two tested
+derivatives of
+
+\[
+ q_\theta=\theta_h\beta G_{e,H}
+          +\theta_R(\beta D_e-\ell_e/3)
+\]
+
+has constant sign and magnitude bounded below on the fixed canonical
+box. One first chooses the nonzero derivative from the flat matrix,
+whose smallest singular value is positive; all actual derivative errors
+are then made smaller than half that margin uniformly in \texttt{theta}.
+The same original conditional density minorization as the companion
+two-link theorem and [ND] applies on this box. Lemma 2 proves
+
+\[
+ \operatorname{Cov}(Y_{a,e}\mid B_a)\succeq c_* I_2
+ \tag{27}
+\]
+
+on every good two-link bath. This is a lower bound for all linear
+combinations, not just for the two diagonal variances.
+
+The matrix intensity measures
+
+\[
+ \boldsymbol{\nu}_a=a^4\sum_e\operatorname{Cov}(Y_{a,e}\mid B_a)\delta_{x_e}
+\]
+
+have subsequential densities \texttt{mathsf\ W(x)} with all finite local
+\texttt{L\^{}p} moments and
+
+\[
+ \mathsf W(x)\succeq K^{-4}c_*I_2
+ \quad\text{almost everywhere, almost surely}.
+ \tag{28}
+\]
+
+To justify matrix compactness, use the trace to dominate the total
+variation of every entry. Moment bounds follow from conditional Holder.
+Positive semidefiniteness and (28) pass by testing a countable dense set
+of rational source vectors and nonnegative smooth spatial tests. Every
+joint subsequential fluctuation limit has conditional characteristic
+functional
+
+\[
+ E\left[e^{iS^h(f)+iS^R(g)}\mid\mathsf W,Z\right]
+ =\exp\left[-\tfrac12\int_\Omega
+       (f(x),g(x))\mathsf W(x)(f(x),g(x))^T\,dx\right].
+ \tag{29}
+\]
+
+Both exact physical identities remain:
+
+\[
+ S_a^h(f)=c_\beta a^4[O_{H,a}(f)-E(O_{H,a}(f)\mid B_a)],
+\]
+
+\[
+ S_a^R(f)=c_\beta a^4[r_{H,a}(f)-E(r_{H,a}(f)\mid B_a)].
+ \tag{30}
+\]
+
+The current companion is their exact difference. Its scalar, lower, and
+source-response records are not changed. Their \textbf{between-bath
+means} still require control; the two-link theorem proves no
+cancellation of them.
+
+\hypertarget{flat-two-link-covariance-check}{%
+\subsubsection{Flat two-link covariance
+check}\label{flat-two-link-covariance-check}}
+
+At the flat bath \texttt{z,w} are independent Gaussian vectors with
+covariance \texttt{I/6}. Put \texttt{d=N\^{}2-1},
+\texttt{A=\textbar{}z\textbar{}\^{}2+\textbar{}w\textbar{}\^{}2},
+\texttt{B=z\ dot\ w}. Then
+
+\[
+ \operatorname{Var}A=d/9,\qquad\operatorname{Var}B=d/36,
+ \qquad\operatorname{Cov}(A,B)=0.
+\]
+
+The limiting centered quadratic rows are \texttt{12\ A+(4/3)B} and
+\texttt{30\ A+2B}; the nonconstant Casimir term is of order
+\texttt{beta\^{}-1} on this exactly flat canonical chart. Hence their
+covariance is
+
+\[
+ d\begin{pmatrix}1300/81&1082/27\\1082/27&901/9\end{pmatrix},
+ \qquad \det=\frac{64}{81}d^2>0.
+ \tag{31}
+\]
+
+This is a normalization and rank check only. It is not used in place of
+the nonlinear good-bath proof (24)--(27), and is not assigned to general
+actual baths.
+
+\hypertarget{extensive-residuals-survive-every-complete-positive-observation}{%
+\subsection{Extensive residuals survive every complete positive
+observation}\label{extensive-residuals-survive-every-complete-positive-observation}}
+
+Let \texttt{C\_a} stand for either actual dimensionless row
+\texttt{h\_a(f)} or \texttt{R\_a(f)}, and set
+\texttt{M\_a=E(C\_a\textbar{}B\_a)} and \texttt{epsilon\_a=C\_a-M\_a}.
+Equations (4) and (7) prove
+
+\[
+ \|\epsilon_a\|_2^2\le C_f a^{-4}.
+ \tag{32}
+\]
+
+Take any completed \textbf{positive} joint realization whose
+original-link marginal is exactly the Wilson law, including auxiliary
+variables, retained records and history labels. Let \texttt{Y} be any
+actual later observation, and let \texttt{Q} be any orthogonal
+projection on its output \texttt{L\^{}2} space, including a low-spectrum
+projection if one has separately identified it. No screening relation
+between \texttt{Y} and \texttt{B\_a} is required. Linearity and
+conditional Jensen give
+
+\[
+ Q E(C_a\mid Y)=Q E(M_a\mid Y)+Q E(\epsilon_a\mid Y),
+\]
+
+\[
+ \boxed{\|Q E(\epsilon_a\mid Y)\|_2^2\le C_f a^{-4}.}
+ \tag{33}
+\]
+
+The same statement holds after centering, since centering is an
+orthogonal contraction. Raw masses and independent scalar factors must
+be restored if this probability identity is used inside an unnormalized
+construction. No signed localized selected member is normalized into a
+new probability law.
+
+The triangle inequality shows that an extensive upper bound for
+\texttt{Q\ E(C\_a\textbar{}Y)} is equivalent, up to the fixed additive
+extensive residual, to an extensive upper bound for
+\texttt{Q\ E(M\_a\textbar{}Y)}. This equivalence is in \texttt{L\^{}2}
+norm. The difference of the \textbf{squared} norms can include the
+uncontrolled cross term with \texttt{Q\ E(M\_a\textbar{}Y)} and is not
+itself bounded by (33).
+
+This provides a self-contained positive-observation bridge for the
+actual ordinary row, based on the inputs from [ND] and the companion two-link
+theorem, and on complete two-link stencils. It does not supply the
+retained-mean estimate.
+
+\newpage
+
+\hypertarget{source-locators}{%
+\section{Source locators}\label{source-locators}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{[W].} Wilson-source estimates, volumes 1--10
+  (\texttt{lattice\_theory/source\_estimates} in this collection), cited by source page.
+  Original source definitions, complete current/ordinary
+  compensation, original scalar masses, and the open AE8/LM47, MT36 and
+  S94 estimates (pp.~932--935, 781--784, 692 and 618--621).
+\item
+  \textbf{[ND].} \emph{Nonlinear dispersion and unequal spatial weights}
+  (\texttt{conditional\_estimates/nonlinear\_dispersion\_and\_unequal\_spatial\_weights.tex}): nonlinear source dispersion and
+  native covariance estimates. Source
+  normalization: §1; original Wilson good-bath and complete one-link
+  calculation: §§2.1--2.3; anti-concentration and non-tightness: §2;
+  native scope: §§3--7.
+\item
+  \textbf{[UA].} \emph{Uniform averaging rows and finite-jet response}
+  (\texttt{conditional\_estimates/uniform\_averaging\_rows\_and\_finite\_jet\_response.tex}): the incoming stored representative.
+  Exact uniform flat averaging
+  differential and counts; nonlinear and boundary remainders;
+  same-body reserve and remaining incoming estimate.
+\item
+  \textbf{Companion notes.} The complete two-link theorem and flat jets are in
+  \emph{A two-link obstruction to removing the physical H contact}
+  (\texttt{local\_contacts/two\_link\_obstruction.tex}). The history-mean estimates
+  are in [RS], \emph{Rare selector means and inherited coefficients}
+  (\texttt{conditional\_estimates/rare\_selector\_means\_and\_inherited\_coefficients.tex}). The same-measure local exponential moments
+  on odd Wilson tori are in \texttt{local\_contacts/odd\_torus\_transfer\_moment.tex}, with its inherited
+  partition-power input and stated size/coupling regime.
+
+\end{enumerate}
+\end{document}

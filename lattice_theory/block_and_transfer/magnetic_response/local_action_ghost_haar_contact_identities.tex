@@ -1,0 +1,127 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Literal local action, gauge-Jacobian and Haar contact identities}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Target.}
+By the short line contact before current decay calculation, the actual endpoint minor retains a genuine
+short-line current contact, so a per-minor longest-time improvement is
+false. Here the local original tensors are matched in the gauge sector.
+This does not identify the surviving transverse contact of the short line contact before current decay calculation with a
+longitudinal one.
+
+Use all free links of the original relative cube and interior gauge
+parameters zero on its complete boundary. At flat background write
+\[
+ S_0(\alpha z)=\alpha^2 S_2(z)+\alpha^3T_3(z)+\alpha^4T_4(z)+\cdots,
+ \quad S_2=\tfrac12z^THz,\quad
+ T_3=t_{abc}z_az_bz_c/6,\quad T_4=u_{abcd}z_az_bz_cz_d/24.
+\]
+The local logarithmic gauge velocity from the local gauge completion first nonlinear coefficient calculation is
+\[
+ \mathcal R_\xi(z)=D\xi+\alpha R_1(z)\xi+\alpha^2R_2(z)\xi+\cdots,
+ \quad R_1=-\tfrac12\operatorname{ad}_z A,\quad
+ R_2=\tfrac1{12}\operatorname{ad}_z^2D.                           \tag{1}
+\]
+Every tensor is the actual finite-lattice tensor, including links
+normal to boundary faces; no periodic or infinite-volume rule is used.
+
+\paragraph{1. Original cubic and quartic contacts.}
+Gauge invariance of the ORIGINAL plaquette action gives, order by order,
+\[
+ HD=0,\qquad
+ \partial_{D\xi}T_3+\langle Hz,R_1(z)\xi\rangle=0,                 \tag{2}
+\]
+\[
+ \boxed{\partial_{D\xi}T_4+
+       \partial_{R_1(z)\xi}T_3+\langle Hz,R_2(z)\xi\rangle=0.}    \tag{3}
+\]
+These include the nonlinear gauge response, not only a constant
+gradient shift. To make the coefficients unambiguous put
+$(R_1)_a=A_{abv}z_b\xi_v$ and
+$(R_2)_a=B_{abcv}z_bz_c\xi_v/2$, with $B$ symmetric in $b,c$.
+Then
+\[
+ D_{av}t_{abc}+H_{ab}A_{acv}+H_{ac}A_{abv}=0,                    \tag{4}
+\]
+\[
+ \begin{split}
+ D_{av}u_{abcd}
+ &+t_{abc}A_{adv}+t_{abd}A_{acv}+t_{acd}A_{abv}\\
+ &+H_{ab}B_{acdv}+H_{ac}B_{abdv}+H_{ad}B_{abcv}=0.               \end{split}\tag{5}
+\]
+Thus the quartic contraction, cubic response and second gauge-response
+contact have fixed coefficients. Treating (5) as just an unnamed Ward
+identity would hide precisely the partners needed in a contraction.
+
+\paragraph{2. Collapse an actual longitudinal propagator leg.}
+Let $G=(H+DD^*)^{-1}$ and $g=(D^*D)^{-1}$.
+At the actual critical background, not only at flat background,
+\[
+ (H+DD^*)D=D(D^*D),\quad GD=Dg,\quad
+ D^*e^{-t(H+DD^*)}=e^{-tD^*D}D^*.                                \tag{6}
+\]
+These are exact incidence/gauge identities with the ORIGINAL relative
+domains. No arbitrary translation between component grids is used.
+Consequently derivative-compatible component changes in (6) have no
+overlap-map commutator defect. Source differentiation must retain the
+derivatives of $D$ and the complete Hessian, including its curvature
+partners; it cannot replace that Hessian by $d_A^*d_A$ alone.
+
+At flat background multiply (4) by its literal propagators:
+\[
+ \begin{split}
+ G_{ia}G_{jb}t_{abc}(GD)_{cv}
+ =-&\big[(P_\perp)_{id}G_{jb}A_{dbw}\\
+       &+(P_\perp)_{jd}G_{ia}A_{daw}\big]g_{wv},\qquad
+ P_\perp=I-DgD^* .                                               \end{split}\tag{7}
+\]
+This explicitly produces the collapsed local identity contact and its
+scalar-gauge correction with the correct signs. The same $A$ occurs
+in the ghost-Jacobian vertex $M_1=D^*R_1$.
+Equation (5) supplies the quartic and $M_2=D^*R_2$ partners.
+The nonlocal part of $P_\perp$ is retained; replacing it by identity
+would lose part of the cancellation.
+
+\paragraph{3. The original Haar contact has a definite coefficient.}
+In the same coordinates Haar invariance is
+$\operatorname{div}\mathcal R_\xi+
+ \mathcal R_\xi\cdot\nabla\log j=0$.
+Since $\log j=\alpha^2J_2+\cdots$ and
+$J_2=-\sum_e|{\bf z}_e|^2/3$ for $SU(2)$,
+\[
+ \operatorname{div}R_1=0,\qquad
+ \boxed{\operatorname{div}(R_2\xi)+
+                    \partial_{D\xi}J_2=0.}                      \tag{8}
+\]
+Explicitly, with either consistent Pauli/quaternion bracket convention,
+\[
+ (R_2\xi)_e=\tfrac13[{\bf z}_e({\bf z}_e\cdot(D\xi)_e)
+                         -|{\bf z}_e|^2(D\xi)_e].
+\]
+Its three-coordinate divergence is
+$2{\bf z}_e\cdot(D\xi)_e/3$, canceled exactly by the Haar derivative.
+This is a local coefficient match, not permission to delete Haar from
+the full nonlinear bracket. It is also why no additional gauge-parameter
+Haar polynomial is added to the left-invariant Jacobian.
+
+\paragraph{4. Exact original-cube checks and scope.}
+The finite calculation
+expands every original plaquette through fourth order and differentiates
+it along the actual fields in (1). On the complete $R=2$ and $R=3$
+cubes (216 and 864 plaquettes; 8 and 96 free links), the cubic residual
+(2), quartic residual (3), and Haar residual (8) all vanish EXACTLY.
+The $R=3$ check includes genuinely nonzero cubic vertices and multiple
+interior gauge parameters.
+
+Equations (4)--(8) match the explicit local gauge-sector collapsed-line
+contacts to quartic, ghost-Jacobian and Haar partners, with the finite
+boundary intact. They explain at tensor level the longitudinal
+cancellation of the local noise ward and longitudinal cancellation calculation. They do NOT imply that a curl-contracted
+transverse short line is a $D$-contracted leg. The contact isolated in the short line contact before current decay calculation
+still requires the complete transverse index sum, its endpoint/spin
+vertices and the quartic/ghost/Haar partners, or a
+complete boundary subtraction with a controlled marginal kinetic term.
+No claim that this entire transverse matching has been completed is
+made. The surviving spatial/current estimate and uniform original
+remainder remain open.
+\end{document}

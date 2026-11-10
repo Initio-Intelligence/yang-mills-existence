@@ -1,0 +1,183 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{A conservative growing-block range for the actual transverse Wilson flow}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Scope and fixed-block input.}
+The actual transverse fixed block flow calculation is a fixed-block statement: its relative-tree Haar map is real,
+its output is the literal fine observable composed with that map, and its
+corrected-score and raw-normalizer estimates follow from compact Laplace
+localization. Here constants are tracked for a PARTICULAR increasing family.
+Fix $N\ge2$. Take a complete four-dimensional cubical box of side at most $R$
+in each direction and a full exterior collar, all boundary links flat except
+the actual path $\eta(t)=\exp(t\alpha v)$, $\alpha=\sqrt{N/B}$,
+$0\le t\le1$. Include every incident plaquette; fixed-only collar terms may
+be included as their EXACT boundary-dependent scalar. Let $\|v\|_2\le1$ in
+angular Lie-coordinate link units before the factor $\alpha$. No random
+boundary typicality, torus holonomy replacement or physical-size claim is made.
+
+Use the relative temporal axial forest: each interior vertex is connected by
+successive direction-zero edges to the lower boundary face. Gauges at every
+boundary vertex remain identity. Boundary vertices on other faces are not
+included as free tree vertices. Every transformed tree edge is identity;
+the last link to the upper face and other non-tree links remain independent
+chords. The exact compact change has Haar Jacobian one, and the independent
+chords have product normalized Haar. Denote their canonical coordinates by
+$x$, the full quadratic incidence by $K$, and
+\[
+ w=-K_{JJ}^{-1}K_{JR}v,\quad E_v=v^*K_{\rm eff}v,\qquad
+ \Phi_t(U)_b=e^{t\alpha w_b}U_b.                                       \tag{1}
+\]
+This is the original common realization of the actual transverse fixed block flow calculation, now with the specified
+forest and increasing dimension. Its Haar divergence is exactly zero.
+
+\paragraph{1. Literal polynomial geometry bounds.}
+There are at most $C_NR^4$ independent real coordinates, and the incidence
+operator has norm at most $C_N$, since each original plaquette has four links
+and each link has bounded plaquette incidence. Each chord, completed by its
+forest paths and a fixed boundary return path, bounds an explicit coordinate
+strip/rectangle of at most $C R^2$ original plaquettes in the complete box
+and collar. Spatial chords use a time--space strip; last temporal chords use
+a return path along a lateral boundary face. Path lengths are at most $CR$.
+
+The exact nonabelian plaquette product for such a filled loop uses conjugated
+plaquette holonomies. Unitary triangle inequality is unaffected by these
+conjugations. Squaring the sum, then summing over at most $CR^4$ chords,
+gives the deliberately crude but uniform bound
+\[
+ \sum_{b\in J}d(U_b,I)^2
+ \le C_N\left[R^6\sum_p s(U_p)
+             +R^5\sum_{b\in R}d(\eta_b,I)^2\right].                    \tag{2}
+\]
+Here $d$ is the fixed group Riemannian distance and chord distance is uniformly
+comparable to it on the compact group. The second term records the actual
+fixed boundary return paths; it is not set to zero after moving the boundary.
+The plaquette sum includes the full prescribed collar. At flat boundary,
+linearizing(2) gives
+\[
+ K_{JJ}\ge c_NR^{-6}I,\qquad \|K\|\le C_N.                             \tag{3}
+\]
+The Schur variational identity then gives
+$w^*K_{JJ}w\le v^*K_{RR}v\le C_N$, hence
+\[
+ \|w\|\le C_NR^3,\qquad \|(v,w)\|\le C_NR^3.                           \tag{4}
+\]
+These are coordinate-dependent upper bounds for this actual forest, not a
+claim that the physical lowest mode really scales as $R^{-6}$.
+
+\paragraph{2. A normalized compact tail bound with dimension retained.}
+Take a joint angular chart of radius $\eta_R=c_NR^{-6}$ in the Euclidean sum
+norm of all chord logs, with $c_N$ small enough. Equation(2), with
+$\sum d(\eta_b,I)^2\le C_N/B$, bounds the original action outside this chart
+below by $c_NBR^{-18}-C_N$ (reducing constants when necessary).
+A ball of radius $B^{-1/2}$ in all independent angular coordinates has action
+bounded by $C_N$ at these boundary data. Its actual Haar volume yields
+\[
+ -\log Z_B(\eta(t))\le C_NR^4\log(2+BR),
+\]
+up to any fixed-only scalar already retained in both sides of the normalized
+comparison. Therefore the ORIGINAL normalized tail probability satisfies
+\[
+ q_{B,R}\le \exp[-c_NBR^{-18}+C_NR^4\log(2+BR)].                         \tag{5}
+\]
+All estimates are uniform in $t$. The displacement of the harmonic center is
+$\alpha\|tw\|\le C_NR^3/\sqrt B$; it lies well inside the chart when
+$B\ge C_NR^{18}$. No fixed-dimensional compactness gap has been hidden here.
+
+\paragraph{3. Canonical moments without exponential dimension loss.}
+In the chart write the ACTUAL log density as
+$V_t(x)=S_B(x;\eta(t))-\log J_{\rm Haar}(x)$, omitting only its normalization.
+Finite plaquette Taylor bounds and bounded incidence give Hessian perturbation
+$C_N\eta_R$ from $K_{JJ}$. The canonical Haar Hessian contributes at most
+$C_N/B$ in operator norm. With the chosen chart and large $B$, therefore
+$\nabla^2V_t\ge c_NR^{-6}I=:\kappa_R I$ on its convex coordinate ball.
+At its quadratic center $m=tw$,
+\[
+ |\nabla V_t(m)|\le C_NR^6/\sqrt B.                                    \tag{6}
+\]
+The local Haar correction is smaller. This bound follows from the quadratic
+stationary equation and the third derivative of the actual local action,
+not from replacing the local law by a Gaussian.
+
+For completeness, radial integration by parts on this ball with vector
+$(x-m)|x-m|^{2p-2}$ has nonnegative outward boundary flux, since $m$ is inside
+it. Strong convexity and(6) then give, for each fixed integer $p\ge1$,
+\[
+ E[|x-m|^{2p}\mid\text{chart}]
+ \le C_{N,p}\left[\frac{n+2p}{\kappa_R}
+                  +\frac{|\nabla V_t(m)|^2}{\kappa_R^2}\right]^p
+ \le C_{N,p}R^{10p},                                                   \tag{7}
+\]
+where $n\le C_NR^4$, provided $B\ge C_{N,p}R^{14}$.
+This avoids comparing two Gaussian determinants by a factor exponential in
+$n$. The compact complement contributes at most
+$C_{N,p}B^pR^{4p}q_{B,R}$ to the moment of canonical distance. In the range
+used below that term is smaller than(7).
+
+\paragraph{4. Corrected-score and Hessian estimates with explicit powers.}
+Let $D=\partial_t+W$, with $W$ the left-translation field in(1), and
+$G_t=DS_B$. In canonical coordinates left multiplication has velocity
+$w+O_N(\alpha|w||x|)$; its second coordinate derivative is
+$O_N(\alpha^2|w|^2|x|)$ on this chart. These follow by differentiating the
+actual local exponential product; the first commutator of $w$ with itself is
+zero. All block derivatives are sums of local plaquette derivatives with
+bounded incidence. The quadratic joint derivative is exactly $tE_v$,
+independent of $x$. Consequently
+\[
+ |G_t-tE_v|\le C_N B^{-1/2}R^3(1+\|x\|^2),                             \tag{8}
+\]
+\[
+ |DG_t-E_v|\le C_N B^{-1/2}R^6(1+\|x\|).                              \tag{9}
+\]
+The linear rather than quadratic growth in(9) is useful: the third derivative
+of the action is $O_N(B^{-1/2})$ as a trilinear form, and the coordinate
+acceleration term is bounded by
+$C_N\alpha^2\|(v,w)\|^2\|x\|^2\le C_N\alpha\|(v,w)\|^2\|x\|$ inside
+the chosen angular chart. The boundary log path is exactly $tv$.
+
+Globally the original group derivatives obey
+$|G_t|\le C_N\sqrt B R^5$ and $|DG_t|\le C_NR^6$ by the literal plaquette
+count and(4). Combining(5),(7)--(9) with the EXACT identity
+$\Gamma_B''=E DG_t-\operatorname{Var}G_t$ gives
+\[
+ \operatorname{Var}_tG_t\le C_N R^{26}/B+\mathcal E_{B,R},                \tag{10}
+\]
+\[
+ |\Gamma_B''(t)-E_v|
+ \le C_N[R^{11}/\sqrt B+R^{26}/B]+\mathcal E_{B,R},\quad
+ \mathcal E_{B,R}=C_NBR^{10}
+       e^{-c_NBR^{-18}+C_NR^4\log(2+BR)}.                               \tag{11}
+\]
+The exact normalized pullback affinity is at least
+$1-\frac18[C_NR^{26}/B+\mathcal E_{B,R}]$ by the corrected-score path bound.
+At flat boundary $\Gamma_B'(0)=0$: global conjugation makes its expected
+boundary gradient an invariant vector in $\mathfrak{su}(N)$, hence zero.
+Thus integrating(11) also controls the ACTUAL scalar
+$\Gamma_B(1)-\frac12E_v$ by its right side. No approximate vacuum factor is
+multiplied over the growing number of links.
+
+\paragraph{5. One explicit mesoscopic range and its limits.}
+For
+\[
+ 2\le R\le B^{1/30},\qquad B\to\infty,                                \tag{12}
+\]
+all conditions above hold eventually, uniformly over the stated normalized
+boundary directions. The tail in(11) is exponentially small, while both
+polynomial errors are at most $C_N B^{-2/15}$. This proves a growing-block
+version of the actual nonabelian transverse response and affinity estimate.
+For a specified physical transverse temporal-face mode with
+$E_v\ge c/R$, (11) even has relative error bounded by
+$C[R^{12}/\sqrt B+R^{27}/B]+R\mathcal E_{B,R}$, tending to zero in(12).
+This last qualification is about that actual mode, not every possible
+positive eigenvalue in arbitrary boundary/tree coordinates.
+
+On $B\asymp\log(1/a)$, the physical radius of(12) is only
+$a[\log(1/a)]^{1/30}\to0$. The box has a flat exterior with the explicitly
+small transverse boundary path; a random original exterior has NOT been
+shown to belong to this class. The estimates cannot be tiled over a physical
+volume without controlling the number of blocks, their actual normalizers,
+induced couplings and boundary records. They do not cover nontrivial global
+holonomy sectors. In particular the polynomial error per block is not a
+summable full-lattice error. This is a genuine conservative growing local
+range, not a physical-block or fullS94 closure.
+\end{document}

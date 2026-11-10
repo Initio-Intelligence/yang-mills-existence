@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\title{Exact boundary-frame integration for torus gluing}\author{}\date{}
+\begin{document}\maketitle
+Write $s(U)=1-N^{-1}\operatorname{Re}\operatorname{Tr}U$ and $d=N^2-1$; all Haar measures have mass one. This note concerns literal Wilson torus gluing, not an identification of a Balaban mixed selector. No change of the assigned old link variables is made.
+
+Take $M=q^4$ old tori of side $n\ge3$, and rewire their wrapping bonds to form the torus of side $qn$. Let $S_o,S_b$ be the old and big actions on the same link variables and let $\mu_o$ be the normalized product old Wilson measure. Let $P_*$ be the seam plaquettes. Precisely the plaquettes with at least one wrapped coordinate in their two-dimensional orientation belong to $P_*$. Put $S_{o,*},S_{b,*}$ for their actions. Independent old site gauges preserve $S_o$ and $\mu_o$.
+
+\begin{theorem}
+Let $C$ be the old vertices with at least one coordinate zero, including the block label, and $K=|C|=M[n^4-(n-1)^4]$. Define
+\[
+ A_\beta(U)=e^{\beta S_{o,*}(U)}\int_{G^C}e^{-\beta S_{b,*}(U^g)}\,dg,
+ \quad E_*(U)=\min_{g\in G^C}S_{b,*}(U^g).
+\]
+Then, exactly,
+\[
+ \frac{Z_{qn}}{Z_n^M}=\mathbb E_{\mu_o} A_\beta,
+\]
+and for $\beta\ge1$,
+\[
+ \beta(E_*-S_{o,*})\le-\log A_\beta
+ \le\beta(E_*-S_{o,*})+\frac{dK}{2}\log\beta+C_N K.
+\]
+No gauge volume, Jacobian, determinant or independent additive scalar has been omitted.
+\end{theorem}
+\begin{proof}
+The unchanged product Haar space gives $Z_{qn}/Z_n^M=\mathbb E_o e^{-\beta(S_b-S_o)}$. Average this identity over independent old site gauges using invariance of $\mu_o$. Nonseam plaquettes cancel exactly. In a seam word, every unmatched gauge endpoint is at an old coordinate-zero vertex. All other site gauges cancel pairwise, and their normalized integrals are one. This proves the displayed identity and the exact reduction to $C$.
+
+The upper bound on the integral is $e^{-\beta E_*}$. For the reverse bound choose any minimizer $g_*$, which exists by compactness. In product exponential coordinates $g_v=g_{*,v}\exp X_v$, the gradient vanishes. Each site occurs in a bounded number of plaquette words, each of bounded length. Their second derivatives are uniformly bounded on a fixed coordinate ball, independently of $n,q,U$. Thus
+\[
+ S_{b,*}(g_*\exp X)\le E_*+C_N\sum_{v\in C}|X_v|^2.
+\]
+Integrate only over $|X_v|\le c_N\beta^{-1/2}$. Haar volume there is at least $(c'_N\beta^{-d/2})^K$, and the action penalty is at most $C_NK$. This proves the other bound. No nondegeneracy of the minimum is needed; all gauge and harmonic zero modes are integrated.
+\end{proof}
+
+For old periodic pure-gauge records, choosing the inverse old gauges makes every old bond equal to the identity. Hence $E_*=S_{o,*}=0$ and the entire discrepancy in this formula is a frame entropy of size at most $O(K\log\beta)$. The estimate is a statement about that orbit, not a bound for arbitrary old Wilson records. Flat records with nontrivial torus holonomies are not asserted to be pure gauge.
+
+For general records the physical minimum mismatch $E_*-S_{o,*}$ remains inside the outer expectation. Replacing it by zero would be unjustified. Likewise, a pointwise frame bound on a measure-zero flat orbit cannot itself estimate the full pressure. Nevertheless the formula resolves the coordinate-frame defect of the literal gluing map with an exact positive integral and a uniform, explicitly counted scalar cost. At fixed physical old side $\ell=na$, its entropy bound divided by physical volume scales as $O(\log\beta/(\ell a^3))$, and is not ultraviolet summable.
+\end{document}

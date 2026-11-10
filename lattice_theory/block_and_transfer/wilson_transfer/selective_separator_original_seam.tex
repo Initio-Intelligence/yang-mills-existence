@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Original selective-separator seam: exact response in a flat Wilson bath}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Analysis of the full two-slice compression.}
+By the two slice sufficient window record calculation, the original conditional bridge between two FULL slices is
+independent of the distant initial slice; its normalizer is exactly the
+original $K_h$. The two-slice density
+$K_s(X,U)K_h(U,V)K_s(V,X)/K_{2s+h}(X,X)$ is normalized by the semigroup law.
+Its averaged squared-affinity formula retains all kernels and cancels the
+boundary diagonals only against the original initial marginal. The short
+bridge is not the identity. The formal $h=0$ result is indeed
+$Z_{4s}/Z_{2s}^2$. These facts do not establish a selective separator after
+removing the selected colors from those boundary slices.
+
+\paragraph{One-link seam, including its original scalar.}
+Use $SU(2)$ quaternion coordinates $u=(u_0,\mathbf u)$ and
+$s(u)=1-u_0$. Keep all four spatial staples at a selected seam link equal to
+identity; temporal links are identity. Let $v_-,v_+$ be its preceding and
+following selected spatial links. Integration of the seam variable gives the
+EXACT local message
+\[
+ Z_1(v_-,v_+)=e^{-6B}\int_{SU(2)}
+       \exp[B\langle u,4I+v_-+v_+\rangle]du.                            \tag{1}
+\]
+Other plaquettes belong to the remaining action and are not included twice.
+For $v_-=e^{ix\sigma_a},v_+=e^{iy\sigma_a}$, write
+$R(x,y)=|4I+v_-+v_+|$. At zero,
+$R=6$, $R_x=R_y=0$, $R_{xy}=1/6$. If
+$z(k)=\int e^{ku_0}du$, direct differentiation gives
+\[
+ \partial_x\partial_y\log Z_1(0,0)
+ =\frac B6\frac{z'(6B)}{z(6B)}
+ =\frac B6 E_{6B}u_0>0.                                                 \tag{2}
+\]
+Concentration at the unique maximum of $u_0$ gives $E_{6B}u_0\to1$.
+Thus this mixed response is $B/6+o(B)$, and equals $1/6+o(1)$ in the scaled
+angles $x=\xi/\sqrt B$, $y=\eta/\sqrt B$. This is an exact induced boundary
+term, not a Gaussian replacement of its normalizer.
+
+\paragraph{A genuine partial-separator test with an interior bath variable.}
+To avoid treating only two removed selected endpoints, retain a second selected
+link $v$ immediately inside the separator, and integrate BOTH $u,v$. Let the
+outside selected neighbor be $v_-=e^{ix\sigma_a}$. At the interior link $v$,
+let ONE spatial bath staple be $A=e^{iy\sigma_a}$, the other three be identity,
+and its next temporal selected neighbor be identity. Four spatial staples at
+$u$ and all temporal bath links remain identity. These assignments are realized
+by original lattice links, with a private outer staple link for $A$ on a
+sufficiently large periodic spatial lattice. The six incident terms for each
+selected link share their one temporal plaquette, which is counted once.
+The literal two-link integral is
+\[
+ Z_2(x,y)=\int du\,dv\ e^{-B[4s(u)+s(uv_-^{-1})+s(uv^{-1})
+                                      +3s(v)+s(vA^{-1})+s(v)]}.          \tag{3}
+\]
+At $x=y=0$ this is
+\[
+ Z_2(0,0)=e^{-11B}\int du\,dv\,
+                  e^{B[5u_0+5v_0+\langle u,v\rangle]}.                 \tag{4}
+\]
+The $11$ original action terms and the raw scalar are retained exactly.
+The two source variations touch separate original plaquettes, so there is no
+direct mixed-action derivative. Quaternion reflection symmetry gives zero
+one-point component means, hence
+\[
+ \partial_x\partial_y\log Z_2(0,0)=B^2 E(u_a v_a)>0.                    \tag{5}
+\]
+The strict sign is exact: conditional on $u$, the $v$ density is proportional
+to $\exp[B\langle v,5I+u\rangle]$, and
+\[
+ E(v_a\mid u)=\frac{u_a}{|5I+u|}\,\frac{z'(B|5I+u|)}{z(B|5I+u|)}.
+\]
+Here $|5I+u|\ge4$, and $z'(k)>0$ for $k>0$ by pairing opposite values of $v_0$.
+The expectation of $u_a^2$ times this strictly positive coefficient proves(5).
+
+For the quantitative weak-coupling scale, the action in(4) has unique global
+minimum $u=v=I$, since it is $5s(u)+5s(v)+s(uv^{-1})\ge0$.
+Rescale principal logs $u=e^{i\xi\cdot\sigma/\sqrt B}$ and
+$v=e^{i\eta\cdot\sigma/\sqrt B}$. The quadratic action is
+\[
+ \tfrac12[6|\xi|^2+6|\eta|^2-2\xi\cdot\eta],\qquad
+ H=\begin{pmatrix}6&-1\\-1&6\end{pmatrix},\quad (H^{-1})_{12}=1/35.
+\]
+The pinned onsite terms give a global integrable Gaussian majorant in these
+exact compact coordinates, including polynomial moments. Dominated convergence
+therefore proves $B E(u_a v_a)\to1/35$, and thus
+\[
+ \partial_x\partial_y\log Z_2(0,0)=B/35+o(B),\qquad
+ \partial_\xi\partial_\eta\log Z_2(\xi/\sqrt B,\eta/\sqrt B)|_0
+                 \longrightarrow1/35.                                \tag{6}
+\]
+This derives a finite nonzero actual cross-seam coupling in the natural
+fluctuation units, including after the interior selected variable is integrated.
+It is present at flat bath, not only at the exceptional cancelled-staple
+configuration that produced $B^2$ responses.
+
+\paragraph{What this says about a selective sufficient record.}
+If the remaining spatial links on the seam were an EXACT sufficient separator
+after its selected link was discarded, the exterior variable $x$ and interior
+bath variable $y$ would have a factorized conditional density, even after
+separate outside/inside variables were fixed. Equations(3)--(5) show a nonzero
+mixed log density in an original such fiber. The remaining action cannot cancel
+this term: the chosen exterior selected link and interior private bath link
+share no original plaquette. Thus the naive selective Markov assertion is
+false. Original locality yields the full-slice separator, but not this partial
+one merely by integrating its missing coordinates.
+
+The positive message(3) is also a constructive description of what must be
+carried: a cross-seam effective interaction of size $O(B)$, or order one in
+canonical fluctuation variables. It is not a scalar-only contact that may be
+dropped. Its coefficients can be retained in a larger joint boundary block;
+no theorem here controls a spatial iteration of those joint messages. A
+physical thickness of order $a$ alone does not make(6) small.
+
+This example does NOT disprove an approximate selective separator with buffers,
+a coarse effective-action treatment, a distributional continuum limit or S94.
+The proved good-run estimates already show how long temporal buffers suppress
+selected endpoint influence when their bath collars remain in the record.
+The unresolved main clause is a quantitative bound for eliminating those
+remaining collars/joint boundary messages while preserving global modes and
+all original normalizers. Neither unconditional $L^p$ response bounds nor the
+full two-slice compression provides that estimate by itself.
+\end{document}

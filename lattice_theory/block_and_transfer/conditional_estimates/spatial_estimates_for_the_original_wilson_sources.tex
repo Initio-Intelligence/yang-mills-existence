@@ -1,0 +1,972 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.9in,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{microtype,booktabs,array,longtable}
+\usepackage{xcolor,fancyhdr,hyperref}
+
+\pagestyle{fancy}\fancyhf{}
+\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
+\setlength{\abovedisplayskip}{7pt}\setlength{\belowdisplayskip}{7pt}
+\setlength{\abovedisplayshortskip}{4pt}\setlength{\belowdisplayshortskip}{4pt}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathbb E}\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\HS}{\mathrm{HS}}\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\osc}{\operatorname{osc}}\newcommand{\dd}{\mathrm d}
+\newcommand{\id}{\mathrm{id}}\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\R}{\mathbb R}\newcommand{\Z}{\mathbb Z}
+\newcommand{\mf}{\mathfrak m_f}\newcommand{\eps}{\varepsilon}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\inner}[2]{\langle #1,#2\rangle}
+\newcommand{\cG}{c_{\beta}}
+\newcommand{\cF}{C_F}
+\newcommand{\Law}{\operatorname{Law}}
+\newcommand{\Ent}{\operatorname{Ent}}
+\newcommand{\Kern}{\mathcal K}
+\newcommand{\Hess}{\operatorname{Hess}}
+\newcommand{\Ad}{\operatorname{Ad}}
+\title{Spatial estimates for the original Wilson sources}\author{}\date{}
+\begin{document}\maketitle
+\section{The original sources and normalization}
+
+Fix $G=SU(N)$, $N\ge2$, and its original invariant orthonormal link derivatives $X_b^A$. With normalized Haar product measure $\dd\lambda$, use
+\begin{equation}
+ S(U)=\sum_p s_p(U),\qquad s_p=N-\Re\Tr U_p,\qquad
+ \dd\mu_{\beta}=Z_{\beta}^{-1}e^{-\beta S}\dd\lambda,
+ \qquad \beta=\cG g^{-2},\quad \cG>0.
+ \label{eq:Wilson}
+\end{equation}
+For a positive-orientation link root $b$ in direction $\nu_b$, let
+\[
+ F_b^A=X_b^AS,\qquad F_{b;\mu}^A=X_b^AS_{\mu\nu_b},\qquad
+ F_b^A=\sum_{\mu\ne\nu_b}F_{b;\mu}^A.
+\]
+All incident plaquettes of the actual domain are included. For a real, field-independent root test $f_b$, define
+\begin{align}
+ D[f]&=\sum_{b,A}f_b\sum_{\mu\ne\nu_b}(F_{b;\mu}^A)^2,
+ &P[f]&=\sum_{b,A}f_b(F_b^A)^2,\\
+ \ell[f]&=\sum_{b,A}f_b(X_b^A)^2S,
+ &\mf&=\sum_b|f_b|^2,\\
+ h_f&=\beta\bigl(D[f]-\tfrac13P[f]\bigr),
+ &r_f&=\beta D[f]-\tfrac13\ell[f].
+ \label{eq:sources}
+\end{align}
+The physical sources in the original prescription are
+\begin{equation}
+ O_H(f)=\frac{a^{-2}}{\cG}\,h_f,
+ \qquad r_H(f)=\frac{a^{-2}}{\cG}\,r_f.
+ \label{eq:physical}
+\end{equation}
+A fixed finite pointing or hypercubic average keeps its original offsets. The estimates below apply to each completed stencil and then to that fixed average; its finite incidence only changes a constant.
+
+The Casimir identity is exact. With $\cF$ the fundamental quadratic Casimir in the chosen derivative convention,
+\begin{equation}
+ \ell[f]=\cF\sum_p m_p(f)(N-s_p),\qquad
+ m_p(f)=\sum_{\substack{b\in\partial p\\b\text{ free}}}f_b.
+ \label{eq:casimir}
+\end{equation}
+In particular, the scalar $\cF N\sum_pm_p(f)$ belongs to the original ordinary row. It is not deleted from $r_f$ or from any raw numerator.
+
+For completeness, put
+\[
+ t_f=h_f-r_f=\tfrac13\bigl(\ell[f]-\beta P[f]\bigr),\qquad
+ V_f=-\tfrac13\sum_{b,A}f_bF_b^AX_b^A.
+\]
+On the original compact product of free link groups,
+\begin{equation}
+ t_fe^{-\beta S}=-\operatorname{div}\bigl(e^{-\beta S}V_f\bigr).
+ \label{eq:ward}
+\end{equation}
+This is an integration-by-parts identity, not permission to replace $h_f$ by $r_f$ in the physical source exponential. The bare two-label prescription remains
+$\exp_{\mathcal J}(\eta_1O_1+\eta_2O_2)$, $\eta_i^2=0$. Its bare mixed action coefficient is zero. After an exact source-free operation $T$, its complete mixed coefficient, wherever the original denominator is nonzero, is
+\begin{equation}
+ \frac{T(\rho O_1O_2)}{T\rho}
+ -\frac{T(\rho O_1)T(\rho O_2)}{(T\rho)^2}.
+ \label{eq:physicalcov}
+\end{equation}
+An individual signed localization term is not assigned a positive conditional probability law by this formula.
+
+\section{An extensive estimate for an exact nonlinear relative block}
+\label{sec:block}
+\subsection{The exact relative boundary and theorem}
+
+Let $\Lambda_R=\{0,\ldots,R\}^4$, $R\ge2$. A boundary link is fixed when it lies tangentially in a boundary face. A link normal to such a face, joining a boundary vertex to an interior vertex, remains free. All plaquettes of the complete cube are included. Fix the tangential boundary record to the identity, or to a record related to it by a fixed real gauge transformation. Integrate every free link with normalized Haar measure and the action \eqref{eq:Wilson}; denote this exact compact law by $\mu_{\beta,R}$.
+
+The roots in \eqref{eq:sources} are \emph{all} original free positive-orientation links, including links subsequently placed in an axial forest. Forces and Casimirs are evaluated at those roots before restricting coordinates to the free chords. A vanishing coordinate on a gauge-fixed forest is not a vanishing original force.
+
+\begin{theorem}[Extensive fluctuations under real source tilts]
+\label{thm:block}
+There are constants $C_0,C,\delta>0$, depending only on $N$ and the fixed lattice/derivative conventions, such that
+\begin{equation}
+ \beta\ge C_0R^{14}\log(2+R)
+ \label{eq:betaregime}
+\end{equation}
+has the following consequences. For either $F_f=h_f$ or $F_f=r_f$, put $b_f=\norm f_\infty$ and
+\[
+ \dd\mu_t=\frac{e^{tF_f}\dd\mu_{\beta,R}}{\E_{\mu_{\beta,R}}e^{tF_f}}.
+\]
+For every real $|t|\le\delta/b_f$,
+\begin{equation}
+ \Var_{\mu_t}(F_f)\le C\mf.
+ \label{eq:tiltedvariance}
+\end{equation}
+The assertion is trivial when $b_f=0$. For the original compact law, with $Z_f=F_f-\E F_f$,
+\begin{align}
+ \log\E e^{tZ_f}&\le C\mf t^2,
+ && |t|\le\delta/b_f,\label{eq:CGF}\\
+ \Pr\{|Z_f|>u\}&\le2\exp\left[-c\min\left\{
+                 \frac{u^2}{\mf},\frac{u}{b_f}\right\}\right],
+ &&u>0,\label{eq:Bernstein}\\
+ \norm{Z_f}_{L^p}&\le C\bigl(\sqrt p\,\sqrt{\mf}+p b_f\bigr),
+ &&p\ge1.\label{eq:moments}
+\end{align}
+In particular,
+\begin{equation}
+ \Var(h_f)+\Var(r_f)\le C\mf,\qquad
+ \norm{h_f-\E h_f}_{\psi_1}+\norm{r_f-\E r_f}_{\psi_1}
+ \le C\sqrt{\mf},
+ \label{eq:extensive}
+\end{equation}
+where $\norm Z_{\psi_1}=\inf\{A>0:\E e^{|Z|/A}\le2\}$. The power in \eqref{eq:betaregime} is sufficient, not claimed optimal.
+\end{theorem}
+
+The proof keeps the compact complement and the full scalar of $r_f$. In particular, it is a theorem for the original nonlinear compact measure, rather than only for a Gaussian approximation or a conditioned small chart.
+
+\subsection{Exact axial coordinates and the relative Maxwell matrix}
+
+Use a temporal axial forest: the path of each interior vertex runs down the time direction to the lower time face. Gauge transformations are the identity on every boundary vertex. They set these forest links to the identity. The final temporal link reaching the upper time face is a chord, not a forest link. Haar invariance gives an exact coordinate change; the gauge-group volume is one. Remaining chord variables have product normalized Haar measure. The action, boundary record, gauge-invariant sources and raw partition function are unchanged.
+
+Let $E$ insert chord Lie-algebra coordinates into the full free-link array, with zero forest coordinates. Let $D_0,D_1$ be the complete relative vertex gradient and plaquette curl, with fixed group trace factors included. Set
+\[
+ K_{\rm full}=D_1^*D_1=\sum_{\alpha=1}^{6}K_\alpha,
+ \qquad K=E^*K_{\rm full}E,
+ \qquad d=(\dim G)\,\#\{\text{chords}\}.
+\]
+The original positive free-link count is $4R(R-1)^3$. There are $(R-1)^4$ interior vertices and forest edges, hence exactly
+\[
+ q=(R-1)^3(3R+1)\quad\text{chords},\qquad
+ d=(N^2-1)(R-1)^3(3R+1).
+\]
+Each plane matrix $K_\alpha$ is positive semidefinite, has bounded operator norm and reads a bounded stencil. We require the following quantitative geometry:
+\begin{equation}
+ \lambda_{\min}(K)\ge cR^{-4},\qquad
+ (K^{-1})_{jj}\le CR^2,\qquad
+ \Tr K^{-1}\le CR^6,\qquad d\le CR^4.
+ \label{eq:Maxwellbounds}
+\end{equation}
+Here $j$ can be a real color coordinate. These estimates also appear in the relative green improved connected bound calculation, but the proof is included.
+
+Let $P$ integrate the temporal forest path to each interior vertex and $T=E^*(I-D_0P)$ be the axial chord map. Then $TD_0=0$, $TE=I$, and both the row and column absolute sums of $T$ are at most $CR$: each path has length at most $R$, and each temporal edge is used by at most $CR$ neighboring chord paths. Put
+$\mathcal L=D_1^*D_1+D_0D_0^*$. The relative one-form Laplacian has Neumann conditions in its component direction and Dirichlet conditions in the other three directions. There is no relative harmonic one-form. Its product-mode spectrum has lower bound $cR^{-2}$. Normalized product modes have squared amplitude at most $CR^{-4}$, so
+\[
+ (\mathcal L^{-1})_{ee}\le
+ CR^{-4}\sum_{\substack{|k|\le CR\\ k\ne0}}\frac{R^2}{|k|^2}\le C.
+\]
+The last sum is $O(R^2)$ by four-dimensional shells.
+
+The exact covariance identity is
+\begin{equation}
+ K^{-1}=T\mathcal L^{-1}T^*.
+ \label{eq:treecovariance}
+\end{equation}
+Indeed, for $u=\mathcal L^{-1}T^*\xi$, $D_0^*u=0$ because $TD_0=0$. Thus $K_{\rm full}u=T^*\xi$. The fields $ETu$ and $u$ differ by a relative gradient, whence
+$KTu=E^*K_{\rm full}u=E^*T^*\xi=\xi$.
+The operator bound $\norm T_{2\to2}\le CR$ and $\norm{\mathcal L^{-1}}\le CR^2$ yield $\norm{K^{-1}}\le CR^4$. Positivity gives
+$|\mathcal L^{-1}_{ee'}|\le\sqrt{\mathcal L^{-1}_{ee}\mathcal L^{-1}_{e'e'}}\le C$; the row bound on $T$ then gives $(K^{-1})_{jj}\le CR^2$. Summing over $d\le CR^4$ proves \eqref{eq:Maxwellbounds}. No periodic holonomy has been inverted in this calculation.
+
+\subsection{Source matrices before the chord restriction}
+
+On a small chord chart $U_j=\exp(x_j/\sqrt\beta)$, each source has
+\begin{equation}
+ \nabla_xF_f=2\mathsf Q_fx+e_f(x).
+ \label{eq:sourcegradient}
+\end{equation}
+For $h_f$, the quadratic matrix is
+\begin{equation}
+ \mathsf Q_f^H
+ =E^*\left[\sum_\alpha K_\alpha W_fK_\alpha
+                -\tfrac13K_{\rm full}W_fK_{\rm full}\right]E,
+ \label{eq:Hmatrix}
+\end{equation}
+where $W_f$ is the original diagonal root/color test. Equivalently, one may use the corresponding plane-restricted diagonal tests; their incidence is bounded. The full matrices act on all original root forces before $E$ restricts the \emph{input} coordinates. Deleting forest roots would change \eqref{eq:Hmatrix} and the physical source.
+
+For $r_f$, retain the directional square matrix and add the weighted Wilson-action quadratic from \eqref{eq:casimir}, with its actual factor $\beta^{-1}$. Its scalar is
+\begin{equation}
+ h_f(0)=0,\qquad r_f(0)=-\frac{\cF N}{3}\sum_pm_p(f).
+ \label{eq:sourceconstant}
+\end{equation}
+A constant differentiates to zero in \eqref{eq:sourcegradient}; it has not been deleted from the observable.
+
+Let $\mathsf T_f=K^{-1/2}\mathsf Q_fK^{-1/2}$. The spatial estimate that replaces a squared root count is
+\begin{equation}
+ \norm{\mathsf T_f}_{\rm op}\le Cb_f,\qquad
+ \norm{\mathsf T_f}_{\HS}^2\le C\mf.
+ \label{eq:HS}
+\end{equation}
+To prove it, positivity and bounded local operator norms give
+$\sum_\alpha K_\alpha^2\le CK_{\rm full}$ and
+$K_{\rm full}^2\le CK_{\rm full}$. Therefore every map
+$A_\alpha=K_\alpha EK^{-1/2}$, as well as
+$K_{\rm full}EK^{-1/2}$, has operator norm at most $C$.
+A term of the whitened source matrix is $A^*W_fA$, and
+\[
+ \norm{A^*W_fA}_{\HS}\le\norm A_{\rm op}^2\norm{W_f}_{\HS}
+ \le C\sqrt{\mf}.
+\]
+The operator bound is analogous. For the lower action row use
+$A=D_1EK^{-1/2}$, so $A^*A=I$, and the weighted plaquette diagonal. Its squared Hilbert--Schmidt norm is bounded by
+$C\sum_pm_p(f)^2\le C\sum_bf_b^2$ by the original bounded incidence. The finite sum of source rows preserves these estimates. No inverse spatial spectral gap enters \eqref{eq:HS}.
+
+\subsection{An exact convex chart, including real tilts and raw Haar factors}
+
+Choose $\eps_R=c_*R^{-4}$, with $c_*$ fixed sufficiently small, and let
+\[
+ \Omega=\{x:|x_j|\le\sqrt\beta\,\eps_R
+                   \text{ for every chord Lie-algebra block }j\}.
+\]
+This is a convex product of invariant balls. If the Haar density in exponential coordinates is $j_{\rm raw}$, set $j=j_{\rm raw}/j_{\rm raw}(0)$ and
+$J(x/\sqrt\beta)=\prod_jj(x_j/\sqrt\beta)$. Thus $J(0)=1$; the constant $j_{\rm raw}(0)$ has not been normalized out of the raw partition function. For $F_0=F_f(0)$, define
+\begin{align}
+ V_t(x)&=\beta S(\exp(Ex/\sqrt\beta))
+       -\log J(x/\sqrt\beta)-t(F_f(x)-F_0),\\
+ \widehat Z_t&=\int_\Omega e^{-V_t(x)}\dd x.
+ \label{eq:chartpotential}
+\end{align}
+If $q$ is the number of chords, the actual chart contribution to the tilted raw partition function is
+\begin{equation}
+ Z_t(\Omega)=e^{tF_0}
+           j_{\rm raw}(0)^q\beta^{-d/2}\widehat Z_t.
+ \label{eq:rawchart}
+\end{equation}
+The factor $e^{tF_0}$ is especially relevant to the ordinary Casimir row.
+
+Finite word length and bounded stencil degree imply, throughout this chart,
+\begin{equation}
+ \norm{\Hess_xV_0-K}_{\rm op}
+ \le C(\eps_R+\beta^{-1}).
+ \label{eq:Vhessian}
+\end{equation}
+The action bound follows row by row from its local Hessian; there is no factor $d$. The Haar logarithm is a sum of single-link analytic functions with Hessian $O(\beta^{-1})$.
+Likewise the exact source Hessian differs from $2\mathsf Q_f$ by at most $Cb_f\eps_R$ in $x$ operator norm. After whitening $y=K^{1/2}x$, \eqref{eq:Maxwellbounds} and \eqref{eq:HS} give
+\begin{equation}
+ \norm{\Hess_yF_f}_{\rm op}\le Cb_f,
+ \label{eq:sourcehessian}
+\end{equation}
+because $\norm{K^{-1}}\eps_R\le C$. Choose $c_*$ small, then $C_0$ large in \eqref{eq:betaregime}, and finally $\delta$ sufficiently small. Uniformly for $|t|\le\delta/b_f$,
+\begin{equation}
+ \kappa K\le\Hess_xV_t\le CK,
+ \qquad V_t(0)=0,\quad\nabla V_t(0)=0,
+ \label{eq:relativeconvexity}
+\end{equation}
+with fixed $\kappa>0$.
+
+The normalized chart law $\mu_{t,\Omega}$ is exactly the original compact tilted law conditioned on this event. Matrix Poincar\'e on this same convex domain gives
+\begin{equation}
+ \Var_{t,\Omega}(G)\le\kappa^{-1}
+ \E_{t,\Omega}\bigl[\nabla G^TK^{-1}\nabla G\bigr],
+ \qquad \Cov_{t,\Omega}(x)\le\kappa^{-1}K^{-1}.
+ \label{eq:BL}
+\end{equation}
+One proof whitens the coordinates, solves the weighted Neumann equation for a centered $G$, and uses the integrated Bochner identity. The Hessian term is at least $\kappa$ times the gradient energy; the outward second fundamental form of the convex boundary is nonnegative. Cauchy--Schwarz then proves Poincar\'e. Smooth convex approximation handles the product-ball corners. The sharp physical domain is not replaced, and its boundary term is not assumed zero.
+
+\subsection{Exact symmetry, moments and the extensive chart variance}
+
+Simultaneous global conjugation preserves the identity boundary, axial forest, product-ball chart, Wilson action and both source tilts. The logarithmic coordinates transform by $x_j\mapsto\Ad_gx_j$. Hence their mean satisfies
+$\E_{t,\Omega}x_j=\Ad_g\E_{t,\Omega}x_j$ for every $g\in SU(N)$. The adjoint representation on $\mathfrak{su}(N)$ has no invariant vector, so
+\begin{equation}
+ \E_{t,\Omega}x=0
+ \label{eq:zeromean}
+\end{equation}
+\emph{exactly}, for all the stated real tilts. The literal boundary flux vector
+$\widehat Z_t^{-1}\int_{\partial\Omega}n e^{-V_t}\dd\sigma$
+transforms in the same way and is also zero. This conclusion uses the flat invariant boundary and invariant chart; it is not available for an arbitrary inherited boundary or reference.
+
+Let $q_K=x^TKx$. Divergence of $xq_K^m e^{-V_t}$, with $x\cdot n\ge0$ and
+$x\cdot\nabla V_t\ge\kappa q_K$, gives
+\begin{equation}
+ \kappa\E q_K^{m+1}\le(d+2m)\E q_K^m.
+ \label{eq:radialmoments}
+\end{equation}
+The boundary flux in this scalar calculation has its nonnegative sign. In particular $\E q_K\le d/\kappa$ and $\E q_K^2\le d(d+2)/\kappa^2$.
+
+Equations~\eqref{eq:BL} and \eqref{eq:zeromean} give
+$\E x_j^2\le C(K^{-1})_{jj}\le CR^2$. Applying \eqref{eq:BL} to $x_j^2$ gives
+\[
+ \E x_j^4=\Var(x_j^2)+(\E x_j^2)^2
+ \le C(K^{-1})_{jj}\E x_j^2+(\E x_j^2)^2\le CR^4.
+\]
+Thus every fixed finite local patch $P$ has
+\begin{equation}
+ \E_{t,\Omega}|x_P|^4\le CR^4.
+ \label{eq:localfourth}
+\end{equation}
+The original coordinate count is still $d\le CR^4$; it was not replaced by one.
+
+Use \eqref{eq:sourcegradient}. The quadratic part, in whitened variables, is $2\mathsf T_fy$. Since $\E y=0$ and $\Cov(y)\le\kappa^{-1}I$,
+\begin{equation}
+ \E\bigl[(2\mathsf Q_fx)^TK^{-1}(2\mathsf Q_fx)\bigr]
+ =4\E|\mathsf T_fy|^2\le C\norm{\mathsf T_f}_{\HS}^2
+ \le C\mf.
+ \label{eq:quadraticvariance}
+\end{equation}
+The Hilbert--Schmidt estimate uses the spatial quadratic structure before an absolute root sum. This is where the extensive count is obtained.
+
+The nonlinear remainder is local: $e_f=\sum_bf_be_b$, with $e_b$ supported on the original fixed determining stencil $P_b$ and
+\[
+ |e_b(x)|\le C\beta^{-1/2}|x_{P_b}|^2.
+\]
+This follows by differentiating the actual squared-force expansion; the $\beta^{-1}$ lower action row satisfies the same bound for $\beta\ge1$. Bounded overlap of the literal stencils and \eqref{eq:localfourth} give
+\begin{equation}
+ \E|e_f|^2\le C\beta^{-1}R^4\mf,
+ \qquad
+ \E[e_f^TK^{-1}e_f]\le C\beta^{-1}R^8\mf.
+ \label{eq:remainder}
+\end{equation}
+Combining \eqref{eq:BL}, \eqref{eq:quadraticvariance} and \eqref{eq:remainder} proves
+\begin{equation}
+ \Var_{t,\Omega}(F_f)\le C\mf
+ \label{eq:chartvariance}
+\end{equation}
+uniformly over the stated real tilt interval. No Gaussian replacement, mean-zero approximation or unproved history mixing was used.
+
+\subsection{Restore the original compact complement}
+
+There is an exact nonabelian reconstruction bound for this relative forest:
+\begin{equation}
+ \max_{\text{chords }j}\operatorname{dist}(U_j,I)
+ \le CR\sqrt{S(U)}.
+ \label{eq:reconstruction}
+\end{equation}
+For a spatial chord, fill its temporal rectangle to the fixed lower time boundary. For the final temporal chord, fill the rectangle connecting its entire temporal column to a fixed side boundary; the upper and lower horizontal boundaries and the side vertical path are fixed. The other forest links are the identity. Each rectangle contains at most $CR^2$ \emph{distinct} original plaquettes. The ordered nonabelian plaquette identity retains its conjugating prefixes. Unitary telescoping, followed by Cauchy--Schwarz, gives
+\[
+ \norm{U_j-I}\le C\sum_{p\text{ in rectangle}}\sqrt{s_p}
+ \le CR\left(\sum_{p\text{ in rectangle}}s_p\right)^{1/2}
+ \le CR\sqrt S.
+\]
+The invariant group distance is bounded by a constant times this matrix distance on the compact group, including the fixed small branch. No commutativity or repeated independent plaquette assumption is used.
+
+The complement of $\Omega$ therefore satisfies
+\begin{equation}
+ S(U)\ge c\eps_R^2R^{-2}=cR^{-10}.
+ \label{eq:badenergy}
+\end{equation}
+We also need the exact compact source-action comparison
+\begin{equation}
+ |F_f(U)-F_0|\le C\beta b_f S(U),\qquad \beta\ge1.
+ \label{eq:actiontilt}
+\end{equation}
+For a plaquette trace, its squared invariant derivative is bounded by $Cs_p$. Each directional force is a sum over boundedly many incident plaquettes, so its square is bounded by the sum of their actions. Summing with $|f_b|\le b_f$ proves the assertion for $\beta D$ and $\beta P$. For the ordinary row, \eqref{eq:casimir} leaves exactly the constant $F_0$ and a weighted action with $|m_p(f)|\le4b_f$. This proves \eqref{eq:actiontilt} for both sources.
+
+Choose the same $\delta$ so that $|t|\le\delta/b_f$ implies
+\begin{equation}
+ \tfrac34\beta S\le \beta S-t(F_f-F_0)\le\tfrac54\beta S.
+ \label{eq:tiltedaction}
+\end{equation}
+Restrict every chord to a Haar ball of radius $c\beta^{-1/2}$. Its Haar mass is bounded below by $c'\beta^{-\dim G/2}$; on the product of these balls, the action is at most $CR^4/\beta$. Consequently the original tilted raw normalizer obeys
+\begin{equation}
+ e^{-tF_0}Z_t\ge\exp[-CR^4\log(2+\beta)].
+ \label{eq:normalizerlower}
+\end{equation}
+This retains the raw scalar $e^{tF_0}$; it is not set to one in $Z_t$.
+
+Equations~\eqref{eq:badenergy}--\eqref{eq:normalizerlower}, with total compact Haar mass one, give
+\begin{equation}
+ q_t:=\mu_t(\Omega^c)
+ \le\exp[-c\beta R^{-10}+CR^4\log(2+\beta)].
+ \label{eq:badtail}
+\end{equation}
+Take $C_0$ in \eqref{eq:betaregime} sufficiently large once for all the estimates in the proof. The ratio $R^{14}\log(2+\beta)/\beta$ is maximized, up to fixed constants, at the lower endpoint of that regime. There, $\log(2+\beta)\le C\log(2+R)+C\log C_0$, so increasing $C_0$ absorbs the positive entropy term and every fixed polynomial factor used below. Uniformly for all larger $\beta$,
+$q_t\le\exp(-c'\beta R^{-10})$ with the required polynomial multiples negligible.
+
+The compact source is bounded by
+\[
+ |F_f(U)|\le C\beta\sum_b|f_b|
+ \le C\beta R^2\sqrt{\mf}.
+\]
+Centering at its actual tilted chart mean gives
+\begin{align}
+ \Var_{\mu_t}(F_f)
+ &\le\E_{\mu_t}(F_f-\E_{t,\Omega}F_f)^2\notag\\
+ &\le\Var_{t,\Omega}(F_f)+C\beta^2R^4\mf\,q_t
+ \le C\mf.
+ \label{eq:fullvariance}
+\end{align}
+This proves \eqref{eq:tiltedvariance} for the full compact law. The scalar in \eqref{eq:sourceconstant}, the original Haar factors and the entire compact complement have been retained.
+
+\subsection{Concentration from the same real tilted laws}
+
+Let $\Psi(t)=\log Z_t-\log Z_0-t\E_{\mu_0}F_f$, using the original raw partition functions. They are finite at every real $t$, because the link space is compact. Differentiation gives exactly
+\[
+ \Psi(0)=\Psi'(0)=0,\qquad \Psi''(t)=\Var_{\mu_t}(F_f).
+\]
+Integrating \eqref{eq:tiltedvariance} twice proves \eqref{eq:CGF}, with no new probability law or complex wall. Exponential Markov inequality with
+$t=\min\{c u/\mf,\delta/(2b_f)\}$, and the same argument for $-Z_f$, proves \eqref{eq:Bernstein}.
+
+Integrating that tail gives \eqref{eq:moments}; equivalently split at the crossover between $u^2/\mf$ and $u/b_f$. Since $b_f\le\sqrt{\mf}$, one has $\norm{Z_f}_p\le Cp\sqrt{\mf}$. Expanding the exponential and using $p!\ge(p/e)^p$ proves $\E e^{|Z_f|/(C'\sqrt{\mf})}\le2$ after increasing $C'$ once. This is the stated $\psi_1$ convention. In particular, the numerical threshold two is imposed after the full compact law has been restored and centered at its genuine mean.
+
+The real interval in \eqref{eq:CGF} is not a fixed zero-free complex domain. It neither admits the simultaneous auxiliary walls of a marked R operation nor identifies its canonical source jets. In physical source units \eqref{eq:physical}, the allowed real parameter acquires its actual factor $a^2$.
+
+\subsection{A simultaneous real-source consequence and physical scaling}
+
+The proof also treats the joint rooted vector. For
+\[
+ \Theta=\sum_b\theta_bh_b+\sum_b\varphi_br_b,
+ \qquad \norm\theta_\infty+\norm\varphi_\infty\le\delta,
+\]
+where $h_b,r_b$ are the original single-root sources, the action comparison, relative Hessian and conjugation symmetry hold on the same chart. A further probe $h_f+r_g$ has the Hilbert--Schmidt bound $C(\norm f_2^2+\norm g_2^2)$ and the same local remainder estimate. Hence the actual joint covariance matrix is bounded by $CI$ uniformly on this \emph{real} source cube. Along the segment $s\Theta$,
+\[
+ \log Z(\theta,\varphi)-\log Z(0,0)-\E\Theta
+ \le C(\norm\theta_2^2+\norm\varphi_2^2).
+\]
+The raw scalar $\exp(\Theta(0))$ remains part of $Z(\theta,\varphi)$. This statement does not provide an arbitrary complex zero-free source cube.
+
+Finally, \eqref{eq:physical} yields
+\[
+ \Var O_H(f)+\Var r_H(f)\le Ca^{-4}\mf.
+\]
+If an analogous extensive estimate were available on a fixed physical plateau, its original root count would scale like $a^{-4}$, and the resulting $a^{-4}\mf$ bound would allow an $a^{-8}$ coincident variance. The theorem proved here does not reach that regime: under logarithmic growth of $\beta$, its allowed physical diameter $aR$ tends to zero. It is not a cutoff-independent coincident-field estimate or a construction of a renormalized continuum source. All later field-independent saved factors multiply variances by their squared modulus and centered exponential norms by their modulus.
+
+\section{Positive observations, low modes and rare lineages}
+\label{sec:positive}
+
+The consequences in this section use the \emph{same} compact Wilson marginal as Theorem~\ref{thm:block}. They do not identify that flat-boundary law with a periodic or inherited mixed-history law. Let $F$ denote either $h_f$ or $r_f$, and write $Z=F-\E F$.
+
+\subsection{Whole-law control includes history means}
+
+Let a completed positive, source-free realization retain $\mu_{\beta,R}$ as its Wilson marginal, and let $Y$ be any actual retained output, observation or complete history. Conditional Jensen and orthogonal projection contraction give, for every orthogonal projection $Q$ on $L^2(\Law(Y))$,
+\begin{equation}
+ \norm{Q\E[Z\mid Y]}_2^2\le\norm{\E[Z\mid Y]}_2^2
+ \le\E Z^2\le C\mf.
+ \label{eq:positiveL2}
+\end{equation}
+This applies, in particular, to zero- or low-spectral projections of a specified self-adjoint output generator. No lower bound on its positive spectrum is required for this implication.
+
+For a history variable $\xi$, the identity
+\begin{equation}
+ \Var(F)=\E_\xi\Var(F\mid\xi)
+       +\Var_\xi\E(F\mid\xi)
+ \label{eq:historyvariance}
+\end{equation}
+shows precisely where between-history modes are included. Here the input is a bound on the complete marginal variance. A convex-fiber estimate alone would bound only the first term and would not prove \eqref{eq:positiveL2} for the full output.
+
+Because the result holds for every deterministic test $f$, the covariance matrix of the original rooted source vector is bounded in Loewner order by $C$ times the identity on the original root space. The assertion is stronger than a uniform bound on each diagonal entry. It gives the extensive count $\mf$, rather than $(\sum_b|f_b|)^2$.
+
+\subsection{Rare weights from the full exponential bound}
+
+For $0<p\le1$ put $L_p=\log(e/p)$ and
+\begin{equation}
+ \Phi_f(p)=p\bigl[\mf L_p+b_f^2L_p^2\bigr],\qquad b_f=\norm f_\infty,
+ \quad \Phi_f(0)=0.
+ \label{eq:rarebudget}
+\end{equation}
+The full Bernstein estimate of Theorem~\ref{thm:block} gives, for any actual weight $0\le H\le1$ of mass $p=\E H$,
+\begin{align}
+ \E[HZ^2]
+ &=\int_0^\infty2u\,\E[H\mathbf1_{|Z|>u}]\,\dd u\notag\\
+ &\le\int_0^\infty2u\min\left\{p,
+  2e^{-c\min\{u^2/\mf,u/b_f\}}\right\}\,\dd u
+ \le C\Phi_f(p).
+ \label{eq:rareweight}
+\end{align}
+Split at $u=C(\sqrt{\mf L_p}+b_fL_p)$ and integrate the Gaussian and exponential tails beyond it. This retains the rarity unnormalized and improves the earlier sufficient $C\mf p\log^2(e/p)$ estimate. For spread-out tests, the first term has only one logarithm.
+
+\begin{proposition}[A complete rare-label increment]
+Let $\mathcal W$ be the record before a label is exposed. Suppose one label is ordinary and all other labels form a rare event $A$, with $p=\Pr(A)$. With
+\[
+ M_0=\E[Z\mid\mathcal W],\qquad
+ M_1=\E[Z\mid\mathcal W,L],\qquad \Delta=M_1-M_0,
+\]
+one has
+\begin{equation}
+ \E\Delta^2\le C\Phi_f(p).
+ \label{eq:rarelabel}
+\end{equation}
+The ordinary compensator is included, and the bound has no rare-label-count factor.
+\end{proposition}
+\begin{proof}
+Put $q=\Pr(A\mid\mathcal W)$ and $B=\{q>1/2\}$. Then $\Pr(B)\le2p$. On $B^c$, the ordinary value $\Delta_0$ obeys
+$(1-q)\Delta_0=-\E[\mathbf1_A\Delta\mid\mathcal W]$.
+Conditional Cauchy--Schwarz therefore gives
+\[
+ \E[\Delta^2\mid\mathcal W]
+ \le2\E[\mathbf1_A\Delta^2\mid\mathcal W]
+ \le2\E[\mathbf1_A(Z-M_0)^2\mid\mathcal W].
+\]
+The last step is conditional Jensen; $A$ is a label event. After integration, the right side is at most
+\[
+ 4\E[\mathbf1_A Z^2]+4\E[qM_0^2]
+ \le4\E[\mathbf1_A Z^2]+4\E[qZ^2].
+\]
+Both weights $\mathbf1_A$ and $q$ have mass $p$, so \eqref{eq:rareweight} applies. On $B$, conditional variance contraction gives
+\[
+ \E[\mathbf1_B\Delta^2]
+ \le\E[\mathbf1_B\Var(F\mid\mathcal W)]
+ \le\E[\mathbf1_BZ^2].
+\]
+Use \eqref{eq:rareweight} with mass at most $2p$. For $p\le1/2$ this proves the claim; for larger $p$, \eqref{eq:positiveL2} absorbs the estimate into the same right side. No division by the selected mass occurs.
+\end{proof}
+
+\subsection{One predictable budget along a lineage}
+
+Let $\mathcal F_i$ be the actual increasing filtration and $M_i=\E[Z\mid\mathcal F_i]$. If $A\in\mathcal F_b$ is known at birth, martingale orthogonality with the predictable weight $\mathbf1_A$ gives
+\begin{align}
+ \sum_{i=b+1}^{T}\E\bigl[\mathbf1_A(M_i-M_{i-1})^2\bigr]
+ &=\E\bigl[\mathbf1_A(M_T-M_b)^2\bigr]\notag\\
+ &\le\E\bigl[\mathbf1_A(Z-M_b)^2\bigr]
+ =\E[\mathbf1_AZ^2]-\E[\mathbf1_AM_b^2]\notag\\
+ &\le C\Phi_f(\Pr(A)).
+ \label{eq:lineage}
+\end{align}
+Thus residence depth does not multiply a single predictable lineage's available second-moment budget. The birth increment, original compensator, ownership of that event and completion of the packet still have to be identified. Overlapping lineages cannot be charged repeatedly to the same reserve without their actual ownership argument.
+
+\subsection{The precise unchanged-marginal limitation}
+
+A decomposition of the periodic Wilson law over boundary records $\eta$ has
+\[
+ \Var(F)=\E_\eta\Var(F\mid\eta)+\Var_\eta\E(F\mid\eta).
+\]
+Theorem~\ref{thm:block} treats a fixed flat boundary record. Even a uniform extension of its conditional variance estimate to all $\eta$ would leave the second term. Likewise, native strong convexity, a local exponential moment, or a raw small mass does not change the starting marginal in \eqref{eq:positiveL2}.
+
+The new extensive bound is therefore a verified spatial mechanism on one exact nonlinear law. Its extension to the actual boundary law, including conditional means and inherited source responses, is an additional theorem to prove. Since the allowed $R$ is only a power of $\beta$, its physical diameter $aR$ tends to zero when $\beta$ grows logarithmically in $a^{-1}$. Tiling a fixed physical volume does not make the common boundary records independent.
+
+\section{Current transfer through the actual old averaging differential}
+\label{sec:hodge}
+
+\subsection{Geometry and an exact total-current identity}
+
+Work first on a cubic periodic four-dimensional lattice of side $\ell$, with fine mesh $a$, old mesh $r=Ba$, and integer $\ell/r$. All scalar products use physical volume: $a^4\sum_y$ or $r^4\sum_x$. The uniform flat differential of~\cite[\S2.1]{UA} and of CB9--CB12 in~\cite[pp.~667--672]{W} is
+\begin{equation}
+ Dq_{\rm raw}(0)A=Q_1A-\dd_r\psi(A),\quad
+ Q_{1,\nu}=Q_0L_\nu,\quad Q_{2,\mu\nu}=Q_0L_\mu L_\nu,
+ \label{eq:qflat}
+\end{equation}
+where $Q_0$ is the normalized centered block mean and
+$L_\mu=B^{-1}\sum_{j=0}^{B-1}\tau_{jae_\mu}$. The actual endpoint connector is $\psi$. Taking the flat curl cancels its coboundary:
+$\dd_rDq_{\rm raw}(0)=Q_2\dd_a$.
+The positive nested filters equal their direct filters; no associativity of the nonlinear group means is asserted.
+
+Write $D_\mu=(\tau_{ae_\mu}-I)/a$, $D_\mu^*=(\tau_{-ae_\mu}-I)/a$, and $\Delta_a=\sum_\mu D_\mu^*D_\mu$. For an antisymmetric two-cochain $F$, let $J=\delta_aF$, $J_r=\delta_rQ_2F$, with
+$J_\nu=\sum_\mu D_\mu^*F_{\mu\nu}$. Put
+\[
+ A_\mu=L_\mu^*L_\mu,\qquad V_\nu=Q_0L_\nu.
+\]
+The actual forward and backward difference identities give exactly
+\begin{equation}
+ (J_r)_\nu=V_\nu\left[J_\nu+
+             \sum_\mu(A_\mu-I)D_\mu^*F_{\mu\nu}\right].
+ \label{eq:currentexact}
+\end{equation}
+When $\dd_aF=0$, discrete Hodge decomposition gives
+$F=\dd_a\Delta_a^{-1}J+h$, where $h$ is the harmonic two-form. It is constant, preserved by $Q_2$, and annihilated by both currents. Thus
+\begin{equation}
+ D_\mu^*F_{\mu\nu}
+ =D_\mu^*D_\mu\Delta_a^{-1}J_\nu
+  -D_\mu^*D_\nu\Delta_a^{-1}J_\mu.
+ \label{eq:Hodgecurrent}
+\end{equation}
+The inverse kills the zero Fourier mode. Equation~\eqref{eq:Hodgecurrent} follows on every nonzero mode from closedness; both sides vanish at zero.
+
+\begin{theorem}[Uniform total-current transfer]
+\label{thm:current}
+For a closed $F$ on this complete uniform family, there is a matrix kernel $\Kern_{a,r}$ such that
+\[
+ J_r(x)=a^4\sum_y\Kern_{a,r}(x,y)J(y).
+\]
+Uniformly in $a$, $r/a$, $\ell/r$ and the number of uniform intermediate steps,
+\begin{align}
+ \sup_xa^4\sum_y\norm{\Kern_{a,r}(x,y)}&\le C,
+ &\sup_x\norm{\Kern_{a,r}(x,\cdot)}_{L^2(a)}&\le Cr^{-2},
+ \label{eq:Krow}\\
+ \norm{\Kern_{a,r}(x,y)}&\le Cr^2d_{\mathbb T}(x,y)^{-6}
+ &&\text{if }d_{\mathbb T}(x,y)>C_0r.
+ \label{eq:Ktail}
+\end{align}
+Consequently
+\begin{equation}
+ \norm{J_r}_\infty\le C\norm J_\infty,\qquad
+ \norm{J_r}_{L^2(r)}\le\sqrt3\norm J_{L^2(a)}.
+ \label{eq:currentbounds}
+\end{equation}
+For every $0\le\gamma<2$, the first bound in \eqref{eq:Krow} also holds with weight $(1+d_{\mathbb T}(x,y)/r)^\gamma$, with constant $C_\gamma$.
+\end{theorem}
+
+\subsection{Proof of the summable spatial kernel}
+
+Combining \eqref{eq:currentexact}--\eqref{eq:Hodgecurrent} defines
+\begin{align}
+ (\Kern J)_\nu={}&V_\nu J_\nu\notag\\
+ &+\sum_\mu V_\nu(A_\mu-I)
+ \left[D_\mu^*D_\mu\Delta_a^{-1}J_\nu
+       -D_\mu^*D_\nu\Delta_a^{-1}J_\mu\right].
+ \label{eq:Kformula}
+\end{align}
+This is one extension to arbitrary vector fields; it is exact on actual $J=\delta_aF$. Its zero-frequency symbol is the identity, harmless because the actual $J$ has zero mean.
+
+\paragraph{Near region.}
+A physical density row $v_{\nu,x}$ of $V_\nu$ has mass one and maximum at most $Cr^{-4}$. Line convolution preserves the block mean's maximum. Hence $\norm{v_{\nu,x}}_2\le Cr^{-2}$. Every multiplier $D_\mu^*D_\rho\Delta_a^{-1}$ has $L^2$ norm at most one, and $A_\mu-I$ has norm at most two. Applying their adjoints to $v_{\nu,x}$ in \eqref{eq:Kformula} proves the second bound in \eqref{eq:Krow}. The region $d_{\mathbb T}(x,y)\le C_0r$ has physical volume at most $Cr^4$, so Cauchy--Schwarz bounds its row $L^1$ mass by $C$. No pointwise bound on the Hodge-corrected kernel at block edges is assumed. This also covers tori with $\ell$ comparable to $r$.
+
+\paragraph{A uniform fourth-difference Green estimate.}
+On the infinite unit lattice in four dimensions,
+\[
+ G(z)=(2\pi)^{-4}\int_{[-\pi,\pi]^4}
+       \frac{e^{ik\cdot z}}{4\sum_\mu\sin^2(k_\mu/2)}\,\dd k.
+\]
+For any ordered four forward or backward differences the multiplier is $p_4(k)/\lambda(k)$. On a neighborhood of zero its derivatives of order $m$ are bounded by $C_m|k|^{2-m}$. A smooth dyadic partition into annuli $|k|\asymp2^{-j}$ and integration by parts give
+\[
+ |G_j^{(4)}(z)|\le C_M2^{-6j}(1+2^{-j}|z|)^{-M}.
+\]
+Choose $M>6$ and split the sum where $2^{-j}|z|=1$; both parts are bounded by $C(1+|z|)^{-6}$. The smooth high-frequency part decays to arbitrary polynomial order by periodic integration by parts. Scaling therefore gives
+\begin{equation}
+ |D_a^\alpha G_a(z)|\le C(a+|z|)^{-6},\qquad |\alpha|=4.
+ \label{eq:Green4}
+\end{equation}
+This fourth-difference kernel is absolutely summable. Periodization equals the finite Fourier multiplier, whose value at zero is zero. For a closest torus representative with distance $R_0\ge a$, its nonzero images contribute at most $C\ell^{-6}\le CR_0^{-6}$. Thus \eqref{eq:Green4} holds in torus distance with a uniform constant. No divergent periodization of the undifferentiated Green function is used.
+
+\paragraph{Far region and the decisive cancellation.}
+The convolution $A_\mu$ is a symmetric probability filter. Its first moment vanishes and its second moment is at most $Cr^2$. In particular
+\[
+ (A_\mu-I)u=\sum_{t>0}w_t
+ [u(\cdot+te_\mu)+u(\cdot-te_\mu)-2u],\qquad
+ \sum_tw_tt^2\le Cr^2,
+\]
+where $t$ is a multiple of $a$ and $t\le r$. Each centered difference of displacement $t$ is a sum of nearest-neighbor second differences with total physical coefficient $t^2$. Apply this to the second-difference Green kernels in \eqref{eq:Kformula}. Equation~\eqref{eq:Green4} gives a bound $Cr^2d_{\mathbb T}^{-6}$ outside a fixed multiple of $r$. The additional $V_\nu$ convolution has mass one and range $Cr$; enlarging that multiple preserves the estimate. Its direct term has compact range. This proves \eqref{eq:Ktail}.
+
+The four-dimensional shell count gives
+\[
+ r^2\int_r^\infty R_0^{-6}R_0^3\,\dd R_0\le C.
+\]
+With weight $(1+R_0/r)^\gamma$ the tail is bounded by
+$r^{2-\gamma}\int_r^\infty R_0^{\gamma-3}\dd R_0$, finite for $\gamma<2$. Dyadic lattice shells give the same bound uniformly in $a$. Together with the near region, this proves the first assertion of \eqref{eq:currentbounds} and the weighted moments. At exponent two this proof instead gives a logarithm of $\ell/r$.
+
+\paragraph{The physical $L^2$ estimate.}
+The positive row and physical column identities make $Q_0$ followed by any line filters a contraction from fine $L^2(a)$ to coarse $L^2(r)$. From \eqref{eq:currentexact} before adding and subtracting $I$,
+\[
+ \norm{J_r}_2^2\le3\sum_\nu\sum_{\mu\ne\nu}
+                     \norm{D_\mu^*F_{\mu\nu}}_2^2
+ \le3\sum_\rho\norm{D_\rho F}_2^2.
+\]
+The cochain Hodge identity makes the last sum
+$\norm{\dd_aF}_2^2+\norm{\delta_aF}_2^2=\norm J_2^2$.
+This uses the actual downsampling contraction, so no alias is omitted. The proof of Theorem~\ref{thm:current} is complete.
+
+\subsection{Bianchi defects and a buffered local form}
+
+For an arbitrary two-cochain set $B_F=\dd_aF$. Hodge decomposition becomes
+$F=\dd_a\Delta_a^{-1}J+\delta_a\Delta_a^{-1}B_F+h$.
+Inserting it only into the correction in \eqref{eq:currentexact} gives
+\[
+ \delta_rQ_2F=\Kern_JJ+\Kern_BB_F,\qquad
+ (\Kern_BB_F)_\nu=\sum_\mu V_\nu(A_\mu-I)D_\mu^*
+                 (\delta_a\Delta_a^{-1}B_F)_{\mu\nu}.
+\]
+The new entries are again second-difference Green multipliers preceded by $A_\mu-I$, so the same proof gives
+\begin{equation}
+ \norm{\delta_rQ_2F}_\infty
+ \le C(\norm{\delta_aF}_\infty+\norm{\dd_aF}_\infty).
+ \label{eq:BianchiDefect}
+\end{equation}
+
+Suppose $F$ is closed on $D^+$, containing the \emph{complete} old-current readset, including neighboring coarse plaquette patches, with a collar of width $h\ge a$. Choose $\chi=1$ on that readset, supported in $D^+$, with $\norm{D\chi}_\infty\le C/h$. Extend $\chi F$ by zero on an aligned auxiliary periodic lattice. This is an analysis cochain, not a new physical minimum. The old current is unchanged. Exact product rules bound its fine divergence and Bianchi defect by $C(\norm J_{\infty,D^+}+h^{-1}\norm F_{\infty,D^+})$. Hence
+\begin{equation}
+ \norm{\delta_rQ_2F}_{\infty,D}
+ \le C\left(\norm J_{\infty,D^+}+h^{-1}\norm F_{\infty,D^+}\right).
+ \label{eq:localcurrent}
+\end{equation}
+A fixed current-unit collar removes the extra $r^{-1}$ of a curvature-only estimate. A shrinking collar retains its actual inverse width.
+
+\subsection{Parameter jets and their actual anchor measures}
+
+If $F(v)$ is closed, all its parameter derivatives are closed. Since $\Kern$ is fixed by the flat geometry, $D_IJ_r=\Kern D_IJ$ for every finite labeled set $I$. With the original anchor measures, define
+\[
+ \mathcal A^{(m)}_\eta(J;y)=\sum_{z_1,\ldots,z_m}
+ \prod_{i=1}^m(1+d_{\mathbb T}(y,z_i)/r)^\eta
+ |D_{z_1}\cdots D_{z_m}J(y)|.
+\]
+The triangle inequality for the metric and Tonelli give
+\begin{equation}
+ \mathcal A^{(m)}_\eta(J_r;x)
+ \le a^4\sum_y\norm{\Kern(x,y)}
+ (1+d_{\mathbb T}(x,y)/r)^{m\eta}\mathcal A^{(m)}_\eta(J;y).
+ \label{eq:anchors}
+\end{equation}
+Thus a bounded input anchor sum transfers with a uniform constant when $m\eta<2$. A directional norm alone supplies no anchor sum. For larger polynomial weights, exponential weights, or the original mixed native metric, the right side of \eqref{eq:anchors} remains explicit; it is not replaced by a constant.
+
+\subsection{A restricted nonlinear current corollary}
+
+Use precisely the admitted gauge-straightened regular hierarchy of CB7--CB8 in~\cite[pp.~666--669]{W}, with its fixed odd blocking factor $L$, $r/a=L^k$, $r\le1$, common logarithmic branch and $M=\norm A_{C^{1,\beta}}$ sufficiently small. Its \emph{actual} nonlinear output satisfies
+\begin{equation}
+ A_r=Q_{1,a\to r}A+E_r,\qquad
+ \norm{A_r}_{C^1}\le CM,\qquad
+ \norm{E_r}_\infty\le Cr^2(M^2+M^3).
+ \label{eq:CBinput}
+\end{equation}
+These are existing admitted regular estimates, not an assertion about arbitrary mixed walls. The standalone flat convolution theorem allows integer $B$; this corollary asserts no nonlinear hierarchy beyond the original one.
+
+In the physical convention of~\cite[\S2]{UA},
+$J_b(A)=M_bA+N_b(A)$, $M_b=\delta_b\dd_b$. The opposite-plaquette cancellation in the actual Wilson current gives uniform analyticity $N_b:C^1\to C^0$ on a fixed chart. Its constant and linear terms vanish, so $\norm{N_b(A)}_\infty\le C\norm A_{C^1}^2$ on a smaller fixed chart. One must use this complete current identity, rather than differentiating an isolated plaquette Taylor error and losing a power of $b$.
+
+There is the exact decomposition
+\begin{equation}
+ J_r(A_r)=\Kern_{a,r}J_a(A)+\mathcal E_{a,r}(A),\qquad
+ \mathcal E_{a,r}=M_rE_r+N_r(A_r)-\Kern_{a,r}N_a(A).
+ \label{eq:nonlinearcurrent}
+\end{equation}
+The finite second-difference stencil gives $\norm{M_rE_r}_\infty\le Cr^{-2}\norm{E_r}_\infty$. Equations~\eqref{eq:Krow} and \eqref{eq:CBinput} therefore prove
+\begin{equation}
+ \norm{J_r(A_r)}_\infty
+ \le C\norm{J_a(A)}_\infty+C(M^2+M^3).
+ \label{eq:nonlinearbound}
+\end{equation}
+This is uniform in the admitted number of steps. In particular, input sizes $\norm{J_a}_\infty,M\le Cg_kq$ with $g_kq$ small yield the saved old dimensionless current size $r^3g_kq$.
+
+Real unitary output gauges preserve the pointwise norm. Complex gauges keep their actual adjoint bounds. Differentiating \eqref{eq:nonlinearcurrent} retains all derivatives of $E_r$, $N_r$, the input family and any moving output gauge. If the uniform remainder bound holds on the existing holomorphic parameter polydisc, Cauchy estimates on a smaller polydisc give its finite jets with the \emph{saved} radius margins and their factorials. No R-origin radius is reset, and coordinatewise Cauchy bounds do not manufacture anchor sums.
+
+\paragraph{Scope.}
+Theorem~\ref{thm:current} controls the \emph{total} current. Each separate directional plane-current reconstruction has an uncanceled order-zero Hodge kernel; the same $L^\infty$ statement is not asserted for each plane. The theorem therefore does not bound the whole $H$ packet by deleting its ordinary, directional, Casimir or contact companions. Literal identity boundary rows and mixed junctions retain the operator $B_\omega$ of~\cite[\S2.3]{UA}; neither positive smoothing nor admission has been assigned to those rows.
+
+\section{Separate ground-relative spectral criteria for S94}
+\label{sec:spectral}
+
+\subsection{The original target}
+
+Let $A$ be the original positive physical Wilson transfer at lattice time $a$, including gauge projection, temporal links and the genuine global sectors. Let $\lambda_0$ be its actual top eigenvalue and
+\[
+ H_A=-a^{-1}\log(A/\lambda_0),\qquad
+ Q_A(t)=\Tr e^{-tH_A},\quad t=ma,
+\]
+on its positive spectral range. A sufficient physical-slab input is
+\begin{equation}
+ \log Q_A(t)\le C\frac{\operatorname{Vol}(\Sigma)}{t^3}+C_{\rm global}
+ \label{eq:S94target}
+\end{equation}
+uniformly in the cutoff, at a fixed positive physical reference time and on the required larger tori. Raw scalar powers cancel in eigenvalue ratios only; they remain in the original partition functions. The following theorems provide sufficient mechanisms for a bound of this type. They have not been identified with the original Wilson transfer.
+
+\subsection{An anisotropic convex-Hamiltonian theorem}
+
+\begin{theorem}[All ground-relative levels retain the oscillator frequencies]
+\label{thm:spectral}
+Let $\Omega>0$ be a real symmetric matrix with eigenvalues $\omega_1,\ldots,\omega_d$, and let
+\[
+ H=-\tfrac12\Delta+\tfrac12x^T\Omega^2x+W(x)
+\]
+be defined by its closed lower-bounded quadratic form on $L^2(\R^d)$, with $W$ finite and convex. Let $E_0<E_1\le\cdots$ be its eigenvalues, and let $\epsilon_j$ be the ordered multiset
+$\{\sum_i n_i\omega_i:n_i\in\Z_{\ge0}\}$, with multiplicity. Then
+\begin{equation}
+ E_j-E_0\ge\epsilon_j\quad\text{for every }j,
+ \qquad
+ \Tr e^{-t(H-E_0)}\le\prod_{i=1}^d(1-e^{-t\omega_i})^{-1}.
+ \label{eq:allspectrum}
+\end{equation}
+\end{theorem}
+\begin{proof}
+A supporting affine function of $W$ can be absorbed by translating the oscillator and retaining an additive scalar. Thus one may assume $W\ge0$ for the semigroup argument; neither $\Omega$ nor a ground-relative eigenvalue changes. Begin with smooth $W$, and use convex approximation for the finite convex case.
+
+Let $\phi(x)=c\exp(-x^T\Omega x/2)$ and $E_{\rm harm}=\Tr\Omega/2$. The exact oscillator ground transform gives, on $L^2(\gamma_\Omega)$ with $\dd\gamma_\Omega=\phi^2\dd x$,
+\[
+ \phi^{-1}(H-E_{\rm harm})\phi
+ =D_\Omega+W,\qquad D_\Omega=-\tfrac12\Delta+(\Omega x)\cdot\nabla.
+\]
+The Ornstein--Uhlenbeck semigroup integrates $f(e^{-s\Omega}x+z)$ against a centered Gaussian in $z$. A log-concave $f$ gives a jointly log-concave integrand, so its marginal is log-concave. Multiplication by $e^{-sW}$ also preserves log-concavity. The Trotter products, and hence $e^{-s(D_\Omega+W)}1$, are log-concave.
+
+Normalize by the actual lowest eigenvalue and let $s\to\infty$. The positive spectral projection converges in $L^2(\gamma_\Omega)$ to $c_1h$, where $h=\psi_0/\phi$, $c_1>0$, and $\psi_0$ is the positive ground state. Along an almost-everywhere subsequence, log-concavity passes to the positive limit; its continuous version is fixed by elliptic regularity. Thus $h$ is log-concave. Consequently
+\[
+ \dd\pi=\psi_0^2\dd x
+ =c_2 e^{-x^T\Omega x-F(x)}\dd x,\qquad F=-2\log h
+\]
+is a convex perturbation of the \emph{same} anisotropic Gaussian.
+
+The same-quadratic Caffarelli contraction theorem, in the form explicitly recorded for arbitrary positive quadratic matrices by Kim--Milman \cite{KimMilman}, supplies a Euclidean $1$-Lipschitz transport $T:\gamma_\Omega\to\pi$. This is not a comparison between unrelated curvature matrices and does not require $\Omega$ to commute with $\Hess F$. The theorem supplies the regularity and approximation needed for the global transport statement.
+
+The exact ground transform identifies $H-E_0$ with the weighted diffusion whose Dirichlet form is
+$\mathcal E_\pi(f)=\tfrac12\int|\nabla f|^2\dd\pi$.
+Pullback by $T$ is an isometry of $L^2$ norms and obeys
+\[
+ \mathcal E_{\gamma_\Omega}(f\circ T)\le\mathcal E_\pi(f).
+\]
+It takes every $(j+1)$-dimensional form subspace injectively to a reference subspace of the same dimension. Min--max therefore gives
+$\lambda_j(D_\pi)\ge\lambda_j(D_{\gamma_\Omega})=\epsilon_j$.
+This is the all-eigenvalue contraction principle, also formulated in \cite{MilmanSpectral}. Summing $e^{-t\epsilon_j}$ proves \eqref{eq:allspectrum}. Convex approximation, form convergence and the same comparison pass the statement to finite nonsmooth convex $W$.
+\end{proof}
+
+\subsection{The physical count keeps every frequency}
+
+Suppose nonzero spatial frequencies in a cubic torus of side $\ell$ satisfy
+$\omega(k)\ge c|k|/\ell$, with at most $r_*$ real polarizations per centered integer $k\ne0$. Shell counting gives
+\[
+ \sum_{k\ne0}e^{-s\omega(k)}\le C r_*(\ell/s)^3,
+ \qquad s>0.
+\]
+For $s\le\ell$ compare shells with $\int u^2e^{-csu/\ell}\dd u$; for $s>\ell$ the exponential first-shell bound is smaller than a constant times $(\ell/s)^3$. Therefore
+\begin{equation}
+ \log Q_{\rm ref}(t)
+ =\sum_{m\ge1}\frac1m\sum_{k\ne0}e^{-mt\omega(k)}
+ \le C r_*\frac{\ell^3}{t^3}\sum_{m\ge1}m^{-4}
+ \le C r_*\frac{\ell^3}{t^3}.
+ \label{eq:frequencycount}
+\end{equation}
+A finite Brillouin set is bounded by the full integer sum. For the exact free time-discrete frequency,
+\[
+ w_a(p)=\frac2a\Bigl(\sum_{i=1}^3\sin^2(ap_i/2)\Bigr)^{1/2},\qquad
+ \omega_a(p)=\frac2a\operatorname{arsinh}\bigl(aw_a(p)/2\bigr),
+\]
+the centered Brillouin zone has $aw_a\le2\sqrt3$. The elementary lower bounds on $\sin$ and on $\operatorname{arsinh}(u)/u$ on this bounded interval give $\omega_a(p)\ge c|p|$ uniformly in $a$. Replacing all these frequencies by the smallest one would instead pay the microscopic mode count and lose \eqref{eq:frequencycount}.
+
+No oscillator zero mode may be inserted into the product in \eqref{eq:allspectrum}. Genuine global and holonomy modes need their own compact factor and an actual comparison. Rectangular tori admit the analogous estimate when all sides exceed the reference time; outside that regime their aspect-ratio dependence remains explicit.
+
+\subsection{A conditional-basis compatibility theorem}
+
+\begin{theorem}[Conditional transport with its retained-variable response]
+\label{thm:conditionaltransport}
+Let $(\mathcal M,\nu)$ be a compact Riemannian probability space with weighted Laplacian $D_\nu$ having Dirichlet coefficient $1/2$. Let
+$\pi(\dd y,\dd z)=\pi_z(\dd y)\nu(\dd z)$ on $\R^d\times\mathcal M$.
+Suppose $T_z$ transports $\gamma_\Omega$ to $\pi_z$ and that the joint map
+$T(x,z)=(T_z(x),z)$ is weakly differentiable, with
+\[
+ \norm{D_xT_z}_{\rm op}\le1,\qquad
+ \norm{D_zT_z}_{\rm op}\le b
+\]
+in the stated product metrics. Put $L_b=(\sqrt{b^2+4}+b)/2$.
+If a nonnegative self-adjoint $H_*$ on $L^2(\pi)$ has ground function $1$ and form bound
+\[
+ \inner f{H_*f}\ge\frac c2\int
+ (|\nabla_yf|^2+|\nabla_zf|^2)\,\dd\pi,
+\]
+with the form-domain conditions needed for pullback, then
+\begin{equation}
+ \Tr e^{-tH_*}
+ \le\Tr e^{-(ct/L_b^2)D_\nu}
+      \prod_i(1-e^{-ct\omega_i/L_b^2})^{-1}.
+ \label{eq:conditionaltrace}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Disintegration proves $T_*(\gamma_\Omega\otimes\nu)=\pi$. Its differential is triangular:
+$\left(\begin{smallmatrix}A&B\\0&I\end{smallmatrix}\right)$,
+with $\norm A\le1$, $\norm B\le b$.
+Its norm is bounded by that of
+$\left(\begin{smallmatrix}1&b\\0&1\end{smallmatrix}\right)$, which is $L_b$ by the quadratic formula for its largest singular value. For a form-domain $f$, pullback preserves its $L^2$ norm and has reference Dirichlet energy at most $L_b^2\mathcal E_\pi(f)\le L_b^2c^{-1}\inner f{H_*f}$. Min--max gives the corresponding ordered-eigenvalue comparison with $(c/L_b^2)(D_{\gamma_\Omega}+D_\nu)$. The reference semigroup is a tensor product, whose trace is the right side of \eqref{eq:conditionaltrace}. No product decomposition of the target $\pi$ was used.
+\end{proof}
+
+Fiberwise convex perturbations of the same Gaussian can supply $\norm{D_xT_z}\le1$. They do not supply $b$. The missing response appears explicitly in the kinetic cross term
+$\nabla_zf+(D_zT_z)^T\nabla_yf$. Thus bath-dependent projectors cannot be tensorized merely because every fixed bath has a spectral estimate.
+
+\subsection{Physical-volume errors and exact ground scalars}
+
+If $H=H_{\rm conv}+R$ in Theorem~\ref{thm:spectral} and $R$ is a bounded multiplication perturbation, min--max gives
+\[
+ E_j(H)\ge E_j(H_{\rm conv})+\inf R,\qquad
+ E_0(H)\le E_0(H_{\rm conv})+\sup R.
+\]
+Hence
+\begin{equation}
+ Q_H(t)\le e^{t\osc R}\prod_i(1-e^{-t\omega_i})^{-1}.
+ \label{eq:oscillation}
+\end{equation}
+At fixed physical time, $\osc R\le C\operatorname{Vol}(\Sigma)$ is compatible with \eqref{eq:S94target}; a bound by the number of microscopic links is not.
+
+More generally, if $V=\operatorname{Vol}(\Sigma)$ and
+\[
+ H\ge(1-\eps)(H_{\rm conv}-E_0(H_{\rm conv}))
+       +E_0(H_{\rm conv})-C_1V,
+ \qquad E_0(H)\le E_0(H_{\rm conv})+C_2V,
+\]
+then the same argument gives
+\[
+ Q_H(t)\le e^{(C_1+C_2)tV}
+             \prod_i(1-e^{-(1-\eps)t\omega_i})^{-1}.
+\]
+Both assumptions concern the actual ground scalar. A source-normalized component estimate supplies neither by cancellation.
+
+\subsection{Why these criteria are not yet Wilson-transfer theorems}
+
+There are specific obstacles to identifying these hypotheses with the original transfer.
+
+\begin{enumerate}
+\item The exact kinetic factor is compact Wilson convolution. For $SU(2)$, its normalized character eigenvalues are $q_d=I_d(B)/I_1(B)$. At fixed $B$, the power series gives
+$I_d(B)=(B/2)^d/d!\,[1+O_B(d^{-1})]$, hence $-\log q_d=d\log d+O_B(d)$. This cannot dominate a positive multiple of the Haar-Laplacian eigenvalue of order $d^2$ at arbitrarily high representation. A low-frequency comparison must retain a separate high-representation tail. The actual $H_A=-a^{-1}\log(A/\lambda_0)$ is not an assumed Schr\"odinger Hamiltonian.
+\item A smooth function on a compact manifold has a maximum with nonpositive Hessian. Therefore global positive Hessian domination for $-2\log\psi_0$ on the entire compact product cannot be assumed. Charts, quotient geometry, Jacobians and global sectors remain necessary.
+\item Nonnegativity of the magnetic action is not convexity. The constant $SU(2)$ sector $A_1=xT_1$, $A_2=yT_2$ has leading potential $c x^2y^2$. At $x=y=s\ne0$ its Hessian is $c\left(\begin{smallmatrix}2s^2&4s^2\\4s^2&2s^2\end{smallmatrix}\right)$, with negative eigenvalue $-2cs^2$. The variation $(1,-1)$ changes gauge-invariant amplitudes. This rules out that unqualified convex-potential premise; it does not rule out every useful conditional-ground estimate.
+\item Native finite-fiber convexity does not bound $D_zT_z$, identify the full simultaneous mixed domain, or supply the physical transverse frequency operator. Those are distinct inputs.
+\end{enumerate}
+
+\section{Verification, status and the remaining theorems}
+\label{sec:status}
+
+\subsection{Finite algebra and numerical checks}
+
+The spatial kernel proof is analytic. Real-space and Fourier calculations confirm the component phases, exact Hodge representation, physical row norms and downsampling identities. The following values use the four-dimensional fine side $n$ and blocking factor $B$; the row norms are in lattice coefficient convention with $a=1$.
+
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$n$ & $B$ & Row $\ell^1$ norm & $B^2$ times row $\ell^2$ norm\\
+\midrule
+9 & 3 & 1.893473 & 0.536896\\
+15 & 3 & 2.166214 & 0.541263\\
+15 & 5 & 1.873405 & 0.498887\\
+21 & 3 & 2.232781 & 0.541457\\
+27 & 9 & 1.853299 & 0.483808\\
+\bottomrule
+\end{tabular}
+\end{center}
+The largest identity relative error in that check was $7.96\times10^{-16}$. These finite checks support the normalization and implementation of the identities. They do not prove the uniform bounds, test original mixed selectors, or certify the existence theorem.
+
+\subsection{The next missing boundary-law theorem}
+
+A concrete extension of the extensive result would need a common positive original realization with boundary record $\eta$ and the actual retained ordinary source $\widetilde r_f$ such that
+\begin{equation}
+ \E_\eta\Var(\widetilde r_f\mid\eta)
+ +\Var_\eta\E(\widetilde r_f\mid\eta)
+ \le C\sum_b|f_b|^2,
+ \label{eq:missingboundary}
+\end{equation}
+with its actual scale and source prefactors. For rare-lineage consequences one also needs the appropriate complete-law exponential or weighted moment bound. The second term in \eqref{eq:missingboundary} must be proved for the actual boundary distribution, not replaced by a coordinate subset of a convex native fiber. Effective-score, reference, sharp-boundary and readout responses remain part of any differentiated version.
+
+Separately, to attach the saved incoming grade, the actual stored representative
+\[
+ W_{\omega,s}=P_{\rm old}q_{\rm old}\Gamma^R_{\omega,s}
+\]
+must lie inside the original saved analytic radius on all simultaneous walls. Its complete determining record includes literal boundary rows, junctions, prefixes and endpoint frames. The admitted uniform current result does not prove this inclusion or the old minimum's anchor responses. The complete quadratic/cubic source cancellations and quartic-tail radius must then be verified on that same body.
+
+Finally, S94 needs the actual absolute cross-torus comparison, including independent scalar factors and terminal contributions. The spectral criteria of Section~\ref{sec:spectral} sharpen a sufficient mechanism but have not supplied its Wilson instance. The final continuum field hierarchy and interacting Yang--Mills identification remain substantive further steps.
+
+\subsection{Status table}
+
+\renewcommand{\arraystretch}{1.17}
+\begin{longtable}{p{0.31\textwidth}p{0.62\textwidth}}
+\toprule
+Interface & Status\\
+\midrule
+\endhead
+Original nonlinear flat relative block & Uniform extensive variance under real source tilts, full Bernstein concentration and centered $\psi_1$ bounds for $h_f,r_f$, with compact complement and raw normalizer retained.\\
+Positive observations of that same law & Exact low-mode contraction, between-history variance control, and one rare predictable lineage budget. No change of Wilson marginal is permitted.\\
+Complete uniform old averaging & Uniform total-current $L^\infty$ and physical $L^2$ transfer; low-order anchor moments and buffered form proved.\\
+Admitted nonlinear regular hierarchy & Current estimate with a quadratic error proved using the existing CB chart and actual saved radii.\\
+Touched mixed AE8/LM47 & Still unproved. Simultaneous range inclusion, joined boundaries, old minimum responses and complete anchor sums remain.\\
+All-history MT36 & Still unproved for inherited full source packets and the actual boundary/history law.\\
+Anisotropic convex Hamiltonians & Full ground-relative spectral comparison proved under its stated convex-Hamiltonian hypotheses.\\
+Conditional basis and global modes & Explicit sufficient transport-response and compact-factor criterion proved; its Wilson hypotheses remain unverified.\\
+Absolute comparison S94 & Still unproved for the original full Wilson transfer and mixed cross-torus records.\\
+Interacting four-dimensional existence & Not established. No mass-gap claim.\\
+\bottomrule
+\end{longtable}
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{W} Wilson-source estimates, volumes 1--10 (\texttt{lattice\_theory/source\_estimates} in this collection), cited by source page. Regular nonlinear averaging estimates: \S97, CB7--CB8, pp.~665--671.
+\bibitem{ND} \emph{Nonlinear dispersion and unequal spatial weights}, \texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/nonlinear\_dispersion\_and\_unequal\_spatial\_weights.tex} in this collection. Nonlinear source dispersion and native covariance estimates.
+\bibitem{UA} \emph{Uniform averaging rows and finite-jet response}, \texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/uniform\_averaging\_rows\_and\_finite\_jet\_response.tex} in this collection. The incoming stored representative.
+\bibitem{RS} \emph{Rare selector means and inherited coefficients}, \texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/rare\_selector\_means\_and\_inherited\_coefficients.tex} in this collection. The positive-observation/ordinary-body estimates. The relative axial-tree Green estimates are in \texttt{lattice\_theory/block\_and\_transfer/block\_hessians/relative\_green\_improved\_connected\_bound.tex}.
+\bibitem{KimMilman} Y.-H. Kim and E. Milman, \emph{A Generalization of Caffarelli's Contraction Theorem via (Reverse) Heat Flow}, arXiv:1002.0373. The same-quadratic contraction statement allows an arbitrary positive quadratic matrix. \url{https://arxiv.org/abs/1002.0373}.
+\bibitem{MilmanSpectral} E. Milman, \emph{Spectral Estimates, Contractions and Hypercontractivity}, Journal of Spectral Theory \textbf{8} (2018), 669--714, especially the all-eigenvalue contraction principle. \url{https://doi.org/10.4171/JST/210}.
+\end{thebibliography}
+\end{document}

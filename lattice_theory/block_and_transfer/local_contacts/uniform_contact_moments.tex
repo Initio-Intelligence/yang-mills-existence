@@ -1,0 +1,145 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Var}{\operatorname{Var}}
+\title{Uniform same-Wilson moment bounds for the extracted H contact}\author{}\date{}
+\begin{document}\maketitle
+This note improves the coupling-dependent upper bounds for the EXPECTED extracted
+contact in the orthogonal contact calculation and the local source transition calculation. It changes none of their source conventions or open claims.
+Use the original full isotropic Wilson probability, AI1--3 and the packed pairs of the orthogonal contact calculation.
+All conclusions here are finite-cutoff exact inequalities under that positive probability.
+They are not bounds for arbitrary selected complex histories.
+
+\paragraph{The total-force moment identity.}
+Fix a bond $b$, a unit color coordinate $A$, and set $F=X_b^AS_0$.
+Only the six incident plaquettes contribute. Compactness gives a constant $H_N$ independent
+of $a$, volume, and $\beta$ such that $|X_b^AF|\le H_N$.
+Haar integration by parts, with no boundary, gives for every integer $m\ge1$
+\[
+ \beta\E F^{2m}=(2m-1)\E[F^{2m-2}X_b^AF]
+ \le(2m-1)H_N\E F^{2m-2}.
+\]
+Therefore
+\begin{equation}\label{wardmom}
+ \E F^{2m}\le(2m-1)!!(H_N/\beta)^m.
+\end{equation}
+For the entire color vector $\mathbf F_b=(X_b^AS_0)_A$, fixed color dimension and
+$(\sum_A x_A^2)^m\le d^{m-1}\sum_A|x_A|^{2m}$ imply
+\[
+ \E|\mathbf F_b|^{2m}\le C_{N,m}\beta^{-m}.
+\]
+No positive Hessian hypothesis is needed: only its uniform absolute upper bound enters.
+These identities estimate the TOTAL Wilson force; applying them to an individual plane
+force with the same density would be incorrect.
+
+\paragraph{Why the total force controls this particular contact.}
+For the pair $b_-,b_+$ with middle bond $b_0$, condition on all other links, denoted $\mathcal B$.
+The exact middle total force is
+\[
+ \mathbf F_{b_0}=a_-(U_-)+a_+(U_+)+c(\mathcal B).
+\]
+The original conditional law is a product and $c$ is a bath vector. Thus
+\[
+ \Cov(\mathbf F_{b_0}\mid\mathcal B)=C_-+C_+.
+\]
+Both $C_\pm$ are positive semidefinite. Pointwise in the bath,
+\begin{align}
+ 0\le\operatorname{tr}(C_-C_+)
+ &\le (\operatorname{tr}C_-)(\operatorname{tr}C_+)\\
+ &\le\tfrac14\{\operatorname{tr}(C_-+C_+)\}^2
+ \le\tfrac14\{\E(|\mathbf F_{b_0}|^2\mid\mathcal B)\}^2.
+\end{align}
+Conditional Jensen and \eqref{wardmom} consequently give, for every integer $p\ge1$,
+\begin{equation}\label{covmom}
+ \E[\operatorname{tr}(C_-C_+)]^p
+ \le4^{-p}\E|\mathbf F_{b_0}|^{4p}
+ \le C_{N,p}\beta^{-2p}.
+\end{equation}
+This proves the desired moment estimate without a bad-bath tail estimate, spectral gap,
+or replacement of the conditional covariance by total variation.
+
+\begin{theorem}[Matching contact scale and all fixed moments]
+Let $v_{12,j}$ be the local scalar coefficient from the local source transition calculation for the physical H pair:
+\[
+ v_{12,j}=\frac{16}{9}\sigma^2(f_1)_{b_{0,j}}(f_2)_{b_{0,j}}
+               \operatorname{tr}(C_{j,-}C_{j,+}),\qquad \sigma=g^{-2}a^{-2}.
+\]
+For every fixed $p\ge1$,
+\[
+ \|v_{12,j}\|_{L^p(\mu)}\le C_{N,p}c_\beta^{-2}a^{-4}
+ |(f_1)_{b_{0,j}}(f_2)_{b_{0,j}}|,
+\]
+and
+\[
+ \Big\|\sum_jv_{12,j}\Big\|_{L^p(\mu)}
+ \le C_{N,p}c_\beta^{-2}a^{-4}
+ \sum_j|(f_1)_{b_{0,j}}(f_2)_{b_{0,j}}|.
+\]
+For a literal test and $\beta\ge\beta_0$, the lower-bound argument of the orthogonal contact calculation and
+the upper bound above imply
+\[
+ ca^{-4}\sum_j|f_{b_{0,j}}|^2
+ \le K_{\cal P}^{O}(f,f)\le Ca^{-4}\sum_j|f_{b_{0,j}}|^2.
+\]
+In particular a fixed plateau containing $\asymp a^{-4}$ blocks has extracted covariance
+of order $a^{-8}$, with constants independent of $\beta\ge\beta_0$ and volume.
+For the ordinary $r_H$ source multiply the contact form by $9/4$.
+\end{theorem}
+\begin{proof}
+Apply \eqref{covmom}, then $\sigma^2\beta^{-2}=c_\beta^{-2}a^{-4}$ and Minkowski.
+For noninteger fixed $p$, use the next integer and probability-space monotonicity of norms.
+The lower bound is blockwise and multiplies $|f_{b_0}|^2$ exactly, so summing gives the
+stated two-sided bound. Pointed completions retain their exact finite averages;
+the upper estimate uses the corresponding double sum of absolute original test weights.
+For their lower estimate the fixed positive plateau argument remains valid.
+\end{proof}
+
+\paragraph{Residue moments and actual conditional covariance.}
+There is also a short independent route to the residue bound:
+\[
+ R_j^O(f)=\frac23\sigma f_{b_0}Q_j|\mathbf F_{b_0}|^2.
+\]
+Each conditional expectation is an $L^p$ contraction, hence $\|Q_j\|_{p\to p}\le4$.
+The force moment identity yields
+$\|R_j^O(f)\|_p\le C_p a^{-2}|f_{b_0}|$ for every fixed $p$.
+For a packed sum $R(f)=\sum_jR_j^O(f)$, conditional independence and conditional zero
+means give the stronger square-count bound
+\begin{equation}\label{resmom}
+ \|R(f)\|_{2m}\le C_m a^{-2}\Big(\sum_j|f_{b_{0,j}}|^2\Big)^{1/2}.
+\end{equation}
+An elementary proof expands the even moment conditionally on the bath: every surviving
+index occurs at least twice. For a multiplicity pattern $k_1+\cdots+k_l=2m$, $k_i\ge2$,
+conditional Jensen followed by unconditional Holder bounds its expectation by
+$\prod_i\|R_{j_i}\|_{2m}^{k_i}$. The finite set of multiplicity patterns is bounded by
+$C_m(\sum_j w_j^2)^m$, with $w_j=|f_{b_{0,j}}|$. Signs are bounded in absolute value;
+no independence of the bath variables is assumed.
+
+Let $q$ now be ANY genuine measurable observation of the original probability, with
+output law $\nu=q_*\mu$. Conditional Holder and Jensen, followed by \eqref{resmom}, give
+\begin{equation}\label{outcov}
+ \|\Cov(R(f),R(h)\mid q)\|_{L^p(\nu)}
+ \le C_p a^{-4}\|f\|_{\ell^2(\mathcal P)}\|h\|_{\ell^2(\mathcal P)}.
+\end{equation}
+Indeed each of $\E(R(f)R(h)|q)$ and $\E(R(f)|q)\E(R(h)|q)$ is bounded in
+$L^p$ by $\|R(f)\|_{2p}\|R(h)\|_{2p}$. This estimates the actual conditional covariance
+of the EXTRACTED residues. It does not replace or bound the full ordinary conditional
+covariance $\Cov(r_H(f),r_H(h)|q)$.
+
+For a genuine nonnegative selected subprobability $1_E\mu$, restriction gives the same
+unnormalized $p$th-moment integral upper bound; normalizing by $\mu(E)$ may cost
+$\mu(E)^{-1/p}$, and conditional laws under selection need their own treatment.
+A signed or complex selected kernel is not covered by probability contraction.
+For a bath-measurable $q$, the local scalar $\E(v_{12}|q)$ has its original $L^p$ bound
+by conditional Jensen. All saved physical factors and old meshes remain literal.
+
+\paragraph{Remaining distinction.}
+The exact decomposition still reads
+$\Cov(O_H)=K_{\cal P}^{O}+\Cov(S_H)$, with a positive residual form.
+The present matching bound controls the first term and its specified conditional responses.
+It gives neither a summable spatial covariance bound for $S_H$ nor the full MT36 norm,
+complex-domain admission, sharp-selector current partners, or interacting normalization.
+XP3 still has $A_{12}^{\rm bare}=0$. Removing $v_{12}$ or its expectation is an explicit
+renormalized source choice, as stated in the local source transition calculation.
+\end{document}

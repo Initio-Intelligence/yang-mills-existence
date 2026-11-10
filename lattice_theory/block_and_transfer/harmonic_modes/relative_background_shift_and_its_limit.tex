@@ -1,0 +1,103 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Interior background shifts: valid relative-box identity and its limit}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Primary passage checked.}
+L\"uscher--Weisz, \emph{Background field technique and renormalization
+in lattice gauge theory}, hep-lat/9504006, section6.2,
+equations6.13--6.24, is available at
+\texttt{https://arxiv.org/pdf/hep-lat/9504006}.
+Their lattice split shift preserves the total link and commutes with
+BRS on ghost-independent functions. The gauge-fixing/ghost variation
+is BRS exact. Their source-free $W[B,0]$ assertion is not an assertion
+that a Legendre effective action or fixed-boundary free energy is zero.
+No infinite-volume renormalizability statement is imported below.
+
+\paragraph{1. Exact interior-supported relative-box shift.}
+Write the actual total link as $U_b=Q_bV_b$, with $V$ an auxiliary
+background and $Q=\exp(\alpha z)$. For a deterministic Lie-algebra
+field $\omega$ supported ONLY on integrated interior links, set
+\[
+ V_b(t)=e^{\alpha t\omega_b}V_b,\qquad
+ Q_b(t)=Q_b e^{-\alpha t\omega_b}. \tag{1}
+\]
+Then $U_b(t)=U_b$ exactly. All original boundary links and their
+constraints stay fixed. Right translation preserves the original
+link Haar measure and has zero Haar divergence.
+Thus for any actual observable $O(U)$ and physical cutoff $\chi(U)$,
+\[
+ \int dQ\,\chi(QV)e^{-S(QV)}O(QV)
+ \quad\hbox{is unchanged by the interior split shift.} \tag{2}
+\]
+This is an exact finite group-variable identity with the original
+raw scalar. It changes the split, not the physical total field.
+
+For the actual transported internal source of the internal source tree to fp transport calculation and the two stage quotient and compensated covariance calculation,
+\[
+ O_t(U)=\exp\{t(Aw)^*q_{\rm tree}(U)-t^2w^*Aw/2\}, \tag{3}
+\]
+the shift variation is ZERO because the full original tree quotient
+depends only on $U$. Its physical-chart cutoff is likewise unchanged.
+Replacing $q_{\rm tree}$ by the bare quantum logarithm would invalidate
+this statement. The nonlinear source contacts of the internal source tree to fp transport calculation are required.
+
+\paragraph{2. Ghost boundary and the source-current Ward.}
+In the relative local FP formulation, ghosts are assigned only to
+integrated vertices and are zero at the original fixed boundary.
+An interior shift changes no such domain. On a ghost-independent
+observable, BRS acts through the total link
+$sU_b=c_sU_b-U_bc_t$, whereas the split shift acts at fixed $U$.
+The two variations therefore commute directly, without integration
+by parts across a physical boundary.
+
+Write the local gauge-fixing and ghost part as $s\Psi$ (or use the
+equivalent on-shell expression of the cited passage), and set
+$R=\delta_s\Psi$, which is odd. Then
+$\delta_sS_{\rm tot}=sR$. With source $J$ and cutoff $\chi$,
+the formal local BRS integration identity gives
+\[
+ \delta_s\log Z[J]=
+ \left\langle\delta_sJ-RsJ
+       +\chi^{-1}\delta_s\chi+\chi^{-1}(s\chi)R\right\rangle_J
+       +{\cal B}_{\rm domain}. \tag{4}
+\]
+The domain term is the actual local FP-chart integration flux; it
+cannot be erased by asserting a global nonperturbative BRS measure.
+Equation (4) follows by applying $s$ to $\chi R e^J$ with its odd
+product sign. Fixed-volume formal Laplace coefficients may use the
+original fixed physical chart $\chi_{\rm phys}(\alpha q)$ and the
+same local gauge-noise construction as the local gauge completion first nonlinear coefficient calculation. No cutoff bound uniform
+in volume is proved here.
+
+For (3) and its gauge-invariant physical cutoff, $sJ=\delta_sJ=0$
+and $s\chi=\delta_s\chi=0$. The surviving content of (4) is exactly
+the representation independence in (2), with any local-chart flux
+handled on its original domain. It is not a new physical coercivity
+or mean-current estimate.
+
+\paragraph{3. No equation-of-motion gain for the completed covariance.}
+The source covariance in the two stage quotient and compensated covariance calculation is a derivative in the physical observable
+parameter $t$, not the auxiliary split parameter of (1).
+The split identity is valid for every $t$, so it transports all its
+derivatives consistently; it does not force any of them to vanish.
+In particular it does not imply
+$\operatorname{Var}((Aw)^*q_{
+m tree})=w^*Aw$.
+The actual $R=2$ values recorded in the two stage quotient and compensated covariance calculation,
+$K_{\rm tree}=-43/24$ or $-47/24$, already exclude that inference.
+
+The remaining completed tensor is still
+\[
+ -[\alpha^2]\left\{E_{\nu_\alpha}v_\alpha
+       +\operatorname{Var}_{\nu_\alpha}m_\alpha-w^*Aw\right\}, \tag{5}
+\]
+with the original conditional normalizers, transported tree source,
+and induced coarse exchange of the same coefficient schur cumulant decomposition calculation. Its harmonic part is controlled;
+the residual/coarse response and heat-regulator source contacts are
+not. The background shift supplies no extra long-distance or energy
+factor in (5). A genuine new estimate of this completed covariance
+or its equivalent signed current kernel is still required.
+This particular shift route is therefore exhausted as a quantitative
+advance: it validates transport but does not close the main norm.
+The original nonlinear remainder and S94 remain open.
+\end{document}

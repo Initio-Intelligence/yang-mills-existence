@@ -1,0 +1,406 @@
+\section{Finite resampling of original links}
+\label{wh:section}
+
+This section constructs actual stationary histories of the original compact Wilson law. It controls the complete fluctuation removed by a finite resampling schedule, including an arbitrary ordered sweep through all original links. It does not identify these auxiliary histories with a native mixed operation or prove decay of their retained ordinary means. The estimates use the unchanged complete rows and the periodic moment regime \eqref{rs:momentregime}.
+
+\subsection{The actual stationary history and its retained mean}
+
+Let \(P_j\), \(1\le j\le m\), be conditional expectation onto a specified observation sigma-algebra \(\mathcal S_j\) of the same original probability space \((\Omega,\mu)\). A principal case is the complete complement of an original coordinate block; a complete complement together with its literal selector labels is also permitted. Its resampling kernel is the actual conditional law on that fiber, with its original normalizer. The schedule is deterministic.
+
+Starting with \(U_0\sim\mu\), sample \(U_j\) from this kernel given \(U_{j-1}\). Every \(U_j\) has law \(\mu\), and
+\[
+ \mu(\dd u)P_j(u,\dd v)=\mu(\dd v)P_j(v,\dd u).
+\]
+The two endpoints of a single update have the same \(\mathcal S_j\)-record. Each \(P_j\) is an orthogonal projection in \(L^2(\mu)\) and a contraction in every \(L^p(\mu)\). The full path law retains the original conditional normalizers; it is not a product law over update times.
+
+For an original centered source \(F\), put
+\[
+ v_0=F,\qquad v_j=P_jv_{j-1},\qquad
+ T=P_m\cdots P_1,\qquad D_j=I-P_j.
+\]
+Reversibility of each step and the Markov property give the exact history mean
+\begin{equation}
+ \E[F(U_0)\mid U_m]=TF(U_m).
+ \label{wh:mean}
+\end{equation}
+Define its complete residual and its same-configuration drift by
+\[
+ N_m=F(U_0)-TF(U_m),\qquad G_m=F-TF.
+\]
+These are different random variables. The distinction is retained below.
+
+\subsection{A projection estimate with the original source at every step}
+
+\begin{lemma}[Complete residual and drift]
+\label{wh:union}
+For any finite deterministic sequence of orthogonal projections \(P_j\), set
+\[
+ \mathcal Q(F)=\sum_{j=1}^m\norm{D_jF}_2^2.
+\]
+Then
+\begin{align}
+ 0\le\norm F_2^2-\norm{TF}_2^2&\le4\mathcal Q(F),
+       \label{wh:loss}\\
+ \norm{F-TF}_2^2&\le\mathcal Q(F).
+       \label{wh:drift}
+\end{align}
+In the actual resampling history,
+\[
+ \E\Var(F(U_0)\mid U_m)=\E N_m^2
+ =\norm F_2^2-\norm{TF}_2^2.
+\]
+The source on the right side of \(\mathcal Q(F)\) is the original \(F\), not the expanded intermediate observable \(v_{j-1}\).
+\end{lemma}
+\begin{proof}
+Write \(d_j=D_jv_{j-1}\), so \(v_{j-1}-v_j=d_j\). Orthogonality gives
+\[
+ L:=\norm F_2^2-\norm{TF}_2^2=\sum_j\norm{d_j}_2^2,
+ \qquad G_m=\sum_jd_j.
+\]
+Since \(d_j\in\ker P_j\),
+\[
+ L+\norm{G_m}_2^2
+ =2\inner F{G_m}
+ =2\sum_j\inner{D_jF}{d_j}
+ \le2\sqrt{\mathcal Q(F)}\sqrt L.
+\]
+It follows that \(L\le4\mathcal Q(F)\). Also
+\[
+ \norm{G_m}_2^2
+ \le2\sqrt{\mathcal Q(F)L}-L
+ \le\mathcal Q(F).
+\]
+Equation \eqref{wh:mean} and orthogonality of conditional expectation prove the history assertion.
+\end{proof}
+
+The polarized covariance loss is positive semidefinite. Thus, for two original source tests,
+\begin{equation}
+ \left|\Cov(F_f,F_g)-\Cov(TF_f,TF_g)\right|
+ \le4\sqrt{\mathcal Q(F_f)\mathcal Q(F_g)}.
+ \label{wh:covloss}
+\end{equation}
+This is a bound on the difference of covariances obtained from an exact positive loss. It is not inferred by squaring a bound on \(F-TF\).
+
+For the ordinary or physical source, suppose step \(j\) resamples an original admissible link block \(\mathcal C_j\), with at most one such link per original plaquette. Let
+\[
+ \mathcal I_j=\{b:D(b)\cap\mathcal C_j\ne\varnothing\},\qquad
+ M_j(f)=\sum_{b\in\mathcal I_j}f_b^2,\qquad
+ b_j(f)=\max_{b\in\mathcal I_j}|f_b|,
+\]
+where \(D(b)\) is the complete original determining stencil and empty maxima are zero. All unaffected rows vanish under \(D_j\). The complete innovation estimate of \texttt{innovation.tex} gives
+\begin{equation}
+ \log\E_\mu e^{uD_jF_f}\le Cu^2M_j(f),
+ \qquad |u|b_j(f)\le\delta,
+ \qquad
+ \norm{D_jF_f}_p
+ \le C\bigl(\sqrt{pM_j(f)}+p b_j(f)\bigr).
+ \label{wh:originalinnovation}
+\end{equation}
+No intermediate-source support has been substituted into this estimate.
+
+A selected update conditioning on the complete complement and its complete label vector has the same type of bound. Indeed, if \(P_j^0\) conditions only on the complement, then \(P_jP_j^0=P_j^0\) and
+\[
+ D_jF_f=(I-P_j)(F_f-P_j^0F_f).
+\]
+Conditional Jensen and Cauchy--Schwarz transfer the exponential estimate, with a fixed change of constants. This works for the complete joint law of all labels. It does not normalize a rare outside branch independently or differentiate a sharp boundary.
+
+Define the actual schedule count
+\begin{equation}
+ \mathcal M_{\mathcal S}(f)=\sum_jM_j(f)
+ =\sum_b f_b^2\#\{j:D(b)\cap\mathcal C_j\ne\varnothing\}.
+ \label{wh:count}
+\end{equation}
+Equations \eqref{wh:loss} and \eqref{wh:originalinnovation} prove
+\begin{equation}
+ \E N_m^2\le C\mathcal M_{\mathcal S}(f).
+ \label{wh:historyvariance}
+\end{equation}
+If each original link is updated at most \(a\) times, original bounded incidence gives
+\[
+ \mathcal M_{\mathcal S}(f)\le CaM_f.
+\]
+In particular, one arbitrary ordered sweep through every original link has an extensive complete residual, even though its number of individual updates grows with the volume. The final retained mean in \eqref{wh:mean} remains.
+
+\subsection{Forward and backward martingales with unchanged original innovations}
+
+The following argument gives higher moments without replacing the complete packet by independent kinetic pieces.
+
+\begin{lemma}[Two martingales on the actual path]
+\label{wh:martingale}
+For \(p\ge2\), define
+\[
+ A_j=D_jF(U_j),\qquad B_j=D_jF(U_{j-1}),\qquad
+ \mathcal Q_p(F)=\sum_j\norm{D_jF}_p^2.
+\]
+Then
+\begin{align}
+ \norm{F(U_m)-F(U_0)}_p
+ &\le2\sqrt{p-1}\sqrt{\mathcal Q_p(F)}, \label{wh:endpointlp}\\
+ \norm{N_m}_p
+ &\le4\sqrt{p-1}\sqrt{\mathcal Q_p(F)}, \label{wh:residuallp}\\
+ \norm{G_m}_p
+ &\le\sqrt{p-1}\sqrt{\mathcal Q_p(F)}. \label{wh:driftlp}
+\end{align}
+All norms of \(D_jF\) are under the original \(\mu\).
+\end{lemma}
+\begin{proof}
+Let \(\mathcal F_j=\sigma(U_0,\ldots,U_j)\) and
+\(\mathcal G_j=\sigma(U_j,\ldots,U_m)\). Since \(P_jD_j=0\),
+\[
+ \E(A_j\mid\mathcal F_{j-1})=0.
+\]
+The reversed inhomogeneous chain has the same kernels in reverse order, by the displayed detailed balance identity. Therefore
+\[
+ \E(B_j\mid\mathcal G_j)=0.
+\]
+Thus \((A_j)\) is a forward martingale-difference sequence, and \((B_m,\ldots,B_1)\) is a backward martingale-difference sequence. Moreover \(P_jF(U_j)=P_jF(U_{j-1})\) almost surely, because the step preserves its conditioning record. Hence
+\begin{equation}
+ F(U_m)-F(U_0)=\sum_{j=1}^m(A_j-B_j).
+ \label{wh:twomartingales}
+\end{equation}
+Neither sequence consists of independent variables.
+
+For completeness, the \(L^p\) smoothness inequality used here is
+\[
+ \norm{x+y}_p^2
+ \le\norm x_p^2+2\inner{J_p(x)}y+(p-1)\norm y_p^2,
+ \qquad
+ J_p(x)=\norm x_p^{2-p}|x|^{p-2}x.
+\]
+It follows by differentiating
+\(\phi(t)=(\E|x+ty|^p)^{2/p}\). The term proportional to \(2-p\) in \(\phi''\) is nonpositive, and Hölder bounds the remaining term by \(2(p-1)\norm y_p^2\). Approximation handles zeros. In a martingale recursion the dual pairing vanishes after conditional expectation, so
+\[
+ \left\|\sum_jA_j\right\|_p^2
+ \le(p-1)\sum_j\norm{A_j}_p^2
+ =(p-1)\mathcal Q_p(F),
+\]
+and likewise for the backward sum. This proves \eqref{wh:endpointlp}.
+
+Set \(X=F(U_0)-F(U_m)\). Equation \eqref{wh:mean} gives
+\(N_m=X-\E(X\mid U_m)\), so conditional contraction costs at most a factor two and proves \eqref{wh:residuallp}.
+
+Finally, write \(g_j=F-v_j\). Then
+\[
+ g_j=P_jg_{j-1}+D_jF.
+\]
+The first summand is \(\mathcal S_j\)-measurable, while
+\(\E(D_jF\mid\mathcal S_j)=0\). Applying the same smoothness inequality and contraction of \(P_j\) yields
+\[
+ \norm{g_j}_p^2\le\norm{g_{j-1}}_p^2+(p-1)\norm{D_jF}_p^2.
+\]
+Iteration proves \eqref{wh:driftlp}.
+\end{proof}
+
+\begin{corollary}[An arbitrary original-link sweep]
+\label{wh:sweep}
+For the complete original \(r_f\) or \(h_f\), let each update resample one original link, either in its full compact fiber or conditional on that link's complete literal label. If each original link is updated at most \(a\) times, then
+\begin{equation}
+ \norm{N_m}_p+\norm{G_m}_p
+ \le Cp^{3/2}\sqrt{aM_f},\qquad p\ge2,
+ \label{wh:sweeplp}
+\end{equation}
+and
+\begin{equation}
+ \Pr(|N_m|>u)
+ \le2\exp\!\left[-c\left(\frac{u}{\sqrt{aM_f}}\right)^{2/3}\right].
+ \label{wh:sweeptail}
+\end{equation}
+The same tail type holds for \(G_m\) and the endpoint difference. The zero test is interpreted separately.
+\end{corollary}
+\begin{proof}
+For an update of link \(s\), retain its complete affected packet and define
+\[
+ A_s(f)=\sum_{b:s\in D(b)}|f_b|.
+\]
+Original local moments and conditional contraction give
+\[
+ \norm{D_sF_f}_p\le Cp A_s(f).
+\]
+The incidence matrix \(\mathbf1_{\{s\in D(b)\}}\) has bounded row and column sums. Thus, counting update multiplicity,
+\[
+ \sum_jA_{s_j}(f)^2\le CaM_f.
+\]
+Apply Lemma \ref{wh:martingale}. Markov's inequality optimized over
+\(p\) of order \((u/\sqrt{aM_f})^{2/3}\), with constants adjusted for \(p<2\), gives \eqref{wh:sweeptail}.
+\end{proof}
+
+There is a useful rare-weight consequence. For any actual path weight \(0\le H\le1\), with \(\varepsilon=\E H\),
+\begin{equation}
+ \E(HN_m^2)
+ \le CaM_f\,\varepsilon\log^3(e/\varepsilon).
+ \label{wh:rare}
+\end{equation}
+Integrate \(2u\min\{\varepsilon,\Pr(|N_m|>u)\}\) and split at
+\(C\sqrt{aM_f}\log^{3/2}(e/\varepsilon)\). A separately identified residual retains this budget under further complete positive observation. A predictable lineage can spend its second-moment budget once by weighted martingale orthogonality; original packet identification and reserve ownership are still necessary.
+
+More generally, a complete rooted grade satisfying
+\(\norm{R_b}_p\le Cp^\alpha\), with the same verified bounded determining incidence, gives
+\(\norm{N_m}_p\le Cp^{\alpha+1/2}\sqrt{aM_f}\).
+The grade dependence is retained; a live saved factor can change both the moment estimate and the determining sets. This statement does not freeze such a factor.
+
+\subsection{Bernstein concentration for a fixed number of original layers}
+
+For a deterministic schedule of \(m\) original admissible blocks, let
+\(b_{\mathcal S}=\max_jb_j(f)\). Equation \eqref{wh:originalinnovation}, stationarity, and Hölder applied to the \(2m\) terms in \eqref{wh:twomartingales} give
+\[
+ \log\E e^{u(F(U_m)-F(U_0))}
+ \le Cm u^2\mathcal M_{\mathcal S}(f),
+ \qquad |u|m b_{\mathcal S}\le\delta.
+\]
+Applying conditional Jensen and Cauchy--Schwarz to
+\(N_m=X-\E(X\mid U_m)\) proves, with adjusted constants,
+\begin{equation}
+ \boxed{\quad
+ \log\E e^{uN_m}
+ \le Cm u^2\mathcal M_{\mathcal S}(f),
+ \qquad |u|m b_{\mathcal S}\le\delta.
+ \quad}
+ \label{wh:bernstein}
+\end{equation}
+This is an unconditional exponential estimate under the complete stationary path law. No one-step estimate has been made uniform after conditioning on the prior path.
+
+The same bound holds for \(G_m\). Indeed,
+\[
+ F-TF=\sum_{j=1}^mP_m\cdots P_{j+1}D_jF,
+\]
+and positive Markov contraction preserves each innovation's exponential estimate by Jensen; Hölder then gives the displayed bound.
+
+The original plaquette interaction graph has a fixed finite coloring. Updating its color classes in sequence visits every original link in a fixed number of admissible layers, so \eqref{wh:bernstein} is an extensive Bernstein estimate for that complete sweep. For \(a\) repetitions, its variance parameter is at most \(Ca^2M_f\), while the sharper \(L^2\) loss \eqref{wh:historyvariance} is \(CaM_f\). Neither estimate is uniform as the number of sweeps tends to infinity.
+
+An independently randomized schedule may be conditioned on when its required incidence counts and constants are uniformly controlled. A state-dependent geometry or update choice cannot be handled by conditioning on its realized schedule and silently reusing \(\mu\). Its actual stationarity, raw weights and weighted moment estimates must first be established.
+
+\subsection{Projected contacts controlled by the actual discarded ordinary component}
+\label{wh:contactsection}
+
+Here is an independent way to control certain projected cross terms. It uses the original bounded contact of \texttt{ward\_ward.tex} (subsection ``Local Ward moments and the finite-range contact matrix''), not only the norm of the Ward difference. Center \(r_f\), retain \(t_f=h_f-r_f\), and write all observables on one actual joint probability space with original Wilson input marginal. Then
+\[
+ |\inner{r_f}{t_g}|\le C\sqrt{M_fM_g},\qquad
+ \norm{t_g}_2^2\le CM_g.
+\]
+The first estimate follows from the original twice-integrated contact identity and the Ward covariance bound.
+
+Let \(P\) be conditional expectation onto an actual output observation. Let \(Q\) be an orthogonal projection on \(\operatorname{ran}P\), extended as zero on its orthogonal complement. Then \(R=QP\) is an orthogonal projection on the joint \(L^2\) space. Define the full discarded ordinary norm
+\[
+ \mathfrak D_f=\norm{(I-R)r_f}_2^2
+ =\E\Var(r_f\mid Y)+\norm{(I-Q)Pr_f}_2^2.
+\]
+Orthogonality gives the exact identity
+\begin{equation}
+ \inner{Rr_f}{Rt_g}
+ =\inner{r_f}{t_g}
+       -\inner{(I-R)r_f}{(I-R)t_g}.
+ \label{wh:projectedcontact}
+\end{equation}
+Consequently
+\begin{equation}
+ |\inner{Rr_f}{Rt_g}|
+ \le C\sqrt{M_fM_g}+C\sqrt{\mathfrak D_f M_g}.
+ \label{wh:contactbound}
+\end{equation}
+The full projected squared-norm comparison therefore satisfies
+\begin{equation}
+ \left|\norm{Rh_f}_2^2-\norm{Rr_f}_2^2\right|
+ \le C\left(M_f+\sqrt{\mathfrak D_fM_f}\right).
+ \label{wh:squaredcomparison}
+\end{equation}
+The mixed-mark version follows by retaining both cross terms. In particular an extensive \(\mathfrak D_f\) gives an extensive comparison.
+
+For the complete resampling history and \(Q=I\), equation \eqref{wh:historyvariance} supplies \(\mathfrak D_f\le CaM_f\). Thus the retained \(h/r\) covariance difference is \(O((1+\sqrt a)\sqrt{M_fM_g})\). This does not bound the common retained covariance.
+
+For a native nonnegative output generator \(B_Y\), take
+\(Q=\mathbf1_{[0,\delta]}(B_Y)\). Then
+\[
+ \mathfrak D_f
+ \le \E\Var(r_f\mid Y)+
+       \delta^{-1}\inner{Pr_f}{B_YPr_f}.
+\]
+This route requires a proved ordinary energy estimate for the actual native generator. It does not require an unproved contraction of the native projector in a different original Dirichlet form. The zero spectrum is included in \(Q\): if the native dynamics freezes history labels, its nonconstant zero-mode means remain. Removing them requires a separate orthogonality proof.
+
+\subsection{The true coordinate-marginal heat bath and its unresolved low spectrum}
+
+For the literal first coordinate integration \(\mathcal C\), retain the exact density
+\[
+ \dd\nu_{\mathcal C}(\eta)
+ =Z_\beta^{-1}e^{-\beta S_{\rm out}(\eta)}
+       \prod_{s\in\mathcal C}Z_s(\eta)\dd\lambda_{\mathcal C^c}.
+\]
+Let \(\Phi_b=\E(r_b\mid\eta)\), and let \(\widehat K_a\) be conditional expectation in this very marginal given all retained coordinates except \(a\). Define its genuine unit-rate heat bath
+\[
+ B_\nu=\sum_{a\notin\mathcal C}(I-\widehat K_a).
+\]
+These kernels contain all induced normalizers; they need not equal an original Wilson one-link kernel or its compressed update.
+
+The complete determining set of \(\Phi_b\) is contained in the original \(D(b)\) together with the retained neighbors of the active links in \(D(b)\). This set has bounded size and bounded multiplicity at this first layer, even when the original row has genuine cross-link terms. Conditional Jensen gives \(\norm{\Phi_b}_2\le C\). Therefore
+\begin{equation}
+ \inner{\Phi_f}{B_\nu\Phi_f}
+ =\sum_a\norm{(I-\widehat K_a)\Phi_f}_2^2\le CM_f.
+ \label{wh:marginalenergy}
+\end{equation}
+To verify it, only the bounded set of rows whose complete retained carrier reads \(a\) can contribute to the \(a\)-term. Cauchy in that set and contraction of \(I-\widehat K_a\) bound the term by \(C\sum_{b:a\in D_{\mathcal C}(b)}f_b^2\). Summing uses the actual bounded incidence.
+
+The same local-energy principle underlies the product-layer estimates of \texttt{block\_and\_transfer/local\_contacts/local\_moments\_fixed\_depth.tex}; the retained-source analysis of \texttt{block\_and\_transfer/ordinary\_law/compact\_source\_jets.tex} (Part~I) also uses this genuine marginal heat bath for its local quadratic and error rows. It is recorded here to make the native projection in \eqref{wh:projectedcontact} explicit.
+
+The smooth positive compact marginal has the same null sets as retained product Haar. Hence the kernel of \(B_\nu\) consists of constants. Center \(\Phi_f\), and put \(Q_\nu=\mathbf1_{(0,1]}(B_\nu)\). The original complete residual bound and \eqref{wh:marginalenergy} imply
+\begin{equation}
+ 0\le
+ \Var_\mu r_f-\norm{Q_\nu(\Phi_f-\E r_f)}_2^2
+ \le CM_f.
+ \label{wh:nativelow}
+\end{equation}
+Indeed the difference is the sum of the original conditional variance and the native high-spectrum squared norm, both nonnegative and bounded. The original contact comparison gives
+\[
+ \left|
+ \Var_\mu h_f-\norm{Q_\nu(\Phi_f-\E r_f)}_2^2
+ \right|\le CM_f.
+\]
+Equation \eqref{wh:contactbound} also controls the actual projected \(h/r\) cross term for this low projection, because its entire discarded ordinary component is extensive.
+
+No bound on the remaining low-spectrum norm has been proved here. A positive original boundary law and a bounded native energy do not supply that bound.
+
+\subsection{A high-spectrum comparison that pays the ordinary error cross term}
+
+The following implication isolates a useful threshold in the parallel compact-jet estimates. Let \(A\) be a specified nonnegative self-adjoint generator in one actual probability space. Suppose centered, linear-in-\(f\) observables obey
+\[
+ m_f=q_f+e_f,\qquad
+ \inner{q_f}{Aq_f}\le C M_f,\qquad
+ \inner{e_f}{Ae_f}\le C\beta^{-1}M_f.
+\]
+These are explicit inputs. In their applications, \(q_f\) and \(e_f\) must be the actual retained quadratic and error under the same law and generator.
+
+For \(Q_\delta=\mathbf1_{[\delta,\infty)}(A)\), spectral calculus gives
+\[
+ \norm{Q_\delta q_f}_2\le C\delta^{-1/2}\sqrt{M_f},
+ \qquad
+ \norm{Q_\delta e_f}_2\le C(\beta\delta)^{-1/2}\sqrt{M_f}.
+\]
+Retain both ordinary cross terms in the exact expansion
+\begin{align*}
+ &\inner{Q_\delta m_f}{Q_\delta m_g}
+          -\inner{Q_\delta q_f}{Q_\delta q_g}\\
+ &\quad=
+ \inner{Q_\delta q_f}{Q_\delta e_g}
+ +\inner{Q_\delta e_f}{Q_\delta q_g}
+ +\inner{Q_\delta e_f}{Q_\delta e_g}.
+\end{align*}
+Cauchy--Schwarz proves
+\begin{equation}
+ \left|
+ \inner{Q_\delta m_f}{Q_\delta m_g}
+       -\inner{Q_\delta q_f}{Q_\delta q_g}
+ \right|
+ \le
+ C\delta^{-1}(\beta^{-1/2}+\beta^{-1})
+       \sqrt{M_fM_g}.
+ \label{wh:highcomparison}
+\end{equation}
+Thus \(\delta\ge\beta^{-1/2}\) gives an extensive covariance comparison. At the smaller cutoff \(\delta=\beta^{-1}\), the error's norm is extensive, but the displayed cross bound can still cost \(\sqrt\beta\); its omission would be invalid.
+
+The retained-source analysis of \texttt{block\_and\_transfer/ordinary\_law/compact\_source\_jets.tex} (Parts~I--II) supplies the stated energy inputs for its specified compact-jet rows and original compressed or genuine separated-marginal heat bath. Equation \eqref{wh:highcomparison} is an implication of those inputs in their stated scope. It does not replace the actual \(q_f\) distribution by a Gaussian law, prove its own covariance extensive, or control the lower spectral interval.
+
+\subsection{Scope of the history advance}
+
+A single full original-link sweep now has an extensive complete residual for arbitrary update order, with a proved higher-moment estimate. A fixed number of admissible color layers has the stronger Bernstein bound. Every source root remains complete, and the same original marginal and raw conditional laws appear at every update.
+
+These statements concern source-free stationary resampling histories that have been explicitly constructed. They do not identify a product of resampling projections with the actual incoming mixed-history observation. They do not establish long-time retained-mean decay: the update-count factor grows, while the common low-spectrum ordinary component remains.
+
+All statements keep the deterministic physical multiplier \(c_\beta^{-1}a^{-2}\), or another verified field-independent saved multiplier, by homogeneity. A live source factor, reference response, moving gauge, selector word or random geometry still requires its own actual determining and moment estimates. Simultaneous domains, current and anchor norms, source grades, reserve ownership, S94 and continuum identification remain unchanged obligations.

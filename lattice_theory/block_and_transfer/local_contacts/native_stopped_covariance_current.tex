@@ -1,0 +1,170 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Var}{\operatorname{Var}}
+\title{Depth-uniform stopped covariance and complete currents on one identified native fiber}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Identified input, not a generic effective measure.}
+Use exactly the native probability of \cite[Section~3]{ND}:
+\[
+ dK=\widehat D^{-1}1_{\Omega_R}e^{-U(B)}dB,\qquad
+ \Omega_R=\prod_{e=1}^q\{|B_e|_*<R\},\quad n=(\dim G)q,
+\]
+where $U=\frac12B^TQB-\ell\cdot B-W_{\rm nl}(B)-\log J(hB)$ is the actual
+admitted density and $D^2U\ge\kappa_0 I>0$ on this original convex domain.
+The criterion is the explicit one in (3.3), with the actual fixed-component coordinate count.
+The sharp selector, genuine denominator, drift and Haar Jacobian are retained.
+The supplement's convex-domain Poincare proof gives
+\[
+ \Var_KF\le\kappa_0^{-1}K|\nabla_BF|^2.
+\]
+We use this only on that identified component and on its genuine internal coordinate fibers.
+It is not imposed on the arbitrary compact Wilson marginals of the inherited effective score calculation through the odd torus transfer moment calculation.
+
+\begin{theorem}[Stopped means and all internal increments]
+Let $F,H\in H^1(K)$ be actual carrying functions and let
+$\mathcal F_0\supset\cdots\supset\mathcal F_m$ be any decreasing family of observations
+on this same probability space, with $F_j=\E_K(F|\mathcal F_j)$ and $F_0=F$.
+Then uniformly in $m$ and the observations,
+\begin{align}
+ \Var_KF_m&\le\kappa_0^{-1}K|\nabla F|^2,\\
+ |\Cov_K(F_m,H_m)|&\le\kappa_0^{-1}
+       (K|\nabla F|^2)^{1/2}(K|\nabla H|^2)^{1/2},\\
+ \sum_{j=1}^m\left|K[(F_{j-1}-F_j)(H_{j-1}-H_j)]\right|
+ &\le\kappa_0^{-1}(K|\nabla F|^2)^{1/2}(K|\nabla H|^2)^{1/2}.
+\end{align}
+Thus both the stopped inherited covariance and the accumulated scalar covariance increments
+have a bound independent of the number of internal eliminations.
+\end{theorem}
+\begin{proof}
+Conditional expectation is the orthogonal $L^2(K)$ projection. Total variance bounds
+$\Var F_m$ by $\Var F$, then Poincare bounds the latter. Reverse-martingale increments
+are orthogonal, so their summed squared norms are at most $\Var F$.
+Cauchy--Schwarz over the increment index and Poincare give the third bound.
+No spatial-overlap count or replacement of the conditional law has been used.
+\end{proof}
+
+\paragraph{Complete normalized auxiliary operations.}
+The scalar theorem also survives adding a genuine source-free positive normalized kernel
+$\Pi(d\xi|B)$ while keeping the same carrying function $F(B)$: its original variance is
+still $\Var_KF$, and every actual output conditional mean is an $L^2$ contraction of it.
+For a sequence of such complete Markov operations, conditional-variance differences telescope
+and the same bound controls the sum of their covariance increments. This follows from the
+Markov tower identity, even if successive output sigma-algebras are not literally nested.
+It does not apply to a separately selected signed kernel, a source-zero tilt changing the
+old marginal, or a changed carrier without its additional response. Current derivatives of
+these auxiliary kernels still appear in the full weak transport; the scalar contraction does
+not authorize deleting them before the complete normalization and integration.
+
+\paragraph{Actual physical H and lower-row specialization.}
+When the original complete top-scale interior and response hypotheses of supplement
+Section5 hold, put $u(B)=\epsilon_{\rm bg}+h|B|_2$ (the subscript is a norm, not a square).
+That section proves
+\[
+ |\nabla O_H(f)|\le C\|f\|_\infty\gamma^{-2}V_{D,f}h u(B),
+\]
+and for the literal ordinary partner, with its Casimir constant retained,
+\[
+ |\nabla r_H(f)|\le C\|f\|_\infty\gamma^{-2}
+ [V_{D,f}+\beta_s^{-1}a^{-2}V_{Y,f}]h u(B).
+\]
+Define $A_f=\|f\|_\infty\gamma^{-2}V_{D,f}$ for $O_H$, or the same expression with
+the bracket for $r_H$. Then every bound in the theorem is at most
+\[
+ C A_f A_k\,\kappa_0^{-1}h^2
+       [\epsilon_{\rm bg}^2+h^2M_2],\qquad
+ M_2=2n/\kappa_0+L_0^2/\kappa_0^2.
+\]
+This is the supplement's physical covariance scale now shown to control the entire
+internal stopped-mean/increment decomposition of that same carrier. Saved couplings,
+old mesh powers, fine support volumes and the actual target dimension are unchanged.
+The absolute Casimir constant has not disappeared from raw masses merely because its
+gradient is zero. No new claim of nondegeneracy or universal operator normalization follows.
+
+\paragraph{Coordinate subfibers: conditional covariance and a bounded current.}
+Split native coordinates as $B=(x,z)$ by complete original coordinate groups, so
+$\Omega_R=\Omega_x\times\Omega_z$. The actual conditional density is
+\[
+ dK_x(z)=D(x)^{-1}1_{\Omega_z}e^{-U(x,z)}dz.
+\]
+The Hessian $D_z^2U\ge\kappa_0I$ and the ORIGINAL convex cutoff remain. Thus
+\[
+ \Var_{K_x}F\le\kappa_0^{-1}K_x|\nabla_zF|^2.
+\]
+Conditional Cauchy--Schwarz and Jensen imply, for every fixed $p\ge1$,
+\[
+ \|\Cov(F,H\mid x)\|_{L^p(\nu_x)}
+ \le\kappa_0^{-1}\|\nabla_zF\|_{L^{2p}(K)}
+                         \|\nabla_zH\|_{L^{2p}(K)}.
+\]
+The radial moment recursion (3.8) supplies the required higher gradient moments for the
+actual physical H and lower rows above, retaining $n,L_0,\kappa_0$ explicitly.
+No analogous pointwise conditional Poincare claim is made for a nonlinear observation.
+
+For a fixed $x$, set $R_F=F-K_xF$ and solve the weak Neumann problem
+\[
+ -L_x\psi=R_F,\qquad L_x=\Delta_z-\nabla_zU\cdot\nabla_z,
+ \qquad \partial_n\psi=0,\qquad K_x\psi=0.
+\]
+The conditional Poincare inequality gives existence and uniqueness in the mean-zero
+Sobolev space. Put $W_F=\nabla_z\psi$, with zero components in $x$.
+Then, as distributions INCLUDING the sharp boundary,
+\[
+ R_F\,1_{\Omega_z}e^{-U}
+ =-\operatorname{div}_z(1_{\Omega_z}e^{-U}W_F).
+\]
+Its boundary partner vanishes by the constructed weak zero-normal-flux condition.
+This does not assert zero boundary flux for an original physical current.
+The energy estimate gives
+\begin{align}
+ K_x|W_F|^2&\le\kappa_0^{-1}\Var_{K_x}F,\\
+ K|W_F|^2&\le\kappa_0^{-2}K|\nabla_zF|^2.
+\end{align}
+This replaces the exponential inverse-gap estimate of the compact AI41 construction on
+this IDENTIFIED native sector. It is an $L^2$ current bound, not spatial locality, complete
+current-jet control, or a bound on derivatives of $\psi$ with respect to $x$.
+
+\paragraph{Whole source pair and exact compensation.}
+Let $F_i=R_i+S_i$, with $S_i=K_xF_i$ and currents $W_i$ as above. The observation is
+literally $x$, so $DqW_i=0$ pointwise. Conditional integration by parts gives
+$K_x(W_iH)=K_x(R_iH)$ for admissible carrying functions.
+For smooth carriers, the integrable degree-two scalar compensation in this alternative
+weak source decomposition is
+\[
+ b_{12}=A_{12}+\tfrac12(W_1R_2+W_2R_1)+W_1S_2+W_2S_1.
+\]
+Here $W_iS_j=0$ because $S_j$ depends only on $x$, and
+\[
+ K_xb_{12}=K_xA_{12}+\Cov(F_1,F_2\mid x).
+\]
+These equalities are justified by the displayed weak adjoint pairings. Full WC11
+transport against a varying tested kernel additionally needs the current derivatives and
+carrying responses; their uniform bounds have not been inferred from this $L^2$ estimate.
+At original XP3, $A_{12}=0$; the covariance is retained and quantitatively bounded,
+not canceled by normalization. Subtracting it as an explicit degree-two source is a separate
+prescription. Original independent scalar factors and raw denominators stay attached.
+
+For an actual native readout $U_B$, testing the same distributional identity with
+$\Phi(U_B)$ pushes the current forward as the vector-valued measure with coefficient
+$D_BU_B\,W_i$. This is a valid FORWARD current transport with the actual map and measure;
+it does not identify that current with an old Wilson EOM current or construct an inverse
+physical-current lift. Constraints, chart Jacobians and any later kernel responses must
+remain in their actual representation. No product of unrelated boundary distributions occurs.
+
+\paragraph{The precise remaining identification gap.}
+The result controls arbitrary stopped observations INSIDE ONE native component once its
+actual carrier has the proved gradient norm. General RG histories change components,
+references, selectors and carriers, and the old reconstructed word need not be the bare
+physical H evaluated on this interior family. Our original-Wilson conditional mean
+$\E_\mu(G|U_R)$ has gradient estimates under a DIFFERENT marginal law; these cannot
+be inserted into $K$-Poincare without identifying its native pullback and controlling the
+same gradient under $K$. A protected row independent of native coordinates has zero
+variance exactly, but that does not extend to touched rows.
+Thus this is a genuine depth-uniform scalar/current mechanism on an identified fiber,
+not a solution of the full mixed-history MT36, the live-reference lift, or S94.
+\begin{thebibliography}{9}
+\bibitem{ND} \emph{Nonlinear dispersion and unequal spatial weights}, \texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/nonlinear\_dispersion\_and\_unequal\_spatial\_weights.tex} in this collection.
+\end{thebibliography}
+\end{document}

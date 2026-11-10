@@ -1,0 +1,216 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\newcommand{\E}{\mathbb E}
+\title{A vacuum-relative local-frequency inequality for the original Wilson transfer}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Exact physical operator and conventions.}
+Use the ORIGINAL $SU(N)$ Wilson transfer on a periodic spatial lattice with sides
+at least three, $A=M Q P M$, $M=e^{-V/2}$, $V=B\sum_{p\,\rm spatial}s(U_p)$,
+$s(U)=1-N^{-1}\operatorname{Re}\operatorname{Tr}U$. Temporal plaquettes have the
+same normalized coefficient $B$. The site-gauge projection $P$ is retained.
+Let $\lambda_0>0$, $\psi>0$, $\|\psi\|_{L^2(dX)}=1$ be the actual leading
+eigenpair, and put $\pi=\psi^2dX$. The ORIGINAL ground-state Markov operator is
+\[
+ (\mathcal T f)(X)=\frac1{\lambda_0\psi(X)}
+          \int A(X,Y)\psi(Y)f(Y)dY.                    \tag{1}
+\]
+It is positive self-adjoint on $L^2(\pi)$ and preserves the physical subspace.
+Its positive physical eigenvalues are $r_j=\lambda_j(A)/\lambda_0$.
+All estimates below are on that space. No temporal scalar or unknown vacuum
+energy is substituted for $\lambda_0$.
+
+Choose anti-Hermitian generators with $-\operatorname{Tr}T^AT^B=\delta^{AB}$.
+For one spatial link $b$, let $\nabla_b=(X_b^A)_A$, $\Delta_b=\sum_A(X_b^A)^2$,
+and $C_F=(N^2-1)/N$. Define the nonnegative ground-weighted one-link operator
+$D_b$ by its closed form $\mathcal E_b(f)=\int|\nabla_b f|^2d\pi$.
+Conditioned on all other spatial links it is the weighted Laplacian on the
+actual compact one-link fiber, with density proportional to $\psi^2$.
+This definition is not a free-link Wilson conditional or a guessed native law.
+
+\begin{proposition}[Exact vacuum-relative gradient smoothing]
+For every smooth physical $f$,
+\[
+ \mathcal E_b(\mathcal T f)
+ \le K_B\big(\|f\|_\pi^2-\|\mathcal T f\|_\pi^2\big),
+ \qquad K_B=B^2/N.                                    \tag{2}
+\]
+The constant is independent of spatial volume, cutoff and the actual value of
+$\lambda_0$.
+\end{proposition}
+\begin{proof}
+Write $q_P(X,Y)$ for the kernel of $QP$. It is the original temporal-link gauge
+average of product Wilson temporal weights. Differentiating in $X_b$ touches
+one temporal plaquette for each gauge configuration. Its score vector obeys
+$|\nabla_b\log k|\le B/\sqrt N$: the traceless anti-Hermitian projection of a
+unitary matrix has Hilbert--Schmidt norm at most $\sqrt N$.
+A positive gauge average preserves this bound, so
+$h_b=\nabla_b\log q_P$ satisfies $|h_b|\le B/\sqrt N$.
+
+Differentiate the eigenfunction normalization in (1). The deterministic
+$\nabla_b\log M(X)$ cancels, as does the normalizing score from $\psi(X)$:
+\[
+ \nabla_b\mathcal T f
+ =\operatorname{Cov}_{p_0(X,\cdot)}(f,h_b),\qquad
+ p_0(X,Y)=A(X,Y)\psi(Y)/(\lambda_0\psi(X)).             \tag{3}
+\]
+Vector Cauchy--Schwarz gives
+$|\nabla_b\mathcal T f|^2\le K_B\{\mathcal T|f|^2-|\mathcal T f|^2\}$.
+Integrate using the ACTUAL stationarity $\pi\mathcal T=\pi$.
+For complex $f$ use the usual absolute-value conditional variance.
+No tensorization or mixing assumption enters.
+\end{proof}
+
+\paragraph{An actual conditional-frequency projection bound.}
+Let $E_b(\Lambda)=\boldsymbol1_{(\Lambda,\infty)}(D_b)$, $\Lambda>0$.
+It is a direct-integral conditional spectral projection; gauge covariance of
+$D_b$ preserves the physical space. From $D_b\ge\Lambda E_b(\Lambda)$ and (2),
+\[
+ \boxed{\quad
+ \mathcal T E_b(\Lambda)\mathcal T
+       \le\frac{B^2}{N\Lambda}(I-\mathcal T^2).
+ \quad}                                               \tag{4}
+\]
+This is a ground-relative operator inequality, with the vacuum canceled BEFORE
+any trace bound. For the spectral subspace $S_E$ of true physical energies
+$-a^{-1}\log r_j\le E$, invert $\mathcal T$ on this finite-dimensional subspace
+to obtain
+\[
+ S_E E_b(\Lambda)S_E
+ \le\frac{B^2}{N\Lambda}(e^{2aE}-1)S_E.               \tag{5}
+\]
+Summing the left side of (5) over links costs its literal $L$. For fixed $E$
+and $L\asymp\operatorname{Vol}\Sigma/a^3$, this gives at most
+$C\operatorname{Vol}\Sigma B^2E/(\Lambda a^2)$. With $\Lambda\asymp B$
+the single-link $O(aBE)$ error is summable over geometric cutoffs, but its
+all-link sum is not. Taking $\Lambda\gtrsim B^2/a^2$ controls that sum only by
+allowing a growing local representation cutoff; it does not give a fixed physical
+coarse state count.
+
+In particular the ground vector $f=1$ has zero high-frequency weight. For a
+fixed physical excitation energy and $\Lambda\asymp B$, the right side is
+$O(aBE)$, uniformly at each link. This is about ground-adapted conditional angular
+frequency, not an assertion about spatial Fourier modes or free torons.
+
+A trace consequence retaining all physical states is, for integer $m\ge3$,
+\[
+ \operatorname{Tr}\{E_b(\Lambda)\mathcal T^m\}
+ \le\frac{B^2}{N\Lambda}
+   [Q_{\rm occ}((m-2)a)-Q_{\rm occ}(ma)].              \tag{6}
+\]
+Multiply (4) by the positive $\mathcal T^{m-2}$ and take its trace; cyclicity
+justifies the left side. The restriction $m\ge3$ keeps both traces finite.
+Equation (6) is not a uniform upper bound for $Q_{\rm occ}$ by itself.
+
+\paragraph{The local conditional frequency has a controlled Casimir count.}
+There is a pointwise lower Hessian-trace bound with only a LOCAL cost:
+\[
+ \Delta_b\log\psi\ge-3 B C_F.                         \tag{7}
+\]
+To verify it, use $\psi=M\lambda_0^{-1}\int q_P(X,Y)M(Y)\psi(Y)dY$.
+For every temporal gauge configuration the log temporal weight has
+$\Delta_b\log k\ge-B C_F$. Passing through a positive integral adds the
+nonnegative trace of the score covariance. Each of the four spatial plaquettes
+incident to $b$ contributes at worst $-(B/2)C_F$ to $\Delta_b\log M$.
+Their total is $-2BC_F$, giving (7). All counts are original three-dimensional
+spatial counts; no microscopic boundary or gauge orbit count was omitted.
+
+On a fixed conditional fiber, multiplication by its normalized $\psi$ is
+unitary from the weighted space to Haar space and gives
+\[
+ D_b\ \simeq\ -\Delta_b+\frac{\Delta_b\psi}{\psi}
+ =-\Delta_b+\Delta_b\log\psi+|\nabla_b\log\psi|^2
+ \ge-\Delta_b-3BC_F.                                 \tag{8}
+\]
+Thus the number of local conditional eigenvalues below $\Lambda$ is at most
+\[
+ \sum_{R:C_R\le\Lambda+3BC_F}d_R^2,                  \tag{9}
+\]
+uniformly in the actual bath. For $SU(2)$, $C_d=(d^2-1)/2$, so this is
+$\sum_{d\le\sqrt{1+2\Lambda+9B}}d^2$.
+The original full physical eigenfunction $\phi=\psi f$ with energy at most $E$
+also obeys the genuine Haar-link kinetic estimate
+\[
+ \langle\phi,(-\Delta_b)\phi\rangle
+ \le[3BC_F+(B^2/N)(e^{2aE}-1)]\|\phi\|^2.             \tag{10}
+\]
+In contrast to (5), (10) includes the legitimate ground-state kinetic baseline.
+No inverse ground overlap or global vacuum energy enters either estimate.
+
+\paragraph{Global counting attempt and its remaining cutoff cost.}
+Sum (2) over the $L$ spatial links. The global weighted operator
+$D=\sum_bD_b$ is conjugate to
+$-\sum_b\Delta_b+(\sum_b\Delta_b\psi)/\psi$
+and is bounded below by the physical Haar Casimir minus $3BC_FL$.
+Min--max on $S_E$ therefore gives the actual interacting ground-relative count
+\[
+ N_A(E)\le N_{\rm Haar,phys}
+ \left(L[3BC_F+(B^2/N)(e^{2aE}-1)]\right).             \tag{11}
+\]
+This is proved without a ground-energy approximation. It is still insufficient
+for a fixed-physical-volume occupation estimate. For example, the explicit
+$SU(2)$ product Peter--Weyl count gives the upper estimate
+\[
+ \log N_A(E)\le L\{C+\tfrac32\log B
+                      +\tfrac B2(e^{2aE}-1)\},\qquad B\ge1,    \tag{12}
+\]
+by exponential counting at parameter $1/B$ and
+$\sum_d d^2e^{-(d^2-1)/(2B)}\le C B^{3/2}$.
+The full product space bounds the physical count from above; it does not replace
+Gauss projection with equality. At fixed $E$ the $L\log B$ loss remains cutoff
+extensive. Bounds (11)--(12) do NOT assert that this many low-energy states
+actually exist.
+
+The conditional low-frequency projectors at different links depend on the
+entire bath and need not commute. Their finite fiber ranks in (9) cannot be
+multiplied to infer a physical coarse-mode tensor product. Moreover a linkwise
+angular-frequency estimate does not control rapid spatial oscillations of
+collective low angular-frequency coordinates. The unresolved spatial stiffness
+and conditional-basis compatibility are the precise missing improvements.
+
+\paragraph{A stronger averaged Ward identity, and why it does not yet tensorize (2).}
+There is an additional exact improvement for deterministic multi-link tangent
+fields $w$. Write $X_w=\sum_{b,A}w_b^A X_b^A$ and
+$h_w=X_w\log q_P$. Differentiating the same ground equation twice and integrating
+by parts in ORIGINAL Haar measure yields
+\[
+ \E_\pi\operatorname{Var}_{p_0(X,\cdot)}h_w
+       +2\|X_w\log\psi\|_\pi^2
+ =-\E_\pi X_w^2\log M
+       -\E_{\pi p_0}X_w^2\log q_P
+ \le\frac{9B}{N}\sum_b|w_b|^2.                        \tag{13}
+\]
+For a tangent supported at one link the constant improves from $9$ to $3$.
+Indeed $|X_w^2s(U_p)|\le N^{-1}(\sum_{b\in p}|w_b|)^2$;
+each spatial plaquette has four links and each link meets four plaquettes,
+so $X_w^2\log M\ge-8B\|w\|^2/N$. Before gauge averaging the temporal
+Hessian is at least $-B\|w\|^2/N$; positive gauge averaging adds nonnegative
+score covariance. Finally $\E_\pi X_w^2\log\psi=-2\|X_w\log\psi\|_\pi^2$.
+This proves (13) with no total-volume factor in its deterministic directional
+constant and no guessed conditional measure.
+
+Equation (13) controls the AVERAGED temporal Fisher matrix by $9B I/N$,
+considerably better than a pointwise $B^2 L$ estimate. It cannot simply replace
+the coefficient in the summed version of (2): the latter integrand contains
+$\operatorname{Var}_{p_0}(f\mid X)$ multiplied by the pointwise Fisher matrix.
+These quantities are correlated. In a spectral trace the multiplier becomes a
+conditional return/occupation diagonal, precisely a quantity still needing
+control. Replacing an average of their product by a product of averages would
+be an unproved step. This locates an exact possible use of spatial/coarse
+information without assuming that missing estimate.
+
+\paragraph{Consistency checks and scope.}
+For pure kinetic $SU(2)$ convolution, (2) yields only a rational spectral upper
+bound of the form $q_d^2 C_d\le K_B(1-q_d^2)$; the exact factorial high-$d$
+Wilson tail is stronger, so no false Gaussian-Casimir domination is introduced.
+Actual constant/holonomy sectors have not been removed: only gauge-projected
+physical states are counted, and (5) is zero on the true ground state without
+claiming that all global excitations have a gap. The derivations require neither
+unavailable R-I domains nor any native convex approximation.
+
+Equations (2),(4),(5),(7)--(11) are genuine original-transfer estimates. They
+advance local ground-relative high-frequency control, but the remaining
+cutoff-extensive count (12) prevents an S94 closure. To improve it one needs
+actual spatial/coarse compatibility or a stronger scale-resolved response,
+not an assumed independent tensor product of conditional fibers.
+\end{document}

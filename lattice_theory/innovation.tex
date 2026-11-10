@@ -1,0 +1,229 @@
+\section{Innovation derivatives in boundary coordinates}
+\label{sec:innovation}
+
+This section controls the complete ordinary fluctuation removed by one actual conditional product integration. The source retains all original roots, including neighboring roots whose forces read several of the integrated links. The exterior marginal is the true Wilson marginal. The argument strengthens the fixed-$L^p$ product-fiber estimates of \texttt{block\_and\_transfer/local\_contacts/local\_moments\_fixed\_depth.tex} to Bernstein concentration; it does not bound the stopped exterior mean.
+
+\subsection{The actual multiplaquette input}
+
+On the original periodic $n^4$ torus let $n\ge3$, $\beta\ge1$, fix $0<t_*<1$, and put
+\begin{equation}
+ {\cal K}_*=\left(\frac{Z_{(1-t_*)\beta}}{Z_\beta}\right)^{1/n^4}.
+ \label{inn:K}
+\end{equation}
+The arbitrary-marked-set transfer argument of \texttt{block\_and\_transfer/wilson\_transfer/original\_sparse\_bath\_records.tex} gives, for every set $\mathcal A$ of original plaquettes, with any orientations,
+\begin{equation}
+ \E_\mu\exp\left(\frac{t_*}{6}\beta\sum_{p\in{\cal A}}s_p\right)
+ \le {\cal K}_*^{|{\cal A}|/6}.
+ \label{inn:binary}
+\end{equation}
+The statement there is written with normalized action $s_p/N$ and coefficient $B=N\beta$, whose product is unchanged. The same proof applies to $SU(N)$: the positive character expansion of the original central Wilson convolution, the gauge projection and the transfer sandwiches are valid for every fixed $N$.
+
+Here is the multipoint mechanism, including the raw denominator. For positive trace-class factors,
+\[
+ |\Tr(A_1\cdots A_n)|\le\prod_{j=1}^n(\Tr A_j^n)^{1/n}.
+\]
+For a transverse slicing of a single plaquette orientation, different slice insertions $D_j$ give the exact numerator
+\[
+ \Tr(D_1T\cdots D_nT)=
+ \Tr\bigl[(T^{1/2}D_1T^{1/2})\cdots(T^{1/2}D_nT^{1/2})\bigr].
+\]
+Each displayed factor is positive. For an in-plane slicing, the factors are the actual positive operators $M Q_j P M$, where $P$ is the original gauge projection and every changed convolution coupling remains nonnegative. The scalar $e^{-N\lambda}$ remains in $Q_j$. Applying the two transverse and then the two in-plane directions disseminates every original mark, with exponent $1/n^4$, to a uniformly repeated orientation mark. The denominator in every step is the original $Z_\beta$. Reducing the remaining orientations only increases the numerator, because $s_p\ge0$. Ordinary H\"older across the six orientations proves \eqref{inn:binary}. No parity restriction or change of torus occurs.
+
+The already established partition-power bounds retain
+\[
+ Q_n=3n^4+1,\qquad R_n=3n^4-4n^3+1,\qquad d_G=N^2-1,
+\]
+and imply
+\[
+ {\cal K}_*\le
+ c_u^{R_n/n^4}c_l^{-Q_n/n^4}
+ (1-t_*)^{-d_GR_n/(2n^4)}(N\beta)^{2d_G/n}.
+\]
+Consequently $\mathcal K_*$ is uniformly bounded on the explicit regime
+\begin{equation}
+ n\ge c_*\log(2+N\beta).
+ \label{inn:physicalregime}
+\end{equation}
+This includes the original logarithmic-running physical torus sequence. Outside this regime the displayed $\mathcal K_*$ is retained, rather than frozen.
+
+A useful weighted form follows from the same argument. If $t_x\in[0,t_*]$ are arbitrary reductions of one orientation $\alpha$, the multivariate dissemination yields
+\[
+ \frac{Z_\alpha(\{t_x\})}{Z_\beta}
+ \le\prod_x\left[\frac{Z_\alpha(t_x)}{Z_\beta}\right]^{1/n^4}.
+\]
+The convex function $F_\alpha(t)=\log[Z_\alpha(t)/Z_\beta]$ vanishes at zero and satisfies
+$F_\alpha(t_*)\le n^4\log{\cal K}_*$. Interpolation and six-orientation H\"older therefore give
+\begin{equation}
+ \log\E_\mu e^{\beta\sum_pa_ps_p}\le C\sum_pa_p,
+ \qquad 0\le a_p\le t_*/6,
+ \label{inn:weighted}
+\end{equation}
+on \eqref{inn:physicalregime}. The binary estimate \eqref{inn:binary} already suffices for the following proof. The transfer estimate is the one proved in \texttt{block\_and\_transfer/wilson\_transfer/original\_sparse\_bath\_records.tex}, not a new independence assumption.
+
+\subsection{Joint moments survive the actual positive history}
+
+Let $R_b$ be either original complete rooted row $r_b$ or $h_b$. Compact plaquette calculus and the exact Casimir row give
+\begin{equation}
+ |R_b|\le C_0\left(1+\sum_{p\in{\cal P}_b}X_p\right),
+ \qquad X_p=\beta s_p\ge0.
+ \label{inn:rootenergy}
+\end{equation}
+Indeed $|X s_p|^2\le Cs_p$ on the compact group, each directional force has bounded incident-plaquette count, and $\ell_b$ is uniformly bounded. The complete original patches $\mathcal P_b$ have bounded size $p_0$ and bounded multiplicity $d_0$, including the actual fixed pointing shifts.
+
+\begin{lemma}[Joint factorial moments on the original root space]
+\label{inn:jointmoments}
+On \eqref{inn:physicalregime}, there are fixed $\kappa,C_1,C_2>0$ such that, for every original root subset $J$,
+\begin{equation}
+ \E e^{\kappa\sum_{b\in J}|R_b|}\le e^{C_1|J|}.
+ \label{inn:jointlaplace}
+\end{equation}
+If $Y$ is any complete positive source-free observation with the same Wilson marginal and $G_b(Y)=\E(R_b\mid Y)$, the same inequality holds for the entire vector $(G_b)_b$. For distinct roots and positive integers $m_b$,
+\begin{equation}
+ \E\prod_{b\in J}|G_b|^{m_b}
+ \le C_2^{\sum_bm_b}\prod_{b\in J}m_b!,
+ \label{inn:factorial}
+\end{equation}
+and likewise for $R_b$. The constants do not accumulate with the observation depth.
+\end{lemma}
+\begin{proof}
+Choose $\kappa C_0d_0\le t_*/6$. Equation~\eqref{inn:rootenergy} and \eqref{inn:binary} bound the left side of \eqref{inn:jointlaplace} by
+\[
+ e^{\kappa C_0|J|}
+ \E\exp\left(\kappa C_0d_0
+                \sum_{p\in\cup_{b\in J}{\cal P}_b}X_p\right)
+ \le e^{\kappa C_0|J|}{\cal K}_*^{p_0|J|/6}.
+\]
+No separation of the patches is needed; their original multiplicity has been paid. Joint conditional Jensen gives
+\[
+ e^{\kappa\sum_{b\in J}|G_b(Y)|}
+ \le \E\left(e^{\kappa\sum_{b\in J}|R_b|}\mid Y\right).
+\]
+This uses one common actual positive observation for the full vector. Finally,
+$x^m\le m!\kappa^{-m}e^{\kappa x}$ for $x\ge0$ gives \eqref{inn:factorial}; absorb $e^{C_1|J|}$ using $|J|\le\sum_bm_b$.
+\end{proof}
+
+Separate local exponential moments alone would not give \eqref{inn:factorial} with its product of factorials. That stronger joint input is what permits the next spatial concentration estimate.
+
+\subsection{The conditional-product concentration lemma}
+
+\begin{theorem}[Complete innovation with its actual carrier coloring]
+\label{inn:product}
+Let an actual law disintegrate as $\nu(\dd\eta)K_\eta(\dd z)$, where $K_\eta$ is a product over free coordinates $z_s$. Suppose $G_b(\eta,z)$ obeys \eqref{inn:factorial} under this full law and reads a deterministic complete set $J_b$ of free coordinates. Let $q$ be a proper coloring number of the graph $b\sim c$ when $J_b\cap J_c\ne\varnothing$. Roots with empty $J_b$ have zero innovation and may be omitted.
+
+For
+\[
+ I_f=\sum_bf_b(G_b-K_\eta G_b),
+\]
+one has
+\begin{align}
+ \log\E e^{tI_f}&\le Cq\,t^2M_f,
+ && |t|q b_f\le\delta, \label{inn:productmgf}\\
+ \Pr(|I_f|>u)&\le2\exp\left[-c\min\left\{
+       \frac{u^2}{qM_f},\frac{u}{q b_f}\right\}\right].
+ \label{inn:producttail}
+\end{align}
+The constants $C,\delta$ depend on the joint moment constant, not on the exterior record, volume or $q$.
+\end{theorem}
+\begin{proof}
+Put $Z_b=G_b-K_\eta G_b$. Within one color these variables are independent and centered \emph{conditional on the complete $\eta$}. For $m\ge2$,
+\[
+ |K_\eta Z_b^m|\le K_\eta|Z_b|^m
+ \le2^mK_\eta|G_b|^m.
+\]
+Expand the conditional exponential product. Its linear terms vanish. For each active set of roots $J$ and orders $m_b\ge2$, disjoint complete free-coordinate readsets give exactly
+\[
+ \prod_{b\in J}K_\eta|G_b|^{m_b}
+ =K_\eta\left(\prod_{b\in J}|G_b|^{m_b}\right).
+\]
+Averaging restores the original full law, so \eqref{inn:factorial} cancels the factorial denominators in the exponential series. Hence, for one color,
+\begin{align*}
+ \E e^{t\sum_{\mathrm{color}}f_bZ_b}
+ &\le\prod_{\mathrm{color}}
+       \left[1+\sum_{m\ge2}(2C_2|tf_b|)^m\right]\\
+ &\le\exp\left(Ct^2\sum_{\mathrm{color}}f_b^2\right),
+ \qquad |t|b_f\le\delta.
+\end{align*}
+The argument is first performed at finite volume, where the original rows and their conditional means are bounded. Alternatively the same nonnegative series majorant justifies truncation and passage to the limit. It never factors an unconditional law.
+
+H\"older with exponent $q$ over the fixed colors now gives
+\[
+ \E e^{tI_f}
+ \le\prod_{\mathrm{colors}}
+   \left[\E e^{qt\sum_{\mathrm{color}}f_bZ_b}\right]^{1/q}
+ \le e^{Cqt^2M_f}.
+\]
+The mean of $I_f$ is zero. Chernoff optimization proves \eqref{inn:producttail}.
+\end{proof}
+
+\subsection{Application to the complete original Wilson packet}
+
+Choose a deterministic original link set $C$ with at most one link in each original plaquette. Retain the complete complementary configuration $\eta=U_{C^c}$. Assign each plaquette once to $S_{\rm out}(\eta)$ or to $S_s(U_s,\eta)$ for its unique $s\in C$. Then the actual laws are
+\begin{equation}
+ K_C(\dd U_C\mid\eta)=\prod_{s\in C}K_s(\dd U_s\mid\eta),
+ \qquad
+ \dd\nu_C(\eta)=
+ \frac{e^{-\beta S_{\rm out}(\eta)}\prod_{s\in C}Z_s(\eta)}
+      {Z_\beta}\dd\lambda_{C^c}.
+ \label{inn:rawmarginal}
+\end{equation}
+Every $Z_s$ is the original raw compact conditional integral. For $R_b$, let $D(b)$ be its complete original determining link set and $J_b=C\cap D(b)$. The intersection graph has a fixed bounded coloring $q_0$, by the original finite incidence.
+
+\begin{corollary}[Ordinary and physical innovations under the fluctuating bath]
+\label{inn:wilsoninnovation}
+For either complete source $F_f=r_f$ or $F_f=h_f$, on the original periodic law satisfying \eqref{inn:physicalregime},
+\begin{equation}
+ \boxed{\quad
+ \log\E_\mu
+ e^{t[F_f-\E(F_f\mid\eta)]}\le Ct^2M_f,
+ \qquad |t|b_f\le\delta.
+ \quad}
+ \label{inn:fullinnovation}
+\end{equation}
+Thus the complete fluctuation has the extensive Bernstein tail and
+\begin{equation}
+ \E_{\nu_C}\Var(F_f\mid\eta)\le CM_f.
+ \label{inn:firstterm}
+\end{equation}
+The same statements hold for a fixed finite joint vector of the original rooted $h$ and $r$ rows.
+\end{corollary}
+\begin{proof}
+Apply Lemma~\ref{inn:jointmoments} and Theorem~\ref{inn:product} to $G_b=R_b$, absorbing the fixed $q_0$. A complete root may read several active links. All of those variables remain in the same $G_b$; independence is used only between disjoint readsets within a color. The second derivative at zero, or tail integration, gives \eqref{inn:firstterm}.
+\end{proof}
+
+The variance bound \eqref{inn:firstterm} already follows from the product-fiber argument of \texttt{block\_and\_transfer/local\_contacts/local\_moments\_fixed\_depth.tex}. The conclusion here is the full extensive centered exponential bound \eqref{inn:fullinnovation}, using the genuine multipoint moments. It is an \emph{unconditional} bound for this innovation under the actual fluctuating boundary law. It does not assert a uniform bound at every fixed bath, or a pressure-Hessian bound for the full ordinary source under a real tilt.
+
+\subsection{History transfer, rare budgets and the retained mean}
+
+For a later complete positive observation, the joint moments of the original rooted means remain those of Lemma~\ref{inn:jointmoments}. If a subsequent \emph{actual} conditional integration is a product and its current complete carriers have a verified deterministic coloring $q_k$, Theorem~\ref{inn:product} applies with
+\[
+ Cq_kM_f\quad\hbox{as variance parameter},\qquad
+ \delta/(q_kb_f)\quad\hbox{as parameter radius}.
+\]
+The current graph includes every effective-normalizer hyperedge and inherited source carrier. Its coloring is not reset to $q_0$. A random geometry record requires its actual common domination, conditioning and overlap estimates; an unconditional moment bound is not silently made uniform after conditioning on that record.
+
+For $0\le H\le1$ of actual mass $p$, tail integration gives
+\begin{equation}
+ \E(HI_f^2)\le
+ Cp\left[qM_f\log(e/p)+q^2b_f^2\log^2(e/p)\right].
+ \label{inn:rareinnovation}
+\end{equation}
+Conditional Jensen transfers the innovation's concentration through any further complete positive observation of the same joint law. Predictable refinements spend one such second-moment budget. The actual identification and ownership of an inherited packet remain necessary; overlapping owners cannot recharge it.
+
+The original source is still $F_f=m_f+I_f$. Its exact raw source-dependent fiber integral is
+\begin{equation}
+ Z_C(\eta;t)=Z_C(\eta;0)e^{t m_f(\eta)}K_Ce^{tI_f},
+ \qquad Z_C(\eta;0)=\prod_{s\in C}Z_s(\eta).
+ \label{inn:rawsource}
+\end{equation}
+The complete source can couple different active links, so $Z_C(\eta;t)$ need not factor. Neither $m_f$ nor its correlation with $K_Ce^{tI_f}$ is dropped.
+
+There is a precise real-source reduction. Conditional Jensen and then Cauchy--Schwarz, with \eqref{inn:fullinnovation}, give
+\begin{align}
+ \log\E_{\nu_C}e^{t(m_f-\E F_f)}
+ &\le\log\E_\mu e^{t(F_f-\E F_f)}\notag\\
+ &\le\frac12\log\E_{\nu_C}e^{2t(m_f-\E F_f)}
+           +Ct^2M_f,
+ \qquad |t|b_f\le\delta/2.
+ \label{inn:meanreduction}
+\end{align}
+Thus the complete-law source concentration reduces quantitatively to the \emph{actual} retained mean. The mean term is still a theorem to prove. This reduction does not supply simultaneous complex admission, a new energy reserve, or a physical-scale induction by tiling.

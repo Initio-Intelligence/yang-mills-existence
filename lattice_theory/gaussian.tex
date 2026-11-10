@@ -1,0 +1,526 @@
+\section{Gaussian comparison of ordinary fluctuations}
+\label{gs:section}
+
+This section proves a reference-law estimate for the \emph{global} ordinary
+quadratic source when all coordinates on a thin separator are observed. The
+proof retains the cross-block contractions, arbitrary signs of the original
+marks, and the mean across commuting flat holonomies. It also shows why the
+second-moment gain cannot by itself be promoted to a uniform higher-source
+bound after random-offset averaging. None of these statements replaces the
+actual compact marginal by a Gaussian law.
+
+\subsection{The original Maxwell quadratic and its positive root matrices}
+
+Work at unit mesh on the periodic four-dimensional torus of side \(n\ge3\).
+Put \(V=n^4\) and \(d_G=\dim SU(N)\). On momentum
+\(k\in(2\pi/n)\{0,\ldots,n-1\}^4\), write
+\[
+ p_\mu=e^{ik_\mu}-1,\qquad u_\mu=|p_\mu|^2,\qquad
+ s=\sum_\mu u_\mu,\qquad K=sI-pp^*.
+\]
+Use the translation-equivariant Coulomb section. After quotienting gradients,
+omit only the remaining constant harmonic zero modes of this specified
+reference. All traces below are real Hilbert-space traces; conjugate Fourier
+and color sectors are paired with their actual real multiplicities.
+Let \(K^{+1/2}=(K^+)^{1/2}\), extended by zero on the kernel. Retain the original
+quadratic normalization \(\upsilon>0\):
+\begin{equation}
+ S_2(A)=\frac{\upsilon}{2}\inner A{KA},\qquad
+ A=(\beta\upsilon)^{-1/2}K^{+1/2}\xi,
+ \label{gs:reference}
+\end{equation}
+where \(\xi\) is standard real Gaussian on the positive transverse space.
+
+The directional row with root direction \(\nu\) and plane partner \(\mu\ne\nu\)
+is
+\[
+ L_{\nu\mu}A=\overline p_\mu(p_\mu A_\nu-p_\nu A_\mu),
+ \qquad L_{\nu\mu}p=0.
+\]
+Its original linear force is \(\upsilon L_{\nu\mu}A\). Equivalent fixed
+edge-placement conventions introduce unit phases and preserve the following
+norms and traces. For each literal oriented-link root \(c=(x,\nu)\), let
+\(T_c\) sum its three row squares and its color components, with the unitary
+Fourier normalization \(V^{-1/2}\). Set
+\begin{equation}
+ B_c=K^{+1/2}T_cK^{+1/2},\quad B_f=\sum_cf_cB_c,\quad
+ B_{\rm all}=\sum_cB_c,\qquad
+ Q_f=\upsilon\xi^*B_f\xi-\frac13\ell^{(0)}[f].
+ \label{gs:source}
+\end{equation}
+The deterministic Casimir scalar is retained. This is the leading complete
+ordinary quadratic in the named Maxwell reference. Lower field-degree-two
+corrections are addressed separately below, rather than silently identified
+with \eqref{gs:source}.
+
+\begin{lemma}[Complete root bounds]
+\label{gs:rootbounds}
+For the literal original oriented roots,
+\begin{equation}
+ B_c\ge0,\qquad \frac13K\le B_{\rm all}\le8I,
+ \qquad \Tr B_c\le6d_G.
+ \label{gs:bounds}
+\end{equation}
+The operator inequalities are on the positive transverse space.
+\end{lemma}
+\begin{proof}
+Put \(C_{\mu\nu}=p_\mu A_\nu-p_\nu A_\mu\). Directly,
+\[
+ \inner A{KA}=\sum_{\mu<\nu}|C_{\mu\nu}|^2,\qquad
+ \sum_{\nu,\mu\ne\nu}|L_{\nu\mu}A|^2
+ =\sum_{\mu<\nu}(u_\mu+u_\nu)|C_{\mu\nu}|^2.
+\]
+Since \(u_\mu\le4\), \(\sum_cT_c\le8K\). Conversely
+\((KA)_\nu=\sum_{\mu\ne\nu}L_{\nu\mu}A\), so Cauchy over its three partners
+gives \(K^2\le3\sum_cT_c\). Conjugate both inequalities by \(K^{+1/2}\).
+For the root trace, the rows annihilate gradients and \(K=sI\) transversely;
+therefore
+\begin{equation}
+ \Tr B_{(x,\nu)}
+ =\frac{d_G}{V}\sum_{k:s(k)>0}\sum_{\mu\ne\nu}
+       \frac{u_\mu(u_\mu+u_\nu)}s
+ \le \frac{d_G}{V}\sum_k\sum_{\mu\ne\nu}u_\mu
+ =6d_G.
+ \label{gs:roottrace}
+\end{equation}
+The last equality uses the exact one-coordinate grid average \(\E_k u_\mu=2\).
+The omitted zero mode has zero source amplitude. No inverse lower spectral
+bound is used.
+\end{proof}
+
+Every fixed pointing/completion of the prescribed source keeps its complete
+root list. Its bounded original incidence changes constants by that declared
+factor; it does not authorize deleting neighboring or retained roots.
+
+\subsection{All separator coordinates and the full trace kernel}
+
+Let \(T\) be independent of the Gaussian field and let
+\(Y_T=L_T\xi\) record \emph{all} prescribed separator link coordinates in the
+same section. In particular \(L_T\) includes the covariance square root in
+\eqref{gs:reference}; this is not observation of independent local kinetic
+pieces. With the Moore--Penrose inverse define
+\[
+ P_T=L_T^*(L_TL_T^*)^+L_T.
+\]
+It is the orthogonal projection onto \(\operatorname{ran}L_T^*\), regardless of
+linear redundancies among the observations. Exact Gaussian conditioning gives
+\begin{align}
+ \E(Q_f\mid T,Y_T)
+ &=\upsilon\{\xi^*P_TB_fP_T\xi+\Tr[(I-P_T)B_f]\}
+       -\ell^{(0)}[f]/3,\label{gs:conditional}\\
+ G_{T,f}&:=\E(Q_f\mid T,Y_T)-\E Q_f
+   =\upsilon\{\xi^*C_{T,f}\xi-\Tr C_{T,f}\},\quad
+ C_{T,f}=P_TB_fP_T.\label{gs:centered}
+\end{align}
+For each \(T\), \(\E_\xi G_{T,f}=0\). Thus the expectation of the original
+source does not fluctuate with the independent offset. Its exact conditional
+variance is
+\begin{equation}
+ \Var_\xi G_{T,f}=2\upsilon^2\Tr(C_{T,f}^2).
+ \label{gs:exactvariance}
+\end{equation}
+
+\begin{theorem}[Arbitrary signed marks under translation averaging]
+\label{gs:separator}
+Suppose the observation is a uniform translation of one fixed separator pattern
+in the translation-equivariant reference, and \(\operatorname{rank}P_T\le r\).
+For every real deterministic original mark \(f\),
+\begin{equation}
+ \Var_{T,\xi}\E(Q_f\mid T,Y_T)
+ \le128\upsilon^2\frac rV M_f,
+ \qquad M_f=\sum_cf_c^2.
+ \label{gs:rankgain}
+\end{equation}
+In particular a separator containing at most \(CV/R\) links obeys
+\begin{equation}
+ \Var_{T,\xi}\E(Q_f\mid T,Y_T)
+ \le C\upsilon^2d_G R^{-1}M_f.
+ \label{gs:separatorgain}
+\end{equation}
+\end{theorem}
+\begin{proof}
+The full root covariance kernel is
+\[
+ \mathcal K_T(c,d)
+ =2\upsilon^2\Tr(P_TB_cP_TB_dP_T)
+ =2\upsilon^2\norm{B_c^{1/2}P_TB_d^{1/2}}_{\HS}^2\ge0.
+\]
+This retains every contraction between roots in different cubes. Its row sum
+uses the \emph{global} positive source bound:
+\begin{equation}
+ \sum_d\mathcal K_T(c,d)
+ \le16\upsilon^2\Tr(P_TB_c).
+ \label{gs:rowsum}
+\end{equation}
+For each orientation separately, translation covariance and uniform averaging
+give
+\[
+ \E_T\Tr(P_TB_{(x,\nu)})
+ =\frac1V\sum_y\Tr(P_0B_{(y,\nu)})
+ \le\frac1V\Tr(P_0B_{\rm all})\le\frac{8r}{V}.
+\]
+No rotational symmetry among the orientation types is needed. Positivity,
+symmetry and \(2|f_cf_d|\le f_c^2+f_d^2\) now give
+\[
+ \sum_{c,d}f_cf_d\E_T\mathcal K_T(c,d)
+ \le\sum_cf_c^2\sum_d\E_T\mathcal K_T(c,d)
+ \le128\upsilon^2(r/V)M_f.
+\]
+Each observed link supplies at most \(d_G\) real coordinates, so the rank is
+at most \(Cd_GV/R\). Equation~\eqref{gs:centered} ensures that the total
+variance contains no further between-offset mean term.
+\end{proof}
+
+One may average over the full torus orbit of any fixed packing. For a period
+\(R\) pattern with \(R\mid n\), averaging its period cell suffices. If a
+different offset convention leaves a nonperiodic remainder, the translation
+identity must be checked for that geometry. Before averaging, the proof gives
+the useful but weaker spatially weighted inequality
+\begin{equation}
+ \Var_\xi G_{T,f}
+ \le16\upsilon^2\sum_cf_c^2\Tr(P_TB_c).
+ \label{gs:fixedoffset}
+\end{equation}
+Rank alone does not give the \(R^{-1}\) gain for arbitrary marks at each fixed
+offset.
+
+\subsection{Sharpness for a full separator}
+
+\begin{proposition}[The \(R^{-1}\) power cannot be improved in general]
+\label{gs:sharpness}
+Suppose \(R\mid n\) and the observed separator contains all tangential links
+on the \(n/R\) hyperplanes \(x_1=T_1\pmod R\). For the global source
+\(f_c=1\), every offset satisfies
+\begin{equation}
+ \Var_\xi\E(Q_1\mid T,Y_T)
+ \ge c\upsilon^2d_G V/R.
+ \label{gs:sharp}
+\end{equation}
+Since \(M_1=4V\), this matches \eqref{gs:separatorgain} in its power of \(R\).
+\end{proposition}
+\begin{proof}
+Consider real link covectors \(h\) supported on the indicated hyperplanes,
+with \(h_1=0\). At each tangential momentum \(k'=(k_2,k_3,k_4)\), require
+\[
+ \sum_{j=2}^4\overline p_jh_j=0,
+ \qquad s'(k')=\sum_{j=2}^4|p_j|^2\ge1.
+\]
+There are at least \(cn^3\) such momenta and two tangential transverse
+polarizations at each, for each hyperplane and color. Pairing conjugate modes
+gives a real space \(\mathcal H\) of dimension at least \(cd_GV/R\).
+Every member is globally divergence-free and has no harmonic zero component.
+It is supported on observed coordinates. Consequently
+\[
+ \mathcal E=K^{+1/2}\mathcal H\subseteq\operatorname{ran}P_T,
+ \qquad \dim\mathcal E=\dim\mathcal H.
+\]
+The inverse square root is injective there and preserves the tangential
+frequency support. On \(\mathcal E\), \(K\ge I\), hence
+\(B_{\rm all}\ge K/3\ge I/3\) as a quadratic-form bound. If \(\Pi\) projects
+onto \(\mathcal E\), Hilbert--Schmidt contraction under compression gives
+\[
+ \Tr[(P_TB_{\rm all}P_T)^2]
+ \ge\Tr[(\Pi B_{\rm all}\Pi)^2]\ge\dim\mathcal E/9.
+\]
+Apply \eqref{gs:exactvariance}. Additional observations enlarge the observed
+subspace and preserve this lower bound.
+\end{proof}
+
+The full separator retains high tangential frequencies. A stronger estimate
+for a separate low-mode observation, such as an \(R^{-8}\) estimate in the
+parallel infrared reference, cannot be substituted here. The proposition is
+about the complete global quadratic; it does not tile a physical-scale
+nonlinear induction.
+
+\subsection{Signed quadratic jets with a positive matrix envelope}
+
+The positivity of each \(B_c\) can be replaced by a quantitative positive
+envelope. This allows an explicitly controlled lower-derivative quadratic
+partner to remain in the reference observable.
+
+\begin{proposition}[Envelope form of the separator estimate]
+\label{gs:envelope}
+Let \(A_c\) be real symmetric matrices, covariant under translations with a
+fixed finite set of root types per cell. Suppose positive matrices \(C_c\)
+satisfy
+\[
+ -C_c\le A_c\le C_c,\qquad \sum_cC_c\le\Lambda I.
+\]
+Let \(V_{\rm cell}\) denote the number of translation cells. For
+\(H_f=\xi^*(\sum_cf_cA_c)\xi-\Tr(\sum_cf_cA_c)\), under the same observation,
+\begin{equation}
+ \Var\E(H_f\mid T,Y_T)
+ \le2\Lambda^2\frac r{V_{\rm cell}}\sum_cf_c^2.
+ \label{gs:envelopebound}
+\end{equation}
+\end{proposition}
+\begin{proof}
+The Loewner bounds imply that \(A_c\) vanishes on \(\ker C_c\), so
+\(A_c=C_c^{1/2}J_cC_c^{1/2}\) with a selfadjoint contraction \(J_c\), even
+when \(C_c\) is singular. For \(U=C_c^{1/2}PC_d^{1/2}\), Schatten Cauchy gives
+\[
+ |\Tr(PA_cPA_dP)|=|\Tr(J_cUJ_dU^*)|
+ \le\norm U_{\HS}^2=\Tr(PC_cPC_dP).
+\]
+Thus the absolute full covariance kernel is dominated by the positive envelope
+kernel. Its row sum is at most \(2\Lambda\Tr(PC_c)\). Averaging over translations
+gives \(\E_T\Tr(P_TC_c)\le\Lambda r/V_{\rm cell}\), separately for each type.
+The signed Schur argument in Theorem~\ref{gs:separator} proves the claim.
+\end{proof}
+
+For example, suppose a \emph{specified fixed-cell} compact flat source jet,
+evaluated in its named Gaussian marginal, has whitened root matrices
+\[
+ A_c=\tfrac12\bigl(\mathsf R_c^*\mathsf R_c
+        +\beta^{-1}\mathsf D_c^*\mathsf J_{\beta,c}\mathsf D_c\bigr),
+\]
+with the already established fixed-cell bounds
+\[
+ \sum_c\mathsf R_c^*\mathsf R_c\le CI,\quad
+ \sum_c\mathsf D_c^*\mathsf D_c\le CI,\quad
+ \norm{\mathsf J_{\beta,c}}_{\rm op}\le C.
+\]
+Taking
+\(C_c=\tfrac12(\mathsf R_c^*\mathsf R_c+
+C\beta^{-1}\mathsf D_c^*\mathsf D_c)\) gives
+\(\Lambda\le C(1+\beta^{-1})\). If this same reference observation has rank
+\(Cd_GV/R\), its \emph{complete} quadratic jet therefore satisfies
+\[
+ \Var(\hbox{retained quadratic jet})
+ \le Cd_GR^{-1}(1+\beta^{-1})^2M_f.
+\]
+This is an implication under the displayed fixed-cell envelope, consistent with
+the corresponding jet estimate of \texttt{block\_and\_transfer/ordinary\_law/compact\_source\_jets.tex}. It does not supply that
+envelope uniformly for a growing eliminated cube. In that geometry the inverse
+block, actual source Hessians and their boundary responses require separate
+bounds. It also makes no comparison between a Gaussian marginal and the
+original compact induced marginal.
+
+\subsection{Uniform flat-holonomy mixtures and their common mean}
+
+Fix a commuting flat background in a constant representative. In an adjoint
+color sector let \(\theta=(\theta_1,\ldots,\theta_4)\) be the total torus twist.
+Its covariant symbols are
+\[
+ p_\mu(k,\theta)=\exp\!\left(\frac{i(2\pi k_\mu+\theta_\mu)}n\right)-1,
+ \quad u_\mu=|p_\mu|^2,\quad s=\sum_\mu u_\mu,
+ \quad K_\theta=sI-pp^*.
+\]
+Conjugate color sectors have opposite twists and form a real Gaussian pair;
+Cartan sectors are untwisted. Use the translation-equivariant covariant Coulomb
+section and omit only its true covariant harmonic zero modes. Positive modes
+arbitrarily close to zero remain in the reference.
+
+The proofs of \eqref{gs:bounds} and Theorem~\ref{gs:separator} are uniform
+in \(\theta\): shifted-grid averaging still gives \(\E_k u_\mu=2\), and the
+rank bound only counts the real observed coordinates. In particular,
+\begin{equation}
+ \E_T\Var_\xi\!\left(\E(Q_f\mid\theta,T,Y_T)\mid\theta,T\right)
+ \le C\upsilon^2d_GR^{-1}M_f.
+ \label{gs:twistedconditional}
+\end{equation}
+The remaining issue within this mixture is its \emph{between-holonomy mean};
+it must not be discarded by centering separately at each holonomy.
+
+\begin{lemma}[Uniform root-mean variation]
+\label{gs:holonomymean}
+For one color and root orientation, define on the momentum torus
+\[
+ b_\nu(k)=\sum_{\mu\ne\nu}
+       \frac{u_\mu(k)[u_\mu(k)+u_\nu(k)]}{s(k)},\qquad b_\nu(0)=0.
+\]
+Its shifted-grid average satisfies
+\begin{equation}
+ \left|\frac1{n^4}\sum_kb_\nu((2\pi k+\theta)/n)
+       -\frac1{n^4}\sum_kb_\nu(2\pi k/n)\right|
+ \le Cn^{-6},
+ \label{gs:rootmeanvariation}
+\end{equation}
+uniformly in every twist, including degenerating twists.
+\end{lemma}
+\begin{proof}
+Near the unique singular point modulo \(2\pi\), \(s(k)\asymp|k|^2\) and the
+numerator vanishes to order four. Thus, away from that point,
+\[
+ |\partial^J b_\nu(k)|\le C_J|k|^{2-|J|}.
+\]
+For a smooth dyadic annulus of radius \(\rho\), the localized symbol has
+\(L^1\) norm \(O(\rho^6)\) and its \(m\)-th derivative has \(L^1\) norm
+\(O(\rho^{6-m})\). Integrating by parts in a coordinate with
+\(|z_j|\ge|z|/2\), for any fixed integer \(m>6\), bounds that annulus's
+Fourier coefficient by
+\[
+ C\rho^6(1+\rho|z|)^{-m}.
+\]
+Sum separately over \(\rho\le|z|^{-1}\) and \(\rho>|z|^{-1}\); both
+geometric sums are \(O(|z|^{-6})\). The smooth portion away from the singular
+point decays faster. Therefore
+\begin{equation}
+ |\widehat b_\nu(z)|\le C(1+|z|)^{-6}.
+ \label{gs:fourierdecay}
+\end{equation}
+These coefficients are absolutely summable in dimension four. The Fourier
+series represents the continuous symbol, including its assigned value zero.
+The shifted-grid Poisson identity is consequently absolutely justified:
+\[
+ \frac1{n^4}\sum_kb_\nu((2\pi k+\theta)/n)
+ =\sum_{m\in\mathbb Z^4}\widehat b_\nu(nm)e^{im\cdot\theta}.
+\]
+Subtract the formula at zero twist and sum \(m\ne0\) using
+\eqref{gs:fourierdecay}. This proves \eqref{gs:rootmeanvariation}.
+\end{proof}
+
+Write \(m_f(\theta)=\E_\xi(Q_f\mid\theta)\). Every plaquette of the flat
+background is identity, so the original Casimir scalar is independent of
+\(\theta\). Summing the real color sectors and using \(4V\) literal roots gives
+\begin{align}
+ |m_f(\theta)-m_f(0)|
+ &\le C|\upsilon|d_Gn^{-6}\norm f_1
+ \le C|\upsilon|d_Gn^{-4}\sqrt{M_f},\label{gs:meancomparison}\\
+ \Var_\pi m_f(\theta)&\le C\upsilon^2d_G^2n^{-8}M_f,
+ \label{gs:betweenholonomy}
+\end{align}
+for \emph{any} source-independent probability law \(\pi\) on commuting flat
+holonomies. No independence among color-sector means has been assumed.
+
+\begin{proposition}[The complete flat-holonomy mixture]
+\label{gs:holonomy}
+For any source-independent holonomy law \(\pi\), with \(T\) independent of
+\(\theta\) and of the conditional Gaussian field, the complete observed mean
+satisfies
+\begin{equation}
+ \Var\E(Q_f\mid\theta,T,Y_T)
+ \le C\upsilon^2\bigl(d_GR^{-1}+d_G^2n^{-8}\bigr)M_f.
+ \label{gs:fullholonomy}
+\end{equation}
+\end{proposition}
+\begin{proof}
+The centered mean splits exactly as
+\[
+ \E(Q_f\mid\theta,T,Y_T)-\E Q_f
+ =G_{\theta,T,f}+[m_f(\theta)-\E_\pi m_f],
+ \qquad \E(G_{\theta,T,f}\mid\theta,T)=0.
+\]
+The two terms are orthogonal, while the second square remains. Combine
+\eqref{gs:twistedconditional} and \eqref{gs:betweenholonomy}.
+\end{proof}
+A coarser positive observation of this same Gaussian mixture contracts the
+complete bound. The estimate does not assert analyticity of the changing
+harmonic quotient through a degenerate twist, nor does it remove harmonic
+variables from an actual compact history. Higher holonomy/source derivatives
+and a comparison with the nonlinear induced law remain independent problems.
+
+\subsection{Higher offset cumulants: an exact limitation}
+\label{gs:higher}
+
+Return to \eqref{gs:centered} and set \(b_f=\norm f_\infty\). Conditional on
+\(T\), the complete Gaussian quadratic cumulants are
+\begin{equation}
+ \kappa_k(G_{T,f}\mid T)
+ =2^{k-1}(k-1)!\upsilon^k\Tr(C_{T,f}^k),\qquad k\ge2.
+ \label{gs:conditionalcumulants}
+\end{equation}
+The root bounds and the signed Schur estimate give
+\begin{equation}
+ \norm{C_{T,f}}_{\rm op}\le8b_f,\qquad
+ v_T:=\Tr(C_{T,f}^2)\le48d_GM_f,
+ \qquad \E_Tv_T\le Cd_GM_f/R.
+ \label{gs:vmax}
+\end{equation}
+Thus the \emph{averaged conditional} cumulants have bounds
+\(C_k|\upsilon|^kb_f^{k-2}d_GM_f/R\). They are not the unconditional
+cumulants after adjoining the offset. Since the conditional first mean is zero,
+the fourth cumulant of the complete joint variable is exactly
+\begin{equation}
+ \kappa_4(G)
+ =48\upsilon^4\E_T\Tr(C_{T,f}^4)
+      +3\Var_T(2\upsilon^2v_T).
+ \label{gs:fourthmixture}
+\end{equation}
+The second term can cost \(M_f^2/R\). Offset independence of the first mean
+does not eliminate fluctuations of higher conditional source coefficients.
+
+\begin{proposition}[No blanket higher-source upgrade]
+\label{gs:counterexample}
+The positivity, bounded root trace, uniform translation, and rank assumptions
+of Theorem~\ref{gs:separator} do not imply a fourth-cumulant bound
+\(C M_f/R\), or a Bernstein bound with variance parameter \(CM_f/R\) and a
+fixed radius \(|t|b_f\le\delta\), for the complete offset mixture.
+\end{proposition}
+\begin{proof}
+Take \(RM\) independent real standard Gaussian coordinates on a cyclic set.
+Let \(S_t\) be its residue classes modulo \(R\), let \(T\) be uniform on
+\(\{0,\ldots,R-1\}\), and observe all coordinates in \(S_T\). Set
+\(B_c=e_ce_c^*\), so \(\sum_cB_c=I\), \(\Tr B_c=1\), and every observation
+has rank \(M\). This family is translation-covariant. Mark only \(S_0\):
+\(f_c=1_{S_0}(c)\), \(M_f=M\), \(b_f=1\). The centered retained quadratic is
+\[
+ G=1_{\{T=0\}}X,\qquad X=\sum_{j\in S_0}(\xi_j^2-1).
+\]
+Direct calculation gives
+\begin{align}
+ \Var G&=2M/R,\notag\\
+ \kappa_4(G)&=48M/R+12M^2(1/R-1/R^2),\label{gs:counterkappa}\\
+ \E e^{tG}&=1-1/R+R^{-1}e^{-tM}(1-2t)^{-M/2},\qquad t<1/2.
+ \label{gs:countermgf}
+\end{align}
+For fixed positive \(t\), the logarithm of \eqref{gs:countermgf} is
+\(M[-t-\tfrac12\log(1-2t)]-\log R+o(1)\) as \(M\to\infty\).
+Taking \(R\) large defeats any uniform bound \(CMt^2/R\) with a fixed
+positive radius. This is a Gaussian linear-observation counterexample to that
+inference. It uses the abstract matrix hypotheses rather than the particular
+Maxwell root family; it is not a counterexample to the variance theorem or to a
+separately proved Wilson estimate.
+\end{proof}
+
+There is nevertheless a valid complete mixture bound. Put
+\(V_{\max}=48d_GM_f\) and \(\bar q=\E_Tv_T/V_{\max}\le C/R\), with the
+zero-mark case interpreted as zero. The Gaussian determinant formula gives
+\[
+ \log\E_\xi e^{tG_{T,f}}
+ \le\frac{\upsilon^2t^2v_T}{1-16|\upsilon t|b_f},
+ \qquad16|\upsilon t|b_f<1.
+\]
+For \(0\le v\le V_{\max}\), convexity bounds \(e^{av}\) \emph{above} by
+the chord joining its endpoint values. Averaging that bound yields
+\begin{equation}
+ \E_{T,\xi}e^{tG_{T,f}}
+ \le1+\bar q\left[
+ \exp\!\left(\frac{\upsilon^2t^2V_{\max}}
+                   {1-16|\upsilon t|b_f}\right)-1\right].
+ \label{gs:validmixturemgf}
+\end{equation}
+In particular,
+\begin{equation}
+ \log\E e^{tG}\le C\upsilon^2d_GM_ft^2/R,
+ \qquad |\upsilon t|\sqrt{d_GM_f}\le c.
+ \label{gs:smallmixtureradius}
+\end{equation}
+This radius depends on the whole marked mass. Gaussian second-chaos moments
+also give, for \(p\ge2\),
+\[
+ \norm G_{L^p}
+ \le C|\upsilon|p\,(\E_Tv_T^{p/2})^{1/p}
+ \le C|\upsilon|p\,R^{-1/p}\sqrt{d_GM_f}.
+\]
+These are real mixture bounds with all offset terms retained. They provide no
+volume-independent complex mixed-admission statement.
+
+\subsection{Relation to the unresolved compact susceptibility}
+
+The rank proof works because this specified observation is a known linear
+Gaussian observation and Wick contraction gives an entrywise positive full
+trace kernel. The actual compact conditional mean has neither representation
+proved. Counting retained links does not estimate its nonlinear excess under
+\(e^{-\beta S_{\rm out}(b)}\prod_jZ_j(b)\,\dd b\); every raw normalizer and
+the full boundary and source responses remain part of that problem.
+
+The results above therefore supply a quantitative reference benchmark, its
+optimal separator exponent, a controlled shared holonomy mean, and a precise
+higher-source limitation. They do not prove the required
+\(\mathcal A^*\mathcal L_1^{-1}\mathcal A\le CI\), the original ordinary
+heat-pressure upper curvature, or a physical-scale induction. The original
+physical source factor still squares to \(c_\beta^{-2}a^{-4}\); source
+normalizations are not altered by Gaussian whitening. The flat-block scale
+restriction and the simultaneous-domain, current, reserve and higher-partner
+obligations remain unchanged.

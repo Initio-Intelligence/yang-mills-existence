@@ -1,0 +1,1074 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.88in,headheight=15pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array,xcolor,fancyhdr}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black,citecolor=blue!45!black]{hyperref}
+\usepackage{bookmark}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small Yang--Mills existence}
+\rhead{}\cfoot{\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Var}{\operatorname{Var}}\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\diver}{\operatorname{div}}\newcommand{\Ad}{\operatorname{Ad}}
+\newcommand{\cB}{c_\beta}\newcommand{\dd}{\,d}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\status}[1]{\par\noindent\colorbox{blue!5}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{#1}}\par}
+\allowdisplaybreaks[2]
+\title{Rare selector means and inherited coefficients}\author{}\date{}
+\providecommand{\mathscr}{\mathcal}
+\begin{document}\maketitle
+\section{The unresolved estimate and unchanged normalization}
+
+Keep the original compact \(SU(N)\) Wilson measure and the local-moment regime of~\cite[\S2]{ND}, \cite[\S1]{SZ} and~\cite[\S1]{OS}:
+\begin{equation}\label{eq:law}
+ d\mu_\beta=Z_\beta^{-1}e^{-\beta S_0}\dd\lambda,\qquad
+ S_0=\sum_p(N-\Re\tr U_p),\qquad
+ \beta=\cB g^{-2}\ge2,\qquad (\log\beta)/n\le K.
+\end{equation}
+The original finite reflection-compatible stencils fit on the torus. The established local input is
+\begin{equation}\label{eq:local}
+ \norm{\beta\sum_{p\in Y}s_p}_{L^u(\mu_\beta)}
+ \le C u\,\#Y,\qquad u\ge1,
+\end{equation}
+with a corresponding exponential moment on each fixed literal plaquette record. No mixing estimate is included in this input.
+
+For a field-independent test, constant in the color index of each original link, use the unchanged packet
+\begin{align}\label{eq:packet}
+ h_f^0&=\beta G_f=\beta(D[f]-P[f]/3),\\
+ R_f^0&=\beta D[f]-\ell[f]/3,\qquad
+ \tau_f^0=(\ell[f]-\beta P[f])/3,\qquad h_f^0=R_f^0+\tau_f^0,\nonumber\\
+ w_f&=-\tfrac13\sum_{e,A}f_e(X_{e,A}S_0)X_{e,A},\qquad
+ D_{w_f}\rho=\tau_f^0\rho,\quad D_w=-\diver(w\,\cdot).\nonumber
+\end{align}
+All actual pointing averages and shifts are applied to every row. In particular
+\[
+ D[f]=\sum_{e,A}f_e\sum_{\mu\ne\operatorname{dir}e}F_{e,A;\mu}^2,\quad
+ P[f]=\sum_{e,A}f_eF_{e,A}^2,\quad
+ \ell[f]=\sum_{e,A}f_eX_{e,A}^2S_0.
+\]
+Write \(M_f=\sum_e|f_e|^2\) on the original positive-orientation link anchors. The unchanged finite pointing/averaging incidence changes estimates by only a fixed factor. For the uniform test, \(M_1=4n^4\), with the fixed color multiplicity accounted for once.
+The physical packet is
+\begin{equation}\label{eq:physical}
+ (O_f,r_f,t_f,V_f)=\cB^{-1}a^{-2}(h_f^0,R_f^0,\tau_f^0,w_f).
+\end{equation}
+The full Casimir constant in \(\ell[f]\) remains.
+
+For the actual separated-link marginal \(\nu_X\) of~\cite[\S\S3--5]{SZ}, put
+\[
+ R_X=\E(R_1^0\mid X),\qquad R_{X,c}=R_X-\E R_X.
+\]
+Let \(B_X\) be either the genuine unit-rate-per-link heat-bath generator or the \(\beta^{-1}\)-normalized marginal Langevin generator of~\cite[\S2.2]{OS}. Its proved reduction is
+\begin{equation}\label{eq:main}
+ \boxed{\quad
+ \left|\chi_{n,\beta}
+ -n^{-4}\norm{1_{(0,1]}(B_X)R_{X,c}}_2^2\right|\le C,\qquad
+ \chi_{n,\beta}=\beta^2n^{-4}\Var_{\mu_\beta}(G_H).
+ \quad}
+\end{equation}
+The missing bound remains
+\begin{equation}\label{eq:missing}
+ \sup_{\text{admissible }n,\beta}
+ n^{-4}\norm{1_{(0,1]}(B_X)R_{X,c}}_2^2<\infty.
+\end{equation}
+The results below control identifiable parts of conditional-mean and history variance. They do not prove \eqref{eq:missing}.
+
+\subsection{An exact pressure direction for the ordinary row}
+
+Let \(N_p\) be the original plaquette count and \(C_F\) the fixed fundamental Casimir in the original derivative convention. For the uniform test,
+\[
+ \ell[1]=4C_FN N_p-4C_FS_0,\qquad
+ R_1^0=\beta D[1]+kS_0-C_0,
+\]
+where \(k=4C_F/3\) and \(C_0=4C_FN N_p/3\). Define
+\(\mathcal Z(b,\theta)=\int e^{-bS_0+\theta D[1]}\dd\lambda\). Then
+\begin{equation}\label{eq:pressure}
+ \int e^{-\beta S_0+\lambda R_1^0}\dd\lambda
+ =e^{-\lambda C_0}\mathcal Z(\beta-k\lambda,\beta\lambda).
+\end{equation}
+Thus
+\[
+ \Var(R_1^0)=\beta^2\Var(D[1])
+ +2\beta k\Cov(D[1],S_0)+k^2\Var(S_0).
+\]
+The ordinary problem is a definite pressure Hessian; an action specific-heat bound alone would not control its other two terms. Equation \eqref{eq:pressure} is an auxiliary identity for estimating the unchanged packet, not a replacement of the physical source.
+
+\section{A genuine rare-selector conditional-mean estimate}
+
+\subsection{The original probability space}
+
+Use the actual completed positive realization of S58b/NR10~\cite[pp.~601--602, 1100--1101]{W} and~\cite[\S3]{OS}. At fixed full old datum \(b\), let
+\[
+ d\mu_b(\xi)=Q(b)^{-1}d\rho_b(\xi),\qquad
+ K_G(dC\mid b)=D_G(b)^{-1}\chi_G(C;b)r_G(C;b)\dd\lambda_{G,b}(C).
+\]
+The old source remains in \((\xi,b)\). With original normalized choice weights \(w_G\) and nonnegative selector partition \(\sum_\alpha\pi_{G,\alpha}=1\), the joint law is
+\begin{equation}\label{eq:joint}
+ d\mathbb P_b
+ =d\mu_b(\xi)\,w_G(b)K_G(dC\mid b)\,
+ \pi_{G,\alpha}(C,\xi,b).
+\end{equation}
+The genuine \(D_G\), original relative tree fiber and cutoff are unchanged. All action-completion factors must be multiplied back before using this probability representation. Individual signed localized members are not probability kernels.
+
+At a global endpoint, integrate \(b\) with its actual old marginal. Complete positive source-free insertions preserve the original Wilson marginal. Every source moment below is therefore an original Wilson moment. Bounds are globally integrated; they are not uniform after fixing an arbitrary \(b\) or dividing by a tiny selected branch mass.
+
+\subsection{A tail estimate that retains the full rare mass}
+
+\begin{lemma}[One probability factor]\label{lem:tail}
+Suppose \(T\ge0\), \(\theta>0\), \(\E e^{\theta T}\le K_0\), and \(0\le H\le1\) has \(\E H=p\). For every integer \(d\ge0\),
+\begin{equation}\label{eq:tail}
+ \E[HT^d]\le
+ p\,\theta^{-d}d!\sum_{j=0}^d
+ \frac{\log^j(K_0/p)}{j!}
+ \le p\,\theta^{-d}\bigl[\log(K_0/p)+d\bigr]^d.
+\end{equation}
+At \(p=0\) the bound is interpreted as zero. In particular, if
+\(\norm{F}_u\le C u A\) for all \(u\ge1\), then
+\begin{equation}\label{eq:subexp}
+ \E[H|F|^d]\le C_d A^d p\log^d(e/p).
+\end{equation}
+\end{lemma}
+\begin{proof}
+For \(d\ge1\), layer cake bounds the integral by
+\[
+ d\int_0^\infty t^{d-1}\min\{p,K_0e^{-\theta t}\}\dd t.
+\]
+Split at \(t=\theta^{-1}\log(K_0/p)\) and integrate the exponential tail. This gives the first expression in \eqref{eq:tail}; the second follows by expanding \((L+d)^d\) and using \(d!/(d-r)!\le d^r\). The moment hypothesis for \(F\) gives an exponential moment for \(|F|/(C'A)\) by its power series. Apply the first assertion.
+\end{proof}
+
+For any one original local root, \eqref{eq:local} gives
+\[
+ \norm{h_e^0}_u+\norm{R_e^0}_u+\norm{\tau_e^0}_u
+ \le C u |f_e|.
+\]
+The harmless local Casimir constant is included in this bound. For the actual retained root \(\Phi_e=P_XR_e^0\), conditional Jensen gives the same bound. No incoming analytic norm for \(\Phi_e\) is assumed. For a finite marked sum, an available envelope is \(A=C\sum_e|f_e|\); replacing it by \(C(\sum_e|f_e|^2)^{1/2}\) would require the missing connected estimate.
+
+\subsection{The complete new history mean}
+
+Put \(W=(b,G,C)\), leaving \(\xi\) integrated, and let the current selector have one distinguished ordinary value \(0\). All its other values form the event \(E=\{\alpha\ne0\}\). Write
+\[
+ p=\mathbb P(E),\quad m_W=\E(F\mid W),\quad
+ m_Y=\E(F\mid W,\alpha),\quad Y=(W,\alpha).
+\]
+At fixed \(b\), the new \(G,C\) are independent of the old mark conditional on \(b\), so \(m_W=\E(F\mid b)\). They do not supply a new physical reference law for \(F\).
+
+\begin{theorem}[Actual rare-refinement variance]\label{thm:rare}
+For a real mark \(F\), if \(\norm{F}_u\le CuA\), then
+\begin{equation}\label{eq:rare}
+ \boxed{\quad
+ \E|m_Y-m_W|^2\le C A^2p\log^2(e/p).
+ \quad}
+\end{equation}
+There is no lower bound on the conditional ordinary probability, no number-of-labels factor and no replacement \(p\mapsto p^\vartheta\).
+\end{theorem}
+\begin{proof}
+Set \(q(W)=\mathbb P(E\mid W)\), \(X=F-m_W\), and
+\(d_\alpha=\E(X\mid W,\alpha)\). Then
+\(\sum_\alpha p_\alpha d_\alpha=0\). On \(q\le1/2\),
+\[
+ p_0d_0^2
+ \le\frac{q}{p_0}\sum_{\alpha\ne0}p_\alpha d_\alpha^2
+ \le\sum_{\alpha\ne0}p_\alpha d_\alpha^2,
+\]
+and therefore
+\[
+ \sum_\alpha p_\alpha d_\alpha^2
+ \le2\,\E(1_E X^2\mid W).
+\]
+On \(B=\{q>1/2\}\), the full conditional variance is bounded by
+\(\E(X^2\mid W)\), while \(\mathbb P(B)\le2p\). Jensen gives
+\(\norm{X}_u\le2CuA\). Apply Lemma \ref{lem:tail} to \(E\) and \(B\), using the ordinary \(L^2\) bound when \(p\ge1/4\). Both contributions are \(CA^2p\log^2(e/p)\).
+\end{proof}
+
+R-II introduces a two-term small/large partition in each fixed component of \(Z\), before its component integrations. Once the prior geometry and preparatory choices are fixed, the current binary vector has one all-small value \cite{RII}. Theorem \ref{thm:rare} thus applies to that actual new refinement. Its \(p\) is the actual union mass. If the vector covers many components, that union mass can be order one; a local component probability cannot replace it without an actual support reduction.
+
+For a general selector with additional common alternatives, let \(I=1_E\) and \(m_I=\E(F\mid W,I)\). Orthogonal projections give
+\begin{equation}\label{eq:common}
+ \E|m_Y-m_W|^2
+ =\E|m_I-m_W|^2+\E[1_E|m_Y-m_I|^2]
+ +\E[1_{E^c}|m_Y-m_I|^2].
+\end{equation}
+The first two terms obey the rare bound; the last is the explicit between-common-history variance. It vanishes only after actual identification of those means.
+
+\subsection{Source matrices, protected records and original root counts}
+
+For a finite vector of marks \(F_i\), let \(V\) be the covariance matrix of their increments. The correct consequence of \eqref{eq:rare} is
+\begin{equation}\label{eq:matrix}
+ \theta^TV\theta
+ \le Cp\log^2(e/p)
+ \norm{\sum_i\theta_i F_i}_{\psi_1}^2
+ \le Cp\log^2(e/p)\left(\sum_i|\theta_i|A_i\right)^2.
+\end{equation}
+It is not the rank-one matrix inequality \(V\preceq CAA^T\). Different entries can have different signs.
+
+Here \(\|F\|_{\psi_1}\) denotes the infimum of \(a>0\) for which \(\E e^{|F|/a}\le2\). If an actual stored row is \(W\)-measurable, its increment is exactly zero. This includes a PE12 protected row only when its full old target record is in \(W\). Thus actual touched readsets can remove entries before any estimate. If a touch event \(T_i\) is \(W\)-measurable and the \(i\)th increment vanishes outside it, repeat the proof with this prelabel mask, or coarsen the selector to its ordinary value outside \(T_i\). The rare mass is then \(p_i=\mathbb P(E\cap T_i)\). Two-mark bounds can similarly retain the joint actual touch event.
+
+These are counts of original determining records. Native coordinate dimension does not replace them. For the uniform sum over \(O(n^4)\) roots, \eqref{eq:matrix} alone can still give an \(O(n^8)\) bound.
+
+\section{One rare birth pays for its entire later variance}
+
+The next result controls repeated history refinement without repeatedly charging the birth mass.
+
+\begin{theorem}[A complete rare lineage]\label{thm:lineage}
+Let \(F\) be real, let \((\cF_t)_{t=0}^T\) be a nested observation filtration on the original augmented positive space, and \(M_t=\E(F\mid\cF_t)\). Let a rare birth event \(E\in\cF_b\) have probability \(p\). For \(t>b\), let \(a_t\in\{0,1\}\) be \(\cF_{t-1}\)-measurable with \(a_t\le1_E\). Then
+\begin{align}\label{eq:lineage}
+ \norm{\sum_{t>b}a_t(M_t-M_{t-1})}_2^2
+ &=\sum_{t>b}\E[a_t(M_t-M_{t-1})^2]\\
+ &\le\E[1_E(F-M_b)^2]
+ \le\E[1_EF^2]
+ \le CA^2p\log^2(e/p),\nonumber
+\end{align}
+provided \(\norm{F}_u\le CuA\).
+
+If the birth itself is the whole centered selector increment of Theorem \ref{thm:rare}, with its ordinary prelabel data already revealed, adding that birth increment to the sum in \eqref{eq:lineage} preserves the same form of bound, with a fixed larger constant.
+\end{theorem}
+\begin{proof}
+Predictability makes the selected differences martingale differences and hence mutually orthogonal. Because \(E\in\cF_b\), all later differences are also orthogonal under the weight \(1_E\). Their full weighted square sum is
+\(\E[1_E(M_T-M_b)^2]\). Any selected subsum is smaller. Conditional Jensen bounds this by
+\(\E[1_E(F-M_b)^2]\). The latter is
+\(\E[1_EF^2]-\E[1_EM_b^2]\).
+Lemma \ref{lem:tail} completes the estimate. The whole birth increment is \(\cF_b\)-measurable and is orthogonal to every later selected difference, so its separate bound adds once.
+\end{proof}
+
+\textbf{Ownership is part of the statement.} A mask chosen after seeing the current rare outcome is not predictable. The current selector increment must include its ordinary-branch compensator. The theorem permits choosing which later operation belongs to an already known lineage; it does not permit deleting an inconvenient realized sign. Mergers require disjoint predictable ownership or one union event. Two overlapping descriptions do not receive two copies of the original mass. The descendant statement extends to a stopping-time birth. Its random-time birth increment needs its own estimate; summing separate birth-time estimates can reintroduce a depth count.
+
+The filtration can retain the whole actual past for analysis even if a later RG output forgets part of it. It does not reveal hidden old numerator variables just to make the source constant. Ordinary data newly revealed before a selector occupy separate increments. They do not acquire a rare factor. A deterministic tag already measurable at birth has zero later increments; it is not charged again as a fluctuation.
+
+\subsection{Transfer to an actual output and its low spectral sector}
+
+Let \(D_E\) be the controlled birth-plus-descendant sum. For an actual final observation \(Y\) with \(\sigma(Y)\subseteq\cF_T\), one has \(\E(F\mid Y)=\E(M_T\mid Y)\). For any orthogonal projection \(Q_Y\) in \(L^2(\nu_Y)\),
+\begin{equation}\label{eq:project}
+ \boxed{\quad
+ \norm{Q_Y\,\E(D_E\mid Y)}_2^2
+ \le \norm{D_E}_2^2
+ \le CA^2p\log^2(e/p).
+ \quad}
+\end{equation}
+In particular \(Q_Y\) may be a low spectral projection of a specified actual output generator, or its zero-energy projection. No inverse spectral threshold occurs. This is a conditional-mean bound, not a current inverse-form estimate.
+
+If the final centered mean decomposes exactly as
+\(m_{Y,c}=m_{Y,\mathrm{ord}}+\E(D_E\mid Y)\), then
+\[
+ \left|\norm{Q_Ym_{Y,c}}_2-\norm{Q_Ym_{Y,\mathrm{ord}}}_2\right|
+ \le CA\sqrt p\log(e/p).
+\]
+Projection can create cross covariance between the two summands. An additive identity for their squared projected norms is not asserted.
+
+The theorem has a direct actual-body application: each literal retained root \(P_XR_e^0\) of~\cite[\S\S3--5]{SZ} has the required moment bound by \eqref{eq:local} and conditional Jensen. Its identified rare-birth and owned-descendant contribution is therefore controlled without assuming an incoming holomorphic supremum. The rest of its history variance is not thereby bounded. For a body which is only one signed stored representative, its equality to that complete retained source must first be checked.
+
+\subsection{An extensive bridge to the original source without screening}
+
+There is a concrete correction when the later actual kernel still reads an eliminated original variable. In that case one cannot assert
+\(\E(R_1^0\mid Y)=\E(R_X\mid Y)\) by the tower property. The correction can nevertheless be bounded at the required extensive scale, using only the earlier proved estimates.
+
+
+\begin{proposition}[The original source through an actual later observation]\label{prop:bridge}
+Let \(X\) be the separated-link output of~\cite[\S\S3--5]{SZ}, \(h=h_1^0\), \(R=R_1^0\), \(\tau=\tau_1^0\), and \(P_X=\E(\,\cdot\mid X)\). Define
+\[
+ \epsilon_h=(I-P_X)h+P_X\tau,
+ \qquad \epsilon_R=\epsilon_h-\tau=(I-P_X)R.
+\]
+Then, exactly,
+\begin{equation}\label{eq:bridgeoriginal}
+ h=R_X+\epsilon_h,\qquad R=R_X+\epsilon_R,
+ \qquad \E\epsilon_h=\E\epsilon_R=0,
+ \qquad \|\epsilon_h\|_2^2+\|\epsilon_R\|_2^2\le Cn^4.
+\end{equation}
+For any later actual observation \(Y\) on a completed positive, source-free realization retaining the original Wilson marginal, and any orthogonal projection \(Q_Y\),
+\begin{align}\label{eq:bridgeoutput}
+ \E(h\mid Y)&=\E(R_X\mid Y)+\E(\epsilon_h\mid Y),\\
+ \E(R\mid Y)&=\E(R_X\mid Y)+\E(\epsilon_R\mid Y),\nonumber\\
+ \|Q_Y\E(\epsilon_h\mid Y)\|_2^2+
+ \|Q_Y\E(\epsilon_R\mid Y)\|_2^2&\le Cn^4.\nonumber
+\end{align}
+No screening of the eliminated variables by \(X\) is required.
+\end{proposition}
+\begin{proof}
+The identity \(h=R+\tau\) gives \(P_Xh=R_X+P_X\tau\). Reference~\cite[\S3]{SZ} proves
+\(\|(I-P_X)h\|_2^2=\E\Var(h\mid X)\le Cn^4\), and~\cite[\S2.4]{OS} proves
+\(\|\tau\|_2^2+\|P_X\tau\|_2^2\le Cn^4\). The two displayed summands of \(\epsilon_h\) are orthogonal: the first is conditionally centered given \(X\), and the second is \(X\)-measurable. Hence
+\[
+ \|\epsilon_h\|_2^2=
+ \E\Var(h\mid X)+\|P_X\tau\|_2^2\le Cn^4.
+\]
+The triangle inequality bounds \(\epsilon_R\), and original compact integration by parts gives \(\E\tau=0\), proving the zero means. Conditional expectation on the actual augmented positive law is an \(L^2\) contraction regardless of which original variables its kernel reads. Applying this contraction and then \(Q_Y\) proves \eqref{eq:bridgeoutput}.
+\end{proof}
+
+The statement includes low spectral and zero-energy projections of any specified actual output generator. It controls an error in the \emph{norm}, of order \(n^2\); it does not assert an \(O(n^4)\) difference of squared projected norms when the retained norm itself is unbounded. The physical factor \(\cB^{-1}a^{-2}\) multiplies the whole identity unchanged. The complete pushed current remains
+\(\tau_Y=\E(\tau\mid Y)\), with every boundary/reference companion needed to identify its stored representation.
+
+The same error has one budget across all later history refinements. If
+\(N_t=\E(\epsilon_h\mid\cF_t)\), orthogonality gives
+\[
+ \sum_t\E|N_t-N_{t-1}|^2\le\|\epsilon_h\|_2^2\le Cn^4,
+\]
+and likewise for \(\epsilon_R\). Predictable subcollections only reduce that sum. This is an extensive, globally integrated bridge for the original packet through the actual positive mixed operation, rather than an assumed incoming inherited norm. It does not bound the remaining \(\E(R_X\mid Y)\), provide a branchwise complex estimate, or identify individually signed stored members without the original recombination.
+
+Mixed connected errors still retain the ordinary energy. If \(d_t^R\) are the martingale increments of \(\E(R_X\mid\cF_t)\) and \(d_t^\epsilon\) those of either residual, then
+\[
+ \sum_t\E|d_t^R d_t^\epsilon|
+ \le Cn^2\left(\sum_t\E|d_t^R|^2\right)^{1/2}.
+\]
+The right side is not automatically \(O(n^4)\). Thus the bridge does not remove any inherited ordinary/contact coefficient or its exact current cancellation.
+
+\subsection{The generated connected row has the same budget}
+
+For two original marks write \(M_t^i=\E(O_i\mid\cF_t)\),
+\(d_t^i=M_t^i-M_{t-1}^i\), and
+\(C_t=\Cov(O_1,O_2\mid\cF_t)\). Exact total covariance gives
+\[
+ \E(C_t-C_{t-1}\mid\cF_{t-1})
+ =-\E(d_t^1d_t^2\mid\cF_{t-1}).
+\]
+With the same predictable owned masks as in Theorem \ref{thm:lineage},
+\begin{equation}\label{eq:generated}
+ \boxed{\quad
+ \sum_{t>b}\E\!\left[
+ a_t\abs{\E(d_t^1d_t^2\mid\cF_{t-1})}\right]
+ \le CA_1A_2p\log^2(e/p).
+ \quad}
+\end{equation}
+Indeed the left side is at most
+\(\sum_t\E[a_t|d_t^1d_t^2|]\); Cauchy--Schwarz over time and probability and \eqref{eq:lineage} prove the claim. The complete centered birth covariance adds once with the same form of bound.
+Thus even the sum of absolute integrated newly generated between-history connected rows has no residence-depth factor. The inherited \(C_t\) remains in its exact total-cumulance identity. This does not turn every separately localized stored contact into this complete row.
+
+\subsection{Raw mass and saved coefficients}
+
+For a complete raw positive mass \(Z\), multiply the right side of \eqref{eq:lineage} by \(Z\). Since \(Zp\) is the actual rare mass, the result keeps that mass once. A genuine field-independent saved coefficient \(\gamma\) gives \(|\gamma|^2\) in the quadratic bound; its original mesh, coupling ratio and age are not reset at a new label.
+
+If \(s(b)\) varies with retained data, it stays in the original density. It is not a constant after the \(b\) integration, and the unweighted moment theorem cannot simply be transferred to a newly tilted law. In the completed original realization all compensating factors are restored before invoking the Wilson moments. Independently extracted vacuum increments remain independent bookkeeping rows.
+
+\section{Complete inherited coefficients and current partners}
+
+\subsection{Endpoint cumulants without an assumed inherited envelope}
+
+Let the original source be \(\sum_i\eta_iO_i\), with distinct commuting squarefree labels. At a complete positive endpoint \(Y\), define
+\[
+ M_Y(\eta)=\E\!\left(e^{\sum_i\eta_iO_i}\mid Y\right),\qquad
+ C_{I,Y}=[\eta_I]\log M_Y(\eta).
+\]
+All logarithms here are finite nilpotent algebra operations at source zero. They do not presume a zero-free complex source disc.
+
+\begin{theorem}[A complete inherited endpoint bound]\label{thm:cumulant}
+Suppose \(T\ge0\), \(A_i\ge0\), \(\theta>0\), \(|O_i|\le A_iT\) on a common original finite record and
+\(\E e^{\theta T}\le K_0\). Let \(r=|I|\), and let
+\[
+ c_r=\sum_{\pi\in\Pi(I)}(|\pi|-1)!.
+\]
+For any output-measurable \(0\le H\le1\) of mass \(p\),
+\begin{equation}\label{eq:cumulant}
+ \boxed{\quad
+ \E[H|C_{I,Y}|]\le
+ c_r\left(\prod_{i\in I}A_i\right)
+ p\,\theta^{-r}\bigl[\log(K_0/p)+r\bigr]^r.
+ \quad}
+\end{equation}
+\end{theorem}
+\begin{proof}
+The exact conditional moment-cumulant formula gives one term per partition. Conditional Holder bounds each product of conditional moments by
+\((\prod_iA_i)\E(T^r\mid Y)\). Sum the absolute partition coefficients, integrate \(H\), and apply Lemma \ref{lem:tail}. A union of rare labels is grouped before this estimate, so no entropy sum over their individual probabilities appears.
+\end{proof}
+
+If an actual old state \(X\) screens the old source variables from a later source-free observation \(Y\), then
+\[
+ C_{12,Y}
+ =\E(A_{12,X}\mid Y)+
+ \Cov\bigl(m_{1,X},m_{2,X}\mid Y\bigr),
+\]
+where \(m_{i,X}=\E(O_i\mid X)\) and
+\(A_{12,X}=\Cov(O_1,O_2\mid X)\). This follows from
+\(\E(M_X(\eta)\mid Y)=M_Y(\eta)\). It bounds the complete inherited combination without first bounding its \(A_{12,X}\) pointwise.
+
+The screening state must include every old variable used by the actual kernel. For an arbitrary selected step that still reads old latent variables, one cannot invoke this composition using an underspecified coarse \(X\). The direct definition of \(C_{I,Y}\) under the complete joint law remains valid.
+
+An individual localized stable member need not equal \(C_{I,Y}\). The original XP product/log identities must identify the whole stored packet, including its compensators, before \eqref{eq:cumulant} applies. This is an endpoint weighted \(L^1\) estimate, not an all-history analytic or graded-current norm.
+
+\subsection{One original energy reserve}
+
+For one actual live-history positive measure \(\lambda_\omega\), suppose the already established source-free bound is
+\[
+ \int e^{\theta E_\omega}\dd\lambda_\omega\le B_\omega.
+\]
+For literal source atoms \(|O_i|\le A_i(1+E_\omega)\), the same proof under its normalized law, followed by restoration of its raw mass, yields
+\begin{equation}\label{eq:onereserve}
+ \int |C_{I,Y}|\dd(\lambda_\omega)_Y
+ \le c_r\left(\prod_iA_i\right)
+ \sup_{t\ge0}(1+t)^re^{-\theta t}\,B_\omega.
+\end{equation}
+There is one \(B_\omega\), for all marks and all partitions in this component. This is applicable only when those literal atoms have the specified original reserve bound. Restoring ancestral variables by Fubini does not prove that they belong to a later local component record.
+
+\subsection{The full selected derivative identity stays in force}
+
+For the physical decomposition \(O_i=t_i+r_i\), retain
+\[
+ b_{12}=A_{12}+\tfrac12(V_1t_2+V_2t_1)+V_1r_2+V_2r_1.
+\]
+Its source-preserving current conjugation differentiates the whole tested kernel. Thus the endpoint estimates above concern the recombined physical coefficient; they do not discard the current companions.
+
+For the actual selected operator
+\(\mathscr T[F]=e^sD^{-1}\langle\chi f,F\rangle\),
+the exact smooth-chart response, when \(fD\ne0\), remains
+\begin{align}\label{eq:response}
+ X\mathscr T[F]
+ ={}&(Xs-X\log D)\mathscr T[F]\\
+ &+\frac{e^s}{D}
+ \left\{\int\chi f(H_XF+S_XF)
+ +\langle f(X\chi-v\chi),F\rangle\right\},\nonumber\\
+ H_X&=X-v,\qquad S_X=f^{-1}(Xf-\diver(fv)).\nonumber
+\end{align}
+The material response includes the actual prepared readout. \(D\) is the original reference denominator, not a newly chosen selected numerator mass. Singular constraints retain the undivided tested identity.
+At first current order,
+\[
+ q_*(\chi t_i\mu)
+ =D\,q_*(\chi\,dq\,V_i\,\mu)+q_*((V_i\chi)\mu).
+\]
+Neither \eqref{eq:rare} nor \eqref{eq:cumulant} is a separate norm estimate for these boundary/reference distributions. Their exact recombination is why the positive endpoint estimate is valid.
+
+\section{An actual nonlinear ordinary body after one link integration}
+
+This section specializes to \(SU(2)\). It gives an exact all-field identification of a literal retained ordinary root. It is not a replacement of the fixed-\(SU(N)\) problem by \(SU(2)\).
+
+\subsection{The compact integral with its full directional record}
+
+Fix every original link except \(e\). Represent it by a unit quaternion \(u\in S^3\). In the convention
+\[
+ S_e=\text{constant}-2u\cdot H,\qquad
+ H=h_1+h_2+h_3,
+\]
+each \(h_\mu\) is the sum of the two actual directional exterior staples, with the orientation/conjugation needed by this action convention. With normalized Haar measure \(d\omega\),
+\begin{equation}\label{eq:starK}
+ K_e(du)=z_\beta(H)^{-1}e^{2\beta u\cdot H}\dd\omega(u),\qquad
+ z_\beta(H)=\frac{2I_1(2\beta\sqrt{H\cdot H})}{2\beta\sqrt{H\cdot H}}.
+\end{equation}
+The original factor \(e^{-\beta\,\mathrm{constant}}\) remains in the raw \(z_e\); \eqref{eq:starK} displays its nonconstant factor.
+
+Choose a real rotation with \(H=\kappa e_0\), and write
+\[
+ h_\mu=(a_\mu,b_\mu),\quad
+ \sum_\mu a_\mu=\kappa,\quad \sum_\mu b_\mu=0,\quad
+ t=2\beta\kappa.
+\]
+Set \(q_\perp=K_eu_1^2\), so \(K_eu_0^2+3q_\perp=1\). The fixed generator constant is
+\[
+ c_X^2=4C_F/3.
+\]
+Indeed the link Laplacian is \((C_F/3)\Delta_{S^3}\), and differentiating \(-2u\cdot h_\mu\) gives
+\[
+ \sum_A F_{e,A;\mu}^2
+ =c_X^2\bigl(|h_\mu|^2-(u\cdot h_\mu)^2\bigr).
+\]
+Consequently
+\[
+ K_eD_e=c_X^2\left[
+ 3q_\perp\sum_\mu a_\mu^2+
+ (1-q_\perp)\sum_\mu|b_\mu|^2\right],
+ \qquad K_eP_e=3c_X^2q_\perp\kappa^2.
+\]
+
+\begin{theorem}[The retained rooted ordinary term]\label{thm:star}
+With the original source and original conditional denominator,
+\begin{equation}\label{eq:star}
+ \boxed{\quad
+ \Phi_e:=K_eR_e^0=\beta K_eG_e
+ =c_X^2\beta\left[
+ 3q_\perp\left(\sum_\mu a_\mu^2-\frac{\kappa^2}{3}\right)
+ +(1-q_\perp)\sum_\mu|b_\mu|^2\right].
+ \quad}
+\end{equation}
+For real fields,
+\[
+ q_\perp=\frac{I_2(t)}{tI_1(t)},\qquad 0\le q_\perp\le\tfrac14,
+ \qquad
+ \Phi_e\ge\tfrac34c_X^2\beta\sum_\mu|b_\mu|^2.
+\]
+At \(\kappa=0\) use \(q_\perp=1/4\); the expression is independent of the chosen rotation.
+\end{theorem}
+\begin{proof}
+The preceding second-moment calculation proves the formula for \(\beta K_eG_e\). Original compact integration by parts gives \(K_e\tau_e^0=0\), hence \(K_eR_e^0=\beta K_eG_e\). This uses the full \(\ell_e\), not a removed constant.
+The Bessel identities in \cite{DLMF} give \(q_\perp=I_2(t)/(tI_1(t))\). Equivalently, the product below gives
+\[
+ q_\perp=2\sum_{k\ge1}(t^2+j_{1,k}^2)^{-1},
+\]
+which decreases from \(1/4\) on the positive real axis.
+Both quadratic forms in \eqref{eq:star} are nonnegative.
+\end{proof}
+
+Thus the total force's current centering leaves an actual positive transverse-staple misalignment. Individual directional scores do not separately center. This is a concrete retained field, rather than an assumed native fluctuation.
+
+There are two counting qualifications. First, \(\Phi_e\) is the original term rooted at \(e\). Neighboring-root terms also depend on \(U_e\); it is not the complete output source after integrating \(e\). Second, for the separated set of~\cite{SZ}, each such rooted term sees at most that one eliminated link, so \eqref{eq:star} is a literal member of its output. It must be added to the other actual output members with their original anchors.
+
+When all three directional staples coincide, \(G_e\) vanishes identically as a function of \(U_e\), and \(\Phi_e=0\). The raw \(R_e^0\) at the exactly flat central link still contains its Casimir constant. That constant is canceled only by its genuine conditional integration identity.
+
+\subsection{Effective score and contact partners}
+
+Put
+\[
+ s=H\cdot H,\qquad d_\mu=h_\mu-H/3,\qquad
+ A=\sum_\mu\frac{(H\cdot d_\mu)^2}{s},\qquad
+ B=\sum_\mu d_\mu\cdot d_\mu-A.
+\]
+The dot product is complex bilinear after complexification. Then
+\begin{equation}\label{eq:starAB}
+ \Phi_e=c_X^2\beta\{3q_\beta(s)A+(1-q_\beta(s))B\},
+ \qquad
+ q_\beta(s)=2\sum_{k\ge1}\frac1{4\beta^2s+j_{1,k}^2}.
+\end{equation}
+On a verified zero-free domain let \(I(H)=\log z_\beta(H)\). For \(D_d\) differentiating \(H\) with \(d\) held fixed,
+\begin{equation}\label{eq:effective}
+ \boxed{\quad
+ \Phi_e
+ =c_X^2\beta\sum_\mu d_\mu\cdot d_\mu
+ -\frac{c_X^2}{4\beta}\sum_\mu
+ \left[D_{d_\mu}^2I+(D_{d_\mu}I)^2\right].
+ \quad}
+\end{equation}
+This follows by twice differentiating the actual compact integral. The effective-score square and its second-derivative contact appear together. The normalizer records \(H\), while the ordinary source also records the separate \(d_\mu\). It cannot be reconstructed from \(I(H)\) without that directional record.
+
+\subsection{A proved good-star domain and its scale dependence}
+
+The Bessel product and recurrence give the entire series
+\[
+ z_\beta(H)=
+ \sum_{j\ge0}\frac{\beta^{2j}(H\cdot H)^j}{j!(j+1)!}
+ =\prod_{k\ge1}\left(1+\frac{4\beta^2s}{j_{1,k}^2}\right).
+\]
+These identities and the simplicity of the nonzero \(J_1\) zeros are verified against \cite{DLMF}. For \(\Re s>0\), the denominator is nonzero and
+\begin{equation}\label{eq:qjets}
+ |\partial_s^r q_\beta(s)|
+ \le r!(\Re s)^{-r}q_\beta(\Re s)
+ \le \frac{r!}{2\beta(\Re s)^{r+1/2}}.
+\end{equation}
+The last step uses \(tq(t)=K_eu_0\le1\) for real \(t>0\).
+
+Let \(H_0\) be real with \(|H_0|=\kappa\ge\kappa_0>0\). In the Hermitian norm,
+\[
+ |H-H_0|\le\kappa/4
+ \quad\Longrightarrow\quad
+ \Re(H\cdot H)\ge7\kappa^2/16.
+\]
+This is a beta-independent zero-free neighborhood of the actual denominator. The bilinear projector \(HH^T/s\) has norm at most \(25/7\), so
+\begin{equation}\label{eq:correction}
+ |\Phi_e-c_X^2\beta B|
+ \le 12c_X^2\kappa_0^{-1}\sum_\mu|d_\mu|^2.
+\end{equation}
+For example, \(|3A-B|=|4A-\sum d_\mu\cdot d_\mu|\le(107/7)\sum|d_\mu|^2\), and
+\(\beta|q_\beta|\le2/(\sqrt7\kappa)\), giving the displayed constant.
+
+If all six actual plaquettes through the central real link satisfy
+\(s_p\le\epsilon^2\), then \(\|I-U_p\|_{\mathrm{op}}^2=s_p\) for \(SU(2)\). The action-convention staple quaternions are \(\epsilon\)-close to the central quaternion. Thus
+\[
+ |H_0|\ge6-6\epsilon,\qquad |d_\mu|\le4\epsilon.
+\]
+For \(\epsilon\le1/2\), take \(\kappa_0=3\). Products of the actual finite exterior links have uniform holomorphic jets in a fixed small direct link-coordinate neighborhood. Choosing it inside the preceding \(H\)-neighborhood proves admission of \(\Phi_e\); it is not an assumed incoming condition.
+
+Let \(y\) denote these direct exterior-link coordinates. At the real good star,
+\begin{equation}\label{eq:physicaljets}
+ |\Phi_e|\le C\beta\epsilon^2,\qquad
+ |D_y\Phi_e|\le C\beta\epsilon,\qquad
+ |D_y^r\Phi_e|\le C^{r+1}r!\beta\quad(r\ge2).
+\end{equation}
+The same estimates hold on a complex neighborhood of radius \(O(\epsilon)\), with a fixed enlarged \(\epsilon\). With the \emph{original} normalization
+\(y=gB\), \(\beta=\cB g^{-2}\), and \(\epsilon\le Cgp\), they become
+\begin{equation}\label{eq:gjets}
+ \boxed{\quad
+ |\Phi_e|\le Cp^2,\qquad |D_B\Phi_e|\le Cp,\qquad
+ |D_B^r\Phi_e|\le C^{r+1}r!g^{r-2}\quad(r\ge2).
+ \quad}
+\end{equation}
+The physical factor \(\cB^{-1}a^{-2}\) remains separate. An older normalization \(g_jD_y\) retains the corresponding \(g_j/g\) factors. Composition with a prepared mixed readout still requires its actual jets and simultaneous wall inclusion; fixed star dimension alone does not establish them.
+
+\subsection{A realizable rare-star pole}
+
+The six staples can be prescribed independently on a sufficiently large original torus: set the transverse links of the six paths to the identity and use the six distinct parallel neighboring links for their prescribed matrices, with the appropriate orientation inverses. The rest of the field can be completed by identity links.
+
+Choose
+\[
+ h_1=ae_1,\quad h_2=-ae_1,\qquad
+ q_\pm(z)=\pm\cos z\,e_2+\sin z\,e_0
+\]
+as the third pair of staples. The choice \(a=2\) is realized by two copies each of \(e_1\) and \(-e_1\). The \(q_\pm(z)\) are \(SU(2)\) for real \(z\) and holomorphic \(SL(2,\mathbb C)\) paths for complex \(z\). Their total staple is
+\[
+ H(z)=2\sin z\,e_0,\qquad t(z)=4\beta\sin z.
+\]
+Let \(j=j_{1,1}>0\). Then the genuine denominator has a simple zero at
+\begin{equation}\label{eq:pole}
+ \boxed{\quad
+ z_*=i\,\operatorname{arsinh}\!\left(\frac{j}{4\beta}\right),
+ \qquad |z_*|\le\frac{j}{4\beta}.
+ \quad}
+\end{equation}
+The actual rooted source simplifies to
+\[
+ \Phi_e(z)=c_X^2\beta\left[
+ 2a^2+2\frac{I_2(t)}{tI_1(t)}(\kappa^2-a^2)\right],
+ \qquad\kappa=2\sin z.
+\]
+At \(z_*\), \(\kappa^2-a^2=-j^2/(4\beta^2)-a^2\ne0\), and
+\(I_2(ij)=I_1'(ij)\ne0\). Hence the pole is nonremovable. Its raw numerator,
+\[
+ z_\beta(H)\Phi_e
+ =c_X^2\beta\left[
+ 2a^2z_\beta(H)+
+ \frac{4(\kappa^2-a^2)I_2(t)}{t^2}\right],
+\]
+is entire and is nonzero at that zero of the denominator.
+
+This disproves a beta-independent \emph{full direct exterior polydisc} for normalized rooted means around every rare real star. It is not a counterexample on a particular restricted simultaneous wall chart until that chart is shown to admit the displayed two-link path. It also does not obstruct the original raw numerator, or a full unconditioned source integral. The original denominator in the marginal cancels this conditional pole before that marginal is integrated.
+
+At real fields \(\Phi_e\) still has a uniform local \(\psi_1\) bound by conditional Jensen. Thus Theorem \ref{thm:lineage} controls its actual rare-history mean variance even though a blanket fixed complex-domain assertion is false. This is precisely the role of retaining the raw rare packet and its original weight.
+
+There is also a concrete bound on the actual bad-denominator sector. Set
+\(E_e=\{|H|<3\}\), which is measurable in the real exterior links. The exact original star action is \(\sum_{p\ni e}s_p=12-2u\cdot H\). On \(E_e\) it exceeds \(6\), so at least one of the six incident plaquettes has \(s_p>1\). Hence the original local exponential moments imply
+\[
+ p_e=\mathbb P(E_e)\le\sum_{p\ni e}\mathbb P(s_p>1)
+ \le C e^{-c\beta}.
+\]
+Moreover \(|h_\mu|\le2\) gives
+\(0\le\Phi_e\le12c_X^2\beta\). Therefore, on the original real law,
+\begin{equation}\label{eq:actualbadstar}
+ \E[1_{E_e}\Phi_e^2]\le C\beta^2e^{-c\beta},\qquad
+ \left\|Q_Y\left\{\E(1_{E_e}\Phi_e\mid Y)
+                 -\E(1_{E_e}\Phi_e)\right\}\right\|_2^2
+ \le C\beta^2e^{-c\beta}
+\end{equation}
+for every later completed positive observation \(Y\) and orthogonal projection \(Q_Y\). The second inequality is conditional contraction of the centered mark. This controls the actual local ordinary mean in that exceptional sector, including its between-history zero-energy projection. It gives neither a complex derivative bound there nor an extensive bound for the sum of all roots; those further conclusions would require additional estimates.
+
+\section{What the actual component interaction does and does not control}
+
+The original R-II component integrations factorize before their cross-component interaction is applied. That interaction depends on old fields and old history choices as well as the new background \cite{RII}. On a fixed actual real exterior and geometry, the resulting structure is
+\begin{equation}\label{eq:components}
+ d\nu(\xi)\ \propto\
+ \prod_Xd\lambda_X(\xi_X)
+ \exp\!\left\{\sum_{Y\ \mathrm{crossing\ components}}
+ V_Y(\xi_{I(Y)};b)\right\}.
+\end{equation}
+The \(\xi_X\) include the actual old coordinates and mixed history choices; they are not just a new native Gaussian field. If one normalizes \(\lambda_X\) for a probability calculation, its raw mass remains as an actual normalization factor. Such masses may depend on \(b\); they are not automatically field-independent vacuum scalars.
+
+Write \(v_Y=\|V_Y\|_\infty\) on the actual admitted real domain. Changing another component \(X'\) changes the log conditional density in \(X\) by an oscillation at most
+\[
+ 4S_{XX'},\qquad
+ S_{XX'}=\sum_{Y:\,X,X'\in I(Y)}v_Y.
+\]
+A direct likelihood-ratio comparison therefore gives a total-variation influence bound, for example
+\begin{equation}\label{eq:influence}
+ c_{XX'}\le e^{4S_{XX'}}-1
+\end{equation}
+in the probability-distance convention. This is a genuine estimate for the old component kernels; no convex reference replacement has been made.
+
+Per-carrier smallness is insufficient to conclude
+\(\sup_X\sum_{X'}c_{XX'}<1\).
+An actual large component can have arbitrarily many distinct boundary carriers. The relative tree metric does not supply a bound on that number independent of the component. A fixed maximum component size would be a new restriction. The original rare-weighted cluster calculation must pay these actual incidences with its one component mass.
+
+The source-free arbitrary-carrying-function estimate applies to a function of the variables of that specific component integration. It does not imply that a previously integrated regular marked body has that readset. A globally restored ancestral representation is exact for the completed integral but need not be local to \(\xi_X\). Thus the endpoint theorem \eqref{eq:cumulant} cannot be silently upgraded to the component norm needed for MT36.
+
+\subsection{Simultaneous walls and protected ordinary modes}
+
+PE12 gives a genuine protected sector:
+\[
+ M_{\mathcal C}(U'_k(B,\xi))=v_{\mathcal C}(\xi),\qquad
+ F(M_{\mathcal C}(U'_k))=F(v_{\mathcal C}(\xi)).
+\]
+It factors from the native \(B\) integral with the old record fixed. If the full row is retained by the observation, it is an exact zero-fluctuation mode of that auxiliary integration:
+\[
+ \E(F\mid q)=F,\qquad \Var(\E(F\mid q))=\Var(F).
+\]
+A strict contraction for every ordinary row is therefore unavailable for the actual reference insertion. Nonzero retained variation can coexist with zero native internal derivatives.
+
+The protected factorization can be performed before localization joins. General touched inherited bodies cannot be granted the same wall representation. Their original three-join/readout map, independent wall variables, complete prefixes and moving constraints must be shown to stay in the established domain. The good-star theorem above supplies one actual local input, but does not prove that composed statement. All terms of \eqref{eq:response} remain required.
+
+\section{A narrower route to the main susceptibility, and its current limit}
+
+The exact scalar generating function
+\begin{equation}\label{eq:sourcefamily}
+ Z_H(\lambda)=\int e^{-\beta(S_0-\lambda G_H)}\dd\lambda_{\rm Haar}
+\end{equation}
+suggests a narrower alternative to all-source MT36. If one proves, on a fixed complex disc,
+\[
+ Z_H(\lambda)\ne0,\qquad
+ |\log Z_H(\lambda)-\log Z_H(0)|\le Cn^4,
+\]
+then Cauchy's estimate bounds \(\chi_{n,\beta}\). This is sufficient for that strategy; a fixed zero-free disc is not necessary for an extensive variance bound in general.
+
+The source remains exactly the original one. With the fixed original quadratic factor \(\upsilon\) defined in Appendix \ref{app:flat}, its flat quadratic part can be absorbed into
+\[
+ K_\lambda=K-2\lambda\upsilon T_H,\qquad
+ 0\le T_H\le\tfrac23K^2\le CK.
+\]
+This gives a fixed relative coercivity margin on physical nonzero Gaussian modes; its zero modes remain explicit. Appendix \ref{app:flat} proves the full corresponding flat-holonomy mixture bound, not just a bound on one fiber.
+
+The source-free primary recursions are stated for the Wilson action and its constrained backgrounds \cite{RGI,RGII}. A theorem for the entire family \eqref{eq:sourcefamily} does not follow just by replacing the flat precision. The nonflat constrained centers, original selectors and reference responses, later quantum terms, and final field/history mixture must all be controlled for that family.
+
+There is no valid obstruction based solely on a quartic Taylor term being large on a fixed physical disc. With a one-link eigenphase \(r\), the literal flat-bath source has \(G_H=c\sin^2r\), and its quartic residual is \(O(\lambda\beta r^4)\). This is not uniformly bounded as an \emph{old} absolute activity on a fixed physical disc admitting this one-link path. But for a \emph{fresh} fluctuation \(r=gB\), \(|gB|\le\epsilon_1\), it obeys
+\[
+ |\lambda|\beta g^4|B|^4
+ \le C|\lambda|\epsilon_1^2|B|^2.
+\]
+It can fit an original quadratic-growth budget. The route remains viable; that local budget is not its full induction.
+
+For a literal fixed bare stencil on a verified finite native chart with a uniformly invertible constrained Hessian, a fixed domain margin and uniform bare-source jets, the analytic implicit-function theorem can handle a sufficiently small \(\lambda\)-dependent constrained center. For the stored original fine source at a later scale, however, finite native dimension does not bound its fine-root sum or its composed jets. Those are the inherited-source estimates being sought. No current-scale substitute for the original \(G_H\) is used.
+
+\subsection{A literal nonflat center response}
+
+The need for that response can be checked on original links. Take a lattice on which this radius-two star embeds without periodic identifications; \(n\ge5\) suffices. In a diagonal \(SU(2)\) subgroup, give the six parallel neighbors of a central \(\nu\)-link phases \(\theta_\mu\), the same for the two neighbors in each transverse direction, and set all other links to the identity. Let the central eigenphase be \(r\), and choose
+\[
+ \sin\theta_1=\sin\theta_2=s,\qquad
+ \sin\theta_3=-2s,\qquad \cos\theta_\mu>0,\quad 0<s\ll1.
+\]
+The original conditional action is
+\[
+ S_e(r)=4\sum_\mu[1-\cos(r-\theta_\mu)],
+\]
+up to its unchanged exterior term. It has its minimum at \(r=0\).
+Directly counting the original source roots gives
+\begin{equation}\label{eq:center}
+ G_H'(0)=-\frac{40}{3}c_X^2
+ \sum_\mu\sin\theta_\mu\cos\theta_\mu\ne0.
+\end{equation}
+The central root contributes \(-8c_X^2\sum\sin\theta_\mu\cos\theta_\mu\). The six parallel roots have three equal directional forces at \(r=0\), and their first residual derivatives vanish. The four transverse roots per direction contribute together
+\(-16c_X^2\sum\sin\theta_\mu\cos\theta_\mu/3\). These are all roots whose source changes with the central link.
+
+Since \(\sum\sin\theta_\mu\cos\theta_\mu=3s^3+O(s^5)\), the deformed center is
+\[
+ r_\lambda=
+ -\frac{10}{3}c_X^2\lambda
+ \frac{\sum_\mu\sin\theta_\mu\cos\theta_\mu}
+      {\sum_\mu\cos\theta_\mu}
+ +O(\lambda^2).
+\]
+For a fixed small physical bath its canonical shift \(r_\lambda/g\) is \(O(\lambda s^3/g)\). On a shrinking real microscopic good bath with \(s=O(gp)\), it is instead \(O(\lambda g^2p^3)\). Neither case permits declaring that all original nonflat Wilson centers stay fixed under the source. Their original wall and reference responses must be included.
+
+\section{The remaining main gap, distinct from S94}
+
+Sections 2--5 bound a rare part of the retained mean and its generated between-history covariance from original moments. Proposition \ref{prop:bridge} transfers the original physical and ordinary rows through actual complete positive mixed observations with one extensive error budget. Neither result bounds the remaining ordinary information in \(R_X\) or its connected spatial sum.
+
+The uniform source needs the extensive scale \(M_1=4n^4\). Local endpoint and lineage bounds still allow \((\sum_e|f_e|)^2=O(n^8)\). Closing this discrepancy requires an actual spatial connected estimate, a verified graded mixed-history induction, or a direct pressure bound. A local \(\psi_1\) estimate does not supply it.
+
+An actual all-history proof must also identify the complete stored coefficient on its simultaneous original walls. The proved good-star domain does not admit arbitrary inherited bodies; the rare-star pole shows why unrestricted admission is false for a normalized representation. The selected response \eqref{eq:response}, the inherited effective score, and the full current/contact/scalar packet remain part of that identification.
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{.21\linewidth}
+>{\raggedright\arraybackslash}p{.36\linewidth}
+>{\raggedright\arraybackslash}p{.37\linewidth}@{}}
+\toprule
+Object & Established here & Still required\\
+\midrule
+Rare history means &
+One birth and its owned descendants have one \(p\log^2(e/p)\) variance budget, also after spectral projection. &
+Ordinary prelabel means and an extensive sum over roots.\\[4pt]
+Inherited connected rows &
+Original moments bound complete endpoint cumulants and generated lineage covariances. &
+Identification and graded bounds for each actual stored mixed packet.\\[4pt]
+Actual ordinary body &
+Exact \(SU(2)\) rooted mean, good-star domain and jets, quantified rare sector and pole. &
+Neighboring-root terms and all subsequent connected correlations.\\[4pt]
+Source deformation &
+Original generating function and complete flat-holonomy Gaussian mixture bound. &
+Nonlinear source maps, simultaneous domains and the final history mixture.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Complete S94 remains a separate obligation. No independent scalar increment, pin or coordinate defect, original root count, or terminal term has been removed by these probability calculations. The exact copied cancellations of~\cite[\S8]{OS} remain available; a wall tail alone is still not an ultraviolet summability theorem. No continuum hierarchy or interacting Yang--Mills identification is claimed here.
+
+\clearpage
+\appendix
+\section{A complete flat-holonomy benchmark}\label{app:flat}
+
+This appendix proves a full conditional-mean bound for the leading Gaussian packet, including arbitrary mixtures of commuting flat holonomies. It is not a Wilson/reference comparison. Nonlinear Haar and Casimir corrections, and nonlinear interactions of degenerate zero modes, remain outside this reference law.
+
+\subsection{Original normalization and exact symbols}
+
+On the unit-spacing \(n^4\) reference lattice, let \(\upsilon>0\) be the fixed quadratic normalization inherited from the original action and group coordinates:
+\[
+ S_2(A)=\tfrac{\upsilon}{2}\langle A,K_\theta A\rangle,\qquad
+ \Sigma_\theta=(\beta\upsilon)^{-1}K_\theta^+.
+\]
+No mesh-dependent factor is absorbed into \(\upsilon\). Each adjoint color sector of a commuting flat background has a bounded momentum twist \(\theta/n\). For \(k\) in the corresponding shifted grid, put
+\[
+ p_\mu=e^{ik_\mu}-1,\quad
+ u_\mu=|p_\mu|^2,\quad s=\sum_\mu u_\mu,\quad
+ K(k)=sI-pp^*,\quad K^+(k)=s^{-1}P_T(k).
+\]
+At \(s=0\), set source trace symbols to zero. Exact harmonic modes are separately fixed or supplied with any probability law; the quadratic source vanishes on them.
+
+In these coordinates the directional force row is
+\[
+ F^{(1)}_{\nu;\mu}A
+ =\upsilon\,\overline p_\mu(p_\mu A_\nu-p_\nu A_\mu).
+\]
+Write \(D_2=\upsilon^2A^*T_DA\) and
+\(G_2=\upsilon^2A^*T_HA\), where
+\[
+ T_H=T_D-K^2/3,\qquad \tfrac13K^2\le T_D\le K^2.
+\]
+The lower inequality is the three-direction Cauchy inequality. For the upper inequality,
+\[
+ A^*T_DA
+ =\sum_{\mu<\nu}(u_\mu+u_\nu)
+       |p_\mu A_\nu-p_\nu A_\mu|^2
+ \le s^2|P_TA|^2.
+\]
+Therefore \(0\le T_H\le2K^2/3\), uniformly through twisted degeneracies.
+
+The reference ordinary row is
+\[
+ R_f^{(0)}=\beta D_2[f]-\ell_\theta^{(0)}[f]/3.
+\]
+Here \(\ell_\theta^{(0)}\) is the full leading Gaussian Hessian/Casimir constant. It is not the full nonlinear compact \(\ell[f]\) evaluated in a Gaussian field.
+The dimensionless mean symbols, after the fixed factor \(\upsilon\) is separated, are
+\begin{align}\label{eq:symbol}
+ q_H(k)&=2\frac{\sum_\mu u_\mu^2}{s},\\
+ q_\nu(k)&=\frac{\sum_\mu u_\mu^2}{s}
+ +\frac43u_\nu-2\frac{u_\nu^2}{s}-\frac{s}{3}.
+\end{align}
+Indeed the directional \(D\)-trace at an oriented anchor is
+\(\sum_{\mu\ne\nu}u_\mu(u_\mu+u_\nu)/s\), while its Hessian row is \(s-u_\nu\). Thus \(q_\nu\) is the mean symbol of both \(\beta G_{2,e}\) and \(R_e^{(0)}\); \(\sum_\nu q_\nu=q_H\). Actual means include \(\upsilon\) and the fixed adjoint color count.
+
+\subsection{The holonomy means have a uniform bound}
+
+Away from the periodic origin,
+\[
+ |\partial^Jq_\nu(k)|\le C_J|k|^{2-|J|}.
+\]
+This follows from \(u_\mu=O(|k|^2)\), \(s\asymp|k|^2\) and quotient differentiation. Decompose near the origin into smooth annular pieces \(q_{\nu,j}\) of radius \(r_j=2^{-j}\). In dimension four,
+\[
+ \|\partial^Jq_{\nu,j}\|_1\le C_Jr_j^{6-|J|}.
+\]
+Integration by parts \(m>6\) times on each annulus, followed by splitting the annular sum at \(r_j=|\ell|^{-1}\), proves
+\[
+ |\widehat q_\nu(\ell)|\le C(1+|\ell|)^{-6}.
+\]
+The part away from the origin is smooth. No sixth classical derivative at the origin and no borderline logarithm is assumed.
+
+The Fourier series is absolutely convergent. Its exact shifted-grid identity is
+\[
+ \sum_{j\in(\mathbb Z/n\mathbb Z)^4}
+ q_\nu(2\pi j/n+\theta/n)
+ =n^4\sum_{\ell\in\mathbb Z^4}
+ \widehat q_\nu(n\ell)e^{i\ell\cdot\theta}.
+\]
+Since \(\sum_{\ell\ne0}|\ell|^{-6}<\infty\),
+\[
+ \left|\sum_kq_\nu(k+\theta/n)-\sum_kq_\nu(k)\right|
+ \le Cn^{-2}.
+\]
+The per-anchor mean change is \(O(n^{-6})\). Hence for any real original anchor test,
+\begin{equation}\label{eq:toronmeans}
+ |m_f(\theta)-m_f(0)|\le Cn^{-6}\sum_e|f_e|,
+ \qquad
+ \Var_\pi m_f(\theta)
+ \le Cn^{-12}\left(\sum_e|f_e|\right)^2
+ \le Cn^{-8}M_f,
+\end{equation}
+for \emph{every} source-independent probability law \(\pi\) of commuting flat holonomies. The fixed \(4n^4\) original anchor count is used in the last step. For the uniform test, the holonomy-mean variance is \(O(n^{-4})\).
+
+\subsection{The fluctuations and the full mixture}
+
+For the local positive quadratic source forms \(T_e\), set
+\[
+ \mathsf B_e=K^{+1/2}T_eK^{+1/2}.
+\]
+Both \(G_2\) and \(D_2\) have such positive local forms, with
+\(\sum_e\mathsf B_e\le CK\le CI\) and \(\tr\mathsf B_e\le C\). Thus
+\[
+ C_{ed}=\tr(\mathsf B_e\mathsf B_d)\ge0,\qquad
+ \sum_d C_{ed}\le C.
+\]
+Schur's test and the exact real Gaussian quadratic-variance formula give
+\[
+ \Var(\beta G_{2,f}\mid\theta)\le CM_f,\qquad
+ \Var(R_f^{(0)}\mid\theta)\le CM_f.
+\]
+Together with \eqref{eq:toronmeans},
+\begin{equation}\label{eq:flatvar}
+ \boxed{\quad
+ \Var_{\pi(d\theta)\mu_\theta(dA)}(\beta G_{2,f})
+ +\Var_{\pi(d\theta)\mu_\theta(dA)}(R_f^{(0)})
+ \le CM_f.
+ \quad}
+\end{equation}
+Real mode traces, or their equivalent complexification, count conjugate colors and momenta once. Arbitrary complete positive source-free observations of this same reference mixture preserve \eqref{eq:flatvar} by conditional Jensen, including all their history means.
+
+\subsection{The full reference mixture has a common source disc}
+
+For the uniform source set
+\(\mathsf B_\theta=\upsilon K_\theta^{+1/2}T_HK_\theta^{+1/2}\).
+On a fixed sufficiently small complex \(\lambda\)-disc,
+\[
+ F_\theta(\lambda)
+ =-\tfrac12\Tr\log(I-2\lambda\mathsf B_\theta),\qquad
+ |F_\theta(\lambda)|\le Cn^4|\lambda|.
+\]
+This is the exact normalized Gaussian logarithm, with its full determinant.
+
+On Fourier four-vectors the corresponding matrix is
+\(\mathsf B(k)=\upsilon T_H(k)/s(k)\), extended by zero at \(k=0\). Its longitudinal eigenvalue is zero. The uniformly convergent matrix-log series gives
+\[
+ |\partial^J[-\tfrac12\tr\log(I-2\lambda\mathsf B(k))]|
+ \le C_J|\lambda||k|^{2-|J|}.
+\]
+The preceding annular Fourier proof therefore implies
+\[
+ |F_\theta(\lambda)-F_0(\lambda)|\le C|\lambda|n^{-2}.
+\]
+Choose a smaller fixed disc so this is at most \(1/4\). Then
+\[
+ \int e^{F_\theta(\lambda)}\dd\pi(\theta)
+ =e^{F_0(\lambda)}
+ \int e^{F_\theta(\lambda)-F_0(\lambda)}\dd\pi(\theta),
+\]
+and the last integral differs from \(1\) by at most \(e^{1/4}-1<1\). Thus the complete reference mixture, including its flat zero-mode means, is nonzero and has an \(O(n^4|\lambda|)\) logarithm on a fixed disc.
+
+Any source-zero scalar reweighting is included in the arbitrary positive \(\pi\), with its raw total mass retained. Source-dependent independent scalar increments require their own terms in this logarithm. The theorem supplies no comparison to the nonlinear Wilson packet or its original selected complex histories.
+
+\section{An exactly counted clean nonlinear force estimate}\label{app:clean}
+
+This is a deterministic consequence of an explicitly identified clean readout input. It is not a variance estimate or a new mixed-wall admission theorem. It gives a useful classical estimate for the source deformation of Section 7 while keeping the ordinary and current rows separate.
+
+\subsection{The admitted input and the actual local transport}
+
+For a birth scale \(j\) read at scale \(k\), put \(r=L^{j-k}\le1\). On an already admitted source-zero enlarged inner window, the original clean readout input, Section 27.12.1, (11.2) of~\cite[pp.~85--87]{W}, has the transported plaquette-log form
+\begin{equation}\label{eq:cleaninput}
+ \log U_p=r^2\mathcal F_{\mu\nu}(x_p)
+      +O(r^{2+\zeta}A_k),\qquad
+ |\mathcal F(x)-\mathcal F(y)|\le CA_k|x-y|^\zeta,
+ \quad |\mathcal F|\le CA_k,
+\end{equation}
+with \(0<\zeta\le1\). Its status as an imported clean input is retained \cite[pp.~85--87]{W}. The original microscopic source has \(j=0\), hence \(r=L^{-k}\).
+
+Every original pointing, source stencil, transport and filling used here must lie in that same admitted window. Within one source stencil, comparison of two local transports must use a fixed plaquette filling in its fixed collar. An arbitrary global tree may enclose a growing surface and does not satisfy this condition merely because it is a tree. Where this transport property has not been verified, the needed input must instead be stated directly as the neighboring, genuinely parallel-transported estimate
+\begin{equation}\label{eq:cleanlogs}
+ \|L_+-L_-\|\le C\{r^{2+\zeta}A_k+r^4A_k^2\}.
+\end{equation}
+The constants depend on the original generator metric, fixed stencil and filling list, collar and domain margins, and the constants in \eqref{eq:cleaninput}. They do not absorb any volume, scale or fine-root count. Variable margins retain their dependence.
+
+\subsection{The exact cancellation of neighboring directional forces}
+
+Let \(e=(x,x+r\hat\nu)\) and use its original left-invariant derivative. Write the forward \(\nu\mu\) plaquette as
+\[
+ P_+=U_\nu(x)U_\mu(x+r\hat\nu)
+          U_\nu(x+r\hat\mu)^{-1}U_\mu(x)^{-1}.
+\]
+Let \(P_{\rm back}\) be the identically oriented plaquette based at \(x-r\hat\mu\), and put
+\[
+ P_-=U_\mu(x-r\hat\mu)^{-1}
+          P_{\rm back}U_\mu(x-r\hat\mu).
+\]
+Differentiating the two actual Wilson incidences and using cyclicity gives
+\begin{equation}\label{eq:forceexact}
+ F_{e,A;\mu}=-\Re\tr\{T_A(P_+-P_-)\}.
+\end{equation}
+For the usual holomorphic extension the same expression is
+\[
+ F_{e,A;\mu}=-\tfrac12\tr T_A
+   \{P_+-P_+^{-1}-P_-+P_-^{-1}\}.
+\]
+The map \(L\mapsto-\tfrac12\tr T_A(e^L-e^{-L})\) has a bounded derivative on the fixed slightly larger admitted log ball. Thus \eqref{eq:cleanlogs} implies
+\begin{equation}\label{eq:forceclean}
+ |F_{e;\mu}|\le C\{r^{2+\zeta}A_k+r^4A_k^2\}.
+\end{equation}
+To obtain \eqref{eq:cleanlogs} from \eqref{eq:cleaninput}, compare the leading curvature terms in one local frame: their centers are distance \(r\) apart, giving \(O(r^{2+\zeta}A_k)\). The approximation errors have the same size. A change to the actual transport in \eqref{eq:forceexact}, through a fixed filling, has holonomy \(I+O(r^2A_k)\). Conjugating a plaquette log of size \(O(r^2A_k)\) adds \(O(r^4A_k^2)\). This proves the stated implication on precisely the stipulated collar.
+
+In particular the leading constant-curvature \(r^2\) term cancels in the actual directional force. No integration by parts, divided difference or mesh redefinition is used. On real fields the original three-plane Cauchy inequality gives
+\begin{equation}\label{eq:Gclean}
+ 0\le G_e\le D_e\le C\{r^{4+2\zeta}A_k^2+r^8A_k^4\}.
+\end{equation}
+
+\subsection{The original root count and microscopic coupling}
+
+Let \(\mathcal I_Q\) be the original fine anchors assigned to a fixed present unit cell \(Q\), with their complete original pointing stencils in the admitted inner window. Their actual number satisfies
+\[
+ \#\mathcal I_Q\le C_Qr^{-4}.
+\]
+The original finite pointing average is expanded and counted once; it only changes the fixed incidence constant. For the uniform original source,
+\begin{equation}\label{eq:cleanreadout}
+ \boxed{\quad
+ |\lambda|\beta_0\sum_{e\in\mathcal I_Q}G_e
+ \le C|\lambda|\beta_0
+       \{r^{2\zeta}A_k^2+r^4A_k^4\}.
+ \quad}
+\end{equation}
+For nonuniform tests, retain \(\sum_{e\in\mathcal I_Q}|f_e|\) before applying \eqref{eq:Gclean}. The coefficient is the original \(\beta_0\), not the present \(\beta_k\). Relative to the present classical budget \(\beta_kA_k^2\), \eqref{eq:cleanreadout} has coefficient
+\[
+ C|\lambda|\frac{\beta_0}{\beta_k}
+       \{r^{2\zeta}+r^4A_k^2\}.
+\]
+On a trajectory for which the original (FR11) running-tube input has been established, write \(x_k=g_k^{-2}\ge h\) and
+\(x_j\le x_k+b_+(k-j)+C_1\), \(j\le k\). Then
+\begin{equation}\label{eq:cleanseries}
+ \frac{\beta_0}{\beta_k}\le1+(b_+k+C_1)/h,
+ \qquad
+ \sum_{k\ge0}\frac{\beta_0}{\beta_k}L^{-2\zeta k}<\infty.
+\end{equation}
+This uses the actual \(r^{-4}\) fine count. The physical factor \(\cB^{-1}a^{-2}\) in \eqref{eq:physical} is unchanged. At \(k=0\) the coefficient is of order one; a small fixed source parameter is still required. If \(A_k\) is not uniformly bounded, the additional \(r^4A_k^2\) term must be kept explicitly.
+
+\subsection{The ordinary Casimir response has no such separate gain}
+
+Keep \(\sum_AT_A^2=-C_FI\) in the original convention. On the compatible original lattices, the whole-link Casimir gives
+\begin{equation}\label{eq:casimirclean}
+ \ell_e=C_F\sum_{p\ni e}\Re\tr U_p
+       =\ell_e(I)-C_F\sum_{p\ni e}s_p,
+ \qquad \ell_e(I)=C_FNq_e,
+\end{equation}
+where \(q_e=6\) on the stipulated compatible nonwrapping stars. Plaquettes containing repeated occurrences of the same link are excluded from this identity; such identifications would require additional Laplacian cross terms. The two rows are still
+\[
+ R_e^0=\beta_0D_e-\ell_e/3,\qquad
+ \tau_e^0=(\ell_e-\beta_0P_e)/3,\qquad
+ R_e^0+\tau_e^0=\beta_0G_e.
+\]
+Their flat constants are opposite and nonzero, with a fine sum of order \(r^{-4}\). They cancel only in the complete physical row. No absolute scalar term is removed by displaying this identity.
+
+Moreover \(s_p=O(r^4A_k^2)\) on this real clean background, and therefore
+\begin{align}\label{eq:ordinaryclean}
+ \sum_{e\in\mathcal I_Q}|\ell_e-\ell_e(I)|&\le CA_k^2,\\
+ \sum_{e\in\mathcal I_Q}\bigl(
+   |R_e^0-R_e^0(I)|+|\tau_e^0-\tau_e^0(I)|\bigr)
+ &\le C\{\beta_0r^{2\zeta}A_k^2+
+          \beta_0r^4A_k^4+A_k^2\}.\nonumber
+\end{align}
+The last term has no \(r^{2\zeta}\) gain. It cancels algebraically between the complete rows, not after separate absolute estimates. Consequently \eqref{eq:cleanreadout} does not bound an inherited ordinary susceptibility. The source-dependent constrained backgrounds, quantum source terms, full selected pushforward and its boundary/reference responses remain to be controlled. Equations \eqref{eq:forceexact}--\eqref{eq:cleanseries} give a clean classical contribution to that program only on the admitted input stated above.
+
+\clearpage
+\begin{thebibliography}{9}
+
+\bibitem{W}
+Wilson-source estimates, volumes 1--10 (\texttt{lattice\_theory/source\_estimates} in this collection), cited by source page. This note uses the identified S58b/NR10, PE12, XP and clean-readout records, including Section 27.12.1, (11.2), with their stated admission requirements (pp.~85--87, 601--602, 726--727, 1100--1101, 1174--1180).
+
+\bibitem{ND}
+\emph{Nonlinear dispersion and unequal spatial weights}, \texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/nonlinear\_dispersion\_and\_unequal\_spatial\_weights.tex} in this collection.
+
+\bibitem{SZ}
+\emph{Conditional estimates at source zero, current transport and native lifts}, \texttt{lattice\_theory/block\_and\_transfer/ordinary\_law/source\_zero\_conditional\_estimates.pdf} in this collection.
+
+\bibitem{OS}
+\emph{Ordinary spectral estimates and mixed current transfer}, \texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/ordinary\_spectral\_estimates\_and\_mixed\_current\_transfer.tex} in this collection. Equation \eqref{eq:main} and the microscopic moment and current estimates are taken from this note together with~\cite{ND} and~\cite{SZ}; they are not reproved here.
+
+\bibitem{RII}
+T. Ba\l aban, \emph{Large field renormalization. II. Localization, exponentiation, and bounds for the \(R\) operation}, Communications in Mathematical Physics \textbf{122} (1989), 355--392. The component/selector formulas used here are on pp. 377--380. DOI: \href{https://doi.org/10.1007/BF01238433}{10.1007/BF01238433}.
+
+\bibitem{DLMF}
+NIST Digital Library of Mathematical Functions, \href{https://dlmf.nist.gov/10.21}{Section 10.21}, Bessel zeros and product formula (10.21.15); \href{https://dlmf.nist.gov/10.27}{Section 10.27}, connection formula (10.27.6); and \href{https://dlmf.nist.gov/10.29}{Section 10.29}, recurrence and derivative formulas including (10.29.2). Used for the stated \(I_1\), \(I_2\) identities and genuine denominator zeros.
+
+\bibitem{RGI}
+T. Ba\l aban, \emph{Renormalization group approach to lattice gauge field theories. I. Generation of effective actions in a small field approximation and a coupling constant renormalization in four dimensions}, Communications in Mathematical Physics \textbf{109} (1987), 249--301.
+DOI: \href{https://doi.org/10.1007/BF01215223}{10.1007/BF01215223}.
+
+\bibitem{RGII}
+T. Ba\l aban, \emph{Renormalization group approach to lattice gauge field theories. II. Cluster expansions}, Communications in Mathematical Physics \textbf{116} (1988), 1--22.
+DOI: \href{https://doi.org/10.1007/BF01239022}{10.1007/BF01239022}.
+
+\end{thebibliography}
+\end{document}

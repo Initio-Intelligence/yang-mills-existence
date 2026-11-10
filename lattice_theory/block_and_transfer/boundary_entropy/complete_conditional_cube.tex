@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\title{Weak-coupling resummation of one complete conditional Wilson cube}\author{}\date{}
+\begin{document}\maketitle
+This is a real, finite-block weak-coupling estimate for the actual Wilson conditional law. Unlike the six-face primitive in the exact cube scalar obstruction calculation, it retains every exterior plaquette incident to the integrated links. It retains the full scalar normalization. It is not an all-history R transition or a uniform estimate over arbitrary baths.
+
+\section{Exact conditional record and its flat Hessian}
+Embed one elementary three-dimensional cube in the four-dimensional lattice, with its fourth coordinate fixed. Take its twelve positively oriented edges as the free set $E_i$, and condition on every other link. The torus is large enough that this record and its one-plaquette collar do not wrap or identify vertices. Denote the fixed bath by $b$.
+
+There are six plaquettes entirely in the free cube. Each free edge belongs to exactly four additional plaquettes, each containing no other free edge. Thus the complete action depending on $E_i$ has exactly $6+48=54$ plaquettes:
+\[
+ S_b(U)=\sum_{P\in\partial\text{cube}}s(U_P)
+ +\sum_{e\in E_i}\sum_{r=1}^{4}s(U_eV_{e,r}(b)).
+ \tag{1}
+\]
+Inverses and orientation changes are absorbed using $s(W^{-1})=s(W)$ and cyclicity of trace; each $V_{e,r}$ is the original ordered three-link bath staple, with its original endpoints. The denominator and conditional law are exactly
+\[
+ D_\beta(b)=\int_{G^{12}}e^{-\beta S_b(U)}dU,
+ \qquad K_{\beta,b}(dU)=D_\beta(b)^{-1}e^{-\beta S_b(U)}dU.
+ \tag{2}
+\]
+The remaining action of the full lattice is independent of these twelve links and factors outside (2).
+
+At the literal flat bath $b=I$, all $V_{e,r}=I$, and
+\[
+ S_I(U)=\sum_{P\in\partial\text{cube}}s(U_P)+4\sum_{e\in E_i}s(U_e).
+ \tag{3}
+\]
+This has a unique global minimum $U=I$. Use an orthonormal basis of $\mathfrak{su}(N)$ for the Frobenius metric, so $s(e^A)=|A|^2/(2N)+O(|A|^4)$. Let $d$ be the oriented cube face-edge incidence matrix. The full Hessian in all $n_i=12d_G$ free coordinates is
+\[
+ H_I=N^{-1}(4I_{12}+d^Td)\otimes I_{d_G},\qquad d_G=N^2-1.
+ \tag{4}
+\]
+The six-by-six matrix $dd^T$ has eigenvalues $0,4,4,4,6,6$. Hence $H_I$ has eigenvalues $4/N$ (multiplicity $7d_G$), $8/N$ (multiplicity $3d_G$), and $10/N$ (multiplicity $2d_G$), and
+\[
+ \det H_I=N^{-12d_G}(4^7 8^3 10^2)^{d_G}.
+ \tag{5}
+\]
+The seven would-be tree/gauge directions of the isolated cube are not divided out: the fixed exterior staples pin them and give the eigenvalue $4/N$. There are twelve original Haar integrations in (2), not five. The five-integration count in \texttt{exact\_cube\_scalar\_obstruction.tex} applies only to the isolated closed-surface factor, which has a different boundary condition.
+
+\section{Uniform nearby-bath Laplace estimate with scalar retained}
+Let $J_0$ denote the density of normalized Haar measure at zero in these fixed orthonormal exponential coordinates. It is kept explicitly.
+\begin{theorem}
+There is a fixed open neighborhood $\mathcal B$ of the flat complete bath record and constants independent of $\beta$ such that, for every $b$ in a sufficiently small closed sub-neighborhood, the action (1) has a unique global minimum $U_*(b)$, positive Hessian $H_b\geq cI_{n_i}$, and
+\[
+ D_\beta(b)=e^{-\beta S_b(U_*)}
+ J_0^{12}(2\pi/\beta)^{n_i/2}(\det H_b)^{-1/2}
+ [1+\varepsilon_\beta(b)],\qquad
+ |\varepsilon_\beta(b)|\leq C\beta^{-1/2}.
+ \tag{6}
+\]
+In particular
+\[
+ \log D_\beta(b)=-\beta S_b(U_*)-\frac{n_i}{2}\log\beta
+ +12\log J_0+\frac{n_i}{2}\log(2\pi)
+ -\frac12\log\det H_b+O(\beta^{-1/2}).
+ \tag{7}
+\]
+In the coordinates $U_e=U_{*,e}(b)e^{x_e/\sqrt\beta}$, the normalized law converges to the full Gaussian with covariance $H_b^{-1}$. For each fixed integer $p\geq0$, there is $\theta>0$ such that its density $k_{\beta,b}$ on the fixed logarithm chart obeys
+\[
+ \int_{\mathbb R^{n_i}}(1+|x|)^pe^{\theta|x|^2}
+ |k_{\beta,b}(x)-g_{H_b}(x)|dx\leq C_p\beta^{-1/2},
+ \tag{8}
+\]
+where $k$ is extended by zero outside the rescaled chart. The omitted probability is at most $Ce^{-c\beta}$. All assertions are uniform over that nearby-bath set.
+\end{theorem}
+\begin{proof}
+At $b=I$ the compact action (3) has a unique zero and a strictly positive Hessian (4). In a small convex coordinate ball its Hessian remains uniformly positive. The implicit function theorem supplies a unique critical point there for nearby $b$. On the compact complement of a smaller ball, the flat action has a positive gap. Uniform continuity preserves a positive gap relative to the nearby critical value after the bath neighborhood is reduced. This proves global uniqueness, uniform Hessian bounds, and the exponential exit estimate.
+
+Translate coordinates by left multiplication with $U_*(b)$. Haar invariance keeps the local density at zero equal to $J_0^{12}$. Taylor's theorem, uniformly on the compact bath set, gives
+\[
+ \beta[S_b(U_*e^{x/\sqrt\beta})-S_b(U_*)]
+ =\tfrac12 x^TH_bx+R_{\beta,b}(x),\quad
+ |R_{\beta,b}(x)|\leq C\beta^{-1/2}|x|^3.
+\]
+On the original sufficiently small chart both the exact action difference and its quadratic approximation are bounded below by $c|x|^2/\beta$. The mean-value formula for two exponentials therefore bounds their difference by
+$C\beta^{-1/2}|x|^3e^{-c'|x|^2}$, reducing the chart if necessary. The smooth Haar Jacobian differs from $J_0^{12}$ by at most $C\beta^{-1/2}(1+|x|)$ there; the sharper quadratic estimate is unnecessary. Integration proves (6). Taking a logarithm proves (7). Division by the same genuine denominator in (6), followed by a Gaussian weighted integral with $\theta<c'$, proves (8). Outside the chart the global gap absorbs the fixed power $\beta^{n_i/2}$. No uncounted gauge volume or independent scalar is removed.
+\end{proof}
+
+At the flat bath, (7) and (5) are an explicit scalar resummation with $n_i/2=6d_G$. The law is weak-coupling small relative to its full pinned Gaussian, not relative to independent Haar boundary variables. Gauge-equivalent copies of the bath give identical conclusions by transforming all fixed staples and free links together. This does not assert that a chosen original R gauge or its selector lands in this bath neighborhood.
+
+\section{What survives in the complete lattice after integration}
+Integrating this block replaces its factor by $D_\beta(b)$. Thus the effective bath action contains the exact local increment $-\log D_\beta(b)$, including the minimum term, $6d_G\log\beta$, and the Hessian determinant. The normalized error in (8) does not bound this scalar by $O(\beta^{-1/2})$.
+
+There is also a precise reason the pinned mass in (4) cannot become a global mass. At the flat full-lattice quadratic level split all links into the cube coordinates $i$ and bath coordinates $b$, writing the curl Hessian as $Q$. The induced bath quadratic form is the Schur complement
+\[
+ Q_{\rm eff}=Q_{bb}-Q_{bi}Q_{ii}^{-1}Q_{ib}.
+ \tag{9}
+\]
+If $Q(v_i,v_b)=0$, its first block row gives $v_i=-Q_{ii}^{-1}Q_{ib}v_b$, and its second gives $Q_{\rm eff}v_b=0$. Thus the exact global infinitesimal gauge and torus harmonic modes are retained. Conditioning pins a finite block; integrating it does not eliminate the collective modes or make the remaining bath interaction small.
+
+For genuinely copied complete cube-and-staple records under a torus covering, (1)--(2) show pointwise equality of $D_\beta$, $U_*$ (in correspondingly transported charts), and all terms of (7). A family of disjoint free blocks with no plaquette coupling different blocks factors conditionally, so this pointwise scalar matching has exactly the covering multiplicity. This is a useful local full-record comparison. It is not a comparison of the distributions of unmatched baths, an identification of arbitrary R histories, or control of wrapped records.
+
+The remaining S94 estimate is now explicit: control or match the induced bath action and its harmonic/boundary modes, with the scalar (7) retained. Uniform admission of these blocks under the manuscript's original selectors and the all-scale sum have not been proved.
+\end{document}

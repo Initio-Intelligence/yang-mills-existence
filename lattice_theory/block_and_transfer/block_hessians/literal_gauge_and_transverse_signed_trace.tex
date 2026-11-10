@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{An original two-link fiber: gauge cancellation and a transverse signed fluctuation trace}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Original fiber and raw normalization.}
+Take two consecutive selected spatial links $u,v\in SU(2)$.
+The first link has four fixed spatial staples and its preceding temporal
+neighbor equal to $A=e^{i\epsilon\sigma_3}$; the second has four spatial
+staples and its following temporal neighbor equal to
+$C=e^{-i\epsilon\sigma_3}$. The temporal bath links are the identity.
+These fixed staples can be realized by the private links in the adjacent
+plaquettes; all other fixed plaquettes remain part of the exterior record.
+With $s(U)=1-\frac12\operatorname{ReTr}U$, the free-dependent action is
+\[
+ S=B[\kappa s(uA^{-1})+\kappa s(vC^{-1})+s(uv^{-1})],\qquad \kappa=5.
+\]
+Its raw integral contains the factor $e^{-11B}$, not a normalized temporal
+kernel. Any fixed-only plaquette contribution $S_{\rm ext}(\epsilon)$ gives
+$Z_{\rm full}=e^{-S_{\rm ext}}Z$ and
+$V_{\rm full}=S_{\rm ext}+V$. It cancels only in the explicitly
+classical-relative fluctuation $F=-\log Z_{\rm full}-V_{\rm full}
+=-\log Z-V$. No live exterior action is discarded from $Z_{\rm full}$.
+
+For sufficiently small $\epsilon$, compact pinning and the positive flat
+Hessian give a unique global action minimum
+\[
+ u_*=e^{i\theta\sigma_3},\quad v_*=e^{-i\theta\sigma_3},\qquad
+ \kappa\sin(\theta-\epsilon)+\sin2\theta=0,\quad
+ \theta'(0)=\frac{\kappa}{\kappa+2}.
+\]
+Indeed uniqueness at zero follows from the nonnegative pinned action;
+compactness excludes other global minimizers away from its neighborhood
+for small parameters, and local strict convexity gives uniqueness there.
+Symmetry and stationarity identify the displayed minimum.
+
+\paragraph{Complete leading Gaussian around the actual minimum.}
+Use right fluctuations
+$u=u_*\exp(i x\cdot\sigma/\sqrt B)$,
+$v=v_*\exp(i y\cdot\sigma/\sqrt B)$. The exact canonical action Hessian is
+\[
+ H=\begin{pmatrix}aI&D\\D^T&aI\end{pmatrix},\quad
+ a=\kappa\cos(\theta-\epsilon)+\cos2\theta,\quad
+ D=-cI-sJ_3,\quad c=\cos2\theta,\ s=\sin2\theta,
+\]
+where $J_3z=e_3\times z$ (reversing the orientation reverses the immaterial
+sign of $J_3$). Its eigenvalues are $a\pm1$, each twice, and $a\pm c$,
+each once. Hence
+\[
+ \det H=(a^2-1)^2(a^2-c^2),\qquad
+ Z_{\rm quad}=e^{-V}\frac{2}{\pi B^3}(\det H)^{-1/2}.
+\]
+The prefactor uses normalized Haar measure with local density
+$1/(2\pi^2)$ on each $SU(2)$ factor. Fixed exterior factors multiply this
+expression exactly as above. This is a leading quadratic reference,
+not an equality to the nonlinear compact integral.
+
+\paragraph{Actual gauge path and the signed cancellation.}
+Conjugate every exterior link and both integration variables by
+$g(t)=e^{it\sigma_1/2}$. This is an actual site-gauge path (the same
+transformation at every site), retaining all holonomy eigenvalues.
+Both raw $Z_{\rm full}$ and $V_{\rm full}$ are exactly unchanged.
+In the minimum-only translated frame the quadratic Hessian rotates:
+\[
+ H_t=O_t H O_t^T,\quad O_t=\operatorname{diag}(\operatorname{Ad}_{g(t)},
+ \operatorname{Ad}_{g(t)}),\quad
+ \dot H=[J,H],\quad \ddot H=[J,[J,H]] .
+\]
+The harmless sign convention for the adjoint generator does not affect
+the following identities. For nonzero small $\epsilon$,
+\[
+ I=\tfrac12\operatorname{Tr}(H^{-1}\dot H H^{-1}\dot H)>0,\qquad
+ \|\dot H\|_{\rm F}^2=4s^2,\qquad I\ge\frac{2s^2}{(a+1)^2}.
+\]
+Nevertheless
+\[
+ F_{\rm quad}''=
+ \tfrac12\operatorname{Tr}(H^{-1}\ddot H)-I=0
+\]
+because the determinant is invariant. This retains the acceleration
+partner; replacing the curved gauge path by its tangent misses it.
+In the fully gauge-aligned fluctuation frame the pulled action and Haar
+measure are unchanged, so the corrected score is exactly zero,
+even nonlinearly. Thus a positive Fisher term in a minimum-only frame
+cannot alone be bounded by the physical change of curvature of a gauge
+orbit. The signed trace, or a correctly aligned physical frame, is needed.
+
+\paragraph{One physical, localized transverse change.}
+Now vary $\epsilon$, rather than conjugating the records.
+The relative center $AC^{-1}=e^{2i\epsilon\sigma_3}$ changes eigenvalues;
+this direction is not a gauge orbit. At $\epsilon=0$ direct differentiation
+gives
+\[
+ a=\kappa+1,\quad
+ a''=-\frac{4\kappa(\kappa+1)}{(\kappa+2)^2},\quad
+ c''=-\frac{4\kappa^2}{(\kappa+2)^2},
+\]
+\[
+ F_{\rm quad,\epsilon\epsilon}
+ =-\frac{4(3\kappa^2+5\kappa+3)}{(\kappa+2)^3},\qquad
+ V_{\epsilon\epsilon}=\frac{4B\kappa}{\kappa+2}.
+\]
+For canonical $\epsilon=\zeta/\sqrt B$ and the original $\kappa=5$,
+\[
+ F_{\rm quad,\zeta\zeta}=-\frac{412}{343B},\qquad
+ V_{\zeta\zeta}=\frac{20}{7},\qquad
+ |F_{\rm quad,\zeta\zeta}|=\frac{103}{245B}V_{\zeta\zeta}.
+\]
+This explicitly tests the signed determinant response against the actual
+finite-fiber classical Schur energy, rather than a coordinate counting
+bound. Fixed-only exterior action cancels from $F$; at the flat record
+its Hessian is nonnegative, so including it can only increase the
+classical curvature used on the right.
+
+\paragraph{Limits and next estimate.}
+The gauge invariance statement is exact for the original compact model.
+The numerical signed transverse coefficient above concerns the complete
+leading Gaussian only. It is not a proof of a uniform nonlinear remainder,
+a growing-block curl estimate, or S94. The reusable next target is the
+signed Hessian determinant response on the full relative incidence
+complex, with its gauge acceleration and measure partners, bounded by
+a physical boundary Schur form. Bounds on Fisher alone do not establish
+that statement. Global torus modes have not been integrated out here.
+\end{document}

@@ -1,0 +1,160 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Local gauge-noise Ward identities and cancellation of longitudinal nonlinear terms}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Local gauge Jacobian and boundary source.}
+The BCH signs, local Jacobian and coefficient formula of the local gauge completion first nonlinear coefficient calculation are used. The
+Jacobian is measured in LEFT-INVARIANT gauge tangents, not in Euclidean
+logarithms of gauge parameters; thus an extra gauge-Haar polynomial must
+not be appended to it. Full-free-link Haar is already present. Its claim
+is local equality of fixed-block Laplace coefficients, not a global gauge
+substitution or a size-uniform complementary-integral bound.
+The boundary-source Ward identity handles the complementary longitudinal terms.
+Here we remove the longitudinal vector sectors of the FULL first nonlinear
+coefficient before spatial estimates. This is an exact cancellation for
+every block size, but it does not bound the surviving transverse terms.
+
+\paragraph{1. Keep the normalized local gauge-noise integral.}
+At the actual critical minimum write $H D=0$, $g=(D^*D)^{-1}$ and
+$F(z)=D^*z$. Replace the local penalty of the local gauge completion first nonlinear coefficient calculation by
+$\kappa |F|^2/2$, with $\kappa>0$, retaining its normalized Gaussian
+prefactor $(\kappa/2\pi)^{m/2}$, where $m$ is the interior gauge dimension.
+The actual local gauge Jacobian remains
+\[
+ M(z)=D^*D+\alpha M_1(z)+\alpha^2M_2(z)+\cdots,\quad
+ \ell_1=\operatorname{Tr}gM_1,\quad
+ \ell_2=\operatorname{Tr}gM_2-\tfrac12\operatorname{Tr}gM_1gM_1,
+ \qquad\alpha=B^{-1/2}.
+\]
+It is independent of $\kappa$. The inverse-function construction can be
+made with cutoffs equal to one near the minimum orbit and near zero gauge
+noise. For each FIXED block, background in its admitted neighborhood, and
+fixed $\kappa>0$, local change of variables along each gauge orbit gives
+\[
+ E_{\rm local}\varphi(F)
+   = E_{N(0,\kappa^{-1}I)}\varphi+\text{exponentially small terms}   \tag{1}
+\]
+for every fixed polynomial $\varphi$. Indeed $\det M$ is precisely the
+Jacobian from the left-invariant orbit measure to $dF$; the action and
+physical tree record are constant along that orbit. The normalizing
+Gaussian over $F$ integrates to one. Its physical cutoff complement has
+the fixed-block action gap; its gauge cutoff complement has Gaussian cost
+$e^{-c_{R,\kappa}B}$. Polynomial insertions or a fixed number of derivatives
+change only fixed-block prefactors. Constants are NOT uniform in $R$ or
+in $\kappa$. The normalization includes the constant gauge-orbit Haar and
+canonical factors; none of them supplies an extra order-$\alpha^2$ vertex.
+Equation(1) is used only as an identity of fixed-block asymptotic
+coefficients. It is not a claim about the full original gauge distribution.
+
+\paragraph{2. The completed mean current is exactly transverse.}
+Let
+\[
+ G_\kappa=(H+\kappa DD^*)^{-1},\quad
+ T_3={1\over6}t_{abc}z_a z_b z_c,\quad
+ \ell_1=l_a z_a,\quad
+ \tau_a=t_{abc}(G_\kappa)_{bc},\quad b=l-\tfrac12\tau.              \tag{2}
+\]
+The original local density's first odd correction is
+$\alpha(\ell_1-T_3)$. Its mean is therefore
+\[
+ E z=\alpha G_\kappa b+O_R(\alpha^2).
+\]
+Taking $\varphi(F)=F$ in (1) makes the displayed coefficient vanish
+exactly. Since $HD=0$,
+\[
+ D^*G_\kappa=\kappa^{-1}gD^*,\qquad
+ \boxed{D^*b=0.}                                                  \tag{3}
+\]
+The ghost-Jacobian linear vertex and the cubic tadpole are needed for this
+identity; neither is separately asserted transverse. At a flat reference
+color symmetry gives $l=\tau=b=0$. Differentiation along the actual
+background path then gives $D_0^*b'=0$, with no omitted $D'$ term because
+it multiplies $b=0$. At a nonflat background the exact differentiated
+identity is instead $D^*b'=-(D^*)'b$.
+
+\paragraph{3. Exact contraction of the complete first coefficient.}
+With $T_4=u_{abcd}z_a z_b z_c z_d/24$ and symmetric tensors, Wick pairing
+of the COMPLETE bracket of the local gauge completion first nonlinear coefficient calculation gives
+\[
+ \boxed{\mathcal C_R(\kappa)=
+ {1\over8}u_{abcd}G_{ab}G_{cd}-EJ_2-E\ell_2
+ -{1\over12}t_{abc}t_{def}G_{ad}G_{be}G_{cf}
+ -\tfrac12 b^*G b,\quad G=G_\kappa.}                              \tag{4}
+\]
+There are six all-cross pairings between the two cubic vertices and nine
+pairings with one internal pair at each vertex. The latter combine with
+$T_3\ell_1$ and $\ell_1^2/2$ into exactly $b^*Gb/2$.
+At flat background the second derivative of this last term is
+$-b'^*G_\kappa b'$. By (3) it has no longitudinal vector propagator.
+This signed current must still be combined with the differentiated
+quartic, Haar, nonlinear Jacobian and all-cross cubic terms in (4).
+It is not by itself the full source response.
+
+\paragraph{4. All longitudinal vector powers cancel in the FULL bracket.}
+The normalized gauge-noise insertion leaves the physical local integral
+unchanged to every fixed-block Laplace order. Hence
+\[
+ \mathcal C_R(\kappa)=\mathcal C_R(1)\quad\text{for every }\kappa>0.
+                                                                    \tag{5}
+\]
+Let $H^+$ be the inverse of $H$ on the orthogonal complement of its gauge
+kernel, extended by zero on that kernel. Exact orthogonal decomposition
+at the critical minimum gives
+\[
+ G_\kappa=H^++\kappa^{-1}Dg^2D^*.                                 \tag{6}
+\]
+All tensors and $g$ in (4) are independent of $\kappa$, and (4) has degree
+at most three in $G$. Thus substitution of (6) gives a literal polynomial
+\[
+ \mathcal C_R(\kappa)=\mathcal C_{R,\perp}
+       +\kappa^{-1}A_1+\kappa^{-2}A_2+\kappa^{-3}A_3.
+\]
+Equation(5) proves
+\[
+ \boxed{A_1=A_2=A_3=0,\qquad
+ \mathcal C_R=\text{the complete expression (4) with }G=H^+.}      \tag{7}
+\]
+These are exact cancellations, valid at every finite $R$, of ALL
+longitudinal vector insertions in the first coefficient, not estimates
+on separate diagrams. The scalar ghost propagator $g$ and the Haar and
+Jacobian vertices remain; (7) does not remove them.
+
+No growing gauge parameter is inserted into the original measure:
+first establish the coefficient identity for each fixed $\kappa$, then
+use its finite polynomial dependence. In particular no uniform-in-$R$
+Laplace remainder is smuggled into the limit. Differentiating (7) in the
+background retains the derivatives of the physical projection in $H^+$,
+as well as those of $D,g$ and every vertex. Replacing them by derivatives
+of a fixed transverse basis would omit partners.
+
+\paragraph{5. Independent exact original-cube check.}
+The complete $R=2$ flat cube has one interior gauge vertex. The scalar
+incidence is $d$, $d^*d=8$. Exact rational contraction gives
+\[
+\begin{array}{c|r|r|r|r}
+\kappa&ET_4&-EJ_2&E\ell_2&\mathcal C_2\\\hline
+1/5&-427/192&5/3&-35/192&-3/8\\
+1/2&-91/48&31/24&-11/48&-3/8\\
+1&-343/192&7/6&-47/192&-3/8\\
+3&-329/192&13/12&-49/192&-3/8\\
+\infty&-161/96&25/24&-25/96&-3/8
+\end{array}
+\]
+The last row uses $H^+=G_1-dd^*/64$ and verifies $d^*H^+=0$ exactly.
+Every finite-$\kappa$ computation also checks $d^*G_\kappa d=\kappa^{-1}$.
+This is a test of the cancellation, not its general proof.
+
+\paragraph{Remaining scale-sensitive term.}
+The full first coefficient is now expressible with physical relative
+vector propagators, scalar ghost propagators, local original action/Haar
+vertices and the connected differentiation formula of the connected first nonlinear flux response calculation. Gauge modes
+are not the remaining obstruction. The all-cross cubic term has three
+propagators between two local vertices; its source derivatives involve a
+joint multivertex current, not the single return loop controlled in the mixed boundary magnetic loop bound calculation.
+The transverse completed mean-current term and the quartic/Jacobian/Haar
+partners must be estimated together. Neither transversality nor (7)
+implies a logarithmic bound on that combination. A uniform physical-energy
+estimate and a uniform original differentiated remainder remain open.
+No global holonomy sector is replaced or removed, and no S94 or scale
+induction is asserted.
+\end{document}

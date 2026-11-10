@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{A non-small boundary interaction left by the complete weak-coupling cube}\author{}\date{}
+\begin{document}\maketitle
+Use exactly the complete conditional Wilson block of the complete conditional cube calculation. Its normalized fluctuation law has a small error relative to a pinned Gaussian, but its induced boundary action is not a weak interaction relative to independent boundary links. The following coefficient makes this distinction explicit.
+
+Choose a free cube edge $e=(x,\mu)$, with $\mu\in\{1,2,3\}$. Let $e_+$ and $e_-$ be its parallel translates by one unit in the positive and negative fourth directions. Each is a bath link occurring in precisely one of the 54 plaquettes in the complete conditional record: the vertical plaquette joining it to $e$. No original plaquette contains both $e_+$ and $e_-$.
+
+Vary only those two bath links in one fixed Lie direction $T$, normalized by $|T|=1$. Choose the signs of parameters $t_+,t_-$ so their contributions to the corresponding linearized plaquette curls are $A_e+t_+$ and $A_e+t_-$. Every other bath link remains the identity. The exact real Wilson action has quadratic part
+\[
+ S_b(A)=\frac1{2N}\left[
+ A^TH_0A+2A_e(t_++t_-)+t_+^2+t_-^2
+ \right]+O((|A|+|t|)^3),\quad H_0=4I+d^Td.
+ \tag{1}
+\]
+All other Lie components decouple at this order. No Gaussian approximation is used to identify this exact Taylor coefficient of the nonlinear action.
+
+The cube symmetry makes every diagonal entry of $H_0^{-1}$ equal. Its verified spectrum from the complete conditional cube calculation therefore gives
+\[
+ (H_0^{-1})_{ee}=\frac1{12}\left(\frac74+\frac38+\frac2{10}\right)=\frac{31}{160}.
+ \tag{2}
+\]
+Minimizing the quadratic part, or differentiating the exact nearby minimizer by the implicit function theorem, yields
+\[
+ S_b(U_*(b))=\frac1{2N}\left[
+ t_+^2+t_-^2-\frac{31}{160}(t_++t_-)^2
+ \right]+O(|t|^3).
+ \tag{3}
+\]
+Thus the exact classical block action has the mixed boundary Hessian
+\[
+ \partial_{t_+}\partial_{t_-}S_b(U_*(b))\big|_{t=0}
+ =-\frac{31}{160N}.
+ \tag{4}
+\]
+
+For completeness, the finite-dimensional Laplace estimate in the complete conditional cube calculation holds in every fixed $C^r$ norm on a smaller closed bath neighborhood. After shifting to the smooth minimizer, Taylor remainder estimates and their bath derivatives remain uniform; differentiating the rescaled Gaussian integral produces fixed polynomial factors, which are integrable under the same strict Gaussian bound. Differentiated exterior integrals retain the compact action gap. This proves a $C^r$ error of order $\beta^{-1/2}$ for fixed $r$ without any number-of-blocks or all-history assertion.
+
+Taking two bath derivatives of its scalar formula, one obtains the actual induced action coefficient
+\[
+ \partial_{t_+}\partial_{t_-}[-\log D_\beta(b)]\big|_{t=0}
+ =-\frac{31\beta}{160N}
+ +\frac12\partial_{t_+}\partial_{t_-}\log\det H_b\big|_{t=0}
+ +O(\beta^{-1/2}).
+ \tag{5}
+\]
+The determinant derivative is a finite $\beta$-independent quantity. The original bath-only Wilson action has zero mixed derivative in these two links, since no plaquette contains both. Hence (5) is a genuine induced interaction in the exact partially integrated lattice action, not an artifact of dropping an existing cross term.
+
+On fluctuation-size boundary variables $t_\pm=y_\pm/\sqrt\beta$, the leading mixed coefficient is the nonzero constant $-31/(160N)$. Thus it is not $O(\beta^{-1/2})$ even in that natural scaled boundary chart. It must be retained in the new quadratic/classical action. The determinant term and $6d_G\log\beta$ scalar from \texttt{complete\_conditional\_cube.tex} likewise remain part of the complete carrier; the logarithmic scalar is independent of $t$ but not bounded as $\beta$ increases.
+
+This calculation indicates the viable constructive organization: retain the Schur-complement Gaussian and the full classical minimum as the next reference, then control the nonlinear residual. A small residual on one pinned block does not prove uniform invertibility or summability of those references after many blocks, especially in the global harmonic/gauge directions identified in \texttt{complete\_conditional\_cube.tex}. No estimate of complete S94 follows without that further control and the original selector/record identification.
+\end{document}

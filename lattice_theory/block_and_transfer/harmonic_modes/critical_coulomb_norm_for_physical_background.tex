@@ -1,0 +1,106 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{A legitimate critical background norm for completed quantum packets}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Physical object and scope.}
+Let $F_R$ be the COMPLETE first quantum coefficient $C_R$ as a function
+of the original boundary record, or one complete gauge-covariant
+proper-time packet from the longest time completed contact packet calculation. For example a dyadic longest-line packet is
+$C(X_{2s},Y_{2s})-C(X_s,Y_s)$, with all vertices, means, ghosts,
+Haar and actual background dependence retained. At each fixed box
+these objects are boundary-gauge invariant and $DF_R(0)=0$ by global
+color invariance. Neither property is asserted for a diagram alone.
+We consider their physical second boundary derivative, not the fourth
+source derivative of the classical minimum action.
+
+\paragraph{1. Gauge quotient of the actual harmonic tangent.}
+Let $h$ be a complete Maxwell-harmonic field extending the actual
+boundary tangent. On the FULL original vertex/link graph, including
+boundary links, minimize $\|h-D\chi\|_2^2$ over vertex functions
+modulo constants. Put $b=h-D\chi$. Then
+\[
+ D^*b=0\ \hbox{at every graph vertex},\qquad db=dh,
+ \qquad (d^*db)_I=0.                                        \tag{1}
+\]
+This is an honest simultaneous gauge change of the complete boundary
+record and the integrated interior, not an independent change of block
+frames. Maxwell harmonicity is preserved because $dD=0$.
+Differentiating exact boundary gauge covariance, using $DF_R(0)=0$,
+gives the two-slot identity
+\[
+ \boxed{D^2F_R(0)[h,h]=D^2F_R(0)[b,b].}                       \tag{2}
+\]
+The source curve induced by $\exp(\epsilon\chi)$ may have acceleration;
+its contribution here is $DF_R(0)$ applied to that acceleration, hence
+zero. This argument cannot be used to discard the corresponding terms
+in a fourth-order classical source coefficient. For a single Cartan
+color all exponentials commute and the straight source paths already
+map exactly; the general quadratic statement also follows by flat
+color polarization.
+
+The local-chart cutoff and all gauge/frame factors are transformed
+with the ORIGINAL source. This is a fixed-volume coefficient statement;
+it supplies no uniform nonlinear chart-tail estimate.
+
+\paragraph{2. Uniform critical norm on the original lattice.}
+Reflect $b$ exactly as in the general box magnetic current bound calculation, odd in its own edge direction
+with zero normal fold edges and even in the transverse coordinates.
+The resulting periodic field $B$ on periods $2(R+1)$ satisfies
+\[
+ D^*B=0,\qquad \sum_{i,j}\|\delta_jB_i\|_2^2
+                       =16\|dh\|_2^2.                      \tag{3}
+\]
+Every component has zero periodic mean by its odd normal reflection.
+The four-dimensional discrete periodic Sobolev inequality consequently
+implies
+\[
+ \boxed{\|b\|_{\ell^4}^2\le C\|dh\|_2^2,
+ \quad \|b\|_{\ell^2}\le CR\|dh\|_2,
+ \quad \|\nabla B\|_2=4\|dh\|_2.}                          \tag{4}
+\]
+All constants are independent of $R$ and the boundary data.
+
+For clarity the Sobolev step introduces no lattice-scale constant.
+Multilinearly interpolate each periodic component on the unit cells.
+Fixed finite-dimensional cell norm equivalence compares its continuum
+$L^4$ norm with the lattice $\ell^4$ norm, and bounds its continuum
+Dirichlet energy by the sum of squared nearest-neighbor differences.
+The interpolant has zero mean. On a torus of side $L$, the elementary
+four-dimensional Sobolev inequality is
+$\|u\|_4\le C(\|\nabla u\|_2+L^{-1}\|u\|_2)$;
+it follows by a cutoff over a fixed number of periodic cells and the
+Euclidean four-dimensional Sobolev inequality. Periodic Poincare for
+zero mean gives $L^{-1}\|u\|_2\le C\|\nabla u\|_2$.
+Both terms have the same scaling, so $C$ is independent of $L$.
+Finally each original internal edge is repeated 16 times in the
+reflection, while fold edges vanish. This proves(4) with the original
+complete curl energy and all boundary multiplicities.
+
+\paragraph{3. Consequence and exact remaining packet estimate.}
+For the offset family of the harmonic offset boundary exchange calculation, the constant temporal component is a pure
+gauge tangent. Equation(2) removes it in EVERY complete dyadic packet
+at this second source order. Thus its classical quartic growth does
+not imply a constant-offset growth for $C_R''$.
+More generally(4) supplies a valid critical background norm for the
+physical quantum Hessian. It is NOT a curl bound on arbitrary tree
+fluctuations, nor a license to drop ghost, minimum or boundary partners.
+
+The remaining quantitative problem is the estimate of the FULL signed
+packet Hessian on these representatives. Writing $P_{R,s}$ for the
+above dyadic packet, one still needs a bound such as
+\[
+ |D^2P_{R,s}(0)[b,b]|\le c_{R,s}\|dh\|_2^2
+\]
+with a controlled sum of $c_{R,s}$ over proper-time scales.
+No such bound is inferred from(4) alone: the internal loop currents,
+short-line contacts, induced exchange and joint coarse covariance
+remain. The new valid inequality is the uniform background norm(4)
+under the exact physical identity(2). It isolates the correct norm
+without assuming an unjustified raw-tree Sobolev estimate.
+The displayed derivatives use the physical background parameter. In
+$B^{-1}C_R(\epsilon h)$ with canonical $\epsilon=\zeta/\sqrt B$,
+the target curvature contributes $B^{-2}D^2C_R(0)[h,h]$; this original
+coupling factor is not changed by the gauge quotient.
+The first nonlinear coefficient bound, its uniform interacting
+remainder and S94 remain open.
+\end{document}

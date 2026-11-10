@@ -1,0 +1,170 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{An exact Gaussian coarse interface for the matched kinetic sector}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Input and scope.}
+Use the complete harmonic kinetic matching calculation. The 18-mode symmetry, energy projection and
+boundary-only Stokes map of the complete constant curvature coarse sector calculation are used here. In particular
+an internal zero-boundary field has ZERO constant-curvature projection on
+its whole block; the harmonic estimate cannot be applied to that leg.
+This note uses genuine retained SUBblock boundaries instead, under the
+original flat relative Gaussian law. This is the actual quadratic
+reference for coefficient calculations, not a substituted nonlinear
+Wilson or native conditional law.
+
+\paragraph{1. Exact harmonic/zero-boundary decomposition and the raw Schur law.}
+Use a common original relative gauge/forest so the physical Gaussian
+precision is positive. Partition its variables into disjoint block
+interiors $I$ and the retained skeleton $Y$. In these actual coordinates
+write the precision as $A$. Its conditional harmonic lift is
+\[
+ W=-A_{II}^{-1}A_{IY},\quad E=\binom W I,\quad
+ S=A_{YY}-A_{YI}A_{II}^{-1}A_{IY}.
+\]
+The exact quadratic decomposition and covariance are
+\[
+ x=(r,0)+Ey,\qquad
+ x^*Ax=r^*A_{II}r+y^*Sy,
+\]
+\[
+ \boxed{A^{-1}=\begin{pmatrix}A_{II}^{-1}&0\\0&0\end{pmatrix}
+                                  +ES^{-1}E^*,\qquad
+        \det A=\det A_{II}\det S.}                              \tag{1}
+\]
+Every original plaquette is assigned once in this precision. Complete
+subblock plaquette sets used below are comparison norms and may overlap;
+fixed-only face energies remain in their original skeleton scalar.
+The raw Gaussian integration factor
+$(2\pi)^{\dim I/2}(\det A_{II})^{-1/2}$, together with the original
+canonical/Haar constants, stays attached to the induced skeleton law.
+The Schur precision $S$ is not reset to Wilson form.
+
+For a complete subblock $B$, the 18 normalized constant-curvature
+coordinates are
+\[
+ c_{B,i}(x)=\langle d_B\psi_{B,i},d_Bx\rangle,
+ \qquad\langle d_B\psi_{B,i},d_B\psi_{B,j}\rangle=\delta_{ij}.
+\]
+They depend ONLY on the retained complete boundary, by literal Stokes.
+Consequently they annihilate the zero-boundary term in (1). Their actual
+joint covariance is that induced by $S^{-1}$, with all correlations and
+normalizers retained; independence across blocks is not asserted.
+
+\paragraph{2. A joint covariance and current bound without a block count.}
+Let $\xi$ be the original centered canonical relative Gaussian with
+energy $\mathcal E(\xi)=\|d\xi\|^2$. For any coefficients $a_i$ on one
+block, energy Cauchy--Schwarz gives
+\[
+ |\sum_i a_i c_{B,i}(w)|^2
+       \le |a|^2\mathcal E_B(w)\le |a|^2\mathcal E(w).
+\]
+The exact finite Gaussian dual-energy formula therefore proves
+\[
+ \operatorname{Cov}(c_B)\le I_{18}.                              \tag{2}
+\]
+If complete subblocks have plaquette overlap at most $q$, their
+orthogonal energy projections give
+\[
+ \sum_B|c_B(w)|^2\le\sum_B\mathcal E_B(w)\le q\mathcal E(w),
+ \qquad \operatorname{Cov}((c_B)_B)\le q I.                      \tag{3}
+\]
+For a literal four-dimensional cubical tiling $q\le4$: a plaquette can
+lie on grid hyperplanes in its two transverse directions. This count
+includes shared faces and corners.
+
+The matched uncut kinetic coefficient of the complete constant curvature coarse sector calculation is $c_R$, with
+$|c_R|\le C\log(2+R)$. Allow coefficients $\kappa_B$ for comparison and retain
+the declared local kinetic piece
+\[
+ Q(\xi)=\sum_B \kappa_B|c_B(\xi)|^2,\qquad
+ \kappa_*:=\sup_B|\kappa_B|.
+\]
+For a deterministic physical mean $h$,
+Gaussian centering and (3) give
+\[
+ |E Q(\xi+\zeta h)-E Q(\xi)|\le \zeta^2 q \kappa_*\mathcal E(h),
+\]
+\[
+ \operatorname{Var}\left(\partial_\zeta Q(\xi+\zeta h)|_0\right)
+              \le4q^2\kappa_*^2\mathcal E(h).                         \tag{4}
+\]
+Indeed the current is twice the joint linear functional
+$\sum_B\kappa_B\langle c_B(\xi),c_B(h)\rangle$; (3), not independence,
+controls its variance. Similarly the second source derivative of
+$\operatorname{Var}Q(\xi+\zeta h)$ is bounded by
+$8q^2\kappa_*^2\mathcal E(h)$, since the Gaussian quadratic-linear third
+moment vanishes. These are logarithmic and logarithmic-squared bounds
+for the RETAINED kinetic piece, not for the full nonlinear packet.
+Its source-zero expectations and variances can be extensive and are
+stored separately rather than dropped.
+
+\paragraph{3. A stronger exact cancellation for a coherent flux and uniform tiling.}
+Suppose the original cube is tiled uniformly by identical complete
+subblocks, with the SAME matched coefficient $c_R$, and let $h$ carry
+coherent constant plaquette flux. For a zero-outer-boundary fluctuation
+$\xi$, Stokes gives the exact identity
+\[
+ \sum_Bc_R\langle c_B(\xi),c_B(h)\rangle=0.                      \tag{5}
+\]
+For each plane orientation the constant flux factors out. The remaining
+sum is a sum of plaquette curls. Complete-block multiplicities depend
+only on the two transverse coordinates, so on each plane slice they
+are constant. The plane sum telescopes to the original OUTER boundary,
+where $\xi$ is zero. Shared faces are not deleted or counted incorrectly.
+Hence
+\[
+ \boxed{Q(\xi+\zeta h)=Q(\xi)+\zeta^2Q(h).}                      \tag{6}
+\]
+The linear current vanishes pointwise, not only in expectation. All
+higher centered cumulants of this one kinetic piece are unchanged by
+that source shift. Its deterministic curvature is bounded by
+$2q|c_R|\mathcal E(h)$.
+
+For an explicitly declared coefficient-insertion parameter $\lambda$,
+whenever the Gaussian integral exists, (6) also gives
+\[
+ {E e^{-\lambda Q(\xi+\zeta h)}\over E e^{-\lambda Q(\xi)}}
+                     =e^{-\lambda\zeta^2Q(h)}.                   \tag{7}
+\]
+The entire source-zero Gaussian factor stays in the denominator; it is
+not estimated by a root-count bound or set equal to one. For example
+$2|\lambda|q|c_R|<1$ suffices for integrability. This is an identity for
+this declared Gaussian kinetic piece, not a modification or proof of
+control of the original nonlinear measure.
+
+\paragraph{4. Exact residuals are still present.}
+For each original subblock field restriction write
+$x_B=h_{\overline F_B}+r_B$ using the boundary-only projection of the complete constant curvature coarse sector calculation.
+The FULL completed uncut self-energy is
+\[
+ x_B^*\widehat K_Bx_B
+ =c_R|c_B(x)|^2+2h_{\overline F_B}^*\widehat K_Br_B
+                                      +r_B^*\widehat K_Br_B.      \tag{8}
+\]
+The last two terms are not controlled by (2)--(7). Energy orthogonality
+does not make their $\widehat K_B$ cross term vanish. They include other
+harmonic boundary modes as well as zero-boundary fluctuations.
+Original source changes also vary covariance/vertices beyond this flat
+Gaussian mean-shift channel. Heat-cutoff kernels require their explicit
+regulator and marked-ghost partners; $c_R$ is the matched UNCUT coefficient
+and is not assigned to each cutoff by fiat. Global holonomies outside
+the chosen relative problem remain retained data.
+
+\paragraph{5. Literal original-grid verification.}
+The finite calculation uses a complete $R=4$ original relative Gaussian and its 16
+complete $R=2$ subblocks. All 96 single-color coarse coordinates are built
+from original incidence; colors then give three identical copies.
+It verifies exactly the plane-current row cancellations in (5), the
+maximum plaquette overlap $4$, and an energy-projection inequality.
+Direct covariance computation checks both $I-\operatorname{Cov}(c_B)$
+and $4I-\operatorname{Cov}((c_B)_B)$ are positive; their minimum elimination
+pivots are respectively above $.869$ and $3.856$ in this test.
+The projected coherent mean energy is $9/4$ versus global energy $25/16$,
+consistent with the retained overlap bound, not a false disjoint norm.
+
+Thus a genuine retained-boundary kinetic piece can be carried through
+an exact original Gaussian Schur transition without a source-response
+block-count loss. The full residual (8), actual heat/current partners
+and original nonlinear remainder remain the main unclosed estimates.
+No full two-loop, physical-scale iteration or S94 claim is made.
+\end{document}

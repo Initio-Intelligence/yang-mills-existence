@@ -1,0 +1,136 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{A complete-cube signed incidence formula and a physical constant-flux test}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Input and scope.}
+Use the signed gauge quotient and unsummed current calculation. The original $R=2$ cube of the full relative cube signed response calculation contains all 216
+plaquettes, eight free links and seven independent chords. Its oriented
+inverse-link insertion is BEFORE the inverse factor with a minus sign;
+its positive-link insertion is AFTER the factor. The actual Cartan minimum
+is odd in the boundary parameter, so its second derivative vanishes at
+zero. Its exact seagull $77/6912$, bubble $1219/3456$, signed response
+$-787/2304$, and full Schur energy $113/24$ agree with the incidence
+formula below. The fixed-only curvature four remains in the classical
+energy. This note extends the formula to every complete relative cube,
+not the nonlinear estimate.
+
+\paragraph{1. Original minimum and complete oriented incidence.}
+Let $J$ be the non-tree free links of the original relative cube, with the
+same rooted temporal forest as the relative green improved connected bound calculation. Fix a Cartan boundary path
+$U_e(\epsilon)=\exp(i\epsilon b_e\sigma_3)$ and keep the tree links equal
+to identity. Write the actual nearby minimum as
+$U_j^*(\epsilon)=\exp(i\theta_j(\epsilon)\sigma_3)$.
+Uniqueness near the flat minimum and invariance under global Cartan
+conjugation imply this form. Conjugation by $i\sigma_1$ changes the sign
+of the boundary parameter, so $\theta$ is odd. For each oriented plaquette
+$p=((e_1,s_1),\ldots,(e_4,s_4))$ set
+\[
+ r_{pj}=\sum_{k:e_k=j}s_k,\quad K=r^*r,\quad G=K^{-1},\quad
+ a_J=-G r^* d b,\quad f_p=\sum_{k=1}^4s_k a_{e_k}.                  \tag{1}
+\]
+Here $a=b$ on fixed boundary links and zero on the tree; $db$ means the
+plaquette incidence of that boundary-only field. Then $a_J=\theta'(0)$,
+$r^*f=0$, and $\theta''(0)=0$. The complete classical curvature is
+$\sum_p f_p^2$, including fixed-only plaquettes. All these are actual
+minimum derivatives; no fine field already integrated elsewhere is restored.
+
+\paragraph{2. Neutral and charged Hessians with all inverse-link partners.}
+Use right fluctuations at the actual minimum. The color-three Hessian
+is a real matrix $N(\epsilon)$; the colors one and two form the real
+representation of one Hermitian complex matrix $C(\epsilon)$. At zero
+$N=C=K$. For two distinct chord occurrences $k<l$ in a plaquette define
+\[
+ \beta_{kl}=\sum_{k<q<l}s_q a_{e_q}
+       +\mathbf1_{s_k=-1}s_k a_{e_k}
+       +\mathbf1_{s_l=1}s_l a_{e_l},\qquad
+ t_{kl}=f_p-2\beta_{kl}.                                            \tag{2}
+\]
+The endpoints in (2) are essential: positive variations occur after their
+factor, negative variations before it. To second order in $\epsilon$, the
+charged off-diagonal entry contributed by these two occurrences is
+$s_ks_l\exp(-i\epsilon t_{kl})$, with the opposite entry its conjugate.
+The immaterial overall imaginary sign changes with the quaternion convention.
+The neutral contribution is $s_ks_l\cos(\epsilon f_p)$. Both diagonal
+color blocks receive $\cos(\epsilon f_p)$ for every chord occurrence.
+Consequently, with all repeated contributions summed,
+\begin{align}
+ N'(0)&=0,& N''(0)&=-r^*\operatorname{diag}(f_p^2)r,\\
+ C'(0)&=iA,& A_{e_ke_l}&\mathrel{+}=-s_ks_l t_{kl},\quad
+ A_{e_le_k}\mathrel{+}=s_ks_l t_{kl},\\
+ C''_{jj}(0)&=-\sum_{p\ni j}f_p^2,&
+ C''_{e_ke_l}(0)&\mathrel{+}=-s_ks_l t_{kl}^2.                       \tag{3}
+\end{align}
+In the last line the off-diagonal contribution is symmetric. $A$ is real
+antisymmetric. These formulas follow by multiplying the ordered factors:
+the transverse insertion pair has scalar part proportional to
+$\cos(\epsilon(f_p-2\beta_{kl}))$ or its sine. The absence of
+$\theta''(0)$ is why no missing minimum-acceleration term occurs at this
+particular symmetric reference. For a general nonflat path it must be restored.
+
+Since $\det H_{\rm real}=\det N\,(\det C)^2$, the FULL signed response is
+\[
+ \boxed{F_{\rm quad,\epsilon\epsilon}
+ =\tfrac12\operatorname{Tr}(G N'')+\operatorname{Tr}(G C'')
+                         +\operatorname{Tr}(G A G A).}             \tag{4}
+\]
+The last term is nonpositive; its negative is the positive covariance
+bubble. The first two terms are the second-derivative partner, which need
+not have a fixed sign. Equation(4) is the complete tree determinant, hence
+already includes the gauge quotient of the signed gauge quotient and unsummed current calculation. Adding a separate ghost
+factor to it would double count that quotient. The raw Gaussian normalizer
+remains $e^{-V}$ times its original canonical/Haar factor times
+$(\det H_{\rm real})^{-1/2}$; it is not the original nonlinear integral.
+
+\paragraph{3. A physical direction with an exact Cartan minimum.}
+On the complete cube of side $R$, choose on EVERY edge
+\[
+ a_{(x,\mu)}=\mathbf1_{\mu=1}\,{x_0\over R^2},                     \tag{5}
+\]
+and impose its boundary restriction as the boundary path. The temporal
+forest (direction zero) is unchanged. Every 01 plaquette has
+$f_p=R^{-2}$ and every other plaquette has zero flux. For every free link,
+the two nonzero sine forces cancel exactly; all transverse color forces
+vanish at the Cartan configuration. Thus (5) is the exact nearby action
+minimum for sufficiently small $\epsilon$, not merely its linearized
+harmonic extension. Its classical energy is
+\[
+ E_R=\sum_p f_p^2={(R+1)^2\over R^2},\qquad
+ E_{R,\rm live}={(R-1)^2\over R^2},\qquad
+ E_{R,\rm fixed}=4/R.                                               \tag{6}
+\]
+This is a genuine physical curvature direction, not a gauge orbit.
+Its complete energy is bounded above and below as $R$ grows. The fixed-only
+piece is part of the original exterior scalar; it cancels from the
+classically-subtracted fluctuation but not from the complete physical energy.
+
+\paragraph{4. Verified finite-size evidence, not an asymptotic estimate.}
+The finite calculation builds ALL plaquettes and the exact original
+forest, computes $G$, and implements (2)--(4). It reproduces
+the full relative cube signed response calculation at $R=2$ to $10^{-12}$. For (5) it gives
+\[
+\begin{array}{c|r|r|r|r}
+ R&|J|&\text{second-derivative term}&\text{positive bubble}&F''_{\rm quad}\\ \hline
+ 2&7&0.3489583333&0.4722222222&-0.1232638889\\
+ 3&80&6.1115422301&6.4315655746&-0.3200233445\\
+ 4&351&25.5232112541&26.0064691612&-0.4832579071
+\end{array}
+\]
+The corresponding signed/complete-energy ratios are
+$-0.0547839506,-0.1800131313,-0.3092850606$.
+For canonical $\epsilon=\zeta/\sqrt B$, every reported fluctuation curvature
+is divided by $B$, whereas the classical curvature is exactly $E_R$.
+Large separate terms cancel substantially. Three sizes cannot determine
+whether the combined response is logarithmic or establish any uniform
+bound. Taking absolute values before combining (4) destroys precisely the
+cancellation this test measures.
+
+\paragraph{Remaining actual-model estimate.}
+Equation(4) supplies a complete finite-incidence expression to which a
+Green/curl estimate can now be applied without guessing insertion positions
+or dropping gauge/acceleration partners. One must bound its COMBINATION
+relative to (1)'s physical energy, including finite-boundary terms. Even
+such a leading signed bound would not estimate the actual-law residual
+(5) of the signed gauge quotient and unsummed current calculation. The latter still contains nonlinear current covariance and
+actual second/fourth-moment differences. No uniform physical-scale,
+coarse-iteration, or S94 conclusion is claimed.
+\end{document}

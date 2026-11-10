@@ -1,0 +1,196 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Complete Wilson block: Gaussian Schur precision and the nonlinear comparison still needed}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Actual block and normalization.}
+Take a complete spatial cubical patch, with every plaquette incident to its
+free links included and all lateral exterior/collar links fixed. Cross a
+selective temporal separator with an interval of $T$ temporal steps. Do NOT
+integrate one color while dropping its compensating neighboring links: every
+free link of this four-dimensional block is included. For the original action
+$B\sum_p[1-N^{-1}\operatorname{ReTr}U_p]$, choose generators with
+$-\operatorname{Tr}T^aT^b=\delta^{ab}$ and write $U_b=\exp(\theta_b)$ near the
+flat reference. Its exact quadratic Taylor term is
+\[
+ S^{(2)}=\frac B{2N}\|d\theta\|^2=\frac12\|d x\|^2,
+ \qquad x=\sqrt{B/N}\,\theta.                                          \tag{1}
+\]
+The incidence $d$ contains ALL original block plaquettes and boundary collars.
+Thus it includes every compensating neighboring-link term, not just the
+isolated cross coefficient of the selective separator original seam calculation.
+
+Fix an actual relative axial/spanning-tree gauge on a contractible block; the
+compact Haar gauge change has Jacobian one. In the linearized coordinates use
+the corresponding independent non-tree links. If $J$ are the integrated
+coordinates and $R$ the retained boundary coordinates, the literal incidence
+matrix $K=d^*d$ in this chart gives
+\[
+ K_{\rm eff}=K_{RR}-K_{RJ}K_{JJ}^{-1}K_{JR},\qquad
+ x_J^*(b)=-K_{JJ}^{-1}K_{JR}b.                                         \tag{2}
+\]
+This is the full block Schur complement. Zero gauge modes must be fixed before
+inverting; a zero harmonic mode must instead be retained or fixed by actual
+boundary data. It cannot be silently assigned a positive eigenvalue.
+
+For $r=|J|$ independent integrated link coordinates per color,
+$d_G=N^2-1$, and a nonsingular relative block, its EXACT Gaussian integral is
+\[
+ Z_{\rm G}(b)=h_N^r (N/B)^{d_Gr/2}(2\pi)^{d_Gr/2}
+             (\det K_{JJ})^{-d_G/2}
+             \exp[-\tfrac12\langle b,(K_{\rm eff}\otimes I_{d_G})b\rangle]. \tag{3}
+\]
+Here $h_N$ is the Haar density at zero in the $d_G$-dimensional Lie coordinate
+chart on one link. Every fixed linear change from the tree chart to an
+orthonormal physical chart contributes its actual Jacobian to(3).
+Formula(3) is an exact Gaussian normalizer and the
+fixed-block leading Laplace expression, NOT the exact nonlinear Wilson
+normalizer. The latter remains the original compact integral $Z_B(b)$.
+In particular no determinant error is dropped by calling it vacuum energy.
+
+\paragraph{Gauss reduction and actual spatial modes.}
+Let $D_0:C^0\to C^1$ and $D_1:C^1\to C^2$ be the spatial incidence maps with
+the stated relative boundary conditions, so $D_1D_0=0$. Integration of the
+temporal scalar variable at each step minimizes
+$\|a_{t+1}-a_t-D_0\phi_t\|^2$ and yields the projection onto
+$\mathcal V=\ker D_0^*$. Its Gaussian integration factor is
+$(2\pi)^{\operatorname{rank}D_0/2}\det{}'(D_0^*D_0)^{-1/2}$ per step and
+color; the chosen tree/physical-chart Jacobians and gauge volumes must be
+retained consistently with(3). Longitudinal endpoint representatives are
+identified by the original gauge projection, not counted as new physical
+oscillators. On $\mathcal V$, set $C=D_1^*D_1$.
+
+For a contractible cubical patch with full relative boundary data there is no
+harmonic one-form. For the periodic spatial torus, instead, there are exactly
+three linearized harmonic one-form directions per Lie component, and
+$\dim\mathcal V=2n^3+1$: the nonzero physical modes have total real dimension
+$2(n^3-1)$, plus three harmonic directions. This is the linearized tangent
+count, not a claim that the genuine compact global sector is three independent
+$\dim G$ rotors. Nonabelian commuting holonomy constraints and the original
+compact harmonic integrations remain outside a noncompact Gaussian replacement.
+
+\paragraph{Exact temporal Dirichlet-to-Neumann matrix.}
+For a normalized spatial physical eigenvector $Cf=\lambda f$, the action of
+its temporal coefficient is
+\[
+ \frac12\sum_{t=0}^{T-1}(q_{t+1}-q_t)^2
+  +\frac\lambda4(q_0^2+q_T^2)+\frac\lambda2\sum_{t=1}^{T-1}q_t^2.        \tag{4}
+\]
+The half-endpoint factors are the original symmetric-transfer convention.
+Let $\omega=\operatorname{arcosh}(1+\lambda/2)$. Solving its second-order
+recurrence, or taking the Schur complement of the tridiagonal matrix, gives
+\[
+ S_{\partial,\lambda}=\frac12\left[
+ a_T(q_0^2+q_T^2)-2b_Tq_0q_T\right],\quad
+ a_T=\sinh\omega\coth(T\omega),\quad
+ b_T=\sinh\omega\operatorname{csch}(T\omega).                           \tag{5}
+\]
+The exact interior determinant is
+\[
+ \det K_{\lambda,\rm int}=\frac{\sinh(T\omega)}{\sinh\omega},            \tag{6}
+\]
+with value $T$ at $\lambda=0$ and value one when $T=1$.
+Its contribution $(2\pi)^{(T-1)/2}\det K_{\lambda,\rm int}^{-1/2}$ stays
+in the raw Gaussian kernel. Formula(5) contains all compensating links through
+$C$; it is not obtained by tensorizing isolated seam responses.
+
+For $q_{\rm av}=(q_0+q_T)/\sqrt2$ and
+$q_{\rm dif}=(q_0-q_T)/\sqrt2$, the two precision eigenvalues are
+\[
+ \Lambda_{\rm av}=\sinh\omega\tanh(T\omega/2),\qquad
+ \Lambda_{\rm dif}=\sinh\omega\coth(T\omega/2).                          \tag{7}
+\]
+For $\lambda=0$ they are respectively zero and $2/T$; the common harmonic
+coordinate is not confined. On the bounded lattice spectral interval, (7)
+gives universal comparability
+\[
+ \Lambda_{\rm av}\asymp\min\{T\lambda,\sqrt\lambda\},\qquad
+ \Lambda_{\rm dif}\asymp T^{-1}+\sqrt\lambda.                            \tag{8}
+\]
+Here the zero-mode convention is explicit. For a relative cube of lattice
+side $R$, componentwise discrete Poincare and the relative Hodge identity
+$\|D_1a\|^2+\|D_0^*a\|^2=\|\nabla a\|^2$ give
+$cR^{-2}\le\lambda\le C$ on $\mathcal V$.
+The identity follows by expanding the commuting coordinate differences; cross
+terms cancel with the relative boundary conditions. Each one-form component
+has a transverse Dirichlet direction, giving the stated Poincare bound.
+Boundary conditions, not a mass term, produce this finite-block lower bound.
+
+\paragraph{Surface/volume and physical-wavelength scaling.}
+A complete spatial cube has $O(R^3)$ physical modes and two temporal faces of
+that order; the lateral collar has $O(R^2T)$ coordinates. Its Gaussian bulk
+determinant involves $O(R^3T)$ variables and must cancel only in exact
+normalized comparisons. It is not bounded uniformly merely because the
+retained temporal boundary has fewer coordinates.
+
+Let lattice mesh be $a$, $T\sim t/a$, and a low spatial mode have
+$\lambda\sim a^2|p|^2$. Then
+\[
+ \Lambda_{\rm av}/a\to |p|\tanh(t|p|/2),\qquad
+ \Lambda_{\rm dif}/a\to |p|\coth(t|p|/2).                               \tag{9}
+\]
+For a smooth canonical physical boundary field $A$, the link coordinate is
+$x_b=aA_b$. Thus $\sum_b|x_b|^2\sim a^{-1}\int|A|^2$ in three spatial
+dimensions, while multiplying by the precision in(9) gives a FINITE physical
+boundary quadratic form. For physical wavelength at least $\ell_*$ its cost
+is controlled by physical volume times $(\ell_*^{-1}+t^{-1})$ and the squared
+field amplitude, with the common-mode low-frequency factor in(9) retained.
+By comparison, the exact same-exterior translation/Fisher bound of the exact joint block translation bound calculation
+charges $\sum|x_b|^2$ and therefore loses a factor $a^{-1}$ on such a boundary.
+This is the explicit stiffness improvement a complete block comparison would
+need to recover. For a torus, the difference harmonic mode has finite
+$1/t$ cost; its common mode must still use the true compact global sector.
+
+\paragraph{A testable nonlinear comparison, and its actual unresolved loss.}
+The original compact block integral in a fixed tree chart is
+$Z_B(b)=\int e^{-S_B(b,z)}J(b,z)dz$, with its real domain and Haar Jacobian.
+The exact boundary action difference is
+$\Gamma_B(b)=-\log[Z_B(b)/Z_B(0)]$; this cancels only the ACTUAL reference
+normalizer. A useful interacting statement would control, for physical coarse
+boundary displacements $v$, the centered difference
+\[
+ \Gamma_B(b+v)+\Gamma_B(b-v)-2\Gamma_B(b)
+ \ \le C\,v^*K_{\rm eff}v+\mathcal R_B(b,v),                            \tag{10}
+\]
+with a proved exponential or overlap bound for $\mathcal R_B$ in the ACTUAL
+two-slice/window law, uniform in cutoff and complete-block size. A Jacobian
+term must be included if the displacement is implemented by a non-Haar chart
+map. The coefficient $C$ cannot grow with microscopic volume. A flat-reference
+formula at $b=0$ alone does not establish(10) under that law.
+
+There is a precise reason the elementary Taylor comparison is insufficient.
+On a DECLARED common near-flat link chart of angular radius $\eta$, finite
+plaquette smoothness and bounded incidence give, in canonical coordinates,
+\[
+ |D^2S_B(X)[w,w]-\|dw\|^2|\le C\eta\sum_{\rm block}|w_b|^2.             \tag{11}
+\]
+This is a sufficient rough bound, not an asserted optimal remainder. The chart
+has not been supplied by an arbitrary gauge-invariant plaquette-good record.
+On a physical block the Poincare comparison costs the inverse lowest mode,
+of order $\max\{R,T\}^2$. Thus direct use of(11) requires
+$\eta\max\{R,T\}^2$ small to preserve the physical stiffness. At
+$R,T\asymp a^{-1}$, a fixed small angle, or an inverse power of the
+logarithmic coupling, does not suffice for this particular proof.
+In canonical coordinates the local log-Haar Hessian is itself $O(B^{-1})$
+per link, so a similarly crude treatment also loses an inverse-mode factor
+of order $R^2/B$. This is another term to retain or cancel, not a proof of
+physical growth. Haar-coordinate contributions and boundary-dependent determinant changes must
+also be compared after actual vacuum subtraction; they cannot be dropped as
+per-link errors over $O(R^3T)$ variables.
+
+The sparse original bad-plaquette record controls exceptional sets, and the
+actual output $L^p$ Hessian bound controls averaged coordinate responses.
+Neither presently proves the wavelength-sensitive remainder(10) or cancels
+the inverse-mode loss in(11). This is an upper-bound loss, NOT evidence of
+actual divergence. A covariant/coarse response estimate, retaining the joint
+seam interactions and all changing-record determinants, is the indispensable
+interacting step. The Gaussian complete-block prerequisite and its physical
+scaling are proved here; the Wilson comparison is explicitly open.
+
+\paragraph{Analysis of the exact joint block translation bound calculation.}
+Its pointwise $24B/N$ directional Hessian bound, original Haar integration by
+parts, exact marginal-score contraction, finite-translation relative entropy
+bound $12B\|w\|^2/N$, and affinity bound all hold. The fixed-exterior scope is
+essential: these do not implement an exterior change or delete fine boundary
+coordinates. The improvement from their norm cost to the physical form(9) is
+precisely what remains to establish nonlinearly.
+\end{document}

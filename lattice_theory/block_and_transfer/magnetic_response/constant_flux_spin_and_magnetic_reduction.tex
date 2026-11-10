@@ -1,0 +1,138 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Constant flux: a logarithmic spin bound and the exact remaining magnetic determinant}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Actual background and full gauge quotient.}
+Keep the complete original relative cube, boundary conditions, and exact
+nearby Cartan minimum of the complete cube abelian signed incidence calculation:
+$a_{(x,\mu)}=\mathbf1_{\mu=1}x_0/R^2$,
+$U_e^*(\epsilon)=\exp(i\epsilon a_e\sigma_3)$.
+Write $f=R^{-2}$. The complete classical energy
+$E_R=(R+1)^2/R^2$ includes its fixed-only part $4/R$.
+Use all free links before tree fixing.
+In the charged right frame the interior covariant gauge derivative is
+\[
+ (D_\epsilon\xi)_e=e^{-2i\epsilon a_e}\xi_x-\xi_{x+\hat\mu},
+\]
+with zero boundary vertex parameters. Let $C_\epsilon$ be the actual
+charged Wilson Hessian, and set
+\[
+ Q_\epsilon=D_\epsilon^*D_\epsilon,\qquad
+ V_\epsilon=C_\epsilon+D_\epsilon D_\epsilon^*.
+\]
+The neutral operators are defined in the same way. The exact quadratic
+gauge quotient, with its original unit tree Jacobian, gives
+\[
+ F_{\rm quad}=\tfrac12\log\det V_{\rm neutral}
+ -\log\det Q_{\rm neutral}
+ +\log\det V_\epsilon-2\log\det Q_\epsilon+\text{constant}.
+\]
+This preserves the original raw Gaussian prefactor; it does not identify
+that prefactor with the nonlinear Wilson integral.
+
+\paragraph{A literal component decomposition.}
+Group free links by their direction $\mu$. Direct combination of the
+four ordered Wilson plaquette insertions and the two endpoint gauge
+insertions yields
+\[
+ V_\epsilon=L_\epsilon+P_\epsilon+S_\epsilon.                 \tag{1}
+\]
+Here $L$ is block diagonal in $\mu$. Each block has the original flat
+mixed-relative diagonal and nearest-neighbor hoppings of modulus one,
+with the phases inherited from the displayed $D$ and the original Wilson
+Hessian. It is a scalar magnetic difference operator on the staggered
+edge grid: Neumann in direction $\mu$, Dirichlet in the other three.
+Its phases are not replaced by a continuum field. The diagonal correction is
+\[
+ (P_\epsilon)_{ee}=
+ \begin{cases}2(\cos(\epsilon f)-1),&\mu=0,1,\\0,&\mu=2,3.\end{cases}   \tag{2}
+\]
+Finally $S$ has only off-component entries. A pair of perpendicular
+free links sharing a vertex receives one plaquette and one gauge term.
+At zero flux they cancel. At nonzero flux the entry is the difference of
+two unit phases whose exponents differ by $\epsilon f$ up to sign.
+Only the 01 component pair survives for this background. In particular
+\[
+ S_0=0,\qquad \|S'_0\|\le 4f.                                    \tag{3}
+\]
+The last bound follows from the at most four adjacent perpendicular
+links per row and column. Signs/phase conventions do not affect it.
+The same-component diagonal (2) counts the two 01 plaquettes incident
+to each free 0- or 1-link. Boundary normal links have one fewer gauge
+endpoint; this is already in the original flat Neumann diagonal, not
+an omitted boundary correction.
+
+At zero let $G=V_0^{-1}=\operatorname{diag}(G_\mu)$ and $g=Q_0^{-1}$.
+Because $L'$ is component diagonal and $S'$ is off component,
+\[
+ \operatorname{Tr}G S''=0,\qquad
+ \operatorname{Tr}(GL'GS')=0.                                    \tag{4}
+\]
+These are exact finite-matrix identities. Thus
+\[
+ F_{\rm quad}''=\mathcal M_R-\operatorname{Tr}(GS'GS')
+                  +\operatorname{Tr}(GP'')+\mathcal N_R,           \tag{5}
+\]
+\[
+ \mathcal M_R=
+ \operatorname{Tr}(GL''-GL'GL')
+ -2\operatorname{Tr}(gQ''-gQ'gQ'),\qquad
+ \mathcal N_R=-\tfrac12 f^2\operatorname{Tr}(G H_{01}).
+\]
+Here $H_{01}$ is the complete flat 01 plaquette curl Gram matrix.
+The neutral ghost is constant. In particular no magnetic/spin mixed
+bubble needs an absolute-value estimate.
+
+\paragraph{An actual logarithmic bound for the spin part.}
+The complete relative product spectrum already gives
+\[
+ \operatorname{Tr}G\le CR^4,\qquad
+ \operatorname{Tr}G^2\le CR^4\log(2+R).
+\]
+Indeed inverse-square eigenvalues are bounded by
+$CR^4/|k|^4$, whose four-dimensional shell sum is logarithmic.
+Since $S'$ is Hermitian, in an eigenbasis of $G$ the inequality
+$g_i g_j\le(g_i^2+g_j^2)/2$ proves
+\[
+ 0\le\operatorname{Tr}(GS'GS')
+ \le\|S'\|^2\operatorname{Tr}G^2\le C\log(2+R).                    \tag{6}
+\]
+No operator-order squaring or commutativity is assumed.
+Also $0\le H_{01}\le V_0$, so
+\[
+ |\mathcal N_R|\le C f^2 R^4\le C,\qquad
+ |\operatorname{Tr}(GP'')|\le C f^2\operatorname{Tr}G\le C.         \tag{7}
+\]
+Consequently the original signed quadratic response satisfies the
+proved reduction
+\[
+ \boxed{\quad |F_{\rm quad}''-\mathcal M_R|
+                  \le C[1+\log(2+R)].\quad}                       \tag{8}
+\]
+For canonical $\epsilon=\zeta/\sqrt B$, divide (5)--(8) by $B$.
+As $E_R\ge1$, this is a physical-energy-normalized logarithmic estimate
+for every term EXCEPT the explicit scalar magnetic combination
+$\mathcal M_R$. It is not a logarithmic bound on the full response.
+
+\paragraph{Independent finite checks and the remaining estimate.}
+The finite calculation constructs all
+free-link charged Hessian entries, $D,D',D''$, and the complete gauge
+quotient independently of the tree inverse. Its values are
+\[
+\begin{array}{c|r|r|r|r|r}
+R&\mathcal M_R&-\operatorname{Tr}(GS'GS')&
+\operatorname{Tr}(GP'')&\mathcal N_R&F_{\rm quad}''\\ \hline
+2&0&-0.013888889&-0.072916667&-0.036458333&-0.123263889\\
+3&0.001407762&-0.060212216&-0.178914364&-0.082304527&-0.320023345
+\end{array}
+\]
+The sum agrees with the direct complete gauge determinant through
+$1.2\,10^{-16}$ and with the independent tree calculation.
+The mixed boundary scalar magnetic determinants remain exactly in
+$\mathcal M_R$. A closed-loop area or finite-boundary magnetic Green
+estimate must control their SIGNED second derivatives; their separate
+potential-coordinate bounds do not prove (8) with $\mathcal M_R$ removed.
+Even that additional estimate would leave the exact original-law
+nonlinear residual of the signed gauge quotient and unsummed current calculation(5). No full S94 or scale induction is
+claimed here.
+\end{document}

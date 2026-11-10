@@ -1,0 +1,114 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{SF boundary insertions and original Wilson normalization}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Primary conventions checked.}
+Sources: Luescher--Narayanan--Weisz--Wolff,
+\texttt{https://arxiv.org/pdf/hep-lat/9207009}, sections3.4--3.5,4.5;
+and Bode--Weisz--Wolff,
+\texttt{https://arxiv.org/pdf/hep-lat/9809175}, sections2--3.
+The former distinguishes ultraviolet subtraction from boundary
+$O(a)$ improvement, with spatial boundary weight $c_s/2$ and attached
+temporal weight $c_t$. The latter uses periodic space, time-Dirichlet
+boundaries, and a special constant Abelian SU(3) family, computing
+coupling coefficients using finite-lattice diagrams and extrapolation.
+These statements do not supply an all-relative-cube norm or pressure.
+
+\paragraph{Raw operators and ratio.}
+Use the papers' oriented plaquette trace convention. Let $S_W/g_0^2$
+be the base SF Wilson action, $O_t$ the literal sum over attached
+temporal plaquettes, and $O_s$ HALF the sum over spatial boundary
+plaquettes. Then
+\[
+ S_c=g_0^{-2}[S_W+(c_t-1)O_t+(c_s-1)O_s],\qquad
+ \frac{Z_c}{Z_W}=E_W e^{-g_0^{-2}[(c_t-1)O_t+(c_s-1)O_s]}. \tag{1}
+\]
+No scalar or conditional denominator is removed. $O_s$ depends only
+on prescribed boundary links. It vanishes identically on the special
+commuting constant boundary family of9809175, but not for general
+records. Changing the SF half allocation to another original Wilson
+block allocation has an explicit boundary-dependent scalar too.
+
+\paragraph{Two-loop insertion bookkeeping.}
+Treat $c=c_t$ first as an independent parameter and write
+\[
+ \Gamma(g_0,c)=g_0^{-2}\Gamma_0(c)+\Gamma_1(c)
+                               +g_0^2\Gamma_2(c)+O(g_0^4).
+\]
+Substitute $c=1+c_1g_0^2+c_2g_0^4+\cdots$. Taylor expansion yields
+\[
+ \Gamma_1^{\rm imp}=\Gamma_1^W+c_1\Gamma_{0,c},
+\]
+\[
+ \boxed{\Gamma_2^{\rm imp}=\Gamma_2^W+c_1\Gamma_{1,c}
+       +c_2\Gamma_{0,c}+\tfrac12c_1^2\Gamma_{0,cc}.} \tag{2}
+\]
+All derivatives are at $c=1$, with the actual minimum retained.
+Let $A$ be its interior Hessian on the true quotient and
+$j=\nabla_I O_t(U_*)$. Since the action is linear in $c$,
+\[
+ \Gamma_{0,c}=O_t(U_*),\qquad \Gamma_{0,cc}=-j^*A^{-1}j. \tag{3}
+\]
+The last term is the classical minimum displacement. It need not
+vanish when the original $c=1$ plaquettes are constant.
+$\Gamma_{1,c}$ includes moving-minimum, determinant, ghost and measure
+response. Equivalently, in the ORIGINAL Wilson law,
+$E_WO_t=O_t(U_*)+g_0^2\Gamma_{1,c}+\cdots$ and
+$\operatorname{Var}_WO_t=g_0^2j^*A^{-1}j+\cdots$.
+The connected expansion of (1) reproduces the negative quadratic
+insertion in (2), independently of coupling inversion.
+
+For several weights retain the full mixed Hessian
+$\frac12\sum_{r,s}c_{r,1}c_{s,1}\Gamma_{0,rs}$.
+The fixed spatial operator has zero interior gradient, hence zero
+mixed variance/minimum response, but its scalar and source derivatives
+remain. Returning to original weights requires ALL insertion terms
+in (2), not merely removal of the $c_2$ term.
+
+\paragraph{Free energy versus inverted coupling.}
+At the specified parameter value let $k=\Gamma_0'$ and
+$\bar g^2=k/\Gamma'$. If
+$\bar g^2=g_0^2+m_1g_0^4+m_2g_0^6+\cdots$, then
+\[
+ m_1=-\Gamma_1'/k,\qquad
+ \boxed{m_2-m_1^2=-\Gamma_2'/k.} \tag{4}
+\]
+Thus $m_2$ is not the free-energy two-loop coefficient. The primary
+equation2.9 explicitly separates
+$m_2-m_1^2=m_2^a+c_1m_2^b+c_1^2m_2^c+c_2m_2^d$.
+These four terms are respectively
+$-\Gamma_2^{W\prime}/k$, $-\Gamma_{1,c}'/k$,
+$-\Gamma_{0,cc}'/(2k)$ and $-\Gamma_{0,c}'/k$.
+The nonzero $c_1^2m_2^c$ is a genuine quadratic boundary insertion,
+not the separate $m_1^2$ coupling inversion term.
+The reported $m_1^b=m_2^d=-2a/L$ verifies the tree boundary count.
+The table's $m_2^a$ isolates the unimproved contribution on that
+particular family; an already improved $m_2$ does not.
+
+This computes a specified first parameter derivative. It is neither
+the arbitrary second boundary Hessian needed here nor the absolute
+coefficient: the source-independent integration constant is lost.
+Such a constant cannot be reconstructed from the running coupling,
+and remains necessary in an absolute S94 comparison.
+
+\paragraph{Transfer limit.}
+The formulas above are valid insertion bookkeeping on the SAME
+finite geometry/domain. They do not transfer periodic-spatial SF
+asymptotics to a complete relative cube or prove uniformity over
+boundary directions and histories. Boundary allocation, bulk coupling
+conversion, original Wilson normalizers and every absolute scalar
+remain to be compared. No growing-$R$ or nonlinear estimate is claimed.
+\paragraph{A boundary-norm warning.}
+On the complete
+relative cube, put a unit Cartan tangent on the single boundary link
+$e=((0,1,1,1),1)$ and zero on all other boundary links.
+Four fixed $x_0=0$ face plaquettes (two in plane12 and two in plane13)
+have unit squared flux. The zero-interior extension adds just one
+inward $01$ plaquette, for total energy $5$. Thus the true harmonic energy
+lies in $[4,5]$, and the fixed-face energy divided by the total is
+at least $4/5$, uniformly in $R\ge4$.
+Therefore the smooth-source $O(a/L)$ boundary improvement scale is
+not uniform smallness in the complete energy tangent norm. This does
+not contradict SF asymptotics or a uniform bounded boundary form;
+it forbids silently deleting $c_s$ in a general-domain comparison.
+\end{document}

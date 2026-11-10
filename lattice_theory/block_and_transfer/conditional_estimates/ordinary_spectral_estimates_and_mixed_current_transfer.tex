@@ -1,0 +1,982 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.88in,headheight=15pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,longtable,array,xcolor,fancyhdr}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black,citecolor=blue!45!black]{hyperref}
+\usepackage{bookmark}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small Yang--Mills existence}
+\rhead{}\cfoot{\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Var}{\operatorname{Var}}\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\supp}{\operatorname{supp}}\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diver}{\operatorname{div}}\newcommand{\Ad}{\operatorname{Ad}}
+\newcommand{\cB}{c_\beta}\newcommand{\dd}{\,d}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\status}[1]{\par\noindent\colorbox{blue!5}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{#1}}\par}
+\allowdisplaybreaks[2]
+\title{Ordinary spectral estimates and mixed current transfer}\author{}\date{}
+\providecommand{\mathscr}{\mathcal}
+\begin{document}\maketitle
+\section{The unchanged source and the measure in which the gap remains}
+
+Work on the original four-dimensional periodic lattice, with $n$ sites per direction, spacing $a$, fixed group $SU(N)$ and normalized Haar measure:
+\begin{equation}\label{eq:law}
+ d\mu_\beta=Z_\beta^{-1}\rho\dd\lambda,\quad
+ \rho=e^{-\beta S_0},\quad S_0=\sum_p s_p,\quad
+ s_p=N-\Re\tr U_p,\quad \beta=\cB g^{-2}.
+\end{equation}
+Retain the local-moment regime of~\cite[\S2]{ND} and~\cite[\S1]{SZ}, $\beta\ge2$, $(\log\beta)/n\le K$, with the fixed reflection-compatible stencils fitting on the torus. Its established input is
+\begin{equation}\label{eq:localmom}
+ \norm{\beta\sum_{p\in Y}s_p}_{L^u(\mu_\beta)}
+ \le Cu\,\#Y,\qquad u\ge1,
+\end{equation}
+for each literal finite plaquette record $Y$. This statement gives no mixing or global variance bound.
+
+For whole-link $e$ and color $A$, set $F_{e,A}=X_{e,A}S_0$. Use exactly the original quantities $P[f],D[f],\ell[f]$ of~\cite[\S1]{SZ}:
+\[
+ P[f]=\sum_{e,A}f_eF_{e,A}^2,\quad
+ D[f]=\sum_{e,A}f_e\sum_{\mu\ne\operatorname{dir}e}F_{e,A;\mu}^2,\quad
+ \ell[f]=\sum_{e,A}f_eX_{e,A}^2S_0.
+\]
+Tests are real, field-independent and color-independent on each link. The literal pointing average is retained in every row. Define the dimensionless packet
+\begin{align}\label{eq:packet}
+ h_f^0&=\beta G_f=\beta(D[f]-P[f]/3),\\
+ R_f^0&=\beta D[f]-\ell[f]/3,\qquad
+ \tau_f^0=(\ell[f]-\beta P[f])/3,\qquad h_f^0=R_f^0+\tau_f^0,\nonumber\\
+ w_f&=-\tfrac13\sum_{e,A}f_eF_{e,A}X_{e,A},\qquad
+ D_{w_f}\rho=\tau_f^0\rho,\qquad D_w=-\diver(w\,\cdot).\nonumber
+\end{align}
+The original physical rows are
+\begin{equation}\label{eq:phys}
+ (O_f,r_f,t_f,V_f)=\cB^{-1}a^{-2}(h_f^0,R_f^0,\tau_f^0,w_f).
+\end{equation}
+The constant term and all plaquette incidences in $\ell[f]$ remain. Put
+\[
+ M_f=\sum_{\text{original bond anchors }e}|f_e|^2.
+\]
+Fixed pointing/averaging incidence changes this count by only a fixed factor; color multiplicity is counted once. For the uniform test, $M_1=4n^4$ with the usual positive-orientation link count.
+
+For a set $X$ of whole retained original links, write
+\begin{equation}\label{eq:margin}
+ \rho_X=\int\rho\dd Y,\quad
+ d\nu_X=Z_\beta^{-1}\rho_X\dd X,\quad
+ P_XF=\E_{\mu_\beta}(F\mid X),\quad Y=E\setminus X.
+\end{equation}
+This is the actual marginal, with $\int\rho_X=Z_\beta$. In particular the susceptibility is still
+\begin{equation}\label{eq:chi}
+ \chi_{n,\beta}=\beta^2n^{-4}\Var_{\mu_\beta}(G_H).
+\end{equation}
+No source average is used to estimate its value at zero.
+
+\section{A quantitative spectral lemma for the retained ordinary carrier}
+
+\subsection{Exact conditional centering of every whole-link current}
+
+Decompose
+\[
+ \tau_f^0=\sum_e\tau_{f,e}^0,\qquad
+ \tau_{f,e}^0=\tfrac{f_e}{3}
+       \bigl(\Delta_eS_0-\beta|\nabla_eS_0|^2\bigr).
+\]
+Let $K_e^0$ be the original conditional expectation given every link except $e$. Compact Haar integration by parts proves
+\begin{equation}\label{eq:localcenter}
+ K_e^0\tau_{f,e}^0=0,\qquad
+ \norm{\tau_{f,e}^0}_2\le C|f_e|.
+\end{equation}
+The second assertion uses the bounded local Laplacian and
+$\beta|\nabla_eS_0|^2\le C\beta\sum_{p\ni e}s_p$, followed by \eqref{eq:localmom}.
+
+There is also a global current estimate
+\begin{equation}\label{eq:globcurrent}
+ \norm{\tau_f^0}_2^2\le CM_f.
+\end{equation}
+Indeed, if the local record of $\tau_{f,d}^0$ omits $e$, then
+$\E\tau_{f,e}^0\tau_{f,d}^0=0$ by \eqref{eq:localcenter}. Only a bounded number of $d$ remain for each $e$. Cauchy--Schwarz and bounded local incidence give \eqref{eq:globcurrent}. This finite-range orthogonality applies to current scores; it is not a claim about ordinary correlations.
+
+For an arbitrary coordinate marginal, define
+$\tau_{X,e}=P_X\tau_{f,e}^0$ and $\tau_X=P_X\tau_f^0$. If $e\notin X$, the tower property gives $\tau_{X,e}=0$. If $e\in X$, the genuine marginal conditional expectation $K_e^X$ satisfies
+\begin{equation}\label{eq:margincenter}
+ K_e^X\tau_{X,e}=0,\quad
+ \sum_{e\in X}\norm{\tau_{X,e}}_2^2\le C\sum_{e\in X}|f_e|^2,\quad
+ \norm{\tau_X}_2^2\le C\sum_{e\in X}|f_e|^2.
+\end{equation}
+For the final inequality use
+$\tau_X=P_X\tau_{f1_X}^0$, Jensen and \eqref{eq:globcurrent}.
+The marginal pieces need not have finite range, so finite-range orthogonality is used \emph{before} conditioning.
+
+\subsection{Two genuine marginal generators and inverse-form bounds}
+
+Define the positive heat-bath operator
+\begin{equation}\label{eq:heatbath}
+ H_X=\sum_{e\in X}(I-K_e^X),\qquad
+ \cE_H(u)=\langle u,H_Xu\rangle
+ =\sum_{e\in X}\norm{(I-K_e^X)u}_2^2.
+\end{equation}
+Each link has unit update rate. There is no division by $\#X$.
+
+Also define the exact effective action and normalized Langevin operator
+\begin{equation}\label{eq:langevin}
+ S_X=-\beta^{-1}\log\rho_X,\quad
+ L_X=\Delta_X-\beta\nabla S_X\cdot\nabla,\quad
+ A_X=-\beta^{-1}L_X,\quad
+ \cE_A(u)=\beta^{-1}\E_{\nu_X}|\nabla u|^2.
+\end{equation}
+Invariant derivatives and their order are retained. The force covariance in the derivative of $\log\rho_X$ is included.
+
+For a nonnegative self-adjoint operator $B$, use its spectral pseudoinverse on $(\ker B)^\perp$. The assertion $v\in\operatorname{Dom}(B^{-1/2})$ means
+$\int_{(0,\infty)}\lambda^{-1}\dd\langle v,E_B(\lambda)v\rangle<\infty$.
+At each fixed finite coordinate marginal, the density is smooth and strictly positive and the kernels of \eqref{eq:heatbath} and \eqref{eq:langevin} contain only constants. No uniform lower bound on their positive spectra is assumed.
+
+\begin{theorem}[Current bound after every coordinate elimination]\label{thm:current}
+For either $B_X=H_X$ or $B_X=A_X$,
+\begin{equation}\label{eq:currentneg}
+ \boxed{\quad
+ \norm{\tau_X}_2^2+\norm{B_X^{-1/2}\tau_X}_2^2
+ \le C\sum_{e\in X}|f_e|^2.
+ \quad}
+\end{equation}
+In particular, for every $\varepsilon>0$,
+\begin{equation}\label{eq:currentlow}
+ \norm{1_{(0,\varepsilon]}(B_X)\tau_X}_2^2\le C\varepsilon M_f,\qquad
+ \langle\tau_X,(B_X+\varepsilon)^{-1}\tau_X\rangle\le CM_f.
+\end{equation}
+\end{theorem}
+\begin{proof}
+For heat bath, \eqref{eq:margincenter} yields
+\[
+ \langle\tau_X,u\rangle
+ =\sum_{e\in X}\langle\tau_{X,e},(I-K_e^X)u\rangle.
+\]
+Cauchy--Schwarz in the direct sum over $e$ gives
+$|\langle\tau_X,u\rangle|^2\le CM_f\cE_H(u)$.
+This inverse-form inequality proves the claimed inverse-domain membership and bound by the spectral variational principle.
+
+For Langevin, let $\bar w_f=P_X(dq\,w_f)$, where $q$ is the coordinate projection. Testing against retained functions gives
+$\tau_X\rho_X=D_{\bar w_f}\rho_X$. Hence
+\[
+ |\langle\tau_X,u\rangle|^2
+ \le \beta\E_{\nu_X}|\bar w_f|^2\,\cE_A(u)
+ \le \beta\E_{\mu_\beta}|dq\,w_f|^2\,\cE_A(u)
+ \le CM_f\cE_A(u).
+\]
+The last inequality is the original local force moment. The $L^2$ assertion was proved in \eqref{eq:margincenter}; spectral calculus gives \eqref{eq:currentlow}.
+\end{proof}
+
+For uniform $f$, the Langevin formula is exact:
+\begin{equation}\label{eq:fisher}
+ \bar w_1=-\tfrac13\nabla S_X,\quad
+ \tau_X=\tfrac13L_XS_X=-\tfrac{\beta}{3}A_XS_X,\quad
+ \norm{A_X^{-1/2}\tau_X}_2^2
+ =\tfrac{\beta}{9}\E_{\nu_X}|\nabla S_X|^2
+ \le C\#X.
+\end{equation}
+This is a bound on the actual marginal Fisher information. It survives every further whole-link coordinate elimination by conditional Jensen and deletion of eliminated components. Equivalently, the regularized and unregularized Green--Kubo integrals of this current are extensive. There is no assertion of a gap for all observables.
+
+\subsection{Positive energy of the actual retained means of the separated-link integration}
+
+Now let $X$ be the complement of the separated-link set $\mathcal S$ in~\cite[\S\S3--5]{SZ}. That set separates every complete source/current stencil as well as every plaquette. Its genuine conditional law is $\prod_{e\in\mathcal S}K_e$ and
+\[
+ \rho_X=e^{-\beta S_{\rm ext}}\prod_{e\in\mathcal S}z_e.
+\]
+Define the actual output rows
+\begin{equation}\label{eq:hR}
+ h_X=P_Xh_f^0,\qquad R_X=P_XR_f^0,\qquad h_X=R_X+\tau_X.
+\end{equation}
+
+\begin{lemma}[Extensive energy of retained physical and ordinary carriers]\label{lem:energy}
+For both generators in \eqref{eq:heatbath}--\eqref{eq:langevin},
+\begin{equation}\label{eq:posenergy}
+ \boxed{\quad \cE_B(h_X)+\cE_B(R_X)\le CM_f.\quad}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Each retained row is an exact sum of local output pieces $b_\alpha$ on fixed finite determining records. The actual single-link denominators are part of those pieces. Finite input incidence and \eqref{eq:localmom} give amplitudes $a_\alpha$ with
+\[
+ \norm{b_\alpha}_2\le Ca_\alpha,\quad
+ \sum_\alpha a_\alpha^2\le CM_f,\quad
+ \#\{\alpha:e\text{ occurs in the record of }b_\alpha\}\le C.
+\]
+Each record also contains at most a fixed number of retained links. If $e$ does not occur, $(I-K_e^X)b_\alpha=0$; otherwise its $L^2$ norm is at most $\norm{b_\alpha}_2$. Sum the finite local squares and then sum over $e$ to prove the heat-bath claim.
+
+The actual quotient-jet estimate of~\cite[\S2]{SZ} gives
+$\norm{X_i b_\alpha}_2\le C\sqrt\beta\,a_\alpha$ whenever that derivative meets the record; derivatives outside vanish. The same incidence argument, and the $\beta^{-1}$ in \eqref{eq:langevin}, prove the Langevin claim. The full Casimir row in $R_X$ obeys the same local estimates.
+\end{proof}
+
+The current theorem applies to arbitrary coordinate histories. Lemma \ref{lem:energy} has only been proved for this actual separated step: later exact marginals can have growing determining sets. Repeating it without controlling that growth would assume the missing induction.
+
+\subsection{The main-gap lemma}
+
+For $B_X=H_X$ or $A_X$, let
+\[
+ \Pi_{\rm lo}(\varepsilon)=1_{(0,\varepsilon]}(B_X),\quad
+ \Pi_{\rm hi}(\varepsilon)=1_{(\varepsilon,\infty)}(B_X),\quad
+ F_c=F-\E_{\nu_X}F,\quad
+ Q_\varepsilon=\norm{\Pi_{\rm lo}(\varepsilon)R_{X,c}}_2.
+\]
+
+\begin{theorem}[Quantitative retained ordinary reduction]\label{thm:maingap}
+With the original measure, source and regime fixed,
+\begin{align}\label{eq:spectral}
+ \norm{\Pi_{\rm hi}(\varepsilon)h_{X,c}}_2^2&\le CM_f/\varepsilon,&
+ \norm{\Pi_{\rm lo}(\varepsilon)\tau_X}_2^2&\le C\varepsilon M_f,\\
+ \bigl(Q_\varepsilon-\sqrt{C\varepsilon M_f}\bigr)_+^2
+ &\le \Var_{\nu_X}(h_X)
+ \le CM_f/\varepsilon+
+       \bigl(Q_\varepsilon+\sqrt{C\varepsilon M_f}\bigr)^2.\nonumber
+\end{align}
+Thus at any fixed $\varepsilon>0$, an extensive bound on the actual low spectral ordinary mass is necessary and sufficient for an extensive retained variance, up to the displayed controlled terms.
+\end{theorem}
+\begin{proof}
+The first inequality follows by integrating $\lambda>\varepsilon$ against the spectral measure of $h_{X,c}$ and using \eqref{eq:posenergy}. The second is \eqref{eq:currentlow}. On the low spectral space use
+$\Pi_{\rm lo}h_{X,c}=\Pi_{\rm lo}R_{X,c}+\Pi_{\rm lo}\tau_X$ and the two triangle inequalities. Orthogonality of the low and high spaces proves the upper bound.
+\end{proof}
+
+For comparison with~\cite[\S\S3--4]{SZ}, inverse-form duality also gives
+\[
+ |\Cov_{\nu_X}(R_X,\tau_X)|
+ \le \norm{B_X^{1/2}R_{X,c}}_2\norm{B_X^{-1/2}\tau_X}_2\le CM_f.
+\]
+Specialize now to the uniform test $f\equiv1$. Together with \eqref{eq:margincenter} and the fast conditional variance of~\cite[\S3]{SZ},
+\begin{equation}\label{eq:addreduction}
+ \left|\beta^2\Var_{\mu_\beta}(G_H)-\Var_{\nu_X}(R_X)\right|\le Cn^4.
+\end{equation}
+This additive reduction is already implicit in the complete degree-two packet and terminal identity of~\cite[\S4]{SZ}. The assertion here is the positive/negative energy and spectral sharpening, not \eqref{eq:addreduction} alone.
+
+For example, at threshold $1$ the energy estimate for $R_X$ gives the precise reformulation
+\begin{equation}\label{eq:lowtarget}
+ \boxed{\quad
+ \left|\chi_{n,\beta}
+ -n^{-4}\norm{1_{(0,1]}(B_X)R_{X,c}}_2^2\right|\le C.
+ \quad}
+\end{equation}
+The right-hand low spectral mass remains unbounded. Finite-volume ergodicity does not justify exchanging $\varepsilon\downarrow0$ with the cutoff supremum.
+
+In physical units, \eqref{eq:addreduction} is multiplied by $\cB^{-2}a^{-4}$. Raw quadratic integrals retain the mass $Z_\beta$; an independent absolute scalar contributes its actual multiplier. Neither is removed by the spectral calculation.
+
+\section{The original selected operation and its covariance budget}
+
+\subsection{The old numerator stays in its old variables}
+
+Use the source-preserving positive endpoint realization established by S58b and NR10.1--6 of~\cite[pp.~601--602, 1100--1101]{W}. Fix the \emph{full} retained datum $b$, including old variables on which the reference depends. Let
+\[
+ d\rho_b(\xi),\quad Q(b)=\int d\rho_b(\xi),\quad
+ d\mu_b(\xi)=Q(b)^{-1}d\rho_b(\xi)
+\]
+be the original old numerator and its probability law on a positive fiber. For an original allowed preparatory choice $G$, retain
+\[
+ D_G(b)=\int\chi_G(C;b)r_G(C;b)\dd\lambda_{G,b}(C),\quad
+ K_G(dC\mid b)=D_G(b)^{-1}\chi_Gr_G\dd\lambda_{G,b}.
+\]
+The reference denominator, relative Haar/tree fiber and original cutoff are unchanged. The original positive selectors satisfy
+$\pi_{G,\alpha}(C,\xi,b)\ge0$ and $\sum_\alpha\pi_{G,\alpha}=1$.
+With the actual normalized choice weights $w_G(b)$, the completed joint probability is
+\begin{equation}\label{eq:actualjoint}
+ d\mathbb P_b(\xi,C,G,\alpha)
+ =d\mu_b(\xi)\,w_G(b)K_G(dC\mid b)\,
+       \pi_{G,\alpha}(C,\xi,b).
+\end{equation}
+This is before signed wall localization and completion splitting. The original source and stored inherited coefficients remain functions of $\xi,b$ in their original slots. They are not replaced by evaluations on the independent new reference field $C$.
+
+R-II explicitly leaves older operations in place, distinguishes the new relative output from the old numerator readout, and uses the small/large decomposition as a partition of unity. Its gauge-removal equivalence is under the corresponding current-variable integral, not a pointwise equality of selected densities \cite{RII}. These primary facts support the placement established in~\cite[pp.~601--602, 1100--1101]{W}; they do not prove every later complex mixed chart.
+
+\subsection{Within-selector and between-selector covariance must be kept together}
+
+Fix $b,G,C$. For $p_\alpha>0$, define
+\[
+ p_\alpha=\mu_b(\pi_{G,\alpha}),\quad
+ \mu_\alpha(F)=p_\alpha^{-1}\mu_b(\pi_{G,\alpha}F),\quad
+ m_{i,\alpha}=\mu_\alpha(O_i).
+\]
+Zero-mass branches remain unnormalized and contribute zero to weighted sums. Let $m_i=\mu_b(O_i)$.
+
+\begin{theorem}[Exact selected covariance budget]\label{thm:selbudget}
+For the original stored marks at this endpoint,
+\begin{equation}\label{eq:totalcov}
+ \Cov_{\mu_b}(O_1,O_2)
+ =
+ \sum_\alpha p_\alpha\Cov_{\mu_\alpha}(O_1,O_2)
+ +\Cov_{p}(m_{1,\alpha},m_{2,\alpha}).
+\end{equation}
+For real marks,
+\begin{equation}\label{eq:selbound}
+ \sum_\alpha p_\alpha|\Cov_{\mu_\alpha}(O_1,O_2)|
+ +|\Cov_p(m_{1,\alpha},m_{2,\alpha})|
+ \le
+ \sqrt{\Var_{\mu_b}(O_1)\Var_{\mu_b}(O_2)}.
+\end{equation}
+For equal labels, both variance terms in \eqref{eq:totalcov} are nonnegative and their sum is exactly the original variance.
+\end{theorem}
+\begin{proof}
+Expand $O_i-m_i=(O_i-m_{i,\alpha})+(m_{i,\alpha}-m_i)$ under $\mu_\alpha$ and sum with $p_\alpha$. Mixed terms vanish. This gives \eqref{eq:totalcov}. Write
+$A_i=\sum_\alpha p_\alpha\Var_{\mu_\alpha}(O_i)$ and
+$B_i=\Var_p(m_{i,\alpha})$, so $A_i+B_i=\Var_{\mu_b}(O_i)$.
+Conditional Cauchy--Schwarz bounds the first absolute sum by $\sqrt{A_1A_2}$ and the second by $\sqrt{B_1B_2}$. The two-dimensional Cauchy inequality gives \eqref{eq:selbound}.
+\end{proof}
+
+The result is pointwise in the actual new reference variable; integrating $K_G$ and the weights $w_G$ adds no branch count and no inverse small selected probability. If an actual inherited action coefficient $A_{12}(\xi,b)$ is present, keep
+\[
+ a_{12,\alpha}=\mu_\alpha(A_{12})+
+                    \Cov_{\mu_\alpha}(O_1,O_2).
+\]
+The complete recombination is
+\begin{equation}\label{eq:sourcecumsel}
+ \sum_\alpha p_\alpha a_{12,\alpha}
+ +\Cov_p(m_{1,\alpha},m_{2,\alpha})
+ =\mu_b(A_{12})+\Cov_{\mu_b}(O_1,O_2).
+\end{equation}
+The literal inherited $\mu_b(A_{12})$ is not bounded by a theorem about bare contacts.
+
+If $\alpha$ is retained, its means remain part of the output. If it is forgotten, their covariance becomes a connected contribution. A bound for individual normalized branches is neither asserted nor needed for \eqref{eq:selbound}. Signed localized pieces do not inherit this probability interpretation.
+
+The estimate preserves the existing covariance budget. It does not make the unknown variance under the physical numerator law $\mu_b$ small. The auxiliary native Poincare inequality below applies to $K_G$ in $C$, not to $\mu_b$ in $\xi$.
+
+\begin{corollary}[The original current budget under completed positive histories]\label{cor:mixedcurrent}
+Start with the original Wilson law and attach any finite sequence of the actual complete positive source-free channels, retaining every actual output/history variable needed by the operation. Let $Y$ be its resulting observation and set
+\[
+ h_Y=\E(h_f^0\mid Y),\quad R_Y=\E(R_f^0\mid Y),\quad
+ \tau_Y=\E(\tau_f^0\mid Y).
+\]
+Then
+\[
+ h_Y=R_Y+\tau_Y,\qquad \norm{\tau_Y}_2^2\le CM_f,\qquad
+ \left|\sqrt{\Var(h_Y)}-\sqrt{\Var(R_Y)}\right|
+ \le C\sqrt{M_f}.
+\]
+\end{corollary}
+\begin{proof}
+The completed channels leave the old marginal law unchanged. Conditional Jensen and \eqref{eq:globcurrent} give the current bound; its mean remains zero. The last inequality is the triangle inequality for the two centered carriers.
+\end{proof}
+
+This is a globally integrated estimate for the complete original current image through the actual positive operation, with its original raw mass when restored. It is not uniform after dividing by each selected branch mass or after fixing an arbitrary old $b$. Nor does it identify $\tau_Y$ with a boundary-free output divergence: its kernel and selector responses are the terms below. The corollary makes no claim for individual signed localized pieces.
+
+\subsection{The physical-current and contact partners remain in the tested transport}
+
+For the actual physical packet $O_i=t_i+r_i$, with
+$t_i\mu=D_{V_i}\mu$, keep the actual inherited $A_{12}$ and
+\[
+ b_{12}=A_{12}+\tfrac12(V_1t_2+V_2t_1)+V_1r_2+V_2r_1.
+\]
+For the whole source-free tested kernel $K\Phi$, the exact degree-two identity is
+\begin{align}\label{eq:tested}
+ [\eta_1\eta_2]\int d\mu\,e^A K\Phi
+ =\int d\mu\,\bigl\{
+ &(b_{12}+r_1r_2)K\Phi+r_1V_2(K\Phi)+r_2V_1(K\Phi)\\
+ &+\tfrac12(V_1V_2+V_2V_1)(K\Phi)\bigr\}.\nonumber
+\end{align}
+Every derivative acts on the complete kernel, including reference, genuine denominator, selectors, observation map and stored variables. A separately extracted higher current word retains its formal adjoint and its carrying response, with its original mesh.
+
+For a literal sharp selector $\chi$ the first current response is already
+\[
+ q_*(\chi t_i\mu)
+ =D\,q_*(\chi\,dq\,V_i\,\mu)+q_*((V_i\chi)\mu).
+\]
+Thus the pushed conditional mean of $t_i$ is not automatically a boundary-free coarse current score. The last term is the actual selector mass transfer. At degree two its partners are exactly the derivatives of the whole $\chi\Phi(q)$ in \eqref{eq:tested}; products of separately defined selector delta distributions are not introduced.
+
+On an actually identified smooth conditional realization this becomes
+\begin{equation}\label{eq:completepacket}
+ \widehat b_{12}\nu
+ =
+ K(b_{12})\nu+\Cov_K(r_1,r_2)\nu+D(J_{12}\nu),
+\end{equation}
+\[
+ J_{12}=\tfrac12\{\Cov_K(t_2,v_1)+\Cov_K(t_1,v_2)\}
+       +\Cov_K(r_2,v_1)+\Cov_K(r_1,v_2),
+ \qquad v_i=dq\,V_i.
+\]
+Here $t_i,r_i,b_{12}$ must belong to the \emph{complete density actually being conditioned}, including its effective kernel score. Otherwise the additional responses remain explicitly in \eqref{eq:tested}. The complete current identity must hold on the augmented realization before applying this formula. In particular
+$D_{V_i}(\mu K)=K D_{V_i}\mu-\mu V_iK$.
+For a sharp history, \eqref{eq:tested} and the undivided coefficient measures are retained instead.
+
+\subsection{The selected denominator and the stored row module}
+
+An individual original selected operator has the form
+\[
+ \mathscr T[F]=e^sD^{-1}\langle\chi f,F\rangle.
+\]
+Here $D$ is its genuine reference denominator. In general $D\ne\langle\chi f,1\rangle$: replacing it by the mass of this selected numerator would change the operation.
+On an actual smooth internal chart with $f\ne0$ and $D\ne0$, for an outer derivative $X$ and an identified internal lift $v$, put $H_X=X-v$ and $S_X=f^{-1}(Xf-\diver(fv))$. Otherwise retain the undivided tested identity. The complete identity on that chart is
+\begin{align}\label{eq:selectedouter}
+ X\mathscr T[F]
+ ={}&(Xs-X\log D)\mathscr T[F]\\
+ &+\frac{e^s}{D}\left\{
+   \int\chi f(H_XF+S_XF)
+   +\langle f(X\chi-v\chi),F\rangle\right\}.\nonumber
+\end{align}
+The full pulled-back carrier $F$ contains its actual observation map; $H_XF$ includes its material response. A covariance rewrite is allowed only when the denominator is the corresponding complete mass. With singular constraints, use the derivative of the original tested operator before splitting \eqref{eq:selectedouter}.
+
+If the actual source-dependent operator has coefficients $\mathscr T_I$ in the squarefree source algebra, its degree-two output before the logarithm is
+\[
+ \mathscr T_0(A_{12}+O_1O_2)+\mathscr T_1O_2+
+       \mathscr T_2O_1+\mathscr T_{12}1.
+\]
+Positive-order operator responses occur only if the actual sourced normalization or exact current conjugation generates them. They are not invented for a source-free insertion. Independent scalar and denominator responses are part of those actual coefficients.
+
+The protected common-row identity is PE12.1:
+\[
+ M_{\mathcal C}(U'_k(B,\xi))=v_{\mathcal C}(\xi)
+                         =M_{\mathcal C}(U_k(\xi)).
+\]
+Its record includes the original prefixes, frames, exterior targets and junctions. A stored $F_I(v_{\mathcal C})$ factors from the native $B$ integration with $\xi$ fixed. It factors from a larger operation only if the whole row record is retained by that operation; otherwise it remains inside the later $\xi$ integral.
+For an actual step retaining these rows,
+$\mathscr T_\eta[F_\eta H_\eta]=F_\eta\mathscr T_\eta[H_\eta]$.
+For an ordered outer word $X_w=X_r\cdots X_1$, its complete source-jet rule is
+\[
+ [\eta_I]X_w\mathscr T_\eta[F_\eta H_\eta]
+ =\sum_{J\subseteq I}\sum_{A\subseteq[r]}
+   (X_AF_J)\,
+   X_{A^c}[\eta_{I\setminus J}]\mathscr T_\eta[H_\eta].
+\]
+Every subword retains its original order. Old-row derivatives stay in the first factor and genuine kernel, moving-reference, selector and denominator responses stay in the second. The saved numerical grade is unchanged on the same admitted row domain. This identity does not establish a larger domain for independently localized off-shell joins.
+
+\section{A quantitative current-transfer lemma for a genuine mixed kernel}
+
+The preceding coordinate result cannot be assigned to a new observation without accounting for its kernel response. The following lemma gives the exact norm that has to be bounded.
+
+Let $\mu$ be a probability with $t\mu=D_w\mu$, let $K(x,dz)$ be the \emph{complete} positive normalized source-free kernel, and let $q(x,z)$ be the actual observation. Put
+$dP=d\mu\,K$ and $\nu=q_*P$. Derivatives of sharp kernels are distributions tested only after their complete pairing.
+
+Choose an identified internal vector field $u$ in $z$. Define the target velocity and response functional
+\begin{equation}\label{eq:transferdefs}
+ v=d_xq\,w-d_zq\,u,\qquad
+ \mathcal R_u(\phi)
+ =
+ \int d\mu\,\bigl[(wK)+D_uK\bigr](\phi\circ q),
+ \qquad D_uK=-\diver_z(uK).
+\end{equation}
+In the bracket, $wK$ differentiates the entire kernel at fixed $z$; the explicit derivative of $q$ is in $v$.
+
+Let the actual target energy be
+\[
+ \cE_\nu(\phi)=\int a(q)|\nabla\phi|^2\,d\nu,
+\]
+where a matrix $a$ may replace the scalar notation and is strictly positive on every represented target velocity. For a semidefinite $a$, require $v\in\operatorname{Ran}a$ almost surely, and interpret $|a^{-1/2}v|$ as infinity outside that range. Its dual norm is
+\[
+ \norm{\mathcal F}_{-1,\nu}
+ =
+ \sup_{\cE_\nu(\phi)>0}
+ \frac{|\mathcal F(\phi)|}{\sqrt{\cE_\nu(\phi)}},
+\]
+with the additional requirement that $\mathcal F$ annihilate \emph{every} zero-energy test.
+
+\begin{proposition}[Full-kernel current transfer]\label{prop:transfer}
+The exact tested identity and quantitative estimate are
+\begin{align}\label{eq:transfer}
+ \int \E_P(t\mid q)\phi\dd\nu
+ &=\int v\cdot\nabla\phi(q)\dd P+\mathcal R_u(\phi),\\
+ \norm{\E_P(t\mid q)}_{-1,\nu}
+ &\le
+ \left(\int|a(q)^{-1/2}v|^2\dd P\right)^{1/2}
+ +\norm{\mathcal R_u}_{-1,\nu},\nonumber
+\end{align}
+whenever the displayed response norm is finite and all nullspace conditions hold.
+\end{proposition}
+\begin{proof}
+Adjointness gives
+$\int t\,K(\phi\circ q)\dd\mu=\int w[K(\phi\circ q)]\dd\mu$.
+Differentiate the observation explicitly. The distribution $D_uK$ pairs with $\phi\circ q$ as $\int K\,d_zq\,u\cdot\nabla\phi$; adding and subtracting it yields the first identity with the signs in \eqref{eq:transferdefs}. Cauchy--Schwarz with the target energy gives the second.
+\end{proof}
+
+This is a quantitative induction rule, not an estimate that sets the response norm to zero. On a verified native chart, the next section bounds its identified centered boundary component. Residual scores, moving constraints and live references contribute to $\mathcal R_u$ or $v$ and remain unless estimated.
+
+\subsection{Selector means are zero modes for a continuous fiber energy}
+
+If $q$ retains discrete history labels and the energy differentiates only continuous coordinates, constants on \emph{each} history have zero energy. The equality $\mathcal R_u(1)=0$ globally does not imply the required annihilation of these separate modes.
+
+A finite example makes the issue exact. On the circle take normalized Haar measure,
+\[
+ w=\sin x\,\partial_x,\quad t=-\cos x,\quad
+ \pi_\pm(x)=\tfrac12(1\pm\cos x),\quad q=\pm.
+\]
+Then $t\mu=D_w\mu$, both label probabilities equal $1/2$, and
+\[
+ \E(t\mid +)=-\tfrac12,\qquad \E(t\mid -)=\tfrac12.
+\]
+There are no continuous target coordinates, so the continuous target energy is zero on every label test. The pushed score is nonzero and its dual norm for that energy is infinite. Its ordinary $L^2$ norm is finite and decreases under conditioning.
+
+This example does not model the Wilson dynamics. It disproves the general inference that a continuous native Poincare estimate controls all selected-history means. In the original operation the corresponding between-selector term is exactly the second term in \eqref{eq:totalcov}. It must be retained, or an actual discrete-label energy and its response bound must be supplied. A rare selected probability is not by itself a bound for that term.
+
+\section{A native centered boundary bound in the carrier's derivative norm}
+
+\subsection{The same verified reference domain}
+
+Use the original admitted reference component of R-II, with its fixed forest and pins. In free logarithmic coordinates $B=(B_e)_{e=1}^q$, set $m=\dim SU(N)$ and $n_{\rm nat}=mq\le n_M$. Work on its original product cutoff
+\[
+ \Omega_R=\prod_{e=1}^q\{B_e\in\R^m:|B_e|_*<R\},
+ \qquad R=M_0p_0(g).
+\]
+The norm $|\cdot|_*$ is the original native one-link norm. Its convex norm balls and their fixed equivalence constants with the Lie-algebra Euclidean norm are retained; the cutoff is not replaced by a Euclidean ball. Gradients and the quadratic precision use the Euclidean coordinates. Take $R\ge R_0$; the native radius law supplies this at sufficiently small $g$.
+
+The established native extraction is
+\begin{equation}\label{eq:native}
+ f(B)=e^{-\langle B,QB\rangle/2}u(B),\quad
+ \lambda_MI\le Q\le\Lambda_MI,\quad
+ e^{-C_M}\le u(B)\le e^{C_M},\quad
+ K(dB)=\widehat D^{-1}1_{\Omega_R}f(B)\dd B.
+\end{equation}
+The Gaussian comparison is used only on this admitted fiber. It is not asserted for arbitrary selected subsets or for the old physical numerator. A raw prefactor $P$ gives $D_{\rm raw}=P\widehat D$ and remains in raw masses.
+
+\begin{lemma}[Native Poincare and centered fourth moment]\label{lem:poincare}
+For the law \eqref{eq:native},
+\begin{equation}\label{eq:poincare}
+ \Var_K(F)\le C_P K|\nabla F|^2,\qquad
+ C_P\le e^{2C_M}/\lambda_M.
+\end{equation}
+For real $F\in W^{1,4}(K)$,
+\begin{equation}\label{eq:L4}
+ \norm{F-KF}_{L^4(K)}
+ \le \sqrt{2+\sqrt5}\,\sqrt{C_P}\,
+             \norm{\nabla F}_{L^4(K)}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The Gaussian with precision $Q$ restricted to the convex product domain has Neumann Poincare constant at most $\lambda_M^{-1}$. One direct proof uses the integrated Bochner identity: the Hessian term is at least $\lambda_M|\nabla h|^2$, while the convex-boundary second fundamental form is nonnegative. The nonzero Neumann eigenvalues are therefore at least $\lambda_M$. Approximation by smooth convex domains handles the product corners. Comparing the infimum over constants in the variance and then the gradient integrals under the bounded factor $u$ costs at most $\sup u/\inf u=e^{2C_M}$.
+
+For \eqref{eq:L4}, put $F_c=F-KF$, $x=\norm{F_c}_4^2$, and $y=\norm{\nabla F}_4^2$. Apply \eqref{eq:poincare} to $F_c$ and to $F_c^2$:
+$x^2\le C_P^2y^2+4C_Pxy$. Solving the quadratic gives $x\le(2+\sqrt5)C_Py$.
+\end{proof}
+
+The proof is a finite-dimensional inequality on the original convex reference cutoff. It is not a Poincare theorem for a disconnected selector domain.
+
+\subsection{Weighted trace and the centered sharp flux}
+
+Let $\Sigma_e$ be the face $|B_e|_*=R$, other coordinates in their original norm balls, with the Euclidean surface measure and almost-everywhere outer normal, and define
+\[
+ T_e(H)=\widehat D^{-1}\int_{\Sigma_e}Hf\dd\Sigma.
+\]
+The native Gaussian envelope and its genuine lower normalization give
+\begin{equation}\label{eq:facemass}
+ T_e(1)\le C_M R^{m-1}e^{-c_MR^2}.
+\end{equation}
+
+\begin{lemma}[Trace estimate without an inherited supremum]\label{lem:trace}
+For $F\in W^{1,2}(K)$ with its usual boundary trace,
+\begin{equation}\label{eq:trace}
+ T_e(|F-KF|^2)
+ \le C_M\{R\Var_K(F)+R^{-1}K|\nabla_eF|^2\}
+ \le C_MR\,K|\nabla F|^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Use the inward radial collar $R-R^{-1}<|B_e|_*<R$. The one-dimensional trace inequality bounds the squared endpoint value by $C R$ times the collar integral of the squared function plus $C R^{-1}$ times that of its radial derivative squared. The radial Jacobian is comparable to its boundary value for $R\ge R_0$; the support function of the fixed convex unit norm ball is bounded above and below. Norm equivalence bounds a radial derivative by a fixed multiple of the Euclidean gradient. Replacing a boundary coordinate by a point in this collar changes $\langle B,QB\rangle$ by at most $C_M$: the full dimension is bounded and the Euclidean displacement is $O_M(R^{-1})$. The bounded ratio of $u$ gives the same density comparison without differentiating $u$. Integrate over all other original coordinates and divide by $\widehat D$. Poincare then gives the last inequality. Density extends the result to the indicated Sobolev class.
+\end{proof}
+
+For an internal vector field $v$, set
+\[
+ T_v^\circ(F)=\widehat D^{-1}\int_{\partial\Omega_R}
+      (F-KF)f(v\cdot n)\dd\Sigma,\qquad
+ A_e(v)=\sup_{\Sigma_e}|v_e\cdot n_e|.
+\]
+
+\begin{theorem}[Centered boundary functional in a derivative norm]\label{thm:boundary}
+On the same admitted native domain,
+\begin{equation}\label{eq:boundarydual}
+ \boxed{\quad
+ |T_v^\circ(F)|
+ \le \epsilon_v\,\sqrt{K|\nabla F|^2},\qquad
+ \epsilon_v=C_M\Bigl(\sum_e A_e(v)\Bigr)
+       R^{m/2}e^{-c'_MR^2}.
+ \quad}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Apply Cauchy--Schwarz separately on every face, then use
+\eqref{eq:facemass} and \eqref{eq:trace}. Their polynomial powers multiply to
+$R^{(m-1)/2}R^{1/2}=R^{m/2}$. Sum the actual $A_e(v)$. The native coordinate dimension is in $C_M$; no extra face count is inserted after that sum.
+\end{proof}
+
+This estimate annihilates constants and uses the derivative norm of the actual inherited carrier. It does not follow from an all-order bare-contact bound, and it supplies no estimate of that derivative norm when the inherited carrier has not been identified.
+
+\subsection{Application to the pinned-forest centering lift and complete ordinary covariance}
+
+For $W=CV_\Lambda(b)$, $C=e^{gB}$, keep the pinned-forest lift of~\cite[\S6]{SZ} of an actual target-centering velocity $a_e=\dot V_eV_e^{-1}$. It obeys
+\[
+ \xi_p=0,\quad
+ \xi_y=\Ad_{V_e^{-1}}(\xi_x+a_e),\quad
+ v_aC_e=\xi_xC_e+C_e(a_e-\Ad_{V_e}\xi_y).
+\]
+Its logarithmic coordinate field is
+\[
+ v_{a,e}^B=g^{-1}\operatorname{dexp}^{-1}_{gB_e}
+       \{\Ad_{C_e^{-1}}\xi_x+a_e-\Ad_{V_e}\xi_y\},
+\]
+with $A_e(v_a^B)\le C_Mg^{-1}\mathcal A_e(a)$ and
+$\mathcal A_e(a)=|\xi_x|+|a_e|+|\xi_y|$.
+All forest paths, pins and component incidences remain in
+$\mathcal A_T(a)=\sum_e\mathcal A_e(a)$.
+
+For this restricted centering component, with every other recorded datum fixed, the raw-density identity of~\cite[\S\S6--7]{SZ} is
+$X_af_{\rm raw}=\diver(f_{\rm raw}v_a^B)$.
+If $f_{\rm raw}=P f$ is extracted as in \eqref{eq:native}, then
+$X_af=\diver(fv_a^B)-(X_a\log P)f$.
+This last score is independent of $B$, so it cancels only in the normalized covariance response; the raw scalar remains.
+For carriers satisfying the identified material identity
+$(X_a-v_a^B)F=0$, the normalized response is exactly
+$X_a(KF)=T_{v_a^B}^\circ(F)$. Theorem \ref{thm:boundary} proves
+\begin{equation}\label{eq:centernew}
+ |X_a(KF)|\le
+ C_M g^{-1}\mathcal A_T(a)R^{m/2}e^{-c'_MR^2}
+       \sqrt{K|\nabla_BF|^2}.
+\end{equation}
+The $g^{-1}$ cancels for the direction $gX_a$. A direction normalized at an older coupling $g_j$ retains $g_j/g$. Any old mesh factor or saved coefficient remains multiplicative.
+
+For two such actual carriers, differentiating the normalized covariance, including both means, gives
+\[
+ X_a\Cov_K(F,G)
+ =T_{v_a^B}^\circ\bigl((F-KF)(G-KG)\bigr).
+\]
+If $F,G\in W^{1,4}(K)$, \eqref{eq:L4} yields
+\begin{equation}\label{eq:covcenter}
+ |X_a\Cov_K(F,G)|
+ \le C_M\epsilon_{v_a^B}
+       \norm{\nabla_BF}_4\norm{\nabla_BG}_4.
+\end{equation}
+An inherited $A_{12}$ has its separate response $X_a(KA_{12})$, bounded by \eqref{eq:centernew} only with its own derivative norm. Equation \eqref{eq:covcenter} bounds a derivative of the covariance, not its value at a reference point.
+
+For a general actual outer direction $X$ at fixed $g$, keep
+\[
+ H_X=X-v,\qquad S_X=\frac{Xf-\diver(fv)}{f}.
+\]
+With fixed native cutoff and no additional selector, the exact response is
+\[
+ X(KF)=K(H_XF)+\Cov_K(F,S_X)+T_v^\circ(F).
+\]
+Thus
+\begin{equation}\label{eq:bulkresponse}
+ |X(KF)-K(H_XF)|
+ \le
+ \{\sqrt{C_P}\norm{S_X-KS_X}_2+\epsilon_v\}
+       \sqrt{K|\nabla F|^2}.
+\end{equation}
+This isolates the actual residual-score estimate required beyond the centering direction.
+
+For an internal physical current $t_v=-f^{-1}\diver(fv)$, the sign-compatible identity is
+\begin{equation}\label{eq:currentboundary}
+ \Cov_K(F,t_v)+T_v^\circ(F)=K(vF).
+\end{equation}
+The current and its sharp-boundary partner must be combined before estimating. Nothing in \eqref{eq:currentboundary} removes the ordinary covariance or an inherited contact coefficient.
+
+\section{Original selectors and a nonconstant native multiplier}
+
+\subsection{Keep sharp selectors inside the full adjoint word}
+
+The actual changed-spatial-weight multiplier of UW12 is $h=e^{-w}$ on the admitted native branch, where
+\begin{equation}\label{eq:wbound}
+ |w(B)|\le a_*|B|+b_*|B|^2,\qquad
+ |\nabla_Bw(B)|\le a_*+2b_*|B|,\qquad
+ \delta_*=a_*+b_*.
+\end{equation}
+The symbols $a_*,b_*$ do not denote the microscopic mesh. The original cell sums defining them keep assigned-scale factors and cell multiplicities. On the verified top-scale separated sector, they satisfy the existing UW12 bounds; no mixed-shell estimate is inferred.
+
+The native complex enlargement already verified in NB12/UW12 for this \emph{reference branch} gives, for each fixed $r\ge2$,
+\[
+ \norm{D_B^r w(B)}
+ \le C_{M,r}\left[
+       a_*R^{1-r}+b_*R^{2-r}(1+|B|/R)\right].
+\]
+This uses the same fixed-target problem and original real selector. It does not enlarge any old mixed-history complex wall domain.
+
+Let $L_{\mathfrak w}$ be an actual ordered word of $r\ge1$ identified centering lifts of~\cite[\S6]{SZ}, whose prescribed target velocities are independent of the native $C$ variables. Keep all coefficient derivatives in their order and let $\mathcal A_{\mathfrak w}$ include their actual forest incidences and target-coefficient jets. An inherited field-dependent physical velocity needs its additional coefficient jets and divergence response; it is not assigned this estimate without them. For small $\delta_*$, the preceding bounds and the one original Gaussian reserve imply
+\begin{equation}\label{eq:hword}
+ |L_{\mathfrak w}(h-1)|
+ \le C_{M,r}\delta_*g^{-r}\mathcal A_{\mathfrak w}
+      (1+|B|)^r e^{\theta|B|^2}
+\end{equation}
+for a fixed $\theta$ inside that reserve. Each word annihilates $1$. This statement covers precisely the stated lift coefficients of~\cite[\S6]{SZ}; a word with additional inherited polynomial coefficients requires its separate coefficient bound.
+
+Let $\pi=\pi(C,\xi,b)$ be any one original nonnegative selector in the complete positive realization. No smoothness or product support is imposed on $\pi$. Treat the entire adjoint distribution
+$L_{\mathfrak w}^*(\chi_{\rm ref}\pi f_{\rm raw})$ at once. By its definition,
+\begin{equation}\label{eq:selectoradjoint}
+ \left\langle L_{\mathfrak w}^*(\chi_{\rm ref}\pi f_{\rm raw}),h-1\right\rangle
+ =\int\chi_{\rm ref}\pi f_{\rm raw}\,L_{\mathfrak w}(h-1).
+\end{equation}
+Consequently
+\begin{equation}\label{eq:selectbound}
+ \boxed{\quad
+ \left|\left\langle L_{\mathfrak w}^*(\chi_{\rm ref}\pi f_{\rm raw}),h-1\right\rangle\right|
+ \le
+ D_{\rm raw} C_{M,r}\delta_*g^{-r}\mathcal A_{\mathfrak w}
+ K\!\left[\pi(1+|B|)^r e^{\theta|B|^2}\right].
+ \quad}
+\end{equation}
+This is a bound for an actual nonconstant Wilson multiplier and the original selected weighted mass. It divides by no selected probability, discards no sharp-boundary term and creates no product of delta distributions. Any independent $e^s$ multiplies the raw bound by $e^{\Re s}$.
+
+The literal selected weighted mass in \eqref{eq:selectbound} is retained. Replacing it by a full native moment can discard a required once-owned rare-history factor; such a factor needs its original estimate for this exact mass. For signed localized pieces the adjoint identity persists, but its absolute bound uses the actual absolute majorant and supplies no positivity.
+
+If a stored coefficient factors through the full unchanged exterior determining rows, PE12.1--13 of~\cite[pp.~1174--1177]{W} gives its exact constancy in the new variable, including nonzero fluctuations. Such a coefficient factors out of \eqref{eq:selectoradjoint} with its original saved grade, while remaining inside every later integration of old variables on which it depends. Outer physical derivatives may still act on that old coefficient; their responses remain. General inherited coefficients do not have this property.
+
+\subsection{When a selected carrier has the derivative norm used above}
+
+A sharp product $\pi F$ need not belong to $W^{1,2}$. It is therefore invalid to insert every selected branch into Theorem \ref{thm:boundary} separately.
+
+For a genuine finite partition into Lipschitz regions, the glued carrier
+$\mathcal F=\sum_\alpha1_{\Omega_\alpha}F_\alpha$ has the distributional derivative
+\[
+ D\mathcal F
+ =\sum_\alpha1_{\Omega_\alpha}\nabla F_\alpha\,dB
+   +\sum_{\alpha\beta}
+      (F_\alpha-F_\beta)n_{\alpha\beta}\,d\Sigma_{\alpha\beta}.
+\]
+Only interfaces actually shared by the regions are counted. Equality of the complete traces removes the jump term and permits the Sobolev estimate. Without that equality, the interface response remains.
+
+For a common old carrier $F(\xi,b)$, the original complete sum has
+$\sum_\alpha\pi_\alpha F=F$ before differentiation, so all selector responses cancel exactly. Its native $B$ derivative is zero. The same holds after all algebraic completion partners have actually been recombined into that common carrier. It does not hold for an isolated ordinary term, current term, contact term or signed wall coefficient merely because their physical endpoint sum is known.
+
+This identifies a same-domain requirement for the mixed induction: either prove that the complete stored packet has this glued realization on the original support and simultaneous wall domain, or retain and estimate its actual selector-jump functional. Endpoint agreement alone does not supply the latter analytic-domain statement.
+
+\section{A concrete same-domain step toward MT36, with its hypotheses exposed}
+
+The following consequence makes the derivative bound useful without upgrading bare contacts into arbitrary connected estimates.
+
+Suppose an actual inherited carrier has a declared common readout
+$F_j(b_{\rm ph})$ on a physical fluctuation disc
+$\norm{b_{\rm ph}}_\infty<\delta_0$, with the same determining problem, selectors and complex source walls throughout. Keep the old deterministic tag $F_j(0)$. Suppose the actual completed graded envelope on this disc is
+\[
+ \norm{F_j}_{\delta_0}\le \Gamma_{j,k},
+\]
+where $\Gamma_{j,k}$ retains its original mesh, coupling ratio, strict-age gain, root count, and the complete lower, current and contact rows. Evaluate at the original physical fluctuation $b_{\rm ph}=g_kB$, with $c_*g_kR\le\delta_0/2$, where $c_*$ is the fixed comparison constant between the original native link norm and the physical-disc norm.
+
+Cauchy's estimate bounds each of the actual native coordinate derivatives. Passing to their Euclidean norm costs at most $2\sqrt{n_{\rm nat}}$, where $n_{\rm nat}\le n_M$ is the native dimension. Microscopic prefix variables are not counted as additional Cauchy coordinates. Thus
+\begin{equation}\label{eq:propergrad}
+ \norm{\nabla_B[F_j(g_kB)-F_j(0)]}_{L^p(K)}
+ \le C_M(g_k/\delta_0)\Gamma_{j,k}.
+\end{equation}
+For two such carriers on one admitted native fiber, Poincare gives the quantitative connected formation bound
+\begin{equation}\label{eq:covformation}
+ |\Cov_K(F_i,F_j)|
+ \le C_M(g_k/\delta_0)^2\Gamma_{i,k}\Gamma_{j,k}.
+\end{equation}
+The centered boundary response has the additional factor
+$\epsilon_v(g_k/\delta_0)\Gamma_{j,k}$, by \eqref{eq:boundarydual}.
+No constant old tag is charged as a new fluctuation.
+
+The important hypotheses are not just analyticity somewhere or a bound at $B=0$. They require the \emph{same actual} original selected numerator, stored inherited packet, prepared map, moving reference constraints and wall domain. MT46--48 already prove a proper-difference bound when these hypotheses hold. Equations \eqref{eq:propergrad}--\eqref{eq:covformation} strengthen its native covariance/response consequence but do not verify those hypotheses for arbitrary mixed histories.
+
+Likewise, suppose the \emph{actual conditional fiber in} \eqref{eq:completepacket} has itself been identified with the admitted law \eqref{eq:native}, including the complete effective density and current identity. An arbitrary further conditioning of a native reference need not retain its Poincare constant. On this identified realization define
+$\gamma(F)=\sqrt{K|\nabla_BF|^2}$.
+The ordinary row obeys
+\[
+ |\Cov_K(r_1,r_2)|\le C_P\gamma(r_1)\gamma(r_2),
+\]
+and every component of its complete current companion has
+\[
+ |J_{12}|
+ \le C_P\left[
+ \tfrac12\gamma(t_2)\gamma(v_1)
+ +\tfrac12\gamma(t_1)\gamma(v_2)
+ +\gamma(r_2)\gamma(v_1)+\gamma(r_1)\gamma(v_2)\right].
+\]
+For vector $v_i$ sum its actual output components in the chosen represented-distribution norm. The term $K(b_{12})$ remains with its own incoming bound. A bound on $J_{12}$ is a bound for its represented divergence when tested with the declared derivative norm, not automatically a scalar total-variation bound.
+
+These formulas constitute a quantitative one-step rule once the incoming derivative norms and actual realization have been established. They do not prove that the actual inherited $A_{12}$ or higher connected coefficients satisfy those norms. All-order bare-contact factorial bounds of~\cite[\S9]{SZ} do not fill that gap.
+
+\section{S94: exact cancellation on copied primitives and the remaining scalar sum}
+
+\subsection{A primary definition gap is narrowed}
+
+The relevant statements of the original background-propagator paper \cite{BG} are:
+\begin{itemize}
+\item Printed p.~394: operators are compressed to the stated finite domain with Dirichlet boundary conditions; the convention applies to subsequent operators.
+\item Printed pp.~408--409 before (3.87): cube-dependent nested domains are constructed, with the outer domain contained in a fixed enlargement; scalar, coarse Schur and vector inverses are constructed for that sequence.
+\item Printed p.~413 before (3.98), and pp.~415--416 at (3.107): the typed expansion is built from those local factors and its specified enlarged auxiliary partitions.
+\end{itemize}
+This distinguishes an autonomous local inverse from a restriction of an ambient torus inverse. The separate exact metric (2.36), exterior/path convention, collar comparison and nonlinear variational matching are not newly verified by these passages.
+
+\begin{proposition}[Exact local-factor conjugacy]\label{prop:copy}
+Suppose two original padded local records are related by an actual site/bond isomorphism, matching the mesh, orientations, nested domains, background links, averaging paths, cutoff functions, subdivisions, fixed operator parameters and normalization conventions. The coordinate identifications $P,P'$ are isometries for the original weighted inner products. Their local matrices and averaging maps satisfy
+\[
+ A_1=P A_0P^{-1},\qquad Q_1=P'Q_0P^{-1}.
+\]
+Where the original inverses exist,
+\[
+ A_1^{-1}=PA_0^{-1}P^{-1},\quad
+ (Q_1A_1^{-1}Q_1^*)^{-1}
+ =P'(Q_0A_0^{-1}Q_0^*)^{-1}(P')^{-1}.
+\]
+All complete typed products, traces and determinants agree after identification, at arbitrary admitted backgrounds.
+\end{proposition}
+\begin{proof}
+Covariant differences and averaging paths have identical matrix entries under the record isomorphism. Dirichlet compression is multiplication by the corresponding finite-domain projections and commutes with it. Inversion, the finite formulas for the gauge projections, and subsequent corrected matrices preserve conjugacy. Products, traces and determinants preserve the resulting identities. Analytic derivatives agree on a common admitted branch.
+\end{proof}
+
+Matching the auxiliary cutoff functions and subdivision data is a hypothesis about the actual records. No assertion is made that two independently selected nonlinear histories automatically choose the same record.
+
+\subsection{Raw scalar equality for the actual whole-link conditional integration}
+
+For the original whole-link conditional integration of~\cite[\S2]{SZ},
+\[
+ z_e(x)=\int_{SU(N)}e^{-\beta S_e(u;x)}\dd u,\quad
+ \rho_X=e^{-\beta S_{\rm ext}}\prod_{e\in\mathcal S}z_e.
+\]
+A literal copy $\iota$ of the complete selected-link star gives, for every retained field,
+\begin{equation}\label{eq:rawcopy}
+ z_{\iota e}(\iota x)=z_e(x).
+\end{equation}
+This follows by copying the actual ordered plaquette words and using the same normalized Haar measure. Thus raw logarithms, their derivatives and any fixed-background extraction
+$\log z_e=c_e+\psi_e$, $c_e=\log z_e(x_*)$, agree when $x_*$ is copied. The scalar $c_e$ can be ultraviolet large; it cancels exactly rather than being estimated.
+
+If the \emph{complete} source/current determining neighborhoods, original shifted tests and coordinate readouts are copied as well, the equality with those original finite-source and carrying factors inserted copies every source coefficient. It also copies the effective score, ordinary covariance and complete current/contact distribution in \eqref{eq:completepacket}. Their values are matched, not set to zero. A copied action star alone does not match an arbitrary inherited carrier.
+
+For a compatible cover of degree $q^4$,
+\begin{equation}\label{eq:rootcancel}
+ \frac{\sum_{e\in\mathcal S_{T_*}}c_e}{|T_*|}
+ -
+ \frac{\sum_{\tilde e\in\mathcal S_{qT_*}}c_{\tilde e}}{q^4|T_*|}
+ =0
+\end{equation}
+for the copied selected set. This is a true finite-cutoff scalar cancellation for the actual operation of~\cite[\S2]{SZ}. It does not control the range of an arbitrarily iterated effective interaction.
+
+\subsection{Keep absolute increments and pins before counting roots}
+
+For each actual reference fraction, retain
+\begin{equation}\label{eq:scalar}
+ D_i=e^{-g^{-2}A_i^0+c_i^{\rm coord}}e^{I_i},\qquad
+ e^{s_i}\frac{e^{-g^{-2}A_i^0}N_i}{D_i}
+ =e^{s_i-c_i^{\rm coord}-I_i}N_i.
+\end{equation}
+The classical term cancels within that paired fraction. The independent $\Delta s$, coordinate scalar $\Delta c^{\rm coord}$, extracted $\Delta I$ and complete carrier difference remain.
+
+Actual free-coordinate counts are
+$n_i=m(|E_i|-|V_i|+|P_i|)$, where $P_i$ is the pin set. If edge and vertex counts scale by $q^4$, then
+\[
+ n_1-q^4n_0=m(|P_1|-q^4|P_0|).
+\]
+For $T_1=qT_0$ and the coordinate term $c_i=n_i\log g$,
+\begin{equation}\label{eq:pins}
+ \frac{c_1}{|T_1|}-\frac{c_0}{|T_0|}
+ =\frac{m(|P_1|-q^4|P_0|)\log g}{q^4|T_0|}.
+\end{equation}
+Copied pinned components have zero defect. One pin on each connected torus instead gives
+$-m(1-q^{-4})\log g/|T_0|$ in this orientation. The inverse prefactor in \eqref{eq:scalar} reverses its sign; S94 uses the opposite torus-density orientation. The actual pin rule must be checked, not chosen for convenience.
+
+For a nonwrapping complete rooted record, choose its lift separately from its own root. There is no need to charge carriers merely for crossing an artificial global fundamental-cell seam. All padded inverse domains, raw prefixes, paths, selectors, reference and denominator read sets, inherited variables and scalar rules belong to that record. Only an injective lift of the complete record supports exact copying.
+
+\subsection{The root-counted defect identity and induction}
+
+Write the original additive vacuum extraction, without a new subtraction, as
+\[
+ V_{a,T}
+ =C^{\rm ext}_{a,T}
+ +\sum_{j=0}^{K(a)}\sum_{r\in\mathcal R_{j,T}}v_{j,T}(r)
+ +V^{\rm term}_{a,T}.
+\]
+$C^{\rm ext}$ contains only constants actually extracted as field-independent terms by the original vacuum prescription. A factor $e^{s(b)}$ that is independent of the current reference variable but depends on retained old data remains part of its carrier until the original construction extracts a scalar from it. It is not moved outside a later $b$ integral by calling it an independent increment.
+For matched original roots define
+\[
+ \delta_j(r)=v_{j,T_*}(r)
+  -q^{-4}\sum_{\tilde r\in\operatorname{Lift}_q(r)}
+                      v_{j,qT_*}(\tilde r).
+\]
+Unmatched roots are added as explicit signed terms. Here $\Delta C^{\rm ext}=C^{\rm ext}_{a,T_*}/|T_*|-C^{\rm ext}_{a,qT_*}/|qT_*|$, and $\Delta V^{\rm term}$ has the same orientation; this is opposite to the orientation explicitly used in \eqref{eq:pins}. Then the exact S94 difference is
+\begin{equation}\label{eq:defect}
+ \boxed{\quad
+ \frac{V_{a,T_*}}{|T_*|}
+ -\frac{V_{a,qT_*}}{|qT_*|}
+ =\Delta C^{\rm ext}
+  +|T_*|^{-1}\sum_{j,r}\delta_j(r)
+  +\Delta V^{\rm term}.
+ \quad}
+\end{equation}
+
+Perform \eqref{eq:scalar}, full normalized-fiber recombination and complete selector refinement before absolute estimates. Defects solely in the copied primitive data of Proposition \ref{prop:copy} and \eqref{eq:rawcopy} vanish. A complete term cancels when its remaining carrier and scalar data are copied as well. Every remaining signed defect retains its independent scalar, unmatched coordinate/pin term, reference log, full carrier/current/ordinary/contact difference, and wrapped contribution.
+
+For genuinely remote or wrapped complete records, suppose an \emph{actual} formation estimate has been proved with $c>0$ and the envelope constants independent of the fine cutoff and cover:
+\[
+ \sum_{\omega\ {\rm remote\ at}\ r}|a_{j,T}(\omega)|
+ \le A_j e^{-cT_*/\ell_j}.
+\]
+Here the physical exit length belongs to the complete record; it is not the native cutoff radius. Apply the stated estimate to both endpoint constructions and keep their actual effective root count
+\[
+ N_j^{\rm eff}=\#\mathcal R_{j,T_*}
+                    +q^{-4}\#\mathcal R_{j,qT_*}.
+\]
+Let $u_j(r)$ contain the remaining signed unmatched defects, including unmatched roots with their appropriate weights. The consequent quantitative comparison is
+\begin{equation}\label{eq:s94criterion}
+ \frac{V_{a,T_*}}{|T_*|}-\frac{V_{a,qT_*}}{|qT_*|}
+ \le
+ \Delta C^{\rm ext}+\Delta V^{\rm term}
+ +|T_*|^{-1}\sum_{j,r}u_j(r)
+ +C|T_*|^{-1}\sum_jN_j^{\rm eff}A_je^{-cT_*/\ell_j}.
+\end{equation}
+For verified current-cell root bounds on both tori,
+$N_j^{\rm eff}\le 2C_{\rm root}|T_*|\ell_j^{-4}$, and fixed polynomial growth of $A_j$ in $\ell_j^{-1}$ with constants independent of $a,q$, the final sum is uniformly ultraviolet summable:
+\[
+ \sum_{n\ge0}L^{(4+p)n}e^{-c_0L^n}<\infty.
+\]
+The $q^4$ cover count has already canceled. It is not inserted again.
+
+In particular, define the uncancelled partial density
+\[
+ E_k=\Delta C^{\rm ext}_{\le k}
+       +|T_*|^{-1}\sum_{j\le k,r}u_j(r).
+\]
+The exact step is
+\begin{equation}\label{eq:scalarind}
+ E_{k+1}
+ =E_k+\Delta C^{\rm ext}_{k+1}
+       +|T_*|^{-1}\sum_r u_{k+1}(r).
+\end{equation}
+The identified copied primitive data have zero new forcing; a complete matched term has zero forcing only after its carrier and scalar data also match. A nonconstant inherited carrier, an independent scalar or an unmatched pin remains in the new forcing until copied or estimated. Because S94 is one-sided, a uniform upper bound on the signed grouped sum would suffice; a bound on every absolute summand is stronger and is not presumed.
+
+The missing full induction is a cutoff-uniform bound on $E_k$, an actual complete-record proof of the remote estimate, and the terminal comparison. This note proves no such bound for every nonlinear prepared history.
+
+For comparison, a wall charge at every microscopic root with
+$g_j^{-2}\asymp j$, $\ell_j=L^{-j}$ and $R_j\asymp(\log j)^{p_0}$ has logarithm
+\[
+ 4j\log L-cR_j^2+O(\log j),
+\]
+which grows. Exact matching replaces that unnecessary charge by zero on copied sectors. On unmatched sectors, the wall tail is still insufficient by itself.
+
+\clearpage
+\section{What is established and what remains to close the proof}
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.19\textwidth}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.37\textwidth}}
+\toprule
+Problem & Established here & Remaining estimate or identification\\
+\midrule
+\endhead
+Fixed-source susceptibility &
+Actual retained means have extensive positive energy; pushed currents have extensive inverse energy. The main gap is \eqref{eq:lowtarget}. &
+A uniform bound on the low spectral mass of the actual retained ordinary carrier.\\[5pt]
+Actual selected transfer &
+The original positive endpoint law gives the complete selector covariance budget, including inherited $A_{12}$ and between-label means. &
+The same completed graded packet on every original simultaneous complex wall/readout domain.\\[5pt]
+Current and boundary rows &
+The full-kernel dual transfer formula retains residual responses. A native centered sharp flux has a derivative-norm bound. Selected adjoint words have an actual multiplier estimate. &
+Full physical-current lift, moving constraints, residual effective scores, selector jumps and live-reference response, with saved scale gains.\\[5pt]
+MT36 &
+A same-domain derivative/covariance formation step is quantitative once its actual incoming derivative norms and readout are established. &
+Propagation of those norms for all inherited ordinary and connected coefficients; live and rare histories retain their original domains and charges.\\[5pt]
+Complete S94 &
+Source-verified autonomous local factors and actual Wilson-star normalizers match exactly on copied full records; original scalar and root defects are retained. &
+Uniform control of the signed unmatched scalar/carrier sum, all prepared records, physical exit estimates and terminal terms.\\[5pt]
+Continuum hierarchy &
+The source and all physical mesh factors remain unchanged; no bare-contact theorem is substituted for connected bounds. &
+A common cutoff-uniform hierarchy, required distribution bounds and positive/covariant limits, followed by interacting Yang--Mills identification.\\
+\bottomrule
+\end{longtable}
+
+The main-gap lemma is a proved quantitative reduction, not a proof of its remaining low spectral bound. The actual selector budget has constant one, not a strict contraction. The native Poincare and boundary estimates remain confined to their verified reference domains. Complete S94 and the four-dimensional interacting existence result remain unproved.
+
+\clearpage
+\begin{thebibliography}{9}\raggedright
+\bibitem{W} Wilson-source estimates, volumes 1--10 (\texttt{lattice\_theory/source\_estimates} in this collection), cited by source page. In particular S58b, MT36--53, Chapters 138, 145, 151 and 154--159 (pp.~601--602, 692--698, 1043--1049, 1100--1108, 1154--1162, 1173--1218).
+\bibitem{ND} \emph{Nonlinear dispersion and unequal spatial weights}, \texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/nonlinear\_dispersion\_and\_unequal\_spatial\_weights.tex} in this collection.
+\bibitem{SZ} \emph{Conditional estimates at source zero, current transport and native lifts}, \texttt{lattice\_theory/block\_and\_transfer/ordinary\_law/source\_zero\_conditional\_estimates.pdf} in this collection. Original-coordinate conditional integration, complete degree-two transport, native centering lift and bare-contact factorial bounds.
+\bibitem{BG} T. Ba{\l}aban, \emph{Propagators for lattice gauge theories in a background field}, Communications in Mathematical Physics \textbf{99} (1985), 389--434. \href{https://doi.org/10.1007/BF01240355}{DOI: 10.1007/BF01240355}. Especially p.~394 and pp.~408--416. These finite-domain definitions do not by themselves verify the separate native metric comparison.
+\bibitem{RII} T. Ba{\l}aban, \emph{Large field renormalization. II. Localization, exponentiation, and bounds for the $R$ operation}, Communications in Mathematical Physics \textbf{122} (1989), 355--392. \href{https://doi.org/10.1007/BF01238433}{DOI: 10.1007/BF01238433}. Especially pp.~356--359, the old/new field placement, and p.~378.
+\bibitem{PRTII} T. Ba{\l}aban, \emph{Propagators and renormalization transformations for lattice gauge theories. II}, Communications in Mathematical Physics \textbf{96} (1984), 223--250. \href{https://doi.org/10.1007/BF01240221}{DOI: 10.1007/BF01240221}. Equation (2.36) and its full surrounding path/exterior convention are not verified here; no definition from it is asserted.
+\end{thebibliography}
+\end{document}

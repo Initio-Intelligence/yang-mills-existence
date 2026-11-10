@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{Original Wilson boundary variation: covariant Hessian and an exact interacting Ward–Schur identity}\author{}\date{}
+\begin{document}\maketitle
+Let $Z(\eta)=\int e^{-S(u;\eta)}du$ be an ORIGINAL compact Wilson block integral with all incident plaquettes and exterior collars retained, normalized Haar on every free interior link, and prescribed boundary links $\eta$. Put $\Gamma(\eta)=-\log[Z(\eta)/Z(\eta_0)]$. The reference cancels only as this exact ratio. No coordinate cutoff or Gaussian replacement is introduced.
+
+\section*{Joint displacement with the complete interior Haar measure}
+Take a boundary left-geodesic path $\eta(t)=e^{tv}\eta$ linkwise and any deterministic interior left translation $u\mapsto e^{tw}u$. Haar invariance gives the EXACT representation
+\[
+ Z(\eta(t))=\int \exp[-S(e^{tw}u;e^{tv}\eta)]du.
+\]
+Consequently, at zero, with $D=X_v+X_w$,
+\[
+ \Gamma''(0)=E D^2S-\operatorname{Var}(DS).             \tag{1}
+\]
+For a nonconstant boundary velocity there is additionally $E X_{\dot v}S$ in the geodesic acceleration convention; it cannot be dropped. Interior translation is a change of integration variables, so the value in(1) is independent of $w$. There is no Haar-coordinate correction in this representation. Hard selectors or nonlinear chart maps would require their own response; none is present in this original compact block identity.
+
+For the flat quadratic reference choose $w$ as the COMPLETE Gaussian harmonic extension, with actual gauge zero modes handled as in the complete block schur and physical stiffness calculation. Then the interior-linear part of $DS$ vanishes, its conditional variance is zero, and(1) equals the full Gaussian Schur boundary energy. This explains the desired wavelength scale without asserting the same cancellation in the interacting integral.
+
+\section*{An exact interacting Schur upper bound, before any estimate}
+Choose divergence-free left-invariant tangent bases for the free interior links and boundary links. Write $F_i=X_iS$, $F_b=X_bS$, and let $H$ denote the symmetric second directional derivative matrix in these bases. Haar integration by parts on interior links gives
+\[
+ E F_i=0,\qquad C_{ii}:=E H_{ii}=\operatorname{Cov}(F_i,F_i),\qquad
+ C_{ib}:=E H_{ib}=\operatorname{Cov}(F_i,F_b).           \tag{2}
+\]
+Symmetrization causes no error: the expectation of an interior commutator derivative is zero by the same Haar identity. Interior and boundary vector fields commute. The actual fixed-exterior conditional law is used everywhere.
+
+Let $C_{bb}=E H_{bb}$ and let $C_{ii}^{\dagger}$ be the Moore--Penrose inverse. Every column of $C_{ib}$ lies in the range of $C_{ii}$: a null interior-score direction is zero in $L^2$, and hence has zero covariance with every boundary score. Therefore for any boundary tangent $v$,
+\[
+ \begin{split}
+ \Gamma''(v,v)
+ &=v^*\left(C_{bb}-C_{bi}C_{ii}^{\dagger}C_{ib}\right)v\\
+ &\quad-\operatorname{Var}\left(v^*F_b-v^*C_{bi}C_{ii}^{\dagger}F_i\right).
+ \end{split}                                                        \tag{3}
+\]
+This is an EXACT interacting identity, not a Schur complement of the flat reference. It follows by subtracting the optimal linear regression onto the original interior scores in
+$\Gamma''(v,v)=v^*C_{bb}v-\operatorname{Var}(v^*F_b)$.
+In particular the first line of(3) is a valid upper bound. Equivalently it is
+$\inf_w E D^2S$; all covariance cross terms in(1) cancel the dependence on the chosen change of variables before that upper bound is taken.
+The pseudoinverse handles genuine null vectors of the deterministic score covariance, not an artificial positive mass. Actual nonlinear gauge velocities have field-dependent coefficients and need not lie in this deterministic null space; their divergence and acceleration require the separate exact gauge-flow identity of the field dependent ward and exact gauge alignment calculation. No positivity of $C_{bb}$ or uniform spectral floor for $C_{ii}$ is assumed.
+
+\section*{Literal nonabelian plaquette Hessian}
+At one plaquette write the original oriented factors as $V_1V_2V_3V_4=P$.
+A positive-oriented varied link contributes $A_j=w_b$ in
+$V_j(t)=e^{tA_j}V_j$. For an inverse-oriented link $V_j=U_b^{-1}$, the original left variation gives
+$A_j=-\operatorname{Ad}_{U_b^{-1}}w_b$.
+Define the ACTUAL prefix transports
+\[
+ X_j=\operatorname{Ad}_{V_1\cdots V_{j-1}}A_j,\qquad
+ C_p=\sum_jX_j,\qquad K_p=\sum_{j<k}[X_j,X_k].
+\]
+The exact path is $P(t)=e^{tX_1}\cdots e^{tX_4}P$ at the base field, and hence
+\[
+ P''(0)=(C_p^2+K_p)P,\qquad
+ D^2s(P)=-N^{-1}\operatorname{ReTr}[(C_p^2+K_p)P].      \tag{4}
+\]
+Thus the covariant curl is $C_p$, not an ordinary curl evaluated on arbitrary fine links. The commutator trace vanishes at $P=I$ but need not vanish in the interacting law.
+
+Since $C_p$ is anti-Hermitian, $\operatorname{Re}P\le I$ gives
+$-\operatorname{ReTr}(C_p^2P)\le\|C_p\|_{\rm HS}^2$.
+Also $\operatorname{Tr}K_p=0$ and
+$\|P-I\|_{\rm HS}^2=2N s(P)$. Therefore the exact upper estimate is
+\[
+ D^2S\le {B\over N}\sum_p\|C_p\|_{\rm HS}^2
+       +B\sum_p\sqrt{{2s(P)\over N}}\ \|K_p\|_{\rm HS}. \tag{5}
+\]
+The SIGNED commutator term and the negative variance in(1) or(3) should be retained if a sharper comparison is sought; taking absolute values in(5) may lose the needed cancellation. Furthermore
+$\|K_p\|_{\rm HS}\le2\sum_{j<k}\|w_{b_j}\|_{\rm HS}\|w_{b_k}\|_{\rm HS}$,
+so the old $O(B\|w\|^2)$ bound is only a rough consequence.
+
+When every prefix transport preserves a common Abelian tangent algebra, all these commutators vanish. In the actual compact Abelian Wilson model, $C_p$ is the ordinary curl, and choosing the complete harmonic extension in(1) proves the boundary upper bound by its Schur curl energy directly, without a near-flat approximation. This statement is an Abelian check of(4)--(5), not a replacement of the full $SU(N)$ integral by a Cartan model.
+
+\section*{The quantitative nonabelian comparison that remains}
+For a deterministic Gaussian harmonic extension in an actual nonabelian block, prefix transports can change both its curl and its commutators. A small-plaquette statement alone does not choose a common link frame or control these transports over a physical block. Even if original same-law moments permit $E\sqrt{s(P)}=O(B^{-1/2})$, separately bounding the last term in(5) still gives order $\sqrt B\sum\|w_b\|^2$ in angular coordinates, hence an inverse-wavelength loss relative to the curl energy. Such unconditional moments also cannot simply be used at an arbitrary fixed rough exterior.
+
+The actual target is now explicit: compare the averaged covariant matrix in(2)--(4), or its regression remainder in(3), with the COMPLETE physical Schur form, in the original two-slice/window law. One must retain parallel transports, exterior acceleration conventions, signed curvature terms, gauge/global modes, and the raw normalizer. A field-dependent covariant harmonic extension is not a free Haar translation; its divergence/Jacobian would need to be included. Equations(1)--(5) provide an exact nonlinear route and isolate that additional estimate, but do not establish it or fullS94.
+\end{document}

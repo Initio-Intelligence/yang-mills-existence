@@ -1,0 +1,175 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\title{Path-centered original compact chains in growing scaled bath tubes}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Precise original conditional class.}
+Use the kernels of the time dependent small bath transfer calculation, with $s(u)=1-\frac12\operatorname{ReTr}u$,
+\[
+ F_t(u,v)=\tfrac B2\sum_{r=1}^4s(uS_{t,r}^{-1})+
+ Bs(ug_tv^{-1}h_t)+\tfrac B2\sum_{r=1}^4s(vS_{t+1,r}^{-1}),\qquad T_t=e^{-F_t}.
+\]
+Take a period $m\ge2$, arbitrary time-dependent bath, and a literal endpoint
+conjugation $u_m=G u_0G^{-1}$. Endpoint onsite data must agree with this transport.
+Every staple and twist has principal angle at most $\epsilon_B$, where
+$\epsilon_B\to0$. In particular $\epsilon_B=P(B)/\sqrt B$ permits any growing
+$P(B)=o(\sqrt B)$, including powers of $\log B$. Bath-only action remains outside
+this fiber and is never dropped. Write $W=T_0\cdots T_{m-1}C_G$.
+
+\begin{theorem}[Conditional product estimate]
+For sufficiently small $\epsilon_B$ and sufficiently large $B$, uniformly in
+$m$, the bath data, and $G$, the exact Perron eigenvalue $\rho(W)$ satisfies
+\[
+ \left|\operatorname{Tr}(W^q)/\rho(W)^q-1\right|
+       \le C(2/5)^{mq-1},\qquad q\ge1.                                  \tag{1}
+\]
+The thresholds depend only on a fixed small angular neighborhood, not on a
+bound for $\sqrt B\epsilon_B$. No claim that this tube is probable under the
+original random bath is made.
+\end{theorem}
+
+\paragraph{1. A uniform location bound for every global minimizing path.}
+Existence follows from compactness. At a site, with all other path variables
+fixed, the energy depends on its unit quaternion through the inner product
+with the sum of four onsite staple quaternions and two unit temporal-neighbor
+quaternions. This remains true for $m=2$, including its rotated seam. (The
+single-site self-edge case $m=1$ is deliberately excluded.) The onsite sum has
+length at least $4\cos\epsilon_B$ and direction of angle at most $\epsilon_B$
+from identity. Adding a vector of length at most two shows that every
+coordinate of a minimizing path has angle at most
+\[
+ \epsilon_B+\arcsin\bigl(2/(4\cos\epsilon_B)\bigr)<\pi/4                  \tag{2}
+\]
+for sufficiently small $\epsilon_B$. Its coefficient is nonzero, and choosing
+the direction opposite that sum would maximize rather than minimize the local
+energy, so no second branch was admitted in(2).
+
+Let $\theta$ be the largest path angle. Conjugation at the seam preserves this
+angle. At a maximizing coordinate take the radial unit tangent pointing away
+from identity. If $\theta\ge\epsilon_B$, each onsite staple's scalar product
+with this tangent is at most $-\sin(\theta-\epsilon_B)$. A temporal neighbor,
+after its two twists, has angle at most $\theta+2\epsilon_B$; its scalar product
+with the same tangent is at most $\sin(2\epsilon_B)$. These assertions follow
+by writing a quaternion as $(\cos\phi,\sin\phi\,n)$; the maximum tangent
+projection is $\sin(\phi-\theta)$ and the angles in(2) keep this in its
+monotone range. Stationarity therefore gives
+\[
+ 4\sin(\theta-\epsilon_B)\le2\sin(2\epsilon_B),\qquad
+ \theta\le\epsilon_B+\arcsin(\tfrac12\sin2\epsilon_B)\le3\epsilon_B.       \tag{3}
+\]
+All global minimizers lie in this same small product chart. In ordinary Lie
+coordinates the Hessian of the unscaled total action at zero bath and zero
+field is $6I-S-S^*\ge4I$, with orthogonal twisted shift $S$. Smoothness of the
+local two-site functions and their bounded incidence imply a perturbation
+bound $C\epsilon_B$ on this Hessian throughout the product ball of radius
+$3\epsilon_B$ in each coordinate. Thus the total action is strictly convex
+there for small $\epsilon_B$, uniformly in $m$, and the global minimum $u^*$
+is unique. Only local finite-dimensional smooth functions are used in this
+Hessian estimate; the operator norm bound does not sum over all sites.
+
+\paragraph{2. Exact centering and telescoping the linear terms.}
+Use $u=u_t^*\exp(i x\cdot\sigma/\sqrt B)$ at each time. These are left Haar
+translations of exact principal coordinates, with
+$c_B=(2\pi^2)^{-1}B^{-3/2}$ and
+$j_B(x)=[\sin(|x|/\sqrt B)/(|x|/\sqrt B)]^2$ on $|x|<\pi\sqrt B$.
+Set
+\[
+ f_t=F_t(u_t^*,u_{t+1}^*),\qquad
+ p_t=\partial_x F_t(u_t^*e^{ix\cdot\sigma/\sqrt B},u_{t+1}^*)|_{x=0}.
+\]
+Path stationarity says that the second-variable derivative of $F_t$ is exactly
+$-p_{t+1}$, with the literal rotation at the seam. Hence the centered scaled
+kernel is
+\[
+ H_{B,t}(x,y)=\sqrt{j_B(x)j_B(y)}\,
+ \exp[-F_t(u_t^*e^{ix\cdot\sigma/\sqrt B},u_{t+1}^*e^{iy\cdot\sigma/\sqrt B})
+       +f_t+p_t\cdot x-p_{t+1}\cdot y].                                  \tag{4}
+\]
+The derivative subtraction in(4) is exact. The exponential multipliers at
+successive sites cancel in the product. For each finite $B$ they are bounded
+and invertible on the compact coordinate ball; their norms need not be
+uniform. The translated period is similar to
+$c_B^m e^{-\sum_t f_t}(H_{B,0}\cdots H_{B,m-1}C_G)$, including its endpoint
+rotation. Thus the scalar is the actual minimum action, not its Taylor
+approximation; powers multiply it exactly by $q$.
+
+\paragraph{3. Uniform Gaussian domination after centering.}
+For a fixed sufficiently small angular radius $\theta_0$, the Hessian of each
+individual two-site $F_t$ in the scaled coordinates differs uniformly from
+that of
+$\frac32(|x|^2+|y|^2)-x\cdot y$ by $O(\theta_0+\epsilon_B)$ whenever
+$|x|,|y|\le\theta_0\sqrt B$. The latter Hessian has minimum eigenvalue two.
+Taylor's integral formula after the EXACT linear subtraction therefore bounds
+the exponent's action below by $c(|x|^2+|y|^2)$ on this product ball.
+
+For the complementary region, the unitary triangle inequality
+$s(ab^{-1})\ge\frac12s(a)-s(b)$, applied to the four onsite terms and to the
+center translation, gives a global lower bound
+\[
+ F_t-f_t-p_t\cdot x+p_{t+1}\cdot y
+ \ge c_0(|x|^2+|y|^2)-C B\epsilon_B^2
+                  -C\sqrt B\epsilon_B(|x|+|y|).                          \tag{5}
+\]
+Here $f_t\le CB\epsilon_B^2$ and $|p_t|\le C\sqrt B\epsilon_B$ follow from(3)
+and smoothness. If either coordinate exceeds $\theta_0\sqrt B$, the two
+negative terms in(5) are absorbed by its positive quadratic term by taking
+$\epsilon_B/\theta_0$ small. Combining the two regions proves the global bound
+\[
+ 0\le H_{B,t}(x,y)\le e^{-c(|x|^2+|y|^2)}.                             \tag{6}
+\]
+All constants are uniform in time, period length and allowed data.
+On bounded $x,y$ sets, the Hessian in(4) tends uniformly to the flat Hessian,
+because $\epsilon_B\to0$ and $B^{-1/2}\to0$. The canceled linear coefficients
+may grow as $\sqrt B\epsilon_B$; they do not enter the remainder. Thus(6) and
+bounded-set convergence imply uniform Hilbert--Schmidt/operator convergence
+\[
+ H_{B,t}\longrightarrow H_0(x,y)=e^{-\frac32(|x|^2+|y|^2)+x\cdot y}.       \tag{7}
+\]
+In particular this is not an $O(P(B))$ perturbation about one fixed origin.
+
+\paragraph{4. Uniform trace norm, including coordinate-edge tails.}
+A trace-norm bound is needed in addition to(7). Choose smooth cutoffs in each
+coordinate equal to one for $|x|\le\theta_0\sqrt B/2$ and zero for
+$|x|\ge\theta_0\sqrt B$. On this interior product, every derivative through
+order four in the first variable of the cut off kernel is bounded by a fixed
+polynomial in $|x|+|y|$ times the Gaussian in(6). This follows from the bounded
+scaled Hessian and higher derivatives of the smooth local action; the exact
+linear subtraction makes its first derivative grow at most linearly in
+$|x|+|y|$. The Haar Jacobian is smooth with uniformly bounded derivatives on
+this smaller angular ball. Hence, for the oscillator
+$L_x=1-\Delta_x+|x|^2$, the kernel of $L_x^2H_{B,t}^{\rm interior}$ has
+uniform $L^2$ norm. Since $L_x^{-2}$ is Hilbert--Schmidt in dimension three,
+factorization gives a uniform trace norm for the interior operator.
+
+The remaining terms have at least one endpoint outside the interior cutoff.
+Use the ORIGINAL factorization into two onsite multipliers and the central
+positive temporal convolution split as $Q^{1/2}UQ^{1/2}$. The $U$ here is the
+left/right Haar twist, also after center translation. The diagonal of $Q$ is
+one. Squared Hilbert--Schmidt norms are consequently onsite integrals with
+one endpoint cut off. Outside the angular ball the onsite action is at least
+$cB$, whereas all linear gauge multipliers are at most $e^{CB\epsilon_B}$
+and the extracted scalar is at most $e^{CB\epsilon_B^2}$. An endpoint tail
+therefore gives $e^{-c'B}$; the other factor has at worst
+$e^{CB\epsilon_B+CB\epsilon_B^2}$. After dividing by $c_B$, the tail trace norm
+still tends to zero, uniformly for $\epsilon_B\to0$. This avoids differentiating
+the zero extension at the principal-coordinate boundary. Consequently
+$\|H_{B,t}/\ell_0\|_1\le K$ uniformly.
+
+\paragraph{5. Whole-product spectral conclusion and its exact scope.}
+By(7), the normalized steps are within $1/20$ of $H_0/\ell_0$ for all allowed
+large $B$. The real common-cone and exterior-square proof of the time dependent small bath transfer calculation now applies
+VERBATIM to the centered kernels: cone aperture $1/4$, growth $15/16$,
+Perron projection norm at most $17/15$, and exterior norm at most $121/400$.
+The retained conjugation fixes the radial reference vector. It yields(1) for
+the exact centered product eigenvalue. The similarity and scalar in(4) transfer
+both its trace and eigenvalue back to the ORIGINAL $W$, with no accumulated
+per-step error. No self-adjointness of the product was assumed.
+
+This enlarges the conditional class from a fixed tiny scaled tube to any
+vanishing angular tube, including logarithmically growing scaled radii.
+It supplies neither a probability nor a relative boundary-overlap bound for
+that class in the original Wilson bath. Integrating out these trajectories
+still leaves their exact normalizers in the bath law. Global gauge/holonomy
+sectors and the remaining coarse bath affinity cannot be discarded. Therefore
+this is a conditional S94 ingredient, not an interacting S94 or mass-gap proof.
+\end{document}

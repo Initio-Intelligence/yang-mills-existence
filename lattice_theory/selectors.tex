@@ -1,0 +1,405 @@
+\section{Local selector bounds}
+\label{sel:section}
+
+This section specializes the original law to \(SU(2)\). Its positive moment inputs retain the periodic physical regime of Lemma~\ref{inn:jointmoments}. The internal cap calculation, by contrast, holds at every positive-mass fixed bath. The two statements have different scopes.
+
+\subsection{The actual good-star kernel, its gap, and its cusp}
+
+Fix one original link \(s\), write \(u=U_s\in S^3\), and retain its \emph{complete} complementary configuration \(\eta\). The six actual staples are unit quaternions \(a_i\). With
+\[
+ H=\sum_{i=1}^6a_i,\qquad c=1-v/2,\qquad 0<v<2,\qquad
+ \Omega=\{u:u\cdot a_i\ge c,\ i=1,\ldots,6\},
+\]
+the literal selected kernel and its raw mass are
+\begin{equation}
+ K_g(\dd u)=Z_g^{-1}\mathbf1_\Omega
+       e^{-12\beta+2\beta H\cdot u}\dd\omega(u),\qquad
+ Z_g=\int_\Omega e^{-12\beta+2\beta H\cdot u}\dd\omega(u).
+ \label{sel:goodkernel}
+\end{equation}
+Here \(\omega\) is normalized Haar measure. Put \(k=C_F/3\); the original link Laplacian is \(k\Delta_{S^3}\), with carré du champ \(\Gamma_s(F)=\sum_A|X_s^AF|^2\).
+
+\begin{proposition}[Literal selected gap]
+\label{sel:gap}
+At every bath with \(Z_g>0\),
+\begin{equation}
+ \operatorname{gap}(K_g)\ge k(2+12\beta c),\qquad
+ \Var_{K_g}F\le
+       \frac{K_g\Gamma_s(F)}{k(2+12\beta c)}.
+ \label{sel:gapbound}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Each cap has radius \(\arccos c<\pi/2\), so its positive-mass intersection is geodesically convex. On that intersection,
+\[
+ \operatorname{Ric}_{S^3}=2g,\qquad
+ \Hess(-2\beta H\cdot u)=2\beta(H\cdot u)g\ge12\beta c\,g.
+\]
+For an explicit inner smoothing of its corners, set
+\[
+ \phi_i=c-u\cdot a_i,\qquad
+ f_\epsilon=\epsilon\log\sum_i e^{\phi_i/\epsilon},
+ \qquad \Omega_\epsilon=\{f_\epsilon\le0\}.
+\]
+Then \(\Omega_\epsilon\subset\Omega\), and on \(\Omega\),
+\[
+ \Hess f_\epsilon
+ =\sum_i p_i\Hess\phi_i+
+       \epsilon^{-1}\operatorname{Cov}_{p}(\nabla\phi_i)
+ \ge c\,g.
+\]
+For sufficiently small \(\epsilon\), the zero level is above the unique minimum, hence regular. The inner domains are smooth and geodesically convex and increase to the interior of \(\Omega\). Weighted Neumann Bochner gives the curvature gap on each of them; its boundary second-fundamental-form term is nonnegative. Dominated convergence for smooth functions and Sobolev approximation pass the estimate to the original sharp domain. The Neumann condition belongs to the auxiliary Poisson solution, not to the physical source or current. Multiplication by the original metric factor \(k\) gives \eqref{sel:gapbound}.
+\end{proof}
+
+Let \(F_s\) contain \emph{every} original source row whose determining stencil reads \(s\), and put \(A_s=\sum_{b:s\in D(b)}|f_b|\), with physical and saved field-independent factors included. The original averaged gradient estimate gives \(\E\Gamma_s(F_s)\le C\beta A_s^2\). Averaging \eqref{sel:gapbound} against the actual outside submeasure \(Z_g e^{-\beta S_{\rm out}}\dd\eta/Z_\beta\) cancels its conditional denominator and yields
+\[
+ \int \nu_g(\dd\eta)\Var_{K_g}F_s
+ \le \frac{C\beta}{k(2+12\beta c)}A_s^2.
+\]
+Its fixed-\(c\) consequence is \(O(A_s^2)\). It is not a bound under an independently normalized rare outside law.
+
+The gap does not give bath analyticity. Take \(a_1=\cdots=a_5=e_0\) and \(a_6(t)=\cos t\,e_0+\sin t\,e_1\), and remove only the common scalar \(e^{-12\beta}\) while writing
+\[
+ z(t)=\int_{\Omega(t)}e^{2\beta H(t)\cdot u}\dd\omega(u).
+\]
+At \(t=0\), the \(u_0=z\) slice density is \((2/\pi)\sqrt{1-z^2}\). On the face \(u_0=c\), the remaining direction is uniform on \(S^2\), with
+\[
+ \E[(-u_1)_+\mid u_0=c]=\frac{\sqrt{1-c^2}}4.
+\]
+For \(t>0\) the moving cap removes the strip with \(u_1<0\); for \(t<0\) it removes the reflected strip. The smooth density derivative is odd in \(u_1\). Therefore
+\begin{equation}
+ z(t)=z(0)-a_c|t|+o(|t|),\qquad
+ a_c=\frac{(1-c^2)e^{12\beta c}}{2\pi}.
+ \label{sel:cusp}
+\end{equation}
+The original Wilson raw coefficient is \(e^{-12\beta}a_c\). For the actual rooted ordinary row at the flat bath,
+\[
+ r_s(z)=48k\beta(1-z^2)-12kz.
+\]
+Its selected mean satisfies
+\begin{equation}
+ K_{g,t}r_s(t)=K_{g,0}r_s
+ -\frac{a_c}{z(0)}
+       \bigl[r_s(c)-K_{g,0}r_s\bigr]|t|+o(|t|).
+ \label{sel:meancusp}
+\end{equation}
+The bracket is strictly positive because \(r_s'(z)=-12k(8\beta z+1)<0\) for \(z\ge c\). Thus the normalized rooted mean also has a nonzero cusp. This tests analyticity of the literal selected operation; it is not an obstruction to a different R-II operation. The estimates below use complete packets, including all neighboring roots.
+
+\subsection{A complete ordinary-compensator inequality}
+
+\begin{lemma}[Rare-label moments without a lower mass bound]
+\label{sel:compensation}
+Let \(K\) be a probability law of a real random variable \(R\) and a finite label \(L\). One label is ordinary; let \(A\) be the union of the others, \(q=K(A)\), and \(\delta_L=K(R\mid L)-KR\). For integers \(m\ge2\) and \(p>1\),
+\begin{align}
+ K|\delta_L|^m
+ &\le4^m\bigl[K(\mathbf1_A|R|^m)+qK|R|^m\bigr],
+ \label{sel:compmoment}\\
+ K|\delta_L|^m
+ &\le8^m q^{1-1/p}(K|R|^{pm})^{1/p}.
+ \label{sel:holdermoment}
+\end{align}
+The ordinary compensator is included, independently of the number of rare labels.
+\end{lemma}
+\begin{proof}
+If \(q\le1/2\), conditional centering gives
+\[
+ (1-q)\delta_0=-K(\mathbf1_A\delta_L),\qquad
+ (1-q)|\delta_0|^m
+ \le\left(\frac q{1-q}\right)^{m-1}
+                 K(\mathbf1_A|\delta_L|^m)
+ \le K(\mathbf1_A|\delta_L|^m).
+\]
+Jensen on the rare labels and \(|R-KR|^m\le2^{m-1}(|R|^m+|KR|^m)\) give \eqref{sel:compmoment}. If \(q>1/2\), ordinary Jensen gives \(K|\delta_L|^m\le2^mK|R|^m\le2^{m+1}qK|R|^m\). This also covers zero ordinary mass. Finally Hölder bounds both terms in brackets by \(q^{1-1/p}(K|R|^{pm})^{1/p}\); absorb their factor two. At \(q=0\), the contrast is zero.
+\end{proof}
+
+For one original link with the complete complement retained, the original local moments give
+\[
+ \|F_s\|_q\le CqA_s,\qquad q\ge1.
+\]
+Lemma~\ref{sel:compensation}, or the corresponding integrated exponential tail, then yields the useful local estimate
+\begin{equation}
+ \E|\E(F_s\mid\eta,L)-\E(F_s\mid\eta)|^2
+ \le CA_s^2p_{\rm bad}\log^2(e/p_{\rm bad}),
+ \qquad p_{\rm bad}=\Pr(A).
+ \label{sel:localcontrast}
+\end{equation}
+This is an actual \(L^2\) contrast estimate even though a selected shape derivative may have only an averaged \(L^1\) estimate. It concerns the complete retained complement; the distinction from a partially observed history is made below.
+
+\subsection{Extensive Bernstein control of a whole literal label layer}
+
+Let \(C\) be any deterministic original link set with at most one \(C\)-link in every original plaquette, and retain \(\eta=U_{C^c}\) completely. The action splits exactly, and
+\begin{equation}
+ K_C(\dd U_C\mid\eta)=\prod_{s\in C}K_s(\dd U_s\mid\eta),
+ \qquad
+ \dd\nu_{\eta,L}
+ =\frac{e^{-\beta S_{\rm out}(\eta)}}{Z_\beta}
+       \prod_{s\in C}Z_{s,L_s}(\eta)\dd\eta .
+ \label{sel:jointlaw}
+\end{equation}
+Every star selector reads only its own free link and the retained bath. The labels are therefore conditionally independent, and the selected conditional kernel is the actual product of \(K_{s,L_s}\).
+
+Take \(R_b=r_b\) or \(R_b=h_b\), retaining the complete original row. With \(D(b)\) its complete determining set, define
+\[
+ C_b=C\cap D(b),\qquad
+ \delta_b=\E(R_b\mid\eta,L)-\E(R_b\mid\eta),\qquad
+ \Delta_f=\sum_bf_b\delta_b .
+\]
+The first conditional mean depends only on \(L_{C_b}\). A row may read several free links; its cross-link terms have not been split into kinetic pieces.
+
+\begin{theorem}[Complete label-layer Bernstein estimate]
+\label{sel:labelbernstein}
+Fix \(0<t_*<1\) in the arbitrary marked-plaquette estimate of Lemma~\ref{inn:jointmoments}. For every \(0<\tau<t_*/6\), on its original physical-torus regime,
+\begin{equation}
+ \log\E e^{t\Delta_f}
+ \le C_\tau e^{-\tau\beta v}t^2M_f,\qquad
+ |t|b_f\le c_\tau .
+ \label{sel:labelcgf}
+\end{equation}
+The constants are uniform in \(0<v<2\), the original torus size, and the chosen independent link set. The assertion is averaged over the actual joint law \eqref{sel:jointlaw}, not uniform at each fixed bath. In particular,
+\begin{align}
+ \Pr(|\Delta_f|>u)
+ &\le2\exp\!\left[-c_\tau
+      \min\left\{\frac{u^2}{e^{-\tau\beta v}M_f},
+                       \frac{u}{b_f}\right\}\right],
+ \label{sel:labeltail}\\
+ \E_\eta\Var_{L\mid\eta}\bigl(\E(F_f\mid\eta,L)\bigr)
+ &=\E\Delta_f^2\le C_\tau e^{-\tau\beta v}M_f .
+ \label{sel:labelvariance}
+\end{align}
+\end{theorem}
+\begin{proof}
+Color the original graph whose active roots \(b,d\) are adjacent when \(C_b\cap C_d\ne\varnothing\). It has a fixed bounded coloring number \(q_0\), from the complete original determining stencils. Discard rows with \(C_b=\varnothing\), whose contrasts vanish.
+
+For a root \(b\), let \(A_b\) mean that some star in \(C_b\) is bad, and put \(q_b(\eta)=\Pr(A_b\mid\eta)\). Its one ordinary label is the all-good vector. For integers \(m\ge2\), Lemma~\ref{sel:compensation} gives
+\begin{equation}
+ D_{b,m}(\eta):=\E_L(|\delta_b|^m\mid\eta)
+ \le8^m q_b^{\,1-1/p}
+                   \bigl(K_C|R_b|^{pm}\bigr)^{1/p}.
+ \label{sel:conditionalmoment}
+\end{equation}
+This estimate retains the entire ordinary compensator, even at baths with zero ordinary mass.
+
+Fix distinct roots \(J\) in one color. Their free sets \(C_b\) are disjoint. The plaquette witness sets
+\[
+ W_b=\bigcup_{s\in C_b}\operatorname{star}(s)
+\]
+are also disjoint: a plaquette in both \(W_b\) and \(W_d\) would contain two distinct \(C\)-links, contrary to the hypothesis. Every event \(A_b\) has a witness \(p_b\in W_b\) with \(s_{p_b}>v\). With \(\lambda=t_*/6\), the original arbitrary-set estimate gives
+\begin{equation}
+ \Pr\!\left(\bigcap_{b\in J}A_b\right)
+ \le C_{\rm rare}^{|J|}e^{-\lambda\beta v|J|}.
+ \label{sel:jointrare}
+\end{equation}
+Indeed there are at most \(w_0^{|J|}\) choices of distinct witnesses, and each choice is bounded by
+\[
+ e^{-\lambda\beta v|J|}
+ \E e^{\lambda\beta\sum_b s_{p_b}}
+ \le e^{-\lambda\beta v|J|}K_*^{|J|/6},
+ \qquad K_*=\left(\frac{Z_{(1-t_*)\beta}}{Z_\beta}\right)^{1/n^4}.
+\]
+The finite \(w_0\) and bounded \(K_*\) belong to the original geometry and moment regime.
+
+Write \(\alpha=1-1/p\), \(M=\sum_{b\in J}m_b\). Multiply \eqref{sel:conditionalmoment}, apply Hölder in the actual outside law, and use the conditional product structure:
+\begin{align}
+ \E_\nu\prod_{b\in J}D_{b,m_b}
+ &\le8^M
+       \left(\E_\nu\prod_bq_b\right)^\alpha
+       \left(\E_\nu\prod_bK_C|R_b|^{pm_b}\right)^{1/p}\notag\\
+ &=8^M\Pr\!\left(\bigcap_bA_b\right)^\alpha
+       \left(\E_\mu\prod_b|R_b|^{pm_b}\right)^{1/p}.
+ \label{sel:mixedholder}
+\end{align}
+Both equalities restore the original full law with its raw outside normalizers. Common retained variables may correlate the roots; no unconditional independence was used.
+
+Lemma~\ref{inn:jointmoments} gives a joint absolute exponential bound \(\E e^{\kappa\sum_{b\in J}|R_b|}\le e^{C|J|}\). Its positive series and \((pm)!^{1/p}\le p^m m!\) imply, with \eqref{sel:jointrare},
+\[
+ \E_\nu\prod_bD_{b,m_b}
+ \le\prod_b\left[C_p^{m_b}m_b!e^{-\lambda\alpha\beta v}\right].
+\]
+Choose a fixed integer \(p>\lambda/(\lambda-\tau)\). Since \(\lambda\alpha>\tau\),
+\begin{equation}
+ \E_\nu\prod_bD_{b,m_b}
+ \le\prod_b\left[C_\tau^{m_b}m_b!e^{-\tau\beta v}\right],
+ \qquad m_b\ge2.
+ \label{sel:jointcontrastmoments}
+\end{equation}
+The per-root constants in the moment and witness bounds are absorbed using \(m_b\ge2\).
+
+Within this color the \(\delta_b\) are conditionally independent and centered. Expand their conditional exponential product. Each active root has order at least two. Bound absolute coefficients with \eqref{sel:jointcontrastmoments}; their factorials cancel:
+\begin{align*}
+ \E e^{t\sum_{\text{color}}f_b\delta_b}
+ &\le\prod_{\text{color}}
+       \left[1+e^{-\tau\beta v}
+                  \sum_{m\ge2}(C_\tau|tf_b|)^m\right]\\
+ &\le\exp\left(C_\tau e^{-\tau\beta v}t^2
+                       \sum_{\text{color}}f_b^2\right)
+\end{align*}
+for a fixed small \(|t|b_f\). At finite volume the original rows are bounded, and Tonelli justifies the nonnegative majorant. Finally Hölder across \(q_0\) colors gives the explicit cost \(C_\tau q_0t^2M_f\) and radius \(c_\tau/(q_0b_f)\); \(q_0\) is a fixed original-stencil constant. Chernoff gives \eqref{sel:labeltail}, and the second derivative at zero gives \eqref{sel:labelvariance}.
+\end{proof}
+
+This proves the extensive selected-body gain, including all cross-root terms. It yields the exact split
+\begin{equation}
+ \Var_{\eta,L}\E(F_f\mid\eta,L)
+ =\Var_\eta\E(F_f\mid\eta)+\E\Delta_f^2.
+ \label{sel:split}
+\end{equation}
+The first term is still the continuous retained ordinary mean variance. The theorem's rare exponent is restricted by the joint witness rate; the earlier local \(L^2\) estimate can have a larger one-point rate. When \(v=v_\beta\) shrinks, the gain in \eqref{sel:labelcgf} is exactly \(e^{-\tau\beta v_\beta}\), which may become order one.
+
+\subsection{Raw recombination cancels the complete sharp response}
+
+Return to one original link with complete complement. Write the unchanged density as \(w(u,\eta)=a(\eta)\rho(u,\eta)\), with \(a=e^{-\beta S_{\rm out}}\). Let \(\{\chi_\ell\}\) be a complete real selector partition, and define
+\[
+ Z_\ell=\int\chi_\ell\rho,\quad N_\ell=\int\chi_\ell\rho F_s,\quad
+ Z=\sum_\ell Z_\ell,\quad p_\ell=Z_\ell/Z,\quad
+ m_\ell=N_\ell/Z_\ell,\quad m=\frac{\sum_\ell N_\ell}{Z}.
+\]
+Zero-mass normalized values may be assigned arbitrarily; their raw products below are unambiguous. The complete compact \(m\) is smooth in the real exterior coordinates and
+\begin{equation}
+ Ym=K(YF_s)+\Cov_K(F_s,Y\log\rho).
+ \label{sel:meanresponse}
+\end{equation}
+This retains the actual direct source response and conditional score.
+
+Where a selected first response is represented by bulk and surface terms,
+\[
+ Ym_\ell=K_\ell(YF_s)+\Cov_{K_\ell}(F_s,Y\log\rho)+B_\ell,
+ \quad
+ B_\ell=Z_\ell^{-1}\int\rho(F_s-m_\ell)Y\chi_\ell .
+\]
+The probability response also contains its surface:
+\[
+ Yp_\ell
+ =p_\ell[K_\ell(Y\log\rho)-K(Y\log\rho)]
+        +Z^{-1}\int\rho Y\chi_\ell .
+\]
+Consequently the two surface contributions in
+\(Ym=\sum_\ell p_\ell Ym_\ell+\sum_\ell m_\ell Yp_\ell\) cancel:
+\begin{equation}
+ \sum_\ell p_\ell B_\ell
+ =-Z^{-1}\sum_\ell m_\ell\int\rho Y\chi_\ell.
+ \label{sel:surfacecancel}
+\end{equation}
+The left side generally is not zero on its own. Dropping the differentiated raw label probabilities would destroy the cancellation.
+
+A distributional formula avoids differentiating normalized selected means. Put \(R_\ell=N_\ell-mZ_\ell\); then \(\sum_\ell R_\ell=0\) and
+\begin{equation}
+ YR_\ell
+ =\int\chi_\ell\rho
+       [YF_s-Ym+(F_s-m)Y\log\rho]
+       +\int\rho(F_s-m)Y\chi_\ell .
+ \label{sel:rawderivative}
+\end{equation}
+All surface distributions in the last term sum to zero. This explains the raw recombination of the cusps in \eqref{sel:cusp}--\eqref{sel:meancusp}. If further sharp geometry selectors remain, their complete partition must also be included before claiming such cancellation. Recombining one local selector does not turn an otherwise selected native measure into a smooth compact kernel.
+
+\subsection{A weak first-response estimate with the actual outside score}
+
+For comparison, compact integration by parts gives the following single-face bound. Since
+\[
+ \Gamma_s(s_p)=k s_p(4-s_p),\qquad
+ \Delta_s s_p=3k(2-s_p),
+\]
+apply weighted divergence to \(\mathbf1_{\{s_p\ge v\}}\nabla_s s_p\), by smooth approximation. With the original moment \(\E e^{t_0\beta s_p}\le K_{t_0}\),
+\begin{equation}
+ \E\delta(s_p-v)
+ \le\frac{C(1+\beta)K_{t_0}e^{-t_0\beta v}}{k v(4-v)}.
+ \label{sel:face}
+\end{equation}
+On the face, a bounded original exterior-link derivative obeys \(|Ys_p|\le C\sqrt{v(4-v)}\). The actual raw \(Z_g\) cancels against its outside density before absolute values are bounded. Since \(|F_s|\le C(1+\beta)A_s\), summing complete faces and the remaining geometry partition gives
+\begin{equation}
+ \int\nu_g|B_g|
+ \le
+ \frac{C(1+\beta)^2A_sK_{t_0}e^{-t_0\beta v}}
+      {\sqrt{v(4-v)}}.
+ \label{sel:shapeLone}
+\end{equation}
+This is only an averaged \(L^1\) first-response bound. Its threshold denominators remain explicit.
+
+There is a different, useful weak estimate for the \emph{complete} full-centered response. Let \(Y\) now be a unit Haar-divergence-free original exterior link derivative. Set
+\[
+ \dd\nu_\ell=\frac{aZ_\ell}{Z_\beta}\dd\eta,\qquad
+ \delta_\ell=m_\ell-m,\qquad
+ A_Y=YF_s-Ym+(F_s-m)Y\log(a\rho),\qquad b_\ell=K_\ell A_Y.
+\]
+Because \(Y\log a\) is bath-measurable, \eqref{sel:meanresponse} implies \(KA_Y=0\). The outside-density score is retained in \(A_Y\), although its conditional mean contribution vanishes.
+
+The original local moments, finite complete stencils, and conditional Hölder give, for \(q\ge2\),
+\begin{align}
+ \|F_s\|_q&\le CqA_s,&
+ \|YF_s\|_q&\le C\sqrt{\beta q}\,A_s,&
+ \|Y\log(a\rho)\|_q&\le C\sqrt{\beta q},\notag\\
+ \|Ym\|_q+\|A_Y\|_q&\le Cq^{3/2}\sqrt\beta\,A_s .
+ \label{sel:bulkmoments}
+\end{align}
+For example,
+\[
+ \beta\|\Cov(F_s,YS_s\mid\eta)\|_q
+ \le2\beta\|F_s\|_{2q}\|YS_s\|_{2q}
+ \le Cq^{3/2}\sqrt\beta\,A_s.
+\]
+These are original-law or exact-marginal averages. They require no exterior Poincare inequality.
+
+Define the raw surface vector centered at the \emph{full} mean by
+\[
+ \sigma_\ell=\frac{a}{Z_\beta}
+                 \int\rho(F_s-m)Y\chi_\ell .
+\]
+Differentiating \(aR_\ell/Z_\beta\) gives the exact distribution identity
+\begin{equation}
+ \sigma_\ell=Y(\nu_\ell\delta_\ell)-\nu_\ell b_\ell.
+ \label{sel:weakidentity}
+\end{equation}
+Both sides sum to zero over labels. With a facet representation, \(\sigma_\ell\) includes the selected centered shape term \emph{and} the label contrast times the raw selector-mass response. It is not \(B_\ell\) alone.
+
+\begin{proposition}[Complete weak surface bound]
+\label{sel:weakbound}
+For the literal good/bad partition and every fixed \(0<\tau<t_0\),
+\begin{equation}
+ \left|\sum_\ell\langle\sigma_\ell,\varphi_\ell\rangle\right|
+ \le C_\tau A_se^{-\tau\beta v/2}
+       \left(\|Y\varphi\|_{L^2(\nu)}
+                    +\sqrt\beta\,\|\varphi\|_{L^2(\nu)}\right)
+ \label{sel:weakestimate}
+\end{equation}
+for smooth label-dependent tests. The constants are uniform in \(0<v<2\); the test norms use the \emph{actual} \(v\)-dependent joint output law.
+\end{proposition}
+\begin{proof}
+Let \(p_{\rm bad}\) be the actual rare mass, bounded by \(6K_{t_0}e^{-t_0\beta v}\). Apply Lemma~\ref{sel:compensation} at order two to \(F_s\), and separately to \(A_Y\). In the second case \(KA_Y=0\), so \(b_\ell\) is exactly its label contrast. Hölder and \eqref{sel:bulkmoments}, at a sufficiently high \emph{fixed} moment order, give
+\[
+ \sum_\ell\int\delta_\ell^2\dd\nu_\ell
+       \le C_\tau A_s^2e^{-\tau\beta v},\qquad
+ \sum_\ell\int b_\ell^2\dd\nu_\ell
+       \le C_\tau\beta A_s^2e^{-\tau\beta v}.
+\]
+Explicitly choose an integer \(p>t_0/(t_0-\tau)\) in \eqref{sel:holdermoment}; the outside Hölder bound costs \(p_{\rm bad}^{1-1/p}\). The constants depend on this fixed \(p\), not on \(v\). Pair \eqref{sel:weakidentity} against the tests. Since \(Y\) is Haar-divergence-free, its derivative term is \(-\sum_\ell\int\delta_\ell Y\varphi_\ell\dd\nu_\ell\). Cauchy--Schwarz gives \eqref{sel:weakestimate}.
+\end{proof}
+
+This is a weighted \(H^{-1}\)-type bound with test norm
+\(\|Y\varphi\|_2^2+\beta\|\varphi\|_2^2\). It does not assert an \(L^2\) bound on \(B_\ell\), a higher selector-word estimate, or a saved physical-current norm. Uniformity in \(v\) here does not remove the separate \(c\) and \(v(4-v)\) factors in \eqref{sel:gapbound} and \eqref{sel:shapeLone}.
+
+There is also an original spatial aggregate. The incidence matrix \(\mathbf1_{\{s\in D(b)\}}\) has bounded row and column sums \(d_1,d_2\), so
+\[
+ \sum_sA_s^2\le d_1d_2\sum_b|f_b|^2.
+\]
+For a bounded number of actual exterior response directions per star, Cauchy--Schwarz in \(s\) therefore yields
+\begin{equation}
+ \left|\sum_{s,\ell}\langle\sigma_{s,\ell},\varphi_{s,\ell}\rangle\right|
+ \le C_\tau e^{-\tau\beta v/2}\sqrt{M_f}
+ \left[\sum_s\left(
+       \|Y_s\varphi_s\|_{L^2(\nu_s)}^2+
+       \beta\|\varphi_s\|_{L^2(\nu_s)}^2\right)\right]^{1/2}.
+ \label{sel:directsum}
+\end{equation}
+This is a direct-sum estimate for the stated literal interfaces, with no independence assumption. Their outside laws are not identified with one common mixed-history law. An actual simultaneous readout still needs its full test pullbacks, derivative bounds and inherited overlaps.
+
+\subsection{The bath-information term under a coarser history}
+
+Let \(\mathcal H\subset\sigma(\eta)\) be a partially observed history, and put \(m_F(\eta)=\E(F\mid\eta)\), \(\delta=\E(F\mid\eta,L)-m_F(\eta)\). The exact increment is
+\begin{equation}
+ \E(F\mid\mathcal H,L)-\E(F\mid\mathcal H)
+ =
+ \left[\E(m_F\mid\mathcal H,L)-\E(m_F\mid\mathcal H)\right]
+       +\E(\delta\mid\mathcal H,L).
+ \label{sel:coarsehistory}
+\end{equation}
+Only the last term inherits the contrast's \(L^2\) and exponential bounds by conditional Jensen. The first term is information about the actual bath mean, including remote rows that were bath-measurable at the complete complement. The two terms need not be orthogonal after this coarser projection.
+
+A separately identified contrast retains its budget through later complete positive observations with the same original joint law; predictable ownership is still required for a lineage. At later product layers the actual inherited carriers, normalizer hyperedges, coloring number, selector witness sets and joint rare rates must be verified. They cannot be reset to their first-layer values. The present results leave the continuous retained ordinary susceptibility, simultaneous-domain admission, full current/anchor response and physical-scale reserve induction as distinct unproved obligations.

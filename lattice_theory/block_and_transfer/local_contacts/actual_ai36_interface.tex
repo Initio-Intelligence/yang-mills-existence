@@ -1,0 +1,119 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Cov}{\operatorname{Cov}}
+\title{Identification with the manuscript's AI36 conditional operation}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{The actual operation and its observation.}
+The original conditional operation AI36--41, PDF pp.~644--646, permits any fixed finite set
+$\Lambda$ of integrated bonds. Take literally $\Lambda=\{b_-,b_+\}$ as in the orthogonal contact calculation, the local source transition calculation and the uniform contact moments calculation,
+and take $q(U)=\omega=(U_b)_{b\notin\Lambda}$, the complete outside-link observation.
+The boundary $B(\Lambda)$ is exactly the union of the outside links in plaquettes touching
+either free link. Since no plaquette contains both free links, the AI36 action separates
+into its original two one-link actions, and its actual conditional normalizer is the product
+of the two one-link normalizers. Thus $\mathcal K$ in the local source transition calculation is exactly this AI36 operation,
+not a replacement reference or an auxiliary Gaussian. The full marginal on $\omega$
+retains the outside action and this genuine conditional normalizer.
+
+For a local physical H term, every link other than the two integrated links is a fixed outside
+parameter. Terms outside its determining neighborhood are also outside parameters.
+The Wilson-word observable extension after AI41 explicitly allows boundary-link dependence.
+Pointed completion is performed on the whole original identity as prescribed on p.~643:
+write $G(f)=|\mathfrak G|^{-1}\sum_{\gamma\in\mathfrak G}G_\gamma(f^\gamma)$.
+Apply $Q_\Lambda$ to each actual term, retaining its transported force row and test
+$f^\gamma$ at its own shifted bond. Define $R=|\mathfrak G|^{-1}\sum_\gamma Q_\Lambda G_\gamma$
+and $S=G-R$. Then $v_{12}=\mathcal K(R_1R_2)$ is the literal double average over
+$(\gamma,\gamma')$, including all original offsets. No test is moved to a common center.
+The preceding scalar formulas for a literal term are recovered when those entries coincide.
+Every cardinality is fixed at this stage. A packed set of many pairs is a composition of
+these verified finite-block operations, not one fixed-cardinality AI36 theorem with a
+silently growing boundary dimension.
+
+\paragraph{Selectors and carrying functions.}
+AI36 itself integrates the full compact group product; there is no sharp integration cutoff.
+A selected factor $\chi(\omega)$ or carrying function $\Phi(\omega)$ is outside measurable,
+so the identity of the local source transition calculation remains valid after multiplying by $\chi\Phi$ before integration.
+This remains true if $\chi$ is sharp, because no derivative in an integrated direction
+acts on it. It does not establish the identity for a selector depending on $U_-$ or $U_+$,
+or a nonlinear observation that retains those free variables. The manuscript's general
+mixed histories have not been identified with this special operation.
+An old field-free coefficient and its original mesh factors pass through literally.
+A live-reference coordinate varied by a physical current must remain in the observation;
+there is no such additional reference in AI36, and adding one with free-link dependence
+requires the whole-kernel rules DT12.6 and DT12.19, not the factorization above.
+
+\paragraph{The whole scalar/current pair, with its actual score.}
+There is a genuine current representative for $R_i$, rather than only zero mean.
+For the fixed pair and each bath, use the original operator of AI41a,
+\[
+ L^\omega_\Lambda=\sum_{b\in\Lambda,A}X_b^{A\dagger}X_b^A,
+ \qquad X_b^{A\dagger}=\beta X_b^AS_0-X_b^A.
+\]
+Only plaquettes touching $\Lambda$ are differentiated, so this is exactly the full
+Wilson weighted adjoint on integrated directions. Since $\mathcal K R_i=0$, the
+unique conditional-mean-zero solution $\psi_i$ of $L^\omega_\Lambda\psi_i=R_i$
+exists and is smooth on the compact product, with smooth real outside dependence.
+This follows from the same finite-dimensional elliptic argument and gap comparison as
+AI41b--d; no stronger gap is claimed here. Set
+\[
+ \mathcal W_i=\sum_{b\in\Lambda,A}(X_b^A\psi_i)X_b^A,
+ \qquad V_i^{\rm phys}=(a^4\kappa_a)^{-1}\nabla_\Lambda\psi_i
+                      =\frac\beta a\nabla_\Lambda\psi_i.
+\]
+Then $R_i=\rho^{-1}D_{\mathcal W_i}\rho=E_a[V_i^{\rm phys}]$ exactly.
+All outside dependence of $\psi_i$, including conditional denominator dependence, remains.
+Because $q$ observes only outside links, $Dq\mathcal W_i=0$ pointwise. Hence the
+pushed current and the current covariance companion $J_{12}$ of DT12.14 vanish for this
+specific observation. This is proved projectability, not an inference from normalization.
+
+In the alternative exact decomposition $G_i=R_i+S_i$, DT12.5 is
+\[
+ b_{12}=A_{12}+\tfrac12(\mathcal W_1R_2+\mathcal W_2R_1)
+                 +\mathcal W_1S_2+\mathcal W_2S_1.
+\]
+Conditional integration by parts on the full compact fiber gives
+$\mathcal K(\mathcal W_iF)=\mathcal K(R_iF)$, retaining every derivative of the
+current coefficient. The conditional orthogonality of the local source transition calculation therefore proves
+\[
+ \mathcal K b_{12}=\mathcal K A_{12}+v_{12},\qquad
+ b^c_{12}=\mathcal K A_{12}+v_{12}+\Cov(S_1,S_2\mid\omega).
+\]
+For original XP3, $A_{12}=0$: the local contact is retained.
+For the explicitly changed local source, $A_{12}=-v_{12}$: this particular contact cancels
+and the actual conditional ordinary covariance remains. This is precisely the DT12.13
+identity with $Dq\mathcal W_i=0$. It is an alternative decomposition of the same physical
+mark, not a claim that the original PD12 choice of current was unique or unchanged.
+
+\paragraph{What the current construction costs.}
+The known bound is only $\operatorname{gap}(L^\omega_\Lambda)\ge c e^{-C\beta}$.
+Its energy estimate gives
+\[
+ \mathcal K|\nabla\psi_i|^2\le Ce^{C\beta}\mathcal K|R_i|^2.
+\]
+The new force-moment theorem bounds the averaged rightmost residue moment by $Ca^{-4}$
+per block, but does not remove the exponential inverse-gap factor. Thus the whole pair
+exists with the correct normalization, score, and boundary behavior, while a suitable
+uniform graded current norm is still open. One must not infer it from the new scalar
+contact bound. The physical-current coefficients also contain the literal factor $\beta/a$.
+
+\paragraph{Native local analytic domain, without inherited-domain claims.}
+AI37--41 applies to the genuine finite conditional denominators on the original radius
+$\|Z\|_\infty<c/(a\beta)$, where outside links vary as $e^{aZ_b}\omega_b$.
+The conditional moments defining $C_\pm$ involve finite Wilson words; their holomorphic
+continuations and denominators are therefore defined on a smaller fixed multiple of the
+same radius. This proves a local complex continuation of $v_{12}$ with crude bound
+$C\sigma^2|f h|$ and physical boundary derivative bound
+$C_m\sigma^2(a\beta)^m|f h|$. It does not continue the Poisson current with such bounds,
+identify any independently prepared mixed readout, enlarge a saved complex domain, or turn
+the averaged $Ca^{-4}$ moment estimate into a uniform complex supremum estimate.
+
+\paragraph{Reusable conclusion and remaining ordinary row.}
+The source-preserving AI36 output contains the exact local component $v_{12}$ plus
+$\Cov(S_1,S_2\mid\omega)$. The former has cutoff-correct $L^p$ moment bounds under the
+actual output marginal by the uniform contact moments calculation. The latter is the explicit next ordinary row to estimate.
+For a general observation the residue conditional covariance also satisfies the bound of the uniform contact moments calculation,
+but cross terms with $S_i$ and the whole current/kernel responses must be kept.
+No all-history MT36, S94, or continuum operator normalization follows from this verified
+finite-block interface. The native-metric and seam estimates supply no
+additional conditional covariance or current-gap estimate for this interface.
+\end{document}

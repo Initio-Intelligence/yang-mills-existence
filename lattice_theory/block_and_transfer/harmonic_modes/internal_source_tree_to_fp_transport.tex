@@ -1,0 +1,124 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Internal source transport: original tree words and their contacts}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Scope of the inputs.}
+Equations (8)--(9) of the same coefficient schur cumulant decomposition calculation are restricted to its common-tree
+fixed-log tensor. Scalar coefficient equality with FP coordinates
+does not identify an arbitrary translated internal source.
+In the conditional residual score contacts calculation, the two Gaussian Hermite contacts have the
+correct subtraction and keep all Haar/quartic/cubic terms. Their
+score variance is the residual classical energy after the actual
+linear tree gauge map, not a substituted Euclidean norm.
+Here is the missing source transport as a finite coefficient identity.
+It is not a uniform nonlinear estimate or a bound on path lengths.
+
+\paragraph{1. Exact source observable, with its cutoff.}
+Let $q$ be the original canonical tree coordinates, with quadratic
+precision $A$, original density $\rho_\alpha(q)$, and the cutoff
+$\chi_\alpha(q)=\chi_{\rm phys}(\alpha q)$ from a fixed PHYSICAL
+chart, equal to one near its flat minimum. Write $\chi=\chi_\alpha$
+below. A fixed cutoff in canonical $q$ would have nonvanishing Gaussian
+boundary mass and would NOT justify the full Gaussian coefficients.
+For an INTERNAL direction
+$w$, set $k=Aw$, $e=w^*Aw$. The change $q'=q+tw$ gives exactly
+\[
+ \begin{split}
+ &\int\chi(q+tw)\rho_\alpha(q+tw)
+             e^{tq^*k+t^2e/2}\,dq\\
+ &\hspace{12mm}=\int\chi(q')\rho_\alpha(q')
+             e^{tq'^*k-t^2e/2}\,dq'.
+ \end{split} \tag{1}
+\]
+On the left, the Gaussian quadratic stays centered at $q$, while
+the interaction, Haar factor AND cutoff are translated. Thus the
+translated-vertex partition is the original observable on the right.
+At each fixed finite block the cutoff-boundary terms are beyond all
+Laplace coefficients. We do not discard them uniformly in block size.
+
+In the local FP representation the observable is
+\[
+ \exp\{t k^*q_\alpha(z)-t^2e/2\}, \tag{2}
+\]
+where $q_\alpha(z)$ is the ACTUAL original tree quotient of
+$U_b=\exp(\alpha z_b)$. It is not just its linearization.
+The same cutoff is transported, and the FP density retains all gauge
+noise, determinant and Haar factors of the local construction of the local gauge completion first nonlinear coefficient calculation.
+
+\paragraph{2. A constructive original map.}
+For the chosen original tree/forest, let $g_v(U)$ be its ordered
+tree-path product from the retained anchor to $v$, with every anchor
+frame fixed as in the original record. For each remaining link
+$b=(s,t)$,
+\[
+ q_{\alpha,b}(z)=\alpha^{-1}\log
+                  [g_s(U)U_b g_t(U)^{-1}]. \tag{3}
+\]
+Boundary roots and chord orientations are retained. Each bracket in
+(3) is a literal ordered word $\prod_r\exp(\alpha X_r)$, with
+$X_r=\pm z_{e_r}$. Define $q_\alpha=Lz+\alpha q_1(z)+\alpha^2q_2(z)+\cdots$.
+The coefficients are fixed by the following explicit BCH recursion.
+Starting with $s_1=s_2=s_3=0$, append a factor $X$ by
+\[
+ \begin{split}
+ s_1^{\rm new}&=s_1+X,\\
+ s_2^{\rm new}&=s_2+\tfrac12[s_1,X],\\
+ s_3^{\rm new}&=s_3+\tfrac12[s_2,X]
+   +\tfrac1{12}([s_1,[s_1,X]]+[X,[X,s_1]]).
+ \end{split} \tag{4}
+\]
+Every right side uses OLD values. The resulting $s_1,s_2,s_3$ are
+$Lz,q_1,q_2$. This gives actual frame-dependent source partners,
+not an assumed abstract field redefinition. Their size may grow with
+the original tree paths; no bound on that growth is asserted.
+
+\paragraph{3. The transported covariance coefficient.}
+Write the COMPLETE local FP density relative to its flat Gaussian as
+$\exp[-\alpha Q_3-\alpha^2Q_4+O(\alpha^3)]$, where
+$Q_3=T_3-\ell_1$ and $Q_4=T_4-J_2-\ell_2$.
+Let $E$ denote its actual flat gauge-fixed Gaussian, and put
+\[
+ l_0=k^*Lz,\quad l_1=k^*q_1(z),\quad l_2=k^*q_2(z),\quad
+ P=Q_4-\tfrac12Q_3^2,\quad m_1=El_1-E(l_0Q_3).
+\]
+At flat background $EQ_3=0$, and parity removes the order-$\alpha$
+term of the covariance. Since $LGL^*=A^{-1}$, $El_0^2=e$.
+Direct normalized expansion yields
+\[
+ \begin{split}
+ [\alpha^2]\operatorname{Var}_{\rm FP}(k^*q_\alpha)
+ ={}&E(l_1^2+2l_0l_2)-2E(l_0l_1Q_3)\\
+ &-\operatorname{Cov}(l_0^2,P)-m_1^2 .
+ \end{split} \tag{5}
+\]
+The normalization covariance and the mean square are essential.
+By (1), the tree translated-vertex tensor is therefore
+\[
+ \boxed{K_{\rm tree}[w,w]=\operatorname{Cov}(l_0^2,P)
+       +2E(l_0l_1Q_3)-E(l_1^2+2l_0l_2)+m_1^2.} \tag{6}
+\]
+This is the precise compensation for replacing the actual observable
+$q_\alpha$ by its linearization. It includes ghost and Haar terms
+inside $P,Q_3$ and the explicit original tree-coordinate contacts.
+
+Set $v=GL^*Aw$. Gaussian integration by parts gives
+$\operatorname{Cov}(l_0^2,P)=E D_v^2P$.
+If the FP insertion is defined using variance rather than the square
+of $Q_3$, then, at $EQ_3=0$,
+\[
+ K_{\rm FP}(v,v)=E D_v^2P+(E D_vQ_3)^2. \tag{7}
+\]
+Thus even the first term of (6) must be matched with its declared
+mean convention. At flat SU(2), color symmetry can be used to verify
+the zero tadpole before dropping this square; it is not silently
+assumed in (6)--(7).
+
+\paragraph{What this does not establish.}
+This is a fixed-volume local source identity using the actual tree
+words, original anchors, cutoff, and full FP density. It supplies no
+uniform bounds for $q_1,q_2$ or for their signed combination in (6).
+It does not identify a heat-cut marked tensor with the uncut density
+expansion: cutoff regulator/source derivatives still have to be
+transported. The conditional coarse compensation of the same coefficient schur cumulant decomposition calculation must also stay
+attached. Full nonlinear background curvature and S94 remain open.
+\end{document}

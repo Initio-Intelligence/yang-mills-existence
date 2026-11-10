@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{Actual shared-face admission and one-step stability with a common harmonic background}\author{}\date{}
+\begin{document}\maketitle
+Take two spatially adjacent complete $R$-scale four-dimensional boxes, with the same temporal extent, and their rectangular union $\mathcal U$. Constants allow its longest side to be $2R$. Retain all incident plaquettes and the actual outer boundary record. Prepare that OUTER record by the boundary-only map of the boundary only preparation and nonflat block calculation, so its canonical norm is at most $CR^5$. No condition on the internal common face is imposed in advance.
+
+Use ONE relative temporal axial forest for the union. Its restrictions to the two strict block interiors are their relative forests; face tree coordinates are fixed only once in this common frame. The independent shared-face chord coordinates $F$ are a subset of the union's free coordinates. Every original plaquette belongs to one strict block or to the common face. Its action is counted once, equivalently half assigned to each block message when taking Schur complements. The exact shared-face posterior therefore has the form
+\[
+ d\nu_\eta(F)=Z_{\mathcal U}(\eta)^{-1}
+ e^{-S_{\Sigma}(F;\eta)}Z_1(F;\eta_1)Z_2(F;\eta_2)\,dF.                 \tag{1}
+\]
+Here the $Z_i$ exclude the separately displayed common-face action. They are ORIGINAL compact conditional integrals with all raw factors. The face measure is the actual common-forest Haar measure; no separately prepared face laws have been multiplied together. The alternative half-face convention gives the same(1). Exact Fubini/coarse-action bookkeeping is the complementary operator composition calculation.
+
+\section*{Admission under the actual pushed face law}
+In canonical coordinates of the union, let $m=-K_{JJ}^{-1}K_{JR}b$ be its COMPLETE quadratic harmonic center. The established geometry gives
+\[
+ n_J\le CR^4,\quad \kappa\ge cR^{-6},\quad \|m\|\le CR^8,
+ \quad |\nabla V(m)|\le CR^{16}/\sqrt B.               \tag{2}
+\]
+Here $V$ is the actual Wilson plus log-Haar negative density on the convex chart, not a Gaussian replacement. The chart complement has the original bound
+\[
+ q_{\mathcal U}\le
+ \exp[-cBR^{-18}+CR^{10}+CR^4\log(2+BR)].              \tag{3}
+\]
+
+There is a useful ALL-integer moment recursion, not just a fixed-moment assertion. For $r=|x-m|$, let $M_p=E(r^{2p}\mid\text{chart})$ and $g=|\nabla V(m)|$. Integrating the vector $(x-m)r^{2p-2}$ against the actual density on its convex ball gives nonnegative outward flux because $m$ is inside. Strong convexity and Young's inequality yield
+\[
+ {\kappa\over2}M_p
+ \le\left(n_J+2p-2+{g^2\over2\kappa}\right)M_{p-1}.
+\]
+Consequently
+\[
+ M_p\le(2/\kappa)^p\prod_{j=1}^p
+            \left(n_J+2j-2+g^2/(2\kappa)\right).       \tag{4}
+\]
+For $B\gg R^{34}$, $g^2/\kappa\le CR^4$. Choose $p$ of order $R^4$ and then a fixed sufficiently large $A$. Markov's inequality in(4) gives
+\[
+ \mathbb P_\eta\{\|x-m\|>A R^5\mid\text{chart}\}
+       \le e^{-cR^4}.
+\]
+Projection to the actual shared-face variables and restoring the compact complement prove
+\[
+ \nu_\eta\{\|F-m_F\|>A R^5\}
+       \le e^{-cR^4}+q_{\mathcal U}.                 \tag{5}
+\]
+All principal-chart qualifications are included in the good event. This estimate is uniform in the specified prepared OUTER record, and its measure is exactly(1). It is not an assertion that $F$ has independent Haar coordinates under the posterior.
+
+The union interior is used to prove(5), but is not restricted when conditioning subsequently on an admitted $F$. Each next conditional block integral still integrates its entire original compact interior. Thus no hidden joint-chart selector is inserted into $Z_1,Z_2$.
+
+\section*{The cancellation lost by restarting from an absolute face norm}
+On the event in(5), write $F=m_F+\delta F$, $\|\delta F\|\le AR^5$. For each subblock let $m_i(F)$ be its COMPLETE quadratic interior minimizer with that face and the actual outer boundary. Exact Schur/harmonic naturality gives
+\[
+ m_i(F)=m|_{J_i}+L_i\delta F,\qquad
+ L_i=-K_{J_iJ_i}^{-1}K_{J_iF},\qquad \|L_i\|\le CR^3. \tag{6}
+\]
+The first equality follows by restricting the union harmonic equations to $J_i$. It uses the SAME incidence, face assignment and frame; no new block reference has been chosen.
+
+Therefore
+\[
+ \|b_i(F)\|\le CR^8,\qquad \|m_i(F)\|\le CR^8,         \tag{7}
+\]
+where $b_i$ is the full local boundary record. A crude estimate that ignores the first equality in(6) would instead multiply the absolute face norm $R^8$ by $R^3$ and lose $R^{11}$.
+
+Moreover, with half of the nonnegative shared-face quadratic action assigned to each block, its complete harmonic energy obeys
+\[
+ E_i(b_i(F))\le2E_{\mathcal U}(b)+C\|\delta F\|^2
+                  \le CR^{10}.                     \tag{8}
+\]
+This follows by superposing the restricted union harmonic field and the local harmonic response to $\delta F$. All local energies are nonnegative and their union sum is the full energy. Equation(8) retains the connected face field rather than absorbing its action into a scalar.
+
+\section*{One further original conditional comparison in the same response class}
+The triple in(7)--(8), not just the absolute boundary norm, is sufficient for the nonlinear estimates. The local chart has radius $cR^{-6}$, the actual center is at most $CR^8$, and the local residual gradient at that center is at most $CR^{16}/\sqrt B$. Thus the radial-moment argument still gives $E|x|^{2p}\le C_pR^{16p}$ under the actual conditional block law.
+
+Its compact tail must retain the larger boundary norm: the geometric outside-action bound costs $CR^{15}$, while the reference normalizer can be lower-bounded near its harmonic center using the energy bound(8), at cost $CR^{10}$. Smoothness adds at most $CR^{24}/\sqrt B$, absorbed for $B\gg R^{28}$. A valid normalized tail is consequently
+\[
+ q_i\le\exp[-cBR^{-18}+CR^{15}+CR^4\log(2+BR)].         \tag{9}
+\]
+The same explicit corrected-score calculation now proves, for a unit local canonical boundary direction and its literal harmonic interior Haar flow,
+\[
+ \operatorname{Var}G_i\le CR^{38}/B+\mathcal E_i,\qquad
+ |\Gamma_i''-v_i^*K_{{\rm eff},i}v_i|
+ \le C(R^{14}/\sqrt B+R^{38}/B)+\mathcal E_i,           \tag{10}
+\]
+with a harmless polynomial multiple $\mathcal E_i=CBR^{16}q_i$.
+The raw first-difference estimate retains $v_i^*K_{{\rm eff},i}b_i$ and has error $CR^{19}/\sqrt B+\mathcal E_i$.
+
+For $R\le B^{1/48}$, (5),(9),(10) are simultaneously useful: the actual output face is admitted with probability $1-e^{-cR^4}-q_{\mathcal U}$ and the conditional response errors have the SAME powers as the initial nonflat block estimate. This is a genuine one-step admission/response result using the exact pushed law and common harmonic background. It does not sum two approximate block partition functions or reset the output action to Wilson form.
+
+\section*{Scope of the composition step}
+There is one shared face in this construction. In a four-dimensional tiling a retained link belongs to at most eight block boundaries, so literal squared-direction norms sum with overlap at most eight in a common chart. Record-dependent separate gauge preparations would require their own chain rule and acceleration terms; the common forest above avoids that problem for this step.
+
+This result is NOT a scale-uniform induction. On repeated enlargement the chart, reference harmonic field, exterior law and event probabilities must be matched again, and $R\le B^{1/48}$ still has vanishing physical radius. The probability and response errors per block cannot be tiled over a physical lattice. The useful cancellation tested here is the exact common-background identity(6) and the energy norm(8): discarding that common background creates a spurious extra extension factor. Extending such connected control to the physical-scale boundary/holonomy comparison remains the main S94 obligation.
+\end{document}

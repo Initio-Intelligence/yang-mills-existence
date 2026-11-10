@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{Original Wilson vacuum action tails and the exact trial-row entropy bias}\author{}\date{}
+\begin{document}\maketitle
+All statements are at finite cutoff, on the ORIGINAL physical spatial Haar space. Write $A=M Q P M$, $M=e^{-V/2}$ with the full spatial Wilson action $V\ge0$, including its coupling. Let $\lambda=\|A\|$ and let $\psi>0$ be its normalized ground eigenfunction. Set $c=\|QP\|=c_B^L$, retaining the raw temporal scalar, and $z=\int e^{-V}dX$. All gauge and continuous holonomy coordinates remain present.
+
+\section*{A genuine vacuum-weighted exponential bound}
+For $0\le\theta\le1$, define the actual spatially deformed transfer
+\[
+ A_\theta=e^{\theta V/2}A e^{\theta V/2}
+ =e^{-(1-\theta)V/2}QP e^{-(1-\theta)V/2}.
+\]
+Since the finite-cutoff action is bounded, every multiplication below is bounded. Gauge invariance ensures it preserves the original physical space. The Rayleigh principle and the equal nonzero spectra of $CC^*$ and $C^*C$ give
+\[
+ \lambda\int\psi^2 e^{\theta V}dX
+ =\langle\psi,A^{1/2}e^{\theta V}A^{1/2}\psi\rangle
+ \le\|A^{1/2}e^{\theta V}A^{1/2}\|
+ =\|A_\theta\|.                                      \tag{1}
+\]
+In particular $A_1=QP$, so
+\[
+ E_{\psi^2}e^V\le c/\lambda\le1/z,\qquad
+ \mathbb P_{\psi^2}\{V\ge u\}\le\min(1,e^{-u}/z).     \tag{2}
+\]
+The last inequality uses the actual trial lower bound $\lambda\ge cz$. Neither Haar measure nor a free toron measure replaces the ground law. The scalar $c$ cancels only between the two bounds. More precisely, for any $\theta\in(0,1]$,
+\[
+ \mathbb P_{\psi^2}\{V\ge u\}
+ \le e^{-\theta u}\|A_\theta\|/\lambda.               \tag{3}
+\]
+The partition-pressure difference in (3) is retained; it has not been estimated by zero. On a compact group of dimension $d_G$, the flat-ball estimate gives $-\log z\le (d_G/2)L\log\beta+CL$ for $\beta\ge1$, with $L=3n^3$. Thus (2) genuinely suppresses action much larger than this cutoff-extensive threshold, but does not itself give a physical-volume occupation bound.
+
+\section*{Why ground typicality does not center the needed row observable}
+For any positive continuous invariant trial $f$ let
+\[
+ R=Af/f,\qquad P_f(X,Y)=A(X,Y)f(Y)/(R(X)f(X)),
+ \qquad p_0(X,Y)=A(X,Y)\psi(Y)/(\lambda\psi(X)).
+\]
+Their stationary probability laws are $\nu_f\propto f^2R$ and $\pi=\psi^2$. Put $h=\psi/f$. The exact ratio is
+\[
+ \frac{p_0(X,Y)}{P_f(X,Y)}=\frac{R(X)}\lambda\frac{h(Y)}{h(X)}.
+\]
+All ratios and logarithms are bounded at fixed cutoff. Stationarity cancels the difference of $\log h$ in the integrated transition entropy, proving
+\[
+ E_\pi\log(R/\lambda)
+ =\int\pi(dX)\,D_{\rm KL}(p_0(X,\cdot)\Vert P_f(X,\cdot))\ge0,\tag{4}
+\]
+\[
+ E_{\nu_f}\log(\lambda/R)
+ =\int\nu_f(dX)\,D_{\rm KL}(P_f(X,\cdot)\Vert p_0(X,\cdot))\ge0.\tag{5}
+\]
+These are opposite biases under different ORIGINAL induced laws, not interchangeable concentration centers. Even a useful action tail (2) cannot be substituted for a bound on the accumulated positive loop fluctuation in the original trial ground row ratio calculation. For $f=M$, $R_M(X)\le c$ pointwise, so the unconditional upper bound is only $\log(R_M/\lambda)\le\log(c/\lambda)\le-\log z$. This remains cutoff-extensive. Suppression of the rough LOW-row fields in \texttt{original\_trial\_ground\_row\_ratio.tex} does not estimate the HIGH-row contribution. No assertion is made that it diverges in the true slab measure.
+
+\section*{Analysis of the open-slab replica calculation}
+The filtered wilson slab replica calculation holds on its stated finite-cutoff scope. For $f_s=A^sM$ and $Z_k=\langle M,A^kM\rangle$, the identity $D_s=Z_{2s}Z_{2s+2}/Z_{2s+1}^2-1$ is exactly the relative row variance under $f_s^2/Z_{2s}$. The stationary law is instead $f_sf_{s+1}/Z_{2s+1}$, under which $\operatorname{Var}(\log R_s)\le D_s$ follows from two independent copies and $\cosh u\ge1+u^2/2$. Log-convexity gives
+\[
+ \sum_{s<S}\log(1+D_s)\le\log(\lambda/(Z_1/Z_0))\le-\log z.
+\]
+The temporal scalar cancels exactly in the final inequality. The mean-bias sign in that note is consistent with (5), not with replacing its law by $\pi$. The resulting budget is cutoff-extensive and controls neither the loop return law nor states orthogonal to the boundary vector $M$.
+
+\section*{Scope and remaining indispensable estimate}
+Equations (1)--(5) are actual interacting Wilson bounds and identities without a gap assumption or limiting vacuum construction. They preserve the original global sector and raw normalization. They do not prove the cutoff-uniform ground-relative thermal trace required by S94. This trial route now requires a quantitative bound for the original vacuum-weighted return kernel, or for both the trial-loop exponential and its return trace; ground spatial-action typicality alone does not supply either. At present there is no proved estimate in the supplied material that closes this step.
+\end{document}

@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Original normalization and an explicit boundary transfer test}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Boundary bookkeeping input.}
+Use the sf boundary insertion and wilson normalization calculation: its raw partition ratio, moving-minimum
+second insertion, multiweight cross terms and distinction between
+$\Gamma_2'$ and $m_2-m_1^2$. The boundary operator fixed
+entirely by prescribed spatial links is a live scalar, not a fluctuating
+interior insertion; its source derivatives remain.
+Primary sources and their limits are as cited there. The deductions
+below make the normalization and one failure of uniform transfer explicit.
+
+\paragraph{1. Bulk subtraction in the original normalized Wilson convention.}
+The lattice action in Luescher--Weisz, hep-lat/9504006, equation5.1,
+uses a sum over both ordered orientations $\mu,\nu$. With our sum over
+geometric plaquettes and $s_p=1-\operatorname{ReTr}U_p/N$, this is
+\[
+ S= B\sum_p s_p,\qquad B=\frac{2N}{g_0^2}.                    \tag{1}
+\]
+Write the original fixed-boundary expansion as
+\[
+ \Gamma=B V_R+F_{1,R}+B^{-1}C_R+\cdots .                      \tag{2}
+\]
+In the conventional expansion
+$\Gamma=g_0^{-2}\Gamma_0+\Gamma_1+g_0^2\Gamma_2+\cdots$,
+\[
+ \Gamma_0=2N V_R,\qquad\Gamma_1=F_{1,R},\qquad
+                         \Gamma_2=C_R/(2N).                 \tag{3}
+\]
+If the SAME-scheme bare coupling is
+$g_0^2=g^2+z_1g^4+z_2g^6+\cdots$, elementary inversion gives
+\[
+ g_0^{-2}=g^{-2}-z_1+(z_1^2-z_2)g^2+\cdots .                 \tag{4}
+\]
+Thus the putative two-loop bulk-renormalized coefficient in our units is
+\[
+ \boxed{C_R^{\rm bulk,ren}
+           =C_R+(2N)^2(z_1^2-z_2)V_R.}                       \tag{5}
+\]
+For a flat harmonic boundary tangent $h$, $V_R''[h,h]=E(h)$, so its
+Hessian subtraction is $(2N)^2(z_1^2-z_2)E(h)$; for SU(2) the
+conversion factor is $16$. No value/sign for the logarithmic $z_i$ is
+imported from another coupling scheme here. Background ghost and
+quantum-field subrenormalizations and boundary insertions still belong
+to the completed coefficient. Equation(5) is the required algebraic
+normalization, NOT proof of its finite-relative-box boundedness.
+The canonical quantum response retains the overall factor $B^{-2}$.
+
+\paragraph{2. A literal harmonic test on a single cube face.}
+Take $R\ge4$ and prescribe one unit color tangent on the tangential
+edge
+\[
+ e=((0,1,1,1),\mu=1),
+\]
+with every other boundary edge zero. Give the free interior initially
+zero values. Exactly five original plaquettes meet $e$: two in plane $12$,
+two in plane $13$, and one inward plaquette in plane $01$. The outward $01$
+plaquette lies outside the cube and is absent. The four $12/13$ plaquettes
+lie entirely in the fixed $x_0=0$ face. Each carries unit squared curl.
+Consequently the zero-interior extension has energy5 and the FIXED
+face energy is4.
+
+Let $h$ be the genuine original Maxwell-harmonic extension of this
+boundary datum, on the original relative gauge quotient. Minimization
+cannot increase energy, and cannot change the four fixed curls. Hence
+\[
+ 4\le E(h)\le5,\qquad
+ \boxed{\frac{E_{\rm face}(h)}{E(h)}\ge\frac45.}               \tag{6}
+\]
+After normalizing total energy to one this is an admissible harmonic
+direction with nonvanishing boundary curvature uniformly in $R$.
+This is a purely finite original-incidence argument; no asymptotic
+harmonic extension or continuum boundary trace estimate is used.
+
+The spatial SF operator has half the boundary plaquette allocation,
+so the analogous ratio has its declared factor $1/2$, still uniformly
+positive. With the usual quadratic action $E/2$, its corresponding
+Hessian is likewise the literal face form with that allocation.
+Thus the electric/magnetic face improvement terms cannot all be
+replaced by an $O(1/R)$ operator error on the entire unit-energy
+boundary tangent class. The smooth fixed-profile SF expansion is not
+contradicted: this test varies on the lattice boundary scale.
+Boundedness is not disproved; only uniform SMALLNESS is.
+
+\paragraph{3. The exact remaining transfer requirement.}
+The original unmodified Wilson coefficient must retain both(5)'s bulk
+kinetic subtraction and the actual boundary-insertion ledger if it is
+compared to an improved SF coefficient. The latter includes
+$c_1\partial_c\Gamma_1+c_2\partial_c\Gamma_0+
+\frac12c_1^2\partial_c^2\Gamma_0$, and all source derivatives.
+For all-relative cubes, the change of boundary/ghost domains and
+corner terms is a separate unproved comparison; neither a periodic
+bulk theorem nor a two-face slab computation supplies it.
+The raw source-zero scalar cannot be reconstructed from a running
+coupling derivative. No uniform estimate of the complete packet,
+its scale sum, the original nonlinear remainder or S94 follows.
+\end{document}

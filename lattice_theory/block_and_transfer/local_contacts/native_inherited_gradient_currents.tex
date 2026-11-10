@@ -1,0 +1,116 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\title{Uniform inherited gradients and summed current energy in the identified native law}\author{}\date{}
+\begin{document}\maketitle
+Use the SAME original native law, domain and assumptions as the native stopped covariance current calculation and \cite[Section~3]{ND}. In addition to $D^2U\ge\kappa I$, its actual NB12 Hessian bounds give
+$\|D^2U\|\le\Lambda_*$, with $\Lambda_*$ equal to the native quadratic upper bound
+plus the stated nonlinear and Haar Hessian errors. All constants keep the actual fixed
+component count and original cutoff. Coordinate partitions below retain whole original
+free group-coordinate blocks, so the sharp domain remains a fixed product; cutting an
+individual norm ball by a moving coordinate section would need its boundary response.
+
+\begin{theorem}[Actual conditional-mean gradient]
+For a partition $B=(x,z)$ into original coordinate groups and a smooth real carrier $F$,
+let $m(x)=\E_K(F|x)$ under the genuine conditional density.
+For every $p\ge2$,
+\[
+ \|\nabla_xm\|_{L^p(\nu_x)}
+ \le\sqrt{1+(\Lambda_*/\kappa)^2}\,
+          \|\nabla_BF\|_{L^p(K)}.
+\]
+This bound is uniform in the choice of retained subset and hence does not multiply once
+per elimination step. It is an inherited-gradient estimate under the IDENTIFIED native
+measure, not a transfer of an averaged original-Wilson estimate to another law.
+\end{theorem}
+\begin{proof}
+The actual fixed-domain conditional denominator gives
+\[
+ \nabla_xm=\E(\nabla_xF|x)-\Cov(F,\nabla_xU|x).
+\]
+For any unit vector $a$ in the retained coordinates, conditional Poincare gives
+\[
+ \Var(a\cdot\nabla_xU|x)\le\kappa^{-1}
+     \E(|U_{zx}a|^2|x)\le\kappa^{-1}\Lambda_*^2,
+\]
+while $\Var(F|x)\le\kappa^{-1}\E(|\nabla_zF|^2|x)$.
+Conditional Cauchy--Schwarz and the supremum over $a$ therefore give, without a dimension
+factor,
+\[
+ |\nabla_xm|\le[\E(|\nabla_xF|^2|x)]^{1/2}
+       +(\Lambda_*/\kappa)[\E(|\nabla_zF|^2|x)]^{1/2}
+ \le\sqrt{1+(\Lambda_*/\kappa)^2}\,[\E(|\nabla_BF|^2|x)]^{1/2}.
+\]
+Conditional Jensen proves the $L^p$ assertion. The covariance term is the actual effective
+score/normalizer response and has not been discarded.
+\end{proof}
+
+\paragraph{Marginal conditional Poincare without replacing the density.}
+Let $Y$ be any retained group subset, and split it as $Y=x\cup z$. The conditional law
+of $z$ under the ACTUAL marginal $\nu_Y$ given $x$ is the $z$-marginal of the original
+native law conditioned only on $x$. That full conditional native law still has Hessian
+floor $\kappa$ and the original product domain. Apply its Poincare inequality to a test
+$H(z)$ independent of all other internal coordinates. It gives exactly
+\[
+ \Var_{\nu_Y(\cdot|x)}H\le\kappa^{-1}
+       \nu_Y(|\nabla_zH|^2|x).
+\]
+Thus EVERY marginal conditional fiber in this native coordinate hierarchy has the same
+Poincare constant. This proof does not assert that its effective score is the original
+bare score; its marginal density is the genuine integral and its differentiated denominator
+is retained. No appeal to an unproved general effective-Wilson spectral gap is made.
+
+\begin{theorem}[Summed energy of the actual increment currents]
+Let $Y_0\supset\cdots\supset Y_m$ be retained native coordinate subsets and
+$F_k=\E_K(F|Y_k)$. In the actual marginal conditional fiber
+$z_k=Y_{k-1}\setminus Y_k$ given $Y_k$, construct the zero-mean Neumann solution
+for $F_{k-1}-F_k$ using its ACTUAL weighted Laplacian. Let $W_k$ be its internal
+configuration-space gradient current, with zero normal flux on its sharp product boundary.
+Then
+\[
+ \sum_{k=1}^m\int|W_k|^2d\nu_{Y_{k-1}}
+ \le\kappa^{-1}\sum_{k=1}^mK|F_{k-1}-F_k|^2
+ \le\kappa^{-2}K|\nabla_BF|^2.
+\]
+Every current represents its exact scalar increment with the true marginal score and
+normalizer. The bound is independent of elimination depth.
+\end{theorem}
+\begin{proof}
+The preceding conditional Poincare bound gives the weak mean-zero Poisson solution and
+its energy estimate exactly as in the native stopped covariance current calculation. Integrate the conditional estimate for each
+stage and sum. Reverse-martingale orthogonality bounds the sum of increment variances
+by $\Var_KF$, which the original native Poincare inequality bounds by the final expression.
+The inherited-gradient theorem ensures the actual conditional means have the necessary
+Sobolev regularity. Corners are handled in the original weak Neumann formulation.
+\end{proof}
+
+\paragraph{Physical-source specialization and limits.}
+For the physical H or its ordinary partner on the complete native interior of \cite{ND}, substitute
+its original gradient bound
+$|\nabla F|\le C A_f^{\rm src}h(\epsilon_{\rm bg}+h|B|)$.
+The summed current energy is then bounded by
+\[
+ C\kappa^{-2}(A_f^{\rm src})^2h^2
+       (\epsilon_{\rm bg}^2+h^2M_2),
+\]
+with the SAME $\gamma,\beta_s,a^{-2},V_D,V_Y,n,L_0$ contained in
+$A_f^{\rm src}$ and $M_2$ in the native stopped covariance current calculation. Inherited gradient moments have the uniform
+multiplicative factor $\sqrt{1+(\Lambda_*/\kappa)^2}$, not its depth power.
+The same conclusions hold uniformly along the same-record interpolation of the native weight stopped response calculation
+when its actual lower/upper Hessian bounds are used.
+
+These estimates control summed $L^2$ current energy and first inherited gradients.
+They do not control spatial anchor moments, all current derivatives, a changed reference,
+a moving selector or nonlinear observation, or products with an unbounded live kernel
+response. The zero-flux current is a constructed alternative native representative, not
+an assertion that an original physical current has no boundary partner. Changing native
+components is not a conditional projection inside this one probability. The missing
+same-carrier/physical-lift identification for general touched histories remains explicit.
+No all-history MT36 or continuum existence conclusion is claimed.
+\begin{thebibliography}{9}
+\bibitem{ND} \emph{Nonlinear dispersion and unequal spatial weights}, \texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/nonlinear\_dispersion\_and\_unequal\_spatial\_weights.tex} in this collection.
+\end{thebibliography}
+\end{document}

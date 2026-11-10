@@ -1,0 +1,156 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{Protected tangent scaling and the exact mixed-entry response threshold}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Target and distinction from the elementary stencil estimate.}
+Keep the clean-born stored $d=2$ stable $H$ packet of the clean born first entry bounds calculation. No original fine
+primitive is restored. The inverse assigned-length factor in the elementary
+retained-coordinate stencil estimate is an upper-bound loss, not an intrinsic
+scaling law for a physical tangent. The relevant tangent is to the SAME
+completed determining problem that supplies its stored physical representative.
+This note differentiates the manuscript's exact DA scaling on such a problem,
+then states the quantitative mixed-entry assertion still missing.
+
+\begin{proposition}[Differentiated protected scaling]
+Let the actual common field $U(v)=\exp(a A(v))$ obey DA1 on the complete protected
+cube containing $x_0+rX$ and its collars. Suppose a current-coordinate direction
+$w$ has the actual physical response
+\[
+ \|D_vA[w]\|_{C^{1,\beta}}+
+ \|D_vJ_a(U)[w]\|_\infty\le C_{\rm resp}g_e\|w\|,
+ \quad \|A\|_{C^{1,\beta}}+\|J_a(U)\|_\infty\le\epsilon.       \tag{1}
+\]
+The constant retains the original determining graph and carrier geometry and
+is independent of $a/r$. Use the DA gauge $g(v,x)=\exp S(v,x)$,
+$S=\sum_i(x_i-x_{0,i})A_i(v,x_0)$, and old coordinates
+$y=(x-x_0)/r$, $\xi=a/r$. Then, on the same strict chart margin,
+\[
+ \|D_v\widetilde A[w]\|_{C^{1,\beta}_\xi}
+       \le C_D C_{\rm resp} r^2 g_e\|w\|,
+ \qquad
+ \|D_vJ_\xi(U^g)[w]\|_\infty
+       \le C_D C_{\rm resp} r^3 g_e\|w\|.              \tag{2}
+\]
+\end{proposition}
+\begin{proof}
+The logarithmic derivative $K=(D_vg[w])g^{-1}$ is an integral of conjugates
+of $D_vS[w]$, so $\|K\|\le C_D r C_{\rm resp}g_e\|w\|$ and its first
+current-coordinate spatial differences are bounded without an inverse fine mesh.
+Differentiating DA4 preserves its exact zero at $x_0$. Its linear part is the
+response difference $D_vA_i(x)-D_vA_i(x_0)$, bounded by
+$C_D r C_{\rm resp}g_e\|w\|$; the analytic remainder and its first/H\"older
+spatial differences obey the same differentiated DA3 bounds on the common
+chart. Rescaling $\widetilde A=r A^g$ gives the first estimate in (2).
+
+For the second, use the EXACT Wilson-current identity DA6, not a generic
+second-difference estimate:
+\[
+ D_vJ_\xi(U^g)[w]
+ =r^3\{\operatorname{Ad}_g D_vJ_a(U)[w]
+                 +[K,\operatorname{Ad}_gJ_a(U)]\}.      \tag{3}
+\]
+The first term uses the physical-current part of (1); the second uses the
+bounds on $K,J_a$ and the controlled adjoint norm. Both have the stated bound.
+No estimate of a second fine difference by $a^{-1}$ has been used.
+\end{proof}
+
+\paragraph{Stored-packet Ward cancellation.}
+For the complete gauge-invariant physical representative of $R_j$, differentiating
+$R_j(U^g,J_{\rm phys}(U^g))=R_j(U,J_{\rm phys}(U))$ shows that the simultaneous
+pure gauge tangent of all links, current legs and transports has zero derivative.
+This is the actual gauge Ward identity for the stored function, not a claim that
+an independent-current partial derivative vanishes. Saved covariant completions,
+anchor transports and projection partners must transform together. It justifies
+using the analysis gauge in (2) without a new gauge derivative cost in that
+complete scalar. It neither deletes a whole-kernel selector boundary response nor
+identifies two different determining problems.
+
+\paragraph{Required exponent for the actual mixed response.}
+For use in the CANONICAL scalar envelope, a tangent estimate alone is not
+sufficient. One must also have the actual zero field/current at flat determining
+data, and a common admitted scaling path for ALL determining, exterior and
+pinned inputs (MT22, RG6/10). Otherwise the nonzero physical baseline remains
+explicit and may cost the physical norm in the clean born first entry bounds calculation. Only with that additional
+zero/path condition does integration of the tangent bound give the canonical
+amplitude used in RG31.
+
+For the literal first-entry stored readout on that canonical family, a sufficient response is (1) with
+$C_{\rm resp}$ uniform in depth and fine mesh, up to the already paid carrier
+polynomials and admissible relative coupling factors. The field/current radius
+conditions remain $C_Dr^2\epsilon< c_{\rm ad}\alpha_j$ and
+$C_Dr^3\epsilon<c_{\rm ad}\gamma_j$; there must be a strict common margin on
+all preparation/source walls. This is an exponent-zero response requirement,
+not an arbitrary bounded coordinate Jacobian.
+
+More generally, if the actual canonical control incurs $r^{-\eta}$, substitution
+into the established RG31 envelope changes its three strict-age exponents to
+\[
+ s-2\eta,\qquad \beta-3\eta,\qquad 2-4\eta.             \tag{4}
+\]
+Thus this route still yields SOME strict decay only for
+\[
+ \eta<\min\{s/2,\beta/3,1/2\}.                         \tag{5}
+\]
+For a specified target $s_*>0$, it suffices to prove
+$\eta\le\min\{(s-s_*)/2,(\beta-s_*)/3,(2-s_*)/4\}$.
+At exponent zero the three original weights are preserved. The generic
+$h^{-1}=r^{-1}$ fallback lies outside (5). These are consequences of the
+available upper bounds, not a lower-bound obstruction to a better argument.
+The extra weak-coupling factors in the cubic/quartic terms remain as in the clean born first entry bounds calculation;
+(5) is the uniform age criterion without spending them as a new age reserve.
+
+\paragraph{Comparison with the manuscript.}
+RG13--14 and LM38--41 provide the field/current response in (1) on an ADMITTED
+common regular determining problem. The strong Maxwell response, or the actual
+KKT multiplier response, is essential: a first-order potential bound alone does
+not provide the physical current derivative. Differentiating
+$J(P)=Q(P)^*\lambda$ gives
+$DJ=(DQ^*)\lambda+Q^*D\lambda$ only for that actual critical constrained field,
+with every prefix/boundary row retained. An auxiliary reference or a separately
+prepared joining field is not identified with it by this equation.
+
+DA1 requires a complete protected cube and contractible carrier; it is not a
+statement across a wild hole. HI3 collapses only the same-action nested hierarchy
+with a common boundary class. HI14 explicitly requires a common joint domain;
+HI15 presupposes a protected regular output. LM42 retains the already integrated
+representative, but LM45--47 does not prove that its mixed prepared range belongs
+to the smaller saved marked core. RG13 explicitly excludes an unprotected
+rough-collar conclusion. At the physical wall endpoint, R-II (1.50) IS an original constrained Wilson
+minimum: the issue is not absence of every critical equation. The missing
+identification is between its CHANGED determining/target/boundary record and
+the protected current problem required by RG13, together with literal nesting
+into the saved old problem. At the independent three-join walls (1.61)--(1.63),
+no common-action critical-map identity is supplied. None of the cited results
+verifies (1) on that actual simultaneous mixed domain.
+
+Performing source localization before action localization keeps later kernel
+walls out of an already admitted source argument. It does not prove the earlier
+changed-record endpoint identity or give the missing protected collar. Likewise,
+its real coordinate-energy reserve and its canonical/physical norm distinction
+remain those of the clean born first entry bounds calculation; the tangent estimate cannot create an unspent
+energy record or pay a fixed physical background as a canonical one.
+
+\paragraph{Necessary model lemma for this route.}
+For the original selected first-entry record, identify its COMPLETE current-unit
+coordinates (including retained old, exterior and pinned rows), its one source
+readout and all proper-difference companions. Prove on the original selected
+support and simultaneous wall domain that this readout either (i) is a common
+admitted critical field to which (1)--(2) apply, with the original collars and
+original energy ownership, or (ii) satisfies a direct completed-packet response
+bound with loss exponent obeying (5). The second option can use the saved
+projections and true Ward cancellations without requiring each intermediate field
+to obey the first option, but such a bound is not supplied by the current text.
+This is a model estimate to prove, not an additional assertion made here.
+
+\paragraph{Precise stopping point and verification.}
+The original R-I selector/range definitions are not used here, so not all hypotheses
+of the original preparation theorem are verified.
+Even supplying those definitions would not itself prove their smaller marked
+range or the response estimate: that is the unresolved mathematical step.
+The clean response algebra, old rescaling, gauge derivative cancellation and
+threshold (5) are derived above. No actual nonprotected selected
+history satisfying the required response has been verified, so no MT36 clause
+is promoted to closed. Further moment computations cannot settle this domain
+and physical-tangent identification.
+\end{document}

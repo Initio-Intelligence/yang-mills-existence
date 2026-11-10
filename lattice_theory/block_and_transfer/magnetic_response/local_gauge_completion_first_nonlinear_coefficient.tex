@@ -1,0 +1,127 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Local vector, gauge-Jacobian and Haar vertices for the first nonlinear coefficient}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Why the quadratic quotient is insufficient at the next order.}
+The exact tree covariance can be written $T\Delta^{-1}T^*$, but replacing
+the propagator alone inside a tree-coordinate quartic expression does
+not produce a local covariant formula. The nonlinear gauge-coordinate
+Jacobian has vertices. This note retains them and verifies the resulting
+first coefficient on the original complete $R=2$ cube.
+
+Fix $R$ and the admitted actual action minimum $U^*(\epsilon)$ on all
+free links. Interior gauge parameters vanish on the complete boundary.
+Use right logarithmic coordinates $U_e=U_e^*\exp(\alpha z_e)$,
+$\alpha=B^{-1/2}$, with the $SU(2)$ convention $z=i{\bf z}\cdot\sigma$.
+Define the two local endpoint maps
+\[
+ (D\xi)_e=\operatorname{Ad}_{U_e^{*-1}}\xi_{s(e)}-\xi_{t(e)},\qquad
+ (A\xi)_e=\operatorname{Ad}_{U_e^{*-1}}\xi_{s(e)}+\xi_{t(e)}.
+\]
+The relative gauge matrix $\Delta_0=D^*D$ is positive, and the actual
+critical action Hessian $H$ obeys $HD=0$. The full vector covariance is
+$\Delta_1^{-1}$, $\Delta_1=H+DD^*$.
+
+\paragraph{Literal local gauge-Jacobian expansion.}
+Choose the local logarithmic gauge function $F(z)=D^*z$, with $D$
+held at the current minimum. Under
+$U_e\mapsto e^{\alpha t\xi_s}U_e e^{-\alpha t\xi_t}$, the BCH derivative is
+\[
+ \left.\partial_t z_e\right|_0
+ = (D\xi)_e-\frac{\alpha}{2}[z_e,(A\xi)_e]
+       +\frac{\alpha^2}{12}[z_e,[z_e,(D\xi)_e]]+O(\alpha^3).
+\]
+Consequently its actual Jacobian in the interior gauge parameter is
+\[
+ M(z)=\Delta_0+\alpha M_1(z)+\alpha^2 M_2(z)+\cdots,\quad
+ M_1=-\tfrac12D^*\operatorname{ad}_z A,\quad
+ M_2=\tfrac1{12}D^*\operatorname{ad}_z^2 D .
+\]
+Let $g=\Delta_0^{-1}$. Its logarithmic determinant partners are
+\[
+ \ell_1=\operatorname{Tr}(gM_1),\qquad
+ \ell_2=\operatorname{Tr}(gM_2)-\tfrac12\operatorname{Tr}(gM_1gM_1).
+                                                               \tag{1}
+\]
+These contain the original local gauge vertices and their propagator;
+they are not a constant extra determinant. At the flat reference,
+$\ell_1\equiv0$ by the color trace of $\operatorname{ad}_z$, but its
+background derivatives must still be retained.
+
+\paragraph{Precise domain of the gauge statement.}
+This construction is LOCAL about the minimum orbit at each fixed $R$.
+The inverse function theorem for the relative matrix $\Delta_0$ supplies
+a unique gauge intersection for sufficiently small coordinates and gauge
+noise. One can insert the local Jacobian and a normalized Gaussian
+integral over the gauge function, with a smooth partition equal to one
+near the minimum orbit. The resulting quadratic gauge penalty is
+$|D^*z|^2/2$. Outside that neighborhood the original tree-fixed compact
+integral has the positive fixed-$R$ action gap used in the first original nonlinear flux coefficient calculation.
+Thus its Laplace coefficients agree with these local gauge-fixed
+coefficients. The local construction is not an exact global
+Faddeev--Popov formula: no assertion about distant gauge copies,
+uniform patch size, or a growing-$R$ complementary integral is made.
+Gauge orbit volume and all constant canonical factors are retained.
+At quadratic order its normalization is
+$\det\Delta_0/(\det\Delta_1)^{1/2}$, equal to the original tree factor.
+
+\paragraph{The complete local first coefficient.}
+Let $T_3,T_4$ be the ORIGINAL full-free-link action Taylor vertices in
+these right coordinates, and
+$J_2=-\sum_{\text{free }e}|{\bf z}_e|^2/3$ the full Haar polynomial.
+Expansion of the actual action, Haar density and Jacobian gives the
+same finite-block coefficient as the tree calculation:
+\[
+ \boxed{\quad
+ \mathcal C_R(\epsilon)=
+ E_{\Delta_1^{-1}}\left[
+ T_4-J_2-\ell_2-\tfrac12(T_3-\ell_1)^2\right].\quad}              \tag{2}
+\]
+Indeed the order-$\alpha$ exponent is $-T_3+\ell_1$, and its square,
+the order-$\alpha^2$ exponent $-T_4+\ell_2$, and Haar $J_2$ supply the
+order-$B^{-1}$ coefficient of the integral. Taking minus its logarithm
+gives (2); the odd first term has zero centered Gaussian expectation.
+This equality concerns the complete combination, not a term-by-term
+identification with tree vertices. At a varying background all
+derivatives of $D,A,g,\Delta_1$ and the original action tensors are kept.
+The normalized connected differentiation formula of the connected first nonlinear flux response calculation applies
+with the complete bracket in (2).
+
+\paragraph{Exact original $R=2$ validation.}
+At flat $R=2$ there is one interior vertex, eight free links and
+$\Delta_0=8I_3$. Write $d_e=\pm1$ for its signed incidence.
+Each plaquette has at most two free links, so $T_3=0$.
+The scalar vector Green matrix consists of four two-by-two blocks
+with diagonal $7$ and off-diagonal $-1$ before inversion. Hence
+$\operatorname{Tr}G=7/6$ and $d^TGd=1$.
+Using $[i{\bf z}\cdot\sigma,i{\bf \xi}\cdot\sigma]
+=-2i({\bf z}\times{\bf \xi})\cdot\sigma$ gives
+\[
+ M_1=\operatorname{cross}\left(\sum_e d_e{\bf z}_e\right),\qquad
+ M_2=\tfrac13\sum_e\operatorname{cross}({\bf z}_e)^2.
+\]
+Original plaquette quartic products and exact Gaussian contraction yield
+\[
+ ET_4=-\frac{343}{192},\qquad -EJ_2=\frac76,\qquad
+ E\ell_2=-\frac14\operatorname{Tr}G+\frac3{64}d^TGd
+                  =-\frac{47}{192}.
+\]
+Thus (2) gives
+\[
+ \mathcal C_2(0)=-\frac{343}{192}+\frac{224}{192}
+                         +\frac{47}{192}=-\frac38,
+\]
+exactly matching the independent tree calculation. The finite calculation verifies every term.
+Omitting the nonlinear gauge Jacobian would fail this test.
+
+\paragraph{Uniformity target, now with explicit partners.}
+Formula (2) supplies local action and gauge vertices with full relative
+vector and scalar Green operators, rather than long axial-tree rows.
+A physical-energy estimate must bound its twice differentiated CONNECTED
+combination, including the Haar term and both terms in (1).
+The quadratic magnetic-loop bound does not estimate these interacting
+multi-vertex contractions or the original differentiated remainder.
+No bound uniform in $R$, random-background extension, or S94 closure is
+claimed. The local gauge identity makes the missing estimate explicit;
+it does not supply that estimate by itself.
+\end{document}

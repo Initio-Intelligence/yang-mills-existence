@@ -1,0 +1,103 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Var}{\operatorname{Var}}
+\title{A quantitative second coordinate elimination with its genuine effective law}\author{}\date{}
+\begin{document}\maketitle
+This note advances the actual AI36 calculation by one further coordinate elimination.
+The constants retain an explicit exponential loss in $\beta$, so it does not establish the
+weak-trajectory MT36 estimate. Its purpose is to identify an actual quantitative second
+interface, rather than replacing the effective measure by a bare Wilson law.
+
+\paragraph{The genuine interaction graph.}
+After the first separated-link elimination, the inherited effective score calculation proves
+\[
+ \rho_1(y)=Z^{-1}e^{-\beta S_{\rm out}(y)}\prod_{e\in E_1}z_e(y).
+\]
+Construct a graph on retained links by joining two links if they occur together in an
+outside plaquette or in the actual outside star of one factor $z_e$.
+Every hyperedge has fixed size, and every retained link belongs to a bounded number
+of hyperedges. Hence the graph degree is bounded by a fixed geometric constant $\Delta_1$.
+Choose any independent set $E_2$ in this graph, and let $q_2$ observe the remaining
+coordinates. The original plaquette graph is insufficient for this choice: all $z_e$
+hyperedges must be included. A greedy coloring gives at least one such set of cardinality
+at least $\#R_1/(\Delta_1+1)$, though the quantitative estimate below applies to every choice.
+
+Conditional on $q_2$, no effective action factor meets two links in $E_2$.
+The genuine second-step conditional law therefore factors over those links, with its
+actual normalizers and effective scores. There is no source-dependent denominator.
+
+\paragraph{An actual uniform-volume one-link comparison.}
+For ANY coordinate marginal of the original Wilson law, consider two values $u,u'$ of
+one retained link $b$, with every other retained coordinate fixed. The original actions
+for the same eliminated coordinates differ only in the six plaquettes touching $b$.
+Since each $s_p$ lies in $[0,2N]$,
+\[
+ |S_0(u,z)-S_0(u',z)|\le12N.
+\]
+Integrating the original positive density over all eliminated coordinates preserves the
+ratio bound. Thus the one-link conditional density $h$ relative to normalized Haar obeys
+$\sup h/\inf h\le e^{12N\beta}$.
+The compact-group Haar Poincare inequality with gap $\lambda_N>0$ then gives
+\[
+ \Var_h F\le\lambda_N^{-1}e^{12N\beta}
+              \E_h\sum_A|X_b^AF|^2.
+\]
+This is a bound for the actual marginal conditional law, independently of elimination
+volume. It is not a lower bound for a full-volume spectral gap and has not lost its
+exponential factor.
+
+\begin{theorem}[Second actual conditional covariance]
+Let $G(f)=O_H(f)$ or $r_H(f)$, and let $G_1(f)=\E(G(f)|R_1)$ be the original first
+conditional mean. For $E_2$ chosen in the genuine effective graph above,
+\[
+ \E\Var(G_1(f)\mid q_2)
+ \le C e^{12N\beta}\sigma^2\beta^{-1}\log^3(2+\beta)
+         \sum_c|f_c|^2.
+\]
+The same original transformed-test sum is used for a pointed completion, with a fixed
+multiplicity constant. The mixed conditional covariance has the corresponding $L^1$
+bound with $(\sum|f_c|^2)^{1/2}(\sum|h_c|^2)^{1/2}$.
+In physical normalization the prefactor is
+$C c_\beta^{-2}a^{-4}\beta e^{12N\beta}\log^3(2+\beta)$.
+\end{theorem}
+\begin{proof}
+Tensorize the actual product conditional law over $E_2$ and apply the one-link comparison:
+\[
+ \E\Var(G_1\mid q_2)
+ \le\lambda_N^{-1}e^{12N\beta}
+       \E_{\nu_1}\sum_{b\in E_2,A}|X_b^AG_1|^2.
+\]
+Use the genuine first-layer derivative estimate of the inherited effective score calculation and the support
+multiplicity analysis of the support and martingale estimate calculation. Mixed covariance follows by conditional and ordinary
+Cauchy--Schwarz. No bare-Wilson force recurrence has been applied to $\nu_1$.
+\end{proof}
+
+\paragraph{Exact retained remainder.}
+The first two reverse-martingale increments are now explicitly controlled, while
+\[
+ \Var_\mu G=\E\Var(G\mid R_1)
+           +\E\Var(G_1\mid q_2)
+           +\Var_{\nu_2}G_2,\qquad G_2=\E(G\mid q_2),
+\]
+keeps the next boundary conditional-mean covariance. Every term is nonnegative for a real
+identical-label source. The second-step bound is much too costly to be called a strict
+stable gain: on a weak trajectory $\beta\to\infty$ its exponential loss must remain
+explicit and cannot be absorbed into an unspecified constant or a saved birth factor.
+Obtaining the graded estimate requires a sharper coercive/resampling estimate for this
+actual effective ordinary sector, or another source-preserving covariance mechanism.
+
+\paragraph{Responses and domains.}
+The second law uses the exact $z_e$ factors and hence their true effective-score jets.
+A bath-measurable selector can multiply the undivided positive estimates, but normalizing
+it introduces its genuine probability, and a selector depending on $E_2$ changes the
+conditional factorization and must be treated with its full responses.
+Currents supported on $E_2$ have zero geometric pushforward to $q_2$, but their density
+adjoints use the effective score of the inherited effective score calculation. Their construction and norms cannot borrow
+the original Wilson adjoint. The original mesh, $\sigma$, finite pointing weights,
+conditional denominators, and independent raw scalar factors all remain attached.
+This real positive calculation supplies no new complex-domain admission or sharp-boundary
+trace estimate and makes no claim about general nonlinear mixed observations.
+\end{document}

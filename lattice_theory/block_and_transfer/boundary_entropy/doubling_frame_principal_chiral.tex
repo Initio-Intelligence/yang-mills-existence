@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\title{The exact pure-gauge frame scalar for one-direction doubling}\author{}\date{}
+\begin{document}\maketitle
+Let $G=SU(N)$, $d=N^2-1$, $s(U)=1-N^{-1}\operatorname{Re}\operatorname{Tr}U$. Double two old $n^4$ tori only in direction one, with $n\ge3$ and transverse graph $\Sigma=(\mathbb Z/n\mathbb Z)^3$, $m=n^3$. Retain their original link Haar measures. On any pair of periodic pure-gauge old records, average the literal rewired Wilson Boltzmann factor over independent old site gauges. The old action is zero.
+
+\begin{theorem}
+The resulting scalar is exactly
+\[
+ I_\beta=\int_{G^\Sigma}\exp\left[-2\beta\sum_{\{y,z\}\in E(\Sigma)}s(H_yH_z^{-1})\right]\prod_y dH_y.
+\]
+There are $3m$ transverse edges and $6m$ seam plaquettes before the two equal contributions are combined. Constants depending only on $N$ satisfy, for all $n\ge3,\beta\ge1$,
+\[
+ (c_N\beta^{-d/2})^{m-1}\le I_\beta\le(C_N\beta^{-d/2})^{m-1}.
+\]
+Consequently $-\log I_\beta=\frac d2(m-1)\log\beta+O_N(m-1)$ uniformly in $n,\beta$.
+\end{theorem}
+\begin{proof}
+Absorb each original pure gauge into the normalized gauge average. A big-torus gauge transformation then sets every nonseam bond to the identity; its seam bonds are $H_y=k_0(y)k_1(y)^{-1}$ and $H_y^{-1}$. The change $(k_0,k_1)\mapsto(k_0,H)$ preserves product Haar exactly; the common frame integrates to one. A seam plaquette is the neighboring frame difference. The inverse seam contributes $s(H_y^{-1}H_z)=s(H_yH_z^{-1})$, by cyclic trace and inversion symmetry. This proves the formula, including its factor two.
+
+The common left action $H_y\mapsto C H_y$ is an exact symmetry. Fix a root $r$, write $H_r=C$, $H_y=C h_y$, $h_r=1$. Again product Haar is preserved and $C$ integrates exactly to one. There remain precisely $(m-1)d$ coordinates. For the upper bound keep only a spanning tree in the nonnegative action and integrate its leaves. This gives $I_\beta\le z(2\beta)^{m-1}$, where $z(t)=\int_G e^{-t s(H)}dH\le C_N t^{-d/2}$ for $t\ge1$. The last inequality follows by the unique nondegenerate minimum of $s$ at the identity, compactness away from it, and local Haar coordinates.
+
+For the lower bound restrict each nonroot $h_y$ to a fixed-radius $c\beta^{-1/2}$ ball. Each edge action is at most $C_N/\beta$, the graph has $3m$ edges, and each ball has Haar mass at least $c_N\beta^{-d/2}$. Since $m/(m-1)$ is bounded, the factor $e^{-C_Nm}$ is absorbed into $c_N^{m-1}$. This also handles all collective modes without requiring a uniform graph spectral gap.
+\end{proof}
+
+For completeness the exact finite-$n$ determinant is retained. Use Lie algebra coordinates with $-\operatorname{Tr}X^2=|X|^2$ and Haar density $J_0$ at zero. If $L_r$ is the root-deleted graph Laplacian, the quadratic Hessian of $2\sum s(h_yh_z^{-1})$ is $(2/N)L_r\otimes I_d$. Thus, for each fixed $n$,
+\[
+ I_\beta=J_0^{m-1}\left(\frac{\pi N}{\beta}\right)^{d(m-1)/2}(\det L_r)^{-d/2}\,[1+O_n(\beta^{-1/2})].
+\]
+Here $\det L_r$ is the exact spanning-tree count; $1\le\det L_r\le6^{m-1}$ by the matrix-tree formula and Hadamard's inequality. The remainder is NOT asserted uniform as $n\to\infty$. The common frame was integrated, not silently removed with an unnormalized gauge quotient.
+
+Dividing the uniform scalar by the doubled physical volume $2\ell^4$, $\ell=na$, gives leading cost $d(n^3-1)\log\beta/(4\ell^4)$ with $O(n^3/\ell^4)$ remainder. At weak coupling this is a surface entropy proportional to $a^{-3}\log\beta/\ell$. It improves the flat-orbit naive $\beta$ seam estimate, but does not close S94. Actual old nonflat records and nontrivial old holonomies require their physical mismatch and outer distribution; the scalar derived here cannot be substituted for their integral.
+\end{document}

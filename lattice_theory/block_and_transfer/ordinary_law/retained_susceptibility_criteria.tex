@@ -1,0 +1,475 @@
+\documentclass[11pt]{article}
+\usepackage[margin=.9in]{geometry}\usepackage{amsmath,amssymb,amsthm,mathtools,bm,booktabs,longtable,array,tabularx,hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathbb E}\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\HS}{\mathrm{HS}}\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\dd}{\mathrm d}\newcommand{\id}{\mathrm{id}}
+\newcommand{\R}{\mathbb R}\newcommand{\Z}{\mathbb Z}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\inner}[2]{\langle #1,#2\rangle}
+\newcommand{\cG}{c_\beta}\newcommand{\cF}{C_F}
+\newcommand{\Hess}{\operatorname{Hess}}\newcommand{\Ad}{\operatorname{Ad}}
+\newcommand{\Ent}{\operatorname{Ent}}
+\title{Conditional variance and the retained susceptibility}\author{}\date{}
+\providecommand{\diver}{\operatorname{div}}
+\begin{document}\maketitle
+\section{The unchanged source and the live variance target}
+\label{sb:setup}
+
+Use the original compact \(SU(N)\) Wilson law
+\[
+ \dd\mu_\beta=Z_\beta^{-1}e^{-\beta S}\dd\lambda,\qquad
+ S=\sum_p s_p,\qquad s_p=N-\Re\Tr U_p.
+\]
+All invariant derivatives use the original product-group metric. For an original link \(b\), write
+\[
+ F_b^A=X_b^AS,\qquad F_{b;\mu}^A=X_b^AS_{\mu\nu_b},\qquad
+ D_b=\sum_{\mu\ne\nu_b,A}(F_{b;\mu}^A)^2,\quad
+ P_b=\sum_A(F_b^A)^2,\quad \ell_b=\sum_A(X_b^A)^2S.
+\]
+For deterministic real root weights \(f\), retain
+\begin{equation}
+ h_f=\beta(D[f]-P[f]/3),\qquad
+ r_f=\beta D[f]-\ell[f]/3,\qquad
+ t_f=h_f-r_f=(\ell[f]-\beta P[f])/3.
+ \label{sb:sources}
+\end{equation}
+Set \(M_f=\sum_bf_b^2\), \(b_f=\norm f_\infty\). Original pointing shifts and neighboring affected roots remain in these sums. Physical multiplication by \(c_\beta^{-1}a^{-2}\) squares to \(c_\beta^{-2}a^{-4}\) in variance estimates. A live saved factor has its actual derivative and cannot be frozen.
+
+For an actual retained observation \(\eta\), the target remains
+\begin{equation}
+ \Var_\mu r_f
+ =
+ \E_\eta\Var(r_f\mid\eta)
+ +
+ \Var_\eta\E(r_f\mid\eta).
+ \label{sb:variance}
+\end{equation}
+The finite-volume estimate of the boundary/history analysis proves extensive Bernstein concentration for the complete innovation of an original admissible link layer, averaged over its actual raw exterior law. The same analysis proves an exponentially small extensive Bernstein variance parameter for the additional literal good/bad label contrast. The continuous retained mean in \eqref{sb:variance} is not bounded by those two results.
+
+For reference, if \(\mathcal C\) contains at most one link in each original plaquette, the complete retained complement \(\eta=U_{\mathcal C^c}\) has law
+\[
+ \dd\nu_{\mathcal C}(\eta)
+ =Z_\beta^{-1}e^{-\beta S_{\rm out}(\eta)}
+       \prod_{s\in\mathcal C}Z_s(\eta)\dd\lambda_{\mathcal C^c}.
+\]
+The \(Z_s\) are the original raw conditional integrals. On the established periodic moment regime
+\begin{equation}
+ n\ge3,\qquad\beta\ge1,\qquad n\ge c_*\log(2+N\beta),
+ \label{sb:momentregime}
+\end{equation}
+the finite-volume estimate gives
+\[
+ \log\E_\mu e^{u(r_f-\E[r_f\mid\eta])}\le Cu^2M_f,
+ \qquad |u|b_f\le\delta.
+\]
+This is an unconditional estimate under the actual full law. It is not a uniform estimate at every frozen nonflat bath.
+
+The parallel retained-source analysis in \texttt{compact\_source\_jets.tex} includes further statements concerning a specified adaptive observation, compressed original heat-bath dynamics, compact source jets, and a Gaussian infrared reference. Results used here are either derived here or explicitly identified as antecedents; no unidentified observation is substituted for the original \(\eta\), history, or mixed operation.
+
+
+\section{Continuous retained susceptibility}
+\label{sec:r18status}
+
+\subsection{Both variance terms, with the exact unresolved part separated}
+
+For the actual original independent-link layer of \texttt{lattice\_theory/innovation.tex}, let $\eta$ be the complete complement and $L$ its complete literal label vector. For either original source put
+\[
+ m_f=\E(F_f\mid\eta),\qquad
+ m_{f,L}=\E(F_f\mid\eta,L),\qquad
+ \Delta_f=m_{f,L}-m_f,\qquad
+ J_f=F_f-m_{f,L}.
+\]
+The exact orthogonal decompositions are
+\begin{align}
+ \Var_\mu F_f
+ &=\E\Var(F_f\mid\eta,L)
+       +\E_\eta\Var_{L\mid\eta}(m_{f,L})
+       +\Var_{\nu_C}m_f, \label{sa:threevariance}\\
+ \Var_{\eta,L}m_{f,L}
+ &=\Var_{\nu_C}m_f+\E\Delta_f^2. \label{sa:meanvariance}
+\end{align}
+The innovation theorem and the complete label theorem prove
+\begin{equation}
+ \E\Var(F_f\mid\eta,L)\le CM_f,\qquad
+ \E\Delta_f^2\le C_\tau e^{-\tau\beta v}M_f.
+ \label{sa:twocontrolled}
+\end{equation}
+In addition, $I_f=F_f-m_f$ and $\Delta_f$ have the proved Bernstein exponential bounds. Since $J_f=I_f-\Delta_f$, Cauchy--Schwarz at twice the parameter gives the same extensive Bernstein bound for $J_f$, on the smaller common interval. This remains an averaged, complete-law statement.
+
+Equations~\eqref{sa:threevariance}--\eqref{sa:twocontrolled} answer the two-term question to the extent established here: the original first term is controlled for this actual layer, and the label contribution to the second term is extensively small. The term $\Var_{\nu_C}m_f$ is still unproved. It cannot be inferred from the other two nonnegative terms.
+
+For a coarser history that does not retain $\eta$, the additional bath-information term of the coarse-history section of \texttt{lattice\_theory/selectors.tex} remains. The controlled components can be projected through a subsequent complete positive observation, but that does not identify them with the full later ordinary increment.
+
+\subsection{An exact source-specific operator target}
+
+The retained scalar density is the actual $\nu_C$ of the raw-marginal display in \texttt{lattice\_theory/innovation.tex}, or the corresponding exact marginal for a specified later unselected coordinate operation. All gradients, adjoints and Laplacians below use the original product-group metric. Write $V_{\rm eff}=-\log(\dd\nu_C/\dd\lambda)$, and let
+\[
+ {\cal L}_0=-\Delta+\nabla V_{\rm eff}\cdot\nabla,
+ \qquad
+ {\cal E}_{\nu_C}(u,u)=\int|\nabla u|^2\dd\nu_C.
+\]
+At each finite lattice size this smooth positive compact density has a well-defined inverse on centered functions. Existence of that finite inverse is not a size-uniform bound.
+
+Let $\dd_{\nu_C}^*$ be the weighted adjoint of the exterior derivative and
+\[
+ {\cal L}_1=\dd\dd_{\nu_C}^*+\dd_{\nu_C}^*\dd
+\]
+the weighted Hodge operator on one-forms. Its inverse below is restricted to exact forms. If $\Phi_b=\E(r_b\mid\eta)$, define the actual linear source-response map
+\[
+ {\cal A}f=\dd\Phi_f,\qquad \Phi_f=\sum_bf_b\Phi_b.
+\]
+Then
+\begin{equation}
+ \Cov_{\nu_C}(\Phi_f,\Phi_g)
+ =\inner{{\cal A}f}{{\cal L}_1^{-1}{\cal A}g}_{L^2(\nu_C)}.
+ \label{sa:resolventidentity}
+\end{equation}
+Indeed, for centered $\Phi_g$, solve $\mathcal L_0u=\Phi_g$. The identity
+$\mathcal L_1\dd u=\dd{\cal L}_0u=\dd\Phi_g$ and weighted integration by parts give
+$\inner{\Phi_f}{\Phi_g}=\inner{\dd\Phi_f}{\dd u}$, proving \eqref{sa:resolventidentity}.
+
+Consequently the missing extensive estimate is precisely the source-specific operator bound
+\begin{equation}
+ \boxed{\qquad {\cal A}^*{\cal L}_1^{-1}{\cal A}\le C I
+ \quad\hbox{on the original root space.}\qquad}
+ \label{sa:missingoperator}
+\end{equation}
+This is an explicit target, not an established inequality. The actual derivative $\dd\Phi_f$ contains the direct source response and the conditional score covariance. The actual effective Hessian contains its negative conditional-force covariance. Those terms have been displayed in the preceding section; they are not replaced by a bare Wilson action with a renamed coupling.
+
+The pre-existing first-layer gradient estimate only gives
+$\E_{\nu_C}|\dd\Phi_f|^2\le C\beta M_f$. It does not give the inverse estimate in \eqref{sa:missingoperator}. A uniform one-site internal gap is also insufficient: general coupled-measure criteria require additional interaction control \cite{OttoReznikoff}. No such condition on this full exterior law has been established here. The weaker first-response selector estimate does not imply it either.
+
+\subsection{A free comparison that keeps the fluctuating mean}
+
+The Gaussian reference makes the desired spatial mechanism explicit without setting a nonflat conditional mean to zero. Let $x$ be a centered Gaussian on its nondegenerate physical subspace with covariance $C$, let $Q_f$ be a symmetric original source matrix, and let
+$F_f=x^TQ_fx+\mathrm{const}$. For a deterministic linear observation $Y$, write
+\[
+ x=m(Y)+\xi,\qquad
+ \Cov(\xi)=C_0,\quad \Cov(m)=C_1,\quad C_0+C_1=C.
+\]
+The conditional residual $\xi$ is independent of $m$. Wick's formula, or direct differentiation of the Gaussian integral, gives
+\begin{align}
+ \E\Var(F_f\mid Y)
+ &=2\Tr(Q_fC_0Q_fC_0)+4\Tr(Q_fC_0Q_fC_1), \label{sa:gaussinternal}\\
+ \Var\E(F_f\mid Y)
+ &=2\Tr(Q_fC_1Q_fC_1). \label{sa:gaussmean}
+\end{align}
+Every term is nonnegative; for example,
+\[
+ \Tr(Q_fC_0Q_fC_1)=\norm{C_1^{1/2}Q_fC_0^{1/2}}_{\HS}^2.
+\]
+Their sum is $2\norm{C^{1/2}Q_fC^{1/2}}_{\HS}^2$.
+For the actual flat Maxwell source matrices, the finite-volume estimate's bounded-incidence argument gives
+\[
+ \norm{C^{1/2}Q_fC^{1/2}}_{\HS}^2\le CM_f,
+\]
+with gauge and harmonic null directions treated on the appropriate quotient rather than inverted. Thus both Gaussian terms are extensive. The random conditional mean in \eqref{sa:gaussmean} is fully retained.
+
+This calculation is a reference check, not a nonlinear boundary-law theorem. In the actual Wilson marginal the conditional covariance depends on the exterior record, the means are nonlinear, and the effective score and selected responses are the originals. The Gaussian formulas cannot be transferred by identifying only their leading Hessian.
+
+\subsection{Why the controlled layers do not yet give physical-scale induction}
+
+The joint factorial constants of the original rooted means survive complete positive observation without depth growth. The \emph{carrier coloring} need not. The deterministic finite-depth support estimate allows a crude overlap growth of order $2^{4k}$ until the torus size saturates. Every effective-normalizer hyperedge participates in that graph.
+
+Even if a coloring stayed bounded, summing an extensive estimate once per step would retain the number of steps. A proof at unbounded depth needs the actual saved source grades, spatial response and ownership estimates that make the complete sum admissible. Neither the new moment lemma nor the label gain assigns these grades to the incoming stored representative.
+
+In particular, the following remain separate:
+\begin{itemize}
+ \item Admission of $P_{\rm old}q_{\rm old}\Gamma^R$ on the actual simultaneous domain, including joined boundary records, junctions, old minimum responses and saved radii.
+ \item Conversion of the literal weak selector tests into the actual old current and anchor norms, including nonlinear readout, reference and moving-gauge derivatives.
+ \item Identification of complete inherited ordinary/source packets and their reserves on the same selected body, with original scalar masses and no repeated reserve ownership.
+ \item Absolute cross-torus comparison S94, compatible continuum reconstruction, and nontrivial interacting Yang--Mills identification.
+\end{itemize}
+The full-relative-block real-tilt theorem of the finite-volume estimate remains valid on its stated mesoscopic regime. It has not been extended to a fixed physical volume by tiling. The new theorems here operate on the actual original periodic law, but control specified components of its variance and source response rather than the entire continuum induction.
+
+
+\section{Spectral criteria for the retained mean}
+\label{sb:status}
+
+\subsection{One variance obstruction in several exact representations}
+
+For the literal first original coordinate-product layer, write
+\[
+ \Phi_f=\E(r_f\mid\eta)-\E r_f.
+\]
+All measures in the following comparison are the actual original Wilson law or its exact coordinate marginal, on \eqref{sb:momentregime}. The previous sections and the finite-volume estimate give
+\begin{align}
+ \left|\Var_\mu h_f-\Var_\mu r_f\right|&\le CM_f,
+       \label{sb:contactsummary}\\
+ 0\le\Var_\mu r_f-\norm{\Phi_f}_2^2&\le CM_f,
+       \label{sb:meansummary}\\
+ 0\le\Var_\mu r_f
+       -\norm{\mathbf1_{(0,1]}(B_\nu)\Phi_f}_2^2&\le CM_f.
+       \label{sb:lowsummary}
+\end{align}
+The true induced-marginal heat bath \(B_\nu\) is defined in the preceding section; its raw normalizers are unchanged. The last comparison is not a spectral-gap assertion.
+
+There is also the new common-heat representation. For \(f_b\ge0\), let
+\[
+ \Psi_f(t)=\log\int
+     \left[\prod_{i=1}^3
+       e^{\,t\Delta_f/(3\beta)}e^{-3\beta S_i}
+     \right]^{1/3}\dd\lambda.
+\]
+The exact first and second logarithmic density derivatives are \(r_f\) and \(J_f\). Hence
+\begin{equation}
+ \left|\Var_\mu r_f-\Psi_f''(0)\right|\le CM_f.
+ \label{sb:heatsummary}
+\end{equation}
+The derivative at zero is understood from nonnegative time. The formula keeps the generated acceleration \(J_f\); it does not replace the source exponential by the heat path at nonzero time.
+
+Consequently a uniform extensive upper bound for any one of the ordinary quantities in \eqref{sb:meansummary}--\eqref{sb:heatsummary} would close the source-zero variance estimate in the others, up to the displayed proved errors. For the heat representation, a bound for all nonnegative marks extends to real marks by \(f=f_+-f_-\) and
+\[
+ \Var(r_{f_+}-r_{f_-})
+ \le2\Var(r_{f_+})+2\Var(r_{f_-}).
+\]
+These are exact comparisons between unresolved targets, not proofs that one of them is bounded. Positive heat-flow monotonicity and its explicit endpoint do not bound \(\Psi_f''(0)\) from above.
+
+\subsection{The source-specific resolvent remains the actual nonlinear target}
+
+Use the canonical Langevin generator of \(\nu_{\mathcal C}\),
+\[
+ \mathcal L_0=d_\nu^*d,\qquad
+ \mathcal L_1=dd_\nu^*+d_\nu^*d,
+\]
+with the original product-group metric and actual weighted adjoint. Define
+\[
+ \mathcal A f=d\Phi_f.
+\]
+At finite volume the positive smooth compact density gives inverses on centered functions and exact one-forms. Weighted integration by parts and
+\(\mathcal L_1d=d\mathcal L_0\) give
+\begin{equation}
+ \Cov_\nu(\Phi_f,\Phi_g)
+ =
+ \inner{\mathcal Af}{\mathcal L_1^{-1}\mathcal Ag}_{L^2(\nu)}.
+ \label{sb:actualresolvent}
+\end{equation}
+The missing uniform inequality remains
+\begin{equation}
+ \boxed{\mathcal A^*\mathcal L_1^{-1}\mathcal A\le CI
+        \quad\hbox{on the original source-root space}.}
+ \label{sb:missing}
+\end{equation}
+No conclusion of this note asserts \eqref{sb:missing}. The gradient energy bound
+\(\E_\nu|d\Phi_f|^2\le C\beta M_f\) controls a different spectral weight.
+
+The new projected \(h/r\) comparison pays its actual cross term with the Ward inverse-form estimate and the ordinary energy. The discarded-component comparison pays its cross term with the original contact and the full discarded ordinary norm. Both avoid the invalid inference from a small difference of observables to a small difference of their squared norms. Neither bounds their common low-spectrum variance.
+
+The directional one-form calculation also identifies a concrete limitation: the separate averaged plane forces need not be gradients of scalar pieces of \(V_{\rm eff}\). Their exterior derivatives contain actual conditional score covariances and can be nonzero even at a flat retained bath. Independent plane probes therefore remain independent probes; the original simultaneous exterior derivative retains its complete response partners.
+
+\subsection{What the complete resampling history adds}
+
+The resampling results go beyond a single admissible layer. An arbitrary ordered sweep through all original links now has an extensive complete residual with a proved \(L^p\) bound; a sweep in a fixed number of admissible color layers has a Bernstein bound. A literal selected update can be included through its complete conditional projection. The original packet is not decomposed into independent kinetic sources.
+
+The terminal observation still has mean \(TF\), and
+\[
+ \Var_\mu F
+ =\E\Var(F(U_0)\mid U_m)+\Var_\mu(TF).
+\]
+The first term is controlled for the stated schedules; the second is not. Repeated sweeps increase the proved budget. No uniform decay to equilibrium on the ordinary source subspace has been established.
+
+A state-dependent mixed history, a history-dependent saved coefficient, or a native operation with frozen labels is not automatically this stationary resampling chain. Its defining record, actual marginal, derivative responses, and zero-mode means must be kept. The finite-sweep theorem does not assign or spend a new reserve in that operation.
+
+
+\section{What the quantitative comparison settles, and what it still leaves open}
+\label{sc:closing}
+
+\subsection{A paid comparison for the actual retained covariance}
+
+Use the explicit cube observation of \texttt{lattice\_theory/cubes.tex}, after summing its good/bad labels, with independent full-translation offset \(T\). Write
+\[
+ \mathcal B=\sigma(T,U_{B_T}),\qquad K_T=\E(\,\cdot\,\mid T,U_{B_T}),
+ \qquad p=\sup_b\Pr_T(b\in B_T)\le C/R .
+\]
+The conditional expectation is always with respect to the original Wilson law (the defining display of \texttt{lattice\_theory/current.tex}). Let the transported Ward observable from the preceding construction be \(T_f\), and define the exact excess
+\begin{equation}
+ E_f=r_f-T_f
+  =\beta\{D[f]-F^TQ_f(U)F\}+a_{Q_f}-\ell[f]/3,\qquad
+ a_{Q_f}=\sum_{i,j}(Q_f)_{ij}X_iF_j .
+ \label{sc:excess}
+\end{equation}
+This is a decomposition of the unchanged source; it is not a new source prescription.
+Center the three actual retained variables by
+\[
+ m_f=K_Tr_f-\E_\mu r_f,\qquad
+ w_f=K_TT_f,\qquad
+ e_f=K_TE_f-\E_\mu r_f .
+\]
+Each is jointly centered in \(T\) and the original law, and \(m_f=e_f+w_f\).
+
+The cube theorem supplies
+\begin{equation}
+ \E_T\norm{(I-K_T)r_f}_2^2\le K_RM_f,\qquad
+ K_R=C\{1+\epsilon(B,R)\},
+ \label{sc:discarded}
+\end{equation}
+where \(B=N\beta\) for the explicitly normalized witness action and
+\[
+ \epsilon(B,R)=(1+B)^2R^8K_t e^{-t\delta BR^{-28}} .
+\]
+The actual transported Ward theorem supplies
+\[
+ \E_T\norm{K_TT_f}_2^2\le CpM_f .
+\]
+These two norms alone would not pay a cross term against an unknown retained ordinary mean. The exact masked source contact is the extra ingredient. With
+\[
+ Q_f^{B_T}=1_{B_T}Q_f1_{B_T},\qquad
+ W_{T,f}=-\diver_\mu(Q_f^{B_T}F),
+\]
+the two exact identities are
+\[
+ K_TT_f=K_TW_{T,f},\qquad
+ \Cov_\mu(W_{T,f},r_g)
+   =\E_\mu\sum_{i,j}(Q_f^{B_T})_{ij}
+           X_jX_i\bigl(r_g/\beta\bigr).
+\]
+The latter pays every original directional and Casimir contact, and its averaged absolute value is at most \(Cp\sqrt{M_fM_g}\). Therefore orthogonal conditional projection gives
+\begin{align*}
+ \E(m_gw_f)
+ &=\E_T\Cov_\mu(r_g,W_{T,f})\\
+ &\quad-\E_T\inner{(I-K_T)r_g}{(I-K_T)W_{T,f}},
+\end{align*}
+and conditional Cauchy--Schwarz with~\eqref{sc:discarded} yields
+\begin{equation}
+ |\E(m_gw_f)|
+ \le C\{p+\sqrt{K_Rp}\}\sqrt{M_fM_g}.
+ \label{sc:paidcross}
+\end{equation}
+Retaining both cross terms in \(e=m-w\) gives the actual bilinear covariance comparison
+\begin{equation}
+ \boxed{\left|\Cov(m_f,m_g)-\Cov(e_f,e_g)\right|
+   \le C\{p+\sqrt{K_Rp}\}\sqrt{M_fM_g}.}
+ \label{sc:paidcomparison}
+\end{equation}
+In the admitted large-\(B\) cube range, \(K_R\) is bounded and this is
+\(C(R^{-1/2}+R^{-1})\sqrt{M_fM_g}\). It is an operator-norm bound on the difference of the two covariance matrices indexed by the original deterministic marks.
+
+Every term in~\eqref{sc:paidcomparison} uses the same actual marginal, with the unrestricted \(Z_j(b)\) restored. The proof does not drop an unknown cross term, average a conditional exponential estimate in the wrong direction, or identify a Gaussian reference with the retained compact law. It also does not bound either covariance matrix separately.
+
+\subsection{Equivalence of the remaining quantitative objectives}
+
+\begin{proposition}[Equivalent source-zero bounds in the stated common regime]
+\label{sc:equivalence}
+Assume the original periodic moment regime, the explicit embedded-cube hypotheses and its admitted parameter range. Uniform extensive control of any one of the following implies uniform extensive control of all of them:
+\begin{enumerate}
+ \item \(\Var_\mu r_f\) for every deterministic real mark \(f\);
+ \item \(\Var_{\mathcal B}\E(r_f\mid\mathcal B)\) for the constructed unrestricted cube observation;
+ \item \(\Var_{\mathcal B}\E(E_f\mid\mathcal B)\) with the complete excess~\eqref{sc:excess};
+ \item the source-space resolvent of \texttt{lattice\_theory/current.tex}, missing-resolvent display for the original first coordinate layer, using its established complete innovation estimate;
+ \item the upper curvature bound \(\psi_f''(0)\le CM_f\) for the original heat interpolation and all nonnegative marks.
+\end{enumerate}
+This proposition is an equivalence of quantitative objectives, not a proof that one of them holds.
+\end{proposition}
+
+\begin{proof}
+For items 1 and 2, use
+\[
+ \Var_\mu r_f=\E\Var(r_f\mid\mathcal B)
+                       +\Var_{\mathcal B}\E(r_f\mid\mathcal B)
+\]
+and~\eqref{sc:discarded}. Items 2 and 3 are equivalent by~\eqref{sc:paidcomparison}. The already established complete innovation bound for the original first coordinate layer gives the analogous total-variance equivalence for item 4, and the resolvent display of \texttt{lattice\_theory/current.tex} identifies its exact resolvent. These are different observations of the same original source; no identification of their operations or histories is needed. Item 5 follows from the heat-acceleration display of \texttt{lattice\_theory/current.tex} and its extensive acceleration correction. Conversely, apply that curvature bound separately to \(f^+\) and \(f^-\), then use
+\(\Var(r_{f^+}-r_{f^-})\le2\Var r_{f^+}+2\Var r_{f^-}\).
+\end{proof}
+
+The new quantitative work pays the Ward contribution and the discarded interior. The still missing estimate is the uniform covariance of the exact nonlinear mean in item 3. Replacing that mean by another unbounded resolvent or divergence would not add a bound to this proposition.
+
+\subsection{Why the remaining excess is not yet small in the required norm}
+
+At the identity, the force-square quadratic jets obey the exact Maxwell reconstruction
+\[
+ \sum_i(H_iA)^*W_f(H_iA)
+       =(H_0A)^*Q_f^0(H_0A).
+\]
+This cancellation is useful, but it is local in field space. The flat-toron calculation in the flat-toron subsection of \texttt{lattice\_theory/transport.tex} shows a genuine quadratic force-square defect for the fixed untwisted transported multiplier at a nontrivial flat holonomy. That calculation concerns a soft mode and does not disprove an extensive susceptibility bound. It prevents a uniform assertion that the entire reconstruction error starts at cubic order around every flat background.
+
+The local contact estimate in the contact-remainder estimate of \texttt{lattice\_theory/transport.tex} gives, in its stated local-patch convention,
+\[
+ \norm{(a_{Q_f}-\ell[f]/3)
+       -(a_{Q_f}(I)-\ell[f](I)/3)}_{L^q(\mu)}
+       \le Cq\,\beta^{-1}\norm f_1,\qquad q\ge2 .
+\]
+Its centered variance consequence costs \(\beta^{-2}\norm f_1^2\). That is a valid quantitative estimate, but it is not \(CM_f\) uniformly in source support or lattice volume. For a uniform source on \(V\) roots, \(\norm f_1^2=V^2\), whereas \(M_f=V\). The same problem affects a naive summation of small local Taylor errors. Original one-plaquette concentration does not itself supply the missing signed covariance-operator bound.
+
+A successful next argument must control the correlations of the complete curvature, holonomy, contact and frame residual under the unchanged \(\nu_T\). One sufficient quantitative route would be an actual inequality
+\[
+ \Var_{\mathcal B}\E(E_f\mid\mathcal B)
+ \le \eta\,\Var_{\mathcal B}\E(r_f\mid\mathcal B)+CM_f,
+ \qquad 0\le\eta<1,
+\]
+with all constants uniform in the required regime. Together with~\eqref{sc:paidcomparison} it would close the source-zero variance bound. No such strict absorption inequality is proved here; it is stated to specify what a small-error claim would have to establish.
+
+\section{Responses, scales and obligations that the new estimates do not remove}
+\label{sc:obligations}
+
+\subsection{The raw exterior derivatives remain}
+
+For an unrestricted original coordinate kernel \(K\) and a fixed retained vector field \(Y\), the exact normalized response is
+\begin{equation}
+ Y(KF)=K(YF)-\beta\Cov_K(F,YS).
+ \label{sc:response}
+\end{equation}
+The conditional covariance is the derivative of the raw denominator. Differentiating again, in the indicated order for fixed retained fields \(Y,Z\), gives
+\begin{align}
+ YZ(KF)
+ &=K(YZF)-\beta\Cov_K(ZF,YS)
+             -\beta\Cov_K(YF,ZS)\notag\\
+ &\quad-\beta\Cov_K(F,YZS)
+          +\beta^2\kappa_{3,K}(F,YS,ZS).
+ \label{sc:secondresponse}
+\end{align}
+Here \(\kappa_{3,K}\) is the centered conditional third cumulant. The ordered derivatives have not been commuted. A field-dependent \(Y\), source-dependent marking, prepared representative or saved transport introduces its own derivatives as well. These are present even when the input coefficient happens to be independent of an endpoint link.
+
+For example, the constructed matrix is endpoint-independent before integration, whereas \(\bar Q_{ab}=KQ_{ab}\) satisfies
+\[
+ X_b\bar Q_{ab}=-\beta\Cov_K(Q_{ab},F_b).
+\]
+The actual retained vector field is consequently
+\[
+ K((QF)_B)=\beta^{-1}
+             \{\bar Q\,\nabla V_{\rm eff}-\diver_B\bar Q\},
+ \qquad V_{\rm eff}=\beta S_{\rm out}-\sum_j\log Z_j .
+\]
+The second term is part of the proved construction. The inherited directional one-forms \(a_i(Y)=K(YS_i)\) likewise retain the exact exterior curl
+\[
+ da_i(Y,Z)=\beta\{\Cov_K(YS_i,ZS)-\Cov_K(ZS_i,YS)\}.
+\]
+The nonzero original examples in the finite-volume estimate remain applicable. Summing the forms gives the total marginal score; it does not make each directional form the differential of a separate scalar potential.
+
+\subsection{Sharp selectors and higher source partners}
+
+For a sharp selected kernel, equation~\eqref{sc:response} has the additional centered shape term
+\[
+ Z_s^{-1}\int(F_s-K_sF_s)e^{-\beta S_s}Y\chi_s .
+\]
+The earlier actual averaged first-response surface estimate is an \(L^1\) estimate after cancellation with the outside raw mass and summation of the full remaining geometry partition. It is not a fixed-bath \(L^2\) estimate, an arbitrary higher selector-word estimate or a complex admission theorem. Its constants retain their dependence on a shrinking threshold \(v\). The one-link intrinsic gap and the literal good/bad cusp cancellation do not alter those distinctions.
+
+The new unrestricted coordinate compression integrates all eliminated group coordinates. Reusing it on one sharp branch would introduce boundary terms; a record that depends on eliminated coordinates also changes the test-function argument. The explicitly proved ordinary label variance covers its complete local packet. It does not automatically cover the nonlocal transported Ward packet's label contrast.
+
+The exact source exponential remains \(e^{u r_f}=e^{u(E_f+T_f)}\). An \(L^2\) estimate for \(T_f\) does not license deleting it at nonzero or complex source. Its mixed cumulants with \(E_f\), the higher ordinary source partners, the heat acceleration and all inherited current/readout grades must be retained. Even the Gaussian reference has the additional fourth-cumulant offset term exhibited in the higher-cumulant display of \texttt{lattice\_theory/gaussian.tex}; a source-zero separator gain cannot be silently promoted to a common complex domain.
+
+\subsection{Mesoscopic scales remain mesoscopic}
+
+The original extensive real-tilt theorem for a block with identity relative boundary retains its condition
+\[
+ \beta\ge CR^{14}\log(2+R).
+\]
+The present cube theorem is a different, averaged, source-zero conditional statement; its convenient sufficient range includes
+\[
+ R\ge R_0,\qquad n\ge C(R+g),\qquad
+ C_0\log B\le R^4,\qquad R\le B^{1/48},\qquad B=N\beta,
+\]
+together with the original periodic moment regime. No next-layer induced convexity follows from the cube chart, and no uniform flat-boundary tilt statement follows from its averaged force moment.
+
+Under logarithmic running \(\beta(a)=O(\log(1/a))\), both permitted block lengths have \(aR\to0\). Tiling them proves neither a physical-scale induction nor the required comparison of native histories. The separate Gaussian separator rank argument also supplies no physical-scale inference.
+\begin{thebibliography}{1}
+\bibitem{OttoReznikoff} F.~Otto and M.~G.~Reznikoff, A new criterion for the logarithmic Sobolev inequality and two applications, \emph{J. Funct. Anal.} \textbf{243} (2007), 121--157.
+\end{thebibliography}
+\end{document}

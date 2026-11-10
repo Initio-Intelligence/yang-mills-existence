@@ -1,0 +1,1747 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.88in,headheight=15pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array,xcolor,fancyhdr}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!50!black,citecolor=blue!45!black]{hyperref}
+\definecolor{ink}{RGB}{28,49,68}
+\pagestyle{fancy}\fancyhf{}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\setcounter{tocdepth}{1}\numberwithin{equation}{section}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Scope}
+\DeclareMathOperator{\Var}{Var}\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Tr}{Tr}\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\supp}{supp}\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\osc}{osc}\DeclareMathOperator{\Ad}{Ad}
+\newcommand{\E}{\mathbb E}\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,\mathrm d}\newcommand{\OH}{\mathcal O_H}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\ind}{\mathbf1}
+\title{Physical Wilson contacts and local conditional subtraction}\author{}\date{}
+\begin{document}\maketitle
+\section{Conventions, the unchanged source, and its actual contact}
+\label{sec:conventions}
+
+Let $G=SU(N)$ with $N\ge2$, $m=\dim G=N^2-1$, with normalized product Haar measure
+$\lambda$. Except where an explicit action convention is displayed, use
+\begin{equation}
+s_p=N-\Re\Tr U_p,\quad S_0=\sum_p s_p,\quad
+\rho=e^{-\beta S_0},\quad Z_\beta=\int\rho\dd\lambda,\quad
+\dd\mu_\beta=Z_\beta^{-1}\rho\dd\lambda,
+\qquad\beta=c_\beta g^{-2}.
+\label{eq:Wilson}
+\end{equation}
+The physical fine spacing is $a$. A finite source algebra has commuting generators
+$\eta_i$ with $\eta_i^2=0$; write $\eta_I=\prod_{i\in I}\eta_i$.
+All exponentials and logarithms in this algebra are finite coefficientwise operations.
+
+Use the original invariant derivative
+$X_{e,A}F(U)=\left.\frac{\dd}{\dd t}F(\ldots,e^{tT_A}U_e,\ldots)\right|_{t=0}$.
+This explicit convention avoids ambiguity in naming left and right invariant fields.
+Put
+\begin{align}
+F_i&=X_iS_0=\sum_{\mu\ne\nu_i}F_{i;\mu},\notag\\
+D[f]&=\sum_i f_i\sum_{\mu\ne\nu_i}F_{i;\mu}^2,
+&P[f]&=\sum_i f_iF_i^2,
+&\ell[f]&=\sum_i f_iX_i^2S_0,\notag\\
+\sigma&=g^{-2}a^{-2},
+&\OH(f)&=\sigma\{D[f]-P[f]/3\}.
+\label{eq:H}
+\end{align}
+Every pointed test offset and original finite hypercubic average is retained.
+When scalar formulas are written for a representative, the final expression is
+the corresponding original average; degree two uses its double average.
+
+The original bare source is $\exp(\sum_i\eta_i\OH(f_i))$, with no added bare
+mixed action coefficient. For two labels, a later actual source action is
+\begin{equation}
+A=\eta_1O_1+\eta_2O_2+\eta_1\eta_2A_{12}.
+\label{eq:source}
+\end{equation}
+$A_{12}$ must be retained after it has been generated.
+
+For a vector field $V$, define its density adjoint by
+$D_Vu=-\diver_\lambda(uV)$. The original PD12 decomposition is
+\begin{align}
+V_H(f)&=-\frac{\sigma}{3\beta}\sum_i f_iF_iX_i,
+&t_H(f)&=-\frac{\sigma}{3}\{P[f]-\beta^{-1}\ell[f]\},\notag\\
+r_H(f)&=\sigma\{D[f]-(3\beta)^{-1}\ell[f]\},
+&\OH(f)&=t_H(f)+r_H(f).
+\label{eq:oldH}
+\end{align}
+In physical units the ordinary part has the exact rows
+\begin{align}
+r_H(f)&=c_f+d_f+\ell_f,\notag\\
+d_f&=\gamma^{-2}D_a(f),\qquad
+\ell_f=\frac{C_F}{3\beta_s}\gamma^{-2}a^{-2}\sum_p f_ps_p,\notag\\
+c_f&=-\frac{C_F}{3\beta_s}\gamma^{-2}a^{-2}N\sum_p f_p.
+\label{eq:Casimir}
+\end{align}
+Here $f_p$ is the literal sum of the four original bond incidences, including the
+specified shifts. The notation $\gamma,\beta_s$ allows saved source normalizations
+to remain distinct from a later native coupling. At the original birth these
+specialize to $\gamma=g$, $\beta_s=\beta$.
+Here $D_a(f)=a^{-2}D[f]=a^4\sum_{b,A,\mu\ne\nu_b}f_b(J_{b;\mu}^A)^2$
+with $J_{b;\mu}=a^{-3}F_{b;\mu}$.
+
+If $O_i=t_i+r_i$ and $t_i\rho=D_{V_i}\rho$, the original compensated coefficient is
+\begin{equation}
+b_{12}=A_{12}+\tfrac12(V_1t_2+V_2t_1)+V_1r_2+V_2r_1.
+\label{eq:oldb}
+\end{equation}
+For the bare $H$ pair PD12 gives, with $W_f=\sum_i f_iF_iX_i$,
+\begin{equation}
+b_{HH}(f,h)=\frac{\sigma^2}{9\beta}
+\left[\tfrac12(W_fP[h]+W_hP[f])-3(W_fD[h]+W_hD[f])
++\frac{W_f\ell[h]+W_h\ell[f]}{2\beta}\right].
+\label{eq:bareb}
+\end{equation}
+Its last term is the Casimir response. It is not dropped in any estimate below.
+
+\section{Actual Wilson local moments and an improved original contact bound}
+\label{sec:moments}
+
+The useful local input is stronger than the crude
+$\E s_p\le C\log(2+\beta)/\beta$ used in~\cite[pp.~21--23]{W}. We rederive the
+matching partition powers from~\cite[\S10, pp.~21--23]{W}, keeping their finite-size loss.
+Let $n$ be the number of fine sites per side, and take an even periodic torus.
+
+\begin{lemma}[Matching finite-volume partition powers]
+\label{lem:partition}
+There are group- and action-dependent constants $0<c_l\le1\le c_u$ such that
+for $\beta\ge1$,
+\begin{equation}
+(c_l\beta^{-m/2})^{Q_n}\le Z_{n,\beta}
+\le(c_u\beta^{-m/2})^{R_n},\quad
+Q_n=3n^4+1,\quad R_n=3n^4-4n^3+1.
+\label{eq:partition}
+\end{equation}
+The upper estimate holds at every positive coefficient after enlarging $c_u$.
+\end{lemma}
+\begin{proof}
+Gauge-fixing a spanning tree by Haar-invariant changes of variables leaves exactly
+$4n^4-(n^4-1)=Q_n$ Haar links. Restrict them to radius $c\beta^{-1/2}$ about the
+identity. Each plaquette then has $\beta s_p\le C$, and each retained link ball
+has mass at least $c'\beta^{-m/2}$. The action cost is at most a fixed constant
+per retained link, giving the lower bound with its original gauge factor one.
+
+For the upper bound, discard the nonnegative actions crossing the periodic seam.
+On the resulting free box, fix a temporal tree and a recursive tree on its bottom
+face. Keep the temporal plaquettes and the bottom-face plaquettes. Integrating
+each spatial-link chain from the free end gives the exact factor
+$z(\beta)=\int_Ge^{-\beta s(U)}\dd U$. The unique nondegenerate action minimum
+and compactness give $z(\beta)\le c_u\beta^{-m/2}$. In dimension $d$ the number
+of these factors is
+$R_d(n)=(d-1)(n-1)^2n^{d-2}+R_{d-1}(n)$, $R_1=0$.
+Induction gives $R_d=(d-1)n^d-dn^{d-1}+1$ and hence the stated $R_n$.
+No discarded action or gauge integral contributes an unrecorded inverse mass.
+\end{proof}
+
+\begin{proposition}[Local moments with their finite-size factor]
+\label{prop:moments}
+For every even $n$, $\beta\ge1$, and original plaquette $p$, there is a fixed
+$C_G$ for which
+\begin{align}
+\E_{n,\beta}e^{\beta s_p/8}&\le\mathcal B_{n,\beta},\notag\\
+\mathcal B_{n,\beta}
+&=c_u^{R_n/n^4}c_l^{-Q_n/n^4}
+2^{mR_n/(2n^4)}\beta^{2m/n}
+\le C_G\exp\!\left(\frac{2m\log\beta}{n}\right),\label{eq:B}\\
+\E_{n,\beta}(\beta s_p)^r&\le r!8^r\mathcal B_{n,\beta}
+\quad(r\ge1).
+\label{eq:moment}
+\end{align}
+In particular this factor is uniformly bounded when $\log\beta/n$ is bounded.
+\end{proposition}
+\begin{proof}
+Use original site-plane Wilson reflection positivity and its chessboard inequality
+on closed unit cells. The latter is the standard repeated-reflection estimate
+for functions supported on a closed block; even cell counts suffice~\cite{biskup}.
+It applies to the bounded gauge-invariant function $e^{t\beta s_p}$ on a face of
+one unit cell. Its disseminated plaquettes have multiplicity at most four: the
+plaquette occupies the full cell in its two directions and can be repeated twice
+in each transverse direction. Thus their summed action $S_*\le4S_0$.
+There are $n^4$ cells, so for $0\le t<1/4$,
+\[
+\E e^{t\beta s_p}
+\le\left[\E\exp(t\beta S_*)\right]^{1/n^4}
+\le\left[\frac{Z_{n,(1-4t)\beta}}{Z_{n,\beta}}\right]^{1/n^4}.
+\]
+Take $t=1/8$ and apply Lemma~\ref{lem:partition}; the power of $\beta$ is
+$m(Q_n-R_n)/(2n^4)=2m/n$. The moment bound follows from
+$x^r\le r!8^r e^{x/8}$. Site-plane reflection positivity here is for the original
+Wilson measure: conditioned on the common plane links the two reflected halves
+factor with conjugate weights. No history-conditioned law is assumed reflection
+positive. Alternatively, on tori divisible by eight, a side-four cell with the
+plaquette strictly inside gives the original \S10 estimate at $t=1/2$, with its
+explicit factor $\beta^{2m4^4/n}$.
+\end{proof}
+
+If $Y$ is any literal finite plaquette set, positivity and the elementary power-mean
+inequality give
+\begin{equation}
+\E\left(\beta\sum_{p\in Y}s_p\right)^r
+\le |Y|^r r!8^r\mathcal B_{n,\beta}.
+\label{eq:patchmoment}
+\end{equation}
+No independence of the plaquettes is asserted. In the simultaneous regime
+$n=t_*/a$, $\beta=O(\log(1/a))$, $\mathcal B_{n,\beta}$ is bounded. This is
+not a uniform-in-$\beta$ assertion at fixed $n$, and it does not construct the
+renormalized coupling trajectory.
+
+\begin{corollary}[Improved absolute mass of the unchanged bare $H$ contact]
+\label{cor:originalcontact}
+Let $Y=Y(f,h)$ be the original overlap union in PD12.26 and $N_Y=|Y|$.
+For the original source and Wilson measure,
+\begin{equation}
+\E|b_{HH}(f,h)|
+\le C_Gc_\beta^{-2}a^{-4}N_Y
+\|f\|_\infty\|h\|_\infty\mathcal B_{n,\beta},\qquad\beta\ge1.
+\label{eq:originalcontactmass}
+\end{equation}
+The corresponding raw mass is this bound multiplied by the actual $Z_\beta$.
+\end{corollary}
+\begin{proof}
+The exact compact-group estimate PD12.27, including every term of
+\eqref{eq:bareb}, is
+$|b_{HH}|\le C_Gc_\beta^{-2}a^{-4}(1+\beta^{-1})\|f\|_\infty\|h\|_\infty E_Y$,
+where $E_Y=\beta\sum_{p\in Y}s_p$. Apply \eqref{eq:patchmoment} with $r=1$.
+The one-reserve estimate itself follows from
+$|X_is_p|\le C_G\sqrt{s_p}$, bounded fixed second plaquette derivatives,
+and the original finite star incidence, as in PD12.28.
+\end{proof}
+This improves a real birth-contact estimate for the unchanged physical source.
+It is not the all-history bound for the ordinary covariance accompanying that
+contact. In particular the Casimir action row in \eqref{eq:Casimir} remains.
+
+\begin{corollary}[Sharper error in the nonlinear dispersion theorem]
+\label{cor:dispersion}
+On the compatible even-torus family, the original nonlinear source of~\cite[\S2]{ND}
+satisfies, with its fixed plateau test and local patch-fit assumptions, for
+$\beta\ge\beta_0$, $0<a<a_0$, and $L\ge0$,
+\begin{equation}
+\sup_c\mu_\beta\{|\OH(f)-c|\le L\}
+\le\min\{1,C_f[e^{-c_f'\beta}+a^2+a^4L]\}.
+\label{eq:sharperdispersion}
+\end{equation}
+\end{corollary}
+\begin{proof}
+The bath event of~\cite[\S2.1]{ND} is implied by $s_p\le\epsilon^2$ on a fixed finite
+patch, with $\epsilon>0$ fixed. Exponential Markov and \eqref{eq:B} give a
+complement probability at most $C\mathcal B_{n,\beta}e^{-\beta\epsilon^2/8}$.
+Since $n\ge2$, $\mathcal B_{n,\beta}\le C\beta^m$, and the polynomial is absorbed
+into $C_\epsilon e^{-\beta\epsilon^2/16}$. Substitute this error in the identical
+good-bath count and conditional concentration proof of~\cite[\S\S2.1--2.4]{ND}. All remaining
+terms and the original source normalization are unchanged.
+\end{proof}
+This is a fixed-patch estimate. A union over $O(a^{-4})$ patches need not be small
+on a logarithmic coupling trajectory; no global small-field event is inferred.
+
+\section{An exact local conditional contact prescription}
+\label{sec:conditional}
+
+Choose a deterministic sparse link set $\mathcal F$ such that no original
+plaquette and no complete determining stencil of an $H$ summand reads two
+selected links. Fixed finite-range packing gives such a set with positive lattice
+density. All original pointed averages are included when choosing the separation.
+Let $b$ be the remaining links. Then the exact Wilson measure has
+\begin{align}
+\rho\dd\lambda
+&=e^{-\beta S_{\mathrm{rest}}(b)}\dd b
+\prod_{e\in\mathcal F}e^{-\beta S_e(U_e;b)}\dd U_e,\notag\\
+d_e(b)&=\int_Ge^{-\beta S_e(U;b)}\dd U,
+&K_e(\dd U\mid b)&=d_e(b)^{-1}e^{-\beta S_e(U;b)}\dd U,\notag\\
+\rho_b(b)&=e^{-\beta S_{\mathrm{rest}}(b)}\prod_e d_e(b),
+&Z_\beta&=\int\rho_b(b)\dd b.
+\label{eq:disintegration}
+\end{align}
+Here $S_e$ is the sum of original plaquette actions containing $e$. All conditional
+denominators and the absolute partition function are explicit. This is an original
+Wilson disintegration; it is not identified with an unverified $R$-operation kernel.
+
+Literal stencil separation gives, for each chosen local source label,
+\begin{equation}
+O_i=O_{0i}(b)+\sum_{e\in\mathcal F}h_{ei}(U_e;b),\quad
+m_i(b)=K_{\mathcal F}O_i,\quad
+X_{ei}=h_{ei}-K_eh_{ei},\quad K_{\mathcal F}=\bigotimes_eK_e.
+\label{eq:localdecomp}
+\end{equation}
+Assigning each whole original summand that reads $e$ to $h_{ei}$ is one valid
+choice. Bath-only additive changes of the splitting do not change its contacts.
+
+\begin{theorem}[Finite-cutoff conditional normal ordering]
+\label{thm:normalorder}
+The input here is the original linear bare source: every inherited action
+coefficient $A_I$ with $|I|\ge2$ is zero.
+Define the bath-dependent polynomial of source degree at least two
+\begin{equation}
+Q_{\mathcal F}(\eta,b)
+=\sum_e\log K_e\exp\left(\sum_i\eta_iX_{ei}\right).
+\label{eq:QF}
+\end{equation}
+It has no linear term. The explicitly \emph{new} source prescription
+\begin{equation}
+\mathcal N_{\mathcal F}(\eta,U)
+=\exp\left(\sum_i\eta_iO_i(U)-Q_{\mathcal F}(\eta,b)\right)
+\label{eq:newsource}
+\end{equation}
+satisfies the exact identity
+\begin{equation}
+K_{\mathcal F}\mathcal N_{\mathcal F}(\eta)
+=\exp\left(\sum_i\eta_i m_i(b)\right).
+\label{eq:CNidentity}
+\end{equation}
+For $|I|\ge2$, its subtraction coefficient is
+\begin{equation}
+Q_{\mathcal F,I}(b)=\sum_e\kappa_{K_e}(h_{ei}:i\in I),
+\label{eq:cumulants}
+\end{equation}
+and is supported in test space where all labels meet one selected-link determining
+patch. These patches have diameter at most $C_{\rm st}a$.
+\end{theorem}
+\begin{proof}
+Conditional independence gives
+$\log K_{\mathcal F}e^{\sum\eta_iO_i}=\sum\eta_i m_i+Q_{\mathcal F}$.
+The factor $e^{-Q_{\mathcal F}}$ is bath measurable, proving
+\eqref{eq:CNidentity}. Expanding the finite logarithm gives the joint conditional
+cumulants without a factorial for distinct square-zero labels. A cumulant
+vanishes if one of its marks does not read that selected patch, proving locality.
+\end{proof}
+
+The original source remains
+$K_{\mathcal F}e^{\sum\eta O}=e^{\sum\eta m+Q_{\mathcal F}}$.
+Removing $Q_{\mathcal F}$ from this identity changes the source and is legitimate
+only under the explicit new definition \eqref{eq:newsource}. Its source-zero mass
+is still $Z_\beta$, and its linear insertion is still the original $O_i$.
+For an inherited nonlinear source action, its complete $K_{\mathcal F}e^A$ must
+instead be used. The one-link cumulant formula \eqref{eq:cumulants} alone would
+then omit its inherited coefficients.
+
+At degree two, write
+\begin{align}
+C_{\mathcal F}(f,h;b)&=\sum_e\Cov_{K_e}(h_e(f),h_e(h)),\notag\\
+[O_fO_h]_{\mathcal F}&=O_fO_h-C_{\mathcal F}(f,h;b),\notag\\
+\Cov_{\mu_\beta}(O_f,O_h)
+&=\Cov_{\mu_\beta}(m_f,m_h)+\E C_{\mathcal F}(f,h;b).
+\label{eq:variance-decomp}
+\end{align}
+The conditional contact is positive semidefinite in its real test labels for every
+bath. Its coefficients can depend on neighboring bath links. It is not replaced
+by a scalar identity counterterm. The full new hierarchy equals the moment
+hierarchy of the projected finite-cutoff observables $m_i$.
+
+Each projected local density is gauge invariant and supported in an enlarged
+microscopic stencil; a smeared $m_f$ is supported in the corresponding enlargement
+of $\supp f$. Gauge covariance follows by changing the integrated link and its
+endpoint frames in \eqref{eq:disintegration}. An arbitrary fine carrier must remain
+inside the conditional integral in \eqref{eq:CNidentity}; only bath-measurable
+carriers factor out. This limitation is relevant to retained readouts.
+
+\begin{theorem}[All finite-order absolute contact masses]
+\label{thm:contactmass}
+On the original even torus, let $r=|I|\ge2$ for the bare linear source of
+Theorem~\ref{thm:normalorder}, and let $N_{\mathcal F}(I)$ count the selected patches meeting
+every original support in $I$. For the original $H$ normalizations on the same
+original lattice,
+\begin{equation}
+\E|Q_{\mathcal F,I}|
+\le C_{G,r}c_\beta^{-r}\mathcal B_{n,\beta}a^{-2r}
+N_{\mathcal F}(I)\prod_{i\in I}\|f_i\|_\infty.
+\label{eq:contactmass}
+\end{equation}
+The raw absolute mass is bounded by the right side times $Z_\beta$.
+For a fixed real $f$ equal to one on a physical box of positive volume, the selected
+links can be chosen so that
+\begin{equation}
+c_fa^{-8}\le \E C_{\mathcal F}(f,f;b)
+\le C_f\mathcal B_{n,\beta}a^{-8}
+\label{eq:contacttwosided}
+\end{equation}
+for $a$ sufficiently small and $\beta\ge\beta_0$.
+\end{theorem}
+\begin{proof}
+Compact plaquette estimates give, for the whole-summand choice in
+\eqref{eq:localdecomp},
+$|h_{ei}|\le C_G\sigma\|f_i\|_\infty S_{Y_e}$,
+where $Y_e$ is a fixed-size original plaquette patch. The cumulant partition
+formula and conditional H\"older give
+\[
+|\kappa_{K_e}(h_{ei}:i\in I)|
+\le C_{G,r}\sigma^r\prod_i\|f_i\|_\infty\,K_e(S_{Y_e}^r).
+\]
+Indeed for a partition $\pi$ of $I$, the product
+$\prod_{B\in\pi}K_eS_{Y_e}^{|B|}$ is at most $K_eS_{Y_e}^r$;
+the sum of its finite cumulant coefficients is absorbed in $C_{G,r}$.
+Integrate over the actual bath law, apply \eqref{eq:patchmoment}, and use
+$\sigma/\beta=c_\beta^{-1}a^{-2}$. Only the literal common-overlap patches
+contribute. This proves \eqref{eq:contactmass}.
+
+For the lower bound, use selected links with their entire determining stencils
+inside the plateau. Section~2 of~\cite{ND} proves for the complete dimensionless local
+$H$ summand that $\Var_{K_e}(G_e)\ge c\beta^{-2}$ on each good bath. Each selected
+link has good-bath probability at least one half, and there are at least
+$c_fa^{-4}$ such links. Multiplication by
+$\sigma^2=\beta^2a^{-4}/c_\beta^2$ gives at least $c_fa^{-8}$.
+This uses no independence of good-bath events. The upper bound is
+\eqref{eq:contactmass} with $r=2$ and the actual count $O(a^{-4})$.
+\end{proof}
+
+Saved scalar factors multiply \eqref{eq:contactmass} by their literal product of
+absolute values. Different saved meshes or pullbacks are not covered merely by
+changing a displayed power of $a$: their actual common determining decomposition
+and moment bounds must first be verified.
+
+\subsection{Tests of the prescription and its limitations}
+
+A precise counterexample prevents promoting one conditional pass to complete
+renormalization. Let independent Gaussian pairs $(X_j,Y_j)$ have unit variances
+and correlation $0<r_0<1$, and put
+$O=a^{-2}\sum_{j=1}^M(X_j^2-1)$. Then
+\begin{equation}
+\E(O\mid Y)=a^{-2}r_0^2\sum_j(Y_j^2-1),\quad
+\E\Var(O\mid Y)=2a^{-4}M(1-r_0^4),\quad
+\Var(\E(O\mid Y))=2a^{-4}Mr_0^4.
+\label{eq:Gaussian-counterexample}
+\end{equation}
+For $M\asymp a^{-4}$ both pieces have order $a^{-8}$. Thus the exact subtraction
+isolates a genuine ultraviolet contact but does not itself prove tightness of the
+remaining observable. This test is a separate probability model, not a replacement
+of the nonlinear Wilson theory.
+
+Finite translation/rotation averages of the new hierarchies are convex mixtures
+of projected-observable laws, not the law of the averaged observable. They retain
+degree-two contact locality. At higher order, the logarithm of a global mixture
+can correlate distinct patches; an all-order local symmetric prescription does
+not follow from that averaging alone. Reflection positivity follows from the
+original law only when each chosen scheme commutes with the same reflection and
+the projected positive-time observables remain in its positive half. Pairing
+two reflected schemes is not by itself that proof.
+
+\section{A separate Gaussian contact extension and a positivity obstruction}
+\label{sec:Gaussian}
+
+This section is an explicit test in the free linearized theory. It does not infer
+interacting estimates from perturbation theory. On a fixed physical torus define
+the Gaussian law in Feynman gauge: its color/component Fourier covariance is
+$\delta_{ab}\delta_{\mu\nu}/\widehat p^2$ for $p\ne0$, up to a specified overall
+positive normalization, with
+$\widehat p^2=\sum_\mu4a^{-2}\sin^2(ap_\mu/2)$; the zero mode is removed.
+Equivalently one may use the transverse inverse, since the currents annihilate
+longitudinal modes. Retain the original forward/backward difference phases.
+The linear directional currents
+$j_{\nu;\mu}=d_\mu^*F_{\mu\nu}$ have two derivatives of the gauge potential.
+For their covariance matrix $C_a(z)$,
+\begin{equation}
+|C_a(z)|\le C_T(d_T(z,0)+a)^{-6},
+\qquad C_a\longrightarrow C\quad\hbox{smoothly off }0.
+\label{eq:freecurrent}
+\end{equation}
+A direct Fourier proof decomposes the multiplier $D^4/\widehat p^2$ into
+smooth dyadic shells $|p|\asymp K$. Its $r$th derivatives are bounded by
+$C_rK^{2-r}$, so summation by parts gives
+$C_NK^6(1+K|z|)^{-N}$ for a shell kernel. Summing to $K\asymp a^{-1}$ gives
+\eqref{eq:freecurrent}; periodization gives the fixed-torus bound. The zero mode
+is killed by the differences. Fixed pointed shifts are $O(a)$ and change only
+the constants in the estimate.
+
+Let $P$ be the block projection $I_3-\frac13\mathbf1\mathbf1^T$ on plane slots
+for each $\nu$. For an unshifted representative the centered quadratic density
+has covariance
+\begin{equation}
+C_{H,a}(z)=2m\Tr\{P C_a(z)P C_a(-z)\},
+\qquad |C_{H,a}(z)|\le C_T(d_T(z,0)+a)^{-12}.
+\label{eq:freeH}
+\end{equation}
+The completed observable uses its literal finite cross-average, which has the
+same bound and off-diagonal limit. This is Wick's identity in the separate
+Gaussian model. A single-source identity subtraction, of order $a^{-6}$, is
+distinct from the two-source prescription below.
+
+\begin{theorem}[Explicit two-point extension]
+\label{thm:extension}
+Choose a smooth cutoff $\chi$ supported in a coordinate ball and equal to one
+near zero. For a smooth test $\varphi$ put
+\begin{align}
+W_8\varphi(z)&=\varphi(z)-\chi(z)
+\sum_{|\alpha|\le8}\frac{z^\alpha}{\alpha!}\partial^\alpha\varphi(0),\label{eq:W8}\\
+\mathcal R_a(\varphi)&=a^4\sum_z C_{H,a}(z)W_8\varphi(z).
+\label{eq:Ra}
+\end{align}
+Then $\mathcal R_a$ converges as a distribution to
+\begin{equation}
+\mathcal R(\varphi)=\int_{z\ne0}C_H(z)W_8\varphi(z)\dd z,
+\label{eq:Rlimit}
+\end{equation}
+with a uniform $C^9$ test bound on fixed compact sets. The finite-cutoff
+counterterm coefficients are explicitly
+\begin{equation}
+c_\alpha(a)=a^4\sum_z C_{H,a}(z)\chi(z)\frac{z^\alpha}{\alpha!},
+\quad |c_\alpha(a)|\le
+\begin{cases}
+C a^{|\alpha|-8},&|\alpha|<8,\\
+C[1+\log(1/a)],&|\alpha|=8.
+\end{cases}
+\label{eq:countercoeff}
+\end{equation}
+Fixed finite local terms can be added to impose specified finite normalizations.
+\end{theorem}
+\begin{proof}
+Near zero, Taylor's theorem gives
+$|W_8\varphi(z)|\le C\|\varphi\|_{C^9}|z|^9$.
+The absolute contribution from $|z|<\delta$ is bounded uniformly in $a$ by
+$C\|\varphi\|_{C^9}\delta$: in four dimensions the radial power is
+$r^3r^{-12}r^9=r^0$. The $z=0$ term vanishes exactly. Away from the ball,
+\eqref{eq:freecurrent} gives ordinary Riemann-sum convergence. Sending first
+$a\to0$ and then $\delta\to0$ proves the claim. The same radial counting with
+$|z|^{|\alpha|}$ proves \eqref{eq:countercoeff}.
+For smeared two-point tests use
+$\varphi(z)=\int f(x)h(x+z)\dd x$ and its lattice version; their $C^9$
+convergence is sufficient by the proved uniform bound.
+\end{proof}
+
+The general scaling-degree extension framework is described in
+Brunetti--Fredenhagen, \S5~\cite{bf}; the elementary proof above establishes this
+particular two-point assertion directly. It is not an interacting construction.
+
+For a hypercubic scalar and a hypercubic cutoff, coordinate-odd coefficients
+vanish. With $p_{2k}=\sum_\mu\partial_\mu^{2k}$, the local ambiguity through
+order eight has the following twelve independent invariant structures:
+\begin{center}
+\begin{tabular}{cl}
+\toprule Differential order&Invariant operators acting on $\delta$\\\midrule
+0&$1$\\
+2&$p_2$\\
+4&$p_2^2,\ p_4$\\
+6&$p_2^3,\ p_2p_4,\ p_6$\\
+8&$p_2^4,\ p_2^2p_4,\ p_4^2,\ p_2p_6,\ p_8$\\\bottomrule
+\end{tabular}
+\end{center}
+These are symmetric polynomials in the four squared derivative variables through
+degree four. Full rotational symmetry would impose additional restrictions;
+it is not assumed for this hypercubic $H$ operator.
+
+\subsection{The logarithmic residue can be computed explicitly}
+
+On $\R^4$ fix the free normalization
+\begin{equation}
+\E A_\mu^a(x)A_\nu^b(0)=\delta_{ab}\delta_{\mu\nu}c|x|^{-2},\qquad
+j_{\nu;\mu}=-\partial_\mu^2A_\nu+\partial_\mu\partial_\nu A_\mu,
+\qquad H=\sum_\nu j_\nu^TPj_\nu.
+\label{eq:freeconvention}
+\end{equation}
+Away from zero its covariance is $C_H(x)=|x|^{-12}\mathcal A(x/|x|)$,
+with $\mathcal A\ge0$ and not identically zero. Positivity follows from
+$2m\|P^{1/2}C(x)P^{1/2}\|_{\rm HS}^2$. The covariance of the total current
+with a directional current has polynomial Fourier multiplier and is supported
+at zero; hence $PC(x)P=C(x)$ away from zero. For example, at $x=(r,0,0,0)$,
+the $j_{2;1}$ self-covariance is $80c r^{-6}$, proving nonvanishing.
+
+Writing $q_{2k}(\omega)=\sum_\mu\omega_\mu^{2k}$ on $S^3$, direct differentiation
+and Wick contraction give
+\begin{equation}
+\frac{\mathcal A(\omega)}{2mc^2}
+=-4608+124416q_4+294912q_4^2-368640q_6.
+\label{eq:angular}
+\end{equation}
+The formula follows by using
+\begin{align*}
+\partial_i\partial_j\partial_k\partial_l|x|^{-2}
+={}&8|x|^{-6}(\delta_{ij}\delta_{kl}+\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk})\\
+&-48|x|^{-8}\sum_{\text{six pairs}}\delta_{ij}x_kx_l
++384|x|^{-10}x_ix_jx_kx_l
+\end{align*}
+in the full $12\times12$ directional-current covariance matrix and summing its squared entries.
+An exact-arithmetic check verifies the polynomial identity, every
+total-current cancellation, and every degree-eight coefficient below.
+
+Define now $p_{2k}=\sum_\mu p_\mu^{2k}$ for a Fourier variable $p$, and let
+\begin{equation}
+\mathcal P_8(p)=\frac1{8!}\int_{S^3}\mathcal A(\omega)(p\cdot\omega)^8\dd\omega.
+\label{eq:P8integral}
+\end{equation}
+The exact sphere moments give
+\begin{equation}
+\boxed{\mathcal P_8(p)=\frac{\pi^2mc^2}{2520}
+\left(297p_2^4+96p_2^2p_4+32p_4^2-104p_2p_6\right).}
+\label{eq:P8explicit}
+\end{equation}
+For $c=(4\pi^2)^{-1}$ the prefactor is $m/(40320\pi^2)$.
+Since $p_6\le p_2^3$, the bracket is at least $193p_2^4$; in particular the
+residue is strictly positive for $p\ne0$. The sphere-moment calculation uses
+\[
+\frac1{|S^3|}\int_{S^3}\omega^\alpha\dd\omega
+=\frac{\prod_\mu(\alpha_\mu-1)!!}
+{4\cdot6\cdots(4+|\alpha|-2)}
+\]
+when every exponent is even, and zero otherwise. Together with
+\eqref{eq:angular} this is a finite coefficientwise derivation of
+\eqref{eq:P8explicit}, rather than numerical quadrature.
+
+\begin{theorem}[Ordinary covariance positivity fails at the allowed contact order]
+\label{thm:positivity-obstruction}
+Let $T$ be any translation-invariant extension of the free $\R^4$ kernel
+$C_H(x)$ with scaling degree at most twelve. No such extension is a
+positive-definite ordinary Euclidean covariance. More explicitly, with Fourier
+convention $\widehat T(p)=\langle T,e^{-ip\cdot x}\rangle$,
+\begin{equation}
+\Re\widehat T(\lambda p)
+=-\lambda^8\log\lambda\,\mathcal P_8(p)+O_p(\lambda^8),
+\qquad\lambda\to\infty,\quad p\ne0.
+\label{eq:negativeFourier}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Every allowed extension differs from the radial-cutoff Taylor extension by
+derivatives of $\delta$ of order at most eight, hence by a Fourier polynomial of
+degree at most eight. For the Taylor extension its Fourier transform is a continuous
+function given by the convergent subtracted oscillatory integral. Dilate
+$x\mapsto x/\lambda$. The degree-eight Taylor term contributes
+\[
+\lambda^8\mathcal P_8(p)
+\int_0^\infty[\chi(r)-\chi(r/\lambda)]\frac{\dd r}{r}
+=-\lambda^8\log\lambda\,\mathcal P_8(p),
+\]
+because $(-i)^8=1$. Every lower Taylor term and every finite allowed contact
+change is $O_p(\lambda^8)$. This proves \eqref{eq:negativeFourier}.
+Its real part is negative on a neighborhood of every sufficiently large point
+along any fixed nonzero ray. A Schwartz test whose Fourier support lies there
+has negative ordinary covariance pairing. Thus positive definiteness fails.
+For a real even extension its Fourier transform is real; taking the real part
+also covers extensions with odd contact terms.
+\end{proof}
+
+This obstruction concerns ordinary probability covariance. It does not contradict
+Osterwalder--Schrader reflection positivity on separated time supports, where the
+local counterterms vanish from the reflected pairing. It is proved for the free
+$\R^4$ model and for extensions respecting the stated scaling degree; higher-order
+contact terms are outside the theorem. A full hierarchy still requires compatible
+extensions at every partial diagonal. Fixed positive flow-time smoothing does not
+by itself settle that local hierarchy.
+
+The restriction on contact order matters. The Fourier transform of the real even
+Taylor extension is bounded in absolute value by
+$C(1+|p|)^8\log(2+|p|)$. Adding a sufficiently large multiple of
+$\delta+(-\Delta)^5\delta$ therefore makes its Fourier transform nonnegative.
+This changes the scaling degree to fourteen. It repairs this two-point ordinary
+positivity test at the cost of a higher-order contact. The resulting positive
+covariance can define a Gaussian hierarchy, but this does not construct the
+specified composite-$H$ higher-point hierarchy or the interacting hierarchy.
+
+There is also a useful diagnostic for the prescription of
+Section~\ref{sec:conditional}. In the separate free model, a sequence of
+ordinary positive covariances cannot have a translation-invariant
+distributional limit on $\R^4$ with the same off-diagonal kernel
+$C_H$ and scaling degree at most twelve: distributional convergence preserves
+positive definiteness, contradicting Theorem~\ref{thm:positivity-obstruction}.
+Consequently a proposed positive projected-observable limit with that
+off-diagonal kernel must either fail to converge or leave this contact-order
+class. This is not a no-go theorem for the interacting source, whose necessary
+off-diagonal comparison has not been established.
+
+\subsection{The exact interacting input still needed}
+
+The same Taylor argument would apply to an actual interacting connected kernel
+after specified single-operator mixing if one proves off-diagonal convergence and
+\begin{equation}
+|C_{H,a}^{\rm int}(z)|\le
+C(|z|+a)^{-12}\bigl(1+|\log(|z|+a)|\bigr)^p
+\label{eq:interactingneeded}
+\end{equation}
+for a fixed $p$, uniformly on the required volumes. The near-diagonal remainder
+would be $O(\delta(1+|\log\delta|)^p)$, and the same contact order would suffice.
+Neither this interacting bound nor its all-order partial-diagonal analogues has
+been proved here. The exact nonlinear prescription in Section~\ref{sec:conditional}
+and the separate Gaussian extension in this section are therefore kept distinct.
+
+\section{Actual one-step selector admission and current-coordinate lifts}
+\label{sec:mixed}
+
+The map in this section is the original one-step average $q:\mathcal D\subset
+G^E\to G^C$ from ME14--31. It is not the matched-reference map of a general
+$R$ history. Its complete row readset $S(c)$ and central crossing pivot $p(c)$
+have the exact properties
+\begin{equation}
+S(c)\cap\{p(d):d\in C\}=\{p(c)\},\qquad
+dq_c(X_{p(c),\cdot})\big|_{U=I}=L^{-3}I.
+\label{eq:pivotinput}
+\end{equation}
+The first property includes every original rooted contour and central path.
+For the second, differentiating the original reference-logarithm mean cancels
+the two reference-path terms; exactly $L$ of its $L^4$ translated middle paths
+read the crossing pivot. Endpoint means stay in their endpoint blocks. The
+$L^{-3}$ is a group/Haar-coordinate factor; physical connection coordinates
+have an additional length conversion.
+
+Write $dq_c(V)=(Vq_c)q_c^{-1}$ and
+\begin{equation}
+A_c=dq_c(X_{p(c),\cdot}),\qquad B_{ci}=dq_c(X_i).
+\label{eq:AB}
+\end{equation}
+
+\begin{theorem}[Literal local plaquette admission]
+\label{thm:admission}
+Suppose that for every row touched by a source direction its full original readset
+lies in a contractible current-lattice box $Q_c$ of side at most $K=O(L)$ bonds,
+with no omitted winding or prescribed seam. Suppose the actual selector implies
+$\|U(\partial p)-I\|\le\epsilon$ on every plaquette of that box. There is a fixed
+$\epsilon_L>0$ such that, if $3K\epsilon\le\epsilon_L$, the actual row belongs
+to its pivot chart and
+\begin{equation}
+s_{\min}(A_c)\ge\tfrac12L^{-3},\qquad
+s_{\max}(A_c)\le\tfrac32L^{-3},\qquad
+\|A_c^{-1}\|\le2L^3.
+\label{eq:pivotbound}
+\end{equation}
+Every fixed-order original-coordinate jet of $A_c^{-1}$ and $B_{ci}$ has a
+bound $C_{L,r}$ on a fixed smaller chart. These constants do not grow with the
+number of active rows or with an earlier ultraviolet mesh.
+\end{theorem}
+\begin{proof}
+Use the coordinate-ordered tree rooted at a box corner. A tree fundamental loop
+is filled by commuting its final unit step past the later coordinate segments;
+at most $3K$ original plaquettes are needed. Its holonomy is the corresponding
+product of transported plaquettes. The transports are unitary on the real field,
+so telescoping gives $\|U_b^g-I\|\le3K\epsilon$ for every bond in the box.
+All row and endpoint frames transform together. Analyticity of the original
+finite mean and \eqref{eq:pivotinput} now give
+$\|L^3A_c-I\|\le1/2$ in transported frames. Fixed real adjoint transports are
+isometries, giving the intrinsic singular-value bounds \eqref{eq:pivotbound}.
+
+For derivative estimates one can hold the real center gauge fixed. The original
+paths have bounded length at fixed $L$; in a fixed smaller complex tube their
+products and inverses remain uniformly bounded and the mean remains on its
+actual branch. Finite-variable Cauchy estimates and inversion give $C_{L,r}$.
+This argument uses a local gauge to prove a coordinate estimate, without changing
+the original integration variable or erasing exterior data.
+\end{proof}
+
+For the actual source bond support $S$, define
+\begin{equation}
+C_S=\{c:S(c)\cap S\ne\varnothing\},\qquad P_S=\{p(c):c\in C_S\}.
+\label{eq:activerows}
+\end{equation}
+The one-step geometry gives bounded row and column overlap:
+$|C_S|+|\bigcup_{c\in C_S}S(c)|\le C_L|S|$. By pivot exclusion the active
+pivot derivative is block diagonal. Thus the inverse function theorem supplies
+the actual simultaneous local chart
+\begin{equation}
+\Phi_S(U)=(z=q_{C_S}(U),w=U_{E\setminus P_S}),\qquad U=\Psi_S(z,w).
+\label{eq:partialchart}
+\end{equation}
+Every other original row remains its actual function of $w$. Rough unrelated
+exterior fields are not put in a potential chart; the original averages that
+are used must still lie on their declared branches.
+
+\begin{proposition}[Complete tangent and output decomposition]
+\label{prop:lifts}
+For a nonpivot source direction define
+\begin{align}
+a_{ci}&=A_c^{-1}B_{ci},
+&H_i&=X_i-\sum_{c,\alpha}a_{ci}^\alpha X_{p(c),\alpha},\notag\\
+Z_{c,\alpha}&=\sum_\beta(A_c^{-1})^{\beta\alpha}X_{p(c),\beta}.
+\label{eq:lifts}
+\end{align}
+Then
+\begin{align}
+dq_d(H_i)&=0\quad\hbox{for every original one-step row }d,\notag\\
+(\Phi_S)_*H_i&=X_{w_i},
+&(\Phi_S)_*Z_{c,\alpha}&=X_{z_c,\alpha},\notag\\
+X_i&=\ind_{\{i\text{ nonpivot}\}}H_i
++\sum_{c,\alpha}B_{ci}^\alpha Z_{c,\alpha}.
+\label{eq:complete-lift}
+\end{align}
+For $V=\sum_{i\in S}v_iX_i$, this gives the exact split
+\begin{equation}
+V=V_{\rm fib}+V_{\rm out},\quad
+V_{\rm fib}=\sum_{i\text{ nonpivot}}v_iH_i,\quad
+V_{\rm out}=\sum_{c,\alpha}(dq_cV)^\alpha Z_{c,\alpha}.
+\label{eq:Vsplit}
+\end{equation}
+\end{proposition}
+\begin{proof}
+For an active row the compensation is exactly $B_{di}-A_dA_d^{-1}B_{di}=0$.
+A remote row reads neither the original source direction nor an active pivot,
+by \eqref{eq:pivotinput}; no inverse of a rough remote row is needed. The $w$
+coordinates change exactly by their original invariant field. The output
+identities and the pivot case follow directly from \eqref{eq:AB}.
+\end{proof}
+
+Every source pivot has its full output response and zero internal component in
+this chart. The coefficient projection in \eqref{eq:Vsplit} has bounded
+$\ell^2\to\ell^2$ norm by its two bounded Schur sums. Fixed ordered words are
+transformed in their original order, including all derivatives of $A_c^{-1}$ and
+$B_{ci}$. For the convention of Section~\ref{sec:conventions},
+$[H_{e,A},H_{f,B}]=-\delta_{ef}f_{AB}^{\ C}H_{e,C}$ when
+$[T_A,T_B]=f_{AB}^{\ C}T_C$; the coordinate pushforward preserves this sign.
+No all-history contraction follows from the finite one-step jet bound.
+
+The vectors in \eqref{eq:lifts} are intrinsic functions of the same original map
+and agree on overlaps of its admitted charts. If a genuine chart partition
+$\sum_\alpha\psi_\alpha=1$ is used near a distribution's support, linearity gives
+\begin{equation}
+\sum_\alpha D_{H_{i_r}}\cdots D_{H_{i_1}}(\psi_\alpha T)
+=D_{H_{i_r}}\cdots D_{H_{i_1}}T.
+\label{eq:chartglue}
+\end{equation}
+Thus artificial chart-interface derivatives cancel before estimates. This does
+not cancel original history selectors or compare different history-dependent maps.
+
+\subsection{Coarea, full effective scores, and sharp selectors}
+
+The exact Haar factor is
+\begin{equation}
+\Psi_S^*\dd\lambda_U=J_S\dd\lambda_z\dd\lambda_w,
+\qquad J_S(z,w)=\prod_{c\in C_S}
+|\det A_c(\Psi_S(z,w))|^{-1}.
+\label{eq:coarea}
+\end{equation}
+The crucial divergence sign is
+\begin{equation}
+X_{w_i}\log J_S=(\diver H_i)\circ\Psi_S,
+\qquad\diver H_i=-\sum_{c,\alpha}X_{p(c),\alpha}a_{ci}^\alpha.
+\label{eq:coareascore}
+\end{equation}
+Indeed the coordinate invariant field has zero divergence for product Haar,
+and divergence for $J_S\lambda_z\lambda_w$ adds $X_{w_i}\log J_S$.
+Logarithmic coordinates must also retain their Haar coordinate densities.
+
+For the complete positive smooth body $\rho=e^{-\beta_sS_0}G$,
+$R=(\rho\circ\Psi_S)J_S$, the negative internal score is exactly
+\begin{equation}
+-X_{w_i}\log R
+=\bigl[\beta_sH_iS_0-H_i\log G-\diver H_i\bigr]\circ\Psi_S.
+\label{eq:fullscore}
+\end{equation}
+A variable-coefficient vector uses
+$\rho^{-1}D_{V_{\rm fib}}\rho
+=\beta_sV_{\rm fib}S_0-V_{\rm fib}\log G-\diver V_{\rm fib}$;
+the divergence includes $\sum_iH_iv_i$. For signed or vanishing selected terms
+use the unnormalized tested identity, without inventing a logarithm or a positive
+conditional law:
+\begin{equation}
+(\Phi_S)_*(D_{X_i}\rho)
+=-\ind_{\{i\text{ nonpivot}\}}X_{w_i}R
+-\sum_{c,\alpha}X_{z_c,\alpha}\bigl[(B_{ci}^\alpha\circ\Psi_S)R\bigr].
+\label{eq:pushcurrent}
+\end{equation}
+This retains derivatives of the coarea factor and the moving output coefficients.
+
+For the smooth Wilson body alone, compact plaquette estimates give, with literal
+local star unions $Y_i$ and $E_Y=\beta_s\sum_{p\in Y}s_p$,
+\begin{align}
+|-X_{w_i}\log R|&\le C_L(1+\sqrt{\beta_s}\sqrt{E_{Y_i}}),\notag\\
+|X_{w_{i_r}}\cdots X_{w_{i_1}}R|
+&\le C_{L,r}\beta_s^{r/2}(1+E_{Y_r})^{r/2}R,\qquad\beta_s\ge1.
+\label{eq:scorejets}
+\end{align}
+Higher log derivatives are bounded by $C_{L,r}(1+\beta_s)$; ordered exponential
+differentiation proves the second estimate. A full inherited $G$ adds its actual
+ordered jets $H_{i_j}\cdots H_{i_1}\log G$ to the finite Bell polynomial.
+Normalization of $G$ supplies no estimate for these derivatives.
+
+Let $\Xi$ denote the original joint sharp selectors, gauge factors, and old
+constraints. It remains $\Xi\circ\Psi_S$. For a smooth multiplier $\chi$,
+$D_i=-X_{w_i}$ gives
+\begin{equation}
+[D_r\cdots D_1,\chi]
+=\sum_{j=1}^r D_r\cdots D_{j+1}M_{D_j\chi}D_{j-1}\cdots D_1.
+\label{eq:boundarycommutator}
+\end{equation}
+For a sharp selector this is distributional; already singular constraints are
+differentiated as their complete original joint distribution, without forming
+undefined products of exposed delta factors. If an actual selector is
+$\chi(U;b)=\chi_{\rm out}(q(U);b)$ with retained reference data satisfying
+$H_i b=0$, then every checked $H_i\chi=0$ and all
+ordered internal words commute with it. Its boundary response remains in
+$V_{\rm out}$. Fine selectors and older differently averaged constraints need
+their own check.
+
+The effect of replacing the bare score by the full score is especially explicit:
+\begin{equation}
+O_H\Xi G\rho_W
+=r_H\Xi G\rho_W+D_{V_H}(\Xi G\rho_W)+\rho_WV_H(\Xi G).
+\label{eq:historycorrection}
+\end{equation}
+The last term contains $+V_H\log G$ in its smooth ordinary part and every original
+selector/constraint response. Keeping only the old $r_H$ after changing the score
+would violate this identity.
+
+\subsection{Actual $H$ projection, retained constraints, and live references}
+
+On the lattice where the original source is evaluated, keep
+$\sigma=\gamma^{-2}a^{-2}$ and its action coefficient $\beta_s$. The full
+physical vector has the internal component
+\begin{equation}
+V_{H,\rm fib}(f)=-\frac{\sigma}{3\beta_s}
+\sum_{i\text{ nonpivot}}f_iF_iH_i.
+\label{eq:Hfib}
+\end{equation}
+Let $Y$ be the literal union of source and compensating-pivot plaquette stars,
+and $N_S$ the actual number of source bond/color directions. Bounded overlap and
+$|F_i|^2\le C\sum_{p\ni i}s_p$ prove
+\begin{align}
+\|V_{H,\rm fib}\|_{\rm coeff}^2
+&\le C_L\sigma^2\beta_s^{-3}\|f\|_\infty^2 E_Y,\label{eq:Hfibbound}\\
+|t_{H,\rm fib}|
+&\le C_L|\sigma|\beta_s^{-1}\|f\|_\infty(N_S+E_Y)
+\quad(G=1,\ \beta_s\ge1).
+\label{eq:Hscorebound}
+\end{align}
+To verify the second bound, the action term is a finite-overlap product of two
+forces and costs $C_L|\sigma|\beta_s^{-1}\|f\|_\infty E_Y$.
+Differentiating $f_iF_i$ contributes bounded second Wilson derivatives times
+$N_S$. The remaining coefficient-divergence term is bounded by the same prefactor
+times $\sqrt{N_SE_Y/\beta_s}$ and is absorbed by $N_S+E_Y$.
+The complete inherited body adds exactly $-V_{H,\rm fib}\log G$ and the original
+sharp distributional partners. If $\beta_s=c_\beta\gamma^{-2}$, then
+$\sigma\beta_s^{-1}=c_\beta^{-1}a^{-2}$: no missing birth gain is supplied.
+Conversion to $U=e^{hB}U^0$ requires the actual inverse exponential differential
+and a factor $h^{-1}$, hence $h^{-2}$ in the squared vector norm. An identification
+of this fiber with the native $B$ fiber is not assumed.
+
+The retained-halo chart ME19--31 has
+$(h,z,w)=(U_{H^+},q_{O_H},w)$, with
+$q=(q_{I_H}(h),z)$. At a prescribed full output it still contains
+\begin{equation}
+\delta(q_{I_H}(h)-y_{I_H}).
+\label{eq:remainingdelta}
+\end{equation}
+A retained inside pivot has the actual flat derivative
+$X_{p(c),A}q_c=L^{-3}T_A$; differentiating \eqref{eq:remainingdelta} therefore
+produces a nonzero output-delta response. Solving the inside pivots recovers the
+full-output tangent chart and the exact inside determinant factors. A retained
+direction at fixed $z$ is not automatically internal at fixed full $q$.
+
+For a parameter family of this same original one-step map, preserving its fixed
+read sets and pivot exclusion, let $b$ be a live reference and $y_c(b)$ a moving
+group target. Use the relative output $r_c=q_c(U;b)y_c(b)^{-1}$. Define
+$u_c=(\partial_bq_c)q_c^{-1}$ and $v_c=(\partial_by_c)y_c^{-1}$.
+The exact fixed-relative-output lift is
+\begin{equation}
+R_b^{\rm rel}=\partial_b-\sum_{c,\alpha}
+\left[A_c^{-1}(u_c-\Ad_{r_c}v_c)\right]^\alpha X_{p(c),\alpha}.
+\label{eq:movingtarget}
+\end{equation}
+The sum includes every row moved by either $q$ or $y$, including any outside
+$C_S$, with admission verified on each such row. Only on $q_c=y_c$ can the
+adjoint be removed. The rowwise formula does not apply to a general mixed map
+with off-diagonal pivot derivatives. Old prefixes and reference derivatives
+acquire no automatic $C_L$ bound. The reference base measure, coarea, all
+independent scalar derivatives, and the responses of every other
+$b$-dependent selector, gauge factor, or domain indicator remain in the full
+density divergence.
+
+\begin{remark}
+This section closes an actual one-step current-coordinate identification on a
+specified local selector sector. It does not identify arbitrary $R$-I/$R$-II
+prepared fields or old readouts with that sector, prove the three localization
+joins of AE8/LM47, or give a spectral gap after additional selectors. An admitted
+coordinate chart can still contain a disconnected selected support.
+\end{remark}
+
+\section{Exact complete-score transport on a verified positive fiber}
+\label{sec:Poisson}
+
+Fix all retained old variables and live references $b$. On an \emph{identified}
+native fiber let
+\begin{equation}
+\dd\mu_b=\rho_b(B)\ind_{\Omega_R}(B)\dd B,\qquad
+Z_b=\mu_b(1)>0,\qquad K_b=Z_b^{-1}\mu_b.
+\label{eq:actualfiber}
+\end{equation}
+The complete smooth positive body $\rho_b$ contains every inherited effective
+factor and Jacobian. The sharp product-norm cutoff is the original one. Assume
+its actual Poincar\'e inequality
+\begin{equation}
+\Var_{K_b}F\le C_P(b)K_b|\nabla_BF|^2.
+\label{eq:actualgap}
+\end{equation}
+Reference~\cite[\S4]{ND} verifies this for its admitted reference and small same-record weight
+interpolation. If $\rho_b=f_be^{-W_b}$ on that same support and the reference
+constant is $C_0$, a direct density-ratio comparison gives
+\begin{equation}
+C_P(b)\le e^{\osc_{\Omega_R}W_b}C_0.
+\label{eq:oscillation}
+\end{equation}
+Indeed $r=\dd K_b/\dd K_0$ gives
+$\Var_{K_b}F\le(\sup r)\Var_{K_0}F
+\le C_0(\sup r/\inf r)K_b|\nabla F|^2$.
+Large constant parts of $W_b$ remain in $Z_b$. A new sharp selector is not a
+bounded-oscillation perturbation: a Gaussian restricted to two disjoint intervals
+has a nonconstant piecewise-constant function with zero internal gradient.
+No spectral gap is imported into the one-step chart of Section~\ref{sec:mixed}.
+
+Define the full effective-score operator
+\begin{equation}
+L_b=\Delta_B+\nabla\log\rho_b\cdot\nabla_B.
+\label{eq:Lb}
+\end{equation}
+For $KF=0$ and $F\in L^2(K)$, the mean-zero weak Neumann problem is
+\begin{equation}
+K(\nabla u_F\cdot\nabla\phi)=K(F\phi)\quad(\phi\in H^1(K)),
+\qquad Ku_F=0.
+\label{eq:weakPoisson}
+\end{equation}
+Coercivity \eqref{eq:actualgap} and the Hilbert-space representation theorem give
+a unique solution. Set $V_F=\nabla u_F$. In weak density notation,
+\begin{equation}
+D_{V_F}\mu=F\mu,\qquad
+\|V_F\|_2\le\sqrt{C_P}\|F\|_2,\qquad
+\|V_F\|_2\le C_P\|\nabla F\|_2\quad(F\in H^1).
+\label{eq:inverse}
+\end{equation}
+The first bound follows by testing with $u_F$ and applying Poincar\'e; the second
+then applies Poincar\'e to $F$. The reflecting condition is imposed on this new
+auxiliary current. It makes no assertion about the flux of an old physical current.
+
+\begin{theorem}[Finite-source transport with the original mass retained]
+\label{thm:Poissontransport}
+For the actual source action $A(\eta,B)$ define
+\begin{equation}
+c(\eta;b)=\log K_b e^A,\qquad R(\eta,B;b)=e^{A-c}-1.
+\label{eq:centeredsource}
+\end{equation}
+Every coefficient $R_I$ has $K_bR_I=0$. If these coefficients lie in $L^2(K_b)$,
+let $V_I=\nabla(-L_b)^{-1}R_I$ in the sense of \eqref{eq:weakPoisson}. Then
+\begin{align}
+\mu_be^A&=e^c\left[\mu_b+\sum_{I\ne\varnothing}\eta_I D_{V_I}\mu_b\right],
+\label{eq:transportdensity}\\
+\int e^A\Phi\dd\mu_b
+&=Z_be^c\left[K_b\Phi+\sum_{I\ne\varnothing}\eta_I
+K_b(V_I\cdot\nabla_B\Phi)\right].
+\label{eq:transportcarrier}
+\end{align}
+The tested current formula holds coefficientwise for $H^1$ carrying functions.
+\end{theorem}
+\begin{proof}
+$Ke^{A-c}=1$ in the finite algebra, so each $R_I$ is centered. Substitute
+\eqref{eq:inverse} into $\mu_be^{A-c}=\mu_b(1+R)$ and multiply by the
+internally constant $e^c$. This requires no composition or exponential flow of
+weak vector fields. Testing gives \eqref{eq:transportcarrier}.
+\end{proof}
+
+Every generated scalar/contact remains in $e^c$. Deleting that factor would
+change the original physical source. If the original expression is
+$e^{s(b)}D_{\rm orig}(b)^{-1}\int\rho_bF$, its scalar is
+\begin{equation}
+\frac{e^{s(b)}Z_b}{D_{\rm orig}(b)}K_bF;
+\label{eq:absolutescalar}
+\end{equation}
+the ratio is not set to one, and every retained derivative differentiates it.
+For an actual readout $q(b,B)$,
+$V_I\cdot\nabla(\phi\circ q)=(D_Bq\,V_I)\cdot\nabla\phi$.
+The absolute mass of the pushed vector is at most
+$Z_b\|\|D_Bq\|_{\rm op}\|_{L^2(K_b)}\|V_I\|_2$, with all actual coordinate components.
+These currents can depend on the whole native component; no spatial-distance
+gain or retained-variable derivative bound follows from \eqref{eq:inverse}.
+
+\subsection{Two-source currents and a quantitative $L^4$ bound}
+
+For \eqref{eq:source}, let $m_i=KO_i$ and $t_i^P=O_i-m_i$. Exact finite algebra gives
+\begin{equation}
+c_{12}=KA_{12}+\Cov_K(O_1,O_2),\qquad
+R_{12}=A_{12}+t_1^Pt_2^P-c_{12}.
+\label{eq:actualc12}
+\end{equation}
+An ordinary representative of its covariance part is
+\begin{equation}
+\Gamma_{12}^P=\tfrac12(V_{t_1^P}\cdot\nabla O_2+V_{t_2^P}\cdot\nabla O_1),
+\quad K\Gamma_{12}^P=\Cov_K(O_1,O_2),
+\quad K|\Gamma_{12}^P|\le C_P\|\nabla O_1\|_2\|\nabla O_2\|_2.
+\label{eq:contactrepresentative}
+\end{equation}
+It represents the actual nonzero contact. Its raw mass includes $Z_b$ and the
+absolute value of every independent prefactor.
+
+Poincar\'e applied to $(F-KF)^2$ supplies a useful fourth-moment consequence:
+\begin{equation}
+\|F-KF\|_4\le c_4\sqrt{C_P}\|\nabla F\|_4,
+\qquad c_4=\sqrt{2+\sqrt5}.
+\label{eq:L4Poincare}
+\end{equation}
+In fact, with $X=(K(F-KF)^4)^{1/2}$ and $a_4=\|\nabla F\|_4^2$, the
+inequality is $X^2\le C_P^2a_4^2+4C_Pa_4X$. Solving the quadratic proves
+\eqref{eq:L4Poincare}; truncation gives the usual Sobolev version.
+Since $\nabla R_{12}=\nabla A_{12}+t_1^P\nabla O_2+t_2^P\nabla O_1$,
+\eqref{eq:inverse}, H\"older, and \eqref{eq:L4Poincare} give
+\begin{equation}
+\boxed{\|V_{12}\|_2\le C_P\|\nabla A_{12}\|_2
++2c_4C_P^{3/2}\|\nabla O_1\|_4\|\nabla O_2\|_4.}
+\label{eq:V12bound}
+\end{equation}
+Large insertion means are absent from this bound. The full effective score is
+still present in the inverse defining $V_{12}$.
+At degree two an external carrier also contributes
+$K(V_1\cdot\nabla\Phi_2)+K(V_2\cdot\nabla\Phi_1)
++K(V_{12}\cdot\nabla\Phi_0)$, followed by the full convolution with $e^c$.
+The scalar coefficient $c_{12}$ alone does not describe that carrying response.
+
+\subsection{Exact conversion of the old boundary and Casimir partners}
+
+Suppose an old decomposition has been correctly lifted to this same realization:
+\begin{equation}
+O_i=t_i+r_i,\qquad t_i\mu=D_{V_i^{\rm old}}\mu+B_i.
+\label{eq:oldboundarysplit}
+\end{equation}
+$B_i$ is the complete original boundary/constraint partner, with its original
+sign. For a smooth old field on the fixed cutoff,
+\begin{equation}
+t_i=-\rho^{-1}\diver(\rho V_i^{\rm old}),\qquad
+B_i=-\rho(V_i^{\rm old}\cdot n)\dd\sigma_{\partial\Omega_R}.
+\label{eq:boundarysign}
+\end{equation}
+The sign follows from $\nabla\ind_{\Omega_R}=-n\delta_{\partial\Omega_R}$.
+The new Poisson current satisfies the exact difference identity
+\begin{equation}
+\boxed{D_{V_i^P-V_i^{\rm old}}\mu=(r_i-m_i)\mu+B_i.}
+\label{eq:changeofsplit}
+\end{equation}
+Thus its zero flux does not remove the old partner.
+
+Let $\mathcal B_i(F)=Z^{-1}\langle B_i,F\rangle$ and
+$\mathring{\mathcal B}_i(F)=\mathcal B_i(F)-\mathcal B_i(1)KF$.
+Retain $b_{12}^{\rm old}$ from \eqref{eq:oldb}, with these actual $t_i,r_i$.
+Then
+\begin{equation}
+\boxed{\begin{aligned}
+c_{12}={}&Kb_{12}^{\rm old}+\Cov_K(r_1,r_2)\\
+&+\mathring{\mathcal B}_1(r_2+\tfrac12t_2)
++\mathring{\mathcal B}_2(r_1+\tfrac12t_1).
+\end{aligned}}
+\label{eq:boundarybridge}
+\end{equation}
+To prove it, use
+$K(t_iF)=K(V_i^{\rm old}F)+\mathcal B_i(F)$, expand $O_1O_2$, symmetrize
+the pure-current term, and subtract the full product of means. The centered
+boundary terms include $-\mathcal B_1(1)\mathcal B_2(1)$.
+
+For external carriers, the raw ordered identity is more detailed:
+\begin{align}
+(A_{12}+O_1O_2)\mu={}&(b_{12}^{\rm old}+r_1r_2)\mu
++D_{V_1^{\rm old}}(r_2\mu)+D_{V_2^{\rm old}}(r_1\mu)\notag\\
+&+\tfrac12(D_{V_1^{\rm old}}D_{V_2^{\rm old}}
++D_{V_2^{\rm old}}D_{V_1^{\rm old}})\mu\notag\\
+&+(r_2+\tfrac12t_2)B_1+(r_1+\tfrac12t_1)B_2\notag\\
+&+\tfrac12(D_{V_1^{\rm old}}B_2+D_{V_2^{\rm old}}B_1).
+\label{eq:rawbridge}
+\end{align}
+This follows by the ordered product rule. It is used only when its old smooth
+fields and displayed distributional products exist on the common realization.
+Already singular higher words require their original tested-kernel formulation;
+no product of coincident boundary delta distributions is inserted.
+
+For $H$, changing the score requires
+\begin{equation}
+r_i=r_{H,i}+e_i,\qquad e_i=t_{H,i}-t_i.
+\label{eq:effectivecorrection}
+\end{equation}
+Thus the covariance in \eqref{eq:boundarybridge} contains the four original
+$dd,d\ell,\ell d,\ell\ell$ rows from \eqref{eq:Casimir}, \emph{and}
+\begin{equation}
+\Cov(r_{H,1},e_2)+\Cov(e_1,r_{H,2})+\Cov(e_1,e_2).
+\label{eq:extracovrows}
+\end{equation}
+The constant Casimir terms remain in raw first-source masses and in separate
+boundary means before centering. The field-dependent action row cannot be
+removed by centering. Applying a bound to the algebraically complete
+$O_H=t_H+r_H$ can avoid losses from separately bounding its artificial pieces,
+but does not prove a smaller bound for every old row. Equations
+\eqref{eq:changeofsplit}--\eqref{eq:extracovrows} record the exact conversion.
+
+\section{A quantitative comparison of the actual connected native contact}
+\label{sec:contactcomparison}
+
+On a genuine fixed-domain chart, let $s_\theta=\partial_\theta\log\rho_\theta$
+be the score of its complete actual body. Exact differentiation gives
+\begin{equation}
+\partial_\theta\log Z_\theta=K_\theta s_\theta,
+\qquad
+\partial_\theta K_\theta F_\theta
+=K_\theta\dot F_\theta+\Cov_{K_\theta}(F_\theta,s_\theta).
+\label{eq:parameterresponse}
+\end{equation}
+In particular, retaining the actual inherited $A_{12}$,
+\begin{equation}
+\boxed{\dot c_{12}=K\dot A_{12}
++\Cov(\dot O_1,O_2)+\Cov(O_1,\dot O_2)
++K(V_{12}\cdot\nabla s_\theta).}
+\label{eq:c12derivative}
+\end{equation}
+The last term is
+$\Cov(A_{12}+(O_1-m_1)(O_2-m_2),s_\theta)$ by the weak Poisson equation.
+It retains the full third cumulant and the inherited-contact score response.
+Consequently
+\begin{align}
+|\dot c_{12}|\le{}&K|\dot A_{12}|
++C_P\{\|\nabla\dot O_1\|_2\|\nabla O_2\|_2
++\|\nabla O_1\|_2\|\nabla\dot O_2\|_2\}\notag\\
+&+\{C_P\|\nabla A_{12}\|_2
++2c_4C_P^{3/2}\|\nabla O_1\|_4\|\nabla O_2\|_4\}
+\|\nabla s_\theta\|_2.
+\label{eq:generalresponsebound}
+\end{align}
+If a selector moves, let $\dot\mu_\theta^\partial$ be its actual raw boundary
+or constraint distribution and
+$\mathcal S_\theta(F)=Z_\theta^{-1}\langle\dot\mu_\theta^\partial,F\rangle$.
+The additional term in \eqref{eq:c12derivative} is exactly
+\begin{equation}
+\mathcal S_\theta(A_{12}+t_1^Pt_2^P)
+-K_\theta(A_{12}+t_1^Pt_2^P)\mathcal S_\theta(1).
+\label{eq:movingboundary}
+\end{equation}
+There is no logarithm of a sharp indicator. Derivatives of the independent scalar
+in \eqref{eq:absolutescalar} are still required for raw responses.
+
+Now specialize to the \emph{verified same-target, same-forest, same-selector}
+top-scale interpolation of~\cite[\S4]{ND}:
+\begin{equation}
+K_\theta=\frac{e^{-\theta w}}{K_0e^{-\theta w}}K_0,
+\qquad0\le\theta\le1,\qquad s_\theta=-w,
+\quad C_P\le\kappa^{-1},\quad
+|\nabla w|\le\alpha_w+2\delta_w|B|.
+\label{eq:actualtilt}
+\end{equation}
+The actual fine map and the physical functions $O_i$ remain fixed on this branch.
+Let $n_B$ be the actual real native coordinate count and
+$L_*=\sup_{0\le\theta\le1}|\nabla[-\log\rho_\theta](0)|$ its actual drift bound.
+This verified interpolation also has
+$\nabla^2[-\log\rho_\theta]\ge\kappa I$ on the original convex cutoff,
+whose outward normal satisfies $B\cdot n\ge0$.
+Using this stronger Hessian and boundary input, the moments of~\cite[\S3.1]{ND} are
+\begin{align}
+M_2^*&=2n_B/\kappa+L_*^2/\kappa^2,\notag\\
+M_4^*&=\left(\frac2\kappa\right)^2
+\left(n_B+\frac{L_*^2}{2\kappa}\right)
+\left(n_B+2+\frac{L_*^2}{2\kappa}\right).
+\label{eq:nativemoments}
+\end{align}
+They bound $K_\theta|B|^2$ and $K_\theta|B|^4$ without a cutoff supremum;
+these moment statements do not follow from a Poincar\'e bound alone.
+For the fully admitted padded interior $H$ stencils, its proved native response is
+\begin{equation}
+|\nabla_BO_i|\le A_i(\epsilon_{\rm bg}+h|B|),\qquad
+A_i=C_{M,\rm col}|\Gamma_i|\|f_i\|_\infty
+\gamma_i^{-2}V_{D,i}h.
+\label{eq:actualHgradient}
+\end{equation}
+Here $h$ is native and $\gamma_i$ is the saved source coupling. Precisely,
+$V_{D,i}=a_{{\rm cur},i}^4N_{D,i}$, where $a_{{\rm cur},i}$ is the actual
+source/reference-word mesh in the current units of the admitted~\cite[\S3]{ND}
+record and $N_{D,i}$ is its actual stencil count. No conversion to a different
+global physical-volume convention is implicit. The saved factor $\Gamma_i$ is internally
+constant; otherwise its full product-rule derivative must be added. Distinct old
+meshes require their actual pullback-response verification before this estimate
+can be used.
+
+\begin{theorem}[Actual native two-source contact comparison]
+\label{thm:contactvariation}
+Under precisely \eqref{eq:actualtilt}--\eqref{eq:actualHgradient}, with unchanged
+physical $H$ insertions and bare $A_{12}=0$,
+\begin{equation}
+\boxed{\begin{aligned}
+&|\Cov_{K_1}(O_1,O_2)-\Cov_{K_0}(O_1,O_2)|\\
+&\quad\le2c_4\kappa^{-3/2}A_1A_2
+\bigl(\epsilon_{\rm bg}+h(M_4^*)^{1/4}\bigr)^2
+\bigl(\alpha_w+2\delta_w\sqrt{M_2^*}\bigr).
+\end{aligned}}
+\label{eq:contactvariation}
+\end{equation}
+For an unchanged inherited $A_{12}$, the comparison of the actual $c_{12}$
+has the additional term
+\begin{equation}
+\kappa^{-1}(\alpha_w+2\delta_w\sqrt{M_2^*})
+\sup_{0\le\theta\le1}\|\nabla_BA_{12}\|_{L^2(K_\theta)}.
+\label{eq:inheritedcontact}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Minkowski and \eqref{eq:nativemoments} give
+$\|\nabla O_i\|_4\le A_i(\epsilon_{\rm bg}+h(M_4^*)^{1/4})$
+and $\|\nabla w\|_2\le\alpha_w+2\delta_w\sqrt{M_2^*}$.
+Use \eqref{eq:c12derivative} and \eqref{eq:V12bound}, then integrate in $\theta$.
+An independent proof avoids Poisson regularity: differentiation gives
+$\partial_\theta\Cov(O_1,O_2)
+=-\Cov((O_1-m_1)(O_2-m_2),w)$.
+Poincar\'e's covariance bound, H\"older, and \eqref{eq:L4Poincare} give the
+same constant $2c_4C_P^{3/2}$ directly.
+\end{proof}
+
+When $\gamma_1=\gamma_2=h$, the source part of the bound is proportional to
+\[
+|\Gamma_1\Gamma_2|\|f_1\|_\infty\|f_2\|_\infty V_{D,1}V_{D,2}
+\bigl(\epsilon_{\rm bg}/h+(M_4^*)^{1/4}\bigr)^2
+(\alpha_w+2\delta_w\sqrt{M_2^*}).
+\]
+The estimate concerns the complete physical covariance. The old action and
+effective-score covariance rows in \eqref{eq:extracovrows} have not individually
+lost their inverse mesh factors. Moving insertions, moving contacts, and moving
+selectors require the explicit extra terms in
+\eqref{eq:generalresponsebound}--\eqref{eq:movingboundary}. This theorem gives
+neither all-history MT36 nor its required age and source-grade gains.
+
+\section{A sharper exact Wilson pressure comparison}
+\label{sec:pressure}
+
+Make the plaquette convention explicit in this section:
+\begin{equation}
+s(U)=c_{\rm rep}\left(1-\frac1N\Re\Tr U\right),\qquad c_{\rm rep}>0.
+\label{eq:actionconvention}
+\end{equation}
+$c_{\rm rep}=N$ is \eqref{eq:Wilson}; $c_{\rm rep}=1$ is the SV2 convention.
+In either case $\beta$ is its original coefficient and is unchanged in every
+volume comparison. For a rectangular four-torus $R$ put
+\begin{equation}
+Z_{a,R}(\beta)=\int e^{-\beta\sum_{p\subset R}s(U_p)}\prod_b\dd U_b,
+\qquad p_{a,R}=\Vol(R)^{-1}\log Z_{a,R}.
+\label{eq:pressuredef}
+\end{equation}
+All action constants and normalized Haar factors are included. Write
+$T_*=(\R/t_*\mathbb Z)^4$, $n=t_*/a$ and an integer cover factor $q$.
+
+\subsection{The exact positive transfer operator and its gauge projection}
+
+For a transverse three-torus $\Sigma$ of physical volume $A$, its original
+numbers of sites and positive spatial links are
+\begin{equation}
+V_\Sigma=A/a^3,\qquad E_\Sigma=3A/a^3.
+\label{eq:slicecount}
+\end{equation}
+On $X=G^{E_\Sigma}$ with normalized Haar, set
+\begin{align}
+b(U)&=e^{-\beta S_{\rm sp}(U)/2},\qquad k_\beta(g)=e^{-\beta s(g)},\notag\\
+C_\beta(U,V)&=\prod_{e\in E_\Sigma}k_\beta(U_eV_e^{-1}),\qquad
+T=M_bC_\beta M_b.
+\label{eq:transfer}
+\end{align}
+In particular $k_\beta(1)=1$; its factor $e^{-\beta c_{\rm rep}}$ per temporal
+plaquette has not been divided out. The pure-gauge transfer construction and
+its character-positivity mechanism agree with the original construction of
+L\"uscher~\cite{luscher}; the periodic projected identity is derived below.
+
+\begin{lemma}[Positivity, trace, and physical top eigenvalue]
+\label{lem:transfer}
+$T$ is positive, self-adjoint and trace class. Let $P$ be the normalized Haar
+average over site gauge transformations on $\Sigma$. Then $TP=PT$, and
+\begin{align}
+\Tr T&=\int_Xb(U)^2\dd U,\notag\\
+Z_{a,(ra)\times\Sigma}&=\Tr(T^rP)
+=\Tr_{\rm phys}T_{\rm phys}^r,\qquad
+T_{\rm phys}=T|_{PL^2(X)},\label{eq:periodictrace}\\
+\|T_{\rm phys}\|&=\|T\|=:\lambda>0.
+\label{eq:physicaltop}
+\end{align}
+\end{lemma}
+\begin{proof}
+The exact absolutely convergent series
+\[
+k_\beta(g)=e^{-\beta c_{\rm rep}}
+\sum_{r,s\ge0}\frac{(\beta c_{\rm rep}/(2N))^{r+s}}{r!s!}
+\chi_f(g)^r\chi_{\bar f}(g)^s
+\]
+has nonnegative irreducible character coefficients $c_\rho$: each product is
+the character of a tensor representation. Convolution has eigenvalue
+$c_\rho/d_\rho$ on its Peter--Weyl block of multiplicity $d_\rho^2$.
+The nonnegative total trace is
+$\sum_\rho d_\rho c_\rho=k_\beta(1)=1$.
+Tensoring over the actual spatial links and multiplying by bounded $b$ proves
+positivity and trace class. The continuous diagonal kernel gives the stated trace.
+
+For a slice gauge field $h$, $(h\cdot U)_{xy}=h_xU_{xy}h_y^{-1}$.
+The class function and spatial action are invariant under simultaneous changes
+of $U,V$, so $T$ commutes with $P$. Keeping the temporal links between two slices,
+the temporal plaquette at $e=(x,y)$ is
+$U_eh_yV_e^{-1}h_x^{-1}=U_e(h\cdot V)_e^{-1}$.
+Their exact Haar integration gives the layer kernel $TP$. Spatial action halves
+combine once per slice. Closing $r$ layers gives $\Tr((TP)^r)=\Tr(T^rP)$.
+This keeps the temporal holonomy integral and introduces no gauge-volume scalar.
+
+Finally compact positivity gives a top Rayleigh eigenvector $f$.
+The strictly positive kernel implies
+$\langle|f|,T|f|\rangle\ge\langle f,Tf\rangle=\lambda\|f\|^2$,
+so $|f|$ is also in the top eigenspace. Its nonnegative gauge average $P|f|$
+is nonzero, since it has the same positive integral. Commutation then gives a
+physical top eigenvector with the same eigenvalue, proving \eqref{eq:physicaltop}.
+No uniqueness or weak-coupling assumption is required.
+\end{proof}
+
+\subsection{A covering bound that costs only logarithmically in $\beta$}
+
+Fix a bi-invariant group metric. For $0<r\le r_0$ there is a measurable group
+partition into at most $C_{\rm cov}r^{-m}$ sets of diameter at most $r$.
+One construction is a maximal separated net followed by a partition subordinate
+to its ball cover. Smoothness at the action minimum gives
+$s(uv^{-1})\le C_sr^2$ for points in one such set. Take
+$r=r_0(1+\beta)^{-1/2}$ and form the product partition of $X$.
+For $U,V$ in one product cell $D$,
+\begin{equation}
+C_\beta(U,V)\ge e^{-C_sr_0^2E_\Sigma}.
+\label{eq:cellkernel}
+\end{equation}
+Some cell has
+$m_D:=\int_Db^2\ge\Tr T/(C_{\rm cov}r^{-m})^{E_\Sigma}$.
+The exact Rayleigh trial $f_D=b\ind_D/\sqrt{m_D}$ gives
+\begin{align}
+\lambda&\ge\frac1{m_D}\int_{D\times D}
+b(U)^2b(V)^2C_\beta(U,V)\dd U\dd V\notag\\
+&\ge e^{-C_sr_0^2E_\Sigma}m_D.
+\label{eq:Rayleigh}
+\end{align}
+Consequently, for a fixed $C_{G,c_{\rm rep}}$,
+\begin{equation}
+\boxed{\log\frac{\Tr T}{\|T\|}\le E_\Sigma B_G(\beta),\qquad
+B_G(\beta)=C_{G,c_{\rm rep}}+\frac m2\log(1+\beta).}
+\label{eq:coverentropy}
+\end{equation}
+This is valid for the actual spatial action. The unprojected covering inequality
+also works for any nonzero bounded nonnegative factor in place of $b$; gauge
+invariance remains necessary for the projected identities. That breadth explains
+why it does not yet exploit spatial dynamics enough to remove the fine-link
+surface count.
+
+Using positivity and \eqref{eq:physicaltop}, for every integer $r\ge1$,
+\begin{equation}
+1\le\Tr_{\rm phys}(T_{\rm phys}/\lambda)^r
+\le\frac{\Tr T}{\lambda},\qquad
+\log\Tr_{\rm phys}\frac{T_{\rm phys}^r}{\|T_{\rm phys}^r\|}
+\le\frac{3A}{a^3}B_G(\beta).
+\label{eq:traceentropy}
+\end{equation}
+The upper bound estimates the physical trace by the unprojected trace; this loss
+is explicit, while the exact gauge projection is retained in the partition function.
+
+\begin{theorem}[Logarithmic seam pressure bound]
+\label{thm:pressure}
+For the original Wilson action at the same $\beta\ge0$, and every compatible
+integer $q\ge1$,
+\begin{equation}
+\boxed{0\le p_{a,T_*}-p_{a,qT_*}
+\le\frac{12}{t_*a^3}
+\left[C_{G,c_{\rm rep}}+\frac m2\log(1+\beta)\right].}
+\label{eq:pressurebound}
+\end{equation}
+\end{theorem}
+\begin{proof}
+For fixed $\Sigma$ set $K=T_{\rm phys}^{n}$, $n=t_*/a$, and
+$\widehat K=K/\|K\|$. The same-transverse identity \eqref{eq:periodictrace} gives
+\begin{equation}
+p_{a,t_*\times\Sigma}-p_{a,qt_*\times\Sigma}
+=\frac1{t_*A}\left[
+\log\Tr\widehat K-\frac1q\log\Tr\widehat K^q\right].
+\label{eq:rectangularpressure}
+\end{equation}
+The top eigenvalue cancels exactly within this pair. Its bracket lies between
+zero and $\log\Tr\widehat K$, hence the difference is at most
+$3B_G(\beta)/(t_*a^3)$ by \eqref{eq:traceentropy}.
+Enlarge the four sides successively. The $j$th transverse volume is
+$A_j=q^{j-1}t_*^3$, with exactly $3A_j/a^3$ spatial links, and the enlarged
+side starts at $t_*$. Summing the four bounds proves \eqref{eq:pressurebound}.
+The four transverse top eigenvalues need not agree; each cancels only in its
+own exact pair. No volume-dependent vacuum normalization is introduced.
+\end{proof}
+
+Along $\beta_a=O(\log(1/a))$, the estimate is
+$O(a^{-3}\log\log(1/a))$. It improves the earlier $O(\beta_a a^{-3})$ bound
+but is not ultraviolet uniform. Given the already stated original stability
+$|\log Z_{a,R}-V_{a,R}|\le C_{\rm st}\Vol(R)$, the corresponding vacuum
+comparison has this bound plus $2C_{\rm st}$. The proof compares complete
+partition functions, including all original histories and scalar weights;
+it is not a termwise conditional history estimate.
+
+\subsection{A proved energy--entropy cancellation for the actual seam}
+
+Use the original common-variable gluing interpolation
+$\Delta S=S_{\rm big}-S_{\rm per}$ and
+$\dd\mu_t=Z_t^{-1}e^{-\beta(S_{\rm per}+t\Delta S)}\dd\lambda$.
+Let $M=q^4$ and
+\begin{equation}
+G_{a,q}=M\log Z_{a,T_*}-\log Z_{a,qT_*}
+=Mt_*^4(p_{a,T_*}-p_{a,qT_*}).
+\label{eq:seamG}
+\end{equation}
+For $n\ge2,q\ge2$ the original seam count and product-law expectation are
+\begin{equation}
+N_{\rm seam}=M(12n^3-6n^2),\qquad
+\E_0\Delta S=N_{\rm seam}(c_{\rm rep}-\bar s_{a,*}).
+\label{eq:seamcount}
+\end{equation}
+Independent block gauge symmetry makes every new open-loop fundamental trace
+average zero, giving $c_{\rm rep}$, not automatically one. The relative entropy
+therefore satisfies the exact identity
+\begin{equation}
+D(\mu_0\Vert\mu_1)
+=\beta N_{\rm seam}(c_{\rm rep}-\bar s_{a,*})-G_{a,q}.
+\label{eq:seamentropy}
+\end{equation}
+Theorem~\ref{thm:pressure} gives
+$0\le G_{a,q}\le12Mn^3B_G\le\frac43B_GN_{\rm seam}$. Hence
+\begin{equation}
+\boxed{\begin{aligned}
+N_{\rm seam}\left[\beta(c_{\rm rep}-\bar s_{a,*})-\tfrac43B_G(\beta)\right]
+&\le D(\mu_0\Vert\mu_1)\\
+&\le\beta N_{\rm seam}(c_{\rm rep}-\bar s_{a,*}).
+\end{aligned}}
+\label{eq:seamcancellation}
+\end{equation}
+Thus the artificial linear-$\beta$ gluing energy is matched by actual relative
+entropy up to a logarithmic surface remainder. This needs no weak-plaquette
+asymptotic and does not assume intermediate measures have endpoint gauge symmetry.
+
+The exact remaining cancellation can also be written
+\begin{equation}
+G_{a,q}=\beta N_{\rm seam}(c_{\rm rep}-\bar s_{a,*})
+-\beta^2\int_0^1(1-t)\Var_{\mu_t}(\Delta S)\dd t.
+\label{eq:variancecancellation}
+\end{equation}
+This is Taylor's theorem for $\log Z_t$, whose second derivative is
+$\beta^2\Var_{\mu_t}(\Delta S)$. A uniform upper bound on $G$ requires a
+matching \emph{lower} bound on this variance integral to accuracy
+$O(Mt_*^4/\beta^2)$. An upper variance estimate alone has the wrong sign for
+that purpose.
+\section{An exact two-copy target for the remaining pressure gap}
+\label{sec:pressuretarget}
+
+The preceding argument identifies a concrete remaining input without choosing
+any new vacuum normalization. Let $\Sigma$ range over the three-dimensional
+rectangular tori used in the four successive enlargements: zero, one, two, or
+three sides equal to $qt_*$, with all other sides $t_*$. The cutoff $a$ is
+compatible with every side. All constants below must be uniform in $a$, in
+integer $q\ge2$, and in this actual transverse family.
+
+For $K=T_{\rm phys}^{t_*/a}$ put
+$\widehat K=K/\|K\|$ and $R_{a,\Sigma}=\Tr\widehat K$. Its eigenvalues
+$a_j$ lie in $[0,1]$ and include one. Hence
+$1\le\sum_j a_j^q\le\sum_j a_j=R_{a,\Sigma}$, and
+\begin{equation}
+\left(1-\frac1q\right)\log R_{a,\Sigma}
+\le\log R_{a,\Sigma}-\frac1q\log\Tr\widehat K^q
+\le\log R_{a,\Sigma}.
+\label{eq:traceequivalence}
+\end{equation}
+The remaining improvement needed in \eqref{eq:traceentropy} is therefore
+\begin{equation}
+\boxed{\log R_{a,\Sigma}\le C_{t_*}\Vol_3(\Sigma).}
+\label{eq:physicaltrace}
+\end{equation}
+This is a hypothesis still to be proved for the original interacting operator.
+
+For clarity, it is quantitatively equivalent to the ultraviolet-uniform
+\emph{pressure part} of the desired periodic comparison on this family.
+If \eqref{eq:physicaltrace} holds, \eqref{eq:rectangularpressure} and four
+enlargements give $p_{a,T_*}-p_{a,qT_*}\le4C_{t_*}/t_*$.
+Conversely suppose this isotropic pressure difference is at most $C_p$.
+Every intermediate rectangular difference is nonnegative, so each is at most
+$C_p$. Its own \eqref{eq:traceequivalence} gives
+\[
+\log R_{a,\Sigma}\le\frac q{q-1}t_*A C_p\le2t_*A C_p.
+\]
+The reference transverse torus is already covered by the first step at $q=2$.
+Any additional comparison with the original vacuum functional still uses the
+stated absolute stability estimate, with its unchanged constant.
+
+Writing the actual physical eigenvalues of $T_{\rm phys}$ as $\lambda_j$ and
+its top eigenvalue as $\lambda_0$, define
+\begin{equation}
+E_{a,\Sigma,j}=-a^{-1}\log(\lambda_j/\lambda_0),\qquad
+\log R_{a,\Sigma}=\log\sum_j e^{-t_*E_{a,\Sigma,j}}.
+\label{eq:excitationcount}
+\end{equation}
+A zero transfer eigenvalue contributes zero to the sum. The missing bound
+controls the number and energies of physical excitations at fixed physical time.
+A positive mass gap alone would not give this estimate. For example, an
+abstract finite-dimensional operator with one eigenvalue one and $R_a-1$
+eigenvalues $e^{-a\Delta}$ has gap $\Delta>0$, but its normalized time-$t_*$
+trace is $1+(R_a-1)e^{-t_*\Delta}$. If $\log R_a$ is of order $A/a^3$,
+\eqref{eq:physicaltrace} fails. This diagnostic is not a Wilson counterexample.
+
+\subsection{The equivalent original two-copy overlap}
+
+The top eigenvalue can be eliminated from the target. Work on the original
+product-Haar boundary space $X$, and set
+$K=(TP)^{t_*/a}$, extended by zero on the orthogonal complement of the
+physical subspace. Its kernel includes the original temporal integrations and
+gauge averages. Define
+\begin{align}
+\mathcal P_{a,\Sigma}
+&=\frac{\Tr K^2}{(\Tr K)^2}
+=\frac{Z_{a,2t_*\times\Sigma}}{Z_{a,t_*\times\Sigma}^2},
+\notag\\
+\mathcal E_{2,a,\Sigma}&=-\log\mathcal P_{a,\Sigma}.
+\label{eq:purity}
+\end{align}
+These are exact original partition functions. From
+$1\le\Tr\widehat K^2\le R_{a,\Sigma}$ one obtains
+\begin{equation}
+\log R_{a,\Sigma}\le\mathcal E_{2,a,\Sigma}
+\le2\log R_{a,\Sigma},\qquad
+p_{a,t_*\times\Sigma}-p_{a,2t_*\times\Sigma}
+=\frac{\mathcal E_{2,a,\Sigma}}{2t_*A}.
+\label{eq:purityequivalence}
+\end{equation}
+Consequently the following explicit inequality is equivalent, up to fixed
+constants, to \eqref{eq:physicaltrace}:
+\begin{equation}
+\boxed{
+\int_{X\times X}K(U,V)K(V,U)\dd U\dd V
+\ge e^{-C_{t_*}A}
+\left(\int_XK(U,U)\dd U\right)^2.}
+\label{eq:overlapneeded}
+\end{equation}
+The real symmetric kernel makes the left integrand $K(U,V)^2$.
+A common scalar multiplying this same kernel cancels from the ratio.
+Independent normalizations of the one-slab and two-slab partition functions
+would change it and are not allowed.
+
+For an actual nonnegative partition of the original slab integral into
+histories, $K=\sum_{\mathfrak h}K_{\mathfrak h}$ with the original raw kernels,
+the left side of \eqref{eq:overlapneeded} is exactly
+\begin{equation}
+\sum_{\mathfrak h,\mathfrak h'}
+\int K_{\mathfrak h}(U,V)K_{\mathfrak h'}(V,U)\dd U\dd V.
+\label{eq:historyoverlap}
+\end{equation}
+Every original scalar and history weight remains in this expression. A signed
+connected polymer expansion is not automatically a nonnegative partition.
+Restricting to matching histories needs a quantitative bound on the mass lost.
+Any proposed coarse change of variables must preserve the original seam
+identifications and coarea factors in both integrals.
+
+The proved estimate is only
+\begin{equation}
+\mathcal E_{2,a,\Sigma}\le
+\frac{6A}{a^3}\left[C_{G,c_{\rm rep}}+\frac m2\log(1+\beta)\right].
+\label{eq:purityproved}
+\end{equation}
+Replacing its fine-link count by physical transverse volume is the outstanding
+interacting estimate. Neither a free determinant nor a separately bounded
+$O(g_a^p)$ error per fine site at any fixed power $p$ supplies it: division
+by physical volume gives $O(a^{-4}g_a^p)$, still divergent on the logarithmic
+trajectory. One needs a bound on the actual \emph{difference} of vacuum
+corrections or the exact original overlap \eqref{eq:overlapneeded}.
+
+\section{Verified scope, remaining problems, and checks}
+\label{sec:status}
+
+\subsection{What this note establishes}
+
+The local Wilson moment proof reuses the original matching partition powers,
+checks their absolute gauge count, and extends the cell argument to every even
+torus with its multiplicity four. It yields the explicit scalar
+$\mathcal B_{n,\beta}$, improves the original compensated $H$ contact bound,
+and strengthens the fixed-patch bad-bath probability. These are statements
+about the original Wilson law, not about arbitrary conditioned histories.
+
+The conditional prescription \eqref{eq:newsource} is an explicit new
+finite-cutoff hierarchy. Its local contacts have proved finite-order absolute
+masses, including the nonvanishing order $a^{-8}$ two-source subtraction.
+The correlated-pair test proves why that one pass does not establish a tight
+remaining field. The separate Gaussian extension has an explicit contact
+order, exact logarithmic residue, and a proved ordinary-covariance obstruction
+at that order. These conclusions do not substitute for the interacting hierarchy.
+
+The one-step chart proves admission for the specified literal local plaquette
+selector and original read set, plus exact current/readout lifts and coarea
+scores. The Poisson identities use the complete actual effective density on
+an identified positive fiber. On the previously verified native interpolation,
+the connected physical two-source comparison \eqref{eq:contactvariation} is
+a concrete new estimate, with actual source units and native coordinate counts.
+Its exact conversion to the old representation retains the Casimir rows,
+effective-score corrections, sharp-boundary partners, and absolute normalizers.
+
+The exact Wilson transfer argument improves the pressure cost from linear
+to logarithmic in the bare coupling at fixed fine surface area and proves
+the corresponding seam-energy/entropy cancellation. It then reduces the
+remaining periodic pressure requirement to the explicit original
+two-copy inequality \eqref{eq:overlapneeded}. That inequality itself is unproved.
+
+\subsection{The unresolved estimates}
+
+\begin{enumerate}
+\item \textbf{Interacting contact completion.}
+Prove the needed single-operator mixing and the interacting off-diagonal
+estimate \eqref{eq:interactingneeded}, or another estimate sufficient for a
+specified replacement prescription. At every source order, construct compatible
+extensions at all partial diagonals and verify the required positivity and
+continuum identities. A finite-cutoff identity, an averaged contact-mass bound,
+or a two-point Gaussian extension does not provide these facts. The
+field-dependent Casimir action row must remain in the original-source calculation.
+
+\item \textbf{Actual general mixed-selector/readout admission.}
+Identify the original $R$-I/$R$-II selectors, their parameter ranges
+$(1.64)$--$(1.69)$ and $(1.75)$, and the three joins on the same actual
+realization used by AE8/LM47. Verify the old readout and moving-reference
+response there, retaining the nonabelian relative-target correction and the
+sharp joint constraint distributions. The one-step local chart here is not
+that general identification. No lemma from the $R$-I paper beyond the cited
+equations is presumed.
+
+\item \textbf{All-history physical-source transfer.}
+For each required positive body, prove its actual domain and spectral estimate,
+or use another justified transport. Bound the actual inherited $O_i,A_I$,
+their native and retained-reference derivatives, the readout differential,
+and the original boundary distributions in the required norms. Keep every
+external scalar and the source-grade and history-age gains required by MT36.
+The native estimate proved here covers its stated fixed-target interpolation;
+the abstract inverse identity does not verify those hypotheses in other histories.
+
+\item \textbf{Ultraviolet-uniform pressure comparison.}
+Establish \eqref{eq:overlapneeded}, equivalently \eqref{eq:physicaltrace},
+on the actual transverse family, or prove the needed all-scale vacuum
+cancellation with the original absolute normalizers. The logarithmic surface
+estimate \eqref{eq:pressurebound} still diverges as $a\to0$.
+
+\item \textbf{The final continuum construction.}
+Assemble a common noncollapsing continuum hierarchy with the required Euclidean
+and Osterwalder--Schrader properties, compatible physical source identifications,
+and the intended coupling trajectory. None of the four preceding gaps may be
+replaced by a conditional assertion in that construction. This note
+does not prove Yang--Mills existence or a mass gap.
+\end{enumerate}
+
+\subsection{Checks and their limits}
+
+An exact finite calculation uses only
+integer and rational arithmetic. It constructs the full $12\times12$
+directional-current covariance matrix from the fourth derivative of $|x|^{-2}$, verifies the
+total-current cancellations modulo $|\omega|^2=1$, checks
+\eqref{eq:angular}, and checks all 165 degree-eight monomial coefficients in
+\eqref{eq:P8explicit}. No sampled integration or floating-point inference is used.
+
+\begin{thebibliography}{9}
+\bibitem{W}
+Wilson-source estimates, volumes 1--10 (\texttt{lattice\_theory/source\_estimates} in this collection), cited by source page. Matching partition
+powers and chessboard moments: \S10, pp.~21--23.
+
+\bibitem{ND}
+\emph{Nonlinear dispersion and unequal spatial weights}, \texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/nonlinear\_dispersion\_and\_unequal\_spatial\_weights.tex} in this collection. Used here for the complete nonlinear
+one-link non-tightness argument, the admitted native Poincar\'e/moment and
+source-response records, and the original boundary/normalizer bookkeeping.
+
+\bibitem{biskup}
+M. Biskup, \emph{Reflection Positivity and Phase Transitions in Lattice Spin
+Models}, lecture notes. Closed-cell setup and Theorem 5.8,
+pp.\ 43--46; equations (5.34)--(5.35).
+\url{https://www.math.ucla.edu/~biskup/PDFs/papers/Biskup-Prague-notes.pdf}.
+
+\bibitem{bf}
+R. Brunetti and K. Fredenhagen,
+\emph{Microlocal Analysis and Interacting Quantum Field Theories:
+Renormalization on Physical Backgrounds},
+Commun.\ Math.\ Phys.\ \textbf{208} (2000), 623--661.
+Scaling-degree extension results: \S5, especially Theorem 5.3.
+\url{https://arxiv.org/abs/math-ph/9903028}.
+
+\bibitem{luscher}
+M. L\"uscher, \emph{Construction of a Selfadjoint, Strictly Positive Transfer
+Matrix for Euclidean Lattice Gauge Theories}, DESY 76/54 (1976).
+Pure-gauge factors (17), (20), (21), Proposition 1, and character argument
+(22)--(23).
+\url{https://bib-pubdb1.desy.de/record/396349/files/7611148.pdf}.
+\end{thebibliography}
+\end{document}

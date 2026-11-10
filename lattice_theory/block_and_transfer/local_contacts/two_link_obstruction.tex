@@ -1,0 +1,323 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\su}{\mathfrak{su}}
+\title{A two-link obstruction to removing the physical H contact}\author{}\date{}
+\begin{document}\maketitle
+\noindent\textbf{Scope.} This is a finite-cutoff, nonlinear, same-Wilson result.
+It strengthens the manuscript's ultraviolet lower bound and proves a lower
+bound for its specified ordinary remainder. It neither proves a matching
+upper bound nor closes all-history MT36. No source prescription is altered.
+
+
+\section{Precise statement and conventions}
+Use AI1--3 (PDF pp.~635--636), MT1 (p.~681), and PD12.20--21 (p.~1186).
+Let $G=SU(N)$, $N\ge2$, with $-\operatorname{tr}(T^AT^B)=\delta_{AB}$.
+On the periodic four-dimensional lattice of spacing $a$, side $T=na$, put
+\[
+ s_p=N-\Re\operatorname{tr}U_p,\qquad
+ S_0=\sum_p s_p,\qquad
+ d\mu_\beta=Z_\beta^{-1}e^{-\beta S_0}\prod_b dU_b,
+ \quad \beta=c_\beta g^{-2},\quad c_\beta>0.
+\]
+Haar factors are normalized. Bond derivatives are exactly
+$X_b^AF=\left.\frac d{dt}F(\ldots,e^{tT^A}U_b,\ldots)\right|_{0}$.
+Write $i=(b,A)$, with the positive bond direction denoted $\nu_b$, and
+\[
+ F_i=X_iS_0,\quad F_{i;\mu}=X_iS_0^{(\mu\nu_b)},\quad
+ D[f]=\sum_i f_i\sum_{\mu\ne\nu_b}F_{i;\mu}^2,\quad
+ P[f]=\sum_i f_iF_i^2,\quad \ell[f]=\sum_i f_iX_i^2S_0.
+\]
+All incidences, color sums and transformed tests in the fixed pointed
+completion are retained. Set
+\[
+ G_H[f]=D[f]-P[f]/3,\qquad \sigma=g^{-2}a^{-2},\qquad
+ O_H(f)=\sigma G_H[f],\qquad
+ r_H(f)=\sigma\{D[f]-\ell[f]/(3\beta)\}.
+\]
+For $f=1$ these global sums are already invariant under the fixed pointed
+hypercubic averaging. The exact Casimir formula is
+\begin{equation}\label{casimir}
+ \ell[f]=C_F\sum_p f_p(N-s_p),\qquad f_p=\sum_{b\in\partial p}f_b,
+\end{equation}
+with the corresponding finite average for a completed test. In particular,
+$\ell[1]=4C_F(N\#p-S_0)$, with its constant intact.
+
+A \emph{single-plaquette subtraction} is any real random variable
+\begin{equation}\label{lower}
+ L(U)=c+\sum_p h_p(U_p),
+\end{equation}
+where $c$ and the functions $h_p$ are deterministic, may depend arbitrarily
+on $a,\beta,T,p$, and every summand belongs to $L^2(\mu_\beta)$. Smooth real class functions
+are sufficient; the proof also permits measurable functions when square
+integrable. No uniform coefficient or derivative bounds are imposed.
+This includes arbitrary weighted Wilson action terms, constants, and the
+literal Casimir companion. It does not include arbitrary products of
+functions of two distinct plaquettes or the full unspecified lower sector.
+
+\begin{theorem}[Ultraviolet fluctuation survives single-plaquette subtractions]
+\label{main}
+There are $c>0$, $\beta_0$ and $n_0$, depending only on the group,
+$c_\beta$ and fixed lattice/pointing geometry, such that for $n\ge n_0$,
+$\beta\ge\beta_0$, and every $L$ of the form \eqref{lower},
+\begin{align}
+ \Var_{\mu_\beta}\bigl(O_H(1)-L\bigr)&\ge cT^4a^{-8},\label{mainH}\\
+ \Var_{\mu_\beta}\bigl(\sigma D[1]-L\bigr)&\ge cT^4a^{-8}.\label{mainD}
+\end{align}
+The constant is independent of the functions and sizes of the subtraction.
+For the original fixed real physical test $f$ equal to one on a
+positive-volume box, both estimates hold with $c_fa^{-8}$ for all sufficiently
+small $a$, using the exact completed tests.
+\end{theorem}
+
+\begin{corollary}[The manuscript's ordinary H remainder also diverges]
+Under the same hypotheses,
+\[
+ \Var_{\mu_\beta}(r_H(1))\ge cT^4a^{-8},\qquad
+ \Var_{\mu_\beta}(r_H(f))\ge c_fa^{-8}.
+\]
+The assertions remain valid after subtracting any additional
+single-plaquette term from $r_H$.
+\end{corollary}
+\begin{proof}
+Take $L=\sigma\ell[f]/(3\beta)$ in \eqref{mainD}, using \eqref{casimir}.
+This keeps the exact constant, original tests, and all plaquette incidences.
+The sum of this term and any further subtraction is still \eqref{lower}.
+\end{proof}
+
+\section{The elementary two-link calculation}
+Choose distinct coordinate directions $\nu,\mu$, and free bonds
+\[
+ b_-=(x-e_\mu,\nu),\qquad b_+=(x+e_\mu,\nu),
+ \qquad b_0=(x,\nu).
+\]
+Here the offsets are in lattice units. No plaquette contains both free bonds.
+Their plaquette stars have exactly one bond in common, $b_0$; the two
+plaquettes meeting there are in the same $\mu\nu$ plane. All statements are
+inside an embedded fixed box, so there is no periodic wrapping.
+
+Put every other link of their determining neighborhood at the identity and
+write $U_-=e^u$, $U_+=e^v$, with $u,v\in\su(N)$. In the AI1 norm,
+$s(e^u)=|u|^2/2+O(|u|^3)$. The quadratic part of each plaquette action
+is one half the squared oriented sum of its link coordinates. Consequently
+the linearized force is the plaquette incidence matrix squared, plane by
+plane. For one free link, its own three plane forces are $2u$ and eighteen
+other bond forces have magnitude $|u|$. Thus $D$ has diagonal coefficient
+$3\cdot4+18=30$, while $P$ has $6^2+18=54$.
+
+For the cross term, only the force row at $b_0$ depends on both variables.
+Its $\mu$-plane force is $-u-v$ to first order. Its other plane forces vanish
+to first order in these variables. Thus its cross coefficient is
+$2\langle u,v\rangle$ in both $D$ and $P$. No other force row contributes
+a cross term. Therefore the complete quadratic jets are
+\begin{align}
+ D^{(2)}(u,v)&=30(|u|^2+|v|^2)+2\langle u,v\rangle,\label{jetD}\\
+ P^{(2)}(u,v)&=54(|u|^2+|v|^2)+2\langle u,v\rangle,\\
+ G_H^{(2)}(u,v)&=12(|u|^2+|v|^2)+\tfrac43\langle u,v\rangle.\label{jetH}
+\end{align}
+In particular for any fixed unit generator coordinate $A$,
+\[
+ \partial_{u^A}\partial_{v^A}D(0,0)=2,\qquad
+ \partial_{u^A}\partial_{v^A}G_H(0,0)=4/3.
+\]
+These are jets of exact nonlinear observables, not a replacement of the
+measure by a Gaussian. The finite calculation
+independently enumerates oriented plaquettes and checks the three quadratic
+matrices by integer/rational arithmetic. The argument above proves why the
+enumerated coefficients are the nonlinear jets for every $SU(N)$.
+
+By smoothness of finitely many compact plaquette words, these mixed
+derivatives are bounded below by a fixed $\kappa>0$ when all bath links
+in that neighborhood are sufficiently near the identity, and both free
+coordinates are in a sufficiently small fixed identity chart. This uses
+only a finite-dimensional neighborhood, with constants independent of
+$n,a,\beta$. Gauge transformations preserving the bath-smallness description
+preserve $D,G_H$ and Haar measure.
+
+\section{A conditional variance lemma immune to additive terms}
+\begin{lemma}\label{mixed}
+Let $(z,w)$ have a density $p$ bounded below by $m_0>0$ on a fixed product
+of balls $B\times B\subset\mathbb R^d\times\mathbb R^d$. Suppose a smooth
+function $Q$ satisfies $\partial_{z^A}\partial_{w^A}Q\ge\kappa>0$ there.
+For arbitrary square-integrable additive terms $A(z)+B(w)$,
+\[
+ \Var\bigl(Q(z,w)-A(z)-B(w)\bigr)\ge
+ \frac{m_0\kappa^2}{\|\partial_{z^A}\partial_{w^A}\phi\|_{L^2}^2}>0,
+\]
+where any fixed $\phi\in C_c^\infty(B\times B)$, $\phi\ge0$,
+$\int\phi=1$, may be used. No independence is needed for this lemma.
+\end{lemma}
+\begin{proof}
+Let $\psi=\partial_{z^A}\partial_{w^A}\phi$. Integration by parts twice
+and Fubini give $\int Q\psi\ge\kappa$, whereas $\int(A+B+c)\psi=0$ for
+every constant $c$. Hence Cauchy--Schwarz yields
+$\|Q-A-B-c\|_{L^2(B\times B)}\ge\kappa/\|\psi\|_2$.
+Multiply its square by the density lower bound and minimize over $c$.
+Locally integrable additive functions suffice, so no derivatives of the
+subtractions have been assumed or estimated.
+\end{proof}
+
+\section{Uniform nonlinear conditional laws and a positive density of blocks}
+Here are the same-measure details needed to use the lemma; compare the
+one-link argument PD12.41--53, PDF pp.~1190--1193.
+
+First the normalized Haar partition function obeys
+\[
+ -\log Z_\beta\le C\#E\log(2+\beta).
+\]
+Indeed restrict every link to a ball of radius $c\beta^{-1/2}$: its Haar
+volume is bounded below by $c'\beta^{-\dim G/2}$, and every plaquette
+energy is $O(\beta^{-1})$. Since $\E_\beta S_0$ is decreasing,
+\[
+ \frac\beta2\E_\beta S_0
+ \le\log Z_{\beta/2}-\log Z_\beta\le-\log Z_\beta.
+\]
+Translation and coordinate symmetries give
+$\E_\beta s_p\le C\log(2+\beta)/\beta$ uniformly in $n$.
+For any fixed contractible cube $Q$, Markov and a union bound imply
+\[
+ \mu_\beta\{s_p\le\epsilon^2\text{ for every }p\subset Q\}
+ \ge1-C_Q\epsilon^{-2}\log(2+\beta)/\beta.
+\]
+On that event, a finite spanning-tree gauge makes every link in a smaller
+cube $C_Q\epsilon$-close to the identity. One direct justification is to
+fill each finite tree cycle by finitely many plaquettes; its holonomy is a
+product of conjugated plaquette holonomies. Unitary telescoping and
+$\|I-U_p\|_{\rm HS}^2=2s_p$ bound its distance by $C_Q\epsilon$.
+The cube size and all cycle lengths are fixed.
+
+Call a conditioned bath good for a block if some vertex gauge makes all
+bath links in the required finite neighborhood $\delta$-close to identity.
+This is an event of the bath alone (minimize the maximal distance over the
+compact finite vertex gauge group). The preceding full-configuration event
+implies this bath event, even though the gauge witnessing that implication
+can depend on the full configuration. Thus its marginal probability is at
+least $1/2$ once $\beta\ge\beta_0(\delta)$.
+
+Choose translated two-link blocks with centers in a fixed-spacing sublattice,
+and keep only an interior packed set, so their entire determining
+neighborhoods are disjoint. Increase the spacing to include every saved
+pointing offset. There are at least $c_0n^4$ such blocks for $n\ge n_0$.
+No plaquette contains two free links, even inside a block. After conditioning
+on every other link, the Wilson law factors over all free links. On a good
+block, after its bath gauge, either free link has conditional action
+\[
+ S_b(U)=6N-\Re\operatorname{tr}(UH_b),\qquad \|H_b-6I\|\le C\delta,
+\]
+up to an irrelevant bath constant. At $H_b=6I$ there is a unique minimum
+at $I$, a strictly positive Hessian, and a strictly positive gap outside a
+fixed small chart. Compactness, smooth dependence and a smaller $\delta$
+preserve these facts uniformly, with the minimum at $x_b^*$ in the chart.
+Subtracting the minimum and integrating local Gaussian upper/lower bounds
+shows that the one-link normalizer is between $c\beta^{-d/2}$ and
+$C\beta^{-d/2}$; the outside-chart mass is exponentially small. Haar
+coordinate Jacobians are uniformly positive and bounded there.
+
+In the actual coordinates
+\[
+ z=\sqrt\beta(u-u_*),\qquad w=\sqrt\beta(v-v_*),
+\]
+the conditional product density is therefore bounded below by a fixed
+$m_0>0$ on a fixed product of unit balls, uniformly on all good baths and
+$\beta\ge\beta_0$. This is a direct nonlinear density estimate. It does
+not invoke asymptotic Gaussian convergence and does not drop linear terms
+of the observable at the conditional minimum.
+
+\section{Proof of the theorem and precise implications}
+For either $G=G_H[1]$ or $G=D[1]$, locality and the separated block packing
+give, conditionally on the bath $\mathfrak b$,
+\[
+ G=G_0(\mathfrak b)+\sum_jG_j(U_{j,-},U_{j,+};\mathfrak b).
+\]
+Each original force-square summand meets at most one block, so every
+summand is included. Since no plaquette contains two free links, \eqref{lower}
+has the conditional form
+\[
+ L=L_0(\mathfrak b)+\sum_j\{L_{j,-}(U_{j,-};\mathfrak b)
+                            +L_{j,+}(U_{j,+};\mathfrak b)\}.
+\]
+No bound on these additive terms is needed. Conditional independence between
+blocks implies additivity of their conditional variances.
+
+For a good block set
+$Q(z,w)=\beta G_j(u_*+\beta^{-1/2}z,v_*+\beta^{-1/2}w;\mathfrak b)$.
+Its mixed derivative equals the corresponding unscaled mixed derivative
+of $G_j$, so it is at least $\kappa$ by \eqref{jetD} or \eqref{jetH} and
+continuity. Apply Lemma~\ref{mixed} with additive terms
+$(\beta/\sigma)L_{j,-}$ and $(\beta/\sigma)L_{j,+}$. This yields
+\[
+ \Var(\sigma G_j-L_{j,-}-L_{j,+}\mid\mathfrak b)
+ \ge c\sigma^2\beta^{-2}
+\]
+on each good bath. The law of total variance, the $1/2$ probability of a
+good bath for each block (independence of those events is not needed), and
+the packing count give
+\[
+ \Var(\sigma G-L)
+ \ge c\sigma^2\beta^{-2}n^4
+ =cc_\beta^{-2}a^{-4}n^4
+ =c'T^4a^{-8}.
+\]
+This proves both uniform-test statements. For a physical real $f$ with a
+plateau equal to one, put all blocks in an interior sub-box whose collar
+contains the full determining neighborhoods and all original pointing
+shifts. Every varying summand there has its actual test equal to one, so
+the calculation is unchanged. The number of blocks is at least
+$c|Q'|a^{-4}$. Terms outside these neighborhoods are bath terms and cannot
+affect the conditional lower bound. This proves the plateau statements.
+
+\paragraph{What is excluded.}
+Identity and arbitrary weighted Wilson-action counterterms, even with
+cutoff-divergent coefficients, cannot make the coincident variance of the
+unrescaled H insertion or its specified ordinary remainder cutoff-uniform.
+The conclusion is stronger than invariance of variance under centering.
+If a multiplicative real normalization $\Gamma_a$ is also applied, the
+bound is multiplied by $|\Gamma_a|^2$. A bounded coincident variance within
+this restricted subtraction class would require $|\Gamma_a|=O(a^4)$ for a
+fixed plateau. This is a necessary condition, not a proposed physical
+normalization or a nondegeneracy result.
+
+\paragraph{What is not excluded.}
+The theorem does not cover all lower operators built from several
+plaquettes, source-degree-two contact counterterms, general current
+redefinitions, or renormalized separated correlations. Nor does divergence
+of a bare coincident variance rule out a continuum distribution constructed
+with an explicitly prescribed contact extension. A subtraction of a
+mixed-source scalar changes that coincident source coefficient and must be
+recorded; it is not an identity of the unchanged XP3 source ($A_{12}^{bare}=0$).
+There is no assertion that the theorem disproves MT36, whose norm retains
+lower/contact sectors.
+
+\paragraph{Target for O2/O3.}
+The actual ordinary remainder cannot be treated as already finite merely
+because its exact Casimir companion was included. A useful next target is
+an upper bound of order $a^{-4}N_f$ (with only explicitly justified coupling
+factors), together with a separated-kernel estimate and a specified
+source-degree-two local contact extension. The bound must transport through
+the genuine mixed maps with the original tests, saved meshes, selectors,
+current lifts, effective scores and common domains. The present theorem
+proves none of those upper or transport estimates.
+
+\paragraph{Absolute masses and domains.}
+All ordered inequalities here concern real observables under the complete
+positive Wilson probability on the full compact configuration space. There
+are no auxiliary selectors or gauge-fixing determinants; local bath gauges
+are merely Haar-preserving changes of variables. For the corresponding
+raw connected numerator the positive variance is multiplied by the original
+$Z_\beta$; an independent field-free factor $e^s$ multiplies its absolute
+mass by $|e^s|$. No lower bound for $Z_\beta$ is inserted. No inequality is
+asserted for an individual signed/complex selected history or a complex wall.
+
+\paragraph{Manuscript interface.}
+The inputs are AI1--3 (pp.~635--636), AI33--35d (pp.~642--644), MT1
+(p.~681), XP2--4 (p.~719), and PD12.4--8,20--25,39--56
+(pp.~1183,1186--1187,1190--1193). The estimates left open
+are MT36 (p.~692) and PD12.58--63 (p.~1194). The exact terminal identity
+$\Var(O_H)=\Var(r_H)+\E b_{HH}$ is preserved; lower bounds for its first
+two variances alone imply no sign or matching estimate for $\E b_{HH}$.
+\end{document}

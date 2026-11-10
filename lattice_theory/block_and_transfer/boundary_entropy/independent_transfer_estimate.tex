@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{Four-direction Wilson transfer dissemination}\author{}\date{}
+\begin{document}\maketitle
+The argument is valid for all integer side lengths $n\geq3$. It needs no commutation of the modified and original transfer operators, no parity condition, and no change of torus. Coupling conventions are fixed explicitly below.
+
+Use $s(U)=1-N^{-1}\operatorname{Re}\operatorname{tr}U$ and coefficient $\beta_W$. The operator note instead uses $s_{\rm AI}=Ns$ and coefficient $\beta_{\rm AI}=\beta_W/N$. Thus its $B=N\beta_{\rm AI}$ is precisely $\beta_W$ here.
+
+\section{Positive operator and exact original normalization}
+Fix one direction as time. On spatial link configurations $X$ use normalized product Haar measure. Let $P$ average the site gauge action $(gX)_e=g_xX_eg_y^{-1}$, and let
+\[
+ Q_{\boldsymbol\lambda}(X,Y)=\prod_e
+ e^{-\lambda_e[N-\operatorname{Re}\operatorname{tr}(X_eY_e^{-1})]}.
+\]
+Each one-link central convolution is positive: expanding the exponential into powers of the fundamental character and its conjugate gives nonnegative sums of tensor-product characters. Its spectral trace is the kernel value at identity, namely one. Hence the finite product $Q$ is positive trace class. For arbitrary link-dependent $\lambda_e\geq0$,
+\[
+ Q(gX,gY)=Q(X,Y),
+\]
+because $X_eY_e^{-1}$ is conjugated by $g_x$. Therefore $Q$ commutes with the unitary gauge action and with $P$. The spatial potential multiplier $M(X)=e^{-\beta_W V(X)/2}$ is gauge invariant. Thus $T=MQPM$ is positive trace class.
+
+For $\lambda_e=\beta_W/N$, its kernel can be written exactly as
+\[
+ T(X,Y)=M(X)M(Y)\int\prod_xdV_x
+ \prod_{e=(x,y)}e^{-\beta_W s(X_eV_yY_e^{-1}V_x^{-1})}.
+ \tag{1}
+\]
+In $\operatorname{Tr}T^n$, the $n$ copies of $X$ are all original spatial links, and the $n$ sets of $V_x$ are all original temporal links. Neighboring half-potentials supply each spatial plaquette once. Periodic trace closure preserves the temporal holonomy integration. Every Haar measure is normalized. Thus $\operatorname{Tr}T^n=Z_{n,\beta_W}$ without a scalar gauge-volume factor. One may algebraically combine the commuting projections, but that simplification is not needed for this identification.
+
+\section{The two inequalities and noncommutativity}
+For positive trace-class $A,B$, Schatten Holder gives
+\[
+ \operatorname{Tr}(AB^{n-1})\leq
+ (\operatorname{Tr}A^n)^{1/n}(\operatorname{Tr}B^n)^{(n-1)/n}.
+\]
+It can also be proved in an eigenbasis of $B$ by scalar Young followed by
+$\langle i,Ai\rangle^n\leq\langle i,A^ni\rangle$. No $AB=BA$ is assumed.
+
+For a positive bounded, gauge-invariant slice insertion $D$, take
+$A=T^{1/2}DT^{1/2}$ and $B=T$. Cyclicity identifies the left side with $\operatorname{Tr}(DT^n)$. The operators $T^{1/2}DT^{1/2}$ and $D^{1/2}TD^{1/2}$ have the same nonzero eigenvalues (they are $C^*C$ and $CC^*$), so the right-side trace is that of a repeated modified spatial potential. The boundedness of $D$ holds at each finite torus because the Wilson action is bounded.
+
+For a marked temporal slab, the insertion decreases selected $\lambda_e$ from $\beta_W/N$ to $(1-t)\beta_W/N$. The modified $T_1$ remains positive and trace class; the original marked numerator is exactly $\operatorname{Tr}(T_1T^{n-1})$. Holder repeats that same slab. It is not necessary that $T_1$ commute with $T$.
+
+\section{Explicit placement in four directions}
+For a plaquette of orientation $(1,2)$, let $A_j$ be marked base points. They progress as follows:
+\[
+\begin{array}{c|c|c}
+ j&\text{free coordinates of the marked bases}&\text{next transfer direction/type}\\\hline
+0&\varnothing&3,\ \text{spatial slice}\\
+1&3&4,\ \text{spatial slice}\\
+2&3,4&1,\ \text{temporal slab}\\
+3&1,3,4&2,\ \text{temporal slab}\\
+4&1,2,3,4&\text{finished}
+\end{array}
+\]
+In the third step only direction-2 spatial links with the chosen coordinate-2 base are modified. In the fourth step all direction-1 links of the chosen time-2 slab are modified. Reversing the orientation convention for a time-2 plaquette leaves $s(U^{-1})=s(U)$ unchanged.
+
+Writing $F(A)$ for the marked numerator divided by the same original uniform partition function, each step gives $F(A_j)\leq F(A_{j+1})^{1/n}$. Thus
+\[
+ E_{n,\beta_W}e^{t\beta_Ws(U_P)}
+ \leq\left[\frac{Z_{n,(1-t)\beta_W}}{Z_{n,\beta_W}}\right]^{1/n^4},
+ \qquad 0\leq t<1.
+ \tag{2}
+\]
+The final anisotropic numerator is no larger than the fully reduced-coupling numerator because every remaining plaquette action is nonnegative. The four applications never change the denominator measure.
+
+Using the actual tree/chain partition exponents $Q_n=3n^4+1$ and $R_n=3n^4-4n^3+1$ gives
+\[
+ E e^{\beta_Ws(U_P)/2}\leq C_G\beta_W^{2d_G/n},\quad\beta_W\geq1.
+ \tag{3}
+\]
+This is the same original Wilson measure on odd or even tori. Uniformity of the local exponential moment itself requires $\log\beta_W/n$ bounded; the displayed finite-size factor is retained otherwise.
+
+\section{Consequence for the complete-cube result}
+Replace (1) of the averaged complete cube calculation by (3). Its exact bath-event proof is unchanged and now gives
+\[
+ \Pr(\mathcal G^c)\leq864C_G\beta_W^{2d_G/n}
+ e^{-\beta_W\varepsilon_0/2}
+\]
+for every integer $n$ large enough to embed the box, without a parity restriction. Therefore its averaged conditional approximation and raw bad-log mass estimates apply to the original odd-$L$ physical sequence when the records fit. This independent derivation agrees with the operator note's four-direction argument. It does not prove a multilocal dissemination estimate for arbitrary marked sets, which would require a separate placement argument.
+\end{document}

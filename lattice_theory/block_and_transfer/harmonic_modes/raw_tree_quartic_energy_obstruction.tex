@@ -1,0 +1,105 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{A raw tree quartic is not controlled by physical curvature energy}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Question and precise conclusion.}
+The suggested critical four-dimensional Sobolev route would bound
+the induced vertices of the same coefficient schur cumulant decomposition calculation by physical quadratic energy. Such an
+argument first needs a COMPATIBLE coordinate/gauge representation.
+The following actual relative-tree family proves that a universal
+bound $|T_4(h)|\le C E(h)^2$ is false for raw tree coordinates.
+It does not refute a bound on a completed gauge-invariant coefficient,
+or on an induced quartic with a specifically proved exchange cancellation.
+
+\paragraph{1. Original field and actual relative forest.}
+Take the four-dimensional cube of side $R\ge6$, with all outer
+boundary links fixed to the identity. In the spatial three-cube let
+the Lie-algebra-valued function $\phi_0$ have only the values
+\[
+ \phi_0(3,2,2)=e_1,\quad \phi_0(3,3,2)=e_1+e_2,
+ \quad\phi_0(2,3,2)=e_2,
+\]
+and vanish elsewhere. Here $e_1,e_2$ are two orthonormal SU(2) colors
+in the quaternion normalization used throughout.
+Set $\phi=R^{-1/2}\phi_0$ and define the physical linear field
+$a_0(t,x)=\phi(x)$, $a_i=0$ for $i=1,2,3$.
+It obeys the original outer boundary condition. Its plaquette energy is
+\[
+ E(a)=R\sum_{\text{spatial edges}}|\delta\phi|^2=20. \tag{1}
+\]
+The finite spatial gradient sum is $20$: vertex degree six gives $24$,
+and the two nonzero neighboring inner products subtract $4$.
+
+Use the genuine temporal relative forest: every interior column is
+anchored at its lower boundary vertex, and all temporal links with
+$t=0,\ldots,R-2$ are tree links. The last temporal link is a chord
+to the fixed upper boundary. Set $\xi(t,x)=t\phi(x)$ at interior
+vertices and $\xi=0$ on the outer boundary. The linear tree field
+$h=a-d\xi$ is
+\[
+ h_0(t,x)=\begin{cases}0&t<R-1,\\R\phi(x)&t=R-1,\end{cases}
+ \qquad h_i(t,x)=-t\,\delta_i\phi(x)\quad(0<t<R),             \tag{2}
+\]
+and $h_i=0$ on the temporal boundary faces. All tree components
+vanish exactly, and $dh=da$, so $E(h)=20$. This is not an arbitrary
+large pure-gauge field appended to an already fixed tree.
+
+\paragraph{2. Actual Wilson quartic growth.}
+On each spatial plaquette, $dh=0$. If its four oriented logarithms
+are $X_1,\ldots,X_4$, the original product has logarithm
+$\alpha^2\Omega_2+O(\alpha^3)$, where
+$\Omega_2=\frac12\sum_{r<s}[X_r,X_s]$.
+Its Wilson quartic is therefore $|\Omega_2|^2/2\ge0$.
+On the indicated spatial square the logarithms are
+$-t e_1/\sqrt R,-t e_2/\sqrt R,t e_1/\sqrt R,t e_2/\sqrt R$,
+giving $2t^4/R^2$. The sum over $t=1,\ldots,R-1$ is at least
+$cR^3$. The other spatial plaquettes cannot cancel it.
+
+On ordinary temporal plaquettes, the two nonzero logarithms are
+parallel and their difference is $\delta\phi$. Their total quartic
+is bounded by $C/R$. The last temporal layer contains only finitely
+many nonzero spatial stencils, each with logarithms $O(\sqrt R)$;
+its absolute quartic is at most $CR^2$. Hence already
+\[
+ T_4(h)\ge cR^3-CR^2-C/R.                                  \tag{3}
+\]
+Every logarithm uses only colors one and two, so the original cubic
+triple product is zero: $T_3(h)=0$.
+
+An exact original-plaquette finite algebraic calculation gives the sharper formula
+\[
+ T_4(h)=R^3-\tfrac32R^2+\tfrac13R-\frac4{3R}.                \tag{4}
+\]
+This can be certified by finite polynomial arithmetic: before division
+by $R^2$, the spatial part is $5\sum_{t=1}^{R-1}t^4$ and the temporal
+part is a polynomial of degree at most four. Thus the total has degree
+at most five. Exact evaluations at six distinct $R\ge6$ verify the
+displayed polynomial. The finite calculation uses the complete original SU(2)
+plaquette product, including the last layer; no continuum vertex or
+infinite-volume identity is substituted.
+
+\paragraph{3. Meaning for the proposed induced-vertex route.}
+For the limiting Schur split with all coordinates retained, $H=1$
+and the exchange term in the same coefficient schur cumulant decomposition calculation is absent. This actual example rules out
+an unconditional raw-tree energy bound for that family of induced
+representations. It also shows why a curl-controlled $L^4$ norm cannot
+be assigned to arbitrary tree fields. At small $\alpha$ the field lies
+in the original local chart; for instance $\alpha\sqrt R\to0$ suffices.
+The obstruction is not caused by leaving the perturbative chart.
+
+For a SPECIFIED nonempty block split, the negative exchange
+$-\frac12\nabla_I T_3 C_I\nabla_I T_3$ may cancel part of this growth.
+No failure for every such split is claimed. A Coulomb representation
+can have critical Sobolev control, but moving from (2) to that
+representation changes nonlinear coordinates and retained skeleton
+sources. The source/frame/Jacobian contacts of the internal source tree to fp transport calculation and the two stage quotient and compensated covariance calculation and the exchange
+must be carried through and estimated together. Neither the fact
+that $T_3(h)=0$ nor the source-free shift of the relative background shift and its limit calculation removes those contacts.
+
+Thus this lead does not presently give a valid quantitative bound
+for the completed coarse remainder of the same coefficient schur cumulant decomposition calculation. The next necessary input is an
+explicit compatible Coulomb/coarse representation with its compensated
+vertices, or a bound on the original completed covariance of the two stage quotient and compensated covariance calculation itself.
+The example is not a divergence of the full coefficient, and proves
+nothing negative about existence, the nonlinear remainder, or S94.
+\end{document}

@@ -1,0 +1,104 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Var}{\operatorname{Var}}
+\title{Literal support multiplicities and stopped elimination covariance}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Analysis of the linear support count in the local ordinary covariance calculation and the inherited effective score calculation.}
+A four-dimensional bond belongs to six plaquettes. Its force reads exactly its own bond
+and the other eighteen bonds in those plaquettes, on an embedded patch. Let $D(b)$ denote
+this nineteen-bond determining set. A source row $c$ varies under a free link $e$ precisely
+when $e\in D(c)$; incidence symmetry makes this equivalent to $c\in D(e)$.
+For a two-link block, the varying row set is $D(e_-)\cup D(e_+)$, containing thirty-seven
+bonds in the geometry used here. With the originally required disjoint determining
+neighborhoods, these row sets are disjoint, so for a literal test
+\[
+ W(f)^2=\sum_j\sum_{c\in\mathcal R_j}|f_c|^2
+ \le\sum_{c:f_c\ne0}|f_c|^2.
+\]
+Without disjointness the correct bound includes the actual maximal row multiplicity;
+bounded lattice incidence alone bounds it by nineteen for a packing with distinct free links.
+The disjoint packing used in the proof has no hidden volume-dependent multiplicity.
+
+For the first-layer conditional mean of a single source row $c$, its retained carrier is
+contained in
+\[
+ D_R(c)=(D(c)\setminus E)\cup
+       \bigcup_{e\in E\cap D(c)}(D(e)\setminus\{e\}).
+\]
+Every new dependence comes from the actual one-link conditional denominator or numerator.
+Thus $|D_R(c)|\le19+19\cdot18=361$, a crude fixed bound. Consequently each source-row
+weight occurs in the summed derivative estimate of the inherited effective score calculation at most $361$ times per fixed
+color count. This proves the claimed linear support dependence independently of how
+many source rows or blocks are present. It does not assert an optimal geometric constant.
+
+The fixed pointed completion contributes its literal finite number of transformed tests.
+Applying the estimate before their finite average gives
+$W^2\le C_{\rm point}\sum_{\gamma,c}|f_c^\gamma|^2$ with every shifted row retained.
+If $Y_f$ is the original completed union of support plaquettes and $N_f=\#Y_f$, each
+nonzero bond test is incident to a plaquette in that union; each plaquette has four bonds.
+Therefore the relevant number of nonzero completed bond weights is at most
+$4C_{\rm point}N_f$, and
+$W^2\le C\|f\|_\infty^2N_f$. This is the precise convention under which the support-count
+claim holds. Defining $N_f$ as only an uncompleted continuum support, or counting a
+single representative before its offsets, would not justify the displayed inequality.
+The original $a^4$ smearing is already in $\sigma=g^{-2}a^{-2}$; it is not inserted again
+when converting this bond count to physical volume.
+
+\paragraph{Exact reverse-martingale decomposition for true coordinate elimination.}
+Let $R_0\supset R_1\supset\cdots\supset R_m$ be actual retained coordinate sets,
+$\mathcal F_k=\sigma(U_b:b\in R_k)$, and $G_k=\E(G\mid\mathcal F_k)$.
+Put $D_kG=G_{k-1}-G_k$. For every pair of square-integrable real observables,
+\[
+ \Cov(G,H)=\sum_{k=1}^m\E[(D_kG)(D_kH)]+\Cov(G_m,H_m),
+\]
+with $G_0=G$ when $R_0$ contains all coordinates. The increments are orthogonal because
+$\E(D_kG\mid\mathcal F_k)=0$ and later increments are $\mathcal F_k$-measurable.
+Each summand is exactly
+\[
+ \E\Cov(G_{k-1},H_{k-1}\mid\mathcal F_k).
+\]
+The first separated-link summand is quantitatively bounded by the local ordinary covariance calculation. The remainder
+$\Cov(G_1,H_1)$ is exactly the inherited mean covariance, with the effective density and
+score of the inherited effective score calculation. There is no sign cancellation available for the equal-label remainder:
+all martingale variance contributions are nonnegative.
+
+\paragraph{Separated supports.}
+In the first layer, if the actual varying blocks of $G(f)$ and $G(h)$ are disjoint,
+conditional independence gives
+$\Cov(G(f),G(h)\mid\mathcal F_1)=0$ pointwise. Hence
+\[
+ \Cov_\mu(G(f),G(h))=\Cov_{\nu_1}(\overline G(f),\overline G(h)).
+\]
+This is an exact localization of the unresolved separated correlation to the inherited
+boundary fields, not a decay estimate. Their carriers are the finite enlarged sets $D_R(c)$
+above, so the separation condition is a checkable finite incidence statement with original
+test offsets. In further layers one may stop before enlarged carriers meet and retain
+all remaining covariance in the stopped term. No decay factor is produced merely by the
+absence of an early overlap.
+
+\paragraph{What persists, and what does not, at later layers.}
+Every coordinate marginal still has the exact score and directional moment estimates in
+the inherited effective score calculation. Moreover, varying one retained link changes the original action by at most a fixed
+constant, so ratios of its marginal densities are bounded by $e^{C\beta}$, independently
+of how many coordinates were eliminated. Thus a one-link conditional Haar comparison
+provides a gap at least $c e^{-C\beta}$ at every coordinate marginal.
+This is a real bound for the actual marginal, but it retains the exponential loss. It is
+not a uniform tensorization constant for a layer of interacting retained variables.
+After the first elimination, a term $-\log z_e$ can couple several remaining links.
+Eliminating another independent set in the ORIGINAL plaquette graph need not give a
+product law for this effective interaction. One must use its actual enlarged interaction
+graph, carrying functions and conditional normalizers. These neighborhoods can grow.
+
+Even if successive independent layers are selected in their actual graphs, the integrated
+observables $G_k$ are conditional means, not fixed finite Wilson-word force squares.
+The resampling proof in the local ordinary covariance calculation therefore cannot be copied to $G_k$ without estimates for
+its actual response. The inherited effective score calculation supplies one first-layer derivative bound; converting it to a
+variance via only the available gap costs $e^{C\beta}$. The score moment bounds control
+directional averages but do not prove a lower Hessian bound or spatial summability.
+Thus the martingale identity cleanly identifies the next quantitative estimate: bound the
+conditional covariance of the first inherited means, under their genuine effective law,
+with the required grade and physical mesh, while retaining the stopped boundary covariance.
+The identity itself does not close MT36 or give a global/separated continuum estimate.
+\end{document}

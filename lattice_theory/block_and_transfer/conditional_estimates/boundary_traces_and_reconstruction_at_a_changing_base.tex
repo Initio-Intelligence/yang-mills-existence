@@ -1,0 +1,1005 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.88in,headheight=15pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array,xcolor,fancyhdr}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!50!black,citecolor=blue!45!black]{hyperref}
+\definecolor{ink}{RGB}{28,49,68}
+\pagestyle{fancy}\fancyhf{}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\numberwithin{equation}{section}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Scope}
+\DeclareMathOperator{\Cov}{Cov}\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Part}{Part}\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\dist}{dist}\DeclareMathOperator{\diag}{diag}
+\newcommand{\dd}{\,\mathrm d}\newcommand{\eps}{\varepsilon}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\title{Boundary traces and reconstruction at a changing base}\author{}\date{}
+\begin{document}\maketitle
+\section{The actual target and two preliminary observations}
+
+For a fixed original history $\omega$ and the complete simultaneous wall
+tuple $\mathbf s$, keep
+\begin{equation}
+ W_{\omega,\mathbf s}
+ =P_{\rm old}\bigl(q_{\rm old}\Gamma^R_{\omega,\mathbf s}\bigr),
+ \qquad
+ F_{j,e;\omega,\mathbf s}
+ =R_j\bigl(W_{\omega,\mathbf s},J_{\rm phys}(W_{\omega,\mathbf s})\bigr).
+ \label{eq:stored}
+\end{equation}
+Every expression in \eqref{eq:stored} is used only where its original map
+is defined. The map $q_{\rm old}$ includes the complete original determining
+record: oriented averages, bare identity rows, meshes, path prefixes,
+endpoint frames, exterior values and boundary conditions. It is not just
+the restriction to the source's geometric support. $P_{\rm old}$ is its
+original constrained Wilson minimum.
+
+For the clean-born $d=2$ stable $H$ packet, write
+\begin{equation}
+ r=L^{j-e},\qquad \rho=g_e/g_j,\qquad u=g_e/\alpha,
+ \qquad (\gamma_2,\gamma_3,\gamma_4)=(s,b,2),
+ \label{eq:notation}
+\end{equation}
+where $b$ is the cubic age exponent, not the Wilson inverse coupling.
+The already proved last-regular envelope has the form
+\begin{equation}
+ |F|\le A_j\rho^2
+ \left[r^sQ^2+ur^bQ^3+u^2r^2Q^4\right],\qquad Q=q_H\ge0.
+ \label{eq:envelope}
+\end{equation}
+Its application to \eqref{eq:stored} is the missing issue. In particular,
+$Q$ includes pinned and exterior determining data as well as integrated
+fluctuations. Formula \eqref{eq:envelope} cannot be assumed on a new mixed
+domain simply because it holds on the last admitted regular problem.
+The saved current/source derivatives and anchor norms are additional
+finite rows of the packet, not consequences of a scalar value bound.
+
+The first observation holds: squaring
+\eqref{eq:envelope} needs moments through degree eight, and the full physical
+core can lose canonical coupling factors. Sections 5--8 show which such
+losses an existing reserve can pay. The second observation holds at first
+order on its expressly admitted protected chart. Section 4 separates that
+fact from the stronger higher-jet and anchor requirements.
+
+All results below concern this fixed stored object. A source-only
+reconstruction agrees with the physical source at the genuine minimum
+endpoint as in LM46, but endpoint equality alone supplies neither
+simultaneous-wall admission nor a new source-independent physical radius.
+
+\section{Retained targets and joined boundary traces}
+
+\begin{lemma}[Exact old-target retention]
+On the admitted domain of the complete old determining problem,
+\begin{equation}
+ q_{\rm old}P_{\rm old}(v)=v.
+ \label{eq:rightinverse}
+\end{equation}
+Consequently, for every admitted parameter family $\Gamma(z)$,
+\begin{equation}
+ q_{\rm old}\bigl(P_{\rm old}q_{\rm old}\Gamma(z)\bigr)
+ =q_{\rm old}\Gamma(z).
+ \label{eq:targetidentity}
+\end{equation}
+All finite ordered derivatives of these composite target functions agree.
+The statement retains the specified common gauge or endpoint conjugations.
+\end{lemma}
+\begin{proof}
+Equation \eqref{eq:rightinverse} is the defining minimum constraint.
+Substitute $v=q_{\rm old}\Gamma(z)$ and differentiate the identity.
+For a nonlinear row the first derivative reads
+\[
+ Dq_{\rm old}(W)DW=Dq_{\rm old}(\Gamma)D\Gamma;
+\]
+it is not $q_{\rm old}DW=q_{\rm old}D\Gamma$. Higher derivatives likewise
+differentiate the entire composite.
+\end{proof}
+
+In particular, admission to the saved spare domain requires
+\begin{equation}
+ q_{\rm old}\Gamma^R_{\omega,\mathbf s}
+ \in q_{\rm old}\bigl(\pi_U\mathcal C^{\rm spare}_{j,e}\bigr)
+ \quad\hbox{on the full original simultaneous domain}.
+ \label{eq:necessary}
+\end{equation}
+Here $\pi_U$ is the field projection of the saved paired domain.
+This is necessary, not sufficient. Reconstruction can restore the
+own-current relation once admitted; it cannot repair targets outside this
+image.
+
+There is a precise current consequence. On every old pinned identity bond,
+$W_b=\Gamma_b$. A Wilson plaquette word is therefore unchanged when its
+whole stencil is pinned. The physical Wilson current at a bond is unchanged
+only when \emph{all} incident-plaquette bond stencils are pinned, with the
+original action coefficients. Every finite jet of those complete words is
+also unchanged. Hence every nonnegative weighted aggregate of those target
+or pinned-stencil jets is exactly unchanged. An interior averaging gain
+cannot supply their missing boundary or anchor bound. This is not an
+example of a bad selected history.
+
+\subsection{The base term cannot be discarded}
+
+In one admitted target chart, a join admits the exact bookkeeping identity
+\begin{equation}
+ q\Gamma_i-q\Gamma_{i-1}
+ =\bigl(q\Gamma_i-q\Gamma_{i,0}\bigr)
+  +\bigl(q\Gamma_{i,0}-q\Gamma_{i-1}\bigr).
+ \label{eq:base}
+\end{equation}
+The first term responds to the localized correction. The second contains
+the joined base minimum and its re-averaged boundary trace. A small estimate
+for the first term does not estimate the second. This is an identity in a
+fixed chart, not an assumption that group-valued averages are additive.
+
+R-II (1.50) retains the genuine old constrained minimum at the physical
+endpoint. Its later joins have distinct coincidence interiors $Y_i^0$ and
+changed complementary boundary rows. The gauge in (1.61) is retained.
+The range in (1.65) is the original native member range. The
+source does not identify it with $\mathcal C^{\rm spare}_{j,e}$.
+The discussion agrees with LM42--48 and PE12 of~\cite[pp.~781--783, 1174--1180]{W} and with~\cite{rii}.
+
+The actual localization construction also does not supply the needed
+universal collar. $Y_1$ is a smallest containing localization domain, and
+later added components connect to successive boundary layers. Containment
+of the complete old readset in $Y_i$ does not imply its positive separation
+from $Y_i\setminus Y_i^0$. The Green forcing uses complete row-adjoint
+stencils, including prefixes, not just row labels. III's join construction
+does not state the missing saved-readset erosion~\cite{iii}.
+
+For genuine surviving ancestors there is a restricted positive statement.
+If the complete packet readset is unchanged, its first touch is $e$, and
+the verified survival step is $Z_{e-1}=S(Z_{e-2})$, the original ten-layer
+padding gives
+\begin{equation}
+ \dist_\infty(S_{\rm old},Z_{e-2})
+ \ge cM R_{e-1}a_{e-1}.
+ \label{eq:ancestorcollar}
+\end{equation}
+Here $a_{e-1}$ is the physical scale length, not an ancestry index.
+An adjoint stencil contained in that actual ancestor inherits this
+separation. Artificial join rows, moving readsets, and native-metric depth
+estimates are not supplied by \eqref{eq:ancestorcollar}.
+
+\section{The exact reconstruction response, including the changed base}
+
+These identities use a common finite-dimensional gauge-fixed chart of an
+\emph{already admitted} old minimum. The original nonredundant target and
+gauge quotient are retained, and its augmented derivative is assumed
+invertible on the verified response domain. Admission or uniqueness alone
+would not imply that nondegeneracy. On complex walls, the symbol $*$ below
+means the bilinear transpose, continued holomorphically from the real
+adjoint; it is not complex conjugation. These formulas are not an
+existence argument for the chart. Write its stationary equations as
+\begin{equation}
+ \nabla S(W)-Dq(W)^*\lambda=0,\qquad q(W)=v.
+ \label{eq:kkt}
+\end{equation}
+Set
+\begin{equation}
+ Q_W=Dq(W),\qquad
+ L_W=S''(W)-\sum_\alpha\lambda_\alpha D^2q_\alpha(W),\qquad
+ K_W=\begin{pmatrix}L_W&-Q_W^*\\Q_W&0\end{pmatrix}.
+ \label{eq:lagrangian}
+\end{equation}
+The nonlinear-constraint term in $L_W$ must remain. Let $G_W$ and $P_W$
+denote the upper-left and upper-right blocks of $K_W^{-1}$; $P_W$ here is
+the derivative lift, distinguished from the nonlinear $P_{\rm old}$.
+Block multiplication gives
+\begin{equation}
+ Q_WG_W=0,\quad G_WQ_W^*=0,\quad
+ G_WL_W+P_WQ_W=I,\quad Q_WP_W=I.
+ \label{eq:block}
+\end{equation}
+
+\begin{proposition}[Off-base derivative identity]
+For $W=P_{\rm old}q\Gamma$ in this fixed chart,
+\begin{align}
+ DW&=P_WQ_\Gamma D\Gamma,\label{eq:exactresponse}\\
+ DW-D\Gamma
+ &=-G_WL_WD\Gamma
+   +P_W(Q_\Gamma-Q_W)D\Gamma.\label{eq:offbase}
+\end{align}
+\end{proposition}
+\begin{proof}
+Differentiate \eqref{eq:kkt}. The target derivative is $Q_\Gamma D\Gamma$.
+Apply the two upper blocks of the inverse, then use \eqref{eq:block}.
+\end{proof}
+
+At a common endpoint $W=\Gamma$, choose any smooth extension of the old
+multiplier and put
+$d_{\rm old}=\nabla S(\Gamma)-Dq(\Gamma)^*\lambda_{\rm ref}$.
+Then \eqref{eq:offbase} reduces to
+\begin{equation}
+ DW-D\Gamma=-G_WDd_{\rm old}.
+ \label{eq:defect}
+\end{equation}
+The arbitrary multiplier derivative drops out by $G_WQ_W^*=0$.
+For an independent preparation or source wall, $Dd_{\rm old}$ need not
+vanish. Away from the endpoint the second term of \eqref{eq:offbase}
+cannot be omitted.
+
+For example, take $S(x,y)=(x^2+y^2)/2$ and $q(x,y)=x+y^2/2$ near
+$v<1$. The local constrained minimum is $W=(v,0)$. At
+$\Gamma=(v-h^2/2,h)$ with tangent $(c,d)$,
+$DW-D\Gamma=(hd,-d)$. The first term of \eqref{eq:offbase} gives
+$(0,-d)$ and its second term gives $(hd,0)$. This finite-dimensional
+example checks the missing term; it is not an original Wilson-history
+counterexample.
+
+If $S_t,q_t$ themselves depend on a wall, define
+\[
+ b_W=\partial_t\bigl(\nabla S_t-Dq_t^*\lambda\bigr)\big|_{W,\lambda}.
+\]
+Differentiation yields the additional explicit terms
+\begin{equation}
+ \dot W=-G_Wb_W+P_W\bigl[
+ Q_\Gamma\dot\Gamma+\partial_tq_t(\Gamma)-\partial_tq_t(W)\bigr].
+ \label{eq:moving}
+\end{equation}
+Physical recovery by a moving chart $\chi_t$ also contributes
+$D\chi_t(W)\dot W+\partial_t\chi_t(W)$. Boundary and frame responses
+cannot be hidden in a fixed-chart identity.
+
+\subsection{Only genuinely shared rows cancel}
+
+At a common flat quadratic center, let $H$ be the positive gauge-fixed
+action Hessian and $Q_o,Q_n$ the complete old and new row matrices on their
+nonredundant full-row-rank target quotients. Define
+\begin{align}
+ \mathcal P_o&=H^{-1}Q_o^*(Q_oH^{-1}Q_o^*)^{-1},\\
+ \mathcal G_o&=H^{-1}-\mathcal P_oQ_oH^{-1}.
+\end{align}
+If $\Gamma=\mathcal P_n v$ and $H\Gamma=Q_n^*\mu$, then
+\begin{equation}
+ (\mathcal P_oQ_o-I)\Gamma=-\mathcal G_oQ_n^*\mu.
+\end{equation}
+For a verified factorization $Q_n=TQ_o+E$, this becomes
+\begin{equation}
+ (\mathcal P_oQ_o-I)\Gamma=-\mathcal G_oE^*\mu.
+ \label{eq:rowdefect}
+\end{equation}
+All unmatched boundary, prefix, averaging and transport adjoints remain
+in $E^*\mu$. The three-join construction of~\cite{iii} does not supply the
+complete $E$, its weighted multiplier sum, or separation of all its
+stencils from the saved readset. Energy contraction of $\mathcal P_oQ_o$
+does not give the required local $r^2$ field or $r^3$ current response.
+
+Finally, constrained stationarity is not $J=0$. In coordinates,
+$\nabla S(W)=Q_W^*\lambda$, and its derivative contains both
+$Q_W^*D\lambda$ and $\sum\lambda_\alpha D^2q_\alpha(W)DW$.
+Converting this coordinate gradient to the physical Wilson current also
+differentiates the actual chart cotangent map and retains the original
+gauge-quotient identification. Those boundary reactions
+are part of the current estimate still required.
+
+\section{Analysis of protected rescaling, higher jets and anchors}
+
+On the \emph{same admitted protected current chart}, assume the genuine
+response bound
+\begin{equation}
+ \norm{DA[v]}_{C^{1,\beta}}+\norm{DJ_{\rm phys}[v]}_\infty
+ \le Cg_e\norm v,
+ \label{eq:protectedresponse}
+\end{equation}
+and the original small background bounds
+$\norm A_{C^{1,\beta}}+\norm J_\infty\le\eps$.
+The entire enlarged old carrier, its difference and current stencils,
+and the neighborhoods used in the Holder seminorm must lie in this same
+chart. Take a fixed carrier constant $D$ and $a\le r\le1$, with old mesh
+$\xi=a/r$. The current response is a
+separate input; it does not follow from $C^1$ control of $A$ alone.
+For an old contractible carrier of relative size $r$, use the DA2 gauge
+\[
+ h(x)=\exp\left(\sum_i(x_i-x_{0,i})A_i(x_0)\right),\qquad
+ A_{\rm old}(y)=rA^h(x_0+ry).
+\]
+The cancellation of the constant connection in the link word gives
+\begin{equation}
+ \norm{DA_{\rm old}[v]}_{C^{1,\beta}}
+ \le C_Dr^2g_e\norm v.
+ \label{eq:oldfield}
+\end{equation}
+Indeed $DA^h$ has the leading difference
+$DA(x)-DA(x_0)$ and analytic remainders with the same factor $r$ in
+supremum norm; rescaling contributes the second factor. Exact link-word
+divisibility is retained before division by the fine mesh.
+
+Using the same fixed Wilson-current and action normalization, without a
+running-coupling conversion, the current identity and its derivative are
+\begin{align}
+ J_{\rm old}&=r^3\Ad_hJ,\\
+ DJ_{\rm old}[v]
+ &=r^3\Ad_h\bigl(DJ[v]+[h^{-1}Dh[v],J]\bigr),
+ \qquad \norm{h^{-1}Dh[v]}\le C_Drg_e\norm v.
+ \label{eq:oldcurrent}
+\end{align}
+Thus $\norm{DJ_{\rm old}[v]}_\infty\le C_Dr^3g_e\norm v$ on that chart.
+Complete scalar Ward invariance removes a simultaneous vertical tangent;
+it does not delete the displayed commutator while boundary, current or
+reference slots are held fixed.
+
+Response estimates leave the base $A(0),J(0)$ intact. The joined bases
+are generally not flat when only an internal fluctuation is set to zero.
+Those terms must remain in $Q$ or receive a separate bound.
+
+\subsection{Higher coupling grades need the original physical radius}
+
+A first canonical derivative bound is insufficient. On a fixed canonical
+complex ball,
+\begin{equation}
+ A_g(z)=g(z+z^2),\qquad F(A)=g_j^{-2}A^2
+ \quad\Longrightarrow\quad
+ DA_g=O(g),\qquad (F\circ A_g)'''(0)=12g^2g_j^{-2}.
+ \label{eq:jetcounter}
+\end{equation}
+There is no uniform cubic $O(g^3g_j^{-2})$ conclusion. This is a countermodel
+to an inference, not a claim about an original selected history.
+
+A sufficient stronger hypothesis is holomorphic dependence on the
+physical variable $w$, with a uniform bound on the first derivative
+$D_wP$ on the larger \emph{unchanged} physical radius $\delta$.
+Cauchy on a fixed smaller part of that domain gives
+\begin{equation}
+ \norm{D_z^mP(g_ez)}\le C_mg_e^m\delta^{1-m},\qquad 1\le m\le m_*.
+ \label{eq:cauchy}
+\end{equation}
+The factors involving a shrinking old radius are retained. A first bound
+on a fixed canonical ball only gives $O(g_e)$ for higher derivatives.
+The full chain rule contains every block
+\begin{equation}
+ D_I(F\circ\Psi)
+ =\sum_{\pi\in\Part(I)}D^{|\pi|}F(\Psi)
+      [D_B\Psi:B\in\pi].
+\end{equation}
+The actual-current hierarchy also contains
+$d_a^*d_aD_IA$ in addition to the derivatives of its analytic nonlinear
+part. The same simultaneous walls must be admitted throughout the Cauchy
+discs; native analyticity on a different determining problem is inadequate.
+
+If an amplitude loses $r^{-\eta}$, the value-envelope powers become
+\begin{equation}
+ s-2\eta,\qquad b-3\eta,\qquad 2-4\eta.
+\end{equation}
+The proposed condition
+$\eta<\min(s/2,b/3,1/2)$ gives positive remaining exponents. It does not
+preserve the exact saved age, prove higher-jet grades, or check old-radius
+admission. No such expenditure is silently made here.
+
+\subsection{Absolute anchor sums remain a separate estimate}
+
+A scalar first-order $\ell^\infty$ operator norm equals its unweighted
+coefficient $\ell^1$ norm. Weighted locality and higher-order absolute
+sums require more. For a symmetric Hadamard matrix $H_n$ with
+$H_nH_n^*=nI$, the bilinear form
+\[
+ B_n(v,w)=n^{-3/2}v^TH_nw
+\]
+has operator norm at most one on two unit $\ell^\infty$ balls, while the
+absolute coefficient sum is $\sqrt n$. Thus ordinary multilinear bounds
+and a common Cauchy domain do not supply a uniform absolute anchor norm.
+
+Localized response columns can supply such sums on their admitted domains.
+For example, on a uniform mesh a column bound
+$|\partial_a\Psi(x)|\le Ce^{-\kappa d(x,a)}$, uniform on a larger physical
+disc, gives finite-order kernels bounded by
+$C_m\delta^{1-m}e^{-\kappa\max_i d(x,a_i)}$ by Cauchy and symmetry.
+Uniform polynomial ball counts then sum any fixed polynomial anchor moment.
+For the actual multiscale record, the input measures, scale powers, row
+multiplicities and native metric must all be checked. The verified native
+response theorem is not a statement for the changed joined target tuple.
+
+\section{The exact moment requirement and the pinned marginal}
+
+\begin{proposition}[Raw three-row moment bound]
+On any finite positive body $\mu$ where \eqref{eq:envelope} is actually valid,
+\begin{equation}
+ \norm F_{L^2(\mu)}\le A_j\rho^2\left[
+ r^s(\mu Q^4)^{1/2}+ur^b(\mu Q^6)^{1/2}
+ +u^2r^2(\mu Q^8)^{1/2}\right].
+ \label{eq:l2}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Apply Minkowski to the three nonnegative majorant terms. Squaring their
+sum directly gives powers $Q^4,Q^5,Q^6,Q^7,Q^8$; the quartic square
+requires degree eight. No artificial factor three is needed in
+\eqref{eq:l2}.
+\end{proof}
+
+If $Q^2\le c_H(1+E)$ for a genuinely owned energy and
+$\mu e^{\theta E}\le B$, define
+\begin{equation}
+ M_m(\theta)=\sup_{t\ge0}(1+t)^me^{-\theta t}
+ =\begin{cases}
+ 1,&m\le\theta,\\
+ (m/\theta)^me^{-m+\theta},&m>\theta.
+ \end{cases}
+ \label{eq:mm}
+\end{equation}
+The derivative locates the maximum at $0$ or $m/\theta-1$. Consequently
+each $(\mu Q^{2m})^{1/2}$ is at most
+$c_H^{m/2}M_m(\theta)^{1/2}\sqrt B$. This uses \emph{one} reserve;
+the degree-eight field moment is a degree-four energy polynomial.
+
+\subsection{An internal reserve does not remove fixed determining data}
+
+Disintegrate only when the original body actually does:
+$\dd\mu=\dd\nu(\lambda)\dd\mu_\lambda(\xi)$,
+$M_\lambda=\mu_\lambda1$. Suppose
+$Q\le h(\lambda)+\sqrt{cE_\lambda}$ and
+$\mu_\lambda e^{\theta E_\lambda}\le B_\lambda$.
+Binomial expansion and Minkowski give, for $m=2,3,4$,
+\begin{align}
+ \norm{Q^m}_{L^2(\mu_\lambda)}
+ \le {}&h^m\sqrt{M_\lambda} \nonumber\\
+ &+\sqrt{B_\lambda}\sum_{\ell=1}^m
+ \binom m\ell h^{m-\ell}c^{\ell/2}
+ \left(\frac{\ell}{\mathrm e\theta}\right)^{\ell/2}.
+ \label{eq:pinned}
+\end{align}
+The leading pinned term keeps the actual mass. If the original larger body
+integrates $\lambda$, the quartic row needs, among its terms,
+\begin{equation}
+ \int h(\lambda)^8M_\lambda\dd\nu(\lambda)\le CB_X.
+ \label{eq:pinnedtarget}
+\end{equation}
+If $\lambda$ remains external, a uniform bound is required instead. There
+is no exterior integral or reserve to invent.
+
+For $M=\mu1>0$, put $f_\lambda=\mu_\lambda F/M_\lambda$ and similarly
+$g_\lambda$, and $\bar f=\mu F/M$, $\bar g=\mu G/M$. Zero-mass fibers
+contribute zero. The full raw covariance is exactly
+\begin{align}
+ \mu(FG)-\frac{\mu F\,\mu G}{M}
+ ={}&\int\left[\mu_\lambda(FG)
+       -\frac{\mu_\lambda F\,\mu_\lambda G}{M_\lambda}\right]\dd\nu
+       \nonumber\\
+ &+\int M_\lambda(f_\lambda-\bar f)(g_\lambda-\bar g)\dd\nu.
+ \label{eq:totalcov}
+\end{align}
+No conditional Poincare or contact prescription deletes the second term.
+
+\subsection{The uniform filter alone has the critical four-dimensional norm}
+
+For the complete uniform $Q_2$ row established in~\cite[\S2]{UA},
+\[
+ \sum_yK_r(x,y)=1,\quad 0\le K_r(x,y)\le C(a/r)^4,
+ \quad |\supp K_r(x,\cdot)|_a\le Cr^4.
+\]
+Its exact physical $L^2_a$-to-one-value norm is
+\begin{equation}
+ \left(\sum_yK_r(x,y)^2/a^4\right)^{1/2},
+ \qquad cr^{-2}\le\norm{K_r(x,\cdot)}_{(L^2_a)^*}\le Cr^{-2}.
+ \label{eq:critical}
+\end{equation}
+The upper bound uses the maximal coefficient, and the lower bound uses
+normalization and support volume. Thus a global curvature-energy estimate
+can give $r^2|Q_2F|\le Cg_e\sqrt E$, but it does not supply the extra $r^2$
+needed by the protected canonical readout. A sufficient fourth local-energy
+moment for the corresponding degree-eight target would be
+\begin{equation}
+ \int\left(\sum_{\supp K_r}a^4|F|^2\right)^4\dd\mu
+ \le Cg_e^8r^{16}B_X.
+ \label{eq:localenergytarget}
+\end{equation}
+This is a route-specific target, not a necessity theorem excluding signed
+cancellation. No selected original history is asserted to saturate
+\eqref{eq:critical}. Identity and mixed boundary rows do not inherit its
+uniform averaging hypothesis.
+
+\section{A summed estimate for genuinely owned native-depth records}
+
+This section improves the numerical part of the aggregate problem without
+assuming a separate charged array at every scale. It uses the original
+source-free positive recurrence within its existing scope.
+
+Let $\mathfrak V_\omega$ be the set of actual pairs $(t,Z)$ consisting of
+an RG step and a live component in the unfolded ancestry contributing to
+the completed component $X$. Define
+\begin{equation}
+ T_\omega=|\mathfrak V_\omega|,\qquad
+ \mathcal G_\omega=\sum_{(t,Z)\in\mathfrak V_\omega}
+      M^4R_t^5\bigl(d'_t(Z)+1\bigr).
+ \label{eq:livet}
+\end{equation}
+With the fixed original $M,R_t\ge1$, $T_\omega\le\mathcal G_\omega$.
+The summands are the original per-component cost majorants LM21.
+The measure below is the complete original positive reference body, or
+its already justified positive dominating body, with its inherited
+scalars, independent normalizers and existing score allocations retained.
+It is not a newly normalized conditional fiber.
+
+\begin{proposition}[Fixed live-step exponential weight]
+Within the original action, record and history assignments, the positive
+completed-body estimate can retain, for any fixed $\lambda\ge0$,
+\begin{equation}
+ \sum_\omega\int
+ e^{\theta E_\omega+\tau N_\omega^{\log}+\lambda T_\omega}
+ \dd\mu_\omega
+ \le B_{X,\lambda},\qquad
+ B_{X,\lambda}\le C_\lambda
+ e^{-c_\lambda P_0(x_e)-\kappa_\lambda d(X)},
+ \label{eq:timebank}
+\end{equation}
+for some fixed remaining $\theta,\tau,c_\lambda,\kappa_\lambda>0$ after
+all prescribed finite costs are combined once and the weak floor is chosen
+accordingly. Here $P_0(x)=(\log x)^{p_0}$ and $x_e=g_e^{-2}$.
+\end{proposition}
+\begin{proof}
+Multiplication by $e^{\lambda T_\omega}$ is bounded by increasing the
+coefficient $C_w$ of the existing charge
+$C_wM^4R_t^5(d'_t(Z)+1)$ by $\lambda$. Its future sum remains bounded by
+$C(C_w+\lambda)M^4L^5R_t^6(d'_t(Z)+1)$.
+The original inequalities $p_0>6r_0$ and
+$2p_1-9r_0>p_0$ make birth, renewal and surplus merger credits dominate
+this enlarged fixed coefficient beyond one weak floor. A no-new-failure
+step subtracts its first future charge; a renewal funds the new future
+bank; a merger keeps one reserve and pays the overlap from surplus child
+reserves. Original history entropy is already in the charge.
+This is the same recurrence as (8.3)--(8.4), LM21--23 and S86 of~\cite[pp.~137--138, 774, 614]{W},
+with a fixed additional numerical cost. It neither changes the
+integral nor assigns energy to new coordinates.
+\end{proof}
+
+For a retained record $R$, let $\ell_R$ be its native scale and $a_R$ the
+start of its continuous live retention in this same unhealed ancestry.
+If the literal chain exists at every step $a_R,\ldots,e-1$, then
+$e-a_R\le T_\omega$. Only if $a_R=\ell_R$ does this directly imply
+\begin{equation}
+ \sigma_R^{-D}=L^{D(e-\ell_R)}
+ \le e^{D(\log L)T_\omega},\qquad \sigma_R=L^{\ell_R-e}.
+ \label{eq:depth}
+\end{equation}
+Otherwise the unpaid factor $L^{D(a_R-\ell_R)}$ remains. This is not a
+mark's pre-entry regular age to be charged retrospectively.
+
+\begin{proposition}[Whole owned-row aggregate]
+Fix $D,m\ge0$ and $\Lambda_e>0$. Let the actual nonnegative weights
+of a verified channel obey
+$\sum_Rw_{xR}\le C_w'$, and assign its inputs once to the eligible chains
+of \eqref{eq:depth}. Suppose the actual native quantity being filtered has
+a proved bound
+$|c_R|\le C\Lambda_e(1+E_R)^{m/2}$, with $\sum_RE_R\le E_\omega$.
+Then
+\begin{equation}
+ \mathcal U_D(x)=\sum_Rw_{xR}\sigma_R^{-D}|c_R|
+ \le CC_w'\Lambda_e e^{D(\log L)T_\omega}(1+E_\omega)^{m/2}.
+ \label{eq:aggregatesup}
+\end{equation}
+For fixed $q\ge1$, choosing $\lambda>qD\log L$ in the same preallocated
+recurrence gives
+\begin{equation}
+ \sum_\omega\int
+ \left(\frac{\sup_x\mathcal U_D(x)}{\Lambda_e}\right)^q
+ \dd\mu_\omega\le C_{q,D,m}B_{X,\lambda}.
+ \label{eq:aggregatemoment}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Bound the maximum eligible native depth by \eqref{eq:depth}, then sum the
+whole row using $\sum_Rw_{xR}\le C_w'$. The remaining polynomial in
+$E_\omega$ is paid by its fixed positive fraction in
+\eqref{eq:timebank}. Actual multiplicity polynomials require a proved
+bound by the original count ledger; no artificial collar count is assumed.
+The fixed constants also depend on the native-envelope constant, $C_w'$
+and the available energy fraction.
+\end{proof}
+
+For curvature $D=2$. For the directional-current channel $D=3$,
+\emph{provided its actual directional derivative envelope is known}.
+One waiting coefficient exceeding $24\log L$ therefore handles their
+joint eighth moment in this eligible sector. An $O(1)$ native amplitude
+normalized by $g_e$ additionally costs $x_e^4$, payable from a remaining
+birth rare coefficient as in Section 7.
+
+The qualification about current is essential. A bound on the physical
+divergence $J=D^*F$ alone does not bound each $D_\rho F$ used by the
+$Q_3$ filters. The elementary bound
+$|D_{\rho,a}F|\le2a^{-1}\sup|F|$ retains the actual mesh $a$; it cannot
+be replaced by $2\sigma^{-1}\sup|F|$ on a reconstructed patch with
+$a\ll\sigma$. Same-mesh compact words with a complete shifted stencil
+are a valid restricted case. The general changed-record directional and
+current-jet bounds remain open.
+
+Eligible records include genuinely retained own-spacing variables with
+their continuous original ancestry. A healed variable is an inherited
+coefficient, not a compact variable to reopen. Exterior clean inputs,
+preparation subdepth inside a single RG step, and artificial joined
+boundary rows have not been assigned to these chains. Thus
+\eqref{eq:aggregatemoment} controls an owned subset jointly; it does not
+complete \eqref{eq:pinnedtarget} for the full old boundary.
+
+\section{Paying cutoff and full-core losses with one original rare factor}
+
+The numerical argument in (8.3)--(8.4), S86 and LM21--23 of~\cite[pp.~137--138, 614, 774]{W} retains a
+positive rare coefficient after the original complete history sum and
+fixed identified cost increases. It keeps the birth reserve separate from
+the future waiting bank. R-II's original rare-factor recurrence is the
+source-free input~\cite[pp.~137--138]{W},~\cite{rii}. Use the notation
+\begin{equation}
+ B_X^{(c)}=C_0e^{-cP_0(x_e)-\kappa d(X)},\qquad
+ P_0(x)=(\log x)^{p_0},\qquad p_0>1.
+ \label{eq:bc}
+\end{equation}
+Its coefficient must actually survive the combined allocation. An
+unspecified symbol $B_X$, or a small value of $T_X1$ alone, is insufficient.
+
+For every fixed $m>0$, $\delta>0$ and $x\ge1$, the explicit scalar bound
+\begin{equation}
+ x^m e^{-\delta(\log x)^p}
+ \le \exp\left[
+ \frac{p-1}{p}m\left(\frac{m}{\delta p}\right)^{1/(p-1)}
+ \right],\qquad p>1,
+ \label{eq:rarepower}
+\end{equation}
+follows by maximizing $mt-\delta t^p$ over $t=\log x\ge0$.
+Consequently one fixed reduction $c\mapsto c-\delta$ pays any specified
+finite product of current inverse-coupling and logarithmic cutoff powers.
+All powers for a finite packet are combined before choosing this reduction.
+
+This is stronger than the minimal VC logarithmic record comparison.
+That comparison has $w_e=1+\log(1+x_e)\le C\mathcal A_\omega$ when a
+literal earlier charged record and the actual running tube provide it;
+it pays fixed polynomials in $w_e$ from a small spare
+$e^{\theta\mathcal A_\omega}$. It does not automatically pay arbitrary
+$x_e^m$. The remaining birth coefficient in \eqref{eq:bc} is what pays
+those inverse-coupling powers.
+
+If only $Q\le CP_e$ is proved on the whole determining record,
+\eqref{eq:envelope} leaves
+\[
+ CA_j\rho^2P_e^2
+ \left[r^s+ur^bP_e+u^2r^2P_e^2\right].
+\]
+The cutoff cost is real until paid. If $Q=u^{-1}=\alpha/g_e$, the three
+rows are exactly
+\begin{equation}
+ A_j(\alpha/g_j)^2r^s,\qquad
+ A_j(\alpha/g_j)^2r^b,\qquad
+ A_j(\alpha/g_j)^2r^2.
+ \label{eq:fullcore}
+\end{equation}
+These are upper-envelope losses; no saturation or divergence is claimed.
+
+\begin{proposition}[Full-core raw $L^2$ carrying after actual admission]
+Suppose the actual full selected support has
+\eqref{eq:envelope}, $Q\le C/u$, and its source-free positive mass is
+bounded by an identified $B_X^{(c)}$. Keep the given clean radius $\alpha$
+bounded above by its original fixed constant. Then for $0<\delta<c$,
+\begin{equation}
+ \norm F_{L^2(\mu)}\le C A_j\rho^2
+ \left[r^s+ur^b+u^2r^2\right]\sqrt{B_X^{(c-\delta)}}.
+ \label{eq:fullcorel2}
+\end{equation}
+\end{proposition}
+\begin{proof}
+The three terms of \eqref{eq:l2} require the scalar payments
+$u^{-4}B^{(c)}$, $u^{-6}B^{(c)}$ and $u^{-8}B^{(c)}$.
+The largest fixed inverse-coupling power is
+$u^{-8}=\alpha^8x_e^4$. Apply \eqref{eq:rarepower} once to the finite
+maximum and retain each original row coefficient outside the payment.
+If a factor is less than one it needs no payment.
+\end{proof}
+
+This conclusion recovers the displayed $u$ and $u^2$, not just the three
+age exponents. It requires the full-core \emph{saved} envelope, not an
+unaged native supremum. A rare bound does not define a source outside its
+analytic domain, prove its canonical jets, or manufacture an arbitrary
+earlier age. R-origin radius costs and old origin couplings keep their own
+ledger; a current rare factor does not reset them.
+
+\section{A checked scalar attachment for the full inherited interaction}
+
+This is the most direct limited transfer result of this note.
+It uses the actual full $V(X^-)$ in the selected R-II body, rather than
+assigning a clean $O(g_e)$ norm to the entire inherited interaction.
+
+Fix the positive component operation $T'_e(X)$ in R-II (1.71), including
+its original internal history sum, before connected exponentiation.
+Write the literal inherited exponent term as $W_z=V(X^-,z)$,
+absorbing its original sign into $W$ if necessary. On the real reference
+body,
+\begin{equation}
+ \dd\mu_{1,\omega}=e^{W_0}\dd\nu_\omega.
+ \label{eq:realv}
+\end{equation}
+Here $\nu_\omega$ retains the original positive Wilson and Gaussian
+factors, selectors, constraints, measures, reference denominators and
+all other original scalars. No normalization is changed.
+Here $z$ ranges over the original paired outer domain of this positive
+operation. Additional source-only wall parameters may be carried
+uniformly when their incoming envelope holds on this same body.
+The argument does not extend the body comparison to an independently
+changed preparation-wall kernel or to a signed localized term.
+
+The original value bound (1.69) and its conversion into the positive
+history cost give
+\begin{equation}
+ |W_z|\le C_VD_\omega,
+ \label{eq:vvolume}
+\end{equation}
+where $D_\omega$ is the actual old-volume/geometric cost ledger, with
+$D_\omega\le C_D\mathcal G_\omega$ for the original
+$\mathcal G_\omega$ in \eqref{eq:livet}. All original old-scale counts
+and collars remain in this comparison; the count $T_\omega$ alone is
+not an arbitrary-volume bound.
+The original outer comparison bounds the quadratic-form variation
+$\sigma_Q$ and the full inherited variation $W_z-W_0$ separately.
+These are source-free facts on the original native outer domain; they
+do not admit the new mark~\cite{rii,W}.
+
+\begin{proposition}[Uniform full-interaction interpolation]
+For $0\le t\le1$, set
+\begin{equation}
+ \dd\mu_{t,\omega}=e^{tW_0}\dd\nu_\omega,\qquad
+ \sigma_{t,z}=\sigma_{Q,z}+t(W_z-W_0).
+ \label{eq:interpolation}
+\end{equation}
+The original positive numerical calculation, with all fixed extra costs
+combined, supplies
+\begin{equation}
+ \sup_{0\le t\le1}\sum_\omega\int
+ e^{\theta E_\omega+\tau D_\omega}\dd\mu_{t,\omega}
+ \le B_X^{(c)},\qquad
+ \sup_{t,\omega,z}|\sigma_{t,z}|\le\eps_*<\log2
+ \label{eq:uniformv}
+\end{equation}
+on that original domain, for fixed positive surviving constants and a
+sufficiently weak original ceiling.
+\end{proposition}
+\begin{proof}
+$W_0$ is real and
+$e^{tW_0}\le e^{|W_0|}\le e^{C_VD_\omega}$.
+The original positive proof already uses this absolute majorant for
+$V(X^-)$. Thus the same majorant works for every $t$; the extra
+$e^{\tau D_\omega}$ merely increases its fixed original cost coefficient.
+Retaining $\theta E_\omega$ and rerunning the birth/waiting/renewal/merger
+recurrence is exactly the source-free reserve argument of S86 and
+Section 6. It does not require $|W|=O(g_e)$.
+For the complex comparison,
+$|\sigma_t|\le\eps_Q+\eps_V$. In dimension four the source bound
+has size $C g_eR_e^6p_0(g_e)^2q_0(g_e)$, which is small for the original
+logarithmic choices. Both variations and the entire inherited $W$ have
+been retained. Here $p_0(g),q_0(g)$ are the original cutoff functions,
+while $p_0$ in $P_0$ denotes the declared logarithmic exponent.
+\end{proof}
+
+The proposition concerns the full resummed inherited scalar. An arbitrary
+subfamily, a selected localized vertex, or its anchor derivatives is
+covered only after its own absolute value and variation majorants are
+verified. A bound on a full sum alone does not establish those stronger
+bounds.
+
+\subsection{One raw rare factor, with the complete history covariance}
+
+Define
+\begin{align}
+ T_{t,z}F&=\sum_\omega\int e^{\sigma_{t,z}}F_{\omega,z}\dd\mu_{t,\omega},
+ \qquad Z_{t,z}=T_{t,z}1,\nonumber\\
+ \mathcal C_{t,z}(F,G)&=T_{t,z}(FG)
+       -\frac{T_{t,z}F\,T_{t,z}G}{Z_{t,z}}.
+ \label{eq:rawconn}
+\end{align}
+If $M_t=\sum_\omega\mu_{t,\omega}1>0$, then
+$|Z_{t,z}|\ge(2-e^{\eps_*})M_t$. Cauchy--Schwarz on this one body gives
+\begin{equation}
+ |\mathcal C_{t,z}(F,G)|
+ \le C_{\eps_*}\norm F_{L^2(\mu_t)}\norm G_{L^2(\mu_t)},
+ \quad C_{\eps}=e^{\eps}+\frac{e^{2\eps}}{2-e^{\eps}}.
+ \label{eq:connineq}
+\end{equation}
+This is the comparison of~\cite[\S3]{CE}. Its history sum is inside
+the body; the between-history conditional-mean term in
+\eqref{eq:totalcov} is therefore included. Any still external history
+variables remain external and require their own subsequent estimate.
+
+From \eqref{eq:vvolume} and \eqref{eq:uniformv},
+\begin{equation}
+ \norm{W_z}_{L^2(\mu_t)}
+ \le \frac{2C_V}{\mathrm e\tau}\sqrt{B_X^{(c)}},
+ \label{eq:v2}
+\end{equation}
+because $\sup_{d\ge0}d^2e^{-\tau d}=(2/(\mathrm e\tau))^2$.
+There has been no new rare bank assigned to this interaction.
+
+\begin{theorem}[Conditional full-$V$ scalar three-row attachment]
+Assume the actual stored mark on the same complete selected support and
+the whole original simultaneous domain satisfies
+\eqref{eq:envelope} and $Q\le C/u$, with the unchanged clean radius.
+Then for every fixed $0<\delta<c$,
+\begin{equation}
+ \boxed{
+ |\mathcal C_{t,z}(F,W)|
+ \le Cg_e A_j\rho^2
+ \left[r^s+ur^b+u^2r^2\right] B_X^{(c-\delta)}
+ }
+ \label{eq:mainpartial}
+\end{equation}
+uniformly in $0\le t\le1$ and the verified outer domain in
+\eqref{eq:uniformv}. This is a scalar raw attachment to the
+literal full inherited interaction, conditional on the stated actual
+incoming admission and envelope.
+\end{theorem}
+\begin{proof}
+For the degree-$m$ envelope term write
+$c_m=A_j\rho^2r^{\gamma_m}u^{m-2}$, where
+$(\gamma_2,\gamma_3,\gamma_4)=(s,b,2)$.
+Apply the pointwise envelope before the $L^2$ estimate. Its contribution
+to $\norm F_{L^2(\mu_t)}$ is at most $Cc_mu^{-m}\sqrt{B_X^{(c)}}$.
+Equations \eqref{eq:connineq}--\eqref{eq:v2} bound the raw contribution
+by $Cc_mu^{-m}B_X^{(c)}$. To extract $g_ec_m$, the needed cost is
+\begin{equation}
+ g_e^{-1}u^{-m}=\alpha^m x_e^{(m+1)/2},\qquad 2\le m\le4.
+ \label{eq:sharpcost}
+\end{equation}
+Its largest current power is $x_e^{5/2}$. Equation
+\eqref{eq:rarepower} pays the whole finite set with one reduction
+$c\mapsto c-\delta$. Summing the three bounds proves
+\eqref{eq:mainpartial}. Both $L^2$ roots use the same majorant and
+produce one $B$, not two independent masses. No saved age is spent.
+\end{proof}
+
+The pointwise or sufficiently reserve-weighted hypothesis is essential:
+a bare $L^2(\mu_1)$ estimate does not imply uniformity under
+\eqref{eq:interpolation}. The factor $g_e$ in
+\eqref{eq:mainpartial} comes from rarity, not a pointwise clean-vertex
+bound for $V$. The scalar maximum in \eqref{eq:rarepower}, with
+$m=5/2$, makes its constant explicit.
+
+A genuinely common outside scalar $a(z)$ multiplies
+\eqref{eq:mainpartial} once. It is not canceled. History-dependent
+reference factors stay inside their corresponding $\mu_{t,\omega}$.
+For a readout held fixed during the exponent interpolation,
+\begin{equation}
+ Z_{t,z}\,\partial_t\left(\frac{T_{t,z}F}{Z_{t,z}}\right)
+ =\mathcal C_{t,z}(F,W_z).
+ \label{eq:normalizedderiv}
+\end{equation}
+Dividing \eqref{eq:mainpartial} by $Z_{t,z}$ leaves the genuine $B/Z$
+problem. The local complex lower bound is proportional to the actual
+mass $M_t$ and does not compare that mass to its rare upper majorant.
+
+\section{The remaining main lemma, stated without hidden replacements}
+
+The new results settle parts of the numerical carrying mechanism. They
+leave the following precise geometric/analytic assertion unproved.
+For the actual $\Gamma^R_{\omega,\mathbf s}$, one needs the full joined
+target family, including its base values, to satisfy
+\eqref{eq:necessary} with the original spare margins. That condition is
+only necessary. The branch $P_{\rm old}q_{\rm old}\Gamma^R$ must exist
+analytically on the entire simultaneous domain, and the actual pair
+$(W,J_{\rm phys}(W))$ must lie in $\mathcal C^{\rm spare}_{j,e}$.
+One then still needs the saved packet norm
+\begin{equation}
+ \mathfrak N_I\!\left[
+ R_j\bigl(P_{\rm old}q_{\rm old}\Gamma^R,
+     J_{\rm phys}(P_{\rm old}q_{\rm old}\Gamma^R)\bigr)\right]
+ \le\sum_\gamma a_{I,\gamma;j,e}Q^{D_{I,\gamma}}.
+ \label{eq:missingnorm}
+\end{equation}
+Here $\mathfrak N_I$ is the \emph{actual} finite current/source-jet and
+weighted absolute anchor norm. Each $a_{I,\gamma;j,e}$ retains the old
+mesh, radius factors, lowered coupling grade, saved age and source
+coefficient. Formula \eqref{eq:missingnorm} is a target, not a theorem
+proved by writing it down.
+
+There are three concrete remaining checks.
+\begin{enumerate}
+\item \textbf{Joined targets and base traces.} Bound the complete
+$q_{\rm old}\Gamma^R$ relative to the saved target domain, including
+the bases in \eqref{eq:base}, all boundary identity and prefix rows,
+and every simultaneous wall. Apply the old response theorem only
+after that admission. The stationary/row defects
+\eqref{eq:offbase} and \eqref{eq:rowdefect} must then be bounded on
+their actual adjoint supports.
+\item \textbf{The unassigned part of the aggregate.} Identify which
+actual read rows are continuously live owned records eligible for
+\eqref{eq:aggregatemoment}. For the remaining exterior and artificial
+joined rows, prove the marginal bound \eqref{eq:pinnedtarget} or a
+uniform deterministic full-record bound. An old scale label is not
+its ancestry. The directional-current, nonlinear, gauge and reference
+responses stay in that sum.
+\item \textbf{The complete differentiated attachment.} Establish
+\eqref{eq:missingnorm} and the corresponding localized distinguished
+vertex bounds, with the full inherited effective score and current
+chain rule. The scalar full-$V$ theorem does not supply the actual
+MT36 kernel/anchor norm. Whole-kernel weak derivatives retain sharp
+boundary partners, the Casimir action row and independent absolute
+normalizer responses.
+\end{enumerate}
+
+No R-I range/selector statement is used here beyond
+R-II's references to it. In particular the R-I preparation range
+(1.64)--(1.69) at $n=N$, selector and cutoff clauses are not
+used directly here. This is a limitation of the cited input, distinct
+from the mathematical need to connect that native range to the saved
+physical/canonical domain. A native range statement alone would not
+settle the latter.
+
+\subsection{Status table}
+
+\begin{tabularx}{\textwidth}{@{}p{0.32\textwidth}X@{}}
+\toprule
+Result & Verified scope and remaining condition\\
+\midrule
+Target and pinned-stencil identities & Exact on the admitted old record;
+reconstruction preserves all its target jets.\\
+Changed-base KKT response & Exact on a common admitted chart;
+the full defect is still unbounded on the actual walls.\\
+Protected first tangents & $r^2g_e$ and $r^3g_e$ follow on the same protected
+chart from its assumed genuine response.\\
+Owned aggregate moments & Actual continuous native-to-current live chains
+and proved native row envelopes; no artificial or exterior ownership.\\
+Full-core raw $L^2$ carrying & One remaining rare coefficient pays the
+known coupling loss after actual saved-envelope admission.\\
+Full inherited scalar attachment & Actual full $V$ and original positive
+body; \eqref{eq:mainpartial} remains conditional on incoming admission.\\
+Full LM47/MT36, normalized transfer & Not proved. Current jets, absolute
+anchors, selected localized vertex and global $B/Z$ remain.\\
+\bottomrule
+\end{tabularx}
+
+No new contact prescription, native-fiber equality, pressure comparison,
+or source replacement is used in this note. The S94
+ultraviolet-uniform comparison of~\cite[pp.~692, 618--621]{W} and other global interfaces are not closed
+by these local raw estimates. The Yang--Mills existence proof remains
+incomplete.
+
+\section*{Verification and source record}
+
+Exact finite computations verify the polynomial square and
+full-core cancellations, the higher-jet countermodel, KKT signs and
+projection identities with rational matrices, the off-base correction
+example, the Hadamard coefficient-norm separation, and the same-body
+complex raw covariance inequality on a nontrivial finite body. These
+checks validate formulas and expose omitted terms. They do not test the
+actual Wilson determining geometry, prove admission, or establish a
+continuum limit. The analytic reserve proofs are given in the text.
+
+Primary sources are cited at the equations used. Source-free positive
+estimates are imported only on their original domains and weak-trajectory
+assumptions. The bounds here do not establish the remaining claims
+of~\cite[pp.~1222--1226]{W}. A conditional row of the status table is not a
+completed proof.
+
+\begin{thebibliography}{9}
+\bibitem{W} Wilson-source estimates, volumes 1--10 (\texttt{lattice\_theory/source\_estimates} in this collection), cited by source page.
+Particularly \S28.9.3, (8.3)--(8.4);
+S86; MT37--48; LM21--23 and LM42--52; VC3--6; AE8--AE9; PE12, on
+pp.~137--138, 614, 692--696, 774, 781--784, 932--935, 969--970, 1001 and 1174--1180.
+\bibitem{CE} \emph{Connected estimates for selected operations}, \texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/connected\_estimates\_for\_selected\_operations.tex} in this collection.
+Raw connected comparison on the same complete selected body, with its
+incoming-admission and normalization limitations.
+\bibitem{UA} \emph{Uniform averaging rows and finite-jet response}, \texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/uniform\_averaging\_rows\_and\_finite\_jet\_response.tex} in this collection.
+Complete uniform old-target averaging and directional-current filters,
+nonlinear and boundary remainders, finite path jets, and the unresolved
+mixed incoming-representative estimate.
+\bibitem{rii} T. Balaban, \emph{Large field renormalization. II.
+Localization, exponentiation, and bounds for the R operation},
+Commun. Math. Phys. \textbf{122} (1989), 355--392.
+\href{https://doi.org/10.1007/BF01238433}{doi:10.1007/BF01238433}.
+Used: (1.50)--(1.65), (1.69)--(1.75), and (1.79)--(1.89).
+\bibitem{iii} T. Balaban, \emph{Convergent renormalization expansions for
+lattice gauge theories}, Commun. Math. Phys. \textbf{119} (1988), 243--285.
+Used: (2.11)--(2.15), pp.256--257.
+\bibitem{variational} T. Balaban, \emph{The variational problem and
+background fields in renormalization group method for lattice gauge
+theories}, Commun. Math. Phys. \textbf{102} (1985), 277--309.
+\href{https://doi.org/10.1007/BF01229381}{doi:10.1007/BF01229381}.
+Native regularity (2), (9)--(10), stationary equations and response
+formula (190), Proposition 9. Used only on admitted native domains.
+\bibitem{ri} T. Balaban, \emph{Large field renormalization. I.
+The basic step of the R operation}, Commun. Math. Phys. \textbf{122}
+(1989), 175--202.
+\href{https://doi.org/10.1007/BF01257412}{doi:10.1007/BF01257412}.
+Cited for identification only: its full range/selector
+clauses are not used here.
+\end{thebibliography}
+\end{document}

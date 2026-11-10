@@ -1,0 +1,811 @@
+\section{Transport of the ordinary source}
+\label{tr:section}
+
+The deterministic matrix estimate of \texttt{ward\_heat.tex} (subsection ``Deterministic matrices in the original invariant frame'') extends to a particular
+field-dependent, gauge-covariant nonlocal matrix. The extension pays its first
+and second transport derivatives under the original Wilson law. Its conditional
+mean has an actual thin-separator gain. The construction reproduces the
+degree-two force-square source at the identity, while leaving an explicit
+nonlinear remainder. The remainder is not bounded extensively here.
+
+Throughout this section the group is a fixed \(SU(N)\). Constants may depend on
+\(N\), the original derivative convention and bounded original plaquette
+incidence, but not on the torus side \(n\), the marks or \(\beta\ge1\). Use
+\[
+ \dd\mu=Z_\beta^{-1}e^{-\beta S}\dd\lambda,
+ \qquad F_i=X_iS,\qquad H_{ij}=X_iF_j,
+\]
+where \(i=(b,A)\) is an original oriented link and color index. The derivative
+\(X_b^A\) differentiates \(U_b\mapsto e^{tT_A}U_b\). In this convention the
+force color frame is based at the origin \(o(b)\). Derivatives on different
+links commute; derivatives on the same link retain their Lie brackets.
+The matrix \(H\) is the ordered Hessian. Bounded determining incidence gives
+\begin{equation}
+ \norm H_{\rm op}\le C
+ \label{tr:hessian}
+\end{equation}
+pointwise, including with arbitrary fixed unitary boundary values. No positive
+lower Hessian bound is assumed.
+
+The three original plane matchings are
+\(\{12,34\}\), \(\{13,24\}\), and \(\{14,23\}\), with actions
+\(S_1,S_2,S_3\). For an original link each matching contributes its complete
+directional force. Thus the unchanged sources are
+\[
+ D[f]=\sum_{b,k}f_b\abs{\nabla_bS_k}^2,\qquad
+ r_f=\beta D[f]-\ell[f]/3,\qquad
+ h_f=\beta\bigl(D[f]-P[f]/3\bigr),\qquad M_f=\sum_bf_b^2.
+\]
+All marks are real and deterministic. All affected original roots, Casimir
+factors and pointing conventions remain in these sums.
+
+\subsection{An upper divergence estimate with the original Lie brackets}
+
+For a smooth real vector field \(V=\sum_iV_iX_i\), define
+\[
+ \delta_\mu V=-\operatorname{div}_\mu V
+   =\beta\sum_iF_iV_i-\sum_iX_iV_i.
+\]
+Compact integration by parts gives
+\(\E((\delta_\mu V)G)=\E\sum_iV_iX_iG\).
+
+\begin{lemma}[Upper divergence and own-link force estimates]
+\label{tr:divergence}
+For \(\beta\ge1\),
+\begin{equation}
+ \norm{\delta_\mu V}_2^2
+ \le C\E\left(\sum_{i,j}\abs{X_jV_i}^2+\beta\abs V^2\right).
+ \label{tr:divupper}
+\end{equation}
+If each coefficient \(W_j\) is independent of the entire original input link
+of \(j\), then
+\begin{equation}
+ \E\abs{\sum_jW_jF_j}^2
+ \le C\beta^{-1}\E\abs W^2
+       +C\beta^{-2}\E\sum_{j,k}\abs{X_kW_j}^2.
+ \label{tr:row}
+\end{equation}
+These are finite-volume upper estimates. They require neither a spectral gap
+uniform in volume nor convexity of the Wilson potential.
+\end{lemma}
+
+\begin{proof}
+Use \(X_i^*=\beta F_i-X_i\). A first integration by parts, followed by a
+second one in the term containing \(F_j\), gives the exact identity
+\begin{align}
+ \E(\delta_\mu V)^2
+ ={}&\beta\E\sum_{i,j}V_iV_jX_iF_j
+    +\E\sum_{i,j}(X_jV_i)(X_iV_j)\notag\\
+   &+\E\sum_{i,j}V_i[X_j,X_i]V_j.
+ \label{tr:dividentity}
+\end{align}
+Indeed, differentiate \(\delta_\mu V\) against \(V_iX_i\), then integrate
+\(\beta F_jV_iX_iV_j\) in \(j\). The two ordered second derivatives differ
+by precisely the displayed bracket. For indices on different links this
+bracket vanishes. For indices on the same link its fixed structure constants,
+followed by Cauchy's inequality in that finite color block, bound its sum by
+\(C\E(\abs V^2+\sum_{i,j}\abs{X_jV_i}^2)\).
+Equation~\eqref{tr:hessian} bounds the first term. This proves
+\eqref{tr:divupper}.
+
+Under the own-link hypothesis, \(\sum_jX_jW_j=0\), so applying
+\eqref{tr:divupper} to \(W\) already proves \eqref{tr:row}. An additional
+direct calculation checks the coefficient responses:
+\begin{equation}
+ \beta^2\E(W\cdot F)^2
+ =\beta\E\sum_{j,k}W_jW_kX_jF_k
+       +\E\sum_{j,k}(X_kW_j)(X_jW_k).
+ \label{tr:rowexact}
+\end{equation}
+Integrating first in \(j\) and then in \(k\) produces a possible extra term
+\(\E\sum_{j,k}W_jX_kX_jW_k\). If the links differ, the derivatives commute
+and \(X_kW_k=0\). If they are the same, \(X_jW_k=0\) by independence of the
+entire link. Thus the extra term is identically zero. Equation
+\eqref{tr:rowexact} and Cauchy's inequality give the stated bound again.
+This is functional independence from a coordinate, not independence of random
+links under \(\mu\).
+\end{proof}
+
+\subsection{A quantitative theorem for endpoint-independent moving matrices}
+
+For a smooth real symmetric component matrix \(Q(U)\), put
+\begin{align*}
+ K_0(Q)&=\E\sum_{i,j}\abs{Q_{ij}}^2,\\
+ K_1(Q)&=\E\sum_{k,i,j}\abs{X_kQ_{ij}}^2,\\
+ K_2(Q)&=\E\sum_{l,k,i,j}\abs{X_lX_kQ_{ij}}^2.
+\end{align*}
+Pointwise upper envelopes for these sums may be used in place of the
+expectations. Say that \(Q\) is endpoint-independent if \(Q_{ij}\) depends on
+neither the entire link of \(i\) nor the entire link of \(j\).
+
+\begin{theorem}[Moving matrix Ward estimate]
+\label{tr:moving}
+For an endpoint-independent \(Q\), set
+\begin{equation}
+ V_Q=QF,\qquad
+ a_Q=\sum_{i,j}Q_{ij}X_iF_j,\qquad
+ T_Q=\delta_\mu(QF)=\beta F^TQF-a_Q.
+ \label{tr:TQ}
+\end{equation}
+Then \(\E T_Q=0\), and
+\begin{align}
+ \E\abs{QF}^2
+ &\le C\bigl(K_0/\beta+K_1/\beta^2\bigr),
+ \label{tr:QF}\\
+ \Var_\mu T_Q
+ &\le C\bigl(K_0+K_1/\beta+K_2/\beta^2\bigr),
+ \label{tr:movingvariance}\\
+ \inner{T_Q}{L_\mu^{-1}T_Q}_\mu
+ &\le C\bigl(K_0/\beta+K_1/\beta^2\bigr).
+ \label{tr:movinginverse}
+\end{align}
+Here \(L_\mu=-\sum_iX_i^2+\beta\sum_iF_iX_i\) is the canonical original
+generator, and its inverse is on mean-zero functions. The same assertions
+hold with arbitrary fixed unitary boundaries when the matrix hypotheses
+and bounded original incidence hold.
+\end{theorem}
+
+\begin{proof}
+Endpoint independence gives \(X_iQ_{ij}=0\) for every \(i,j\), proving the
+exact divergence formula in \eqref{tr:TQ}. No moving coefficient has been
+frozen. Apply \eqref{tr:row} to every input row \(j\mapsto Q_{ij}\) and sum
+over \(i\); this proves \eqref{tr:QF}.
+
+For each \(k,i\), the differentiated row \(j\mapsto X_kQ_{ij}\) is still
+independent of the entire input link of \(j\). A derivative on another link
+preserves that independence, while a derivative on the input link annihilates
+the coefficient. Consequently a second use of the row estimate gives
+\[
+ \E\sum_{k,i}\abs{\sum_j(X_kQ_{ij})F_j}^2
+ \le C\bigl(K_1/\beta+K_2/\beta^2\bigr).
+\]
+Since
+\[
+ X_k(QF)_i=\sum_j(X_kQ_{ij})F_j+\sum_jQ_{ij}H_{kj},
+\]
+the ordered Hessian bound yields
+\begin{equation}
+ \E\sum_{k,i}\abs{X_k(QF)_i}^2
+ \le C\bigl(K_0+K_1/\beta+K_2/\beta^2\bigr).
+ \label{tr:gradV}
+\end{equation}
+Use Lemma~\ref{tr:divergence} with \(V=QF\). This proves
+\eqref{tr:movingvariance}, including the contributions from all first and
+second coefficient derivatives and the same-link brackets.
+
+Finally \(\E(T_QG)=\E(QF)\cdot\nabla G\). Cauchy's inequality and the
+variational inverse-form identity bound \(\inner{T_Q}{L_\mu^{-1}T_Q}\)
+by \(\E\abs{QF}^2\). This proves \eqref{tr:movinginverse}; no uniform
+spectral gap has been introduced in using the inverse.
+\end{proof}
+
+\subsection{A flat reference with a uniform weighted Hilbert--Schmidt bound}
+
+This subsection constructs deterministic matrices on the periodic \(n^4\)
+torus, \(n\ge3\). Let \(H_k^0\) be the identity Hessian of \(S_k\) and
+\(H_0^0=\sum_kH_k^0\). With
+\[
+ q_\mu(p)=e^{ip_\mu}-1,\qquad s(p)=\sum_\mu\abs{q_\mu(p)}^2,
+\]
+the original common quadratic normalization \(\kappa>0\) gives
+\[
+ H_0^0(p)=\kappa\bigl(s(p)I-q(p)q(p)^*\bigr).
+\]
+Each \(H_k^0\) is nonnegative, annihilates \(q\), and is bounded above by
+\(H_0^0\). Define
+\begin{equation}
+ A_k(p)=\frac{H_k^0(p)}{\kappa s(p)}\quad(p\ne0),\qquad A_k(0)=0.
+ \label{tr:Ak}
+\end{equation}
+Equivalently \(A_k=H_k^0(H_0^0)^+\); hence
+\(\norm{A_k}_{\rm op}\le1\) and \(H_k^0=A_kH_0^0\).
+These are real scalar matrices in link space, tensored with the identity in
+color. The zero-mode convention is made only in this deterministic reference;
+it does not remove any modes or holonomies from the compact measure.
+
+For real marks let
+\begin{equation}
+ Q_f^0=\sum_{k=1}^3A_k^*D_fA_k,\qquad (D_f)_{bc}=f_b\delta_{bc},
+ \qquad q^f_{bc}=(Q_f^0)_{bc}.
+ \label{tr:Qflat}
+\end{equation}
+The matrix is real symmetric. The Hilbert--Schmidt ideal inequality directly
+gives \(\norm{Q_f^0}_{\HS}^2\le CM_f\), including signed marks.
+
+\begin{lemma}[Periodic weighted matrix estimate]
+\label{tr:weightedHS}
+With \(d_T\) the torus graph distance between link origins,
+\begin{equation}
+ \sum_{b,c}\bigl(1+d_T(o(b),o(c))^2\bigr)\abs{q^f_{bc}}^2
+ \le CM_f.
+ \label{tr:weighted}
+\end{equation}
+The constant is uniform in \(n\); there is no absolute-kernel logarithmic
+factor.
+\end{lemma}
+
+\begin{proof}
+For each coordinate \(\nu\), use the periodic multiplication
+\[
+ \phi_\nu(x)=\frac{n}{2\pi}e^{2\pi ix_\nu/n}.
+\]
+The sum of \(\abs{\phi_\nu(x)-\phi_\nu(y)}^2\) over \(\nu\) is comparable
+to \(d_T(x,y)^2\). Uniform row and column estimates for each \(A_k\) are
+\begin{equation}
+ \sup_x\sum_y\abs{\phi_\nu(x)-\phi_\nu(y)}^2
+                   \norm{A_k(x,y)}_{\HS}^2\le C.
+ \label{tr:weightedrow}
+\end{equation}
+Here the finite matrix in \(x,y\) includes the four link orientations.
+To verify this, set \(h=2\pi/n\). Parseval converts the row sum, up to a
+fixed factor, to
+\begin{equation}
+ \frac{n^2}{n^4}\sum_p
+       \norm{A_k(p+he_\nu)-A_k(p)}_{\HS}^2.
+ \label{tr:diffparseval}
+\end{equation}
+Away from a distance \(2h\) of zero and the shifted singular point, the
+explicit order-zero symbol in \eqref{tr:Ak} satisfies
+\(\norm{\nabla_pA_k}\le C/\operatorname{dist}(p,0)\).
+Its finite difference is at most \(Ch/\operatorname{dist}(p,0)\).
+In four dimensions the normalized sum of
+\(\operatorname{dist}(p,0)^{-2}\) away from the origin is bounded: shell
+counting reduces it to the integrable radial power \(r^{3-2}\).
+The bounded number of modes within distance \(2h\) contributes at most
+\(Cn^2/n^4=Cn^{-2}\) to \eqref{tr:diffparseval}, using
+\(\norm{A_k}_{\rm op}\le1\). This proves \eqref{tr:weightedrow} and its
+column counterpart.
+
+The exact commutator is
+\[
+ [\phi,Q_f^0]=\sum_k\bigl([\phi,A_k^*]D_fA_k
+                          +A_k^*D_f[\phi,A_k]\bigr).
+\]
+Multiplication by \(D_f\), \eqref{tr:weightedrow}, and the
+Hilbert--Schmidt ideal inequality bound its squared norm by \(CM_f\).
+For the adjoint term one uses
+\([\phi,A_k^*]=-[\overline\phi,A_k]^*\); the complex multiplication
+\(\phi\) is not being treated as self-adjoint. Summing in \(\nu\), then
+adding the unweighted estimate, proves \eqref{tr:weighted}.
+\end{proof}
+
+\subsection{Endpoint-avoiding parallel transport}
+
+For every unordered pair of original links \(b,c\), choose a deterministic
+path \(\gamma_{bc}\) from \(o(b)\) to \(o(c)\) that avoids both underlying
+links \(b,c\), and put \(\gamma_{cb}=\gamma_{bc}^{-1}\). If the origins agree,
+choose the empty path. A shortest path encounters each forbidden edge at most
+once. Replace each such occurrence by a three-edge elementary plaquette
+detour avoiding both edges. In dimension four a perpendicular direction can
+be chosen to avoid the other forbidden edge. At most two detours are needed,
+so these paths have length
+\begin{equation}
+ L_{bc}\le d_T(o(b),o(c))+4
+ \label{tr:pathlength}
+\end{equation}
+and uniformly bounded edge multiplicity. Keeping the detours as walks
+preserves their chosen shortest-path homotopy. When \(b,c\) share an original
+plaquette, choose its local arc and elementary detours in a fixed neighborhood.
+The complete path family is chosen independently of the marks and of any
+later random separator offset.
+
+Define the actual compact-field matrix
+\begin{equation}
+ (Q_f(U))_{bA,cB}
+    =q^f_{bc}\,[\Ad U(\gamma_{bc})]_{AB}.
+ \label{tr:Qtransport}
+\end{equation}
+It is real symmetric and covariant in the two origin color frames. It is
+independent of both endpoint links. Its transport paths can pass through
+other links that will later be integrated; no such dependence is suppressed.
+
+\begin{theorem}[Extensive actual-law transported Ward component]
+\label{tr:ward}
+For the periodic original Wilson law, \(n\ge3\) and \(\beta\ge1\), let
+\(T_f=T_{Q_f}\) be defined by \eqref{tr:TQ} and
+\eqref{tr:Qtransport}. Then
+\begin{equation}
+ \E T_f=0,\qquad
+ \Var_\mu T_f\le CM_f,\qquad
+ \inner{T_f}{L_\mu^{-1}T_f}_\mu\le C\beta^{-1}M_f,
+ \qquad \E\abs{Q_fF}^2\le C\beta^{-1}M_f.
+ \label{tr:wardbounds}
+\end{equation}
+These conclusions concern the constructed Ward component under the actual
+compact law. They do not assert a bound for \(r_f\).
+\end{theorem}
+
+\begin{proof}
+Each adjoint transporter is orthogonal. A derivative on one of the at most
+\(L_{bc}\) path links is a sum of a uniformly bounded number of insertions
+of fixed adjoint generators. The edge multiplicity is bounded. Thus,
+pointwise on the complete compact link product,
+\begin{align*}
+ \sum_k\norm{X_k\Ad U(\gamma_{bc})}_{\HS}^2&\le CL_{bc},\\
+ \sum_{l,k}\norm{X_lX_k\Ad U(\gamma_{bc})}_{\HS}^2&\le CL_{bc}^2.
+\end{align*}
+All ordered second derivatives, including two derivatives on the same link,
+are included. Multiplying by \(\abs{q^f_{bc}}^2\), summing over endpoints,
+and using \eqref{tr:pathlength} and Lemma~\ref{tr:weightedHS}, gives
+pointwise envelopes with
+\begin{equation}
+ K_0(Q_f)+K_1(Q_f)+K_2(Q_f)\le CM_f.
+ \label{tr:Kbounds}
+\end{equation}
+Theorem~\ref{tr:moving} proves \eqref{tr:wardbounds}.
+No pointwise operator norm of the transported matrix was estimated. In
+particular, replacing signed Riesz cancellations by an absolute kernel sum,
+which could cost \(\log n\), was unnecessary.
+\end{proof}
+
+\begin{proposition}[Complete ordinary contacts]
+\label{tr:ordinarycontact}
+For \(R_g=r_g\) or \(h_g\), put \(G_g=R_g/\beta\). Then
+\begin{equation}
+ \Cov_\mu(T_f,R_g)
+   =\E\sum_{i,j}(Q_f)_{ij}X_jX_iG_g,
+ \qquad
+ \abs{\Cov_\mu(T_f,R_g)}\le C\sqrt{M_fM_g}.
+ \label{tr:sourcecontact}
+\end{equation}
+The contact identity applies to every endpoint-independent moving matrix.
+The bound uses its \(K_0\) estimate and requires no directional moment input.
+\end{proposition}
+
+\begin{proof}
+The complete local source stencil and compactness give, pointwise,
+\[
+ \norm{\Hess_{\rm ord}G_g}_{\HS}^2\le CM_g.
+\]
+For \(r_g\), this includes the derivative of
+\(G_g=D[g]-\ell[g]/(3\beta)\); \(\beta\ge1\) suffices. To check the bound,
+each ordered Hessian entry reads boundedly many original source roots and
+each source root contributes to boundedly many entries. Cauchy's inequality
+on these finite incidence sets gives \(CM_g\).
+
+Since \(\E T_f=0\), two original integrations by parts give
+\[
+ \E(T_fR_g)
+ =\beta\E\sum_{i,j}(Q_f)_{ij}F_jX_iG_g
+ =\E\sum_{i,j}(Q_f)_{ij}X_jX_iG_g.
+\]
+The coefficient derivative \(X_j(Q_f)_{ij}\) is exactly zero by input-link
+independence. No ordered derivatives are commuted. Hilbert--Schmidt Cauchy
+and \eqref{tr:Kbounds} prove the result. This argument also works with
+arbitrary fixed unitary boundaries for matrices satisfying the same bounds.
+\end{proof}
+\subsection{Exact compression retains the raw marginal response}
+
+Split the original links into integrated coordinates \(I\) and retained
+coordinates \(B\). Let \(K\) be the complete compact conditional expectation,
+with exact marginal
+\begin{equation}
+ \dd\nu_B=e^{-V_{\rm eff}}\dd\lambda_B,\qquad
+ e^{-V_{\rm eff}(b)}
+   =Z_\beta^{-1}\int e^{-\beta S(u_I,b)}\dd\lambda_I(u_I).
+ \label{tr:rawmarginal}
+\end{equation}
+For a cube observation, this density is exactly
+\(Z_\beta^{-1}e^{-\beta S_{\rm out}(b)}\prod_jZ_j(b)\).
+For the original one-link layer, it retains its original \(\prod_sZ_s(b)\).
+No induced action is replaced by a bare Wilson action.
+
+Compact integration by parts gives
+\begin{equation}
+ KT_f=-\operatorname{div}_{\nu_B}\overline V_f,\qquad
+ \overline V_f=K((Q_fF)_B).
+ \label{tr:compression}
+\end{equation}
+Indeed, the integrated output divergences vanish and the retained output
+divergence is the divergence in the true marginal. For each retained output
+\(a\), every integrated input column satisfies
+\[
+ K((Q_f)_{ac}F_c)=\beta^{-1}K(X_c(Q_f)_{ac})=0,
+ \qquad c\in I.
+\]
+The remaining matrix still depends on the integrated coordinates along its
+paths. Put \(\overline Q_{ab}=K(Q_f)_{ab}\) for retained \(a,b\). The exact
+retained vector field is
+\begin{equation}
+ (\overline V_f)_a
+  =\beta^{-1}\left(
+     \sum_{b\in B}\overline Q_{ab}X_bV_{\rm eff}
+       -\sum_{b\in B}X_b\overline Q_{ab}\right).
+ \label{tr:movingcompression}
+\end{equation}
+The minus sign and the second term are essential. To check them, differentiate
+the original normalized conditional integral:
+\[
+ X_b\overline Q_{ab}
+ =K(X_b(Q_f)_{ab})-\beta\Cov_K((Q_f)_{ab},F_b)
+ =-\beta\Cov_K((Q_f)_{ab},F_b).
+\]
+Also \(KF_b=\beta^{-1}X_bV_{\rm eff}\). Solving the last display for
+\(K((Q_f)_{ab}F_b)\) gives \eqref{tr:movingcompression}. Thus the
+raw-normalizer covariance response remains in the compressed field, even
+though the original endpoint coefficient derivatives vanish.
+
+Conditional Jensen gives \(\Var_{\nu_B}(KT_f)\le CM_f\).
+For the canonical generator of this same marginal, with its original product
+metric,
+\begin{equation}
+ \inner{KT_f}{L_{\nu_B}^{-1}KT_f}_{\nu_B}
+  \le\E_{\nu_B}\abs{\overline V_f}^2
+  \le C\beta^{-1}M_f.
+ \label{tr:compressedinverse}
+\end{equation}
+This is a generator-specific conclusion. Conditional Jensen also applies to
+other complete positive observations, but it does not identify their history
+generators with \(L_{\nu_B}\). Equations
+\eqref{tr:compression}--\eqref{tr:movingcompression} integrate complete
+compact coordinates. They do not differentiate a sharp selected boundary.
+For a good/bad partition, the raw branches must first recombine to that
+complete coordinate integral before these formulas are used.
+
+\subsection{An actual thin-separator gain}
+
+Let \(\tau\) be an independent packing offset, and let \(B_\tau\) be the
+retained original link set. Suppose
+\begin{equation}
+ \sup_b\Pr_\tau(b\in B_\tau)\le p.
+ \label{tr:thincondition}
+\end{equation}
+The paths defining \(Q_f\) are fixed independently of \(\tau\).
+Let \(K_\tau\) integrate the complete complement of \(B_\tau\) with its
+actual raw marginal. No product conditional law is needed in the following
+theorem. Write \(I_B\) for the component projection onto retained links and
+define
+\[
+ Q_f^B=I_BQ_fI_B,\qquad W_f^B=\delta_\mu(Q_f^BF).
+\]
+
+\begin{theorem}[Thin-separator mean gain in the actual compact law]
+\label{tr:separator}
+For every fixed offset,
+\begin{equation}
+ K_\tau T_f=K_\tau W_f^{B_\tau}.
+ \label{tr:maskidentity}
+\end{equation}
+Moreover,
+\begin{align}
+ \Var_{\tau,\mu}(K_\tau T_f)&\le CpM_f,
+ \label{tr:meanthin}\\
+ \E_\tau\inner{K_\tau T_f}
+       {L_{\nu_{B_\tau}}^{-1}K_\tau T_f}_{\nu_{B_\tau}}
+   &\le Cp\beta^{-1}M_f.
+ \label{tr:inversethin}
+\end{align}
+For the separated-cube packing with \(p\le C/R\), the first bound is an
+actual \(R^{-1}\) gain. It is not a Gaussian finite-rank comparison.
+\end{theorem}
+
+\begin{proof}
+In \eqref{tr:compression}, output divergences at deleted links integrate
+to zero. For a retained output, every deleted input column has zero conditional
+expectation by endpoint independence and compact integration by parts. The
+surviving vector field is therefore exactly the one obtained from
+\(Q_f^{B_\tau}\). This proves \eqref{tr:maskidentity}, while retaining
+the dependence of the transport paths on all integrated links.
+
+Once \(\tau\) is fixed, the endpoint mask has no field derivative. Every
+squared coefficient and every first or second derivative contribution in
+\(K_j(Q_f^{B_\tau})\) has a factor
+\(\mathbf 1_{\{b,c\in B_\tau\}}\). This factor is bounded by
+\(\mathbf 1_{\{b\in B_\tau\}}\). Average it against \(\tau\) before
+summing the deterministic path envelopes used in
+\eqref{tr:Kbounds}. The result is
+\begin{equation}
+ \E_\tau\bigl(K_0(Q_f^{B_\tau})+K_1(Q_f^{B_\tau})
+                         +K_2(Q_f^{B_\tau})\bigr)\le CpM_f.
+ \label{tr:maskedK}
+\end{equation}
+No interchange of a supremum in \(U\) with expectation is required: the
+pointwise sums have the deterministic envelopes already proved.
+
+Theorem~\ref{tr:moving}, conditional Jensen, and
+\eqref{tr:maskidentity} give
+\[
+ \E_\tau\norm{K_\tau T_f}_2^2
+ \le\E_\tau\norm{W_f^{B_\tau}}_2^2\le CpM_f.
+\]
+For every offset, \(\E_\mu T_f=0\). Thus there is no discarded
+between-offset mean variance in \eqref{tr:meanthin}. Apply the variational
+argument of \eqref{tr:compressedinverse} to the masked retained field and
+use \eqref{tr:QF}, averaged as in \eqref{tr:maskedK}. This proves
+\eqref{tr:inversethin} for the actual canonical marginal generators.
+\end{proof}
+
+The complete ordinary contacts have a sharper averaged masked estimate:
+\begin{equation}
+ \E_\tau\abs{\Cov_\mu(W_f^{B_\tau},R_g)}
+       \le Cp\sqrt{M_fM_g},\qquad R_g=r_g\ \hbox{or}\ h_g.
+ \label{tr:maskedcontact}
+\end{equation}
+To verify it, use the exact contact in
+Proposition~\ref{tr:ordinarycontact}. Before integrating \(U\), bound its
+absolute value by the sum of
+\(\mathbf 1_{\{b,c\in B_\tau\}}\abs{q^f_{bc}}\) times the Frobenius
+norm of the corresponding color block of
+\(\Hess_{\rm ord}(R_g/\beta)\), with a fixed group factor from
+\(\Ad U(\gamma_{bc})\). The Hessian and the complete marks are independent
+of \(\tau\). Average the indicator first, obtaining \(p\), and then use
+Cauchy's inequality in the full endpoint sum. This proves
+\eqref{tr:maskedcontact} without a moment assumption or a conditional
+centering statement.
+
+\begin{corollary}[Projected ordinary covariance comparison]
+\label{tr:cross}
+Suppose the chosen complete coordinate observation also satisfies the
+separate averaged internal estimate
+\begin{equation}
+ \E_\tau\E_\mu\Var(r_g\mid B_\tau)\le C M_g.
+ \label{tr:internalinput}
+\end{equation}
+For the explicitly constructed separated-cube observation this is the
+all-branch internal theorem proved in the accompanying construction, under
+its stated geometric and original-moment hypotheses. It is not an
+identification with R-II. Put
+\[
+ m_f=K_\tau r_f-\E_\mu r_f,\qquad
+ w_f=K_\tau T_f,\qquad
+ e_f=K_\tau(r_f-T_f)-\E_\mu r_f=m_f-w_f.
+\]
+Then, under the joint law of \(\tau\) and the actual retained coordinates,
+\begin{align}
+ \abs{\inner{m_g}{w_f}}
+   &\le C(p+\sqrt p)\sqrt{M_fM_g},
+ \label{tr:meancross}\\
+ \abs{\Cov(m_f,m_g)-\Cov(e_f,e_g)}
+   &\le C(p+\sqrt p)\sqrt{M_fM_g}.
+ \label{tr:meancomparison}
+\end{align}
+In particular the change of squared variance for one mark is
+\(O(R^{-1/2}M_f)\) when \(p\le C/R\).
+\end{corollary}
+
+\begin{proof}
+Keep the actual total covariance identity, using
+\eqref{tr:maskidentity}:
+\begin{align*}
+ \inner{m_g}{w_f}
+ ={}&\E_\tau\Cov_\mu(r_g,W_f^{B_\tau})\\
+    &-\E_\tau\E_\mu\Cov(r_g,W_f^{B_\tau}\mid B_\tau).
+\end{align*}
+The first term is bounded by \eqref{tr:maskedcontact}. Conditional Cauchy,
+then Cauchy in the actual outside law and \(\tau\), bounds the second by
+\[
+ \left(\E_\tau\E\Var(r_g\mid B_\tau)\right)^{1/2}
+ \left(\E_\tau\E\Var(W_f^{B_\tau}\mid B_\tau)\right)^{1/2}
+ \le C\sqrt p\sqrt{M_fM_g}.
+\]
+Here the first factor uses \eqref{tr:internalinput}; the second uses the
+full original-law masked Ward variance, not a fixed-bath estimate.
+This proves \eqref{tr:meancross}. Since \(e_f=m_f-w_f\), retain both
+cross terms in the exact expansion
+\[
+ \Cov(m_f,m_g)-\Cov(e_f,e_g)
+ =\Cov(m_f,w_g)+\Cov(w_f,m_g)-\Cov(w_f,w_g).
+\]
+The first two terms use \eqref{tr:meancross}, and the last uses
+\eqref{tr:meanthin}. This proves \eqref{tr:meancomparison}.
+\end{proof}
+
+\subsection{The exact nonlinear residual and a paid contact estimate}
+
+Define the following residual without changing the ordinary source:
+\begin{equation}
+ E_f=r_f-T_f
+   =\beta\bigl[D[f]-F^TQ_f(U)F\bigr]+C_f,
+ \qquad C_f=a_{Q_f}-\ell[f]/3.
+ \label{tr:residual}
+\end{equation}
+Theorem~\ref{tr:ward} and Proposition~\ref{tr:ordinarycontact} give
+\begin{equation}
+ \abs{\Var_\mu r_f-\Var_\mu E_f}\le CM_f.
+ \label{tr:fullcomparison}
+\end{equation}
+At the identity, the degree-two force-square jet cancels exactly:
+\begin{equation}
+ \sum_{b,k}f_b\abs{H_k^0A}_b^2
+       =(H_0^0A)^TQ_f^0(H_0^0A).
+ \label{tr:jet}
+\end{equation}
+This follows from \(H_k^0=A_kH_0^0\), with no replacement of the global
+source by independent local kinetic pieces. Equation~\eqref{tr:jet} is
+an identity-chart Taylor statement, not a global reconstruction theorem.
+
+\begin{proposition}[Local contact remainder under the actual law]
+\label{tr:contactremainder}
+Use the local contractible path convention for endpoint pairs that share an
+original plaquette. Let \(n\ge n_0\), where \(n_0\) is a fixed size large
+enough for those bounded local patches to embed. In the original periodic
+moment regime \eqref{rt:momentregime}, for every \(q\ge1\),
+\begin{equation}
+ \norm{C_f-C_f(I)}_{L^q(\mu)}
+     \le Cq\beta^{-1}\norm f_1.
+ \label{tr:contactLp}
+\end{equation}
+Consequently, for any complete observation \(K\),
+\begin{equation}
+ \Var_\mu C_f\le C\beta^{-2}\norm f_1^2,
+ \qquad
+ \Var(KC_f)\le C\beta^{-2}\norm f_1^2
+       \le C\beta^{-2}\abs{\supp f}M_f.
+ \label{tr:contactvariance}
+\end{equation}
+This is extensive for marks with \(\abs{\supp f}\le C\beta^2\). It is not
+a volume-uniform extensive estimate for arbitrary marks.
+\end{proposition}
+
+\begin{proof}
+The ordered Hessian block \(H_{bc}\) vanishes unless \(b,c\) belong to a
+common original plaquette. For such a pair set
+\[
+ g_{bc}(U)=\sum_{A,B}[\Ad U(\gamma_{bc})]_{AB}
+                         H_{(b,A),(c,B)}(U).
+\]
+This scalar is gauge invariant: the transporter and Hessian block transform
+by the same orthogonal adjoint matrices at their two origins. By the local
+path convention it is supported in a fixed contractible neighborhood.
+At the identity every first link derivative of \(g_{bc}\) vanishes. Indeed,
+global conjugation fixes the identity field, so that derivative would define
+an invariant vector in the adjoint representation of \(\mathfrak{su}(N)\),
+which has none.
+
+Choose a fixed embedded local box containing the plaquette and its detours,
+and a local spanning tree. Its remaining loop variables have plaquette
+fillings of bounded area. Nonabelian plaquette reconstruction, with all
+conjugating prefixes retained, gives a gauge in which their total squared
+distance to identity is at most \(C\sum_{p\in\mathcal P_{bc}}s_p\).
+Here \(\mathcal P_{bc}\) is a fixed-size set of original plaquettes. If this
+sum is small, all the remaining local links lie in a common chart; Taylor's
+theorem and the vanishing first derivative give
+\begin{equation}
+ \abs{g_{bc}(U)-g_{bc}(I)}
+      \le C\sum_{p\in\mathcal P_{bc}}s_p.
+ \label{tr:localcontact}
+\end{equation}
+On the compact complement, increase \(C\) using the positive lower threshold
+for that sum. This proves \eqref{tr:localcontact} globally. This local
+gauge is only an estimate of a gauge-invariant scalar; it does not change
+the actual outside law or remove a global holonomy. The explicit
+\(n\ge n_0\) hypothesis makes this fixed-patch argument literal.
+
+Write \(b\sim c\) for pairs sharing a plaquette, including the diagonal.
+This relation has bounded degree. From \eqref{tr:Qflat},
+\begin{align*}
+ \sum_{b\sim c}\abs{q^f_{bc}}
+ &\le\sum_a\abs{f_a}\sum_k\sum_{b\sim c}
+                           \abs{(A_k)_{ab}(A_k)_{ac}}\\
+ &\le C\sum_a\abs{f_a}\sum_k\sum_b\abs{(A_k)_{ab}}^2
+ \le C\norm f_1.
+\end{align*}
+The last step uses \(\norm{A_k}_{\rm op}\le1\).
+Also \(\ell[f]-\ell[f](I)\) is exactly a bounded-incidence sum of original
+plaquette deficits with the original Casimir coefficient: each occurrence
+of \(\Delta_bs_p\) is \(C_F\Re\Tr U_p\).
+The original local exponential moment gives
+\(\norm{s_p}_{L^q(\mu)}\le Cq/\beta\).
+Minkowski's inequality, \eqref{tr:localcontact}, and the last coefficient
+sum prove \eqref{tr:contactLp}. Centering and conditional Jensen prove
+\eqref{tr:contactvariance}. No spatial covariance cancellation follows
+from this local moment argument; the factor \(\norm f_1^2\) is retained.
+\end{proof}
+
+\subsection{A flat holonomy calculation limits the Taylor cancellation}
+
+\begin{proposition}[A nonzero quadratic defect at a flat toron]
+\label{tr:toron}
+For the transported matrix above, the force-square residual in
+\eqref{tr:residual} need not have a vanishing quadratic jet at a flat
+connection with nontrivial holonomy. This occurs already in \(SU(2)\) with
+constant marks.
+\end{proposition}
+
+\begin{proof}
+Take odd \(n\ge\max\{3,n_0\}\), \(f_b=1\), and the constant flat background
+\[
+ U_{x,1}=g=\begin{pmatrix}e^{i\theta/(2n)}&0\\0&e^{-i\theta/(2n)}\end{pmatrix},
+ \qquad U_{x,\nu}=I\quad(\nu\ne1),
+\]
+where \(0<\abs\theta<\pi\). Every plaquette is identity, whereas the
+first-direction holonomy \(g^n\) is nontrivial. On the charged two-dimensional
+color plane, viewed as one complex coordinate, \(\Ad g\) acts by
+\(e^{i\theta/n}\).
+
+Choose the signed shortest displacement representatives
+\(d_\mu\in\{-(n-1)/2,\ldots,(n-1)/2\}\), with elementary endpoint
+detours homotopic to those paths. Because the connection is flat, the
+transporter between endpoints separated by \(d\) acts on this color plane
+by \(e^{i\theta d_1/n}\). The detours preserve this value.
+
+For momenta \(p\) with \(p_2=p_3=p_4=0\), the flat matrices satisfy
+\[
+ Q_1^0(p)=\operatorname{diag}(0,1,1,1)\quad(p_1\ne0),
+ \qquad Q_1^0(0)=0.
+\]
+Indeed, for each transverse direction \(\nu\), only the matching containing
+the plane \((1,\nu)\) acts, and its \(A_k\) is the unit projection onto that
+component. The translation-invariant kernel therefore obeys
+\[
+ \sum_{d_2,d_3,d_4}q^1_{(0,\nu),(d,\nu)}
+     =\mathbf 1_{\{d_1=0\}}-1/n\qquad(\nu\ne1),
+\]
+while the off-diagonal output-direction sums vanish. On a spatially constant
+charged perturbation \(A\) in link direction \(\nu=2\), the transported
+matrix consequently acts by the scalar
+\begin{equation}
+ q_\theta=1-D_n(\theta),\qquad
+ D_n(\theta)=\frac1n\sum_{d=-(n-1)/2}^{(n-1)/2}e^{i\theta d/n}
+       =\frac{\sin(\theta/2)}{n\sin(\theta/(2n))}.
+ \label{tr:toronmultiplier}
+\end{equation}
+The symmetric sum is real. Reversing the Fourier or transport sign leaves
+this scalar unchanged.
+
+The actual Hessian at this flat background is the covariant Maxwell Hessian.
+On the same perturbation it satisfies
+\[
+ H_0^\theta A=H_{\{12,34\}}^\theta A
+    =\kappa s_\theta A,\qquad
+ s_\theta=\abs{e^{i\theta/n}-1}^2,
+\]
+and the other two matching Hessians annihilate \(A\). The total and each
+directional force vanish at the background itself. Hence, along the original
+compact perturbation \(U(\varepsilon)\) with tangent \(A\),
+\begin{equation}
+ D[1](U(\varepsilon))-F^TQ_1(U(\varepsilon))F
+   =\varepsilon^2D_n(\theta)\norm{H_0^\theta A}_2^2
+       +O(\varepsilon^3).
+ \label{tr:torondefect}
+\end{equation}
+For small nonzero \(\theta\) the quadratic coefficient is nonzero and
+\(D_n(\theta)\) tends to one as \(\theta\) tends to zero. Thus vanishing
+background plaquette actions do not make this residual cubic around every
+flat compact connection.
+\end{proof}
+
+This example does not refute an extensive covariance bound. The mode in
+\eqref{tr:torondefect} is soft:
+\(s_\theta=O(\theta^2/n^2)\). In its stated quadratic Gaussian reference,
+the variance of the displayed energy scales as \(O(\theta^4/n^4)\).
+That calculation only checks its scale; it is not a comparison with the
+actual compact law. A nonlinear proof must accommodate these holonomy-dependent
+soft modes or change the reconstruction while paying its new responses.
+
+\subsection{What the quantitative estimates leave open}
+
+For the constructed separated-cube observation, the internal ordinary
+variance is bounded under its stated hypotheses, and
+Corollary~\ref{tr:cross} compares the retained ordinary mean to the retained
+mean of the exact residual \eqref{tr:residual}. A sufficient missing bound
+is now explicitly
+\begin{equation}
+ \Var_{\tau,\mu}\bigl(K_\tau E_f\bigr)\le CM_f,
+ \label{tr:missing}
+\end{equation}
+or a proved absorption estimate
+\begin{equation}
+ \Var_{\tau,\mu}\bigl(K_\tau E_f\bigr)
+   \le\eta\Var_{\tau,\mu}\bigl(K_\tau r_f\bigr)+CM_f,
+ \qquad \eta<1.
+ \label{tr:missingabsorption}
+\end{equation}
+Neither estimate is established. The local contact estimate retains the
+nonextensive \(\norm f_1^2\) factor. The force residual retains its nonlinear
+curvature, transport and holonomy responses. Score integration by parts
+bounds the Ward component and its contacts; repeating the variance comparison
+without another analytic input leaves coefficient one and supplies no
+\(\eta<1\).
+
+These results hold at the original source-zero law and for the stated complete
+coordinate observations. They prove neither bounds under arbitrary joint
+source tilts nor mixed complex admission. Sharp-selector first \(L^1\)
+surface estimates remain distinct from higher selector words and complex
+domains. The original flat-block restriction
+\(\beta\ge CR^{14}\log(2+R)\), all actual raw \(Z_s\) and \(Z_j\),
+complete source partners and heat acceleration, current and anchor responses,
+inherited history generators, reserve ownership and S94 remain in force.
+Physical multiplication by \(c_\beta^{-1}a^{-2}\) multiplies every stated
+variance bound by \(c_\beta^{-2}a^{-4}\). No physical-scale induction by
+tiling and no complete Yang--Mills existence proof follow from this section.

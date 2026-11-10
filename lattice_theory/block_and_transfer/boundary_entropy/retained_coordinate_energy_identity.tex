@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{The retained compact-coordinate part of the first-entry energy estimate}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Scope.}
+This derives a coordinate estimate on a literal retained relative-tree record. It does not identify the mixed prepared minimum or replace the stored stable coefficient. The rows S54--S59 of \cite[pp.~599--602]{W} retain original relative axial-tree constraints, fixed reference links and once-owned energies. MT22 defines the canonical amplitude using all determining and exterior inputs, including their first-order norm. The estimate below supplies the compact-coordinate part of that norm when its actual record is present. Missing hypotheses are identified at the end rather than silently imposed on all histories.
+
+Let $T$ be a tree in one actual retained rectangular lattice record, and let $V,W$ be its original and reference $SU(N)$ connections. Keep the original relative constraint $V_b=W_b$ on $T$. No compact variables are freed and no Jacobian is changed. Fix a root. The unique tree gauge for $W$ makes both connections equal to one on $T$. For a nontree link $b$, the resulting link is its based fundamental loop $\gamma_b$, separately for $V,W$.
+
+Choose a literal plaquette filling of each contractible $\gamma_b$. Let $n_{bp}$ be the nonnegative integer number of occurrences of plaquette $p$ in that filling and $m_b=\sum_p n_{bp}$. Its nonabelian word identity is an ordered product of $m_b$ conjugated plaquette holonomies. Orientations and conjugating prefixes are retained. Write
+\[
+ s(P)=1-N^{-1}\operatorname{Re}\operatorname{Tr}P,
+ \qquad\|P-I\|_{\rm HS}^2=2Ns(P).
+\]
+Unitary conjugation preserves the norm, and telescoping the ordered product gives
+\[
+ \|V_b^T-I\|_{\rm HS}\le\sum_p n_{bp}\sqrt{2Ns(V_p)},
+\]
+and the same for $W$. Since relative links transform by conjugation at their starting point, the norm of $V_bW_b^{-1}-I$ is unchanged by the common tree gauge. Hence
+\[
+ \|V_bW_b^{-1}-I\|_{\rm HS}^2
+ \le4N m_b\sum_p n_{bp}\{s(V_p)+s(W_p)\}.                 \tag{1}
+\]
+This is an exact real compact-field inequality; it does not assume flatness of $W$. On the original small logarithm branch, with fixed branch constant $C_{\log}$, define the canonical retained coordinate $B_b=g_R^{-1}\log(V_bW_b^{-1})$. Then
+\[
+ |B_b|^2\le \frac{4NC_{\log}^2}{c_\beta}
+ m_b\sum_p n_{bp}\{E_{R,p}+E^{\rm ref}_{R,p}\},\quad
+ E_{R,p}=\beta_Rs(V_p),\quad\beta_R=c_\beta g_R^{-2}.      \tag{2}
+\]
+Thus the coupling cancels at the record's OWN scale. The reference energy is explicit and is not declared an unused random reserve.
+
+For a halo of retained links, define $w_p=\sum_{b\in H}m_bn_{bp}$. Summing (2) gives a weighted plaquette sum with exactly these multiplicities. To use an unweighted once-owned reserve, take the coefficient $w_* =\max_p w_p$ outside the sum; do not repeat the energy $w_p$ times in the ledger. A supremum norm uses instead $\max_bm_b\sum_pn_{bp}(\cdots)$ and can be bounded by the same sum. If these variables are expressed in current coupling units $g_e$, rather than own units $g_R$, multiply the squared right side by $(g_R/g_e)^2$. That ratio cannot be omitted by relabelling the record.
+
+\paragraph{First differences and actual cell lengths.}
+For an original covariant stencil from $b$ to $b'$ of assigned length $h_{bb'}$, its real unitary transport satisfies
+\[
+ |\nabla B|^2\le 2h_{bb'}^{-2}(|B_b|^2+|B_{b'}|^2).       \tag{3}
+\]
+Consequently the full first-order canonical input norm has an incidence majorant obtained from (2) by adding the actual stencil weights $2h_{bb'}^{-2}$. On a current-unit record these are fixed constants. On an inherited finer record they remain explicit inverse assigned lengths. Neither the number of points nor a new current-scale label cancels them. Nonunitary complex frame transports have their actual operator norms in (3); the real estimate is not copied unchanged to complex walls.
+
+\paragraph{Geometric cost that is genuinely payable.}
+For a rectangular current-unit box of diameter $R$, a tree loop has length at most twice the number of vertices plus one. Successively sweeping its coordinates to the root gives a plaquette filling with at most $C_4R\,|\gamma_b|$ occurrences. This follows by sliding each directed edge across at most $R$ plaquettes in each of four coordinate directions; the sweep remains in the rectangle. Thus on a four-dimensional box $m_b\le C R^5$ and $w_*\le C R^{14}$, a deliberately crude polynomial bound. This estimate uses all filling plaquettes, not just the visible halo bonds.
+
+When this complete box is already an original current record in $N_\omega$, the polynomial is payable from a fixed unspent record-count tilt in S13: for fixed degree $r$, $\sup_{N\ge1}N^r e^{-\tau N/2}<\infty$. No source-only buffer is thereby made an admissible R component, and no new rare factor is earned. If filling plaquettes lie outside the original reserve or carry exhausted energies, (2) remains true but cannot be integrated using that reserve.
+
+\paragraph{Precise input to the weaker marked-$L^2$ route.}
+For one clean-born stable $H$ packet at first entry $e$, preserve its actual LM42 representative, removed projections, free companions and saved old radius. The last regular envelope RG31 is expressed using $q_H=1+\|z\|_{\rm first}+\max|B|$, where $z$ includes fixed exterior and pinned data. Equations (2)--(3) control only the coordinates actually present in the described relative-tree record. They retain four distinct contributions:
+\begin{enumerate}
+\item still integrated current fluctuation coordinates with their unspent Gaussian energy;
+\item retained compact coordinates, with the literal plaquette fillings, reference energy and own coupling in (2);
+\item fixed exterior coordinates $z$, whose canonical amplitude and first differences stay as deterministic parameters;
+\item variables already integrated out, which are absent and cannot be recreated from a fine primitive.
+\end{enumerate}
+The full halo belongs to one shared integration record only if every required prefix, frame, filling plaquette and stencil is present. The exterior contribution can be $O(1)$ on the canonical external ball. A fixed physical external core can instead have size $O(\alpha/g_e)$; its legitimate physical norm conversion must be retained. No scalar canonical bound uniform on that larger core follows.
+
+The first-entry part now isolated is the assignment of the actual RG31 determining coordinates to these literal records and unused energies, followed by the original admitted response from those coordinates. The loop estimate cannot replace that response: MT23/LM41's physical current bound requires the same protected determining problem. Neither a polynomial moment nor the first-order bound (3) proves the missing simultaneous mixed-range inclusion. In particular the unresolved original factor is not a history spectral gap; it is the old-to-current coordinate/range identification with its exact assigned lengths, reference energy and sharp selector.
+
+\paragraph{Analysis of the inherited-stencil cost.}
+There is a precise reason to retain the assigned lengths in (3). If a record at scale $R$ is genuinely still present at entry $e$, its stencil has current-unit length $h=L^{R-e}$. The elementary coordinate fallback has amplitude cost $(g_R/g_e)L^{e-R}$ times its literal incidence factor. For a genuinely retained birth-scale record $R=j$, put $r=L^{j-e}$ and $\rho=g_e/g_j$. Substitution of $q_H\lesssim \rho^{-1}r^{-1}\sqrt{1+E}$ into the three $d=2$ RG31 weights gives, respectively,
+\[
+ r^{s-2},\qquad (g_j/\alpha)r^{\beta-3},\qquad
+ (g_j/\alpha)^2r^{-2}.
+\]
+Thus paying the polynomial energy moment alone can lose the strict regular age. This is a calculation for that actual retained-record alternative, not an assertion that the birth-scale variables survive every history. Already-integrated variables remain excluded. A current-unit retained record avoids this stencil loss; otherwise the needed improvement must come from the original protected old-to-current response, rather than from a new copy of the energy reserve.
+\begin{thebibliography}{9}
+\bibitem{W} Wilson-source estimates, volumes 1--10 (\texttt{lattice\_theory/source\_estimates} in this collection), cited by source page.
+\end{thebibliography}
+\end{document}

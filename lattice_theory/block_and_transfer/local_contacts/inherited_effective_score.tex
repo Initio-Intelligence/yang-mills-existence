@@ -1,0 +1,150 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Var}{\operatorname{Var}}
+\title{Actual marginal Wilson scores and a quantitative inherited-mean interface}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Exact density after a coordinate elimination.}
+Partition the original bonds into retained $R$ and eliminated $E$, and observe
+$q(U)=U_R=y$. With the original normalized Haar factors the marginal density is
+\[
+ \rho_R(y)=Z^{-1}\int e^{-\beta S_0(y,z)}d\lambda_E(z),\qquad
+ S_R^{\rm eff}(y)=-\log\rho_R(y).
+\]
+The positive denominator is the actual marginal integral. No determinant or coordinate
+Jacobian is introduced by this coordinate projection. If charts are later used, their actual
+Haar Jacobians remain part of that density. All conditional means below use this exact integral.
+For a deterministic invariant direction $X_v$ on retained links, write $F_v=X_vS_0$.
+Differentiation under the compact integral gives
+\begin{align}
+ X_vS_R^{\rm eff}&=\beta\E(F_v\mid y),\label{score}\\
+ X_v^2S_R^{\rm eff}&=\beta\E(X_v^2S_0\mid y)-\beta^2\Var(F_v\mid y),\label{hessian}\\
+ X_v\E(G\mid y)&=\E(X_vG\mid y)-\beta\Cov(G,F_v\mid y).\label{response}
+\end{align}
+In particular the effective score is not the remaining bare Wilson score.
+These identities retain the response of the genuine denominator as the centered covariance.
+
+\paragraph{Dimension-independent directional Ward moments.}
+Let $v$ have arbitrary finite support and constant Lie coefficients, with
+$\|v\|_2^2=\sum_{b,A}|v_b^A|^2$. The compact plaquette action has uniformly bounded
+second derivatives. Bounded plaquette incidence therefore implies
+\[
+ |X_v^2S_0|\le C_N\|v\|_2^2
+\]
+pointwise, independently of the number of bonds in the support.
+Indeed each plaquette contributes at most $C(\sum_{b\in p}|v_b|)^2$ and each bond
+belongs to exactly six plaquettes. Since $X_v$ is Haar divergence-free, the same recurrence
+as the uniform contact moments calculation proves
+\[
+ \E|F_v|^{2m}\le(2m-1)!!(C_N\|v\|_2^2/\beta)^m.
+\]
+Thus for every fixed $p\ge1$, under the genuine marginal $\nu_R$,
+\begin{align}
+ \|X_vS_R^{\rm eff}\|_{L^p(\nu_R)}&\le C_{N,p}\sqrt\beta\|v\|_2,\label{scorebound}\\
+ \|X_v^2S_R^{\rm eff}\|_{L^p(\nu_R)}&\le C_{N,p}\beta\|v\|_2^2,\label{hessbound}\\
+ X_v^2S_R^{\rm eff}&\le C_N\beta\|v\|_2^2\quad\hbox{pointwise}.\label{onesided}
+\end{align}
+For \eqref{hessbound}, use conditional Jensen on $\Var(F_v|y)\le\E(F_v^2|y)$;
+for \eqref{onesided}, keep the negative variance sign. Polarization gives the analogous
+$C_p\beta\|v\|_2\|w\|_2$ bound for the symmetrized mixed Hessian.
+An ordered mixed Hessian has in addition half the commutator score, which is bounded
+by \eqref{scorebound} and $\|[v,w]\|_2\le C\|v\|_2\|w\|_2$.
+These estimates hold for ANY eliminated coordinate set. They are averaged directional
+estimates, not a pointwise lower Hessian bound, a spectral gap, or a summable kernel bound.
+
+\paragraph{Proved finite range for the first separated-link layer.}
+For the noninteracting free links of AI36, no plaquette contains two eliminated links.
+Write $S_0=S_{\rm out}(y)+\sum_{e\in E}s_e(U_e;y)$ with every touching plaquette
+assigned to its unique free link, and put
+$z_e(y)=\int e^{-\beta s_e(U_e;y)}dU_e$. Then exactly
+\[
+ \rho_R(y)=Z^{-1}e^{-\beta S_{\rm out}(y)}\prod_{e\in E}z_e(y),\qquad
+ S_R^{\rm eff}=\log Z+\beta S_{\rm out}-\sum_{e\in E}\log z_e.
+\]
+Each $z_e$ depends only on the literal outside plaquette star of $e$.
+Consequently every score and Hessian entry has a fixed finite-range carrier, and the
+number of such carriers meeting a retained bond is bounded by lattice incidence.
+This is actual locality of the effective action for this layer. For a general eliminated
+set the covariance in \eqref{hessian} may connect far-separated retained bonds; the
+moment estimates above do not claim it vanishes or decays.
+
+\paragraph{A derivative bound for the actual inherited H mean.}
+Take the separated packing and $G(f)=O_H(f)$ or the specified $r_H(f)$.
+Let $\overline G(f)=\E(G(f)|y)$. For a retained bond/color derivative $X_b^A$, let
+$\mathcal N_b$ consist of the finitely many original force rows whose terms either depend
+directly on $U_b$ or vary in an eliminated block whose plaquette star meets $b$.
+Set $W_b(f)^2=\sum_{c\in\mathcal N_b}|f_c|^2$, retaining actual pointed offsets when
+present. The number of these rows and their multiplicity over $b$ are fixed constants.
+Then
+\begin{equation}\label{meanbound}
+ \|X_b^A\overline G(f)\|_{L^2(\nu_R)}
+ \le C\sigma\beta^{-1/2}\log^{3/2}(2+\beta)\,W_b(f),
+ \qquad \sigma=g^{-2}a^{-2}.
+\end{equation}
+Here is a proof that uses the actual conditional covariance rather than an unrelated norm.
+The direct derivative $X_b^AG$ is a fixed sum of force times bounded force derivative,
+plus the literal Casimir derivative for $r_H$. The plaquette energy bound gives
+$\|X_b^AG\|_2\le C\sigma\sqrt{L_\beta/\beta}\,W_b(f)$, with
+$L_\beta=\log(2+\beta)$.
+
+Conditional product independence localizes $\Cov(G,F_b^A|y)$ to those blocks sharing
+free variables with $F_b^A$. Write $G_b$ for exactly their varying source terms and
+$v_b=\Var(G_b|y)$, $c_b=\Var(F_b^A|y)$.
+The local ordinary covariance calculation proves $\E v_b\le C\sigma^2\beta^{-2}L_\beta^2W_b(f)^2$.
+Compactness of this fixed local sum also gives $v_b\le C\sigma^2W_b(f)^2$ pointwise.
+The directional Ward moments give $\|c_b\|_m\le Cm/\beta$ for integers $m\ge2$.
+Conditional Cauchy--Schwarz and Holder thus yield
+\[
+ \|\Cov(G_b,F_b^A|y)\|_2^2
+ \le\E(v_bc_b)
+ \le\frac{Cm}{\beta}
+       (C\sigma^2W_b^2)^{1/m}
+       (C\sigma^2\beta^{-2}L_\beta^2W_b^2)^{1-1/m}.
+\]
+Choosing $m=\max(2,\lceil L_\beta\rceil)$ bounds this by
+$C\sigma^2\beta^{-3}L_\beta^3W_b^2$.
+Insert this and the direct derivative estimate in \eqref{response} to obtain
+\eqref{meanbound}. A bounded physical boundary variation $U_b\mapsto e^{aZ_b}U_b$
+adds its original factor $a$ to this derivative. Saved field-independent source factors
+multiply the whole expression; field-dependent ones remain inside $G$ and are differentiated.
+
+Summing actual derivative components gives the quantitative finite-range estimate
+\[
+ \E_{\nu_R}\sum_{b,A}|X_b^A\overline G(f)|^2
+ \le C\sigma^2\beta^{-1}L_\beta^3\sum_c|f_c|^2.
+\]
+The final sum can be restricted to the literal completed support. This is a Dirichlet-energy
+bound for the inherited conditional mean, not a variance bound without an additional
+coercive or spatial covariance input.
+
+\paragraph{Selectors, current partners, and denominator scope.}
+For a bath-measurable selector $\chi(y)$, the selected marginal is $\chi\rho_R$.
+A smooth positive selector adds $-X_v\log\chi$ to the effective score.
+A sharp selector must instead retain the weak derivative
+$X_v(\chi\rho_R)=(X_v\chi)\rho_R+\chi X_v\rho_R$; there is no pointwise log score
+on its boundary. For a selector depending on eliminated variables, the undivided exact
+formula is
+\[
+ X_v\int\chi(y,z)e^{-\beta S_0(y,z)}dz
+ =\int(X_v\chi-\beta\chi F_v)e^{-\beta S_0}dz.
+\]
+Its normalized form requires its genuine nonzero selected denominator and its actual
+conditional measure. No preceding probability contraction supplies a bound for that extra
+response. The same rule applies to a live kernel, constraint, or coordinate Jacobian.
+The AI41 current supported on eliminated bonds still has $Dq\mathcal W=0$ for this
+observation, as proved in the actual AI36 interface calculation. Outer currents act on the complete marginal and hence
+on every $z_e$; their responses are exactly the effective-score terms above. No boundary
+partner or independent absolute scalar factor is canceled by these estimates.
+
+\paragraph{Next interface.}
+We now have actual marginal score moments, first-layer finite-range effective action, and
+an $L^2$ derivative/locality bound for the inherited ordinary mean. To conclude a bound
+on $\Var_{\nu_R}\overline G$ from its Dirichlet energy would require a uniform Poincare
+or appropriate restricted covariance estimate for this actual marginal. Such an estimate
+has not been proved. The one-sided Hessian upper bound \eqref{onesided} does not provide
+it. Subsequent coordinate marginals retain \eqref{scorebound}--\eqref{hessbound}, but
+can lose the first-layer finite range and can generate long-range conditional-mean covariance.
+No general MT36 or universal operator normalization is claimed.
+\end{document}

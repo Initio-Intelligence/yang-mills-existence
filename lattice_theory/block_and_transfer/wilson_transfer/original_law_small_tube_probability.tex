@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{Original-law probability of an all-time staple tube}\author{}\date{}
+\begin{document}\maketitle
+We work in the ORIGINAL four-dimensional periodic $SU(2)$ Wilson law with normalized coefficient $B\ge1$, all side lengths at least three. The statements also hold after fixing the entire initial spatial slice, for links not on that slice. No independent-bath hypothesis is made. The distance below is the principal class angle $d(u,v)\in[0,\pi]$, invariant under left and right multiplication.
+
+\section*{An exact conditional concentration limit}
+A spatial link belongs to six original plaquettes. Conditional on all other links its Haar density is
+\[
+ p(u\mid\mathrm{rest})=Z_z^{-1}\exp[z\cos d(u,W)],\qquad0\le z\le6B,                 \tag{1}
+\]
+by the literal quaternion sum of its six staples; for $z=0$ the density is Haar. Orientation changes preserve this form. The Haar angle density is $(2/\pi)\sin^2\theta\,d\theta$.
+
+A lower bound on $Z_z$ obtained from $\theta\le(1+z)^{-1/2}$ yields
+\[
+ \sup_u p(u\mid\mathrm{rest})\le C(1+z)^{3/2}\le C B^{3/2}.                        \tag{2}
+\]
+Consequently every ball of angle radius $R/\sqrt B$ has conditional probability at most $CR^3$, uniformly in its bath-dependent center. For sufficiently small fixed $R$, this is strictly below one.
+
+There is also a useful uniform LOWER bound on the probability of leaving a larger ball. Among all measurable sets of the Haar volume of a given ball, the radial density in(1) puts most mass on the ball centered at $W$: this follows by integrating its nested superlevel sets. That centered-ball probability increases with $z$, since its derivative is the covariance of two decreasing functions of the angle, the cap indicator and $\cos\theta$. Thus the maximum over all centers and $z\le6B$ occurs at the centered density with $z=6B$.
+
+For $1\le R$ and $R+1\le\sqrt B$, integrate its complement over
+$R/\sqrt B\le\theta\le(R+1)/\sqrt B$. Using $Z_{6B}\le e^{6B}$, $1-\cos\theta\le\theta^2/2$ and $\sin\theta\ge c\theta$ on $[0,1]$, we obtain the UNIFORM estimate
+\[
+ \mathbb P\{u\notin\operatorname{Ball}(U_*,R/\sqrt B)\mid\mathrm{rest}\}
+ \ge q_B(R):=c B^{-3/2}\exp[-3(R+1)^2].               \tag{3}
+\]
+The weaker polynomial factor shown is enough; keeping the annulus volume improves it. The arbitrary center $U_*$ may depend on all other links.
+
+\section*{A gauge-invariant necessary event for the selected-trajectory tube}
+At each time $t$, choose two different spatial staples $S_{t,1},S_{t,2}$ of the same selected spatial link, from two distinct adjacent plaquettes. They share endpoints, and $S_{t,1}S_{t,2}^{-1}$ is a gauge-covariant closed loop. Choose a bath link $e_t$ occurring once in the first staple and not in the second; such a link exists on the original lattice of side at least three. Different times use disjoint spatial-link sets. Define
+\[
+ E_t(R)=\{d(S_{t,1},S_{t,2})\le R/\sqrt B\}.           \tag{4}
+\]
+Conditioning all links except $e_t$, (4) is exactly a Haar ball constraint on $e_t$, after left/right multiplication and possibly inversion. Each other $E_s$ is independent of $e_t$. Therefore successive conditional integration, without independence assumptions, gives for any set of $M$ such time slices
+\[
+ \mathbb P\left(\bigcap_t E_t(R)\right)
+ \le (CR^3)^M\quad\hbox{for small fixed }R,            \tag{5}
+\]
+\[
+ \mathbb P\left(\bigcap_t E_t(R)\right)
+ \le[1-q_B(R)]^M\le e^{-M q_B(R)}                    \tag{6}
+\]
+under the conditions of(3). The same holds under the actual bath law $\eta_X$ of the conditioned wilson chain affinity calculation, uniformly in the fixed initial slice $X$, if the selected times exclude time zero: the event is measurable in the bath and its probability equals the original conditional probability before the selected paths were integrated. All selected-chain normalizers are therefore already retained.
+
+If all four staples lie within $P(B)/\sqrt B$ of ANY common transported center at every time, triangle inequality forces every $E_t(2P(B))$. This requirement is invariant under the exact endpoint gauge/frame transformations. It is not merely an artifact of asking a gauge link to be near the identity.
+
+In particular let $B\sim b\log(1/a)$ with $b>0$, $M\asymp t_*/a$, and $P(B)^2=o(B)$. Equations(3),(6) imply
+\[
+ Mq_B(2P(B))\longrightarrow\infty,
+ \qquad\sup_X\eta_X\{\hbox{all-time common-center tube}\}\longrightarrow0.           \tag{7}
+\]
+This includes $P(B)$ equal to any fixed power of $\log B$. It does not claim that such local cutoffs are invalid: multiscale constructions normally retain exceptional regions rather than require every microscopic time slice to be good. A necessary scale not ruled out by this argument for an ALL-time event is $P(B)^2$ of order $\log M$, hence of order $B$ on this trajectory. Constants in(3) are not sharp enough to give a sufficiency threshold.
+
+\section*{Consequence for the exact bath-affinity interface}
+For the event $\mathcal G$ just considered, Cauchy--Schwarz gives
+\[
+ \int_{\mathcal G}\sqrt{d\eta_Xd\eta_Y}
+ \le\sqrt{\eta_X(\mathcal G)\eta_Y(\mathcal G)}.        \tag{8}
+\]
+Thus restricting the bath-overlap lower-bound method of the conditioned wilson chain affinity calculation exclusively to an all-time tiny or polylogarithmic common-center tube captures a vanishing overlap contribution by these uniform estimates. This does NOT upper-bound the full purity or disprove S94. It shows why a conditional product theorem, even extended to such growing tubes, must be combined with control of the exceptional slices or a different adaptive coarse record.
+
+The next concrete estimate is an exact-scalar product comparison allowing sparse bad or weakly pinned time slices, with their number and their original joint bath weights retained. A local energy reserve may be useful there, but no estimate here identifies that reserve with an arbitrary original inherited component. Neither good-bath typicality nor a full global mixing bound has been assumed.
+\end{document}

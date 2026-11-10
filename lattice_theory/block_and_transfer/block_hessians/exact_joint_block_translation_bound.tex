@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{A dimension-controlled response of exact Wilson block marginals}\author{}\date{}
+\begin{document}\maketitle
+Use ORIGINAL four-dimensional $SU(N)$ Wilson action
+$S=B\sum_p[1-N^{-1}\operatorname{ReTr}U_p]$ and normalized Haar.
+Fix any exterior link record $\eta$, retain free links $R$, and integrate free links $J$:
+\[
+ \rho_\eta(x)=Z_\eta^{-1}\int e^{-S(x,y;\eta)}dy. \tag{1}
+\]
+Every induced chain normalizer and cross-seam message remains in this exact density.
+No native cutoff, gauge constraint or reference measure is added.
+
+For deterministic anti-Hermitian tangents $w_b$ on $R$, use
+$\|w\|^2=\sum_b-\operatorname{Tr}w_b^2$, generators normalized by
+$-\operatorname{Tr}T^AT^B=\delta^{AB}$, and Haar translation
+$R_wx=(e^{w_b}x_b)_b$. The following bounds hold uniformly in the fixed exterior and the number of integrated links:
+\[
+ \int |X_w\log\rho_\eta|^2\rho_\eta dx\le {24B\over N}\|w\|^2, \tag{2}
+\]
+\[
+ D_{\rm KL}(\rho_\eta\Vert(R_w)_*\rho_\eta)
+       \le {12B\over N}\|w\|^2,\qquad
+ \operatorname{Aff}(\rho_\eta,(R_w)_*\rho_\eta)
+       \ge e^{-6B\|w\|^2/N}. \tag{3}
+\]
+The literal block count stays in the squared norm; no dimension has been silently absorbed.
+
+\paragraph{Proof in the original compact integral.}
+Unitary trace inequalities, including inverse-link orientations, give
+\[
+ |X_w^2s(U_p)|\le N^{-1}
+       \left(\sum_{b\in\partial p\cap R}\|w_b\|\right)^2.
+\]
+Four links per plaquette and six plaquettes per four-dimensional link imply the POINTWISE bound
+\[
+ |X_w^2S|\le {24B\over N}\|w\|^2=:C_w. \tag{4}
+\]
+Haar integration by parts along free retained links, with exterior fixed, yields
+$E_\eta X_wS=0$ and $E_\eta(X_wS)^2=E_\eta X_w^2S\le C_w$.
+The exact marginal score is
+$X_w\log\rho_\eta=-E_\eta(X_wS\mid x)$, so conditional contraction proves(2).
+
+Haar translation preserves the full conditional partition integral. Thus
+\[
+ D_{\rm KL}(\mu_\eta\Vert(R_w)_*\mu_\eta)
+ =E_\eta[S(R_{-w}(x,y);\eta)-S(x,y;\eta)].
+\]
+Taylor's integral formula, zero mean first derivative, and(4) give $C_w/2$.
+Forgetting $y$ decreases relative entropy and commutes with the translation, proving the first bound in(3). Jensen applied to the square-root likelihood ratio proves the affinity bound. In particular no inverse normalizer or assumed conditional gap enters.
+
+\paragraph{What joint block response is gained.}
+With $w_b=\xi_b/\sqrt B$, the entropy cost is at most
+$12\sum_b\|\xi_b\|^2/N$, uniform in coupling and eliminated volume.
+This controls the COMPLETE joint boundary message and is consistent with the nonzero canonical seam coefficient $1/35$ in the selective separator original seam calculation. It does not discard that message as a scalar.
+The full marginal Fisher matrix is bounded above by the original conditional Fisher matrix, because the marginal score is its conditional mean. Hence all deterministic collective directions are controlled simultaneously.
+This is not uniform control of the pointwise effective Hessian; the actual cancelled-staple $B^2$ example remains compatible.
+
+\paragraph{Precise missing spatial comparison.}
+These estimates compare a density with its Haar TRANSLATION at the SAME fixed exterior.
+They do not compare $\rho_{\eta_1}$ with $\rho_{\eta_2}$ for different external records.
+Nor do they show that deleting microscopic boundary coordinates costs little overlap.
+Changing each of $M$ links by canonical size one costs $O(M)$ here, so a microscopic covering still has a divergent state count. Gauge and global modes were not removed.
+
+To apply this bound to the two-slice/window problem one needs an actual map between exterior/coarse records inducing joint boundary translations, or another common realization, with squared canonical tangent cost bounded by PHYSICAL block volume, together with control of the residual action and normalizer change. Exact locality and the present Fisher bound do not identify that map. This is a concrete dimension-controlled original-law response, but the spatial coarse comparison required by S94 remains open.
+\end{document}

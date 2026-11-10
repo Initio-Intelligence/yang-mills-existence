@@ -1,0 +1,138 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Why the original endpoint minor needs contact cancellation before longest-time decay}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Input and target.}
+In the actual cubic curl and endpoint minor calculation, the exact plaquette cubic grouping, factor-24 all-cross
+contraction, endpoint minor and transported curvature vertex retain their
+stated partners. This note tests the proposed extra $1/(1+T)$ on that
+minor itself. It proves that such a bound cannot hold uniformly for an
+individual charged scalar minor, even deep inside the ORIGINAL finite
+relative grid. The short-line contact must be canceled with the complete
+quartic/ghost/Haar and source partners first. This is not a divergence
+claim for their full sum or for the original field theory.
+
+\paragraph{1. The exact short-line term.}
+Polarize the endpoint determinant of the actual cubic curl and endpoint minor calculation. For two heat times $s,T$
+and a neighboring endpoint pair $x,x+\hat\mu$, let
+\[
+ \mathcal B(P_s,P_T)=\tfrac12[
+ (P_s)_{00}(P_T)_{11}+(P_T)_{00}(P_s)_{11}
+ -(P_s)_{01}(P_T)_{10}-(P_T)_{01}(P_s)_{10}].                       \tag{1}
+\]
+Integrating (1) over both positive times is exactly the Green endpoint
+minor, not a new vertex.
+Choose an odd cube side $R=2m+1$, a $\nu$ component with $\nu\ne\mu$,
+and the central pair with $\mu$ positions $m,m+1$. The original product
+grid is invariant under their reflection. At zero field the two endpoint
+matrices are therefore
+\[
+ P_s=\begin{pmatrix}u&v\\v&u\end{pmatrix},\qquad
+ P_T=\begin{pmatrix}U&V\\V&U\end{pmatrix}.
+\]
+Positivity gives $v\ge0$ and $U-V\ge0$. Hence
+\[
+ \boxed{\mathcal B=(u-v)U+v(U-V)\ge(u-v)U.}                       \tag{2}
+\]
+For a sufficiently small fixed $s>0$, the no-jump contribution gives
+$u\ge e^{-8s}$, while $v\le1-e^{-8s}\le8s$. Thus $u-v\ge c>0$
+uniformly in the original cube size. Central product eigenfunctions give
+$U\ge cT^{-2}$ for $1\le T\le cR^2$; this also follows by retaining the
+low-frequency sine/cosine modes with indices at most $cR/\sqrt T$.
+Therefore the minor can be of order $T^{-2}$, not $T^{-3}$.
+The two literal differences in the vertex can both act on the SHORT
+line. Their algebraic presence does not pay a longest-time derivative.
+The exact dangerous piece in (2) is the short-link Dirichlet energy
+$u-v$ multiplying the undifferentiated long heat diagonal $U$.
+
+\paragraph{2. The geometric current has the same short-time contact.}
+Put the actual magnetic scalar connection of strength $b=2/R^2$ into (1).
+At $s=0$ its scalar current part is exactly
+\[
+ \mathcal B_\epsilon(P_0,P_T)
+       =\tfrac12[p_T^\epsilon(x,x)+p_T^\epsilon(x+\hat\mu,x+\hat\mu)].
+                                                                    \tag{3}
+\]
+Thus minus its second flux derivative is the average of the two original
+closed-loop area second moments. The derivative is NOT zero merely
+because the endpoint minor contains differences.
+
+Here is a self-contained quantitative lower bound, avoiding an assumption
+about reflected bridge areas. First consider the unrestricted rate-one
+nearest-neighbor walk on $\mathbb Z^4$. Conditional on return at time $T$,
+the numbers $n_j$ of positive and negative jumps in each coordinate agree;
+the coordinates' counts are independent, and one count has probabilities
+proportional to $T^{2n}/(n!)^2$. Shifting this series gives
+\[
+ E n^2=T^2,\qquad E n^4=T^2(T^2+2En+1)\le4T^4\quad(T\ge1).
+\]
+The elementary second-moment inequality for $n^2$ then implies
+$P(n\ge T/\sqrt2)\ge1/16$, hence $En\ge cT$.
+
+Conditional on all counts, the order of the jumps is a uniform
+permutation. For its projected closed 01 polygon let $A$ be the signed
+lattice area. If its labeled steps are $v_i$ and
+$c_{ij}=v_i\wedge v_j$, then
+$A=\frac12\sum_{i<j}c_{ij}\operatorname{sign}(U_j-U_i)$ for independent
+continuous ordering priorities $U_i$. Disjoint sign pairs have mean zero;
+shared-endpoint pairs have correlation $\pm1/3$.
+Since $\sum_jc_{ij}=0$ for a closed word, expansion gives
+\[
+ E[A^2\mid(n_j)]=\frac1{12}\sum_{i<j}c_{ij}^2
+                         =\frac{n_0n_1}{3}.                     \tag{4}
+\]
+Other coordinate steps do not change the relative order distribution.
+It follows that the unrestricted return-weighted current satisfies
+\[
+ E[(bA)^2;X_T=x]\ge cb^2 T^2 p_T^{\mathbb Z^4}(0)\ge cb^2.
+                                                                    \tag{5}
+\]
+The last return bound is elementary: the one-dimensional Fourier integral
+of $e^{-2T(1-\cos k)}$ is bounded below by $cT^{-1/2}$ by integrating
+$|k|\le T^{-1/2}$, and the four coordinates factorize.
+
+Transfer this lower bound to the ORIGINAL finite grid at a central
+endpoint by choosing $T=R^{1/3}$. Every path with fewer than $R/4$ total
+jumps stays away from its boundary, so its original killed/reflected
+weight and magnetic current equal the unrestricted ones. The total
+number $N$ of jumps is Poisson with mean $8T$, and $|A|^2\le CN^4$.
+The discarded area moment is at most
+\[
+ Cb^2E[N^4;N\ge R/4]
+ \le Cb^2(1+T)^4\exp[-R/4+CT]=o(b^2).                            \tag{6}
+\]
+For example (6) follows by inserting $e^{N-R/4}$ and differentiating the
+Poisson exponential generating function four times. Thus (5), with a
+smaller constant, holds at the two central ORIGINAL-grid endpoints.
+Combining with (3) proves
+\[
+ -\partial_\epsilon^2\mathcal B_\epsilon(P_0,P_T)\big|_0
+       \ge cb^2,\qquad T=R^{1/3}\longrightarrow\infty.            \tag{7}
+\]
+A diagramwise attempt to attach an extra $1/(1+T)$ to the natural
+current scale $b^2T^2(1+T)^{-2}$ would instead give $Cb^2/(1+T)$,
+contradicting (7). Continuity in $s$ rules out such a uniform bound on
+all positive short times as well. Equation(7) concerns the geometric
+scalar-current part; actual differentiated vertex, spin and ghost terms
+may cancel it and have NOT been deleted from the full coefficient.
+
+\paragraph{3. Exact checks and the next estimate.}
+The product-spectrum finite calculation evaluates (2) on original cubes
+$R=9,17,33,65,129$, at $s=1/64$ and $T=R^{1/3}$.
+The ratio $\mathcal B/(uU)$ stays above $0.985$ while
+$T\mathcal B/(uU)$ grows. Exact enumeration of closed words with
+$(n_0,n_1)=(1,1),(1,2),(2,2)$ gives area variances
+$1/3,2/3,4/3$, checking (4).
+
+The next valid main estimate is on the FULL contact-subtracted,
+Ward-completed current. It must match the local short-line term in (2)
+and the zero-time current contact (3) with the original quartic/Haar/
+ghost and endpoint/spin partners. The derivative network contact and boundary defect calculation exhibits one scalar
+contraction where this cancellation is exact, with a retained mixed
+boundary defect. The finite boundary nonlinear ward cancellation calculation supplies the complete boundary mass Ward.
+Neither identity yet proves that every tensor sector of the actual cubic curl and endpoint minor calculation has
+been grouped correctly. A uniform bound on the uncompleted minor is
+not a substitute for that missing matching step.
+No obstruction to a renormalized construction or S94 is inferred from
+this necessary correction to the attempted diagramwise bound.
+\end{document}

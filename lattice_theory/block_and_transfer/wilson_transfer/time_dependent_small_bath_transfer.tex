@@ -1,0 +1,182 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newcommand{\Tr}{\operatorname{Tr}}
+\title{A length-uniform exact-scalar bound for time-dependent small-bath Wilson chains}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Actual kernels and the precise small-bath class.}
+Keep one selected spatial-link trajectory in the ORIGINAL $SU(2)$ Wilson measure.
+Its four spatial staples at time $t$ are $S_{t,r}$, and its temporal twists are
+$g_t,h_t$. With $s(u)=1-\tfrac12\operatorname{Re}\operatorname{Tr}u$, define
+\[
+ M_t(u)=\exp[-\tfrac B2\sum_{r=1}^4s(uS_{t,r}^{-1})],\qquad
+ T_t(u,v)=M_t(u)e^{-Bs(ug_tv^{-1}h_t)}M_{t+1}(v).       \tag{1}
+\]
+Every original onsite scalar is inside $M_t$. Bath-only action outside this
+selected trajectory remains in the original bath density.
+
+Assume, in a declared ORIGINAL frame or after an explicit left/right Haar
+transport as in the compatible staples and holonomy calculation, that the principal-log vectors satisfy
+\[
+ S_{t,r}=e^{i\mathbf s_{t,r}\cdot\sigma/\sqrt B},\quad
+ g_t=e^{i\mathbf g_t\cdot\sigma/\sqrt B},\quad
+ h_t=e^{i\mathbf h_t\cdot\sigma/\sqrt B},\qquad
+ |\mathbf s_{t,r}|,|\mathbf g_t|,|\mathbf h_t|\le\delta.  \tag{2}
+\]
+The parameters may vary arbitrarily with time; no stationary spectrum is assumed.
+A retained endpoint holonomy is allowed as $C_Gf(u)=f(G^{-1}uG)$ with arbitrary
+$G\in SU(2)$. For a period $m$, the exact conditional period operator is
+\[
+ W_m=T_0T_1\cdots T_{m-1}C_G.                         \tag{3}
+\]
+A plain original periodic chain has $G=I$ and $M_m=M_0$. If a transported frame
+leaves $G\ne I$, its endpoint consistency is the literal one from that transport;
+(3), not a discarded holonomy, is used. The kernel is strictly positive, but
+$W_m$ need not be self-adjoint. Denote its exact positive Perron eigenvalue by
+$\rho_m$.
+
+\begin{theorem}
+There are $\delta>0$, $B_0<\infty$, $C<\infty$ and $r=2/5<1$ such that every
+actual kernel sequence satisfying(1)--(2), $B\ge B_0$, obeys
+\[
+ \left|\frac{\Tr W_m^q}{\rho_m^q}-1\right|
+       \le C r^{mq-1},\qquad m,q\in\mathbb N.          \tag{4}
+\]
+All constants are independent of the period length, the time-dependent parameters
+and the retained conjugation $G$. The leading scalar is the EXACT Perron scalar
+of the WHOLE product, not a product of local eigenvalue approximations.
+\end{theorem}
+
+\paragraph{Step1: uniform control of the actual rescaled operators.}
+Use the exact Haar coordinates of the exact flat bath compact transfer calculation,
+$du=c_Bj_B(x)dx$, $c_B=(2\pi^2)^{-1}B^{-3/2}$,
+$u=e^{i x\cdot\sigma/\sqrt B}$, $|x|<\pi\sqrt B$.
+After the unitary coordinate map, $c_B^{-1}T_t$ has a kernel $H_{B,t}$ on this
+ball, extended by zero to $L^2(\mathbb R^3)$.
+Its uniform compact-parameter limit has kernel
+\[
+ \exp\left[-\tfrac14\sum_r|x-\mathbf s_{t,r}|^2
+            -\tfrac12|x-y+\mathbf g_t+\mathbf h_t|^2
+            -\tfrac14\sum_r|y-\mathbf s_{t+1,r}|^2\right].       \tag{5}
+\]
+This is a kernel limit used to bound operators, not a replacement of the original
+partition integral.
+
+The unitary norm triangle inequality gives
+$s(uS^{-1})\ge\tfrac12s(u)-s(S)$. Thus
+$M_t(u)\le e^{\delta^2}e^{-Bs(u)}$ and the rescaled kernels have the common
+integrable majorant
+\[
+ |H_{B,t}(x,y)|\le e^{2\delta^2}
+              e^{-2(|x|^2+|y|^2)/\pi^2}.              \tag{6}
+\]
+Uniform convergence on bounded sets, followed by the uniform tails in(6), proves
+Hilbert--Schmidt convergence uniformly over the compact parameter set(2).
+At zero parameters the limit is the pinned Mehler operator $H_0$ with
+\[
+ \ell_0=\left[\frac\pi{3/2+\sqrt2}\right]^{3/2},\qquad
+ S_*=H_0/\ell_0,\quad \|S_*\|=1,\quad
+ \|S_*|_{v^\perp}\|=3-\sqrt8<1/5,                   \tag{7}
+\]
+where $v$ is its normalized positive radial ground vector. Taking $\delta$
+sufficiently small and then $B_0$ sufficiently large proves
+\[
+ \|S_t-S_*\|\le\epsilon=1/20,
+ \qquad S_t=c_B^{-1}\ell_0^{-1}T_t
+ \quad\hbox{in the unitary rescaled coordinates}.     \tag{8}
+\]
+The phrase in parentheses is essential: the displayed scalar does not replace
+the coordinate unitary or its Haar Jacobian.
+
+There is also a uniform trace-norm bound $\|S_t\|_1\le K$.
+Indeed the twisted temporal operator is $Q^{1/2}U_tQ^{1/2}$, where $U_t$ is a
+left/right Haar unitary commuting with central convolution $Q$.
+Hilbert--Schmidt factorization gives
+\[
+ \|T_t\|_1\le
+  (\int M_t^2du)^{1/2}(\int M_{t+1}^2du)^{1/2}
+ \le C c_B.                                         \tag{9}
+\]
+Here $k_B(I)=1$ for the original temporal kernel, and
+$\int M_t^2\le e^{2\delta^2}\int e^{-2Bs(u)}du\le Cc_B$.
+No trace estimate depends on how many steps will later be multiplied.
+
+\paragraph{Step2: common cone and a product Perron lower bound.}
+Work in the real Hilbert space, and let
+$\mathcal C=\{a v+z:a\ge0,\ z\perp v,\ \|z\|\le k a\}$, $k=1/4$.
+From(7)--(8), the new $v$ coefficient under any $S_t$ is at least
+\[
+ a'\ge[1-\epsilon(1+k)]a=\alpha a,\qquad\alpha=15/16,
+\]
+while its orthogonal part has norm at most
+$[\epsilon+(1/5+\epsilon)k]a\le k\alpha a$.
+Thus every $S_t$ preserves this cone and increases its positive coefficient by
+at least $\alpha$. The same holds for each adjoint. Since $C_Gv=v$ and $C_G$
+is unitary, it also preserves the cone.
+
+Put $B_m=S_0\cdots S_{m-1}C_G$, with reference $S_*$ as in(7).
+Repeated cycles preserve the cone and give
+$\|B_m^n v\|\ge\alpha^{mn}$. Hence its spectral radius $\rho\ge\alpha^m$.
+At fixed cutoff the actual compact-group product has a strictly positive kernel;
+its positive right and left Perron vectors exist uniquely. Iteration from $v$
+and from $v$ under the adjoint places both in the closed cone. Their rank-one
+spectral projection $\Pi$ consequently has
+\[
+ \|\Pi\|\le\frac{1+k^2}{1-k^2}=17/15=:C_\Pi.        \tag{10}
+\]
+The zero extension outside the principal-coordinate ball only adds zero modes;
+it does not change this Perron statement on the original compact-group space.
+
+\paragraph{Step3: a trace bound for the whole product, not accumulated step errors.}
+Exterior powers give
+\[
+ \|\wedge^2S_t\|\le1/5+2\epsilon+\epsilon^2=121/400=:\kappa,
+ \qquad \|\wedge^2S_t\|_1\le K^2/2.                  \tag{11}
+\]
+The first inequality follows by subtracting the two tensor squares; the second
+follows from singular values, $\sum_{i<j}s_is_j\le(\sum_i s_i)^2/2$.
+Thus
+\[
+ \|\wedge^2 B_m\|\le\kappa^m,\qquad
+ \|\wedge^2 B_m\|_1\le(K^2/2)\kappa^{m-1}.           \tag{12}
+\]
+These are product identities/trace-ideal estimates, valid without self-adjointness
+or commutativity of the steps.
+
+Here is a direct way to pass to the Perron complement. Normalize its right vector
+$v_m$ to unit norm and its left functional $l_m$ by $l_m(v_m)=1$.
+On $\mathcal H_0=\ker l_m$, $Jx=v_m\wedge x$ has norm at most one and inverse
+on its range of norm at most $C_\Pi$. If $R=B_m|_{\mathcal H_0}$, then
+$(\wedge^2B_m)J=\rho J R$. Equations(10)--(12) imply
+\[
+ \|R/\rho\|\le C_\Pi(\kappa/\alpha^2)^m\le r^m,
+ \quad
+ \|R/\rho\|_1\le C(\kappa/\alpha^2)^{m-1}\le Cr^{m-1},  \tag{13}
+\]
+where $r=2/5$ works since
+$C_\Pi\kappa/\alpha^2<2/5$.
+The bounded direct-sum decomposition into the Perron line and $\mathcal H_0$
+gives $\Tr B_m^q=\rho^q+\Tr R^q$.
+Using $|\Tr R^q|\le\|R\|_1\|R\|^{q-1}$ proves(4).
+Returning to original coordinates multiplies $W_m$ and its Perron eigenvalue by
+the SAME $(c_B\ell_0)^m$, so(4) retains the exact raw scalar. In particular no
+$O(\delta)$ or $O(B^{-1/2})$ vacuum error has been multiplied by $m$ and dropped.
+
+\paragraph{Interpretation and precise limits.}
+The actual periodic conditional normalization is $\Tr W_m>0$.
+For non-self-adjoint or holonomy-twisted products, excited traces need not be
+nonnegative, so (4) is an absolute relative-error bound, not a claim that this
+ratio is a positive-density purity. Once $Cr^{mq-1}\le1/2$ it gives the
+corresponding logarithmic error bound $2Cr^{mq-1}$.
+At physical trajectory length $m\asymp t_*/a$, the error is summable even after
+multiplication by a polynomial number of independent selected trajectories.
+
+The hypotheses concern an ACTUAL explicit small tube of bath staples and twists.
+No probability lower bound for that tube under the original random bath has
+been proved, and demanding it at every time may be costly. Coherent large
+transported centers are covered only after their exact frame change and retained
+endpoint holonomy have been verified. Arbitrary unscaled frustration and the
+remaining bath-affinity factor of the conditioned wilson chain affinity calculation are outside this theorem. The result
+advances the conditional spectral estimate to time-dependent original kernels;
+it does not close the full physical-torus S94 comparison or a mass gap.
+\end{document}

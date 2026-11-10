@@ -1,0 +1,131 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{The first original nonlinear coefficient after the signed constant-flux bound}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{What the completed quadratic estimate does and does not give.}
+The mixed boundary magnetic loop bound calculation, together with the constant flux spin and magnetic reduction calculation,
+bounds the complete original leading quadratic constant-flux response by
+$C\log(2+R)E_R/B$, with all relative boundary and gauge determinants.
+Here the next coefficient is isolated in the ORIGINAL compact integral,
+rather than replaced by an unspecified Gaussian error.
+
+Fix a finite cube $R$ and the exact constant-flux boundary path with
+physical angle $\epsilon$. Let $U^*(\epsilon)$ be its unique nearby
+tree-fixed action minimum. Use the exact Haar change
+$U_j=U_j^*(\epsilon)\exp(i y_j\cdot\sigma)$ on its seven or more independent
+chords, as appropriate to $R$. If $S_0$ is the original action without $B$,
+write its genuine local Taylor expansion
+\[
+ S_0(U^*\exp(iy))=v(\epsilon)+\tfrac12 y^TH_\epsilon y
+       +T_{3,\epsilon}(y)+T_{4,\epsilon}(y)+\cdots ,
+\]
+where $T_k$ includes the factor $1/k!$. With $y=z/\sqrt B$,
+\[
+ BS_0=Bv+\tfrac12z^TH_\epsilon z+
+ B^{-1/2}T_{3,\epsilon}(z)+B^{-1}T_{4,\epsilon}(z)+\cdots .
+\]
+These tensors are in the actual right minimum frame, so their
+$\epsilon$ derivatives retain the minimum response and acceleration.
+Normalized $SU(2)$ Haar measure on each chord gives
+\[
+ j(z/\sqrt B)=1+B^{-1}J_2(z)+O_R(B^{-2}|z|^4),\qquad
+ J_2(z)=-\tfrac13\sum_j|z_j|^2 .
+\]
+It is independent of $\epsilon$ before taking Gaussian expectations.
+The tree gauge has normalized volume one; adding a further ghost
+determinant to this tree integral would double count the quotient.
+
+\paragraph{Actual fixed-size differentiated expansion.}
+Let $\gamma_\epsilon$ have covariance $H_\epsilon^{-1}$ and set
+\[
+ \mathcal C_R(\epsilon)=
+ E_{\gamma_\epsilon}T_{4,\epsilon}
+ -\tfrac12E_{\gamma_\epsilon}T_{3,\epsilon}^2
+ -E_{\gamma_\epsilon}J_2.                                      \tag{1}
+\]
+For each fixed $R$, uniformly on a sufficiently small fixed interval of
+$\epsilon$, the ORIGINAL compact integral satisfies
+\[
+ F_R(\epsilon):=-\log Z_R(\epsilon)-Bv(\epsilon)
+ =c_{R,B}+\tfrac12\log\det H_\epsilon
+       +B^{-1}\mathcal C_R(\epsilon)+O_R(B^{-2}),                  \tag{2}
+\]
+with the same bound after up to two $\epsilon$ derivatives.
+Here $c_{R,B}$ retains every fixed canonical/Haar normalization and is
+independent of $\epsilon$. Any fixed-only boundary plaquette action is
+present in both $Z$ and $Bv$ and cancels only in this stated difference.
+
+For clarity, (2) is a fixed-dimensional Laplace statement, not a
+measure replacement: compactness and the unique flat minimum give a
+uniform positive action gap outside a small neighborhood for small
+$\epsilon$. Inside it the positive Hessian is uniform. A symmetric
+cutoff, Taylor expansion through sufficiently many orders, and Gaussian
+domination justify termwise integration and two parameter derivatives.
+The complement is exponentially small, with derivatives costing only
+fixed powers of $B$. Odd polynomial coefficients vanish in the centered
+Gaussian. The order $B^{-1}$ term of the original integral is
+$E(J_2-T_4+T_3^2/2)$; taking minus its logarithm proves (1).
+Expanding two further orders gives the stated differentiated remainder.
+Every constant and neighborhood in this justification may depend on $R$.
+
+For canonical $\epsilon=\zeta/\sqrt B$, (2) therefore gives the actual
+fixed-block response at zero:
+\[
+ \boxed{\quad
+ F_{R,\zeta\zeta}(0)
+ =B^{-1}\left(\tfrac12\log\det H_\epsilon\right)''_{\epsilon=0}
+   +B^{-2}\mathcal C_R''(0)+O_R(B^{-3}).\quad}                     \tag{3}
+\]
+Thus the first POSSIBLE non-Gaussian coupling correction is $B^{-2}$,
+not another independent leading $B^{-1}$ term, for this fixed-size
+family. This is not a uniform growing-block bound.
+
+\paragraph{The first explicit nonlinear current on the complete $R=2$ cube.}
+Every plaquette in this cube contains at most two free links: all eight
+free links meet the unique interior vertex. At the flat record the
+scalar part of a product of at most two fluctuation exponentials is
+even under simultaneous reversal of the fluctuations.
+Consequently $T_{3,0}\equiv0$, even before the temporal tree edge is
+fixed. The derivative $T'_{3,0}$ need not vanish: the varying
+nontrivial external/minimum factors destroy that two-factor reversal
+at nonzero $\epsilon$.
+
+Differentiating (1) at this flat record gives the exact finite Gaussian
+coefficient
+\[
+ \mathcal C_2''(0)
+ =\left.\frac{d^2}{d\epsilon^2}
+       E_{\gamma_\epsilon}(T_{4,\epsilon}-J_2)\right|_0
+       -E_{\gamma_0}(T'_{3,0})^2 .                               \tag{4}
+\]
+All derivatives of the Gaussian covariance in the first term are
+retained. In the second term those derivatives multiply $T_{3,0}$
+and hence vanish. Formula (4) displays the first nonlinear source
+covariance and its quartic/Haar partners; dropping either side is not
+a signed estimate. The exact rational product check
+the finite algebraic calculation evaluates
+$T'_{3,0}=-3/8$ on one explicitly stored rational chord fluctuation.
+Thus this cubic source polynomial is genuinely nonzero and
+$E_{\gamma_0}(T'_{3,0})^2>0$. This does not assert that the total signed
+combination in (4) is nonzero.
+
+On larger cubes a plaquette may contain three or four free links.
+At the flat record its cubic action vertex contains
+\[
+ \sum_{k<l<m}(s_kz_{e_k}\times s_lz_{e_l})\cdot s_mz_{e_m}.
+\]
+It is absent in the $R=2$ geometry but generally survives. Then the
+full derivative of $E_{\gamma_\epsilon}T_{3,\epsilon}^2$ in (1),
+including its covariance derivatives, must be used instead of (4).
+
+\paragraph{Exact remaining mathematical input.}
+A growing-block conclusion requires a signed physical-energy estimate on
+$\mathcal C_R''(0)$ AND a uniform differentiated remainder bound for the
+original integral, or a direct original-law resummation controlling the
+equivalent residual (5) of the signed gauge quotient and unsummed current calculation. Fixed-dimensional analyticity proves neither.
+The previous $R^{14}/B$ actual estimate remains available only in its
+admitted mesoscopic range. No size-independent perturbative expansion,
+random-exterior admission, global-mode replacement, or S94 follows from
+(2)--(4). The completed leading logarithm is a prerequisite, not the
+nonlinear comparison.
+\end{document}

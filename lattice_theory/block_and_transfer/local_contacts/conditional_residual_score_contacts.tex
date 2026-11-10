@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{The retained conditional residual as a Gaussian score contact}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Frame and input.}
+Use the same-coefficient conditioning identity of the same coefficient schur cumulant decomposition calculation and its
+harmonic boundary response. Arbitrary internal insertions here are
+DEFINED in that common-tree fixed-log frame. Equality of the scalar
+coefficient to a local FP representation does not identify arbitrary
+internal source operators across nonlinear coordinate changes.
+Such an identification must carry its transformed source and Jacobian
+partners; it is not supplied by this note.
+
+Fix one complete block, its actual free tree coordinates $\eta$, and
+its original conditional flat covariance $C=A^{-1}$. Boundary action
+indices are retained, while only genuinely integrated links carry Haar.
+Define the FULL local polynomial
+\[
+ P(z)=T_4(z)-J_{2,I}(z)-\tfrac12T_3(z)^2.                       \tag{1}
+\]
+The gauge/ghost effects of the original tree integral are implicit in
+this exact choice of coordinates, not discarded from a different
+representation. At flat SU(2), the color-diagonal covariance gives
+$ET_3=0$ and $ED_wT_3=0$ for every deterministic direction $w$,
+including boundary directions. Consequently the local variance-defined
+second insertion tensor is exactly
+\[
+ K_C(u,v)=E_C D_uD_v P(\eta).                                 \tag{2}
+\]
+This equality would require mean partners when the tadpole is nonzero.
+
+\paragraph{1. Exact cross and residual contacts.}
+Let $h$ be the true local harmonic extension of a retained boundary
+direction and $r$ a zero-boundary residual in this same frame. Put
+$q=Ar$, $e_r=r^*Ar$, and $\ell_r=q^*\eta$. Then Gaussian integration
+by parts, with the boundary coordinates held fixed, gives
+\[
+ \boxed{K_C(h,r)=E_C[\ell_r D_hP],\qquad
+ K_C(r,r)=E_C[(\ell_r^2-e_r)P].}                              \tag{3}
+\]
+No tadpole, Haar, quartic or cubic cross term of (1) is removed from
+these expectations. The second identity has the subtraction $-e_r$;
+retaining only $\ell_r^2$ would introduce a spurious vacuum contact.
+Both identities are exact even if $h$ has interior components: the
+constant differential operators commute, and integration by parts is
+only in the actual zero-boundary direction $r$.
+
+Since $E\ell_r=0$ and $E\ell_r^2=e_r$, (3) can equivalently be written
+as centered covariances. In particular,
+\[
+ |K_C(h,r)|\le\sqrt{e_r}\,
+                \|D_hP-E D_hP\|_2,
+\]
+\[
+ |K_C(r,r)|\le\sqrt2\,e_r\,\|P-EP\|_2.                       \tag{4}
+\]
+These are exact quantitative interfaces, not claims that the displayed
+polynomial norms are uniformly bounded. They retain the complete
+connected polynomial. Estimating its separate vacuum summands by
+absolute values can lose the desired scale behavior.
+
+\paragraph{2. Relation to the actual long-leg gain.}
+For a deterministic marked field $w$,54 constructs the true local
+residual with
+\[
+ \sum_B e_{r_B}\le \ell^2\|Hw\|^2/12.
+\]
+A linear relative gauge transformation to the declared common-tree
+coordinates preserves these classical energies. Thus the score
+variance in (3) is EXACTLY the residual energy controlled by the long leg harmonic residual with gauss constraint calculation.
+No tree Euclidean norm is substituted for the full-link angular norm.
+After the local polynomial average is taken, one may average the
+marked direction against an independent heat-covariance realization;
+54 then supplies the extra $\ell^2/(1+s)$ factor for its energy.
+One must not use (3) by treating a direction correlated with $\eta$
+as deterministic.
+
+This identifies the missing response norm precisely: the complete
+conditional fluctuations in (4), or a signed estimate combining their
+expectations with the induced coarse terms of the same coefficient schur cumulant decomposition calculation. The residual-energy gain
+alone does not bound those fluctuations. Nor does harmonicity set
+$K_C(h,r)$ to zero: (3) displays its surviving score insertion.
+
+\paragraph{3. Same-coefficient compensation still remains.}
+Under the original joint skeleton law,85 retains
+\[
+ T_4^{\rm eff}=T_4(Hy)
+ -\tfrac12\nabla_I T_3(Hy)^*C_I\nabla_I T_3(Hy)
+\]
+and the FULL $\operatorname{Var}_{S^{-1}}T_3(Hy)$, including all
+cross-block contractions. These are the compensation for replacing a
+global covariance by local conditional covariances; they must accompany
+(3). No equality between the local sum and the global self-energy is
+asserted without that remainder. Its source derivatives and any change
+to the full vector/ghost frame remain explicit work.
+
+The identities isolate genuine original conditional score contacts,
+but do not establish a logarithmic bound for the complete first
+nonlinear coefficient or its original uniform remainder. No physical
+scale iteration or S94 claim follows.
+\end{document}

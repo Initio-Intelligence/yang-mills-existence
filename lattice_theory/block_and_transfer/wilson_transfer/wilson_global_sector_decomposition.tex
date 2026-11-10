@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{Actual Wilson global sectors and the remaining continuous problem}\author{}\date{}
+\begin{document}\maketitle
+Use the original positive transfer $A=M Q P M$ on an $n^3$ periodic spatial lattice, $n\ge3$, with normalized Haar measure as in the wilson slab exact spectral target calculation. This note gives an interacting finite-cutoff bound and an exact description of the degrees of freedom it does not bound. No mass gap or free harmonic replacement is introduced.
+
+\section*{Finite spatial center sectors}
+For each direction $i$, multiply all oriented $i$-links crossing a transverse cut by $z_i\in Z(SU(N))$, with the inverse on reversed links. Center factors cancel on every spatial plaquette, so $M$ is unchanged. The same transformation of both arguments of $Q$ cancels in $X_eY_e^{-1}$, and commutes with gauge projection. These three transformations commute with the EXACT interacting $A$ and generate $\mathcal Z\cong(\mathbb Z/N\mathbb Z)^3$.
+
+For $\chi\in\widehat{\mathcal Z}$ put
+\[
+ \Pi_\chi=N^{-3}\sum_{z\in\mathcal Z}\overline{\chi(z)}C_z.
+\]
+The physical Hilbert space is their orthogonal direct sum. Let $A_\chi$ be the restriction, $\lambda_\chi=\|A_\chi\|$, and $\lambda_0=\|A\|$. The transfer kernel is strictly positive on the compact original space; its leading eigenfunction is unique, positive, and invariant under every $C_z$. Thus the full vacuum is neutral and $\lambda_\chi\le\lambda_0$. Define $Q_\chi(t)=\operatorname{Tr}(A_\chi/\lambda_\chi)^m$, $t=ma$, for nonempty sectors.
+
+\begin{proposition}
+Exactly,
+\[
+ Q_a(t)=\sum_\chi e^{-t\Delta_\chi}Q_\chi(t),\qquad
+ \Delta_\chi=-a^{-1}\log(\lambda_\chi/\lambda_0)\ge0.
+\]
+Therefore
+\[
+ Q_a(t)\le N^3\max_\chi Q_\chi(t),\qquad
+ -\log\mathcal P_a(t)\le6\log N+2\max_\chi\log Q_\chi(t).
+\]
+No positive lower bound on $\Delta_\chi$ is needed.
+\end{proposition}
+Thus including every center sector costs at most $3\log N$ in thermal occupation. This is an actual interacting statement, not a semiclassical count. It does not bound infinitely many excitations inside a sector.
+
+\section*{Continuous holonomies survive gauge projection}
+The spatial graph has $3n^3$ positive links and $n^3$ vertices. Successive normalized Haar changes of variables fix a spanning tree of $n^3-1$ links when evaluating invariant functions. The root gauge acts by simultaneous conjugation on the remaining links; every removed Haar factor integrates to one and the Jacobian is one. Hence the exact physical Hilbert space is
+\[
+ L^2(G^{2n^3+1},\prod dU)^{\operatorname{Ad}G}.
+\]
+One can choose the tree so that three chords close specified fundamental spatial cycles. Call their based holonomies $H_1,H_2,H_3$ and the remaining coordinates $Y$. This is a coordinate description, NOT a product decomposition of action or spectrum. The action couples $H$ to $Y$ and root conjugation acts on both.
+
+For example, $\operatorname{tr}_R H_1$ is gauge invariant. Infinitely many irreducible representations have zero center character, so infinitely many linearly independent such states remain neutral. Independence follows from Haar character orthogonality. This is only kinematics: it does not establish that these states have small ground-relative Wilson energy.
+
+The compact bare rotor in the physical slab free spectrum calculation is therefore not a derived SU(N) Hamiltonian for $H$. There is no continuous spatial-center symmetry protecting arbitrary holonomy motion. Noncentral changes generally alter plaquettes through the coupled bath. Replacing this sector by commuting free torons would require an actual effective comparison, retaining its induced scalar and metric.
+
+\section*{An exact necessary global return-trace test}
+Use the original ground-state Markov operator $\mathcal M_a$ and probability $\psi_0^2dH\,dY$ from the wilson slab exact spectral target calculation. Let $\mathcal H_H$ be the subspace of simultaneous-conjugation-invariant functions of $H$ alone, and $\Pi_H$ its conditional-expectation projection. Orthogonal compression of a positive trace-class operator gives
+\[
+ \operatorname{Tr}_{\mathcal H_H}(\Pi_H\mathcal M_a^m\Pi_H)
+ \le\operatorname{Tr}\mathcal M_a^m=Q_a(t).
+\]
+There is an explicit original-kernel formula. Write $K_m=A^m$ and $\mu_H(h)=\int\psi_0(h,y)^2dy$. The compressed return trace is
+\[
+ \lambda_0^{-m}\int dh\,\frac{\int dy\,dy'\,
+ \psi_0(h,y)K_m((h,y),(h,y'))\psi_0(h,y')}{\mu_H(h)}.
+\]
+The integral is over full $G^3$. This represents the trace on the conjugation-invariant subspace because the ORIGINAL $K_m$ retains root-gauge projection: after integration in $y,y^{\prime}$, the compressed kernel is invariant under independent conjugations of its two holonomy arguments and annihilates the orthogonal noninvariant subspace. An unprojected kernel would require additional root averaging. It fixes only the holonomy at the two slab ends and keeps the full bath-to-bath overlap; the genuine conditional denominator $\mu_H(h)$ remains. This is not the raw diagonal $y=y'$ partition trace. It provides a specific original-Wilson boundary-overlap quantity to estimate, not a freely chosen diffusion coefficient.
+
+Consequently the desired thermal bound requires a uniform bound for this original weighted holonomy return trace. The conditional denominators belong to $\psi_0^2$; Haar cannot be substituted for the bath. Compressions at different times need not form a semigroup, so powers of a one-step marginal cannot replace the physical-time compression.
+
+This isolates the global estimate: control the physical-time return trace on the actual holonomy quotient after the coupled bath is integrated in the actual vacuum. A mass gap is unnecessary for this target, but finite Haar volume and the finite center-sector bound do not prove it. The global test is necessary only; a sufficient full estimate must also bound the conditional nonzero-mode occupation. No interacting thermal or complete S94 bound is claimed.
+\end{document}

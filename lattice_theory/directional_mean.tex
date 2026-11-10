@@ -1,0 +1,264 @@
+\section{Directional means and temporal sources}
+\label{dm:section}
+
+This section identifies a precise obstruction to replacing the retained directional forces by gradients of separately induced scalar actions. It also gives concentration for deterministic linear probes of the original directional forces. The two statements use their actual measures. Neither removes the covariance of the continuous retained ordinary mean.
+
+\subsection{The averaged directional forms and their raw responses}
+
+Retain the three matchings of the six plaquette orientations,
+\[
+ A_1=\{12,34\},\qquad A_2=\{13,24\},\qquad
+ A_3=\{14,23\},\qquad S=\sum_{i=1}^3S_i.
+\]
+Let \(I\) be a set of integrated original links and \(B=I^c\) the complete retained coordinate set. Independence inside \(I\) is unnecessary for the following identity. With \(z=U_I\), \(\eta=U_B\), define the actual raw integral, conditional kernel, and marginal potential by
+\begin{align}
+ \mathcal Z(\eta)&=\int e^{-\beta S(z,\eta)}\dd\lambda_I(z),
+ &K_\eta(\dd z)&=\mathcal Z(\eta)^{-1}e^{-\beta S(z,\eta)}\dd\lambda_I(z),\notag\\
+ \dd\nu(\eta)&=Z_\beta^{-1}\mathcal Z(\eta)\dd\lambda_B(\eta),
+ &V_{\rm eff}(\eta)&=-\log\mathcal Z(\eta).
+ \label{dm:rawlaw}
+\end{align}
+Every exterior plaquette and raw fiber normalizer is included in \(\mathcal Z\). Define the retained one-forms
+\begin{equation}
+ a_i=K_\eta(\dd_B S_i),\qquad a_i(Y)=K_\eta(YS_i).
+ \label{dm:forms}
+\end{equation}
+Here exterior vector fields are lifted to the full product without dependence on the integrated coordinates. The compact integration domain in \eqref{dm:rawlaw} is unchanged.
+
+\begin{proposition}[Actual directional curvature]
+\label{dm:curvatureprop}
+For smooth retained vector fields \(Y,Z\), with
+\(\dd a(Y,Z)=Ya(Z)-Za(Y)-a([Y,Z])\), one has
+\begin{align}
+ YK_\eta G&=K_\eta(YG)-\beta\Cov_{K_\eta}(G,YS),
+ \label{dm:response}\\
+ \sum_{i=1}^3a_i&=\beta^{-1}\dd V_{\rm eff},
+ \label{dm:sumexact}\\
+ \dd a_i(Y,Z)&=\beta\left[
+   \Cov_{K_\eta}(YS_i,ZS)
+  -\Cov_{K_\eta}(ZS_i,YS)\right].
+ \label{dm:curl}
+\end{align}
+In particular, the sum is exact, whereas an individual \(a_i\) need not be closed.
+\end{proposition}
+\begin{proof}
+Differentiate the numerator and the same raw denominator in \eqref{dm:rawlaw}; their quotient gives \eqref{dm:response}. Differentiating \(-\log\mathcal Z\) proves \eqref{dm:sumexact}. Apply \eqref{dm:response} to \(G=ZS_i\) and \(G=YS_i\), subtract, and use
+\(YZS_i-ZYS_i-[Y,Z]S_i=0\). The remaining covariances are exactly \eqref{dm:curl}. Summing those covariances over \(i\) gives zero by symmetry, consistently with \eqref{dm:sumexact}.
+\end{proof}
+
+There is an auxiliary scalar generating function for these responses, but it has three independent copies of the retained argument:
+\begin{equation}
+ W(\eta_1,\eta_2,\eta_3)
+ =-\log\int\exp\left[-\beta\sum_{i=1}^3S_i(z,\eta_i)\right]
+                 \dd\lambda_I(z).
+ \label{dm:probe}
+\end{equation}
+The integrated variable \(z\) is shared, so this integral is not a product of three independently normalized plane integrals. On the diagonal, \(W(\eta,\eta,\eta)=V_{\rm eff}(\eta)\) and
+\(a_i=\beta^{-1}(\dd_iW)|_{\rm diag}\). More explicitly, on the diagonal,
+\begin{align}
+ Y_i W&=\beta K_\eta(YS_i),\notag\\
+ Y_iZ_jW
+ &=\delta_{ij}\beta K_\eta(YZS_i)
+       -\beta^2\Cov_{K_\eta}(YS_i,ZS_j).
+ \label{dm:probejets}
+\end{align}
+The first term in the second line occurs only when the derivatives act on the same copy. These are ordered derivatives along the indicated vector fields; the usual bracket or connection term is retained when an exterior derivative or covariant Hessian is formed. A genuine change of the original retained configuration differentiates along all three copies simultaneously. Consequently \(\dd_iW\) being a partial derivative on the enlarged product does not make its diagonal restriction an exact one-form on the actual retained space. The covariance terms in \eqref{dm:probejets} are required responses of the raw normalizer.
+
+For the complete ordinary packet there is a further covariance contribution even before any exterior differentiation. Writing \(\mathcal F_{b,i}=\nabla_bS_i\) in the original invariant frame,
+\begin{equation}
+ K_\eta r_f
+ =\beta\sum_bf_b\sum_i\left(
+       |K_\eta\mathcal F_{b,i}|^2
+       +\Tr\Cov_{K_\eta}(\mathcal F_{b,i})\right)
+       -\frac13K_\eta\ell[f].
+ \label{dm:fullmeansplit}
+\end{equation}
+The sum includes integrated and retained roots, all neighboring affected roots, and the complete Casimir row. For retained \(b\), the components of \(K_\eta\mathcal F_{b,i}\) are the corresponding components of \(a_i\). Formula~\eqref{dm:fullmeansplit} does not replace the complete source by the squares of those means alone.
+
+\subsection{A nonzero curvature in the literal Wilson star}
+
+The failure of closedness in \eqref{dm:curl} occurs in the actual original model, including at a flat retained configuration. This is a local response statement, not a counterexample to an extensive variance estimate.
+
+\begin{proposition}[Flat retained configuration, nonclosed directional mean]
+\label{dm:flatcurl}
+Consider the periodic \(SU(2)\) lattice with \(n\ge3\) and \(\beta>0\). Integrate just the link \(s=(x,x+e_4)\), and set every retained link to the identity when evaluating the following response. Put \(k=C_F/3\), so \(\sum_A(X_s^A)^2=k\Delta_{S^3}\). There are two commuting original retained link derivatives \(Y,Z\), in the same color direction, for which
+\begin{equation}
+ \dd a_1(Y,Z)
+ =4k\beta\,b(12\beta)
+ =\frac{k}{3}\frac{I_2(12\beta)}{I_1(12\beta)}>0,
+ \qquad
+ \lim_{\beta\to\infty}\dd a_1(Y,Z)=\frac{k}{3}.
+ \label{dm:flatcurlvalue}
+\end{equation}
+Thus no scalar function on a neighborhood of this retained configuration has differential equal to \(a_1\).
+\end{proposition}
+\begin{proof}
+Identify the integrated link with \(u=(u_0,u_1,u_2,u_3)\in S^3\). At the stated retained configuration all six staples are identity, so the exact conditional law is
+\begin{equation}
+ K_s(\dd u)=z(12\beta)^{-1}e^{12\beta u_0}\dd\omega(u),\qquad
+ Z_s=e^{-12\beta}z(12\beta),\qquad
+ z(\kappa)=\frac{2I_1(\kappa)}{\kappa}.
+ \label{dm:flatstar}
+\end{equation}
+The scalar \(e^{-12\beta}\) remains in the raw exterior density. The normalized Haar integral also gives
+\[
+ K_su_A=0,\qquad K_su_A^2=b(\kappa)
+ =\frac{I_2(\kappa)}{\kappa I_1(\kappa)},\qquad \kappa=12\beta,
+\]
+for a fixed tangent color \(A\in\{1,2,3\}\). These identities follow either by differentiating \(z\), as in the complete compact-star formulas of \texttt{bath\_packet.tex} (subsection ``The raw compact integral and its analytic retained mean''), or by integration by parts on \(S^3\).
+
+Choose the retained links
+\(y=(x+e_3,x+e_3+e_4)\) and
+\(z'=(x+e_2,x+e_2+e_4)\). They are distinct and each occurs in just one of the six plaquettes incident to \(s\). Let \(Y\) and \(Z\) be their invariant derivatives generated by the same quaternion tangent \(\sqrt{k}\,e_A\). For the forward \((4,\mu)\) plaquette, its varying factor is \(uv^{-1}\) at the retained identity configuration. Since
+\[
+ \Re(uv(t)^{-1})
+ =u_0\cos(\sqrt{k}\,t)+u_A\sin(\sqrt{k}\,t),
+\]
+the derivative of its Wilson action is \(-2\sqrt{k}\,u_A\). Every plaquette not containing \(s\) is identity at the point of evaluation, and its first derivative vanishes. The plane \(34\) belongs to \(S_1\), whereas \(24\) belongs to \(S_2\). Consequently, as functions of the still fluctuating \(u\),
+\[
+ YS_1=YS=ZS=-2\sqrt{k}\,u_A,\qquad ZS_1=0.
+\]
+Substitution into \eqref{dm:curl} proves \eqref{dm:flatcurlvalue}. Finally, the probability densities proportional to \(e^{\kappa u_0}\) concentrate at \(u_0=1\), whence \(I_2(\kappa)/I_1(\kappa)=K_su_0\to1\).
+\end{proof}
+
+At this retained configuration the directional first moments themselves vanish by the remaining rotational symmetry. Their exterior derivatives have the nonzero antisymmetric response in \eqref{dm:flatcurlvalue}. The marginal density is smooth and strictly positive, and the curvature is continuous, so it is also nonzero on an open set of retained configurations with positive actual marginal mass. This calculation uses the full compact integral, with no sharp selector boundary and no discarded raw response. It prevents an exact identification of the separate averaged plane forces with scalar pieces of the actual marginal potential; it does not prevent a different analysis that controls their curvature and the other terms in \eqref{dm:fullmeansplit}.
+
+\subsection{Original-law concentration of deterministic directional probes}
+
+The original periodic law has a useful centering operation that is unavailable at a general frozen nonflat retained configuration. Here it gives a complete linear-probe estimate.
+
+\begin{lemma}[Weighted moments from the actual marked-set bound]
+\label{dm:weighted}
+Suppose nonnegative original plaquette variables \(X_p=\beta s_p\) satisfy
+\begin{equation}
+ \E_\mu e^{\kappa_*\sum_{p\in A}X_p}\le e^{C_*|A|}
+ \quad\hbox{for every original plaquette set }A.
+ \label{dm:binary}
+\end{equation}
+Then for deterministic \(0\le a_p\le\kappa_*\),
+\begin{equation}
+ \log\E_\mu e^{\sum_pa_pX_p}
+ \le\frac{e^{C_*}-1}{\kappa_*}\sum_pa_p.
+ \label{dm:weightedbound}
+\end{equation}
+On \eqref{rs:momentregime}, the original marked-set estimate of \texttt{innovation.tex} (subsection ``The actual multiplaquette input'') gives \eqref{dm:binary} with uniformly positive \(\kappa_*\) and bounded \(C_*\).
+\end{lemma}
+\begin{proof}
+Introduce independent auxiliary Bernoulli marks \(B_p\) with mean \(a_p/\kappa_*\). Convexity gives the pointwise inequality
+\[
+ e^{\sum_pa_pX_p}
+ \le\E_B e^{\kappa_*\sum_pB_pX_p}.
+\]
+Average over the original field and use \eqref{dm:binary}. The resulting expectation over marks is
+\[
+ \prod_p\left[1+\frac{a_p}{\kappa_*}(e^{C_*}-1)\right]
+ \le\exp\left[\frac{e^{C_*}-1}{\kappa_*}\sum_pa_p\right].
+\]
+Only the auxiliary marks are independent. No factorization of original plaquette variables or change of the raw Wilson denominator is used.
+\end{proof}
+
+For a positively oriented link \(b\), write \(o(b)\) for its initial vertex and specify the invariant frame by the original left-multiplication path \(U_b\mapsto e^{tT_A}U_b\). With the opposite multiplication convention the same argument groups links by their terminal vertices instead. Let \(v_{b,i}\) be arbitrary deterministic vectors in the original Lie algebra, in the specified fixed frame, and set
+\begin{align}
+ \mathcal J_v&=\sqrt\beta\sum_b\sum_{i=1}^3
+                       \inner{v_{b,i}}{\mathcal F_{b,i}},
+ &\mathcal F_{b,i}&=\nabla_bS_i,\notag\\
+ \mathcal V(v)&=\sum_{b,i}|v_{b,i}|^2,
+ &v_*&=\max_x\left(\sum_{b:o(b)=x}\sum_i|v_{b,i}|^2\right)^{1/2}.
+ \label{dm:current}
+\end{align}
+
+\begin{theorem}[Directional-current Bernstein estimate on the original law]
+\label{dm:currenttheorem}
+For the original periodic \(SU(N)\) Wilson law on \eqref{rs:momentregime},
+\begin{equation}
+ \E_\mu\mathcal J_v=0,\qquad
+ \log\E_\mu e^{t\mathcal J_v}
+ \le Ct^2\mathcal V(v),\qquad |t|v_*\le\delta.
+ \label{dm:currentmgf}
+\end{equation}
+The constants depend on the fixed group, original derivative normalization and marked-set constants, not on the number or support of the probes. Thus, when \(\mathcal V(v)>0\),
+\begin{equation}
+ \Pr_\mu(|\mathcal J_v|>u)
+ \le2\exp\left[-c\min\left\{
+       \frac{u^2}{\mathcal V(v)},\frac{u}{v_*}\right\}\right].
+ \label{dm:currenttail}
+\end{equation}
+If \(Y\) is any common positive source-free observation of a joint law whose field marginal is this same \(\mu\), then \(\E(\mathcal J_v\mid Y)\) obeys the same centered exponential bound.
+\end{theorem}
+\begin{proof}
+Each \(S_i\) is gauge invariant. Under a site gauge transformation \(g=(g_x)_x\), its original force in the specified invariant frame transforms as
+\begin{equation}
+ \mathcal F_{b,i}(g\cdot U)=\Ad(g_{o(b)})\mathcal F_{b,i}(U).
+ \label{dm:gaugeforce}
+\end{equation}
+The periodic Wilson law is invariant under all these transformations. Average over independent Haar \(g_x\) after fixing \(U\). Group the force and coefficient tuples by their initial vertices:
+\[
+ \mathcal F_x=(\mathcal F_{b,i})_{o(b)=x,i},\qquad
+ v_x=(v_{b,i})_{o(b)=x,i}.
+\]
+The adjoint representation of \(SU(N)\) has no invariant vector, so
+\(\int\Ad(g)\mathcal F_x\dd g=0\). Each site contribution
+\(\sqrt\beta\inner{v_x}{\Ad(g_x)\mathcal F_x}\) is therefore centered in its auxiliary Haar variable and is bounded in absolute value by
+\(\sqrt\beta|v_x||\mathcal F_x|\). The centered bounded-variable exponential inequality yields
+\begin{align}
+ \E_\mu e^{t\mathcal J_v}
+ &=\E_\mu\prod_x\int
+ e^{t\sqrt\beta\inner{v_x}{\Ad(g_x)\mathcal F_x}}\dd g_x\notag\\
+ &\le\E_\mu\exp\left(
+       \frac{t^2\beta}{2}\sum_x|v_x|^2|\mathcal F_x|^2\right).
+ \label{dm:haarbound}
+\end{align}
+For completeness, the bounded-variable inequality used here follows by convexity from a centered variable in \([-a,a]\): its exponential moment is at most \(\cosh(ta)\le e^{t^2a^2/2}\).
+
+Original plaquette calculus gives
+\(|\nabla_b s_p|^2\le C s_p\). For example, subtract the identity inside the trace and use
+\(\norm{U_p-\id}_{\HS}^2=2s_p\), together with the fixed orthonormal generator frame. Each directional force contains only a fixed number of original incident plaquettes. Consequently
+\[
+ |\mathcal F_x|^2\le C\sum_{p\in\mathcal P_x}s_p,
+\]
+where both \(|\mathcal P_x|\) and the multiplicity of a plaquette among the \(\mathcal P_x\) are uniformly bounded by the original incidence. The exponent in \eqref{dm:haarbound} is bounded by \(\sum_pa_pX_p\), with
+\[
+ a_p=Ct^2\sum_{x:p\in\mathcal P_x}|v_x|^2,
+ \qquad \max_pa_p\le C t^2v_*^2,
+ \qquad \sum_pa_p\le Ct^2\mathcal V(v).
+\]
+Choose \(\delta\) so that \(|t|v_*\le\delta\) implies \(a_p\le\kappa_*\), and apply Lemma~\ref{dm:weighted}. Haar averaging also proves the zero mean. The tail estimate follows by the usual one-variable Chernoff minimization within the displayed radius. Finally, joint conditional Jensen gives
+\[
+ \E e^{t\E(\mathcal J_v\mid Y)}\le\E_\mu e^{t\mathcal J_v},
+\]
+with the same unconditional center and constants.
+\end{proof}
+
+This is centering under the complete fluctuating original law. It does not set \(\E(\mathcal J_v\mid\eta)\) to zero at each retained configuration, and it gives no uniform fixed-bath exponential estimate. A source-dependent gauge transport, current coefficient, anchor or saved multiplier is not one of the deterministic vectors \(v_{b,i}\) in the theorem. Its transformations and derivatives must be retained. In particular, choosing \(v\) to depend on the force in order to obtain a force square is outside the argument. Averaging the bound over auxiliary Gaussian probe coefficients would also require a further estimate: their \(v_*\) is unbounded, whereas the proved parameter radius depends on \(v_*\).
+
+\subsection{Why these linear estimates leave the ordinary susceptibility open}
+
+Independent gauge averaging controls the angular linear probes, while the ordinary source contains gauge-invariant quadratic amplitudes. The following elementary model precisely separates the two kinds of information; it is not proposed as a Wilson measure.
+
+Fix a unit element \(T\) of the Lie algebra of \(SU(N)\). Let \(g_x\) be independent Haar variables and let \(R\in[1,2]\) be an independent bounded, nonconstant scalar shared by all vertices. Put
+\begin{equation}
+ X_x=\sqrt R\,\Ad(g_x)T.
+ \label{dm:model}
+\end{equation}
+These variables are invariant in law under independent site adjoint rotations and satisfy \(\E X_x=0\). The same conditional Haar estimate gives, for all real \(t\) and every deterministic collection \(v_x\),
+\begin{equation}
+ \log\E\exp\left(t\sum_x\inner{v_x}{X_x}\right)
+ \le t^2\sum_x|v_x|^2.
+ \label{dm:modelcurrent}
+\end{equation}
+For every vertex set \(J\) and \(\kappa\ge0\), the strong joint norm estimate
+\begin{equation}
+ \E e^{\kappa\sum_{x\in J}|X_x|^2}
+ \le e^{2\kappa|J|}
+ \label{dm:modeljoint}
+\end{equation}
+holds. Nevertheless, for \(V\) vertices,
+\begin{equation}
+ \Var\left(\sum_{x=1}^V|X_x|^2\right)
+ =V^2\Var R.
+ \label{dm:modelvariance}
+\end{equation}
+Indeed \(|X_x|^2=R\) exactly. With deterministic real weights, the corresponding variance is \((\sum_xf_x)^2\Var R\).
+
+Thus site gauge centering, all deterministic linear-probe concentration bounds, and even extensive joint exponential norm bounds do not by themselves imply an extensive centered quadratic susceptibility. This example does not test the additional locality, compatibility and interaction structure of the original Wilson law. Those properties would have to enter a further proof. In the actual problem, the outstanding quantity remains
+\(\Var_\nu K_\eta r_f\), with the full expression \eqref{dm:fullmeansplit}, its raw law \eqref{dm:rawlaw}, and its actual exterior source responses.

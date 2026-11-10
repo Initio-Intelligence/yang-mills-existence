@@ -1,0 +1,137 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Tr}{\operatorname{Tr}}
+\title{Same-measure local exponential moments on odd Wilson tori}\author{}\date{}
+\begin{document}\maketitle
+This note removes the dyadic compatibility restriction in the local-moment application of
+the local moments fixed depth calculation, without changing the torus or the measure. It uses the exact positive Wilson
+transfer operator and an elementary trace inequality. The partition-power bounds remain
+those evaluated from manuscript Lemma 10.1. The source is still XP3.
+
+\begin{lemma}[Positive trace Holder inequality]
+For positive trace-class operators $A,B$ and an integer $n\ge2$,
+\[
+ \Tr(AB^{n-1})\le(\Tr A^n)^{1/n}(\Tr B^n)^{(n-1)/n}.
+\]
+\end{lemma}
+\begin{proof}
+After rescaling, suppose both traces on the right equal one. In an eigenbasis of $B$,
+write $a_i=\langle i,Ai\rangle$, $b_i$ for its eigenvalues. Scalar Young's inequality gives
+$a_ib_i^{n-1}\le a_i^n/n+(n-1)b_i^n/n$.
+Spectral Jensen gives $a_i^n\le\langle i,A^ni\rangle$. Sum and then undo the rescaling.
+Finite-rank approximation or monotone spectral sums give the trace-class assertion.
+No parity condition on $n$ occurs.
+\end{proof}
+
+\paragraph{The exact positive Wilson transfer operator.}
+Choose any coordinate as time and let $\mathcal X=G^{E_{\rm spatial}}$ be a spatial-slice
+link configuration. Work in $L^2(\mathcal X,d\lambda)$ with normalized product Haar.
+Let $P$ be orthogonal averaging over site gauge transformations on this slice.
+For nonnegative couplings $\lambda_e$, define the product convolution kernel
+\[
+ Q_{\boldsymbol\lambda}(X,Y)=\prod_{e\in E_{\rm spatial}}
+ k_{\lambda_e}(X_eY_e^{-1}),\qquad
+ k_\lambda(U)=e^{-\lambda(N-\Re\operatorname{tr}U)}.
+\]
+This operator is positive. Indeed
+$e^{\lambda\Re\chi}=\sum_{r,s\ge0}(\lambda/2)^{r+s}\chi^r\overline\chi^s/(r!s!)$;
+each tensor-product character decomposes with nonnegative integer multiplicities.
+Thus every central Fourier coefficient of $k_\lambda$ is nonnegative, and convolution
+has nonnegative eigenvalues. Uniform convergence is immediate from $|\chi|\le N$.
+Smoothness on the compact group makes the convolution trace class; alternatively its
+positive spectral sum is $k_\lambda(I)=1$. The product kernel also has trace one.
+
+Centrality makes $Q_{\boldsymbol\lambda}$ commute with the simultaneous site gauge
+projection $P$, even when couplings vary from spatial link to spatial link.
+Let $M$ be multiplication by $e^{-\beta S_{\rm spatial}(X)/2}$ and set
+\[
+ T_{\boldsymbol\lambda}=M Q_{\boldsymbol\lambda}P M.
+\]
+Both $M$ and $Q$ commute with $P$, so this is positive and trace class.
+For uniform $\lambda_e=\beta$ write $T$.
+Expanding the trace of $T^n$ in its kernel and the gauge averages gives exactly the original
+Wilson torus partition function $Z_{n,\beta}$: the slice variables are spatial links,
+the gauge variables between slices are the original temporal links, $Q$ supplies all
+space-time plaquettes, and the two adjacent factors of $M$ supply each spatial plaquette
+once. Every Haar factor is normalized, and $k_\lambda$ includes its original constant
+$e^{-N\lambda}$. No residual gauge volume or Polyakov-loop factor has been omitted;
+the full periodic product of gauge averages retains those temporal integrations.
+
+\paragraph{Dissemination in a transverse slice direction.}
+Suppose an insertion is $D(X)=e^{t\beta\sum_{p\in A}s_p(X)}$, with the plaquettes in
+one spatial slice and $D$ gauge invariant. Its original numerator is $\Tr(DT^n)$.
+Put $A=T^{1/2}DT^{1/2}$ and $B=T$ in the lemma. Cyclicity gives
+\[
+ \Tr(DT^n)\le[\Tr(D^{1/2}TD^{1/2})^n]^{1/n}[\Tr T^n]^{(n-1)/n}.
+\]
+Here the first trace is the exact partition function with the same insertion in EVERY
+time slice: $D$ commutes with $M$ and $P$, so it changes the spatial potential by the
+specified amount. The notation means $\Tr((D^{1/2}TD^{1/2})^n)$.
+Dividing by the original partition function disseminates the slice insertion with exponent
+$1/n$, preserving all original normalizers.
+
+\paragraph{Dissemination in an in-plane slab direction.}
+If the marked plaquettes cross one temporal slab, multiplying their Boltzmann weights by
+$e^{t\beta s_p}$ replaces the corresponding temporal convolution coefficients by
+$(1-t)\beta$, leaving all other coefficients at $\beta$.
+For $0\le t<1$, the modified operator $T_1=M Q_{\boldsymbol\lambda}PM$ is still positive.
+The original numerator is exactly $\Tr(T_1T^{n-1})$.
+The lemma bounds it by $(\Tr T_1^n)^{1/n}(\Tr T^n)^{(n-1)/n}$.
+The first trace repeats the SAME modified slab in every time position. Spatial potentials,
+Haar measures and gauge projections have not changed.
+
+\begin{theorem}[Local moment, every integer torus size]
+For the original periodic four-dimensional $SU(N)$ Wilson measure on an $n^4$ lattice,
+$n\ge3$, every plaquette $p$ and $0\le t<1$ satisfy
+\begin{equation}\label{main}
+ \E_{n,\beta}e^{t\beta s_p}
+ \le\left(\frac{Z_{n,(1-t)\beta}}{Z_{n,\beta}}\right)^{1/n^4}.
+\end{equation}
+There is no evenness, dyadic, or blocking-factor assumption.
+\end{theorem}
+\begin{proof}
+Let $p$ have orientation $(1,2)$. Apply slice dissemination in direction $3$, then in
+direction $4$. At each application the currently marked plaquettes all lie in a single
+slice of the chosen direction. The resulting marked set contains all translates in
+coordinates $3,4$, with fixed base coordinates $1,2$.
+Now apply slab dissemination with direction $1$ as time. The marked set consists precisely
+of the orientation $(1,2)$ plaquettes in one temporal slab whose spatial direction-2 link
+has the chosen coordinate-2 base. The modified convolution operator is positive as proved
+above. Its repetition marks all coordinate-1 translates.
+Finally use direction $2$ as time. All marked plaquettes are in one slab and all its
+spatial direction-1 links are marked; slab dissemination marks every orientation $(1,2)$
+plaquette on the torus. Four applications give exponent $1/n^4$ and the ratio of this
+anisotropically reduced-coupling partition function to the original one.
+Since all remaining plaquette actions are nonnegative, reducing their couplings also to
+$(1-t)\beta$ only increases the numerator. This proves \eqref{main}.
+Every step used the original uniform measure as denominator and an exact marked numerator;
+no successive change of probability or torus size was made.
+\end{proof}
+
+\paragraph{Quantitative consequence in AI normalization.}
+Put $B=N\beta$ and $d_G=N^2-1$. The manuscript's partition-power bounds give
+\[
+ \E e^{t\beta s_p}\le
+ c_u^{R_n/n^4}c_l^{-Q_n/n^4}(1-t)^{-d_GR_n/(2n^4)}B^{2d_G/n},
+ \quad Q_n=3n^4+1,\ R_n=3n^4-4n^3+1.
+\]
+Thus the finite-size factor is $B^{2d_G/n}$, with no chessboard-cell volume and no parity
+restriction. Under the ORIGINAL physical regime $n\ge c_*\log(2+B)$ it is uniformly
+bounded. In particular odd $L$ and odd $n=L^k$ cause no change in measure or sequence.
+For all $n\ge3$, a tail integration also gives
+\[
+ \|\beta s_p\|_m\le C_m\left(1+\frac{\log(2+B)}n\right).
+\]
+This last estimate retains the finite-size cost instead of claiming uniformity in $\beta$
+at a fixed torus size.
+
+Consequently every conclusion of the local moments fixed depth calculation holds on the original odd-torus physical sequence
+whenever its explicit size/coupling condition holds: local row moments, log-free fixed-depth
+conditional covariances under actual independent effective layers, and improved first-layer
+mean derivatives. The row-overlap constants still grow with depth, and the stopped inherited
+mean covariance remains. This result is a local moment theorem, not an all-history MT36,
+separated-decay, vacuum comparison, or Yang--Mills existence proof.
+\end{document}

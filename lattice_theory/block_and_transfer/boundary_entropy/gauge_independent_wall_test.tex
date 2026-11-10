@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\title{A gauge-independent nonlinear retained-holonomy test}\author{}\date{}
+\begin{document}\maketitle
+This is a finite-record necessary test for O1, not an assertion that a particular target family occurs on the original R-selector support. It strengthens the SU(2) test SG11.21 by removing its complex-gauge condition-number factor. All holonomies, original meshes, and wall radii remain those of the retained record.
+
+\section{An invariant inequality}
+For $H\in SL(2,\mathbb C)$ and any invertible matrix $g$, put $X=g(H-I)g^{-1}$. The characteristic identity gives
+\[
+ 2-\operatorname{tr}H=\det(H-I)=\det X,\qquad
+ |2-\operatorname{tr}H|^{1/2}\leq\|X\|_{\rm op}.
+ \tag{1}
+\]
+The second inequality is the product-of-singular-values bound. It requires neither a bound on $g,g^{-1}$ nor holomorphic dependence of $g$. Thus even arbitrarily ill-conditioned complex gauges cannot defeat this particular invariant obstruction.
+
+Let $p>8$ and let $\mathcal P$ be exactly those once-counted plaquettes whose four links are fixed by literal retained rows, with holonomies $H_P(z)$ on a common wall domain. Assume a proposed field chart has curvature norm at most $\tau$ on the complete required record, allowing any pointwise complex gauge. On the fixed plaquette subset, (1) implies
+\[
+ \left(\sum_{P\in\mathcal P}a_P^{4-2p}
+ |2-\operatorname{tr}H_P(z)|^{p/2}\right)^{2/p}\leq\tau^2.
+ \tag{2}
+\]
+The $a_P$ are the actual original meshes, not a new current mesh. For the same holomorphic common-domain hypothesis as SG11.9, expand
+\[
+ (2-\operatorname{tr}H_P(z))_P=\sum_\alpha b_\alpha(z-z_0)^\alpha.
+\]
+Since $p/2>1$, the weighted $\ell^{p/2}$ expression on the left of (2) is a Banach norm. Banach-valued Cauchy therefore proves
+\[
+ r^\alpha\left(\sum_Pa_P^{4-2p}|b_{\alpha,P}|^{p/2}\right)^{2/p}
+ \leq\tau^2.
+ \tag{3}
+\]
+These bounds use the original simultaneous radii. No independent one-wall replacement or radius renewal occurs.
+
+\section{Exact nonlinear commutator calculation}
+Use exactly the SG11.20 matrices
+\[
+ X=\begin{pmatrix}0&i\\i&0\end{pmatrix},\qquad
+ Y=\begin{pmatrix}0&1\\-1&0\end{pmatrix},
+ \quad H(t)=e^{tX}e^{tY}e^{-tX}e^{-tY}.
+\]
+They obey $X^2=Y^2=-I$ and $XY=-YX$. Multiplication of
+$e^{tX}=\cos t\,I+\sin t\,X$ and the analogous three factors gives the exact entire identity
+\[
+ 2-\operatorname{tr}H(t)=4\sin^4 t.
+ \tag{4}
+\]
+The first trace response is order four, although $H-I$ begins at order two. The coefficient of $t^4$ is exactly $4$. For one fixed plaquette at mesh $a$, (3) forces
+\[
+ 4r^4a^{8/p-4}\leq\tau^2,
+ \qquad r\leq\frac{\sqrt\tau}{\sqrt2}a^{1-2/p}.
+ \tag{5}
+\]
+The original test SG11.21 allowed a factor $K$ from an assumed bound on the complex gauge and its inverse. Equation (5) has no such factor. For a real parameter $t$, the endpoint estimate also follows directly from (1) and (4): every representative has curvature at this plaquette at least $2a^{-2}|\sin t|^2$.
+
+For $M$ identical retained plaquettes, all at the original mesh $a$, driven by this same wall, (3) instead forces
+\[
+ 4r^4 M^{2/p}a^{8/p-4}\leq\tau^2,
+ \qquad r\leq\frac{\sqrt\tau}{\sqrt2}M^{-1/(2p)}a^{1-2/p}.
+ \tag{6}
+\]
+The actual plaquette count is retained. For different parameters or coefficients the exact weighted array norm in (3), rather than $M$, is the appropriate statement.
+
+\section{What this does and does not decide}
+For an actual admitted record, failure of (3) rules out the asserted common weak chart even if one allows unbounded complex gauge condition numbers. This provides an invariant falsification test for a proposed chart identification. It does not prove that the commutator family occurs in a selector-supported R preparation; that identification still requires the original R-I range and selector definitions. The identity of retained rows must hold on the common domain, not just at its physical endpoint. Auxiliary $U^0$ is not substituted for the three-join numerator. No old saved radius or grade is changed. O1 remains open.
+\end{document}

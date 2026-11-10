@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,hyperref}
+\newtheorem{theorem}{Theorem}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Var}{\operatorname{Var}}
+\title{Using the manuscript's local exponential moment in actual inherited transitions}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Input and its exact scope.}
+The manuscript proves a stronger local moment than the elementary estimate used
+in PD12 and in the orthogonal contact calculation through the second actual elimination calculation: Theorem 10.2, PDF pp.~21--23. Its normalization and finite-volume hypotheses are as follows.
+Section 10 uses normalized action $a_p=s_p/N$ and coupling $B=N\beta$, so that
+$Ba_p=\beta s_p$ is unchanged. Let $d_G=N^2-1$, fix the chessboard cell side $b=4$
+and volume $v=b^4$, and use compatible dyadic tori. The partition exponents are
+$Q_n=3n^4+1$, $R_n=3n^4-4n^3+1$, and $M=n^4/v$.
+The tree gauge lower bound retains $Q_n$ Haar coordinates; the free-box chain integration
+upper bound retains $R_n$. Their difference is exactly $4n^3$, not a bulk power.
+The resulting finite-volume exponential moment is
+\begin{equation}\label{expmom}
+ \E e^{t\beta s_p}\le
+ c_u^{R_n/M}c_l^{-Q_n/M}(1-t)^{-d_GR_n/(2M)}B^{2d_Gv/n},\quad 0\le t<1.
+\end{equation}
+Hence on the explicit regime $n\ge c_*\log(2+B)$, $B\ge1$, the right side is a constant
+$C_{t,c_*,N}$ independent of $a,n,\beta$. This includes a compatible physical torus
+sequence $n\asymp T/a$, $\beta=O(\log(1/a))$, but not arbitrary fixed $n$ as
+$\beta\to\infty$. Earlier unrestricted estimates retain their stated scope.
+
+The chessboard application uses a plaquette strictly inside the cell, so disseminated
+plaquettes are distinct and their summed action is at most $S_0$. The needed site-reflection
+positivity can also be checked directly: condition on the two reflection-plane boundary
+link sets, split the other links into the two halves, and assign boundary plaquettes to
+the boundary action. No unit plaquette crosses both interiors. The two conditional half
+integrals are reflections of one another; their product for a reflected test is a square.
+Haar inversion preserves the reflected oriented-link measure. This verifies the actual
+Wilson reflection hypothesis, including shared boundary links.
+The site-reflection chessboard form and its block conventions are independently recorded
+in Biskup--Chayes--Nussinov, Section 6.1, Theorem 6.2; the general function form is
+Biskup, Theorem 4.8. The partition comparison giving \eqref{expmom} is the manuscript's
+explicit argument, not an appeal to a weak-coupling asymptotic expansion.
+
+\paragraph{Local moments with unchanged normalization.}
+Fix $t\in(0,1)$ and expand the nonnegative exponential series. For every integer $m$,
+\[
+ \E s_p^m\le C_t m!t^{-m}\beta^{-m}.
+\]
+For every fixed finite plaquette patch $Y$, Holder gives
+$\E\exp(t\beta\sum_{p\in Y}s_p/\#Y)\le C_t$; independence is not assumed.
+Thus every fixed local patch energy has all fixed moments at scale $\beta^{-1}$.
+In particular every directional force obeys
+$\|\mathbf F_{b;\mu}\|_p\le C_p\beta^{-1/2}$, by its actual compact energy bound.
+For a literal physical H row and its actual ordinary companion define
+\[
+ g_c^O=\sigma\left(\sum_\mu|\mathbf F_{c;\mu}|^2-\tfrac13|\mathbf F_c|^2\right),
+ \qquad
+ g_c^r=\sigma\left(\sum_\mu|\mathbf F_{c;\mu}|^2
+            -\frac1{3\beta}\sum_A(X_c^A)^2S_0\right).
+\]
+Both have
+\begin{equation}\label{rowmom}
+ \|g_c\|_{L^p(\mu)}\le C_p\sigma\beta^{-1}=C_pc_\beta^{-1}a^{-2}
+\end{equation}
+for all fixed $p$. The Casimir constant is retained and itself has this scale.
+Every original transformed row in the pointed completion satisfies the same estimate.
+No global connected covariance bound follows by summing \eqref{rowmom} alone.
+
+\paragraph{A reusable actual product-fiber covariance lemma.}
+Let a genuine conditional law of variables $(z_e)_{e\in E}$ given $y$ be a product.
+Let $A_c=A_c(y,z_{J_c})$ have deterministic free-coordinate supports $J_c\subset E$.
+Suppose $\|A_c\|_{2p}\le L_p$ under the complete probability and let the row overlap
+graph $c\sim d$ mean $J_c\cap J_d\ne\varnothing$, with each row meeting at most $D$
+other rows (include the diagonal when $J_c\ne\varnothing$).
+Conditional independence makes every off-graph covariance exactly zero. For a graph entry,
+conditional Holder and Jensen give
+$\|\Cov(A_c,A_d|y)\|_p\le2\|A_c\|_{2p}\|A_d\|_{2p}\le2L_p^2$.
+Consequently, by the graph's row and column degree bounds,
+\begin{equation}\label{fiberlemma}
+ \left\|\Cov\left(\sum_cf_cA_c,\sum_dh_dA_d\mid y\right)\right\|_p
+ \le2D L_p^2\|f\|_{\ell^2}\|h\|_{\ell^2}.
+\end{equation}
+This is an estimate of the actual inherited conditional covariance, with its original
+probability and supports. It requires neither a gap nor a comparison with fine total variation.
+
+\paragraph{Application through every fixed number of actual independent layers.}
+Start from the original plaquette interaction graph. At each stage eliminate an independent
+set in the CURRENT genuine interaction graph, including all conditional-normalizer
+hyperedges from previous stages. Let $R_k$ be the retained coordinates and
+$g_{c,k}=\E(g_c|R_k)$. Conditional Jensen preserves \eqref{rowmom} exactly, with no
+factor accumulated per stage. The actual conditional law for the next independent set
+is a product by the graph definition. Its row supports are the deterministic inherited
+carriers, obtained by replacing an eliminated coordinate by its actual neighboring coordinates.
+For every fixed depth $k$, these carriers and their overlap counts are uniformly finite.
+Applying \eqref{fiberlemma} gives
+\begin{equation}\label{fixeddepth}
+ \|\Cov(G_k(f),G_k(h)\mid R_{k+1})\|_{L^p(\nu_{k+1})}
+ \le C_pD_k a^{-4}\|f\|_{\ell^2}\|h\|_{\ell^2},
+ \qquad G_k=\sum_cf_cg_{c,k}.
+\end{equation}
+There is NO exponential-in-$\beta$ cost and NO logarithmic loss in this compatible
+physical-torus regime. In particular this improves the costly second-step bound of the second actual elimination calculation
+on that regime, and improves the local ordinary covariance calculation to all fixed $L^p$ conditional covariances.
+The prescribed finite pointed averages are expanded before this estimate, so all shifted
+weights and their fixed multiplicity remain. The support count in the support and martingale estimate calculation converts
+$\|f\|_{\ell^2}^2$ to the literal completed support count.
+
+For clarity, the depth dependence is not hidden. Eliminating an independent set replaces
+each action hyperedge touching an eliminated coordinate by a hyperedge within its old
+neighbor set. Thus the next graph is contained in the square of the old graph. Measured
+in original plaquette-graph distance, interaction radius is at most $2^k$, and a row carrier
+has radius at most a fixed multiple of $2^k$. Four-dimensional lattice ball counts then
+bound its overlap degree by $D_k\le C2^{4k}$ until wrapping saturates the torus.
+This crude bound is adequate at every fixed $k$ but is not a strict stable scale gain.
+
+\paragraph{Improved inherited-mean derivatives.}
+For the first layer, \eqref{response} of the inherited effective score calculation together with \eqref{rowmom} gives directly
+\[
+ \|X_b\overline G(f)\|_2\le C\sigma\beta^{-1/2}W_b(f).
+\]
+Indeed the direct derivative is a finite sum of directional force times bounded Hessian,
+while $\|\Cov(G_b,F_b|y)\|_2\le2\|G_b\|_4\|F_b\|_4
+\le C\sigma\beta^{-3/2}W_b(f)$ for the actual local varying sum.
+Thus the logarithms in the inherited effective score calculation also disappear on the stated regime.
+This does not remove original-mesh powers or supply complex suprema.
+
+\paragraph{The explicit all-depth obstruction to this inference.}
+The reverse-martingale identity still reads
+\[
+ \Var_\mu G=\sum_{j<k}\E\Var(G_j|R_{j+1})+\Var_{\nu_k}G_k.
+\]
+The fixed-depth bounds control each displayed increment. They do not bound the final
+inherited covariance uniformly in depth, and $D_k$ grows until it can reach the torus
+volume. Summing the crude estimate to complete elimination can therefore recover a
+quadratic-volume bound, not the required linear-volume global bound.
+No separated decay follows merely from the product-fiber lemma: if supports have not
+met, the conditional covariance vanishes and the full correlation remains in the retained
+mean covariance. Actual multiscale grades, anchored kernel moments, common domains,
+current lifts and independent scalar terms still need their own estimates.
+
+\paragraph{Selectors and raw measures.}
+Every displayed $L^p$ estimate uses the complete positive Wilson probability or its
+actual coordinate marginal. A sharp selected branch with free-coordinate dependence is
+not a product fiber unless independently verified; its boundary and denominator responses
+remain. Bath-measurable restrictions preserve undivided positive integrals, but normalizing
+rare branches has its actual cost. Raw connected numerators carry the same original $Z$,
+and independent scalar factors are never removed. The source remains XP3 unless the
+explicit optional contact extension of the local source transition calculation is separately chosen.
+
+\begin{thebibliography}{2}
+\bibitem{BCN} M. Biskup, L. Chayes and Z. Nussinov, \emph{Orbital ordering in transition-metal
+compounds: I. The 120-degree model}, Section 6.1 and Theorem 6.2,
+\url{https://web.ma.utexas.edu/mp_arc/c/03/03-445.pdf}.
+\bibitem{B} M. Biskup, \emph{Reflection positivity and phase transitions in lattice spin models},
+Theorem 4.8 and its proof,
+\url{https://www.math.ucla.edu/~biskup/PDFs/papers/Prague-School.pdf}.
+\end{thebibliography}
+\end{document}

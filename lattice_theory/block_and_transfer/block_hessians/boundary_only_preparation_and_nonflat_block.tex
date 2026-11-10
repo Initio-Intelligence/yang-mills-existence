@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{Boundary-only preparation of an actual nonflat Wilson record on a slowly growing block}\author{}\date{}
+\begin{document}\maketitle
+Fix $SU(N)$, normalized original Wilson coefficient $B$, and an embedded complete four-dimensional cube of side $R$ inside the original periodic $n^4$ lattice. Assume $n\ge2R+3$ and the size/coupling regime in which the original plaquette moment constant $K_t=(Z_{(1-t)B}/Z_B)^{1/n^4}$ is uniformly bounded. All plaquettes incident to free interior links lie in the cube; retain its entire fixed boundary graph and any prescribed collar scalars. No torus harmonic variable is identified with a noncompact field.
+
+\section*{The gauge map uses ONLY the fixed boundary record}
+Choose once and for all a breadth-first tree of the boundary one-skeleton rooted at a corner. Its graph distance to the root is at most $C R$: a boundary vertex has a coordinate equal to $0$ or $R$, and a coordinate path can keep that face fixed while reaching it. Define the boundary site gauge $g(\eta)$ by parallel transport along this tree, with root gauge identity. It depends only on the ORIGINAL fixed boundary links. All boundary tree links become identity. Extend this site transformation to the free interior by any declared fixed extension, for example identity at interior vertices, and transform every incident link and prescribed collar consistently. Product Haar invariance and pointwise plaquette gauge covariance give an exact common frame change, preserving the raw conditional integral. Any exterior-only scalar is transformed by the same actual gauge action. This Haar-invariance claim is for the FREE interior integral at each FIXED boundary record. When boundary records themselves are random, their prepared law is the actual pushforward of the original boundary marginal; it is not silently replaced by product Haar or a flat reference density. No boundary coarea factor is inferred away.
+
+For each non-tree boundary link, its transformed holonomy is the original boundary chord loop, up to the fixed root convention. The loop has length at most $CR$. It admits a filling of at most $CR^2$ ORIGINAL plaquettes inside the complete cube: connect each vertex to the corner by a fixed coordinate-comb path, fill the comparison for each loop edge by coordinate strips of at most $CR$ plaquettes, and cancel the comb paths successively. This construction can repeat a plaquette. We retain the conservative multiplicity bound $CR$, since there are at most $CR$ loop edges and each individual coordinate strip uses any plaquette only a bounded number of times. Conjugated nonabelian plaquette products, the unitary triangle inequality, and Cauchy--Schwarz with this multiplicity imply
+\[
+ \sum_{\partial\mathcal B}d(\eta_b^{g},I)^2
+ \le C_N R^6\sum_{p\subset\mathcal B}s(U_p).            \tag{1}
+\]
+There are $O(R^3)$ boundary chords. The filling may use FREE interior plaquettes, but ONLY as witnesses for(1). They do NOT enter $g(\eta)$, the prepared boundary event, or the conditional map. This distinction prevents a change of conditioning record.
+
+When the prepared links lie in the principal chart put
+$b=\sqrt{B/N}\log\eta^g$, including zeros on the boundary tree. Equation(1) gives
+\[
+ \|b\|^2\le C_N R^6\sum_{p\subset\mathcal B}B s(U_p).   \tag{2}
+\]
+The SAME-original-law multipoint exponential bound from the original sparse bath records calculation yields
+\[
+ \mathbb P\left\{\sum_{p\subset\mathcal B}B s(U_p)>C_0R^4\right\}
+ \le e^{-cR^4},                                      \tag{3}
+\]
+for fixed sufficiently large $C_0$, with all original partition factors in $K_t$. Hence the BOUNDARY-MEASURABLE prepared event
+\[
+ \mathcal A_R=\{\eta^g\hbox{ in its declared chart},\
+                    \|b\|\le C_1R^{5}\}             \tag{4}
+\]
+has probability at least $1-e^{-cR^4}$ once $R^{10}/B$ is small enough. Failure of(4) implies failure of the witness energy event; no interior good-event constraint is imposed on the conditional integral. This is an actual one-block marginal probability, not a claim that every block of a physical volume is good.
+
+\section*{Carry the nonflat amplitude through the conditional estimate}
+Now FIX any actual prepared boundary in(4), and integrate the entire original interior fiber, including its bad configurations. Use the specified relative temporal axial forest of the explicit growing relative block range calculation, with all boundary vertices fixed. Its bounds
+\[
+ n_J\le CR^4,\quad K_{JJ}\ge cR^{-6}I,\quad \|K\|\le C
+\]
+remain geometric facts about the same complete quadratic reference. For a declared boundary direction $\|v\|\le1$, let
+\[
+ b_t=b+tv,\quad \eta(t)=\exp(\sqrt{N/B}\,b_t),\quad
+ w=-K_{JJ}^{-1}K_{JR}v.
+\]
+The boundary path is exactly this canonical-log path; its nonconstant left velocity and acceleration are included when differentiating the original action. The interior flow is the actual Haar translation
+$\Phi_t(U)_j=\exp[t\sqrt{N/B}\,w_j]U_j$ on the independent chords. Its divergence is zero. The reconstructed fine-field output map and the boundary gauge $g(\eta)$ are retained; the latter is chosen from the starting fixed record and is NOT recomputed using the free interior.
+
+Write $M=C R^{5}$. The quadratic center has norm at most $CR^3M=CR^{8}$. The chart radius in angular Euclidean norm is $cR^{-6}$. Its center fits inside for $B\gg R^{28}$. The global geometric inequality gives an unnormalized outside-action cost at least $cBR^{-18}-CM^2/R$. The lower normalization bound now costs $CM^2+CR^4\log(2+BR)$, not the old constant. Therefore the ORIGINAL normalized tail obeys
+\[
+ q_{B,R}\le
+ \exp[-cBR^{-18}+CR^{10}+CR^4\log(2+BR)].                \tag{5}
+\]
+No boundary classical energy has been discarded.
+
+On the actual strongly convex chart, the residual gradient at the quadratic center is at most $CR^{16}/\sqrt B$. The radial-moment argument, with dimension $CR^4$ and floor $cR^{-6}$, gives
+\[
+ E|x-m_t|^{2p}\le C_pR^{10p},\qquad
+ E|x|^{2p}\le C_pR^{16p},                             \tag{6}
+\]
+provided $B\gg R^{34}$, plus the compact tail from(5). The Haar Hessian and all original chart Jacobians remain present as in the explicit growing relative block range calculation.
+
+Let $G_t$ be the corrected score of this explicit boundary/interior path. Its divergence term is zero, but the boundary acceleration in $DG_t$ is not omitted. The complete quadratic derivative is the scalar
+$v^*K_{\rm eff}(b+tv)$, independent of the interior variable. The same local finite-incidence Taylor and exponential-product bounds, now retaining $b$, yield
+\[
+ |G_t-v^*K_{\rm eff}(b+tv)|
+ \le C B^{-1/2}R^3(1+\|x\|^2+\|b_t\|^2),             \tag{7}
+\]
+\[
+ |DG_t-v^*K_{\rm eff}v|
+ \le C B^{-1/2}R^6(1+\|x\|+\|b_t\|).                 \tag{8}
+\]
+One can equivalently differentiate directly in the boundary canonical-log coordinates, where $b_t$ has zero coordinate acceleration; converting to the left frame restores precisely the corresponding group acceleration. Equations(7)--(8) are not computed with an inconsistent geodesic convention.
+
+Consequently, uniformly over the ACTUAL fixed prepared records(4),
+\[
+ \operatorname{Var}G_t\le C R^{38}/B+\mathcal E_{B,R}, \tag{9}
+\]
+\[
+ |\Gamma''(t)-v^*K_{\rm eff}v|
+ \le C[R^{14}/\sqrt B+R^{38}/B]+\mathcal E_{B,R},    \tag{10}
+\]
+\[
+ \left|\Gamma(1)-v^*K_{\rm eff}b-\tfrac12v^*K_{\rm eff}v\right|
+ \le C R^{19}/\sqrt B+\mathcal E_{B,R},               \tag{11}
+\]
+where $\Gamma(t)=-\log[Z_B(\eta(t))/Z_B(\eta(0))]$ is the exact nonflat reference ratio and a harmless explicit tail choice is
+$\mathcal E_{B,R}=CBR^{12}q_{B,R}$.
+The normalized pullback affinity is at least
+$1-\frac18[C R^{38}/B+\mathcal E_{B,R}]$.
+These statements retain the baseline linear boundary action in(11), rather than treating the new background as flat.
+
+\section*{A conservative range and the remaining global limitation}
+For $2\le R\le B^{1/48}$, all chart and moment requirements hold for large $B$. The variance/curvature errors in(9)--(10) tend to zero at least as $B^{-5/24}$, the scalar error in(11) at least as $B^{-5/48}$, and the tail is negligible. For $R\to\infty$ within this range, the original prepared-boundary probability from(3)--(4) tends to one. The compact original interior is integrated without an added witness selector.
+
+This supplies a real nonflat-record mesoscopic conditional comparison with a gauge chosen only from fixed boundary/collar links. It does NOT prove that all blocks in a physical volume satisfy(4): their number grows much faster than this one-block error is controlled. Nor is the per-block comparison error summable over the full lattice. Physical block radius $aB^{1/48}$ still vanishes on $B\asymp\log(1/a)$. Wrapped/global holonomy sectors and the actual composition of neighboring boundary maps remain to be compared. No S94 or mass-gap conclusion is claimed.
+\end{document}

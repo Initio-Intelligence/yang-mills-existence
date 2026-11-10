@@ -1,0 +1,131 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Exact removal of the complete longitudinal regulator packet}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Original tensors and no change of action.}
+Use the COMPLETE coefficient polynomial $\mathcal C(G,g)$ and kernels
+$\mathsf K,\mathsf J$ of the complete shortest time contact packet calculation, at the actual conditional minimum
+and original relative boundary. Let
+\[
+ \Delta_1=H+DD^*,\quad \Delta_0=D^*D,\quad g=\Delta_0^{-1},\quad
+ P=I-DgD^*.
+\]
+Its original simultaneous spectral tails are $G_s,g_s$.
+The exact longitudinal part and its complement are
+\[
+ L_s=Dg^2e^{-s\Delta_0}D^*,\qquad
+ G_s^\perp=G_s-L_s=H^+e^{-sH}P.                                 \tag{1}
+\]
+The last expression is defined on the physical complement, not by
+inverting a gauge zero mode. Its marked kernel is
+\[
+ E_s^\perp=-\partial_sG_s^\perp
+       =e^{-s\Delta_1}-Dg e^{-s\Delta_0}D^*.                     \tag{2}
+\]
+All scalar ghosts and all source derivatives of $P,D,g$ are retained.
+
+\paragraph{A finite, explicit total-time counterterm.}
+Define
+\[
+ \mathcal F_s=\mathcal C(G_s,g_s)-\mathcal C(G_s^\perp,g_s).
+\]
+Gaussian differentiation proves the exact finite identity
+\[
+ \boxed{\mathcal F_s=
+ \tfrac12\int_0^1\operatorname{Tr}
+ \left[L_s\mathsf K(G_s^\perp+rL_s,g_s)\right]\,dr.}              \tag{3}
+\]
+Every ghost term is held at its original common cutoff $g_s$ in
+this interpolation; the actual vertices are unchanged.
+
+For explicit polynomial coefficients put $G_0=G_s^\perp$, $L=L_s$,
+$b_0=l-\tfrac12t:G_0$, $\beta=-\tfrac12t:L$. Then
+$\mathsf K(G_0+rL,g_s)=K_0+rK_1+r^2K_2$, where $K_0$ is the
+complete kernel at $(G_0,g_s)$ and
+\[
+ \begin{split}
+ (K_1)_{ab}={}&\tfrac12u_{abcd}L_{cd}
+ -\tfrac12t_{acd}(L_{ce}(G_0)_{df}+(G_0)_{ce}L_{df})t_{bef}\\
+ &-(b_0)_a\beta_b-\beta_a(b_0)_b
+       +t_{abc}(G_0\beta+Lb_0)_c,\\
+ (K_2)_{ab}={}&-\tfrac12t_{acd}L_{ce}L_{df}t_{bef}
+                       -\beta_a\beta_b+t_{abc}(L\beta)_c .
+ \end{split}
+\]
+Consequently
+\[
+ \mathcal F_s=\tfrac12\operatorname{Tr}
+           L_s(K_0+K_1/2+K_2/3).                               \tag{4}
+\]
+This is not a changed Wilson coupling or a new probability-law
+counterterm. It is an exact add-and-subtract in the original first
+coefficient. In particular its nonflat mean-current terms are not reset.
+
+At $s=0$, independence of the normalized local gauge penalty (the local noise ward and longitudinal cancellation calculation)
+gives $\mathcal C(G,g)=\mathcal C(H^+,g)$, hence
+\[
+ \mathcal F_0=0.
+\]
+At $s=\infty$ all covariances vanish and $\mathcal F_\infty=0$.
+Both identities hold for every nearby admitted background, so their
+fixed-$R$ source derivatives also vanish. They do not require a
+limit of original measures or a uniform growing-$R$ Laplace theorem.
+
+\paragraph{The actual remaining transverse packet.}
+Let
+\[
+ \mathcal I_s^\perp=
+ \tfrac12\operatorname{Tr}(E_s^\perp\mathsf K_s^\perp)
+       +\operatorname{Tr}(e^{-s\Delta_0}\mathsf J_s^\perp),
+ \quad
+ \mathsf K_s^\perp=\mathsf K(G_s^\perp,g_s),\quad
+ \mathsf J_s^\perp=\mathsf J(G_s^\perp,g_s).
+\]
+Differentiating the COMPLETE polynomials gives
+\[
+ \boxed{\mathcal I_s=\mathcal I_s^\perp-\partial_s\mathcal F_s,
+ \qquad
+ \mathcal C_R=\int_0^\infty\mathcal I_s^\perp\,ds.}               \tag{5}
+\]
+Thus all longitudinal regulator contacts are removed from the integrated
+coefficient by a specified total-time derivative with zero endpoints,
+not by asserting the false cut identity $\mathsf K_sD=-H\mathcal A_s$.
+The marked-ghost term is still present in (5).
+At fixed block size (5) may be differentiated twice along the actual
+source path, retaining every heat, minimum, vertex and projection
+derivative. No uniform integral estimate has been proved.
+
+The original scalar $\mathcal C_R$, its changing background current,
+raw normalization and classical minimum are unchanged. The subtraction
+does not authorize omitting a live transverse kinetic coefficient.
+
+\paragraph{Exact regression of the finite counterterm.}
+On the complete original $R=2$ flat cube, independent rational
+quartic/Haar/ghost contraction gives
+\[
+ \mathcal F_0=0,\qquad
+ \mathcal F_{\frac12\log2}=\frac{1901}{262144}\ne0.
+\]
+Equation(3)'s polynomial evaluation agrees exactly. The check is in
+the finite algebraic calculation; it validates the
+finite subtraction rather than another isolated diagram.
+The counterterm cannot be set to zero at each scale merely because
+its integrated derivative has zero endpoints.
+
+\paragraph{Precise remaining quantitative task.}
+Equation(5) isolates the full physical vector packet with its ghosts
+and original source partners. The projection is NONLOCAL:
+its $Dg e^{-s\Delta_0}D^*$ contribution cannot be treated as one of
+the mixed grid joint current with connectors calculation's bounded connector maps. It can instead be kept in the
+displayed local-incidence/ghost representation while estimating the
+signed combination. The transverse endpoint-minor contact of
+the short line contact before current decay calculation has not thereby vanished. Neither gauge-sector matching
+nor the background-source Ward proves its physical-energy bound.
+
+The next estimate must control the twice differentiated signed
+$\mathcal I_s^\perp$, including its retained kinetic tensor and finite-
+boundary remainder, or an equivalent full-packet representation, with
+integrable scale dependence. The original nonlinear remainder is a
+separate requirement. This note proves a completed regulator subtraction,
+not a uniform transverse estimate or S94.
+\end{document}

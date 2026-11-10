@@ -1,0 +1,107 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\title{Exact transported-staple conditional chains with the endpoint holonomy retained}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Analysis of the actual flat compact transfer.}
+For the flat-bath compact transfer operator, the principal-log Haar scalar is
+$(2\pi^2)^{-1}B^{-3/2}$, the exterior factors give an integrable Gaussian majorant,
+and both Hilbert--Schmidt and trace convergence hold. The limiting three-dimensional
+Mehler ratio is $3-\sqrt8$. Using the EXACT leading eigenvalue after these bounds,
+not a per-step asymptotic for it, is what makes its conclusion uniform in chain
+length. This is a conditional one-link trajectory, not a replacement of the
+full gauge theory or its global sector by three free rotors.
+
+\paragraph{The four actual SU(2) staples combine exactly.}
+For a selected spatial link at time $t$, write its four original incident spatial
+plaquette actions as $s(u S_{t,r}^{-1})$, $r=1,\ldots,4$, after the literal
+orientation adjustments; $s(u)=1-\operatorname{Re}\operatorname{Tr}(u)/2$.
+The $S_{t,r}$ are the actual unitary bath staples. Using unit quaternions, put
+\[
+ \sum_{r=1}^4 S_{t,r}=\kappa_t W_t,\qquad
+ 0\le\kappa_t\le4,\quad W_t\in SU(2)\quad(\kappa_t>0).
+\]
+Linearity of the trace gives the exact identity
+\[
+ \sum_r s(u S_{t,r}^{-1})=(4-\kappa_t)+\kappa_t s(uW_t^{-1}). \tag{1}
+\]
+The scalar $4-\kappa_t$ is part of the ORIGINAL conditional normalization and
+must not be discarded. No claim that arbitrary SU(N) matrix sums have this
+scalar-unitary form is made.
+
+\paragraph{Compatible transport is an exact Haar change, not deletion of a twist.}
+Let the temporal plaquette between $u_t,u_{t+1}$ have action
+$s(u_t g_t u_{t+1}^{-1}h_t)$ with the actual temporal bath links $g_t,h_t$.
+Assume the literal centers satisfy
+\[
+ W_t g_t W_{t+1}^{-1}h_t=I.                            \tag{2}
+\]
+Set $R_0=I$, $R_{t+1}=g_t^{-1}R_t$, $L_t=W_tR_t$, and change variables
+$u_t=L_t w_tR_t^{-1}$. Left/right Haar invariance has unit Jacobian. Equation(2)
+implies $h_t=L_{t+1}L_t^{-1}$, and consequently the onsite and temporal actions
+become $s(w_t)$ and $s(w_tw_{t+1}^{-1})$ respectively.
+
+For a period $m$, $W_m=W_0$ but the frames need not close. Write
+$G=g_0g_1\cdots g_{m-1}$. Then $R_m=G^{-1}$, $L_m=W_0G^{-1}$ and the ORIGINAL
+periodic condition $u_m=u_0$ becomes
+\[
+ w_m=G w_0G^{-1}.                                    \tag{3}
+\]
+Thus the Polyakov transport is retained as an endpoint conjugation. Compatible
+nontrivial $G$ is realized, for example, by a flat spatial bath and constant
+temporal link $P$ with $P^m=G$. It has not been gauged to the identity.
+
+\paragraph{Uniform strength and an exact twisted trace estimate.}
+Suppose $\kappa_t=\kappa\in[\kappa_*,4]$, $\kappa_*>0$. Define the actual
+symmetric positive transfer
+\[
+ T_{B,\kappa}(u,v)=e^{-B\kappa s(u)/2}
+                 e^{-Bs(uv^{-1})}e^{-B\kappa s(v)/2}.
+\]
+With $C_G f(w)=f(G^{-1}wG)$, the original selected-chain normalization is
+\[
+ Z_m(\omega)=e^{-B m(4-\kappa)}
+             \operatorname{Tr}(T_{B,\kappa}^{m}C_G).  \tag{4}
+\]
+Any fixed-bath factors outside this selected chain remain separately in the
+full bath measure. Formula(4) retains all scalar and holonomy data of this fiber.
+
+The compact-transfer proof of the exact flat bath compact transfer calculation is uniform for $\kappa\in[\kappa_*,4]$.
+After the same exact coordinate change its limit has kernel
+\[
+ H_\kappa(x,y)=\exp[-(\kappa+2)(|x|^2+|y|^2)/4+x\cdot y]
+\]
+and Mehler ratio
+\[
+ q_\kappa=\frac{\kappa+2-\sqrt{\kappa(\kappa+4)}}2<1.
+\]
+The uniform external majorant is
+$\exp[-\kappa_*(|x|^2+|y|^2)/\pi^2]$; uniform convergence on compact sets and
+uniform tails prove operator/trace convergence uniformly in $\kappa$.
+The limiting leading eigenvalue is continuous and strictly positive on this
+interval. Thus for any fixed $r>q_{\kappa_*}$ with $r<1$, for sufficiently large
+$B$ uniformly in $\kappa$, the ORIGINAL eigenvalues satisfy
+$\lambda_1/\lambda_0\le r$, $\operatorname{Tr}T/\lambda_0\le1+C$.
+
+The positive unique leading eigenfunction is conjugation invariant, because
+$T_{B,\kappa}$ commutes with every $C_G$. Hence it contributes exactly
+$\lambda_0^m$ to the twisted trace, and unitarity on the remaining eigenspaces gives
+\[
+ \left|\frac{\operatorname{Tr}(T_{B,\kappa}^m C_G)}{\lambda_0^m}-1\right|
+ \le C r^{m-1},                                     \tag{5}
+\]
+uniformly in the ACTUAL $G$. The twisted trace is a positive path integral,
+but its excited spectral terms can have either sign. It is not called the purity
+of a positive density operator. For $Cr^{m-1}\le1/2$, (5) bounds its logarithmic
+error by $2Cr^{m-1}$. Repeating the same bath doubles the scalar in(4) and replaces
+$G$ by $G^2$; these original factors, rather than an invented common normalization,
+are the ones to compare.
+
+\paragraph{Scope.}
+This extends the exact flat conditional result to transported centers, coherent
+nonzero net staple strength, and retained nontrivial holonomy. It is an actual
+pointwise conditional statement. It does not show that the original random bath
+satisfies(2) or has constant strength; zero strength and arbitrary time-dependent
+frustration are excluded here. It does not estimate the remaining bath affinity.
+The next note treats a genuine time-dependent small perturbation without
+pretending that a product of different transfers has a stationary spectrum.
+\end{document}

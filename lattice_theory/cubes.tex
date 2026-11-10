@@ -1,0 +1,287 @@
+\section{Cube estimates for the ordinary law}
+\label{cb:section}
+\label{cb:cubes}
+
+This section constructs a definite observation of the original Wilson field and proves its small label contrast and extensive internal ordinary error. It proves these conclusions for the observation specified below; it does not identify this observation with R-II. The proof treats a fluctuating nonflat retained bath. Its internal estimate uses a pointwise source-gradient inequality followed by the original averaged force moment, without transferring flat-boundary centering to that bath. The continuous retained mean remains a separate term.
+
+\subsection{Normalization, packing, and the unchanged raw law}
+
+Use the law and sources of \eqref{rt:source}. Write \(\mathcal F_{c,i}=\nabla_c S_i\) for the three original directional forces, \(\mathcal F_c=\sum_i\mathcal F_{c,i}\), and \(M_f=\sum_cf_c^2\), with deterministic real marks. All original roots, including forest and affected retained roots, are included. For comparison with a normalized-action convention, set
+\begin{equation}
+ \bar s_p=s_p/N,\qquad B=N\beta,\qquad B\bar s_p=\beta s_p.
+ \label{cb:normalization}
+\end{equation}
+If a source is itself formed from \(S/N\) with coefficient \(B\), its ordinary row is \(r/N\); a notation such as a superscript zero does not by itself imply that convention. We keep the original \(r_f\). The inputs from the original periodic moment regime \eqref{rt:momentregime} are
+\begin{equation}
+ \E_\mu e^{tB\bar s_p}\le K_t,\qquad
+ \E_\mu\beta\sum_i|\mathcal F_{c,i}|^2\le C.
+ \label{cb:moments}
+\end{equation}
+Here \(t>0\) is fixed. The second bound follows from the first and the original finite-stencil inequality \(|\nabla s_p|^2\le Cs_p\). Constants below depend on the fixed group, original metric and stencil, not on \(n,\beta,R,f\).
+
+Choose a fixed shell width \(w\) containing every retained link in the complete determining stencil of every affected root; taking \(w\) larger than twice the original source radius suffices. Then choose a fixed gap \(g\ge2w+4\), increasing it so no action plaquette or complete source row can meet free links in two different cubes. Require
+\begin{equation}
+ R\ge R_0\ge g,\qquad n\ge C(R+g),\qquad \beta\ge CR^4,
+ \label{cb:geometryregime}
+\end{equation}
+in addition to \eqref{rt:momentregime}. The constant in the second inequality is fixed sufficiently large.
+
+For arbitrary integer \(n\), let \(q=\lfloor n/(R+g)\rfloor\ge2\) and \(h=n-q(R+g)\). Distribute \(h\) among \(q\) nonnegative integers \(d_k\) differing by at most one and put \(L_k=R+d_k\). Since \(h<R+g\le2R\), one has \(R\le L_k\le2R\). Partition each coordinate circle into intervals of spans \(L_k\), each followed by \(g\) links of gap. Their Cartesian products are the cube rectangles. In each rectangle retain tangential boundary links and free every original link with an interior endpoint, including normal boundary-to-interior links. Translate this fixed packing by an independent uniform torus offset \(T\). Denote its free sets by \(I_j(T)\), their union by \(I(T)\), and the retained complement by \(B_T\).
+
+For the stated identical coordinate partitions, the free-link count in each orientation is
+\[
+ (n-qg)(n-q(g+1))^3.
+\]
+The longitudinal origin has \(L_k\) choices and each transverse coordinate has \(L_k-1\) strictly interior choices. Thus, for each original link of orientation \(\nu\),
+\begin{equation}
+ p_\nu:=\Pr_T(c\in B_T)
+ =1-(1-qg/n)(1-q(g+1)/n)^3
+ \le (4g+3)q/n\le p:=C/R.
+ \label{cb:retainedfraction}
+\end{equation}
+No divisibility of \(n\) by a block period is assumed. The enlarged shells embed in the torus and contain no other cube's free links.
+
+Let \(A_j(T)\) be every original source root whose complete determining stencil reads at least one link of \(I_j(T)\). These sets include neighboring retained roots, are disjoint, and have size at most \(CR^4\). Define
+\begin{equation}
+ R_{j,f}=\sum_{c\in A_j}f_cr_c,\quad
+ R_{0,f}=r_f-\sum_jR_{j,f},\quad
+ a_j=\sum_{c\in A_j}|f_c|,\quad M_j=\sum_{c\in A_j}f_c^2.
+ \label{cb:completepackets}
+\end{equation}
+Then \(R_{0,f}\) is retained-measurable and \(a_j^2\le CR^4M_j\). This decomposes the literal source according to its determining sets; it does not declare global kinetic pieces independent.
+
+Split each original action plaquette exactly once as
+\(S=S_{\rm out}(b)+\sum_jS_j(u_j,b)\), where \(b=U_{B_T}\). The exact conditional kernels and retained law are
+\begin{align}
+ Z_j(b)&=\int e^{-\beta S_j(u,b)}\dd\lambda_{I_j}(u),&
+ K_j(\dd u\mid b)&=Z_j(b)^{-1}e^{-\beta S_j(u,b)}\dd\lambda_{I_j}(u),\notag\\
+ \dd\rho_T(b)&=Z_\beta^{-1}e^{-\beta S_{\rm out}(b)}
+                 \prod_jZ_j(b)\dd\lambda_{B_T}(b).
+ \label{cb:rawlaw}
+\end{align}
+Given \(T,b\), the free cubes have the product law \(\prod_jK_j\). The common bath remains shared, and every raw normalizer occurs once.
+
+\subsection{Retained-only preparation and a literal good label}
+
+For clarity give the geometry for \([0,R]^4\); replacing the four upper faces by lengths in \([R,2R]\) changes only constants. The shell is the lattice part of \([-w,R+w]^4\setminus(0,R)^4\). Every retained edge needed by a packet has both endpoints in this shell. An edge with an interior endpoint belongs to that cube's free set.
+
+\begin{lemma}[A retained collar gauge]
+\label{cb:collar}
+There are deterministic paths \(\gamma_v\) of length at most \(CR\), from \(o=(-w)^4\) to every shell vertex, such that each loop \(\gamma_xe\gamma_y^{-1}\) for a retained shell edge \(e=(x,y)\) has a filling of at most \(CR^2\) original plaquettes using only retained links. Consequently the gauge defined by these path products satisfies
+\begin{equation}
+ \max_{e\text{ relevant retained}}\operatorname{dist}(b_e^{\rm prep},I)
+ \le CR^2\sqrt{\max_{p\text{ in retained shell}}\bar s_p}.
+ \label{cb:collargauge}
+\end{equation}
+\end{lemma}
+\begin{proof}
+For a vertex \(v\), choose a deterministic pivot coordinate outside \((0,R)\). First move that coordinate from \(-w\) to its final value; then move the other coordinates monotonically in a fixed order. The initial segment has other coordinates fixed at \(-w\), and the remaining path has its pivot fixed outside, so the path lies in the shell.
+
+To compare two pivot choices, move the second pivot segment to the front of the first path's remainder, keeping the first pivot outside. Do the converse for the other path. Swap the initial two segments in their coordinate rectangle; another coordinate remains at \(-w\), so this rectangle is retained. There are boundedly many swaps, each of area at most \(CR^2\).
+
+Adjacent shell vertices have a common outside pivot. A coordinate other than the edge direction is unchanged. If none is outside, both edge-direction coordinates must be outside and lie in the same outside interval: a unit edge cannot jump between opposite intervals when \(R\ge2\). Compare the two canonical paths with paths using this common pivot, then commute the additional edge through at most \(CR\) steps. If the pivot is the edge direction, every resulting width-one rectangle stays in its outside slab; otherwise the unchanged outside pivot keeps the rectangles in the shell. A face-normal edge entering an interior vertex is free and is not an exception among retained edges. The gap \(g\ge2w+4\) ensures all these shell plaquettes avoid every other free cube.
+
+The ordered nonabelian plaquette identity for each filling retains all conjugating prefixes. Unitary conjugation preserves distance, and telescoping the at most \(CR^2\) factors, with \(\operatorname{dist}(U_p,I)\le C\sqrt{\bar s_p}\), proves \eqref{cb:collargauge}.
+\end{proof}
+
+Choose small fixed constants in the order \(c_g,c_b,\delta\), and set
+\[
+ \rho_R=c_gR^{-10},\qquad \epsilon_b=c_bR^{-12}.
+\]
+A bath is prepared when every relevant retained link in this canonical collar gauge is within \(\epsilon_b\) of identity. This event depends only on retained links. Equation~\eqref{cb:collargauge} shows that shell plaquette bounds \(\bar s_p\le\delta R^{-28}\) imply preparation. The gauge can be extended to all vertices for evaluating the invariant scalar packet; no change of variables in \(\rho_T\) is made.
+
+For a prepared bath, use the relative temporal axial forest inside the cube, with gauge transformations equal to identity on its boundary. It sets each interior vertex's temporal path to the lower face to identity. The final temporal link reaching the upper face is a chord. Haar invariance gives product Haar measure on free chords and an integrated gauge volume exactly one. The nonflat prepared boundary and every original source root remain.
+
+The relative reconstruction rectangles used in \texttt{block\_and\_transfer/conditional\_estimates/spatial\_estimates\_for\_the\_original\_wilson\_sources.tex} carry their actual boundary links. A spatial chord is filled to the lower face; a final temporal chord is filled by a rectangle connecting its column to a side face. At most \(CR\) retained boundary links and \(CR^2\) plaquettes enter. Hence
+\begin{equation}
+ \max_{e\text{ chord}}\operatorname{dist}(U_e,I)
+ \le CR\epsilon_b+CR^2\sqrt{\max_{p\text{ in cube}}\bar s_p}.
+ \label{cb:nonflatreconstruction}
+\end{equation}
+The identity is nonabelian and keeps its conjugating prefixes. Under \(\bar s_p\le\delta R^{-28}\), the right side is \(O(c_bR^{-11}+\sqrt\delta R^{-12})\le\rho_R/2\), after fixing constants.
+
+Define \(\alpha_j=G\) when the bath is prepared and every relative chord satisfies \(|\log U_e|\le\rho_R\) in the principal chart; otherwise set \(\alpha_j=B\). For a prepared fixed bath, the good domain in chord logarithms is a convex product of Lie-algebra balls. It is not an intersection of multi-link plaquette caps. There is a fixed original witness set \(W_j(T)\), of at most \(CR^4\) plaquettes, such that
+\begin{equation}
+ \{\alpha_j=B\}\subset
+ \bigcup_{p\in W_j}\{\bar s_p>\delta R^{-28}\},\qquad
+ \Pr_\mu(\alpha_j=B\mid T)
+ \le CR^4K_t e^{-t\delta BR^{-28}}.
+ \label{cb:badmass}
+\end{equation}
+The witness set contains the retained preparation shell and the interior reconstruction plaquettes. Interior plaquettes certify chart entry but do not define the preparation map. The probability estimate is the original unconditional moment bound; no conditional good mass is divided out.
+
+\subsection{Small label variance with the raw factors in place}
+
+Let \(Z_j^G,Z_j^B\) be the literal branch integrals, so \(Z_j^G+Z_j^B=Z_j\). Define
+\[
+ \mathcal B=\sigma(T,b),\qquad \mathcal O=\sigma(T,b,\alpha),\qquad
+ m_{\mathcal B}=\E[r_f\mid\mathcal B],\quad
+ m_{\mathcal O}=\E[r_f\mid\mathcal O].
+\]
+Their exact expressions are
+\begin{equation}
+ m_{\mathcal B}=R_{0,f}+\sum_jK_jR_{j,f},\qquad
+ m_{\mathcal O}=R_{0,f}+\sum_jK_j^{\alpha_j}R_{j,f}.
+ \label{cb:means}
+\end{equation}
+Given \(T,b\), labels are independent with probabilities \(Z_j^\alpha/Z_j\). Thus
+\begin{equation}
+ \norm{m_{\mathcal O}-m_{\mathcal B}}_2^2
+ =\E_{T,b}\sum_j\Var_{\alpha_j\mid b}
+                      (K_j^{\alpha_j}R_{j,f}).
+ \label{cb:labelidentity}
+\end{equation}
+This uses independent conditional label contrasts, with the same bath throughout.
+
+Compactness gives \(|r_c|\le C(1+\beta)\), including the Casimir row, and hence \(\operatorname{osc}R_{j,f}\le C(1+B)a_j\). If \(q_j=Z_j^B/Z_j\), the binary contrast variance is
+\(q_j(1-q_j)(K_j^BR_{j,f}-K_j^GR_{j,f})^2\), bounded by \(C(1+B)^2a_j^2q_j\). Zero-mass branches are absent. The actual raw cancellation is
+\[
+ q_j\dd\rho_T
+ =Z_\beta^{-1}e^{-\beta S_{\rm out}}
+       Z_j^B\prod_{k\ne j}Z_k\dd\lambda_{B_T}.
+\]
+Integrating, then using \eqref{cb:badmass}, \(a_j^2\le CR^4M_j\), and disjointness, proves
+\begin{equation}
+ \norm{m_{\mathcal O}-m_{\mathcal B}}_2^2
+ \le C\varepsilon_{B,R}M_f,\qquad
+ \varepsilon_{B,R}:=(1+B)^2R^8K_t e^{-t\delta BR^{-28}}.
+ \label{cb:labels}
+\end{equation}
+The same proof applies to the complete \(h_f,t_f\) packets. The shrinking threshold and its constants remain explicit.
+
+\subsection{The averaged good-cube bound without conditional centering}
+
+Fix a prepared bath and write \(x_e=\sqrt\beta\log U_e\) for free chords. Let \(E\) insert these coordinates into the full original link array with zero coordinates on forest and retained links. Let \(H_i\) be the complete flat Hessian of \(S_i\), \(H=\sum_iH_i\), and \(K=E^*HE\). The relative Maxwell estimates of \texttt{block\_and\_transfer/conditional\_estimates/spatial\_estimates\_for\_the\_original\_wilson\_sources.tex} give
+\begin{equation}
+ \lambda_{\min}(K)\ge cR^{-4},\quad \norm{K^{-1}}\le CR^4,
+ \quad H_i\ge0,\quad H_i^2\le CH,
+ \quad\norm{H_iEK^{-1/2}}\le C.
+ \label{cb:matrix}
+\end{equation}
+The same proof applies to side lengths in \([R,2R]\): axial path row and column bounds are \(CR\), and the four-dimensional relative Green diagonal bound is unchanged. The last inequality follows from \(E^*H_i^2E\le CK\); it uses full output rows before restricting input coordinates.
+
+The exact normalized good conditional density on the convex product domain \(\Omega=\{|x_e|\le\sqrt\beta\rho_R\}\) has potential
+\begin{equation}
+ V_b(x)=\beta S_j(e^{Ex/\sqrt\beta},b^{\rm prep})
+                   -\sum_e\log j(x_e/\sqrt\beta).
+ \label{cb:potential}
+\end{equation}
+Here \(j\) is the exponential-coordinate Haar density. Raw constants and boundary scalars remain in \(Z_j^G(b)\); they cancel only in this normalized conditional expectation. Bounded word length and incidence imply
+\[
+ \norm{\Hess_xV_b-K}_{\rm op}
+ \le C(\rho_R+\epsilon_b+\beta^{-1})
+ \le C(\rho_R+\beta^{-1}).
+\]
+For \eqref{cb:geometryregime} and the fixed small constants, \(\Hess V_b\ge\kappa K\). The possible nonzero \(\nabla V_b(0)\) is retained. The convex-domain matrix Brascamp--Lieb inequality therefore gives
+\begin{equation}
+ \Var_{K_j^G}(R_{j,f})
+ \le\kappa^{-1}K_j^G\bigl[|\nabla_xR_{j,f}|_{K^{-1}}^2\bigr].
+ \label{cb:BL}
+\end{equation}
+An invertible linear change reduces this to the scalar uniform-convexity inequality on a convex domain. Convex Neumann boundary terms have their nonnegative sign; inner convex smoothing handles product-ball corners.
+
+Set \(G_i(x)=\sqrt\beta\mathcal F_i(U(x),b^{\rm prep})\), retaining every output root in \(A_j\). Local analytic differentiation in the original invariant frames gives
+\begin{equation}
+ D_xG_i=H_iE+D_i(x,b),\qquad
+ \norm{D_i}_{\rm op}\le C(\rho_R+\epsilon_b)\le C\rho_R.
+ \label{cb:forcegradient}
+\end{equation}
+Each row and column has bounded original incidence, which makes this an operator bound independent of cube size. All exponential-chart and invariant-frame derivatives are included.
+
+In particular, \(G_i\) evaluates the original force on the chosen representative; it is not defined as the chord gradient of a reduced action. A forest-root force is the original root derivative evaluated at its identity forest link, and a retained-root force is evaluated at its fixed prepared boundary link. Both output rows remain. Only input derivatives are restricted by \(E\). The representative has identity forest links, exponential chord links, and fixed bath links, so the derivative at the all-identity representative is exactly \(H_iE\). Gauge invariance permits evaluation of the source scalar on this representative without differentiating an inverse gauge-orbit map. Equivalently, a derivative of a transported color frame is skew-adjoint and its contribution to \(\dd|\mathcal F_{c,i}|^2\) vanishes. The preparation gauge is fixed during this internal calculation; its exterior responses are not being estimated.
+
+Let \(W_f\) be the original diagonal root/color test on \(A_j\). Then
+\[
+ \nabla_x\left(\beta\sum_{c\in A_j}f_c|\mathcal F_{c,i}|^2\right)
+       =2(D_xG_i)^*W_fG_i.
+\]
+Equations~\eqref{cb:matrix}--\eqref{cb:forcegradient} give the pointwise bound
+\[
+ |\nabla_x(\beta D[f1_{A_j}])|_{K^{-1}}^2
+ \le C(1+R^4\rho_R^2)
+          \sum_{c\in A_j}f_c^2\beta\sum_i|\mathcal F_{c,i}|^2.
+\]
+The full Casimir row is a bounded-incidence sum of original plaquette traces, so
+\( |\nabla_x\ell[f1_{A_j}]|_{K^{-1}}^2\le C\beta^{-1}R^4M_j\).
+Consequently
+\begin{equation}
+ |\nabla_xR_{j,f}|_{K^{-1}}^2
+ \le C\sum_{c\in A_j}f_c^2\beta\sum_i|\mathcal F_{c,i}|^2+CM_j.
+ \label{cb:pointwiseenergy}
+\end{equation}
+The same inequality holds for the complete \(h\) packet: its total-force square uses \(H\) and \(|\mathcal F_c|^2\le3\sum_i|\mathcal F_{c,i}|^2\).
+
+Multiply \eqref{cb:BL} by the actual good-branch mass and outside density, sum the complete remaining label partition, and restore the original law. Using \eqref{cb:pointwiseenergy} and then \eqref{cb:moments} gives
+\begin{align}
+ \E\sum_j1_{\{\alpha_j=G\}}\Var_{K_j^G}(R_{j,f})
+ &\le C\E_\mu\sum_{j,c\in A_j}1_{\{\alpha_j=G\}}
+                  f_c^2\beta\sum_i|\mathcal F_{c,i}|^2+CM_f\notag\\
+ &\le CM_f.
+ \label{cb:averagedgood}
+\end{align}
+This is an averaged force moment under the original law, not a fixed-bath estimate and not a conclusion that the coordinate mean vanishes. The actual raw factors cancel only through the exact joint probability identity.
+
+\subsection{All branches, the residual mean, and the Ward comparison}
+
+On a bad branch, compact range and its unchanged raw mass give
+\[
+ \E\bigl[1_{\{\alpha_j=B\}}\Var_{K_j^B}(R_{j,f})\bigr]
+ \le C(1+B)^2a_j^2\Pr(\alpha_j=B).
+\]
+Conditional product structure, \eqref{cb:badmass}, \eqref{cb:averagedgood}, and the tower identity prove the following statement.
+
+\begin{theorem}[Complete averaged internal error for the constructed observation]
+\label{cb:internal}
+Under \eqref{rt:momentregime} and \eqref{cb:geometryregime}, the observation just defined satisfies
+\begin{align}
+ \E\Var(r_f\mid\mathcal O)&\le C(1+\varepsilon_{B,R})M_f,\notag\\
+ \E\Var(r_f\mid\mathcal B)&\le C(1+\varepsilon_{B,R})M_f,\notag\\
+ \norm{\E[r_f\mid\mathcal O]-\E[r_f\mid\mathcal B]}_2^2
+   &\le C\varepsilon_{B,R}M_f.
+ \label{cb:allbranch}
+\end{align}
+The same conclusions hold for \(h_f\). For \(R\le B^{1/48}\) and sufficiently large \(B\),
+\[
+ \varepsilon_{B,R}\le CK_tB^{13/6}e^{-cB^{5/12}},
+\]
+so both internal errors are extensive with a uniform constant. The extra range \(C_0\log B\le R^4\) is compatible with this conclusion but is not needed for its pointwise-gradient proof.
+\end{theorem}
+
+The exact remaining decomposition is
+\begin{equation}
+ \Var_\mu r_f
+ =\E\Var(r_f\mid\mathcal O)
+  +\norm{m_{\mathcal O}-m_{\mathcal B}}_2^2
+  +\Var_{T,\rho_T}(m_{\mathcal B}).
+ \label{cb:uncontrolledmean}
+\end{equation}
+Summing all labels restores the unrestricted \(Z_j(b)\) in \eqref{cb:rawlaw}. It does not produce a convex induced next-layer law.
+
+There is also a useful quantitative comparison for the local Ward row. Put \(P_T=\E_\mu[\,\cdot\mid U_{B_T}]\). Compact integration by parts at integrated roots gives exactly
+\[
+ P_Tt_f=P_Tt_{f1_{B_T}}.
+\]
+The original Ward variance bound, conditional Jensen, and \eqref{cb:retainedfraction} yield
+\begin{equation}
+ \Var_{T,\mu}(P_Tt_f)\le CpM_f.
+ \label{cb:localwardgain}
+\end{equation}
+Each fixed-\(T\) Ward mean is zero, so this does not omit offset-mean variance. The corresponding inverse-form estimate uses the canonical generator of the actual marginal and is at most \(C\beta^{-1}pM_f\).
+
+Write \(K_*=C(1+\varepsilon_{B,R})\). The exact orthogonal-projection identity is
+\[
+ \inner{P_Tr_f}{P_Tt_g}
+ =\Cov(r_f,t_{g1_{B_T}})
+  -\inner{(I-P_T)r_f}{(I-P_T)t_{g1_{B_T}}},
+\]
+with centered quantities in the inner products. Averaging the first term over \(T\) replaces \(g_c1_{B_T}\) by \(p_{\nu_c}g_c\); the original source contact bounds it by \(Cp\sqrt{M_fM_g}\). The second term is at most \(C\sqrt{K_*p}\sqrt{M_fM_g}\), by Theorem~\ref{cb:internal} and the Ward bound. Retaining both cross terms gives
+\begin{equation}
+ \left|\Cov(P_Th_f,P_Th_g)-\Cov(P_Tr_f,P_Tr_g)\right|
+ \le C\bigl(p+\sqrt{K_*p}\bigr)\sqrt{M_fM_g},
+ \label{cb:localcomparison}
+\end{equation}
+where covariances include the independent offset. In the stated range the right side is \(O(R^{-1/2}\sqrt{M_fM_g})\). Label contrasts are orthogonal to every \(\mathcal B\)-measurable variable; restoring labels for these local complete packets adds only \(C\varepsilon_{B,R}\sqrt{M_fM_g}\). This last assertion does not automatically apply to a nonlocal packet.
+
+Section~\ref{tr:separator} proves a stronger separator gain for the transported nonlocal Ward packet capturing the full leading ordinary quadratic source. The internal bound above pays its projected ordinary cross term under this same raw law. Its nonlinear excess still requires a separate estimate. Neither the local comparison \eqref{cb:localcomparison} nor that nonlocal comparison bounds \(\Var(m_{\mathcal B})\) in \eqref{cb:uncontrolledmean}.
+
+The preparation gauge depends on the bath. Exterior differentiation therefore keeps its transport responses, the raw normalizer covariance, and the directional exterior curl in the directional-response analysis of \texttt{directional\_mean.tex}. The present result is a source-zero averaged conditional estimate. It does not relax the flat-block real-tilt condition \(\beta\ge CR^{14}\log(2+R)\) of \texttt{block\_and\_transfer/conditional\_estimates/spatial\_estimates\_for\_the\_original\_wilson\_sources.tex}, establish complex mixed admission, or imply physical-scale induction by tiling. Physical variance estimates carry \(c_\beta^{-2}a^{-4}\). Actual simultaneous domains, higher source partners, currents, anchors, native-history identification, reserve ownership, absolute comparison S94, and continuum reconstruction remain separate obligations.

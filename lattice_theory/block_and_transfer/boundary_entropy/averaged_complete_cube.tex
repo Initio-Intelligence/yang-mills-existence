@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{A same-Wilson exponentially rare bad-bath estimate for the complete cube}\author{}\date{}
+\begin{document}\maketitle
+This note uses the finite-torus exponential plaquette estimate proved in the manuscript, Section 10.2, equation (13), with its stated compatible chessboard geometry. It applies it to the actual full conditional block of the complete conditional cube calculation. It does not change an original selector or assume a bound for arbitrary mixed histories.
+
+\section{The retained finite-size moment input}
+Let the chessboard cell have side four and $v=4^4$. For $G=SU(N)$, $d_G=N^2-1$, the manuscript's tree/chain partition bounds and chessboard dissemination give, at $t=1/2$,
+\[
+ E_{n,\beta}e^{\beta s(U_P)/2}\leq
+ C_G\,\beta^{2d_Gv/n},\qquad\beta\geq1.
+ \tag{1}
+\]
+Here $C_G$ is fixed, though large; it includes the original cell volume and the upper/lower Haar constants. We retain the finite-size power. This is asserted only on the compatible tori of that theorem (in particular its dyadic family), large enough to fit the records below. Along $n\asymp\ell/a$ and $\beta=O(\log(1/a))$, the power is uniformly harmless. No inference to an incompatible native torus sequence is made.
+
+\section{From a full-field plaquette event to a bath-measurable event}
+Take the coordinate box $[-1,2]^4$ containing the elementary cube and every bath link in its 54-plaquette conditional record. This box has side length three in lattice bonds, four vertices per coordinate, and exactly
+\[
+ 6\cdot3^2\cdot4^2=864
+\]
+plaquettes. It embeds without wrapping on the compatible tori under consideration.
+
+Fix a rooted coordinate-ordered axial tree in this box. The tree gauge expresses every transformed link as a product of at most nine conjugated box plaquettes. One explicit construction moves an appended link backwards through the later coordinate segments of the root path; each adjacent interchange contributes one plaquette, and there are at most $3\cdot3=9$ such interchanges. Frobenius distance to the identity is invariant under unitary conjugation and subadditive on products. Since
+\[
+ \|U_P-I\|_F^2=2N s(U_P),
+\]
+the event $\max_{P\subset\text{box}}s(U_P)\leq\varepsilon_0$ implies that every box link in this gauge is within $9\sqrt{2N\varepsilon_0}$ of $I$.
+
+Choose $\delta>0$ inside the nearby-bath neighborhood of the complete conditional cube calculation and set $\varepsilon_0=\delta^2/(162N)$. Define $\mathcal G$ to be the event that the actual bath links in the complete conditional record admit some site gauge bringing them within $\delta$ of $I$. This is a bath-measurable Borel event: it is a finite-dimensional compact-gauge existence condition. The gauge supplied by the preceding full-field event may depend on the free links, but its existence implies $\mathcal G$, which itself does not inspect those links. Thus
+\[
+ \mathcal G^c\subset
+ \bigcup_{P\subset\text{box}}\{s(U_P)>\varepsilon_0\}.
+\]
+Equation (1) and a union bound give the actual Wilson estimate
+\[
+ \Pr(\mathcal G^c)\leq
+ 864C_G\,\beta^{2d_Gv/n}e^{-\beta\varepsilon_0/2}.
+ \tag{2}
+\]
+For all compatible $n\geq n_0\geq8$, the polynomial factor has a fixed bounded exponent, so after adjusting constants
+\[
+ \Pr(\mathcal G^c)\leq C e^{-c\beta}.
+ \tag{3}
+\]
+The constants depend on the fixed block and its admitted neighborhood. The rate $c$ is not claimed large enough to compensate an independently arising $e^{C'\beta}$ gap loss.
+
+\section{Averaging the complete weak-coupling block estimate}
+On $\mathcal G$, transform all bath staples and all twelve free links together. Gauge invariance of the original Wilson action and normalized Haar measure gives exactly the conditional problem of the complete conditional cube calculation in its admitted chart. Its positive Hessian, unique minimum, scalar expansion and normalized weighted Gaussian error therefore apply. These statements are independent of which witnessing gauge is chosen; the minimum and Hessian transform covariantly.
+
+Consequently the error in approximating the original joint bath/free-link measure by the corresponding pinned Gaussian on $\mathcal G$ is at most
+\[
+ C\beta^{-1/2}+Ce^{-c\beta}
+ \tag{4}
+\]
+in total variation, if the bad-bath part is left as an explicitly excluded mass. This is an averaged finite-block result for the original measure, not a uniform good-bath assertion for every history.
+
+The raw scalar on the excluded baths can also be bounded without an inverse-gap estimate. The 54-plaquette action obeys $0\leq S_b\leq108$, hence
+\[
+ e^{-108\beta}\leq D_\beta(b)\leq1,
+ \qquad |\log D_\beta(b)|\leq108\beta.
+\]
+Thus
+\[
+ E\big[1_{\mathcal G^c}|\log D_\beta(b)|\big]
+ \leq C\beta e^{-c\beta}.
+ \tag{5}
+\]
+Combining (5) with the good-bath scalar formula from the complete conditional cube calculation yields
+\[
+ E\log D_\beta(b)=E\left[1_{\mathcal G}\left(
+ -\beta s_*(b)-6d_G\log\beta+12\log J_0
+ +6d_G\log(2\pi)-\tfrac12\log\det H_b\right)\right]
+ +O(\beta^{-1/2})+O(\beta e^{-c\beta}).
+ \tag{6}
+\]
+Every displayed classical, coordinate and determinant contribution is retained. No probability-normalization identity removes them.
+
+The small bad probability also absorbs any fixed polynomial in $\beta$. It does not automatically absorb arbitrary inverse powers of an old physical mesh: along $\beta\asymp\log(1/a)$ its exponential rate becomes only a fixed positive power of $a$. Moreover summing the $O(\beta^{-1/2})$ block error over $O(a^{-4})$ blocks is not ultraviolet summable. For S94 one still needs complete nonwrapping matching and control of the induced bath action, not a per-block smallness assertion alone.
+\end{document}

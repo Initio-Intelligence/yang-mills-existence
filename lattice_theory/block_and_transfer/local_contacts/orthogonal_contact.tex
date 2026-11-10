@@ -1,0 +1,187 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Var}{\operatorname{Var}}
+\title{Exact extraction of a positive local component of the physical H covariance}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Scope and source.}
+This note works only on the original real, finite, isotropic periodic Wilson probability
+$\mu=Z^{-1}e^{-\beta S_0}\prod_b dU_b$, with AI1--3 normalization,
+$\beta=c_\beta g^{-2}$, and $\sigma=g^{-2}a^{-2}$.
+All Haar measures are normalized. The original XP3 mixed action is zero.
+No sharp selector, complex chart, or inherited effective measure is covered by the estimates below.
+A possible modified degree-two source is stated separately at the end.
+The construction retains the original powers of $a$ and $g$.
+
+Write $D[f],P[f],\ell[f]$ as in PD12.20 and put
+\[
+ O(f)=\sigma(D[f]-P[f]/3),\qquad
+ r(f)=\sigma(D[f]-\ell[f]/(3\beta)).
+\]
+First take a literal bond test $f_b$ independent of color; every assertion extends linearly
+and bilinearly to the original finite pointed completion, with its actual shifted tests.
+Let $b_-=(x-e_\mu,\nu)$, $b_+=(x+e_\mu,\nu)$ and $b_0=(x,\nu)$,
+where $\mu\ne\nu$. No plaquette contains both free links. Their plaquette stars
+have precisely one common bond, $b_0$. Choose many translated blocks with disjoint
+fixed determining neighborhoods, including the collars of every saved pointing.
+There are $M\ge c n^4$ such blocks on a sufficiently large torus.
+
+\paragraph{Conditional projections.}
+For a free bond $b$, let $K_b$ be conditional expectation given all links except $U_b$.
+It is an orthogonal projection on $L^2(\mu)$. Its conditional density is the actual
+one-link Wilson density; its denominator is neither replaced nor estimated away.
+For two free links in different plaquettes, their conditional densities depend on neither
+other free link. Thus their $K_b$ commute, by direct Fubini with the conditional product law.
+Set $Q_j=(I-K_{j,-})(I-K_{j,+})$. This is also an orthogonal projection.
+Every constant or arbitrary square-integrable single-plaquette function is annihilated by $Q_j$.
+This last assertion is exact, including any cutoff-dependent coefficient.
+
+\paragraph{The exact nonlinear residue.}
+Let $p_-$ and $p_+$ be the two plaquettes containing respectively $(b_-,b_0)$ and
+$(b_+,b_0)$. With the bath fixed, define the color vectors
+\[
+ a_-^A(U_-)=X_{b_0}^A s_{p_-},\qquad
+ a_+^A(U_+)=X_{b_0}^A s_{p_+},\qquad
+ \widetilde a_\pm=a_\pm-K_\pm a_\pm .
+\]
+All orientations and transports are those of the original plaquette words.
+The force at $b_0$ is additive in these two vectors. Both occur in the same plane slot.
+Every other force-square row depends on at most one of $U_-,U_+$.
+Double centering therefore gives the exact identities, not merely flat jets,
+\begin{align}
+ Q_jD[f]&=Q_jP[f]=2f_{b_0}\langle\widetilde a_-,\widetilde a_+\rangle,\\
+ Q_j\ell[f]&=0,\\
+ R_j^O(f):=Q_jO(f)&=\tfrac43\sigma f_{b_0}
+                 \langle\widetilde a_-,\widetilde a_+\rangle,\label{resO}\\
+ R_j^r(f):=Q_jr(f)&=2\sigma f_{b_0}
+                 \langle\widetilde a_-,\widetilde a_+\rangle
+                 =\tfrac32 R_j^O(f).\label{resr}
+\end{align}
+This calculation keeps the Casimir scalar intact: it disappears here because an exact
+orthogonal projection kills its single-plaquette summands, not because it was dropped
+from the physical mark. More generally $Q_j(O-L)=Q_jO$ for every allowed plaquette subtraction $L$.
+
+Let $C_\pm=K_\pm(\widetilde a_\pm\widetilde a_\pm^t)$ be the conditional covariance
+matrices. These are positive semidefinite real matrices, depending only on the local bath.
+Independence of $U_-$ and $U_+$ gives
+\begin{equation}\label{noise}
+ k_j^O(f,h):=\E[R_j^O(f)R_j^O(h)]
+ =\frac{16}{9}\sigma^2 f_{b_0}h_{b_0}\E\operatorname{tr}(C_-C_+),
+ \qquad k_j^r=\frac94 k_j^O.
+\end{equation}
+Thus the extracted contribution is diagonal in the literal bond test, not an arbitrary
+long-range covariance. For completed tests it is the corresponding double finite average
+of their original evaluations; its range is at most the saved pointing radius.
+
+\begin{theorem}[Positive local covariance decomposition]
+For $G=O$ or $G=r$, set $R^G(f)=\sum_jR_j^G(f)$ and $G^\perp(f)=G(f)-R^G(f)$.
+Then
+\[
+ \Cov(G(f),G(h))=K_{\cal P}^G(f,h)+\Cov(G^\perp(f),G^\perp(h)),\qquad
+ K_{\cal P}^G=\sum_j k_j^G.
+\]
+Both terms are positive semidefinite bilinear forms on real tests. $K_{\cal P}^G$ has
+strictly microscopic support. For plateau tests equal to one in a positive-volume box,
+\[
+ K_{\cal P}^G(f,f)\ge c_f a^{-8}
+\]
+when the packing is chosen in that box, uniformly for $\beta\ge\beta_0$.
+For every test,
+\[
+ 0\le K_{\cal P}^G(f,f)\le
+ C a^{-4}\beta\log(2+\beta)\sum_j |f_{b_{0,j}}|^2.
+\]
+The last bound is a genuine linear-count upper bound for this extracted component,
+not for the full ordinary remainder.
+\end{theorem}
+\begin{proof}
+Locality makes $R_j^G$ depend only on its own block neighborhood. Conditioning on all
+nonfree links gives independent blocks and zero conditional means of their residues.
+Thus $R_j^G$ and $R_k^G$ are orthogonal for $j\ne k$.
+Also $Q_jR_k^G=0$ for $j\ne k$, while $Q_jG=R_j^G$ and $Q_jR_j^G=R_j^G$.
+Self-adjointness yields $\E[R_j^G(f)G^\perp(h)]=0$. This proves the covariance identity.
+
+For completeness, the lower-bound input can be established directly. Restricting links
+to $c\beta^{-1/2}$ Haar balls bounds $-\log Z_\beta\le C\#E\log(2+\beta)$.
+Monotonicity of $\E S_0$ and isotropic translation symmetry give
+$\E s_p\le C\log(2+\beta)/\beta$.
+For a fixed contractible cube, Markov's inequality and a spanning-tree gauge then imply
+probability at least $1/2$ of a bath gauge close to identity, once $\beta\ge\beta_0$.
+This is a bath-measurable existence condition; its witnessing gauge need not be chosen
+independently of the full configuration to prove the marginal probability bound.
+On good baths each actual conditional one-link law has a unique near-identity minimum,
+uniform positive Hessian and a gap outside a fixed chart. Direct finite-dimensional
+integration gives a density bounded below on fixed balls in rescaled coordinates
+$z=\sqrt\beta(u-u_*),w=\sqrt\beta(v-v_*)$.
+The flat mixed derivatives of $D$ and $D-P/3$ are respectively $2$ and $4/3$
+in any common unit color coordinate, and remain positive on a smaller chart.
+Double centering subtracts only additive functions of $u$ and $v$.
+For a nonnegative compactly supported smooth $\phi$ with integral one,
+$\psi=\partial_{z^A}\partial_{w^A}\phi$ annihilates all those additive functions.
+Two integrations by parts and Cauchy--Schwarz give
+$\E[(Q_jG)^2\mid\text{bath}]\ge c\sigma^2\beta^{-2}$ on good baths.
+Average and count blocks. Since $\sigma^2\beta^{-2}=c_\beta^{-2}a^{-4}$,
+a physical plateau containing $c a^{-4}$ blocks gives $c_fa^{-8}$.
+
+For the upper bound, compactness gives $\|C_+\|\le C$ and the force bound
+$|a_-|^2\le C s_{p_-}$ gives
+$\E\operatorname{tr}C_-\le \E|a_-|^2\le C\log(2+\beta)/\beta$.
+Consequently $\E\operatorname{tr}(C_-C_+)\le C\log(2+\beta)/\beta$.
+Insert this in \eqref{noise} and use $\sigma^2=\beta^2c_\beta^{-2}a^{-4}$.
+On good baths alone the upper bound is actually $C\sigma^2\beta^{-2}$:
+both local covariance matrices are $O(\beta^{-1})$, by uniform conditional concentration
+and smoothness of the force functions. We have not proved an adequately strong bad-bath
+estimate to extend that sharper bound to the full probability.
+\end{proof}
+
+\paragraph{Translation symmetry without a preferred packing.}
+Average the exact decomposition over all translations of a fixed packing and, if desired,
+its finite hypercubic images. The residual term is then an average of covariance forms
+and remains positive semidefinite. Formula \eqref{noise} becomes a translation-invariant
+local test form, with the actual packing fraction retained. The extraction coefficient
+may depend on $\beta$ and torus size $n$ through $\E\operatorname{tr}(C_-C_+)$.
+It has not been shown to have a volume-independent or universal limit. The averaged
+residual form need not be the covariance of a single random observable on the original
+probability space; the stated positive-form identity does not require that stronger claim.
+
+\paragraph{A precise, optional degree-two extension.}
+For two labels, one can explicitly choose the DIFFERENT source
+\[
+ A^{\mathrm{ext}}=\eta_1G(f)+\eta_2G(h)-\eta_1\eta_2K_{\cal P}^G(f,h).
+\]
+Its terminal connected coefficient is exactly
+$\Cov(G^\perp(f),G^\perp(h))$. Its degree-one means and source-zero partition
+function are unchanged. Separated tests outside the microscopic range are unchanged.
+This construction subtracts a rigorously identified positive local covariance component;
+it is not a claim that the residual covariance is bounded or that the entire divergence
+has been removed. It also does not prove reflection positivity, higher-source consistency,
+interacting nondegeneracy, or a universal renormalization prescription.
+For the original physical source choose $G=O$, not $G=r$; the latter is a distinct source.
+Because $K_{\cal P}^G$ is field independent, its mixed insertion is transported exactly
+by any original source-free linear operation: $T(\rho K)=K T\rho$.
+Thus its original coefficient and mesh cannot be replaced by a later mesh.
+This algebraic transport is exact even on undivided selected numerators, but it gives
+no bound on their independent absolute factors, denominators, or physical-current lifts.
+
+\paragraph{Relation to the whole scalar/current pair.}
+For the original decomposition $O=t+r$, PD12.16 gives
+$\Cov(O,O)=\Cov(r,r)+\E b$ with its complete $b$, including mixed ordinary responses.
+Our residues satisfy $R^r=(3/2)R^O$, and hence the extracted covariance pieces have ratio
+$9/4$. The remaining current contact and orthogonal remainders compensate this difference;
+one must not subtract the $r$ extraction from the $O$ source without changing the specified
+coefficient. Under a genuine field-independent normalization $\Gamma_i$, every residue
+is multiplied by $\Gamma_i$ and every mixed coefficient by $\Gamma_1\Gamma_2$.
+A live field-dependent factor is part of the observable and does not obey that simplification.
+Raw connected numerators carry the unchanged $Z_\beta$, and an independent scalar carries
+its own absolute multiplier. No selected or complex law is replaced by this positive law.
+
+\paragraph{What remains open.}
+A matching $Ca^{-4}N_f$ upper bound for the entire ordinary covariance, control of the
+orthogonal remainder at separated supports, universal contact coefficients, actual mixed
+history transitions and their full current/boundary/reference partners remain unproved.
+The result explains constructively why a positive $a^{-8}$ coincident divergence can live
+in a microscopic contact component without contradicting a distributional continuum target.
+It proves neither that all the divergence is local nor that Yang--Mills existence follows.
+\end{document}

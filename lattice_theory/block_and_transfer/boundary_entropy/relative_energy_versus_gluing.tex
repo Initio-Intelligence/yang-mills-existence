@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{Why the flat relative-energy comparison does not cover literal torus gluing}\author{}\date{}
+\begin{document}\maketitle
+Section 6 of \cite{ND} and the all shell relative entropy calculation compare weights of the SAME plaquette words on the SAME field map. Their key estimate $|w|\leq\delta E_0$ is strong and useful, but it cannot be applied directly to the original SV5 gluing difference $\Delta S=S_{\rm big}-S_{\rm per}$, even on flat original small tori.
+
+Use the literal common link variables of SV5 with $q,n\geq3$. Choose an orientation $(\mu,\nu)$ and a singly rewired plaquette at $x_\mu=n-1$, $x_\nu\leq n-2$, in small block $b$. Its new second edge belongs to block $b+e_\mu$ at the wrapped coordinate $y_\mu=0$.
+
+On every small torus put the links in a pure gauge:
+\[
+ U_e=g_x^{-1}g_{x+\widehat e},
+\]
+where the endpoint is understood periodically INSIDE that small block. Set every $g_x=I$, except at the vertex $(b+e_\mu,y)$, where set $g_y=H\ne I$. Then every original small-torus plaquette is exactly the identity, so
+\[
+ S_{\rm per}=0.
+\]
+The specified new big-torus plaquette contains exactly one nontrivial link from that neighboring block. Its other three links lie in block $b$ and are identities. Its holonomy is $H$ or $H^{-1}$, depending on orientation, hence
+\[
+ \Delta S=S_{\rm big}\geq s(H)>0.
+\]
+The matrix $H$ can be arbitrarily close to $I$. Thus this failure persists in arbitrarily small raw link neighborhoods; it is not a large-field example. By continuity it also prevents a uniform relative bound in neighborhoods of this flat configuration. In particular
+\[
+ |\Delta S|\leq C S_{\rm per}
+\]
+fails for every finite constant $C$ on the unchanged gluing space.
+
+This proves a precise limit of the new all-shell entropy result: gluing changes how the original links enter plaquette words and how independent block gauge frames are matched. It is not merely a relative perturbation of spatial coefficients on a common field map. Integrating or aligning those gauge frames may be part of a constructive comparison, but it has an actual normalization and boundary interaction; the exact full-cube examples in notes 07--08 show why those terms must remain.
+
+The example does not imply a positive lower bound for the full free-energy defect, because the product Wilson law averages all configurations and the interpolation includes compensating entropy. It is not a counterexample to S94. It identifies the missing map/frame comparison needed before the flat relative-energy estimate can enter a proof of S94.
+\begin{thebibliography}{9}
+\bibitem{ND} \emph{Nonlinear dispersion and unequal spatial weights}, \texttt{lattice\_theory/block\_and\_transfer/conditional\_estimates/nonlinear\_dispersion\_and\_unequal\_spatial\_weights.tex} in this collection.
+\end{thebibliography}
+\end{document}

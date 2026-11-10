@@ -1,0 +1,190 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{Original Wilson transfer: kinetic bounds, the true ground scalar, and a heat-kernel obstruction}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Analysis of the physical-slab reference calculation.}
+On the linearized
+nonzero-momentum sector, the real dimension is $2(n^3-1)d_G$: conjugate Fourier
+pairs have two real amplitudes per transverse polarization; self-conjugate
+momenta have real amplitudes and are counted once. The remaining $3d_G$ harmonic
+coordinates are NOT discarded. This is the linearized count, not a claim that
+interacting SU(N) global modes are independent free rotors or that residual
+conjugation is absent. A further physical singlet restriction can reduce a free
+trace, but cannot justify deleting interacting holonomies.
+
+The time-discrete frequency $\Omega=2a^{-1}\operatorname{arsinh}(aw/2)$ and
+$\det[(2+a^2w^2)I-S-S^{-1}]=4\sinh^2(ma\Omega/2)$ are correct, including $m=1,2$
+when repeated cyclic neighbors are counted with their actual multiplicity.
+The raw scalar powers and oscillator vacuum factor cancel in purity. The shell
+sum bound holds at odd/even spatial sizes. For rectangles, the stated bound at
+fixed $t_*$ needs all side lengths at least $t_*$; monotonicity extends it to
+larger slab times with denominator $t_*^3$, not an unproved rectangular $t^{-3}$
+claim at all aspect ratios.
+
+For the original interacting transfer, gauge projection commutes with both the
+central temporal convolution and the gauge-invariant spatial multiplier. The
+physical trace retains temporal-link/Polyakov integration. At finite cutoff its
+strictly positive continuous kernel gives a positive leading eigenfunction;
+zero eigenvalues off the projected range are omitted. The inequalities
+$\log Q(t)\le-\log\mathcal P(t)\le2\log Q(t)$ and the integer-elongation pressure
+comparison are valid. These checks do not establish a uniform interacting trace.
+
+\paragraph{Keep the temporal scalar before normalizing the kinetic operator.}
+For a spatial graph with $L$ links, let $k_B(U)$ be the original central Wilson
+temporal kernel and $c_B=\int k_B(U)dU>0$ its trivial Fourier eigenvalue.
+Write $\widehat Q=Q/c_B^L$, and retain the spatial multiplier
+$M=e^{-V/2}$, where $V\ge0$ is the ORIGINAL spatial Wilson action in one slice.
+On gauge-invariant Haar $L^2$, put
+\[
+ \widehat A=M\widehat Q M,\quad A=c_B^L\widehat A,
+ \qquad Z(m)=c_B^{Lm}\operatorname{Tr}\widehat A^m.       \tag{1}
+\]
+The global scalar in (1) is not omitted from $Z$. It cancels in eigenvalue ratios.
+Let $\widehat\lambda_0=\|\widehat A\|$ and
+$Q_{\rm occ}(ma)=\operatorname{Tr}\widehat A^m/\widehat\lambda_0^m$.
+All projections below are the original site-gauge projection.
+
+\begin{proposition}[Actual kinetic and variational bounds]
+Let $z_{\rm sp}=\int e^{-V}dU$ be the original three-dimensional spatial Wilson
+integral with normalized link Haar measure. Then
+\[
+ z_{\rm sp}\le\widehat\lambda_0\le1,\qquad
+ \operatorname{Tr}\widehat A^m\le\operatorname{Tr}_{\rm phys}\widehat Q^m
+ \le\operatorname{Tr}_{\rm full}\widehat Q^m,\quad m\ge1.    \tag{2}
+\]
+Consequently, if $q_R$ is the one-link kinetic eigenvalue in representation $R$,
+\[
+ \log Q_{\rm occ}(ma)
+ \le-m\log z_{\rm sp}
+       +L\log\left(\sum_R d_R^2 q_R^m\right).          \tag{3}
+\]
+\end{proposition}
+\begin{proof}
+The normalized central convolution is positive with norm one and has the constant
+function as a unit eigenvector; hence $\widehat Q\ge|1\rangle\langle1|$.
+The gauge-invariant trial vector $M$ has squared norm $z_{\rm sp}$ and Rayleigh
+numerator $\langle M^2,\widehat Q M^2\rangle\ge z_{\rm sp}^2$.
+This proves the lower bound; contraction of $M$ proves the upper bound.
+The nonzero spectra of $M\widehat Q M$ and
+$\widehat Q^{1/2}M^2\widehat Q^{1/2}$ agree. The latter is bounded above by
+$\widehat Q$ in quadratic-form order, so min--max bounds every ordered eigenvalue.
+Taking integer powers AFTER the eigenvalue comparison gives the trace inequality;
+no operator-monotonicity of $x^m$ is assumed. Gauge restriction can only reduce
+this positive trace. Peter--Weyl and tensor factorization give the last term.
+\end{proof}
+
+This is a rigorous interacting estimate, but its first term is an unresolved
+vacuum cost, not thermal occupation. Even a better variational scalar bounded
+only by $-\log\widehat\lambda_0\le C L$ would contribute $C mL$, of order
+$t\operatorname{Vol}(\Sigma)a^{-4}$ in three spatial dimensions. It is therefore
+insufficient to combine an unshifted kinetic bound with an extensive ground bound
+and then call the result ground-relative. The exact spatial factor $z_{\rm sp}$
+in (3) is retained rather than estimated away.
+
+\paragraph{Exact SU(2) kinetic spectrum disproves a global Gaussian upper comparison.}
+Use $s(U)=1-\tfrac12\operatorname{Re}\operatorname{Tr}U$ and
+$k_B(U)=e^{-Bs(U)}$, with $B$ the normalized Wilson coefficient. For representation
+dimension $d=1,2,\ldots$, Weyl integration with
+$\chi_d(\theta)=\sin(d\theta)/\sin\theta$ gives
+\[
+ c_B=e^{-B}\frac{2I_1(B)}B,\qquad q_d=I_d(B)/I_1(B).    \tag{4}
+\]
+Indeed integration of $e^{B\cos\theta}\sin\theta\sin(d\theta)$ gives the
+character coefficient $2d I_d(B)/B$, which must be divided by $d$ for convolution.
+The exact positive series gives
+\[
+ \frac{(B/2)^d}{d!}\le I_d(B)
+ \le\frac{(B/2)^d}{d!}\exp\left(\frac{B^2}{4(d+1)}\right). \tag{5}
+\]
+The upper bound follows from $(d+1)\cdots(d+k)\ge(d+1)^k$ termwise.
+Thus at any fixed $B>0$, $-\log q_d=d\log d+O_B(d)$, whereas the Casimir is
+proportional to $d^2-1$. In particular there are NO constants $C<\infty,c>0$
+for which
+\[
+ \widehat Q_B\le C\exp[-c(-\Delta)/B]                  \tag{6}
+\]
+holds as an operator inequality on the entire one-link representation space.
+This is a statement about an UPPER heat-kernel spectral comparison; a lower
+comparison or a restricted low-representation estimate is a different question.
+
+Gauge projection does not repair (6). On any simple spatial loop of $\ell$ distinct
+links, the gauge-invariant Wilson-loop character of representation $d$ is a
+nonzero eigenfunction of the product temporal convolution with eigenvalue
+$q_d^\ell$; the sum of link Laplacians has eigenvalue $\ell C_d$.
+Testing (6) on these physical vectors again contradicts (5). No free global
+rotor replacement or gauge-volume approximation is involved. High representations
+still have a factorially controlled tail, so this failure is not a failure of
+physical-slab trace finiteness or of the S94 target.
+
+The Bessel series used in (5) is NIST DLMF formula 10.25.2,
+\texttt{https://dlmf.nist.gov/10.25.E2}; its fixed-argument large-order behavior
+is DLMF 10.41.1. The two inequalities in (5) are proved here directly.
+
+\paragraph{A valid all-representation kinetic estimate replaces the false Gaussian one.}
+The Turan inequality and recurrence of Baricz--Ponnusamy,
+\texttt{https://arxiv.org/pdf/1010.3346}, equations(1)--(3), give for integer $n\ge1$
+\[
+ e^{-\operatorname{arsinh}((n+1)/B)}
+ <\frac{I_{n+1}(B)}{I_n(B)}
+ < e^{-\operatorname{arsinh}(n/B)}.                     \tag{8}
+\]
+For completeness, write $r_n=I_{n+1}/I_n$. Turan positivity gives
+$r_{n-1}>r_n>r_{n+1}$, while the recurrence gives
+$r_{n-1}^{-1}=2n/B+r_n$ and $r_n^{-1}=2(n+1)/B+r_{n+1}$.
+The resulting two quadratic inequalities in $r_n$ prove (8).
+The trivial representation has $q_1=1$. For $d\ge2$, multiplication from $n=1$ to $d-1$ yields
+\[
+ \exp\left[-\sum_{n=1}^{d-1}\operatorname{arsinh}((n+1)/B)\right]
+ <q_d<
+ \exp\left[-\sum_{n=1}^{d-1}\operatorname{arsinh}(n/B)\right]. \tag{9}
+\]
+This retains the low-representation quadratic and high-representation factorial
+regimes in the SAME original kernel. For $B\ge1$,
+$\operatorname{arsinh}(n/B)\ge n/(B+n)\ge1/(2B)$, hence in particular
+$q_d\le\exp[-(d-1)/(4B)]$. If $m\ge B$, the one-link trace satisfies
+\[
+ \sum_{d\ge1}d^2q_d^m\le1+C\exp[-m/(4B)],\qquad
+ C=\sum_{d\ge2}d^2e^{-(d-2)/4}<\infty.                 \tag{10}
+\]
+Inserting (10) into the actual min--max bound gives
+\[
+ \log Q_{\rm occ}(ma)\le
+       -m\log\widehat\lambda_0+C L e^{-m/(4B)}.        \tag{11}
+\]
+At physical time $m\asymp a^{-1}$ and $B\asymp\log(a^{-1})$, the second term
+tends to zero even with $L\asymp a^{-3}$. The FIRST term is the missing ground
+subtraction; it is not small and is not dropped. Thus the full kinetic tail can
+be controlled without solving the interacting vacuum-relative problem. Equations
+(9)--(11) are not a ground-relative heat-kernel comparison.
+
+\paragraph{Precision required of a useful vacuum-matched comparison.}
+Suppose a reference transfer $R_a$ on the correct physical/global space has its
+own leading eigenvalue $r_0$ and controlled occupation trace. A proposed spectral
+comparison with original Wilson eigenvalues of the form
+\[
+ \lambda_j(A_a)\le e^{-a b_a+\epsilon_a}r_j^{\,c},\qquad
+ \lambda_0(A_a)\ge e^{-a b_a-\epsilon_a}r_0^{\,c}
+\]
+would imply
+\[
+ Q_{\rm occ}(ma)\le e^{2m\epsilon_a}
+       \sum_j(r_j/r_0)^{cm}.                           \tag{7}
+\]
+The common scalar $b_a$ cancels exactly, however divergent it is. But for a uniform
+extensive physical-time bound the unmatched error must obey
+$\epsilon_a=O(a\operatorname{Vol}\Sigma)$ at fixed physical time. An error
+$\epsilon_a=\delta_a L$, $L\asymp\operatorname{Vol}\Sigma/a^3$, needs
+$\delta_a=O(a^4)$. A fixed-order per-link perturbative error $O(g_a^p)$ with
+logarithmically vanishing coupling does not meet that criterion.
+This identifies the required precision for THIS comparison route; it does not
+assert that a more intrinsic ground-state-relative comparison must compute
+vacuum energy to that accuracy by perturbation theory.
+
+\paragraph{Main remaining step.}
+A genuine occupied-state bound must use either a vacuum-matched spatial/temporal
+comparison (including high-representation tails and true compact holonomies), or
+the actual ground-state-transformed operator with controlled physical-time trace.
+Equations (2)--(5) are actual Wilson bounds but do not supply that missing
+comparison. No interacting purity, S94 closure or mass gap is claimed.
+\end{document}

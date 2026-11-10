@@ -1,0 +1,43 @@
+\section{Boundary histories and conditional covariance}
+\label{sec:r18setup}
+
+Use $G=SU(N)$, $N\ge2$, normalized product Haar measure and the actual Wilson action
+\begin{equation}
+ \dd\mu_\beta=Z_\beta^{-1}e^{-\beta S}\dd\lambda,\qquad
+ S=\sum_p s_p,\qquad s_p=N-\Re\Tr U_p,\qquad \beta=\cG g^{-2}.
+ \label{eq:r18wilson}
+\end{equation}
+The original invariant free-link derivatives are $X_b^A$. Set
+\[
+ F_b^A=X_b^AS,\qquad
+ F_{b;\mu}^A=X_b^AS_{\mu\nu_b},\qquad
+ D_b=\sum_{A,\mu\ne\nu_b}(F_{b;\mu}^A)^2,\quad
+ P_b=\sum_A(F_b^A)^2,\quad
+ \ell_b=\sum_A(X_b^A)^2S.
+\]
+For a real deterministic scalar root test $f$, define the unchanged sources
+\begin{equation}
+ h_f=\sum_bf_b\beta(D_b-P_b/3),\qquad
+ r_f=\sum_bf_b(\beta D_b-\ell_b/3),\qquad
+ t_f=h_f-r_f=\frac13\sum_bf_b(\ell_b-\beta P_b).
+ \label{eq:r18sources}
+\end{equation}
+Write $M_f=\sum_bf_b^2$ and $b_f=\norm f_\infty$. All finite pointing shifts are expanded with their original weights before these norms are evaluated. Forces at roots later placed in a gauge-fixing forest are still original forces, evaluated before chord restriction.
+
+The exact Casimir identity and physical factors remain
+\begin{equation}
+ \ell[f]=\cF\sum_pm_p(f)(N-s_p),\qquad
+ m_p(f)=\sum_{\substack{b\in\partial p\\b\ {\rm free}}}f_b,
+ \qquad
+ O_H(f)=\cG^{-1}a^{-2}h_f,\quad r_H(f)=\cG^{-1}a^{-2}r_f.
+ \label{eq:r18physical}
+\end{equation}
+The constant $\cF N\sum_pm_p(f)$ has not been removed. Field-independent physical or saved factors multiply variance bounds by their squared modulus and exponential scales by their modulus. Live factors retain their actual derivatives.
+
+For an actual coordinate boundary or retained record $\eta$, put $m_f(\eta)=\E(F_f\mid\eta)$, where $F_f$ is either original source. The target is
+\begin{equation}
+ \Var_\mu F_f
+ =\E_\eta\Var(F_f\mid\eta)+\Var_\eta m_f(\eta).
+ \label{eq:r18variance}
+\end{equation}
+The first term and the portion of the second caused by a complete original label layer are controlled below. The continuous exterior mean term is not set to zero. In particular, global conjugation of the original law does not give zero conditional coordinates at a fixed nonflat boundary.

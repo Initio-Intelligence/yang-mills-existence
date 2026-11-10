@@ -1,0 +1,177 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{The complete internal Ward identity and its heat-tail regulator contacts}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{New internal, rather than only boundary-source, information.}
+Take the analysis of the complete shortest time contact packet calculation. Its $\mathsf K$ is the COMPLETE
+marked-vector contact, not the isolated cubic bubble. Here a local
+Gaussian-noise Stein identity matches its gauge contraction to an
+explicit kinetic response. Heat tails break the uncut identity by a
+fully specified regulator polynomial. This identifies which cancellation
+holds before or after scale integration. It does not bound the remaining
+transverse contact uniformly in the block size.
+
+All matrices and tensors use the actual relative boundary and original
+right-minimum coordinates. Set
+\[
+ G=(H+DD^*)^{-1},\quad g=(D^*D)^{-1},\quad
+ P=I-DgD^*,\quad b=l-\tfrac12 t:G.
+\]
+The local gauge velocity and Jacobian are
+$\mathcal R=D+\alpha R_1(z)+\alpha^2R_2(z)+\cdots$ and
+$M=D^*\mathcal R$, with $\alpha=B^{-1/2}$. No global gauge identity or
+uniform patch size is assumed.
+
+\paragraph{1. A complete local Stein/contact identity.}
+In the normalized local gauge construction, the noise $F=D^*z$ has
+standard Gaussian law independently of the physical tree record, to
+all fixed-block Laplace coefficients. Holding that physical record fixed,
+\[
+ \partial_F z=\mathcal R M^{-1},\qquad
+ E[zF^*]=E[\mathcal R M^{-1}].                                    \tag{1}
+\]
+This is Gaussian integration by parts in the actual local orbit
+coordinate, with the left-invariant Jacobian and original Haar included.
+Cutoff partners are exponentially small at each fixed block and do not
+alter these coefficients.
+
+For the original normalized fluctuation density, Gaussian differentiation
+of its normalization gives the UNCENTERED moments
+\[
+ Ez=\alpha Gb+O_R(\alpha^2),\qquad
+ Ezz^*=G-\alpha^2G\mathsf K G+O_R(\alpha^3).                     \tag{2}
+\]
+Using the centered covariance here would incorrectly remove a mean-current
+partner already present in $\mathsf K$.
+Since $M_1=D^*R_1,M_2=D^*R_2$, direct inverse multiplication gives
+\[
+ \mathcal R M^{-1}=Dg+\alpha P R_1g
+                +\alpha^2P(R_2-R_1gM_1)g+O_R(\alpha^3).
+\]
+The mean in (2) contributes to the linear $R_1$ term. Therefore define
+\[
+ \mathcal A=R_1(Gb)+E_G[R_2-R_1gM_1].
+\]
+Equating the order-$\alpha^2$ terms in (1), and using $GD=Dg$, proves
+\[
+ \boxed{\mathsf K D=-H\mathcal A.}                              \tag{3}
+\]
+This contains the original quartic, cubic, ghost-Jacobian, Haar and
+completed mean-current coefficients through the full tensor of the complete shortest time contact packet calculation.
+It does NOT say $\mathsf K D=0$. Its possible cross-sector part is an
+explicit kinetic gauge-response term. At a flat record $b=0$, but the
+expectation in $\mathcal A$ must still be kept.
+
+Symmetry and $HD=0$ imply
+\[
+ D^*\mathsf K D=0,\qquad
+ \boxed{P\mathsf K P=\mathsf K+H\mathcal A gD^*
+                                  +Dg\mathcal A^*H.}             \tag{4}
+\]
+Thus the fully dressed transverse kernel is explicit. It is still the
+transverse kernel, not a proved multiple of $H$ with uniform coefficient.
+A physical-energy bound on (4) remains a separate mathematical problem.
+
+\paragraph{2. The complete heat-tail defect is not zero.}
+Use the actual simultaneous tails $G_s,g_s$ of the complete shortest time contact packet calculation. Put
+\[
+ X=G-G_s=\int_0^s e^{-t\Delta_1}dt,\quad
+ Y=g-g_s=\int_0^s e^{-t\Delta_0}dt,
+\]
+\[
+ \delta b=b_s-b=\tfrac12t:X-\operatorname{Tr}(Y A_a)
+ \quad\text{in component }a.
+\]
+Here $A_a$ is the ghost matrix in $M_1=z_a A_a$.
+Write $R_1=z_a C_a$, $R_2=z_a z_b E_{ab}$, so
+$A_a=D^*C_a$ and $B_{ab}=D^*E_{ab}$.
+Let $\delta\mathsf K=\mathsf K_s-\mathsf K$ and
+$\delta\mathcal A=\mathcal A_s-\mathcal A$, using the SAME original
+tensors at the current minimum. Exact expansion of the complete shortest time contact packet calculation gives
+\begin{align}
+ \delta v_{ab}={}&2\operatorname{Tr}(YB_{ab})
+ -\operatorname{Tr}(YA_agA_b+gA_aYA_b)
+ +\operatorname{Tr}(YA_aYA_b),\\
+ \delta\mathsf K_{ab}={}&\delta v_{ab}-\tfrac12u_{abcd}X_{cd}
+ +\tfrac12t_{acd}(X_{ce}G_{df}+G_{ce}X_{df}-X_{ce}X_{df})t_{bef}\\
+ &-b_a\delta b_b-\delta b_a b_b-\delta b_a\delta b_b
+       +t_{abc}(G\delta b-Xb-X\delta b)_c,                       \tag{5}\\
+ \delta\mathcal A={}&C_a(G\delta b-Xb-X\delta b)_a-X_{ab}E_{ab}
+ +X_{ab}C_agA_b+G_{ab}C_aYA_b-X_{ab}C_aYA_b.                       \tag{6}
+\end{align}
+Consequently the complete regulated identity is
+\[
+ \boxed{\mathsf K_sD+H\mathcal A_s
+                 =\delta\mathsf K D+H\delta\mathcal A.}         \tag{7}
+\]
+Every term on the right contains an explicit short covariance $X$ or
+$Y$. All original boundary conditions remain inside those kernels.
+The Haar $2\delta/3$ is present in $\mathsf K$ and $\mathsf K_s$;
+it cancels from their difference, not from either contact tensor.
+At large $s$, $\mathsf K_s\to2I/3$ even though $\mathcal C_s\to0$;
+the marked heat kernel, not a vanishing unweighted contact, kills that
+endpoint in the complete packet.
+
+\paragraph{3. Which regulator variation cancels only after scale integration.}
+Vary the normalized local gauge penalty to $\kappa|D^*z|^2/2$.
+The original uncut coefficient is independent of $\kappa$, as proved in
+the local noise ward and longitudinal cancellation calculation. In the heat-tail packet use
+$G_s^{(\kappa)}=\int_s^\infty e^{-t(H+\kappa DD^*)}dt$ and keep the
+ghost tail $g_s$ associated with the original Jacobian.
+At $\kappa=1$,
+\[
+ -\partial_\kappa G_s^{(\kappa)}
+ =W_s:=Dg^2e^{-s\Delta_0}(I+s\Delta_0)D^*.
+\]
+Define $\mathcal B_s=\tfrac12\operatorname{Tr}(W_s\mathsf K_s)$.
+Then the exact complete packet satisfies
+\[
+ \partial_\kappa\mathcal C_s^{(\kappa)}\big|_1=-\mathcal B_s,
+ \qquad
+ \partial_\kappa\mathcal I_s^{(\kappa)}\big|_1=\partial_s\mathcal B_s.
+                                                                    \tag{8}
+\]
+Equation(3) gives $\mathcal B_0=0$, while the relative spectral gap gives
+$\mathcal B_\infty=0$ for each fixed block. Hence this regulator variation
+cancels after integrating all $s$, not necessarily at a fixed scale.
+The derivative $\partial_s\mathsf K_s$ in (8) includes its ghost-tail
+variation. Dropping the marked-ghost packet would not preserve this
+identity. This is a definite complete regulator/contact matching, not
+an assertion that every transverse short-line contact has canceled.
+
+\paragraph{4. Actual original-cube check distinguishes cut and uncut contacts.}
+On the complete flat $R=2$ cube the cubic polynomial vanishes, so the
+full internal matrix can be reconstructed exactly from the original
+quartic, Haar and nonlinear ghost-Jacobian contractions. For each color,
+with the literal eight-link action Hessian $H$, rational arithmetic gives
+\[
+ \boxed{\mathsf K=-{49\over288}H-{1\over192}H^2.}                \tag{9}
+\]
+This is a genuine complete kinetic decomposition in that finite geometry,
+not a claim of a universal renormalized coupling. In particular
+$\mathsf K d=0$ for its original gauge incidence $d$.
+
+Now take an ACTUAL common proper-time cutoff
+$s=\frac12\log2$. The vector physical heat eigenvalues are $1/8,1/16$
+(from eigenvalues6,8), and the ghost heat eigenvalue is $1/16$.
+The same complete tensor has
+\[
+ \mathsf K_s d={1901\over3072}d,\qquad
+ d^*\mathsf K_s d={1901\over384}.                                \tag{10}
+\]
+Thus applying the uncut internal Ward directly to a cut tensor would
+be false. This is a regulator effect accounted for by (5)--(8), not an
+uncanceled physical mass in the original coefficient. The finite calculation checks the full matrix, not only a selected cubic contact.
+
+\paragraph{What remains.}
+The full regulated residual (7) and the kinetic gauge-response matching
+(3)--(4) are now explicit. The unresolved main term is the transverse
+part $P\mathsf K P$, together with the marked-ghost and background/source
+partners when inserted into the complete packet. Equation(9) is only a
+finite verification, not the growing-block estimate. Neither boundary-
+source covariance nor the gauge-sector identities prove a physical-curl
+bound on that full transverse integral. Its local kinetic coefficient
+and boundary contributions must be retained, and the original uniform
+differentiated remainder remains open. No S94 or physical-scale induction
+is claimed.
+\end{document}

@@ -1,0 +1,176 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Complete harmonic kinetic matching in the original boundary integral}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Input and the specific matched insertion.}
+The exact completed transverse shortest time packet calculation supplies the finite longitudinal interpolation, nonflat
+mean-current coefficients, zero endpoint total-time subtraction and
+marked ghost term used here. Its transverse projector is nonlocal
+and is not replaced here by a bounded connector.
+This note instead matches one COMPLETE uncut vector self-energy insertion
+with its original physical boundary response. Boundary vertices are
+included, not identified with internal fluctuation indices. This gives
+a uniform logarithmic bound for the harmonic constant-flux contraction,
+while leaving arbitrary internal legs and the full two-loop packet open.
+
+\paragraph{1. Complete the original Gaussian with its actual boundary field.}
+Work at the flat record on the complete relative cube. Let $J$ denote
+all free links before tree fixing and $\partial$ the original fixed links.
+Let $v$ be a fixed boundary tangent. With the complete classical Hessian
+blocks define the physical harmonic extension
+\[
+ h_\partial=v,\quad
+ h_J=-G H_{J\partial}v,\qquad
+ G=(H_{JJ}+DD^*)^{-1}.
+\]
+The exact relative gauge identities give
+$D^*H_{J\partial}=0$, hence $D^*h_J=0$ and
+$H_{JJ}h_J+H_{J\partial}v=0$.
+Its complete energy is
+\[
+ E_v=h^*Hh=v^*K_{\rm eff}v,
+\]
+including all fixed-only boundary plaquettes.
+
+Use a FIXED logarithmic gauge at this flat reference, with local gauge
+function $D^*X_J$. Put $\alpha=B^{-1/2}$ and change the free integration
+coordinates by the exact Euclidean translation
+\[
+ X_J=z+\zeta h_J,\qquad X_\partial=\zeta v,
+ \qquad U_e=\exp(i\alpha X_e\cdot\sigma).
+                                                                    \tag{1}
+\]
+The links in (1) are SINGLE exponentials. Replacing them by a product of
+background and fluctuation exponentials would change intermediate
+vertices and omit the coordinate/measure partners being matched.
+The original quadratic action and fixed gauge penalty complete exactly:
+\[
+ S_2(X)+\tfrac12|D^*X_J|^2
+       =\tfrac12z^*\Delta_1z+\tfrac12\zeta^2E_v.
+\]
+The local gauge-noise insertion is normalized as before and leaves the
+original conditional partition function unchanged to its fixed-block
+coefficients. No new finite-cutoff source prescription is introduced.
+
+\paragraph{2. Retain the external action vertices and free measure vertices.}
+Let $T_3(X),T_4(X)$ be the Taylor polynomials of ALL original plaquettes,
+now with free AND fixed field indices. The free-link Haar and original
+local gauge Jacobian depend on $X_J$ only. Set
+\[
+ \widehat Q_3(X)=T_3(X)-\ell_1(X_J),\qquad
+ \widehat Q_4(X)=T_4(X)-J_2(X_J)-\ell_2(X_J).
+\]
+There is no Haar factor for a fixed boundary link. Conversely, the Haar
+factor on a translated free link is $j(\alpha(z+\zeta h_J))$, so its
+source derivative must be kept. The same is true of the fixed-gauge
+Jacobian evaluated at $z+\zeta h_J$.
+
+The coefficient of the quadratic boundary correction obtained from the
+ORIGINAL integral in coordinates(1) is
+\[
+ \boxed{\mathcal S_R[v]=
+ E_G\partial_h^2\widehat Q_4
+ -\operatorname{Var}_G(\partial_h\widehat Q_3)
+ -\operatorname{Cov}_G(\widehat Q_3,
+                                      \partial_h^2\widehat Q_3).} \tag{2}
+\]
+All polynomials in (2) are evaluated at $X_J=z,X_\partial=0$.
+This follows by expanding
+$-\log E_G\exp[-\alpha\widehat Q_3-\alpha^2\widehat Q_4+\cdots]$
+and differentiating twice in $\zeta$. The order-$\alpha$ second derivative
+is the expectation of a linear polynomial and vanishes. Flat global color
+symmetry also makes the linear source expectation vanish.
+
+Equivalently extend the complete tensor of the complete shortest time contact packet calculation to external boundary
+indices, while extending $G$ by zero on fixed links and supporting its
+Haar/Jacobian tensors on free links only. At the flat reference the
+completed mean-current vector vanishes and
+\[
+ \widehat K_{ab}=v_{ab}+\tfrac12u_{abcd}G_{cd}
+                  -\tfrac12t_{acd}G_{ce}G_{df}t_{bef},\qquad
+ \mathcal S_R[v]=h^*\widehat K h.                                 \tag{3}
+\]
+Here $t,u$ include the external original plaquette indices; $v_{ab}$
+contains the original free Haar and ghost-Jacobian coefficients of the complete shortest time contact packet calculation.
+This is NOT the internal free-link matrix evaluated on $h_J$ alone.
+The missing boundary cross terms would change the answer.
+
+\paragraph{3. Compare two coefficient expansions of the SAME raw integral.}
+For each fixed $R$, the fixed-log expansion above gives
+\[
+ \left.\partial_\zeta^2[-\log Z_B(\zeta v/\sqrt B)]\right|_0
+       =E_v+B^{-1}\mathcal S_R[v]+O_R(B^{-2}).                    \tag{4}
+\]
+All original raw Haar, orbit and canonical factors are retained;
+source-independent factors do not enter this derivative. The fixed-only
+plaquette action is present in $E_v$, not discarded from $Z_B$.
+
+Now use the independently justified moving-ACTUAL-minimum expansion of
+that same original integral. For physical boundary angle $\epsilon$,
+\[
+ -\log Z_B(\epsilon v)=B V_{\rm cl}(\epsilon)
+   +c_{R,B}+F_{\rm quad}(\epsilon)
+   +B^{-1}\mathcal C_R(\epsilon)+O_R(B^{-2}).
+\]
+It gives instead
+\[
+ \left.\partial_\zeta^2[-\log Z_B(\zeta v/\sqrt B)]\right|_0
+       =E_v+B^{-1}F_{\rm quad}''(0)+O_R(B^{-2}).
+\]
+Uniqueness of the fixed-$R$ coefficient proves the exact finite identity
+\[
+ \boxed{h^*\widehat K h=F_{\rm quad}''(0).}                        \tag{5}
+\]
+The actual minimum acceleration, change of right frame and all gauge/
+Haar partners are accounted for by comparing the same integral; they
+are not individually declared zero. For the constant-flux family the
+Cartan minimum is in fact exactly linear, giving an additional check.
+No uniform remainder in $R$ is inferred from this coefficient comparison.
+
+\paragraph{4. A genuine uniform kinetic bound for the complete flux insertion.}
+For the original constant-flux boundary data,
+$h_{(x,\mu)}=\mathbf1_{\mu=1}x_0/R^2$ is the true harmonic extension and
+$E_R=(R+1)^2/R^2$. The proved and evaluated scalar-loop/spin
+bound of the mixed boundary magnetic loop bound calculation applies to the RIGHT side of (5). Hence
+\[
+ \boxed{|h^*\widehat K h|\le C\log(2+R)E_R.}                     \tag{6}
+\]
+In canonical boundary curvature its coefficient is $B^{-1}$ times (6).
+This matches the complete quartic, cubic, ghost and Haar short-subgraph
+insertion against an actual physical kinetic response; no derivative
+factor was assigned to an isolated endpoint minor. Its nonzero signed
+kinetic coefficient is retained, not absorbed silently into a new coupling.
+The identity was established separately for each finite block, then the
+already uniform bound was applied to its common value. There is no exchange
+of an unproved growing-dimensional Laplace limit.
+
+\paragraph{5. Exact single-exponential original-cube check.}
+On the complete $R=2$ cube the fixed-log expansion contains all 216
+plaquettes and 24 free real fluctuation variables before gauge fixing.
+The exact harmonic quadratic completion is verified, including energy
+$9/4$. Rational expansion of the SINGLE exponentials in (1) gives
+\[
+\begin{array}{c|r}
+\text{complete insertion partner}&\text{value}\\\hline
+E\partial_h^2T_4&-35/192\\
+-E\partial_h^2J_2&1/12\\
+-E\partial_h^2\ell_2&1/48\\
+\operatorname{Var}(\partial_hT_3)&13/288
+\end{array}
+\]
+The other covariance in (2) vanishes in this particular flat geometry.
+Their signed sum is exactly $-71/576$, matching the independent moving-
+minimum determinant calculation. The original internal matrix on $h_J$
+alone would give a different value; external source terms matter.
+
+\paragraph{Remaining main gap, precisely delimited.}
+Equation(6) controls the COMPLETE UNCUT vector insertion with external
+legs equal to the physical harmonic flux field. It does not control
+arbitrary off-shell internal fields, individual heat-cutoff kernels,
+the marked-ghost self-energy, or the twice differentiated TWO-LOOP
+coefficient $\mathcal C_R''$. Internal legs in the transverse packet of
+the exact completed transverse shortest time packet calculation need not be harmonic boundary extensions. Their regulator/contact
+and source-spin partners must still be matched and bounded. The original
+uniform differentiated remainder is also open. Thus this is an actual
+kinetic matching step, not full nonlinear closure or S94.
+\end{document}

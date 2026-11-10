@@ -1,0 +1,155 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{A logarithmic signed magnetic bound with the original mixed boundaries}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Objective and scope.}
+The constant flux spin and magnetic reduction calculation reduces the ORIGINAL complete constant-flux quadratic response to
+four scalar magnetic edge determinants, twice the scalar ghost determinant,
+and already bounded spin/potential/neutral terms. Its spin trace estimate
+and boundary-normal diagonal check are used. Here an elementary killed-walk
+argument controls the remaining scalar determinants with their actual
+mixed boundary conditions. This closes the leading quadratic estimate for
+ONE physical direction. The nonlinear original-law remainder (5) of the signed gauge quotient and unsummed current calculation
+is not estimated by this argument.
+
+\paragraph{1. The literal scalar connections.}
+Put $f=R^{-2}$. In the conventions of the constant flux spin and magnetic reduction calculation, the forward scalar hopping
+phase on the component-$\mu$ edge grid in direction $\nu$ is
+\[
+ a^{(\mu)}_\nu(x)=f\left[
+  \mathbf1_{\nu=1}(2x_0+\mathbf1_{\mu=0})
+       +\mathbf1_{\nu=0}\mathbf1_{\mu=1}\right].                    \tag{1}
+\]
+This follows directly from the same-component ordered Wilson insertions
+and the endpoint gauge term. In the direction of the link component the
+hopping comes from the gauge term; in a transverse direction it comes
+from its single incident plaquette. The ghost phase is
+$a^{(g)}_\nu(x)=2f x_0\mathbf1_{\nu=1}$.
+The extra terms in (1) are exact gradients of
+$f(\mathbf1_{\mu=0}x_1+\mathbf1_{\mu=1}x_0)$.
+Hence every scalar operator is unitarily gauge equivalent to the SAME
+constant-flux connection $a_1=2fx_0$, on its OWN finite grid.
+This does not equate their boundary conditions. Each edge grid has $R$
+Neumann sites in direction $\mu$, and $R-1$ Dirichlet interior sites in
+each other direction; the ghost has four Dirichlet directions.
+The original $R=3$ full-Hessian derivative check verifies every elementary
+square curvature $2f$ in plane01 and zero otherwise, error below $6\,10^{-17}$.
+
+\paragraph{2. A scalar mixed-boundary lemma.}
+Let $L_\epsilon$ be the nearest-neighbor magnetic difference matrix on any
+of these grids, with hopping phases $\epsilon a$, flat original diagonal,
+and connection gauge equivalent to $a_1=b x_0$, $b=2f$.
+Then with an absolute constant independent of $R$,
+\[
+ \boxed{0\le (\log\det L_\epsilon)''\big|_0
+            \le C |\Omega|b^2\log(2+R)\le C\log(2+R).}             \tag{2}
+\]
+The first bound's factor $|\Omega|b^2$ is retained: $|\Omega|\le R^4$
+and $b^2=4R^{-4}$ only in this specific physical direction.
+
+Here is a direct proof, including the reflection issue. Realize $L_0$
+as the negative generator of independent continuous-time coordinate walks,
+with rate one to each nearest neighbor. A Neumann endpoint suppresses the
+outward jump; a Dirichlet endpoint kills the walk on the outward jump.
+Write $\tau$ for the killing time. At least three coordinates are
+Dirichlet, so the original operator is strictly positive.
+
+Fix a starting point $x$. Among coordinates zero and one at least ONE is
+Dirichlet, since there is at most one Neumann coordinate in the entire
+grid. Choose it as $y$, and call the other $z$. A gauge change puts the
+connection in the form
+\[
+ a_y=\pm b(z-z(x)),\qquad a_\nu=0\quad(\nu\ne y).                  \tag{3}
+\]
+The subtraction of $z(x)$ is a constant-gradient gauge change. It depends
+on the chosen start, which is harmless for a closed-loop trace.
+Extend the coordinate processes beyond the killing time, and stop their
+current at $\tau$. Because $y$ is Dirichlet, its two jumps have equal
+rates until killing, INCLUDING the possible killing jump. Thus
+\[
+ M_t=\sum_{\substack{y\text{-jumps at }s\le t\wedge\tau}}
+             \pm b(Z_{s-}-z(x))\,\Delta Y_s
+\]
+is a stopped martingale. Its predictable quadratic variation is
+$2b^2\int_0^{t\wedge\tau}(Z_s-z(x))^2ds$.
+If $z$ is Dirichlet, use the unrestricted integer walk up to killing.
+If $z$ is Neumann, its reflected finite-interval walk is a 1-Lipschitz
+fold of the unrestricted integer walk (the suppressed endpoint jump
+becomes a self jump under the fold). Consequently, for either case,
+$E(Z_s-z(x))^2\le2s$ for the extended process. Dropping the stopping
+indicator in the nonnegative integral proves
+\[
+ E_x M_t^2\le 2b^2t^2,
+ \qquad E_x[M_t^2;\tau>t]\le2b^2t^2.                              \tag{4}
+\]
+No reflected-coordinate drift estimate is assumed: the current is
+integrated only against a DIRICHLET coordinate. This choice is what uses
+the actual mixed boundary structure.
+
+\paragraph{3. Close the loop before bounding its current.}
+Let $p_t$ be the original zero-field killed transition kernel. The
+one-dimensional sine/cosine product expansions give
+\[
+ \sup_{u,v}p_t(u,v)\le C(1+t)^{-2}e^{-ct/R^2}.                     \tag{5}
+\]
+For completeness each Dirichlet factor is bounded by
+$C(1+t)^{-1/2}e^{-ct/R^2}$, and the one possible Neumann factor by
+$C[(1+t)^{-1/2}+R^{-1}]$. For $t\le R^2$ the first term controls both;
+for $t>R^2$ the extra factor $\sqrt{t}/R$ is absorbed by a smaller
+constant in the exponential supplied by the three Dirichlet factors.
+The same estimate holds with four Dirichlet factors.
+
+The magnetic exponential expansion is the jump-path expansion of the
+same walk, each surviving path weighted by $e^{i\epsilon J}$, where $J$
+is its oriented current. In particular
+\[
+ -\partial_\epsilon^2\operatorname{Tr}e^{-tL_\epsilon}\big|_0
+ =\sum_x E_x[J_t^2;X_t=x,\tau>t]=:\mathcal A(t).                  \tag{6}
+\]
+Split a closed path into two halves of length $s=t/2$ and reverse the
+second. Reversibility of the killed real kernel makes both halves paths
+from $x$ to the same midpoint; their weights multiply. The total current
+is $J_1-J_2$. With the SAME start-centered gauge (3),
+$(J_1-J_2)^2\le2J_1^2+2J_2^2$. For each half, sum its squared current
+first and bound the other half by $\sup p_s$. Equations(4)--(5) give
+\[
+ \mathcal A(t)\le4|\Omega|(\sup p_s)\sup_xE_x[M_s^2;\tau>s]
+ \le C|\Omega|b^2\frac{t^2}{(1+t)^2}e^{-ct/R^2}.                  \tag{7}
+\]
+This keeps the four-dimensional return probability. Using an unconditioned
+area bound followed by Cauchy--Schwarz would lose that power.
+
+The finite positive-matrix logarithm identity, differentiated twice, gives
+\[
+ (\log\det L_\epsilon)''\big|_0
+ =\int_0^\infty\mathcal A(t)\,\frac{dt}{t}.
+\]
+All terms are nonnegative. Formula(7) proves convergence at zero and
+infinity and gives
+$\int_0^\infty t(1+t)^{-2}e^{-ct/R^2}dt\le C\log(2+R)$,
+which proves (2). The finite-dimensional differentiation can equivalently
+be done first with finite time cutoffs and then passed to the limit using
+(7); no infinite-volume limit or unproved bridge estimate is used.
+
+\paragraph{4. Consequence for the original signed quadratic response.}
+Apply (2) to each of the four ORIGINAL scalar edge operators and to the
+original ghost operator. The signed combination of the constant flux spin and magnetic reduction calculation therefore obeys
+$|\mathcal M_R|\le C\log(2+R)$. Its exact spin remainder costs at most the
+same logarithm, while potential and neutral terms cost $C$. Consequently
+for the actual constant-flux minimum of the complete cube abelian signed incidence calculation,
+\[
+ \boxed{|F_{{\rm quad},\zeta\zeta}|
+       \le {C\log(2+R)\over B}
+       \le {C\log(2+R)\over B}\,E_R,\qquad
+       \epsilon=\zeta/\sqrt B,\quad E_R={(R+1)^2\over R^2}.}         \tag{8}
+\]
+This is a signed leading quadratic physical-energy bound with the original
+relative boundary conditions and full gauge normalization. No replacement
+of a global holonomy law by free rotors, or deletion of a live determinant,
+occurs. Its constant does not determine the renormalized coupling coefficient.
+The original compact nonlinear integral still differs by the exact
+second/fourth-moment and current terms in (5) of the signed gauge quotient and unsummed current calculation. Controlling those by
+this same energy, and extending from one flux direction to general admitted
+nonflat records under composition, are indispensable open steps. Thus (8)
+is not a full nonlinear block estimate, nor S94 or a physical-scale induction.
+\end{document}

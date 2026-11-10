@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,hyperref}
+\newtheorem{theorem}{Theorem}
+\title{A complete Wilson torus comparison in an explicit strong-coupling regime}\author{}\date{}
+\begin{document}\maketitle
+This theorem concerns the original normalized-Haar Wilson partition function, including its absolute scalar. It proves the full integrated cancellation from the exact seam variance calculation at small fixed inverse coupling. It does not cover the manuscript's weak trajectory $\beta_a\asymp\log(1/a)$.
+
+\section{Constants and statement}
+Let $G=SU(N)$, $N\geq2$, $s(U)=1-N^{-1}\operatorname{Re}\operatorname{tr}U$, and let $Z_n(\beta)$ be the four-dimensional periodic lattice integral with $n$ sites per side and $6n^4$ positively oriented plaquettes. Define
+\[
+ D=20,\quad C=4D=80,\quad
+ u_*=[2e^2(C+D+1)]^{-1},\quad
+ \beta_*=-\tfrac12\log(1-u_*).
+ \tag{1}
+\]
+For $0\leq\beta\leq\beta_*$ set $u=1-e^{-2\beta}$ and
+\[
+ B(\beta)=\frac{ue^2}{1-Cue^2}.
+ \tag{2}
+\]
+\begin{theorem}
+For $n\geq8$ and every integer $q\geq1$,
+\[
+ \left|\frac{\log Z_n(\beta)}{n^4}
+ -\frac{\log Z_{qn}(\beta)}{(qn)^4}\right|
+ \leq12B(\beta)e^{-n/8}.
+ \tag{3}
+\]
+Thus, at physical mesh $a$ and $\ell_*=na$,
+\[
+ |p_{a,T_*}-p_{a,qT_*}|\leq
+ 12B(\beta)a^{-4}e^{-\ell_*/(8a)}.
+ \tag{4}
+\]
+In particular the right side is uniformly bounded for $\ell_*\geq\ell_0>0$ and $a>0$ in this small-$\beta$ regime, and tends to zero as $a\downarrow0$ for fixed $\ell_*$. No claim about a continuum gauge hierarchy follows.
+\end{theorem}
+
+\section{Exact gas and an explicit convergent majorant}
+Put $f_P=e^{-\beta s(U_P)}-1$. The original Haar product integral expands exactly as
+\[
+ Z_n=\int\prod_P(1+f_P)\,dU.
+\]
+Join two plaquettes if they share a link. Each plaquette has at most $D=4(6-1)=20$ neighbors. A polymer $\gamma$ is a nonempty connected set of plaquettes in this graph, with activity
+\[
+ z_\gamma=\int\prod_{P\in\gamma}f_P\prod_{e\in E(\gamma)}dU_e.
+ \tag{5}
+\]
+Distinct connected components of a plaquette subset use disjoint links, so Haar factorization gives exactly the hard-core polymer gas: two polymers are incompatible when they overlap or have adjacent plaquettes. No positivity of $z_\gamma$ is needed. Since $|f_P|\leq u$,
+$|z_\gamma|\leq u^{|\gamma|}$.
+
+The number of size-$m$ connected sets containing a fixed plaquette is at most $C^{m-1}$. To see this without a lattice asymptotic, choose a canonical rooted spanning tree, order its children by fixed neighbor labels, and encode it as a rooted plane tree with an allowed neighbor choice on each edge. There are at most $4^{m-1}$ plane trees and at most $D^{m-1}$ edge choices. This is an overcount, sufficient for the bound.
+
+Consequently
+\[
+ \sum_{\gamma\ni P}|z_\gamma|e^{2|\gamma|}\leq B(\beta).
+ \tag{6}
+\]
+Every polymer incompatible with $\gamma_0$ contains a plaquette in the closed graph neighborhood of $\gamma_0$, whose size is at most $(D+1)|\gamma_0|$. Hence
+\[
+ \sum_{\gamma\not\sim\gamma_0}|z_\gamma|e^{2|\gamma|}
+ \leq (D+1)B(\beta)|\gamma_0|<|\gamma_0|.
+ \tag{7}
+\]
+The last strict inequality follows directly from (1): $ue^2\leq[2(C+D+1)]^{-1}$, so $(D+1)B\leq(D+1)/(C+2D+2)<1$.
+
+Apply the Kotecky--Preiss pinned cluster bound to the tilted activities $|z_\gamma|e^{|\gamma|}$ and size function $|\gamma|$. In the standard multi-index cluster notation, let $\Phi(X)$ be the logarithmic cluster coefficient including activities and factorials, let
+$m(X)=\sum_\gamma n_\gamma(X)|\gamma|$, and let
+$N_P(X)=\sum_{\gamma\ni P}n_\gamma(X)$. Its pinned consequence is
+\[
+ \sum_X |\Phi(X)|e^{m(X)}N_P(X)\leq B(\beta).
+ \tag{8}
+\]
+This is the only external cluster theorem used. Its criterion and pinned conclusion appear as (2.12)--(2.15) in Fernandez--Procacci, \emph{Cluster expansion for abstract polymer models. New bounds from an old approach}, arXiv:math-ph/0605041, with the convergent logarithmic expansion in (2.3). The primary author copy and arXiv copy were directly inspected. Equation (7) verifies its hypotheses with the actual incidence count and an unused strict margin.
+
+\section{Exact local matching of the full logarithm}
+Assign each cluster to its plaquette occurrences by the weights $N_P(X)/m(X)$. Define
+\[
+ R_{n,P}=\sum_X\Phi(X)\frac{N_P(X)}{m(X)},\qquad
+ \log Z_n=\sum_PR_{n,P}.
+ \tag{9}
+\]
+The equality is exact because $\sum_PN_P(X)=m(X)$. Equation (8) gives
+\[
+ \sum_{m(X)\geq r}|\Phi(X)|\frac{N_P(X)}{m(X)}
+ \leq B(\beta)e^{-r}.
+ \tag{10}
+\]
+Take $r=\lfloor n/4\rfloor$. A cluster with $m(X)<r$, pinned at a given plaquette, has connected plaquette union with at most $m(X)$ distinct plaquettes. Along a chain of shared links, each coordinate displacement of the plaquette base changes by at most one. The resulting lifted support and its links have diameter less than $2m(X)+2<n$. No periodic identification or extra shared-link incompatibility can occur in that support. It therefore lifts uniquely from the pinned plaquette to the infinite lattice, and projects injectively into both tori. Activities (5), all link counts, incompatibilities, and cluster factorials are identical under this lift. Repeated polymer occurrences remain repeated; they are not removed.
+
+Thus the entire $m(X)<r$ part of $R_{n,P}$ is exactly the same as that of $R_{qn,P'}$ at the corresponding pinned orientation. Equation (10) bounds their difference by $2Be^{-r}$. Translation invariance gives $n^4$ plaquettes per orientation, and the six orientations contribute at most $12Be^{-r}$ to the difference per site. Since $r\geq n/8$ for $n\geq8$, this proves (3).
+
+The bound (4) follows by multiplying the per-site logarithm by $a^{-4}$. For example, writing $x=\ell_*/(8a)$ gives
+\[
+ a^{-4}e^{-\ell_*/(8a)}=(8/\ell_*)^4x^4e^{-x}
+ \leq (8/\ell_0)^4 4^4e^{-4}.
+\]
+No independent normalization was introduced. In particular the bulk scalar contributions canceled because the original local log-clusters were matched, not because a conditional kernel integrates to one.
+
+\section{The actual interpolation consequence and the weak-coupling limit}
+With $M=q^4$ and the same $\Delta S,\mu_t$ as the exact seam variance calculation, (3) implies
+\[
+ \left|\int_0^1(1-t)\operatorname{Var}_{\mu_t}(\Delta S)dt
+ -\frac{N_{\rm seam}(1-\bar s)}{\beta}\right|
+ \leq\frac{12B(\beta)Mn^4e^{-n/8}}{\beta^2},\quad\beta>0.
+ \tag{11}
+\]
+This controls the full signed cancellation, rather than its endpoint variance. Where the original stability comparison $|\log Z-V|\leq C_{\rm st}\operatorname{Vol}$ is available in this regime, it transfers (4) to the corresponding S94-type vacuum bound with the additional $2C_{\rm st}$. It does not extend the range where that separate stability theorem has been proved.
+
+For the manuscript's target $\beta_a\to\infty$, $u\to1$ and (7) fails. Analyticity at each finite volume does not extend the uniform absolute cluster bound beyond its verified domain. A new reorganization must control the full local scalar and carrier, with actual copied records, before this mechanism can be used there. The note \texttt{exact\_cube\_scalar\_obstruction.tex} tests the most elementary one-plaquette reorganization on an actual cube.
+
+\begin{thebibliography}{1}
+\bibitem{FP} R. Fernandez and A. Procacci, \emph{Cluster expansion for abstract polymer models. New bounds from an old approach}, Commun. Math. Phys. (2007), DOI 10.1007/s00220-007-0279-2. Primary full text: \url{https://arxiv.org/pdf/math-ph/0605041}; author copy: \url{https://webspace.science.uu.nl/~ferna107/papers/ferpro07.pdf}.
+\end{thebibliography}
+\end{document}

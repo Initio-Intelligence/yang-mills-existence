@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{Actual multi-plaquette Wilson tails and a sparse exceptional-slice record}\author{}\date{}
+\begin{document}\maketitle
+The law is the ORIGINAL periodic $SU(2)$ Wilson measure on an $n^4$ torus, $n\ge3$, normalized plaquette action $s=1-\operatorname{ReTr}/2$, coefficient $B$. Write $Z_B$ for its original Haar partition function. All scalars are retained. Fix $0<t<1$ and define
+\[
+ K_t=\left(Z_{(1-t)B}/Z_B\right)^{1/n^4}.              \tag{1}
+\]
+The manuscript's partition-power bounds (Lemma 10.1; see the odd torus transfer moment calculation) make $K_t\le C_t$ on the physical regime $n\ge c_*\log(2+B)$. We retain $K_t$ explicitly until that hypothesis is invoked.
+
+\section*{A genuine multipoint consequence of the transfer argument}
+For ANY set $A$ of plaquettes of one fixed orientation,
+\[
+ E\exp[tB\sum_{p\in A}s(U_p)]\le K_t^{|A|}.           \tag{2}
+\]
+Here is the extension from the previously verified single-mark argument. For positive trace-class factors $A_1,\ldots,A_n$, Schatten H\"older gives
+$|\operatorname{Tr}A_1\cdots A_n|\le\prod_i(\operatorname{Tr}A_i^n)^{1/n}$.
+For a transverse slicing, different slice insertions $D_i$ give positive factors $T^{1/2}D_iT^{1/2}$. For an in-plane slicing, each marked slab gives its original positive modified convolution transfer $M Q_i P M$; all reduced couplings remain $(1-t)B\ge0$. Thus arbitrary different binary marking patterns in the slices/slabs may be disseminated, with a separate factor for each slice, not assumed to be the same pattern.
+
+Apply the two transverse directions followed by the two in-plane directions, as in the single-mark proof. At the end each original marked plaquette contributes exponent $1/n^4$ of the uniformly repeated orientation-marked partition ratio; each unmarked seed contributes one. Reducing the other orientations too only increases that numerator. This proves(2), preserving the original denominator at every H\"older step. No parity or dyadic assumption is used.
+
+For a set $A$ containing any orientations, ordinary H\"older over the six orientation classes yields
+\[
+ E\exp[(tB/6)\sum_{p\in A}s(U_p)]\le K_t^{|A|/6}.
+\]
+Consequently for distinct plaquettes and any $u>0$,
+\[
+ \mathbb P\{s(U_p)\ge u\ \forall p\in A\}
+ \le q^{|A|},\qquad q=K_t^{1/6}e^{-tBu/6}.            \tag{3}
+\]
+We use(3) only where $q\le1$.
+
+\section*{A literal bath-measurable exceptional-slice criterion}
+Retain one selected spatial-link trajectory $u_j$. Its four spatial staples are $S_{j,r}$ and its temporal twists are $g_j,h_j$. Choose the bath-only center $W_j=S_{j,1}$. Declare slice $j$ exceptional if either
+\[
+ d(S_{j,r},W_j)>\epsilon\quad\hbox{for some }r,
+ \qquad\hbox{or}\qquad
+ d(W_jg_jW_{j+1}^{-1}h_j,I)>\epsilon.                 \tag{4}
+\]
+Here $\epsilon>0$ is a fixed small angular threshold, and $d$ is the SU(2) principal angle. These conditions are invariant under original endpoint gauges and are measurable in the bath after selected paths are integrated. On a good interval, the exact frame transport of the compatible staples and holonomy calculation puts the onsite centers at identity, one temporal twist at identity, and the other within angle $\epsilon$. It retains accumulated endpoint holonomy. Thus(4) is tied to actual conditional kernels, not an invented independent event.
+
+To bound its probability in the original law, insert the actual selected variables only as witnesses. Put $A_{j,r}=u_jS_{j,r}^{-1}$ and $T_j=u_jg_ju_{j+1}^{-1}h_j$; these are ORIGINAL plaquette holonomies with orientation adjustments. The unitary chord inequality gives
+\[
+ s(S_{j,r}W_j^{-1})\le2[s(A_{j,r})+s(A_{j,1})],
+\]
+\[
+ s(W_jg_jW_{j+1}^{-1}h_j)
+ \le3[s(A_{j,1})+s(T_j)+s(A_{j+1,1})].              \tag{5}
+\]
+For the second formula, the product equals
+$A_{j,1}^{-1}T_j h_j^{-1}A_{j+1,1}h_j$.
+Thus every exceptional slice has a witness among at most six original plaquettes with action at least
+\[
+ u_\epsilon=(1-\cos\epsilon)/9.                     \tag{6}
+\]
+Every witness plaquette can serve at most two slice labels: a first spatial plaquette can occur at its own and the preceding time; other spatial and temporal witnesses occur once. For any prescribed set $D$ of $k$ exceptional times, select witnesses. There are at most $6^k$ choices and each has at least $k/2$ distinct plaquettes. Equation(3) proves the genuine joint record weight
+\[
+ \mathbb P\{D\subset\mathcal B\}\le p_B^{|D|},\qquad
+ p_B=6K_t^{1/12}\exp[-tB u_\epsilon/12],             \tag{7}
+\]
+where $\mathcal B$ is the exceptional-time set and $B$ is large enough that $p_B<1$.
+
+In particular, on $M$ allowed slices,
+\[
+ E e^{\theta|\mathcal B|}
+ =E\prod_j[1+(e^\theta-1)1_{j\in\mathcal B}]
+ \le[1+p_B(e^\theta-1)]^M,\qquad\theta\ge0.          \tag{8}
+\]
+Prescribed clusters and runs satisfy the same subset bound. The probability of any run of length $k$ is at most $M p_B^k$. These are sparse-record estimates, not temporal independence or a Markov description of the bath. On $B\asymp\log(1/a)$, the bad fraction tends to zero, while the expected upper count $Mp_B$ can still diverge. Therefore the next transfer comparison must allow many rare defective slices rather than require none.
+
+\section*{Exact boundary-law scope and an overlap consequence}
+Let $p(X)$ be the ORIGINAL initial-slice marginal and $\eta_X$ the actual conditional bath law of the conditioned wilson chain affinity calculation, including the integrated selected-chain normalizers. Then
+\[
+ \int p(dX)\,\eta_X\{D\subset\mathcal B\}
+ =\mathbb P\{D\subset\mathcal B\}\le p_B^{|D|}.        \tag{9}
+\]
+This does NOT prove the same bound for every $X$. In particular fixing a rough boundary can change conditional rare-event weights. No native reference law replaces $\eta_X$.
+
+For any bath event $E$, Fubini and Cauchy--Schwarz give the exact averaged overlap bound
+\[
+ E_{X,Y\ {
+m iid}\ p}\int_E\sqrt{d\eta_Xd\eta_Y}
+ \le\int p(dX)\eta_X(E)=\mathbb P(E).                \tag{10}
+\]
+Thus(8) controls the ABSOLUTE averaged Hellinger mass lost when discarding records with excessive defect count; for example $\mathbb P\{|\mathcal B|\ge (e-1)Mp_B+v\}\le e^{-v}$. It does not give a relative error against a possibly small full bath affinity, nor a lower bound on that full affinity. This distinction is essential for S94.
+
+The concrete next estimate is a whole-product comparison through good runs and exceptional blocks, retaining their scalar costs and endpoint modes. The useful record weights are(7)--(9); a proposed defect cost must be tested against their actual rate $cB\epsilon^2$, not absorbed into an unspecified rare reserve. Full S94 remains open.
+\end{document}

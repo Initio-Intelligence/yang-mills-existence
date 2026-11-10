@@ -1,0 +1,146 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{An exact derivative-network cancellation and its mixed-boundary defect}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Input and the derivative issue.}
+The common-gauge current estimate of the mixed grid joint current with connectors calculation holds for its stated bounded
+partial-permutation connectors. In the reflected-current case the
+endpoint product in its integration-by-parts formula is indispensable;
+its independent coordinate moment estimate pays that product. Piecewise
+substochasticity and adjoint connectors justify its mixed loop bound.
+An arbitrary nonlocal projection or an unverified actual vertex connector
+is still outside that lemma.
+
+The desired additional factor $1/(1+T)$ must not be inferred merely by
+counting two derivatives. On unequal proper times, derivatives on a short
+propagator generate short-time contact terms. This note proves their
+EXACT cancellation for a fully contracted scalar derivative theta, and
+locates the surviving defect when its neutral component grid changes.
+This is a reusable original-operator identity, not a bound on the entire
+Wilson vector/ghost coefficient.
+
+\paragraph{1. Keep the original killing boundary term.}
+On one original mixed scalar grid write
+\[
+ (L_\epsilon u)(x)=\sum_{y\sim x}c_{xy}
+ [u(x)-e^{i\epsilon a_{xy}}u(y)]+k_xu(x),\qquad c_{xy}=c_{yx}.
+\]
+Here $k_x$ is the original Dirichlet killing rate. Suppressed Neumann
+outward edges contribute neither a hopping nor a killing term.
+For oppositely charged functions define
+\[
+ \Gamma_\epsilon(u,v)(x)=\sum_{y\sim x}c_{xy}
+ [u(x)-e^{i\epsilon a_{xy}}u(y)]
+ [v(x)-e^{-i\epsilon a_{xy}}v(y)]+k_xu(x)v(x).                    \tag{1}
+\]
+Direct multiplication, including the ONE killing term in (1), gives
+\[
+ \Gamma_\epsilon(u,v)=vL_\epsilon u+uL_{-\epsilon}v-L_0(uv).
+                                                                    \tag{2}
+\]
+Thus for any neutral weight $w$ and the original counting measure,
+\[
+ \sum_x w\Gamma_\epsilon(u,v)=
+ \sum_x[w v L_\epsilon u+w u L_{-\epsilon}v-uvL_0w].              \tag{3}
+\]
+There is no discarded boundary summation term: the killing term accounts
+for it exactly. Equation(3) is a contracted sum over ALL scalar gradient
+directions; a particular Wilson curl tensor is not silently substituted
+for it.
+
+\paragraph{2. The complete same-grid quadratic flux response vanishes.}
+Let $G_\epsilon=L_\epsilon^{-1}$ and $G_0=L_0^{-1}$. Define the actual
+contracted scalar network
+\[
+ \mathcal D(\epsilon)=\sum_{x,z}G_0(x,z)
+ \Gamma_\epsilon(G_\epsilon(\cdot,z),G_{-\epsilon}(\cdot,z))(x).
+\]
+Using $L_\epsilon G_\epsilon=I$ in (3) gives the exact resolvent identity
+\[
+ \boxed{\mathcal D(\epsilon)=\sum_x
+ [2G_0(x,x)G_\epsilon(x,x)-G_\epsilon(x,x)^2]
+ =\mathcal D(0)-\sum_x[G_\epsilon(x,x)-G_0(x,x)]^2.}              \tag{4}
+\]
+A Hermitian magnetic inverse has real diagonal, and
+$G_{-\epsilon}=\overline{G_\epsilon}$. Its diagonal is therefore even
+in $\epsilon$. Consequently
+\[
+ \boxed{\mathcal D''(0)=0}                                        \tag{5}
+\]
+for EVERY finite original grid, with no size estimate or asymptotic fit.
+
+Equivalently, for the scalar heat theta $\Theta(t_1,t_2,t_3;\epsilon)$,
+the contracted-gradient network equals
+$-\partial_{t_1}\Theta-\partial_{t_2}\Theta+\partial_{t_3}\Theta$.
+Integrating all three proper times produces the THREE zero-time contacts
+in (4). Their flux Hessians cancel. This explains why taking absolute
+values of the separate short-time contacts cannot supply the desired
+marginal derivative estimate: the signed contacts must first be combined.
+No numerical $1/T$ factor was inserted into a propagator.
+
+\paragraph{3. A different original neutral grid produces a boundary defect.}
+Let $K_0$ be another original scalar component or ghost operator, and let
+$P$ be a fixed bounded translation/overlap partial permutation mapping its
+grid into the charged grid. Keep its true inverse and put
+\[
+ W=P K_0^{-1}P^*,\qquad E=L_0 W-I.
+\]
+Repeat (3) with the neutral column $w=W(\cdot,z)$. The exact answer is
+\[
+ \boxed{\mathcal D_W(\epsilon)=
+ 2\sum_x W(x,x)G_\epsilon(x,x)-\sum_xG_\epsilon(x,x)^2
+             -\sum_{x,z}E(x,z)|G_\epsilon(x,z)|^2.}               \tag{6}
+\]
+In particular, with dots denoting background derivatives at zero,
+\begin{align}
+ \mathcal D_W''(0)
+ &=2\sum_x[W(x,x)-G_0(x,x)]\ddot G(x,x)
+             -\sum_{x,z}E(x,z)(|G_\epsilon(x,z)|^2)''_0\\
+ &=\sum_{u,z}E(u,z)
+ [2G_0(z,u)\ddot G(z,z)-(|G_\epsilon(u,z)|^2)''_0].              \tag{7}
+\end{align}
+The second line uses $W-G_0=G_0E$. The diagonal $u=z$ summand vanishes.
+The whole bracket is gauge invariant; expanding only one of its current
+terms would lose that property.
+
+The defect has the literal operator decomposition
+\[
+ E=(PP^*-I)+(L_0P-PK_0)K_0^{-1}P^*.                              \tag{8}
+\]
+For the original component grids and a bounded coordinate translation,
+the two flat difference operators agree in their common interior.
+Consequently $L_0P-PK_0$ has rows only in a fixed-width boundary collar;
+$PP^*-I$ is supported in the missing overlap collar. Thus the first index
+$u$ in (7) lies in $O(R^3)$ boundary rows, rather than an unrestricted
+$O(R^4)$ volume set. Its second index remains unrestricted and its actual
+kernel $K_0^{-1}$ is still present. This is a SUPPORT cancellation, not
+an estimate of the defect's weighted spatial moment.
+
+If a proposed vertex uses a parameter-dependent connector, (6) still
+holds pointwise with that connector, but its derivatives also act on
+$W$ and $E$. Those partners are NOT omitted or covered by (7)'s fixed-$P$
+formula. Long tree connectors and nonlocal projectors are likewise not
+replaced by the bounded overlap map used here.
+
+\paragraph{4. Direct original-grid checks.}
+On the $R=3$ grid with reflected direction one, direct complex inversion
+checks (4) through $8\,10^{-16}$. Its deficit scales as $\epsilon^4$;
+$[\mathcal D(0)-\mathcal D(\epsilon)]/\epsilon^4$ approaches
+$1.356\,10^{-9}$ in that particular finite test.
+An independent $R=4$ check uses direction-one and direction-zero grids
+of 108 sites each, with their literal overlap map. The mixed identity(6)
+passes through $7\,10^{-15}$, and the defect on strict common-interior rows
+is below $10^{-15}$. These tests include the original killing diagonals.
+
+\paragraph{Precisely what remains unpaid.}
+Equations(4)--(8) cancel the entire bulk scalar contraction and retain its
+mixed-boundary remainder. To use them for the complete first Wilson
+coefficient, the actual curl/ghost tensor contractions and differentiated
+endpoint/spin/projector terms must first be grouped into this scalar
+energy contraction plus explicitly retained remainders. That grouping has
+not been established here. Even after it, the weighted boundary defect(7)
+needs a physical-energy estimate consistent with the finite boundary nonlinear ward cancellation calculation's complete
+boundary Ward. No bound on the full $\mathcal C_R''$ or on the original
+growing-block differentiated remainder follows merely from (5).
+No S94 or physical-scale induction is claimed.
+\end{document}

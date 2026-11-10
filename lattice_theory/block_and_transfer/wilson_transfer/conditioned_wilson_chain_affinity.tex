@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{A separation-improving conditional affinity bound in the original Wilson measure}\author{}\date{}
+\begin{document}\maketitle
+Fix the ORIGINAL periodic Wilson lattice with $m=2l$ time steps, $l\ge1$, spatial torus of any integer side $n\ge3$, normalized action $s\in[0,2]$, temporal coupling $B$. No gauge fixing or transfer scalar normalization is imposed. Choose a set $I$ of spatial links such that no spatial plaquette contains two members, and select their trajectories at every time. The conflict graph has degree at most $12$, so such a set of size at least $3n^3/13$ exists, including odd tori. Condition all temporal links and all complementary spatial-link trajectories. Spatial plaquettes now contribute only positive single-site potentials to each selected trajectory; temporal plaquettes couple successive copies of that same link. Thus the selected trajectories are independent compact-group one-dimensional chains with arbitrary, actual bath-dependent onsite factors. Temporal holonomies remain in the conditioned bath.
+
+\section*{Uniform contraction despite the interacting bath}
+A temporal factor has the form
+\[
+ k_t(u,v)=\exp[-B s(u\,g_t\,v^{-1}h_t)],
+\]
+with fixed unitary twists. Its log cross-ratio has absolute value at most $4B$. Multiplication by arbitrary positive factors of $u$ or $v$ does not change this bound. With Hilbert distance $d_H(f,g)=\operatorname{osc}\log(f/g)$, the corresponding positive integral operator obeys
+\[
+ d_H(Tf,Tg)\le \tau d_H(f,g),\qquad \tau=\tanh B.       \tag{1}
+\]
+For clarity, this standard Birkhoff bound can be checked directly here. Interpolate $f_t=g\exp[t\log(f/g)]$. The derivative of $\log(Tf_t)$ is the expectation of $\log(f/g)$ under the normalized kernel row tilted by $f_t$. Two such rows have log likelihood-ratio oscillation at most $4B$, hence total variation at most $\tanh B$. Here total variation is $\sup_E|\mu(E)-\nu(E)|=\tfrac12\|\mu-\nu\|_1$. Their expectation difference is at most this factor times $d_H(f,g)$. Integrating in $t$ proves(1). The likelihood-ratio bound follows by optimizing a mean-one random variable in an interval with endpoint ratio $e^{4B}$. All densities here are continuous and strictly positive on a compact group at finite cutoff, so these operations are legitimate.
+
+A product of $l$ successive chain kernels, including arbitrary onsite factors, therefore has endpoint row distance at most $4B\tau^{l-1}$. The first step takes a point boundary condition into a positive row of diameter at most $4B$, and the other steps apply(1). On the periodic $2l$ chain, the conditional midpoint law given its initial value $x$ is the normalized product of the two arc kernels. Hence for ANY $x,y$ and the SAME conditioned bath $\omega$,
+\[
+ d_H(p_x^\omega,p_y^\omega)\le \delta_l,
+ \qquad \delta_l=8B\tau^{l-1}.                       \tag{2}
+\]
+No bound on the magnitude or oscillation of the spatial onsite potentials was used.
+
+For two probability densities of Hilbert distance at most $\delta$, their affinity is at least $\operatorname{sech}(\delta/4)$. Indeed if $a\le p/q\le b$, concavity gives $\sqrt r\ge(r+\sqrt{ab})/(\sqrt a+\sqrt b)$; integration and optimization at fixed $b/a\le e^\delta$ prove the claim. Product factorization of the selected chains gives
+\[
+ \mathcal A(p_{x,I}^{\omega},p_{y,I}^{\omega})^2
+ \ge \exp[-\epsilon_I],\qquad
+ \epsilon_I=2|I|\log\cosh(2B\tau^{l-1})
+ \le4|I|B^2\tau^{2(l-1)}.                            \tag{3}
+\]
+This is an ACTUAL interacting conditional bound gaining with temporal separation, not a free Gaussian or independent-Haar replacement.
+
+\section*{Exact disintegration retaining the unresolved bath overlap}
+Use the original periodic Wilson law and fix the entire initial spatial slice $X$. Let $\omega$ contain all temporal links and all complementary spatial links at times $1,\ldots,2l-1$. Let $\eta_X(d\omega)$ be its ACTUAL conditional distribution after integrating the selected-link interiors. Its normalization includes their exact chain partition functions. The complement at time zero is the fixed part of $X$ and is not duplicated in $\omega$. The midpoint complement is a function of $\omega$.
+
+The lifted midpoint law is
+\[
+ \widetilde p_X(d\omega,dz_I)=\eta_X(d\omega)p_{X_I,I}^\omega(dz_I).
+\]
+For different $X,Y$, these baths live on the same Haar coordinate space. The changed spatial potential at time zero is constant once the initial slice is fixed and cancels from the selected conditional midpoint law. Thus(2)--(3) compare the correct selected conditionals even if the complementary initial values differ. Their differences remain in $\eta_X,\eta_Y$.
+
+Affinity increases upon projection to the full midpoint slice. Its exact disintegration before projection therefore gives
+\[
+ \mathcal A(p_X,p_Y)
+ \ge\int\sqrt{d\eta_X d\eta_Y}\,
+       \mathcal A(p_{X_I,I}^\omega,p_{Y_I,I}^\omega)
+ \ge e^{-\epsilon_I/2}\mathcal A(\eta_X,\eta_Y).       \tag{4}
+\]
+With $p(X)$ the original slice marginal and the full-state replica identity,
+\[
+ \mathcal P(2l)\ge e^{-\epsilon_I}
+ E_{X,Y\ {
+m iid}\ p}\mathcal A(\eta_X,\eta_Y)^2.    \tag{5}
+\]
+All original normalization factors and global modes remain in the bath affinity on the right. It has not been replaced by one. This is not yet conditioning only at a fixed physical coarse scale: the retained bath is still microscopic and includes whole trajectories. Its exact density after the first elimination contains induced spatial interactions, so one cannot repeat the independent-chain argument for the next color without a new estimate on those interactions.
+
+\section*{An actual induced-interaction response estimate}
+For one selected trajectory let $\mathcal Z_\omega$ be its ORIGINAL periodic chain integral, with every onsite factor and temporal scalar included. Perturb two onsite log weights at distinct times $r,s$ by $uF_r$ and $vG_s$, with bounded real functions $F,G$. The finite compact integral gives the exact induced-action Hessian
+\[
+ \partial_u\partial_v\log\mathcal Z_\omega(u,v)
+ =\operatorname{Cov}_{\omega,u,v}(F(U_r),G(U_s)).       \tag{7}
+\]
+Let $d\in\{1,\ldots,m-1\}$ be the forward time separation. The same two-arc argument, now with lengths $d,m-d$, bounds the Hilbert distance between conditional laws of $U_s$ for two fixed values of $U_r$ by $4B(\tau^{d-1}+\tau^{m-d-1})$. Consequently their total variation is at most
+\[
+ q_d=\tanh\{B(\tau^{d-1}+\tau^{m-d-1})\}.
+\]
+The conditional mean of $G$ has oscillation at most $q_d\operatorname{osc}G$. Applying the elementary covariance bound $|\operatorname{Cov}(F,H)|\le\operatorname{osc}F\operatorname{osc}H/4$ to $H=E(G\mid U_r)$ proves
+\[
+ |\partial_u\partial_v\log\mathcal Z_\omega|
+ \le\tfrac14\operatorname{osc}F\operatorname{osc}G\ q_d.\tag{8}
+\]
+This holds uniformly under the real onsite tilts $u,v$ because(1) is independent of their size. Integrating(8) over a parameter rectangle bounds the exact four-term connected difference of $\log\mathcal Z_\omega$, not merely a normalized conditional kernel. Thus its raw scalar is preserved. For two plaquette-weight variations with $\operatorname{osc}F,\operatorname{osc}G\le2B$, the bound is at most $B^2q_d$. At fixed physical separation this has the same exponential gain described below. Multiple selected links contribute their literal incidence sum.
+
+This estimate controls the long temporal part of the interactions induced by the FIRST elimination. It gives no smallness for simultaneous or adjacent-time interactions between surviving spatial neighbors: there $q_d$ can be order one and the coupling bound is $B^2$. Those actual induced interactions are why a subsequent color cannot simply be treated as another independent-chain system. Estimating their joint block response, while retaining the connected scalar difference, is a precise next constructive target.
+
+\section*{UV check and the next concrete estimate}
+If $l\asymp t_*/a$, $|I|\le C\operatorname{Vol}(\Sigma)a^{-3}$ and $B\le b\log(1/a)+C$ with $b<1/2$, then
+\[
+ \epsilon_I\le C\operatorname{Vol}(\Sigma)a^{-3}\log^2(1/a)
+       \exp[-c t_*a^{2b-1}],                          \tag{6}
+\]
+which vanishes faster than any power and is summable over geometric cutoffs. This is a conditional rate statement for the stated normalized temporal coefficient, not an assertion of that coefficient for every gauge group or bare trajectory. For $b\ge1/2$ this bound gives no such UV gain. It still improves with separation at each fixed cutoff.
+
+The constructive next step is to estimate the induced bath interaction from the exact selected-chain partition functions, or a multi-color affinity comparison preserving their scalar normalizers, so that the microscopic bath in(5) can be reduced to an actual fixed physical-scale boundary record. A bound for a fixed bath alone is not an unconditional mixing theorem. S94 remains open; (3)--(6) isolate one genuinely controlled factor and its precise remaining measure.
+
+The general projective-contraction framework is that of S. Cohen and E. Fausti, \emph{Hyperbolic contractivity and the Hilbert metric on probability measures}, arXiv:2309.02413v2, \texttt{https://arxiv.org/pdf/2309.02413}. The bounded-kernel argument needed here is supplied explicitly above.
+\end{document}

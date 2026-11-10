@@ -1,0 +1,99 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{Exact signed quadratic response on one complete original relative cube}\author{}\date{}
+\begin{document}\maketitle
+Use the four-dimensional lattice cube $\{0,1,2\}^4$ with all 216 oriented
+plaquettes, normalized $SU(2)$ Haar measure, and action
+$B\sum_p(1-\frac12\operatorname{ReTr}U_p)$. Tangential boundary links
+are fixed. There are eight free links, namely the two edges in each
+direction whose other coordinates are all one. Fix the temporal forest
+edge $((0,1,1,1),0)$ to identity by the single interior-site gauge
+transformation, which is identity on the boundary. Seven chord variables
+remain. This exact compact gauge change has unit Haar Jacobian and retains
+all boundary data.
+
+The boundary link $e_*=((0,0,1,1),0)$ is
+$\exp(i\epsilon\sigma_3)$, and every other fixed link is identity.
+Let $D$ be the full 216-by-7 plaquette incidence restricted to the chords,
+and $b$ the column of this boundary edge. The positive matrix $K=D^TD$
+is the scalar flat chord Hessian. The harmonic derivative of the actual
+minimum is
+\[
+ w=-K^{-1}D^Tb.
+\]
+For sufficiently small $\epsilon$ the global minimum is unique in the
+tree quotient: at zero, zero action implies trivial holonomy on the
+contractible cube, and its tree-fixed representative is identity;
+compactness and the positive local Hessian then give the claim.
+Simultaneous color rotations fixing $\sigma_3$ imply that the minimum is
+abelian. Its chord angles solve the literal original equation
+\[
+ D^T\sin(D\theta(\epsilon)+b\epsilon)=0.
+\]
+The solution is odd, so $\theta'(0)=w$ and $\theta''(0)=0$.
+Thus the minimum acceleration needed for the second Hessian derivative
+is known exactly, rather than replaced by a guessed straight background.
+
+Use right fluctuations $U_j=U_j^*(\epsilon)\exp(i x_j\cdot\sigma/\sqrt B)$.
+Let $H(\epsilon)$ be their 21-by-21 canonical action Hessian.
+At zero $H(0)=K\otimes I_3$. All action vertices are obtained by multiplying
+the four original oriented plaquette factors. For a positive occurrence
+the first link derivative is $U_j i\sigma_a$, and for a negative occurrence
+it is $-i\sigma_a U_j^{-1}$. The symmetric same-link second derivative is
+$-\delta_{ab}$ times that occurrence. Cross derivatives are inserted in
+their original cyclic order. Differentiating these products twice in
+$\epsilon$, using $w$ and $\theta''(0)=0$, gives rational matrices
+$H'(0),H''(0)$ without finite-difference truncation.
+
+Exact rational elimination gives
+\[
+ \frac12\operatorname{Tr}(H^{-1}H'')=\frac{77}{6912},\qquad
+ \frac12\operatorname{Tr}(H^{-1}H'H^{-1}H')=\frac{1219}{3456},
+\]
+\[
+ \boxed{\quad
+ \left(\tfrac12\log\det H\right)''=-\frac{787}{2304},\qquad
+ \|Dw+b\|^2=\frac{113}{24}.\quad}
+\]
+These rational results follow from an exact finite algebraic calculation.
+Independent finite-difference solutions of the nonlinear minimum equations
+converge to $-0.34157986$, while the exact fraction is $-787/2304$.
+The flat full Hessian agrees with the incidence matrix exactly.
+
+There are four fixed-only plaquettes affected by the boundary edge.
+Their original action is $4B(1-\cos\epsilon)$, with curvature $4B$.
+Accordingly the live free-dependent classical Schur curvature is
+$17B/24$, whereas the full classical curvature is $113B/24$.
+The fixed-only action multiplies the raw integral by its actual exponential
+and cancels only in $F=-\log Z-V_{\min}$.
+
+For canonical $\epsilon=\zeta/\sqrt B$, the complete leading Gaussian
+fluctuation curvature and the full classical Schur curvature are therefore
+\[
+ F_{{\rm quad},\zeta\zeta}=-\frac{787}{2304B},\qquad
+ V_{\min,\zeta\zeta}=\frac{113}{24},\qquad
+ |F_{{\rm quad},\zeta\zeta}|=\frac{787}{10848B}V_{\min,\zeta\zeta}.
+\]
+Relative to the live Schur energy alone the corresponding factor is
+$787/(1632B)$; these two energies must not be conflated.
+
+The raw leading Gaussian normalization is
+\[
+ Z_{\rm quad}
+ =e^{-V_{\min}}(2\pi^2)^{-7}B^{-21/2}(2\pi)^{21/2}
+                 (\det H)^{-1/2}.
+\]
+The tree gauge integration has normalized volume one. Boundary-only
+plaquettes are included in $V_{\min}$ above. The exact compact integral
+has its original nonlinear and Haar corrections; it has not been
+identified with this expression. Equivalently, the tree determinant
+includes the complete vector-minus-gauge determinant of the signed gauge quotient and unsummed current calculation,
+so no gauge determinant has been omitted.
+
+This is one physical boundary change: its positive Schur energy and
+changed plaquette holonomies exclude a pure gauge interpretation.
+It tests the signed seagull-minus-covariance response on the full incidence
+complex with all adjacent links, rather than only a pinned two-link chain.
+It neither proves a logarithmic bound as the cube grows nor controls the
+actual-law residual of the signed gauge quotient and unsummed current calculation(5). Those are the remaining main estimates.
+\end{document}

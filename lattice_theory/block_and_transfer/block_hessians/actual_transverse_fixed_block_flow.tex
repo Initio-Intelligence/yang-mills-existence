@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{One actual transverse Wilson boundary path and its corrected-score estimate on a fixed complete block}\author{}\date{}
+\begin{document}\maketitle
+Fix a FINITE contractible four-dimensional cubical block, all plaquettes incident to its free links, and a complete flat exterior collar. Use a relative tree/forest gauge rooted at the fixed boundary vertices. The original compact Haar gauge change has Jacobian one; the independent interior non-tree links have product normalized Haar measure. Tree links are fixed by this actual gauge choice, not removed from the plaquette action. There are no relative harmonic modes, and the flat gauge-fixed minimum is unique. All claims below keep this block fixed as $B\to\infty$.
+
+Let $K=d^*d$ be the complete quadratic incidence matrix with interior independent coordinates $J$ and boundary coordinates $R$, with the original collar and gauge conventions. $K_{JJ}>0$. Choose a fixed nonzero boundary direction $v$ in a positive eigenspace of the actual Schur matrix
+\[
+ K_{\rm eff}=K_{RR}-K_{RJ}K_{JJ}^{-1}K_{JR}.
+\]
+This is a transverse boundary change in the literal sense that its complete boundary curl/Schur energy is positive; it is not an infinitesimal gauge orbit. Fix its color components in the declared root frame. Set
+\[
+ \alpha=\sqrt{N/B},\qquad w=-K_{JJ}^{-1}K_{JR}v,\qquad
+ \eta_b(t)=e^{t\alpha v_b},\quad 0\le t\le1.           \tag{1}
+\]
+The prescribed exterior/collar coordinates outside $R$ remain identity. Equation(1) specifies actual group-valued boundary links and changes their gauge-invariant curvature readouts, not just a chart label.
+
+\section*{A specified common realization, with its output map}
+On the independent interior links use
+\[
+ \Phi_t(u)_b=e^{t\alpha w_b}u_b,\qquad b\in J.          \tag{2}
+\]
+This is an exact product Haar translation, hence its Jacobian is one and its Haar divergence is zero. Reconstructing original fine links through the relative tree gauge gives the actual fine-field map. The tree coordinates are held fixed, and the chord velocities in an unfixed frame are conjugated by their tree frames. Those frames depend only on the held tree variables, not on the translated chord, so this description does not add a hidden divergence. The map has support in this complete block; the length of the tree paths and the size of $w$ are part of its block dependence.
+
+For every retained fine observable the common realization is its literal composition with that reconstructed map. No arbitrary global measure transport or unspecified output identification is used. The boundary output is exactly $\eta(t)$ in(1). Nontrivial torus holonomy sectors are not covered by this contractible-relative-block construction.
+
+Let $S_B(u;\eta(t))$ be the ORIGINAL Wilson action and put
+\[
+ G_t=(\partial_t+W)S_B,\qquad W=\alpha\sum_{b\in J}w_b^AX_b^A.
+\]
+This is the corrected score because $\operatorname{div}W=0$. Expectations below are in the exact original compact fiber at $\eta(t)$, not in its Gaussian replacement.
+
+\section*{An actual finite-block nonabelian estimate}
+For this fixed block and fixed $v$, there are finite constants $C_{\mathcal B,v},B_0$ such that
+\[
+ \sup_{0\le t\le1}\operatorname{Var}_tG_t
+       \le C_{\mathcal B,v}/B,\qquad
+ \Gamma_B''(t)=v^*K_{\rm eff}v+O_{\mathcal B,v}(B^{-1/2}),               \tag{3}
+\]
+where $\Gamma_B(t)=-\log[Z_B(\eta(t))/Z_B(\eta(0))]$ uses the EXACT original normalizers. The corresponding normalized pullback measures satisfy
+\[
+ \operatorname{Aff}(\widetilde\mu_0,\widetilde\mu_1)
+       \ge1-C_{\mathcal B,v}/(8B),\qquad
+ \Gamma_B(1)=\tfrac12v^*K_{\rm eff}v+O_{\mathcal B,v}(B^{-1/2}).         \tag{4}
+\]
+These are fixed-block statements with controlled corrected score, not claims uniform in the number of lattice sites.
+
+\paragraph{Proof and the dependence that must not be hidden.}
+In principal Lie coordinates $u_b=e^{\alpha x_b}$ near the unique flat minimum, the complete original action has quadratic term
+\[
+ \tfrac12(t v,x)^*K(t v,x).
+\]
+For the joint direction $(v,w)$ in(1)--(2), its derivative is EXACTLY
+$t\,v^*K_{\rm eff}v$, independent of $x$, because $K_{JJ}w+K_{JR}v=0$.
+The actual left-translation velocity in these canonical coordinates differs from $w$ by $O(\alpha |w||x|)$; this finite Baker--Campbell--Hausdorff coordinate correction is retained in the remainder. Smooth plaquette Taylor bounds on a sufficiently small fixed chart therefore give
+\[
+ |G_t-t\,v^*K_{\rm eff}v|
+ \le C_{\mathcal B,v}B^{-1/2}(1+\|x\|^2),              \tag{5}
+\]
+and
+\[
+ |(\partial_t+W)G_t-v^*K_{\rm eff}v|
+ \le C_{\mathcal B,v}B^{-1/2}(1+\|x\|^2)              \tag{6}
+\]
+there, after reducing that chart if necessary. Bounds(5)--(6) include the actual boundary acceleration convention: (1) and(2) are fixed left-geodesic flows.
+
+The ORIGINAL Haar density in this chart is its smooth positive product density, including its exact value at zero and its higher terms. The positive interior quadratic floor and finite-dimensional Taylor remainder give a Gaussian majorant in the canonical variables, uniform in $t\in[0,1]$ for sufficiently large $B$. All fixed polynomial canonical moments are consequently bounded. Outside a fixed small neighborhood, the unscaled action at flat boundary has a positive compactness gap, since all plaquettes flat plus the relative tree gauge implies the unique identity configuration. The boundary perturbation is $O(B^{-1/2})$, so this gap remains positive for large $B$. Its contribution, even with the polynomial-in-$B$ bounds on $G_t$ and its derivatives, is exponentially small compared to the true Laplace normalizer. No flat-extension of the field map beyond its chart is made: the complement is bounded in the original group integral.
+
+These facts prove the $L^2$ version of(5), hence the variance estimate. The exact identity
+$\Gamma_B''=E[(\partial_t+W)G_t]-\operatorname{Var}G_t$ proves(3).
+The same first-score estimate gives $\Gamma_B'(t)=t\,v^*K_{\rm eff}v+O(B^{-1/2})$, proving the scalar statement in(4). The square-root-density path bound proves its affinity statement. At no point is an approximate per-link vacuum scalar multiplied over a growing block and discarded.
+
+\section*{Why this does not yet reach a physical block}
+The constants depend on the smallest complete relative mode, the number of independent links, the norm of the harmonic extension, the common chart radius and the compact gap outside that chart. For example controlling a generic local Hessian remainder by $C\eta\|z\|^2$ requires the chart radius to be small relative to the lowest mode; canonical fourth moments already carry inverse-mode powers and coordinate counts. For spatial/temporal sizes of order $a^{-1}$ and only $B\asymp\log(1/a)$, this proof supplies no uniform bound on $C_{\mathcal B,v}/B$.
+
+Thus(1)--(4) exhibit a genuine transverse original map and corrected-score estimate, and recover the complete Schur response on a fixed nonabelian block. The main remaining estimate is a wavelength-sensitive replacement for these size-dependent Taylor/moment bounds under the actual two-slice/window law, including nonflat exterior records and compact global sectors. Exact gauge alignment removes the gauge part but does not provide this transverse uniformity.
+\end{document}

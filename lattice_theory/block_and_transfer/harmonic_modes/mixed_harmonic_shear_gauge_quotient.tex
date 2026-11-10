@@ -1,0 +1,185 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{A uniform gauge quotient for mixed harmonic shears}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Scope.}
+Retain the original complete four-dimensional cube $[0,R]^4$, all its
+boundary links and plaquettes, and the relative interior gauge group.
+For each link direction $\mu$, let $a_\mu(x)$ be independent of $x_\mu$
+and discrete harmonic in the three other coordinates, with its actual
+boundary values. Work first in one fixed Cartan color. The sum of these
+four shears is an actual Maxwell-harmonic, divergence-free boundary
+extension. No boundary values are set to zero. Write
+\[
+ E(a)=\sum_p|(da)_p|^2,\qquad
+ E_{\rm sep}(a)=\sum_{\mu\ne\nu}\sum_{p\parallel\mu\nu}
+                         |\delta_\nu a_\mu|^2 .
+\]
+The second sum counts the original component derivatives, so that
+$E_{\rm sep}(a)$ is the sum of the four individual shear energies.
+In general $E_{\rm sep}(a)$ is NOT controlled by $E(a)$: the field
+$a_1=x_0,a_0=x_1$ is pure gauge.
+
+\paragraph{1. A uniform quotient, with the actual boundary gauge retained.}
+There is a multiaffine scalar polynomial $q$ on the whole cube such that
+\[
+ \boxed{E_{\rm sep}(a-dq)\le C E(a),}                         \tag{1}
+\]
+with $C$ independent of $R$ and of the original boundary values.
+The polynomial has degree at most one in each of the four coordinates;
+its gradient space has dimension fifteen, including constant vectors.
+Subtracting $dq$ preserves independence in each component's own
+coordinate and transverse discrete harmonicity. It is an honest
+complete boundary gauge tangent, not a deletion of physical boundary data.
+
+Here is a proof that keeps the lattice boundary.
+On the unit continuous cube define the constant-coefficient operator
+\[
+ {\cal A}u=(\{\partial_\mu u_\nu-\partial_\nu u_\mu\}_{\mu<\nu},
+                  \partial_0u_0,\ldots,\partial_3u_3).
+\]
+It is complex elliptic: if $\xi\wedge v=0$ for $\xi\in\mathbb C^4
+\setminus\{0\}$, then $v=c\xi$; the remaining symbol equations
+$c\xi_i^2=0$ imply $c=0$.
+Its kernel consists exactly of gradients of multiaffine polynomials.
+Indeed curl zero gives $u=\nabla q$ on the cube, and
+$\partial_i u_i=0$ gives $\partial_i^2q=0$ for every $i$.
+
+Theorem 1.3 of Diening--Gmeineder, \emph{Sharp Trace and Korn Inequalities
+for Differential Operators}, Potential Analysis 63 (2025), 169--222,
+DOI 10.1007/s11118-024-10165-1, gives
+$\|u\|_{W^{1,2}}\le C(\|{\cal A}u\|_2+\|u\|_2)$ on this cube.
+Removing the finite-dimensional kernel gives
+\[
+ \inf_{v\in\ker{\cal A}}\|\nabla(u-v)\|_2
+                         \le C\|{\cal A}u\|_2.                \tag{2}
+\]
+For completeness, take the $L^2$-orthogonal complement of the kernel.
+If its full $W^{1,2}$ estimate failed, normalize a countersequence to
+unit $W^{1,2}$ norm. Rellich compactness gives an $L^2$ limit in the
+kernel and its orthogonal complement, hence zero. The preceding
+theorem then forces the $W^{1,2}$ norm to zero, a contradiction.
+This argument imposes no boundary condition on $u$.
+
+Interpolate each lattice component multilinearly in its three transverse
+coordinates and constantly in its own coordinate. This is the cubical
+Whitney one-form interpolation, which here is also a continuous
+$W^{1,2}$ vector field. Its own-coordinate derivatives vanish exactly.
+On each elementary cube, its curl is the bilinear interpolation of
+the original plaquette curls in the two remaining coordinates.
+The tensor-product mass matrices for linear interpolation have fixed
+positive eigenvalues; consequently
+\[
+ \|\nabla I(a-dq)\|_{L^2([0,R]^4)}^2\asymp E_{\rm sep}(a-dq),
+ \quad
+ \|\operatorname{curl}Ia\|_{L^2([0,R]^4)}^2\asymp E(a).
+\]
+Boundary plaquettes have multiplicity between one and four, so these
+comparisons include them with uniform constants. Multiaffine gradients
+interpolate exactly. Rescale (2) from the unit cube to $[0,R]^4$;
+both derivative norms have the same scaling. This proves (1).
+
+\paragraph{2. Complete scalar connections and cross terms.}
+Set $\widetilde a=a-dq$. The original charged vector Hessian plus
+gauge-fixing operator has on component $\mu$ the raw forward phase
+\[
+ \theta^\mu_\nu(x)=
+ a_\nu(x)+a_\nu(x+\hat\mu)+a_\mu(x+\hat\nu)-a_\mu(x).           \tag{3}
+\]
+This is the sum of the four literal single-shear phases of the harmonic shear leading kinetic bound calculation;
+it is a first-background-derivative identity, not a finite nonabelian
+superposition. The scalar gradient gauge $a_\mu$ removes the last
+difference, leaving $a_\nu(x)+a_\nu(x+\hat\mu)$. Ghost phases are $2a_\nu$.
+The exact original insertion check
+the finite algebraic calculation verifies (3),
+including mixed polarizations and a multiaffine pure-gauge addition,
+on $R=2,3$ with zero residual.
+
+For each component grid, a closed magnetic current is the sum of the
+four polarization currents. Gauge phases cancel on the closed path,
+and
+\[
+ \left|\sum_{\nu=0}^3J_\nu\right|^2\le4\sum_\nu|J_\nu|^2.
+\]
+Thus the actual killed/reflected path estimates apply separately
+to $\widetilde a_\nu$ and then sum. When the current coordinate is the
+Neumann coordinate, transverse harmonicity supplies exactly the
+stopped-martingale cancellation, INCLUDING the original killing
+boundary values and endpoint term. All other current coordinates
+are Dirichlet. We obtain for each scalar determinant
+\[
+ 0\le(\log\det L)''[\widetilde a,\widetilde a]
+       \le C\log(2+R)E_{\rm sep}(\widetilde a)
+       \le C\log(2+R)E(a).                                   \tag{4}
+\]
+This controls mixed scalar terms by positivity of the path-current
+quadratic form. It does not infer cross bounds for the indefinite
+complete determinant from its separate signed restrictions.
+
+The spin insertion is a bounded local linear function of the TOTAL
+plaquette flux. The original product Green bound
+$|G_\mu(x,y)|\le C(1+|x-y|)^{-2}$ therefore gives
+$|\operatorname{Tr}(GS'GS')|\le C\log(2+R)E(a)$ directly.
+The diagonal cosine and neutral partners cost $CE(a)$.
+Mixed scalar/spin traces and the trace of $S''$ vanish by component
+structure. All these are the full finite-boundary partners of the harmonic shear leading kinetic bound calculation.
+
+\paragraph{3. Complete leading response, and exact limits.}
+The complete boundary-source Ward identity annihilates $dq$ in both
+slots of the leading Hessian. Its flat first derivative vanishes, so
+there is no omitted boundary-path acceleration. Consequently (4) and
+the retained spin, neutral and ghost multiplicities prove
+\[
+ \boxed{|F_{\rm quad}''[a,a]|
+       =|h_a^*\widehat K h_a|
+       \le C\log(2+R)E(a).}                                  \tag{5}
+\]
+The equality is the uncut harmonic matching of the complete harmonic kinetic matching calculation.
+In canonical source units the right side is multiplied by $B^{-1}$.
+Flat global color invariance extends (5) to three color-valued shears:
+the color Hessian is diagonal and identical in the three colors.
+This uses only a second derivative at the flat background, not a
+commuting finite-source family.
+
+The gauge quotient is proved on the actual complete cube and does
+not alter any retained reference boundary constraint except by its
+honest simultaneous gauge transformation. Raw determinant constants
+and the source-zero scalar are not removed.
+This extends the growing family of the harmonic shear leading kinetic bound calculation to all four shear
+polarizations. General harmonic one-forms whose components depend
+on their own coordinates are NOT covered. Neither cut self-energy
+insertions, the complete first nonlinear coefficient $C_R''$, nor the
+original nonlinear remainder or S94 are proved here.
+The next indispensable estimate is a controlled decomposition of
+general retained harmonic boundary data, or a direct current estimate
+for that data, with its original boundary response retained.
+
+\paragraph{A precise obstruction to extending this by gauge choice alone.}
+For every sum of shears,
+$\delta_\mu\delta_\nu(da)_{\mu\nu}=0$: in the first term
+$\delta_\mu a_\nu$ the $\nu$ derivative vanishes, and conversely.
+This identity is gauge invariant, and fails for genuine harmonic data.
+
+Write $\Delta_i f(x)=f(x+\hat i)+f(x-\hat i)-2f(x)$.
+On the integer lattice put
+\[
+ f=x_0^3x_1^3,\quad
+ p_2=x_2^2/2,\quad p_4=(x_2^4-x_2^2)/24,\quad
+ \psi=f-p_2(\Delta_0+\Delta_1)f
+                  +p_4(\Delta_0+\Delta_1)^2f.
+\]
+Since $\Delta_2p_2=1$, $\Delta_2p_4=p_2$, and
+$(\Delta_0+\Delta_1)^3f=0$, one has $\Delta\psi=0$ exactly.
+Set $a_0=\delta_1^-\psi$, $a_1=-\delta_0^-\psi$, $a_2=a_3=0$.
+Backward divergence vanishes by commutation, and $\Delta a=0$.
+Thus restriction to a complete cube is an actual Maxwell-harmonic
+boundary extension (modulo its original interior gauge).
+Its curvature is $F_{01}=-(\Delta_0+\Delta_1)\psi$, and
+\[
+ \delta_0\delta_1F_{01}(1,1,1,x_3)=-48.
+\]
+A cube large enough to retain this stencil therefore cannot gauge this
+datum into the shear sum. This is not an obstruction to a full kinetic
+bound; it shows exactly why an additional harmonic-current estimate,
+rather than gauge alignment alone, is needed beyond (5).
+\end{document}

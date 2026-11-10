@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\title{Physical-slab purity: the exact free nonzero-mode calculation}\author{}\date{}
+\begin{document}\maketitle
+This is a prerequisite for the original interacting Wilson slab inequality, not a free-field substitution for it. Let spatial side $\ell=na$, temporal slab thickness $t=ma$, and $d_G=N^2-1$. Remove the linearized longitudinal gauge coordinates by the Gauss constraint, retaining the harmonic sector separately. For every nonzero spatial momentum there are two real transverse oscillator modes per color; counting the entire Brillouin set counts their real dimensions correctly, including conjugate momentum pairs.
+
+\section*{Time-discrete transfer and its scalar}
+For spatial momentum $k$, use one representative $|k_i|\le n/2$ for each residue and put
+\[
+ w_a(k)=\frac2a\left(\sum_{i=1}^3\sin^2\frac{\pi k_i}{n}\right)^{1/2},\qquad
+ \Omega_a(k)=\frac2a\operatorname{arsinh}\left(\frac{a w_a(k)}2\right).
+\]
+The second expression, rather than $w_a$ itself, is the exact time-discrete transfer energy. For one oscillator the cyclic quadratic matrix is
+\[
+ D_m=(2+a^2w^2)I-S-S^{-1},\qquad
+ \det D_m=\prod_{j=0}^{m-1}(a^2w^2+4\sin^2(\pi j/m))
+ =4\sinh^2\!\left(\frac{ma\Omega}2\right).
+\]
+The determinant identity follows by factoring $z^m-1$ at $z=e^{\pm a\Omega}$, using $2\cosh(a\Omega)=2+a^2w^2$. With the original real coordinate measure and quadratic coefficient $b$, the raw Gaussian integral is $(2\pi/b)^{m/2}(\det D_m)^{-1/2}$. Any additional transfer normalization is likewise a scalar to the power $m$. Consequently all such raw factors cancel EXACTLY in
+\[
+ \frac{Z_{2m}}{Z_m^2}=\tanh(t\Omega/2).
+\]
+This cancellation has been written before discarding any normalization. The oscillator ground energy also cancels; it is not set to zero in either raw partition function.
+
+\begin{theorem}
+For the nonzero transverse sector, at every $n\ge3$, $m\ge1$,
+\[
+ -\log\mathcal P_{\rm osc}(t)
+ =2d_G\sum_{k\ne0}\log\coth(t\Omega_a(k)/2)
+ \le C d_G\frac{\ell^3}{t^3},
+\]
+with an absolute constant independent of $a,n,m$ and the quadratic coupling.
+\end{theorem}
+\begin{proof}
+For $|k_i|\le n/2$, $|\sin(\pi k_i/n)|\ge2|k_i|/n$. Since $\operatorname{arsinh}x/x$ decreases on $[0,\sqrt3]$,
+\[
+ \Omega_a(k)\ge\frac{c_0}{\ell}|k|_2,
+ \qquad c_0=4\operatorname{arsinh}(\sqrt3)/\sqrt3>0.
+\]
+The lattice shell $|k|_\infty=j$ has $24j^2+2$ points. A direct geometric-series bound gives $\sum_{j\ge1}j^2e^{-uj}\le8u^{-3}$ for all $u>0$: for $u\le1$ compare with $\int_0^\infty(x+1)^2e^{-ux}dx$, and for $u\ge1$ use $e^{-u}\sum j^2e^{-(j-1)}$ and $\sup u^3e^{-u}=27e^{-3}$. Thus
+\[
+ \sum_{k\in\mathbb Z^3\setminus0}e^{-u|k|_2}\le208u^{-3}.
+\]
+Finally $\log\coth(x/2)=2\sum_{r\ge1,\ r\,\mathrm{odd}}e^{-rx}/r$. Sum the nonnegative series and use $\sum_{r\,\mathrm{odd}}r^{-4}=(15/16)\zeta(4)$. One explicit choice is $C=832(15/16)\zeta(4)c_0^{-3}$. No microscopic mode count is paid independently of its physical transfer energy.
+\end{proof}
+
+The same estimate at fixed $t_*$ extends to rectangular spatial tori with all side lengths at least $t_*$, with $C d_G\operatorname{Vol}(\Sigma)/t_*^3$. One can prove this by the product estimate for the one-dimensional lattice heat sums at $t_*$ and the preceding positive-series expansion; the condition on minimum side length absorbs lower-dimensional terms. Longer slab thicknesses only decrease the purity cost.
+
+\section*{Global modes are not among the canceled longitudinal coordinates}
+The dimension count is $3n^3-(n^3-1)=2(n^3-1)+3$ per linearized color. The remaining three coordinates are spatial harmonic modes. A noncompact zero-frequency Gaussian has no finite heat trace and cannot be assigned oscillator purity one.
+
+A compact $m_0$-torus rotor gives an exact diagnostic. For $H_{\rm harm}=D\sum_{j=1}^{m_0}(-\partial_{\theta_j}^2)$ with normalized Haar measure,
+\[
+ Z_{\rm harm}(t)=\left(\sum_{q\in\mathbb Z}e^{-tDq^2}\right)^{m_0},
+ \quad\mathcal P_{\rm harm}=Z_{\rm harm}(2t)/Z_{\rm harm}(t)^2.
+\]
+Periodizing the Gaussian and taking its Fourier series gives
+$\sum_qe^{-tDq^2}=\sqrt{\pi/(tD)}\sum_re^{-\pi^2r^2/(tD)}$. Therefore as $D\downarrow0$,
+\[
+ -\log\mathcal P_{\rm harm}
+ =\frac{m_0}{2}\log\frac{2\pi}{tD}+O(e^{-c/(tD)}).
+\]
+This is not removed by normalizing Haar or integrating the global constant gauge transformation. In the compact Abelian harmonic Hamiltonian obtained from a bare Maxwell electric term, the diffusion scale is proportional to $g_a^2/\ell$; hence a vanishing bare coupling is not a uniform bound on this sector.
+
+This rotor statement is an exact model calculation, NOT a theorem about the SU(N) interacting low spectrum. Non-Abelian flat holonomies, residual conjugation, Weyl identifications, noncommuting constant modes and their fluctuation-induced interactions must remain in the actual spectral comparison. In particular no $3d_G$ compact free-rotor multiplicity is asserted for that interacting theory. The successful nonzero-mode bound identifies ultraviolet thermal suppression; it does not close the global-mode or interacting excitation estimate.
+\end{document}

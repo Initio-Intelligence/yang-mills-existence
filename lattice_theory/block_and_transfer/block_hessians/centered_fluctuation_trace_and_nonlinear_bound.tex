@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{Centered fluctuation trace and a sharper actual connected response}\author{}\date{}
+\begin{document}\maketitle
+Work in the admitted original relative-block class and exact-minimum Haar flow of the exact minimum flow connected response calculation. All original plaquettes, exterior/collars, common forest, raw normalizers and the complete classical minimum $V(t)$ are retained. Let $n\le CR^4$, $\alpha=\sqrt{N/B}$, and $\kappa\ge cR^{-6}$. The action minimum in the original canonical chart is $x_t^*$, with $\|x_t^*\|\le CR^8$. Actual centered moments satisfy $E\|x-x_t^*\|^{2p}\le C_pR^{10p}$, plus the original compact tail. The exact score is $G_t=DS_B$ with $\nabla G_t(x_t^*)=0$. No torus harmonic mode is inverted in these relative-block formulas.
+
+\section*{The leading finite-block Gaussian expression, with its measure factors}
+Use the moving RIGHT fluctuation coordinates
+\[
+ U_j=U_j^*(t)\exp(\alpha z_j).
+\]
+They are precisely transported by the actual minimum-following LEFT Haar flow. The Haar density is $h_N^r\alpha^n\prod_j j_N(\alpha z_j)$, independent of $t$; $r$ is the number of independent links. Let $H_t$ be the complete interior action Hessian in these transported coordinates. The exact quadratic integral is
+\[
+ Z_{{\rm quad},t}=e^{-V(t)}h_N^r\alpha^n(2\pi)^{n/2}
+                      (\det H_t)^{-1/2}.              \tag{1}
+\]
+This is the Gaussian fluctuation integral about the ACTUAL minimum, not the original nonlinear partition function. The tree/linear-chart Jacobian must additionally be retained if one changes these coordinates; a moving orthogonal adjoint frame has determinant one.
+
+Its normalized score covariance and fluctuation free-energy derivatives are
+\[
+ I_{\rm quad}(t)=\tfrac12\operatorname{Tr}[(H_t^{-1}\dot H_t)^2],        \tag{2}
+\]
+\[
+ F_{\rm quad}'=\tfrac12\operatorname{Tr}(H_t^{-1}\dot H_t),\quad
+ F_{\rm quad}''=\tfrac12\operatorname{Tr}(H_t^{-1}\ddot H_t)
+                -\tfrac12\operatorname{Tr}[(H_t^{-1}\dot H_t)^2].       \tag{3}
+\]
+These follow from the covariance of $\frac12z^T\dot H_tz$ in the complete centered Gaussian law. In a LEFT fluctuation frame, $\dot H$ also contains the actual moving adjoint-frame commutator; dropping it would not describe this pullback score. Higher Haar terms are not zero: they remain in the nonlinear density and its estimates below. If one instead uses a parameter-dependent non-Haar chart, its Jacobian response is additional data. Relative gauge fixing makes $H_t$ nonsingular here; a compact global/harmonic sector cannot be replaced by this determinant.
+
+The available local derivative and velocity bounds give
+\[
+ \|\dot H_t\|\le C\alpha R^3,\qquad
+ I_{\rm quad}\le\tfrac n2\kappa^{-2}\|\dot H_t\|^2
+                    \le CR^{22}/B.                  \tag{4}
+\]
+The trace contracts one coordinate sum rather than estimating the square of an uncentered quadratic norm. It still contains the inverse-mode loss; (4) is not yet a physical curl/Schur bound.
+
+\section*{The same variance improvement for the ACTUAL nonlinear law}
+This step does not infer the nonlinear result from(1). On the fixed convex canonical chart the actual density potential $S_B-\log J_{\rm Haar}$ has Hessian at least $\kappa I$. The convex-domain Poincare inequality therefore gives, for the normalized conditional chart law,
+\[
+ \operatorname{Var}_{\rm chart}G_t
+ \le \kappa^{-1}E_{\rm chart}\|\nabla G_t\|^2.
+\]
+This is the sharp convex-cutoff inequality established in \S3 of \emph{Nonlinear dispersion and unequal spatial weights} (\texttt{../conditional\_estimates/nonlinear\_dispersion\_and\_unequal\_spatial\_weights.tex}), applied only to this verified chart. Exact stationarity gives $\nabla G_t(x_t^*)=0$, and the literal third-derivative/flow bound is
+$\|\nabla^2G_t\|\le C\alpha R^3$. Hence
+\[
+ \operatorname{Var}_{\rm chart}G_t
+ \le C R^6\alpha^2R^6 E_{\rm chart}\|x-x_t^*\|^2
+ \le CR^{22}/B.                                      \tag{5}
+\]
+Restoring the original compact complement by total variance adds only a polynomial times its actual exponentially small probability. No chart selector has been inserted into the original block integral.
+
+\section*{Centering the expected Hessian difference rather than its absolute value}
+One more cancellation improves the connected curvature. Put $z=x-x_t^*$ in the ORIGINAL canonical coordinates, and let $H_*=\nabla^2S_B(x_t^*)$, so $H_*\ge\kappa I$.
+Choose a smooth cutoff equal to one on half the chart radius and zero outside the chart. Its transition annulus has the same geometric action-gap bound with a smaller positive constant. Original coordinate integration by parts, retaining Haar density, gives
+\[
+ H_*E z=-E\,\mathcal R(z)+E\nabla\log J_{\rm Haar}(x)
+                    +\text{annulus terms},           \tag{6}
+\]
+up to replacing cutoff moments by full moments with exponentially small error.
+Here $\nabla S_B=H_*z+\mathcal R(z)$ and
+$\|\mathcal R(z)\|\le C\alpha\|z\|^2$.
+The Haar bound is
+$\|\nabla\log J_{\rm Haar}(x)\|\le C B^{-1}\|x\|$.
+Consequently the ACTUAL mean displacement obeys
+\[
+ \|Ez\|\le C R^{16}/\sqrt B+\text{tail}.               \tag{7}
+\]
+Explicitly the two non-tail terms before simplification are
+$C R^6[R^{10}/\sqrt B+R^8/B]$.
+The cutoff derivative is at most $CR^6/\sqrt B$; its annular expectation and moment corrections are controlled by the original gap and dimension-dependent normalizer, not set to zero as if the chart had no boundary.
+
+In $DG_t$ separate the interior acceleration force:
+\[
+ DG_t=J_t+\dot w_t\cdot F_J.
+\]
+Its expectation is exactly zero and its value at the minimum is zero, by the original interior Haar Ward identity; this is not a pointwise deletion.
+The remaining $J_t$ consists of the same-field Hessian on the fixed instantaneous velocity and the ACTUAL boundary acceleration term. Local fourth-derivative and frame estimates give
+\[
+ \|\nabla J_t(x_t^*)\|\le C\alpha R^6,\qquad
+ \sup_{\rm chart}\|\nabla^2J_t\|\le C\alpha^2R^6.       \tag{8}
+\]
+For the acceleration partner, the boundary canonical acceleration is $O(\alpha)$ and the relevant third action derivative is $O(\alpha)$, so it is included in(8). All velocities here are frozen only for spatial differentiation, not for the time derivative.
+
+Taylor expansion inside the expectation, now using the SIGNED mean(7), yields
+\[
+ |EJ_t-J_t(x_t^*)|
+ \le C\alpha R^6\|Ez\|+
+           C\alpha^2R^6E\|z\|^2+\text{tail}
+ \le C(R^{22}+R^{16})/B+\text{tail}.                  \tag{9}
+\]
+This replaces an absolute first-moment estimate of order $R^{11}/\sqrt B$.
+
+Let $F(t)=-\log[Z(\eta(t))/Z(\eta(0))]-[V(t)-V(0)]$, with BOTH terms exact. Since $V''=DG_t(U^*)$, equations(5),(9) and the exact variance subtraction prove
+\[
+ \boxed{\quad \operatorname{Var}G_t\le CR^{22}/B+\mathcal E,\qquad
+                  |F''(t)|\le CR^{22}/B+\mathcal E.\quad}             \tag{10}
+\]
+A conservative common tail is
+\[
+ \mathcal E=C B^3R^{40}
+   \exp[-cBR^{-18}+CR^{15}+CR^4\log(2+BR)],
+\]
+with a smaller $c>0$ for the annulus. It absorbs the coordinate cutoff, inverse floor and global group-derivative polynomial factors. For $R\le B^{1/36}$ this tail is negligible and the two bounds in(10) are $O(B^{-7/18})$. Admission still requires $B\gg R^{34}$; no larger range is claimed here.
+
+\section*{What has improved and what still lacks a physical-scale bound}
+The fluctuation current $F'(0)$ remains stored; its prior bound $CR^{13}/\sqrt B$ is not erased by(10). The improved estimate applies to the centered/connected difference, or $F(t)-tF'(0)$, and to the actual normalized pullback affinity. The nonlinear classical state and its face-minimization response remain exact.
+
+Equations(5)--(10) are actual nonlinear conditional estimates, independent of treating the Gaussian determinant as the exact partition integral. The Gaussian trace(2) explains the improved size count but supplies no missing nonlinear theorem by itself. The remaining $R^{22}$ inverse-mode loss still grows under block enlargement. To reach S94 one needs a wavelength-sensitive bound for the transported Hessian variation or a cancellation in the connected trace relative to the full physical Schur energy, with live boundary records and global modes retained. None is asserted here.
+\end{document}

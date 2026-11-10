@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{The exact second-color action and a sharp induced interaction in an actual Wilson bath}\author{}\date{}
+\begin{document}\maketitle
+Consider the ORIGINAL periodic $SU(2)$ Wilson integral, and integrate a set $I$ of plaquette-disjoint spatial-link trajectories, while retaining temporal links and all other spatial trajectories as $\omega$. Every original plaquette is assigned once either to the remaining action $S_{\rm rest}(\omega)$ or to the selected-chain action $H_i(u_i;\omega)$. Then, with original normalized Haar measures,
+\[
+ d\mu_{\rm out}(\omega)=Z^{-1}e^{-S_{\rm rest}(\omega)}
+                 \prod_{i\in I}\mathcal Z_i(\omega)\,d\omega,
+ \quad \mathcal Z_i=\int e^{-H_i(u_i;\omega)}du_i.       \tag{1}
+\]
+Every onsite scalar, temporal convolution scalar and endpoint holonomy is retained in $\mathcal Z_i$. Equation(1) is the literal output density, not a Wilson action with a renamed coupling. A boundary-conditioned law has the corresponding original selected-path endpoint constraints in its integrals; they are not replaced by periodic traces.
+
+\section*{Actual response seen by two surviving bath coordinates}
+For smooth real variations $x,y$ of retained coordinates, finite compact differentiation gives
+\[
+ \partial_x\partial_y\log\mathcal Z_i
+ =-E_i\partial_x\partial_y H_i
+   +\operatorname{Cov}_i(\partial_xH_i,\partial_yH_i).  \tag{2}
+\]
+The covariance is in the ACTUAL conditional selected-chain measure for the same $\omega$. If the two variations touch different plaquette terms, the direct mixed derivative is zero. Nevertheless they couple through(2) whenever their plaquettes meet the same integrated trajectory, even if the surviving links share no original plaquette. At distinct times this is a nonlocal temporal interaction of the whole original chain. Bounded local Wilson derivatives give $O(B^2)$ covariance, with literal finite plaquette incidences, but do not reduce it to $O(B)$ uniformly in the bath.
+
+\begin{proposition}[The uniform $B^2$ induced scale is attained]
+There is an actual periodic compact $SU(2)$ bath, with original spatial side at least five and one integrated trajectory, for which two distinct surviving spatial-link variations in separate incident plaquettes obey
+\[
+ \left.\partial_x\partial_y\log\mathcal Z\right|_{x=y=0}
+ =-B^2/4.                                            \tag{3}
+\]
+This holds at every temporal length at least three. No Gaussian approximation or artificial conditional measure is used.
+\end{proposition}
+\begin{proof}
+Set all temporal bath links to identity. At each time set the four oriented spatial staples of the integrated link to $(I,-I,I,-I)$. This is realizable by original bath links: the four length-three staple paths have distinct interior links, so choose one private link on each path to carry the prescribed central sign and the others to be identity. Use opposite-side staples in one spatial plane for the two varied paths; their private outer links can be chosen not to share a plaquette on spatial sides at least five. Make these bath assignments constant in time.
+
+The sum of four staple quaternions is zero. Thus the complete onsite action is exactly $4B$ at each time, independent of the selected variable. The exact normalization is
+\[
+ \mathcal Z=e^{-4Bm}\operatorname{Tr}Q_B^m,
+ \qquad Q_B(u,v)=e^{-Bs(uv^{-1})}.                    \tag{4}
+\]
+In particular the raw scalar $e^{-4Bm}$ is present. Global left multiplication preserves this conditional closed-chain law, so the selected $u$ at any fixed time has exactly normalized Haar marginal, at every $B,m$.
+
+At one time vary the two private bath links so that their oriented staples become
+$S_1(x)=e^{ix\sigma_a}$ and $S_2(y)=-e^{iy\sigma_a}$; the other two remain unchanged. Writing $u=u_0 I+i\mathbf u\cdot\sigma$, the derivatives of the log Boltzmann weight at zero are $B u_a$ and $-B u_a$. They arise from separate plaquettes, so there is no direct mixed term. Haar measure is uniform on the unit three-sphere, hence $E u_a=0$ and $E u_a^2=1/4$. The covariance in(2) is therefore $-B^2/4$, proving(3).
+\end{proof}
+
+The remaining original action can have its own derivatives, but in the specified pair of private links no common original plaquette generates a direct mixed derivative. In any case(3) is an exact induced term in the output action $S_{\rm rest}-\log\mathcal Z$. The point bath has no asserted positive mass; finite-cutoff analyticity shows the response is approached on neighborhoods. It disproves only a proposed UNIFORM $O(B)$ induced-Hessian bound over arbitrary baths. It does not prove that an averaged response diverges or that S94 fails. The cancelled-staple bath is a genuinely exceptional geometry, and its probability must be priced if it is excluded.
+
+\section*{A constructive averaged bound under the exact output law}
+There is a real improvement after averaging, with no good-bath substitution. For a unit angular derivative of an original SU(2) plaquette, $|\partial s|^2\le2s$. If a retained variation meets at most $k$ plaquettes of a selected chain, its score $F=\partial H_i$ therefore satisfies
+\[
+ |F|^2\le2k B^2\sum_{p\text{ touched}}s(U_p).
+\]
+The SAME-measure plaquette exponential moments of the local moments fixed depth and odd torus transfer moment calculations on the original periodic cube, in the physical size/coupling regime, give for every fixed $p\ge1$
+\[
+ \|F\|_{L^{2p}(\mu_{\rm original})}\le C_{p,k}\sqrt B. \tag{6}
+\]
+Disintegration of the ORIGINAL law is exactly $\mu_{\rm out}(d\omega)\mu_i(du_i\mid\omega)$, with the other independent selected fibers integrated. Conditional Cauchy--Schwarz, Jensen, and outer H\"older now give
+\[
+ \|\operatorname{Cov}_i(F,G)\|_{L^p(\mu_{\rm out})}
+ \le \|F\|_{L^{2p}(\mu_{\rm original})}
+       \|G\|_{L^{2p}(\mu_{\rm original})}
+ \le C_{p,k}B.                                       \tag{7}
+\]
+The direct mixed-action term in(2), when present, has the same $O(B)$ bound by the literal bounded plaquette second derivative. Thus the exact induced log-normalizer Hessian has $L^p$ norm at most $C_{p,k}B$ under the ACTUAL output law. Equation(3) shows why this averaged statement cannot be promoted to a uniform-in-bath estimate. The constants retain the original finite incidence; no sum over the entire spatial lattice has been absorbed.
+
+A further separation estimate follows using the good-run result of the good run arbitrary complement calculation when the variations are onsite insertions, functions of $U_r$ and $U_s$ at distinct times $r,s$ on this one chain and have no direct mixed action. Let $d$ and $m-d$ be the two arc lengths. For $L\ge2$ set $\delta=3e^{64B}(2/5)^L$, $h=L+4$, and use the ORIGINAL sparse-record parameter $p_B$ of the original sparse bath records calculation. On the event of a good run in each arc, the conditional midpoint projective bound implies total variation at most $4\delta$ (for $\delta\le1/2$), so conditional covariance of these bounded scores is at most $CB^2\delta$. On its complement use the deterministic $CB^2$ bound and the ORIGINAL record probability. Therefore
+\[
+ E_{\mu_{\rm out}}|\operatorname{Cov}_i(F_r,G_s)|
+ \le CB^2\left[\delta+(hp_B)^{\lfloor d/h\rfloor}
+                       +(hp_B)^{\lfloor(m-d)/h\rfloor}\right].          \tag{8}
+\]
+This is an actual averaged temporal decay estimate for the induced interaction, with both arcs and the raw output law preserved. It is useful when both separations exceed the good-run length of order $B$ plus the desired logarithmic accuracy. It does not make simultaneous nearby spatial couplings small and does not give a uniform conditional estimate at a fixed rough initial slice.
+
+\section*{Why a second-color repetition is not yet justified}
+The first-color output contains the full logarithms in(1). The surviving second-color trajectories can now interact through common first-color chain integrals even when their original plaquette supports were disjoint. Thus neither the independent-chain factorization nor the pinned single-chain Hessian used in the first pass survives automatically. The required new estimate is an averaged or recorded control of these induced interactions with the ACTUAL output law, retaining their scalar normalization and allowing the exceptional $B^2$ responses demonstrated above.
+
+There is a separate issue in the previously proved bath-affinity lower bound. Its $\eta_X$ is the law of entire complementary paths (and temporal links), not merely a remaining midpoint slice. It records configurations near the initial boundary. If $\bar\eta_X$ is its projection to a smaller coarse/midpoint record, affinity only satisfies
+\[
+ \operatorname{Aff}(\eta_X,\eta_Y)
+ \le\operatorname{Aff}(\bar\eta_X,\bar\eta_Y).          \tag{5}
+\]
+Therefore the old lower bound cannot be strengthened by replacing its bath factor with this larger coarse affinity without a NEW conditional-overlap estimate for the discarded path information. Calling the whole-path bath factor an output purity would lose this distinction.
+
+A concrete next step is to construct a thinner lifted record confined to interior good windows, integrating the original boundary-adjacent bath first, and prove the resulting conditional selected overlap. Alternatively, estimate the induced finite-spatial-range, temporally nonlocal action(1) using the actual sparse record and its boundary-averaged weights. Either route must address the original global/coarse sector; the one-color decoupling theorem alone does not close the full S94.
+\end{document}

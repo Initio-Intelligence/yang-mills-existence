@@ -1,0 +1,201 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{A leading kinetic bound for nonconstant harmonic shear fields}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{An actual harmonic family beyond constant curvature.}
+On the original cube of side $R\ge2$, put
+\[
+ a_1(x)=A(x_0,x_2,x_3)\,i\sigma_3,\qquad a_\mu=0\quad(\mu\ne1),
+                                                               \tag{1}
+\]
+where $A$ is discrete harmonic on the interior of the three-dimensional
+transverse cube, with its complete boundary values retained.
+The original linearized Maxwell force and divergence of (1) vanish
+on all free links. It is the true harmonic extension of its original
+boundary tangent. Its energy is
+\[
+ \mathcal E(a)=\sum_p |(d_1a)_p|^2
+       =R\sum_{\text{transverse edges}}|\delta A|^2.              \tag{2}
+\]
+Fixed-only plaquettes are included.
+
+For sufficiently small physical source parameter $\epsilon$, the actual
+nearby tree-quotient action minimum exists uniquely at each fixed $R$.
+Cartan conjugation and sign reversal imply an odd Cartan minimum branch.
+Its first derivative is (1) and its second derivative is zero. Thus
+the leading determinant's second derivative is computed from the
+linear background $\epsilon a$ without missing an acceleration term,
+even though this background need not be an exact nonlinear minimum
+at nonzero $\epsilon$.
+
+\paragraph{1. Literal scalar connections from the full Wilson Hessian.}
+Use the full charged vector operator $V=C+DD^*$ and ghost $Q=D^*D$
+of the constant flux spin and magnetic reduction calculation, before tree deletion. On a component grid $\mu\ne1$,
+the scalar same-component connection is
+\[
+ a^{(\mu)}_1(x)=A(x)+A(x+\hat\mu),\qquad
+ a^{(\mu)}_\nu=0\quad(\nu\ne1).
+                                                               \tag{3}
+\]
+On component one its raw transverse phases are
+$\delta_\nu A$ and its direction-one phase is $2A$.
+The exact scalar gradient gauge $A(x)$ removes those transverse phases,
+leaving $a^{(1)}_1=2A$. The ghost likewise has $a^{(g)}_1=2A$.
+These follow from the original positive-after/inverse-before
+insertions and endpoint gauge factors, not a continuum substitution.
+All these connections are independent of coordinate one.
+
+The component-one grid has Neumann direction one and three Dirichlet
+transverse directions. Every OTHER component and the ghost has
+Dirichlet direction one. This precise boundary fact is used below.
+The transverse nearest-neighbor energy of every coefficient in (3),
+times its number of direction-one sites, is at most $C\mathcal E(a)$
+by a literal bounded-multiplicity sum of original plaquette differences.
+
+\paragraph{2. Sum open-current moments before closing the loop.}
+First consider a scalar grid with DIRICHLET coordinate $Y=X^1$ and
+connection $b(Z)dY$, independent of $Y$.
+For each start $(y,z)$ use the constant-gradient gauge subtracting $b(z)$.
+The current
+\[
+ J_t=\int_0^t[b(Z_{s-})-b(z)]\,dY_s
+\]
+stopped INCLUDING its possible killing jump is a martingale.
+For the transverse coordinate process, domination by the reflected
+chain on the same finite set gives
+\[
+ \sum_z E_z[(b(Z_s)-b(z))^2;\text{survival}]
+ \le2\langle b,(I-e^{-sL_N})b\rangle
+ \le2s\,\mathcal E_N(b).
+\]
+Here $L_N$ is used ONLY for this moment upper bound, with its original
+internal edge energy and suppressed outward jumps; the actual path
+kernel still has its killed boundary conditions.
+Summing starts and integrating the quadratic variation yields
+\[
+ \sum_x E_x[J_t^2;\tau>t]\le C t^2\mathcal E(a).                  \tag{4}
+\]
+No pointwise bound on $A$ or its boundary values is needed.
+
+For component one, $Y$ reflects and all three coordinates $Z$ are
+Dirichlet. Its coefficient $b=2A$ is harmonic. Use exact discrete
+integration by parts to write the SAME centered-gauge current as
+\[
+ J_t=-\int_0^t(Y_{s-}-y)\,db(Z_s)
+                   +(Y_t-y)(b(Z_t)-b(z)).                      \tag{5}
+\]
+The first term is a stopped martingale: its drift is
+$-(Y-y)\Delta b$, which vanishes at every interior transverse site.
+For a killing jump use the ACTUAL boundary value of $b$; this retains
+the harmonic equation, and does not change any surviving path current.
+Its summed quadratic variation is bounded by
+$Ct^2 n_Y\sum|\delta b|^2$.
+For the endpoint product in (5), independence of the reflected $Y$
+and transverse killed processes, the displacement bound
+$E(Y_t-y)^2\le2t$, and the preceding reflected-energy estimate give
+the same upper bound. Thus (4) holds also for this component.
+The killing and endpoint terms have not been discarded.
+
+\paragraph{3. Scalar determinant curvature.}
+The original scalar kernels satisfy
+$\sup p_t\le C(1+t)^{-2}e^{-ct/R^2}$.
+The SAME-start half-loop reversal of the mixed boundary magnetic loop bound calculation, now using the summed
+moment (4), proves
+\[
+ -\partial_\epsilon^2\operatorname{Tr}e^{-tL_\epsilon}\big|_0
+ \le C\,t^2(1+t)^{-2}e^{-ct/R^2}\mathcal E(a).
+\]
+Integrating $dt/t$ gives, for EACH original scalar grid,
+\[
+ 0\le(\log\det L_\epsilon)''_0
+                  \le C\log(2+R)\,\mathcal E(a).                \tag{6}
+\]
+The complete boundary conditions and all scalar gauge transforms
+are retained. Harmonicity in (5) is essential; an arbitrary field
+with a reflected current coordinate is not covered by this proof.
+
+\paragraph{4. Spin and diagonal partners with nonconstant curvature.}
+Let $f_p=(d_1a)_p$. The exact charged decomposition is still
+$V=L+P+S$: $L$ is component diagonal, $P$ has diagonal
+$\sum_{p\ni e}(\cos(\epsilon f_p)-1)$, and $S$ is off component.
+At zero, $S'$ is a bounded-stencil matrix whose entries are signed
+local fluxes $f_p$. The mixed trace
+$\operatorname{Tr}(GL'GS')$ and $\operatorname{Tr}(GS'')$ vanish
+by component structure exactly as in the constant flux spin and magnetic reduction calculation.
+
+The original flat product Green kernels obey
+\[
+ |G_\mu(x,y)|\le C(1+|x-y|)^{-2}.                               \tag{7}
+\]
+One direct finite-boundary proof uses the one-dimensional reflected
+image formula for an upper bound at $t\le R^2$, while Dirichlet killing
+can only decrease the positive kernel. The unrestricted kernel satisfies
+\[
+ p_t^{\mathbb Z}(n)\le C(1+t)^{-1/2}
+  e^{-c\min(n^2/(1+t),|n|)}
+\]
+by shifting its elementary Fourier integral by
+$\min(1,|n|/(4(1+t)))$ in the imaginary direction.
+The reflected image sums have periods comparable to $R$ and uniformly
+bounded multiplicity at $t\le R^2$. Their four-dimensional product gives
+the corresponding off-diagonal bound. For $t\ge R^2$ the original
+three-Dirichlet product gap gives $CR^{-4}e^{-ct/R^2}$.
+Integrating these two ranges proves (7), including boundary rows.
+
+Consequently the absolute spin trace is bounded by a kernel
+$C(1+|p-q|)^{-4}$ on local plaquette fluxes:
+\[
+ |\operatorname{Tr}(GS'GS')|
+ \le C\sum_{p,q}\frac{|f_p f_q|}{(1+|p-q|)^4}
+ \le C\log(2+R)\sum_p f_p^2.                                   \tag{8}
+\]
+The last step is the finite four-dimensional shell sum and Schur
+bound, not a commutativity assumption.
+The diagonal correction costs at most $C\sum f_p^2$ by the bounded
+Green diagonal. The neutral term is
+$-\frac12\sum_p f_p^2 r_p G r_p^*$; each $r_p G r_p^*\le1$
+because $r_p^*r_p\le H\le\Delta_1$.
+All full gauge/ghost determinant multiplicities remain those of the constant flux spin and magnetic reduction calculation.
+
+Combining these ACTUAL scalar, spin, diagonal and neutral partners yields
+\[
+ \boxed{|F_{\rm quad}''[a,a]|
+       \le C\log(2+R)\mathcal E(a),\qquad
+       |h_a^*\widehat K h_a|
+       \le C\log(2+R)\mathcal E(a).}                            \tag{9}
+\]
+The second identity uses the evaluated harmonic matching of the complete harmonic kinetic matching calculation.
+In canonical source units multiply (9) by $B^{-1}$.
+This is a leading, complete, UNCUT kinetic bound on the harmonic family
+(1), not a two-loop or original nonlinear remainder bound.
+
+\paragraph{A mode completely outside the eighteen constant-curvature modes.}
+Take
+\[
+ A(x_0,x_2,x_3)=
+ \frac{(x_0-R/2)(x_2-R/2)}{R^3}.
+\]
+It is exactly discrete harmonic, its mean flux in every plane is zero,
+and
+\[
+ \mathcal E(a)=\frac{(R+1)^2(R+2)}{6R^3}\longrightarrow\frac16.
+\]
+Thus (9) controls a genuine nonconstant harmonic boundary mode with
+ZERO projection onto the eighteen modes of the complete constant curvature coarse sector calculation.
+The exact original-incidence the finite calculation verifies its harmonic
+force, zero coarse flux, energy and literal scalar phases on $R=2,3$.
+
+Flat global color invariance also gives a precise corollary: within
+ONE spatial polarization, $a_1=\sum_a A^a(Z)i\sigma_a$ with each $A^a$
+harmonic obeys (9) with the sum of their energies. The Hessian is
+diagonal in color. This argument concerns the second derivative at
+flat background and does not assume that its finite noncommuting
+source is a Cartan configuration.
+
+The family (1) grows with the number of transverse boundary values.
+It is not the entire harmonic boundary space: superposing different
+polarizations or arbitrary multi-component sources requires further mixed
+estimates. The global self-energy is not reset to independent subblock
+tensors. The transverse two-loop packet, its ghost/cutoff/source partners
+and the original uniform remainder remain open.
+\end{document}

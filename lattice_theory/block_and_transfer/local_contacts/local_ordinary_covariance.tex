@@ -1,0 +1,149 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{theorem}{Theorem}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Var}{\operatorname{Var}}
+\title{An expected ordinary covariance bound for the actual AI36 fiber}\author{}\date{}
+\begin{document}\maketitle
+Use the original isotropic Wilson measure, fixed $SU(N)$, and finite embedded neighborhoods.
+Write $L_\beta=\log(2+\beta)$ and assume $\beta\ge1$. Constants depend only on the group
+and fixed local geometry. This result is about the ACTUAL local conditional covariance,
+not the variance of the full smeared observable. It supplies a quantitative bound for the
+particular AI36 transition identified in the actual AI36 interface calculation.
+
+\paragraph{Two inputs already proved for the same measure.}
+The Haar total-force identities in the uniform contact moments calculation imply, uniformly for integers $p\ge1$,
+\[
+ \|\mathbf F_b\|_{2p}\le C\sqrt{p/\beta},\qquad \mathbf F_b=(X_b^AS_0)_A.
+\]
+The manuscript's elementary plaquette estimate PD12.31 gives
+$\E s_p\le C L_\beta/\beta$. Its proof is reproduced in the orthogonal contact calculation and uses the original
+partition function and isotropic symmetry. Therefore every individual plane-force vector
+$A=\mathbf F_{b;\mu}$ is uniformly bounded and satisfies
+\[
+ |A|\le C,\qquad \E|A|^2\le C L_\beta/\beta.
+\]
+These statements alone do not bound its full fourth moment by $C\beta^{-2}$.
+
+\paragraph{Exact resampling control of a directional force.}
+Resample a single bond $e$ from its original one-link conditional law given all other links.
+Call the original and resampled configurations $U,U'$. Both marginals are exactly $\mu$.
+For every affected directional force $A=\mathbf F_{b;\mu}$,
+\begin{equation}\label{delta}
+ \|A(U)-A(U')\|_{2p}\le C\sqrt{p/\beta}.
+\end{equation}
+Here is the geometric reason, including the only exceptional row.
+If $b\ne e$, two distinct bonds share at most one plaquette in the embedded neighborhood.
+Thus either $A$ is unchanged, or its difference equals the difference of the TOTAL force
+$\mathbf F_b$, since all other plaquette terms at $b$ are fixed.
+If $b=e$, its plane force contains two plaquette terms. For either plaquette, choose its
+opposite parallel bond $o\ne e$. The force vectors at $e$ and $o$ for this plaquette are
+related by a minus sign and an adjoint transport along the perpendicular bath edge joining
+their source vertices. This transport is independent of the resampled link.
+For example, with plaquette word $P=U_e V U_o^{-1}W^{-1}$,
+\[
+ X_o s_p=-\operatorname{Ad}_{W^{-1}}X_e s_p
+\]
+when both gradients are identified with Lie-algebra vectors in AI1 normalization.
+This follows by differentiating under the trace and cycling the inserted generator; the
+sign changes with the orientation convention but its norm and independence do not.
+The other incident plane plaquette has the same property with its own bath transport.
+Each opposite bond shares just this plaquette with $e$, so its varying partial force equals
+its varying total force. The central directional-force difference is consequently the sum
+of at most two transported total-force differences at opposite bonds. Applying the total-force
+moment bound to both marginals proves \eqref{delta}. No conditional concentration or
+pointwise conditional gap has been assumed.
+
+\paragraph{Square-force fluctuation lemma.}
+For such a vector $A$, write $A'=A(U')$. Since
+$||A|^2-|A'|^2|\le|A-A'|\,|A+A'|$, Holder with
+$q=p/(p-1)$, $p\ge2$, gives
+\begin{align*}
+ \E\bigl(|A|^2-|A'|^2\bigr)^2
+ &\le\|A-A'\|_{2p}^2\|A+A'\|_{2q}^2\\
+ &\le C\frac p\beta\left(\frac{L_\beta}{\beta}\right)^{1-1/p}.
+\end{align*}
+The second inequality uses the uniform bound on $A+A'$ and
+$\E|A+A'|^2\le C L_\beta/\beta$, with both original marginals retained.
+Choose $p=\max(2,\lceil L_\beta\rceil)$. Since
+$(\beta/L_\beta)^{1/p}\le C$, this yields the explicit bound
+\begin{equation}\label{square}
+ \E\bigl(|A|^2-|A'|^2\bigr)^2\le C\beta^{-2}L_\beta^2.
+\end{equation}
+For a total-force square, the sharper $C\beta^{-2}$ bound follows directly from its
+fourth moment. The logarithmic loss in \eqref{square} records precisely where the
+available directional-force energy estimate is used; no summable covariance assumption
+has been inserted.
+
+\begin{theorem}[Expected AI36 ordinary covariance]
+Let $\Lambda$ consist of a separated packing of the two-link blocks of the orthogonal contact calculation, with
+all their determining neighborhoods disjoint. Let $q$ observe every outside link and let
+$\nu=q_*\mu$ be its actual marginal. Let $\mathcal R_j$ be the finite set of force rows
+whose plaquette stars meet the free links in block $j$, including every original saved
+pointing offset. For a literal test define
+$W_j(f)^2=\sum_{b\in\mathcal R_j}|f_b|^2$ and $W(f)^2=\sum_jW_j(f)^2$.
+For the original physical $G=O_H$ or the specified ordinary $G=r_H$,
+\[
+ \E_\nu\Var(G(f)\mid q)\le Cc_\beta^{-2}a^{-4}L_\beta^2 W(f)^2,
+\]
+and
+\[
+ \|\Cov(G(f),G(h)\mid q)\|_{L^1(\nu)}
+ \le Cc_\beta^{-2}a^{-4}L_\beta^2 W(f)W(h).
+\]
+The same inequalities hold for the residual $S=G-R$ of the orthogonal contact calculation through the actual AI36 interface calculation.
+For pointed completions replace $W_j(f)^2$ by the fixed finite sum of the actual
+transformed test weights at their original rows. No common-center test replacement is made.
+\end{theorem}
+\begin{proof}
+For one resampled link, only a fixed number of rows varies in $D[f]$ or $P[f]$.
+Cauchy--Schwarz over those actual rows and \eqref{square} bound the expected squared
+difference of either dimensionless sum by
+$C\beta^{-2}L_\beta^2\sum_{b\text{ affected}}|f_b|^2$.
+The physical factor is exactly $\sigma^2=g^{-4}a^{-4}$, so
+$\sigma^2\beta^{-2}=c_\beta^{-2}a^{-4}$.
+For $r_H$, the additional term is $-\sigma\ell[f]/(3\beta)$.
+Its exact Casimir formula is a finite weighted plaquette sum. Compactness bounds its
+resampling squared difference by $C\sigma^2\beta^{-2}$ times the sum of squared
+original incident test weights. This is already at the claimed scale, with its constant
+and all four incidences intact.
+
+Conditioned on $q$, every free-link law factors. Tensorization of conditional variance
+therefore gives
+\[
+ \Var(G\mid q)\le\sum_{e\in\Lambda}\E[\Var(G\mid U_{\ne e})\mid q].
+\]
+Each one-link variance is one half the expected squared difference under the conditional
+independent replica. Average and insert the just-proved estimates. The number of rows,
+colors, and plaquette incidences per link is fixed, and the packing keeps total overlap
+bounded. This proves the first bound. Conditional Cauchy--Schwarz followed by ordinary
+Cauchy--Schwarz gives the mixed $L^1$ bound.
+Finally the orthogonal contact calculation and the local source transition calculation prove the stronger conditional orthogonal identity
+\[
+ \Var(G(f)\mid q)=v_{ff}(q)+\Var(S(f)\mid q),\qquad v_{ff}\ge0.
+\]
+Thus the same upper bound applies to the residual conditional variance and, by the same
+Cauchy--Schwarz argument, to its mixed covariance. No independence of the outside bath
+variables is required anywhere.
+\end{proof}
+
+\paragraph{What this advances and what it leaves.}
+This is a linear support-count estimate, with two explicit logarithms, for the complete
+ordinary covariance produced by the identified original compact conditional fiber.
+For bounded physical tests $W(f)^2\le C\|f\|_\infty^2N_f$, with $N_f$ the literal
+completed support plaquette count. The extracted contact itself has the sharper
+$Ca^{-4}N_f$ bound without logarithms from the uniform contact moments calculation.
+The law of total variance still contains
+\[
+ \Var_\mu G(f)=\E_\nu\Var(G(f)\mid q)+\Var_\nu\E(G(f)\mid q).
+\]
+The second term is the inherited boundary ordinary covariance and is not bounded here.
+After an integration the next effective score is generally not the original Wilson score;
+repeating the original force Ward recurrence without that score would be invalid.
+Thus this is a reusable verified local transition estimate, not an all-history MT36 bound.
+Bath-measurable selectors can be retained in unnormalized positive moment integrals;
+normalizing a rare branch and free-link-dependent selectors need their own denominators
+and complete responses. Complex domains, boundary-current norms, and the independent
+absolute scalar factors are not supplied by this positive-measure bound.
+\end{document}

@@ -1,0 +1,135 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{A harmonic boundary offset excites an actual low exchange mode}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Analysis of the positive example.}
+Consider the nonempty cycle exchange compensation calculation. Its interior gauge is a bijection
+of the original spatial-link conditional fibers and preserves their
+RAW Haar partition functions. The two temporal plaquettes give cubic
+force $2\phi(x)\times\phi(x+\hat i)$. On its specified four-cycle
+this is twice an original curl boundary, so the projection bound
+$j^*A_I^{-1}j\le4/R$ and the complete interval
+$-4/R\le T_{4,\rm red}\le-2/R$ are valid. This is a genuinely
+compensated nonempty example, not merely a raw-vertex estimate.
+
+The proposed extension to arbitrary harmonic boundary data has a
+different outcome. Co-closedness of the cubic force alone does not
+control its low spatial relative modes. The following specifies the
+exact original record and the missing boundary/offset control.
+
+\paragraph{1. Actual harmonic boundary family.}
+On a side-$R$ four-cube retain all temporal links and integrate all
+free spatial links, exactly as in the nonempty cycle exchange compensation calculation. Now prescribe the actual temporal
+record, including its spatial-boundary values, by
+\[
+ U_0(t,x)=\exp(\alpha\phi(x)),\qquad
+ \phi(x)=c e_1+\frac{x_1}{R^2}e_2,\quad c\ne0,
+ \qquad U_i|_{\partial}=1 .                                \tag{1}
+\]
+The first tangent is $a_0=\phi$, $a_i=0$. It is harmonic in the
+full original Maxwell problem: $\Delta_3\phi=0$, and the free
+spatial forces from successive temporal plaquettes cancel.
+All fixed-only plaquettes are included in its physical energy:
+\[
+ E(a)=\frac{(R+1)^2}{R^2}.                                  \tag{2}
+\]
+Thus this is a genuine harmonic boundary shear with uniformly bounded
+quadratic curvature energy, not an arbitrary off-shell tree insertion.
+
+For two neighboring temporal logarithms $u,v$, the original SU(2)
+Wilson quartic is
+\[
+ -\frac{|u-v|^4}{24}-\frac{|u\times v|^2}{6}.
+\]
+Only the $01$ planes contribute. Therefore the complete physical raw
+quartic along (1) is exactly
+\[
+ T_4(a)=-\frac{c^2(R+1)^2}{6R^2}
+             -\frac{(R+1)^2}{24R^6}<0.                     \tag{3}
+\]
+The original cubic force on free spatial links is
+\[
+ j_1(t,x)=\frac{2c}{R^2}e_3,
+ \qquad j_2=j_3=0.                                         \tag{4}
+\]
+It is co-closed at every original interior vertex. Nevertheless it
+is not the local cycle source of the nonempty cycle exchange compensation calculation. Its boundary-induced relative
+curl and its low-mode overlap are retained below.
+
+\paragraph{2. An exact original relative eigenmode.}
+The spatial conditional precision remains
+$A_I=\Delta_t^D+H_3$, $H_3=d_3^*d_3$.
+Take the actual free-link mode
+\[
+ r_1(t,x)=\sin(\pi t/R)\sin(\pi x_2/R)\sin(\pi x_3/R)e_3,
+ \qquad r_2=r_3=0,                                         \tag{5}
+\]
+constant in the normal coordinate $x_1=0,\ldots,R-1$.
+This has exactly the original boundary conditions: Dirichlet in
+$t,x_2,x_3$, Neumann in its own component coordinate. Its divergence
+vanishes because the normal component is constant in $x_1$.
+Hence $H_3$ equals the relative vector Laplacian on this mode, giving
+\[
+ A_Ir=\lambda_Rr,\qquad
+ \lambda_R=12\sin^2(\pi/(2R)),\qquad \|r\|^2=R^4/8.         \tag{6}
+\]
+Put $\theta=\pi/(2R)$. The exact finite sine sum yields
+$\langle j,r\rangle=(2c/R)\cot^3\theta$.
+Projection onto just this one actual mode proves
+\[
+ \boxed{j^*A_I^{-1}j\ge
+       \frac{32c^2\cot^6\theta}{R^6\lambda_R}
+       \asymp c^2R^2.}                                     \tag{7}
+\]
+The asymptotic coefficient is $2048/(3\pi^8)$.
+No infinite-volume kernel or assumed spectral gap is used.
+
+Since (3) is negative, the COMPLETE conditional classical quartic
+plus exchange satisfies
+\[
+ T_{4,\rm red}=T_4(a)-\tfrac12j^*A_I^{-1}j
+                        \le-\kappa c^2R^2                 \tag{8}
+\]
+for a fixed $\kappa>0$ and all sufficiently large $R$.
+Consequently an $R$-uniform bound by $CE(a)^2$ is false even for
+this specified NONEMPTY integration and actual harmonic first tangent.
+This is stronger than the raw-coordinate diagnostic of the raw tree quartic energy obstruction calculation, but remains
+only a statement about the specified classical boundary-source family.
+
+\paragraph{3. Why removing the constant is not free.}
+The constant color $c e_1$ costs no linear curvature energy. However,
+it does not commute with the varying color. The honest boundary gauge
+$g(t)=\exp(\alpha t c e_1)$ transforms (1) to a time-dependent record.
+Writing $\psi=x_1 e_2/R^2$, its temporal logarithm begins
+\[
+ \alpha\psi+\alpha^2(t+\tfrac12)[c e_1,\psi]+O(\alpha^3).
+                                                               \tag{9}
+\]
+The second-order original boundary source has not vanished. Its
+spatial differences have size $t|c|/R^2$ and retain the low-mode
+effect. Replacing (9) by the straight family $\exp(\alpha\psi)$
+would change the physical boundary path. The global/root and boundary
+data cannot be silently reset to obtain an energy-only bound.
+
+The negative coefficient (8) is compatible with a nonnegative full
+action: it is a Taylor coefficient, and its validity is local in
+$\alpha$ at fixed $R$. In particular $\alpha R\to0$ can keep the
+displayed gauge/source expansion within a small physical chart.
+No divergence of a complete quantum coefficient or failure of S94
+is inferred. Rather, a proposed general classical energy norm must
+also control these nonlinear boundary/offset partners, or restrict
+the original class with a verified preserved condition. That input
+has not been established for the main all-history problem.
+\paragraph{Critical source-order qualification.}
+This example is fourth order in the CLASSICAL source amplitude.
+It does not impose an offset norm on the desired SECOND derivative
+of the complete first quantum coefficient $C_R$. Boundary gauge
+covariance and $DC_R(0)=0$ imply that its Hessian annihilates the
+constant temporal tangent $c e_1=D(t c e_1)$ in BOTH slots. Thus
+$D^2C_R(0)[c e_1+\psi,c e_1+\psi]=D^2C_R(0)[\psi,\psi]$.
+The acceleration in (9) multiplies the vanishing first derivative
+at this quantum source order. The same holds for each COMPLETE
+gauge-covariant proper-time packet. The critical coulomb norm for physical background calculation supplies the valid
+critical Coulomb norm for that physical background. The obstruction
+above must not be transferred to that different source order.
+\end{document}

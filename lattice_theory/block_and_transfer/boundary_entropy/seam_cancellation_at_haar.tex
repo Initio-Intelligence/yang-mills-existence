@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\title{estimate: the large seam variance cancels at the first nonzero coupling order}\author{}\date{}
+\begin{document}\maketitle
+This check prevents treating the endpoint lower bound in the exact seam variance calculation as an obstruction to the actual free-energy cancellation. Use its same-variable Wilson construction with $q,n\geq3$, and write $H$ for the product Haar measure on all labeled links. All nonseam plaquettes cancel in $\Delta S$.
+
+Each old or new seam plaquette contains four distinct link variables. Any two distinct plaquettes in the union of the old and new seam lists have different four-link supports. Their centered normalized real traces are therefore orthogonal under $H$: integrate a link present in exactly one support. The trace variance is the same $\kappa_N$ as in \texttt{exact\_seam\_variance.tex}. Consequently
+\[
+ E_H\Delta S=0,\qquad
+ \operatorname{Var}_H(\Delta S)=2\kappa_N N_{\rm seam},\qquad
+ \operatorname{Cov}_H(\Delta S,S_{\rm per})=-\kappa_NN_{\rm seam}.
+ \tag{1}
+\]
+The support assertion follows by tracking the block label of each seam-shifted link; the restrictions $q,n\geq3$ exclude degenerate periodic identifications. Enumerating both lists confirms uniqueness.
+
+Keep the dependence of $\mu_0$ on $\beta$. Differentiation at $\beta=0$ gives
+\[
+ E_{\mu_0(\beta)}\Delta S=\beta\kappa_NN_{\rm seam}+O(\beta^2).
+\]
+For each $t$, $\mu_{t,\beta=0}=H$, hence
+\[
+ \int_0^1(1-t)\operatorname{Var}_{\mu_{t,\beta}}(\Delta S)dt
+ =\kappa_NN_{\rm seam}+O(\beta).
+\]
+The two terms in the exact free-energy identity from the exact seam variance calculation thus have the same leading value $\beta^2\kappa_NN_{\rm seam}$, with opposite signs. The entire order-$\beta^2$ seam contribution cancels. The remainders here are finite-volume Taylor remainders; no volume-uniform constants are claimed from this elementary calculation.
+
+The convergent expansion in the full Wilson strong coupling comparison supplies the stronger volume-uniform statement. In fact its exponential tilt can be sharpened for $0<u\leq u_*$ by choosing
+$s=1+\log(u_*/u)$ instead of $s=1$. The same verified criterion then uses $ue^{1+s}=u_*e^2$ and gives, with $r=\lfloor n/4\rfloor$,
+\[
+ \left|\frac{\log Z_n}{n^4}-\frac{\log Z_{qn}}{(qn)^4}\right|
+ \leq12B(\beta_*)e^{-r}(u/u_*)^r.
+ \tag{2}
+\]
+This proves matching of the Taylor coefficients below order $r$ at zero coupling as well as the exponentially small finite-volume bound. It is a quantitative result for the full absolute Wilson partition functions, with their common local scalar pieces intact. Neither (1) nor (2) extends the proof to the manuscript's large inverse-coupling trajectory.
+\end{document}

@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{An actual nonempty exchange compensation with a summable bound}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Input and target.}
+The raw temporal-tree obstruction of the raw tree quartic energy obstruction calculation is used,
+including its six exact plaquette checks. It concerns raw coordinate
+vertices, not the completed physical coefficient. Here a SPECIFIED
+nonempty conditional integration yields a genuinely decreasing bound
+for its complete classical quartic plus exchange. This is not a bound
+on the quantum coefficient $C_R''$ or the original nonlinear remainder.
+
+\paragraph{1. Original record and complete conditional fiber.}
+Take the same side-$R$ cube, $R\ge6$, with identity outer boundary.
+Retain ALL temporal links and integrate ALL free spatial links with
+original Haar measure and every incident Wilson plaquette. On one
+interior spatial square place
+\[
+ \phi_0(2,2,2)=e_1,\quad \phi_0(3,2,2)=e_2,\quad
+ \phi_0(3,3,2)=-e_1,\quad \phi_0(2,3,2)=-e_2,
+\]
+and put $\phi_0=0$ elsewhere. Let $\phi=R^{-1/2}\phi_0$.
+The distributed temporal record is
+$U_0(t,x)=\exp(\alpha\phi(x))$ for every temporal layer; the free
+spatial classical minimum has first tangent $a_i=0$.
+Indeed the temporal plaquette curls are independent of time, so the
+linear spatial force cancels between adjacent temporal plaquettes.
+The original energy is $E(a)=24$.
+
+The original interior gauge
+$g(t,x)=\exp(\alpha t\phi(x))$ for $0<t<R$, with $g=1$ on the
+outer boundary, maps this temporal record to
+\[
+ U_0^{\rm ax}(t,x)=1\quad(t<R-1),\qquad
+ U_0^{\rm ax}(R-1,x)=\exp(\alpha R\phi(x)).                    \tag{1}
+\]
+It also maps each integrated spatial link by its honest endpoint
+gauges. Both conditional fibers and their entire original action
+are mapped bijectively, with Haar Jacobian one. Their RAW conditional
+partition functions are equal, without dropping a determinant or
+normalizer. If a local chart is used its cutoff must be transported;
+no independent fixed canonical cutoff is inserted.
+
+Consequently their reduced CLASSICAL minimum actions agree for each
+small $\alpha$ at fixed $R$. The axial first tangent is precisely the
+temporal-tree type $h_i=-t\delta_i\phi$, $h_0=0$ except in the last
+layer. The second-order minimum displacement is not discarded.
+
+\paragraph{2. Literal cubic force and physical quartic.}
+Use the normalization $s=1-\tfrac12\operatorname{Tr}U_p$ so that the
+quadratic action is $E/2$. In the distributed record only temporal
+links have nonzero first tangent. The two-link plaquette product gives
+\[
+ T_4(a)=-2/R.                                                  \tag{2}
+\]
+There are 16 spatial edges with one nonzero endpoint and four with two
+orthogonal unit endpoints. Before the common $R/R^2$ scaling, their
+quartics are respectively $-1/24$ and $-1/3$, totaling $-2$.
+
+The ORIGINAL cubic force on a free spatial link is
+\[
+ j_i(t,x)=\nabla_{I,i,t,x}T_3(a)
+       =2\phi(x)\mathbin\times\phi(x+\hat i)=R^{-1}j_{0,i}(x).
+                                                               \tag{3}
+\]
+Each of its two adjacent temporal plaquettes contributes once. On the
+chosen four-cycle, $j_0$ is exactly twice the oriented boundary of that
+single spatial plaquette, in color three:
+\[
+ j_0=\pm2d_3^* e_p,\qquad D_3^*j_0=0.                         \tag{4}
+\]
+Signs depend only on orientation and do not affect the estimate.
+There is no longitudinal forcing hidden in (4).
+
+\paragraph{3. Exact exchange and its uniform bound.}
+With temporal links fixed, the original spatial quadratic precision is
+\[
+ A_I=\Delta_t^D\otimes I+I\otimes H_3,
+ \qquad H_3=d_3^*d_3.                                        \tag{5}
+\]
+Spatial one-forms have their actual relative boundary condition;
+time has Dirichlet endpoints because the temporal boundary spatial
+links are fixed. $A_I$ is strictly positive, even on spatial gradient
+modes. On the co-closed source (4), the variational comparison gives
+\[
+ \begin{split}
+ 0\le j^*A_I^{-1}j
+ &\le\frac{R-1}{R^2}\langle j_0,H_3^+j_0\rangle\\
+ &=\frac{4(R-1)}{R^2}
+       \langle e_p,d_3H_3^+d_3^*e_p\rangle
+ \le\frac{4(R-1)}{R^2}\le\frac4R .
+ \end{split} \tag{6}
+\]
+The last operator is the exact orthogonal projection onto the range
+of the original spatial curl. No infinite-volume Green function or
+unproved spectral gap is used. Equivalently one may use the variational
+supremum for $j^*A_I^{-1}j$, discard the nonnegative temporal energy,
+and maximize in each slice; $j_0$ annihilates the spatial kernel.
+
+The conditional classical minimum therefore has the exact quartic
+coefficient
+\[
+ T_{4,\rm red}=T_4(a)-\tfrac12j^*A_I^{-1}j,
+ \qquad \boxed{-4/R\le T_{4,\rm red}\le-2/R.}                 \tag{7}
+\]
+By the actual gauge equivalence in paragraph1 this is ALSO
+\[
+ T_4(h)-\tfrac12\nabla_I T_3(h)^*A_I^{-1}\nabla_I T_3(h)         \tag{8}
+\]
+in the concentrated temporal-tree record. On the chosen spatial square the axial plaquette has zero linear curl
+but quartic $8t^4/R^2$; its sum is of order $R^3$, while the last
+temporal layer costs at most $CR^2$. Thus the coordinate growth
+of the raw axial vertex is compensated in this genuine nonempty
+conditional expression. This is not an assertion that the separate
+exchange or raw vertex is small in that frame.
+
+For dyadic block sizes $R_j=2^jR_0$, the absolute bounds in (7) sum to
+at most $8/R_0$. In canonical action units this quartic contribution
+is multiplied by $B^{-1}$. This is a one-record scale bound, NOT a
+claim that a physical-volume cover can be summed without block counts.
+The chosen retained temporal record and all exterior data have been
+specified; no probability of this record is asserted.
+
+\paragraph{4. Verification and remaining main estimate.}
+The finite calculation checks the energy $24$, $-2$ unscaled physical quartic,
+all four cubic forces, and their zero divergence. A separate original
+spatial incidence solve plus exact temporal sine decomposition gives
+$R T_{4,\rm red}\simeq-3.02579,-3.10034,-3.17475$ at $R=6,8,12$,
+inside the PROVED interval $[-4,-2]$. Those numerical solves are only
+checks; (6) proves the uniform estimate.
+
+The equality of conditional partition functions retains all Haar,
+quantum determinant and vacuum scalar factors, but (7) estimates ONLY
+the reduced classical quartic/exchange contribution. It does not bound
+those other factors, the full induced cubic variance under the joint
+skeleton law, or the physical first nonlinear background response
+$C_R''$. For general records the cubic force can have a spatial
+longitudinal part, so the projection argument (6) cannot be assumed.
+This example identifies an actual cancellation and a sufficient curl
+structure, not a general Sobolev replacement or S94 closure.
+\end{document}

@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\title{An exact trial-ground transform and the half-Wilson trial test}\author{}\date{}
+\begin{document}\maketitle
+All kernels below are the ORIGINAL positive gauge-projected Wilson transfer on normalized spatial link Haar measure. Let $A=M Q P M$, with $M=e^{-\beta V/2}$, $V=\sum_{p\,\mathrm{spatial}}s(U_p)$ and $s(U)=1-\operatorname{Re}\operatorname{Tr}(U)/N$. The temporal kernel is $\prod_e e^{-\beta s(X_eY_e^{-1})}$. No temporal scalar is normalized away.
+
+\section*{Exact trial-ground normalization}
+For a strictly positive continuous gauge-invariant trial $f$ put
+\[
+ R_f(X)=\frac{(Af)(X)}{f(X)},\qquad
+ P_f(X,Y)=\frac{A(X,Y)f(Y)}{R_f(X)f(X)},\qquad
+ B_f=R_f^{-1/2} A R_f^{-1/2}.
+\]
+$P_f$ is a Markov kernel reversible for the normalized density proportional to $f^2R_f$. $B_f$ is positive, has leading eigenvalue one and eigenfunction $\sqrt{R_f}f$, and has the same eigenvalues as $P_f$ by the exact weighted unitary identification. Every original gauge projection remains present.
+
+Let $r_-=\min R_f$, $r_+=\max R_f$. Positivity gives the Collatz bounds $r_-\le\lambda_0(A)\le r_+$. Congruence and min--max give $\lambda_j(A)\le r_+\lambda_j(B_f)$. Therefore
+\[
+ Q_A(ma)=\lambda_0^{-m}\operatorname{Tr}A^m
+ \le (r_+/r_-)^m\operatorname{Tr}B_f^m.                 \tag{1}
+\]
+This is a legitimate ground-aware comparison, but its global row-oscillation cost must be estimated. At physical $m=t/a$, the direct sufficient cost is $\log(r_+/r_-)=O(a\operatorname{Vol}\Sigma)$, together with a uniform reference return trace. An overall scalar multiplying $A$ multiplies both $R_f$ and $\lambda_0$ and cancels in these ratios.
+
+There is a finer exact formula before taking a supremum. On closed loops of $m$ spatial configurations, let $\mathbb P_{f,m}^{\rm loop}$ have density proportional to $\prod_{j=0}^{m-1}P_f(X_j,X_{j+1})$, $X_m=X_0$, with normalization $\operatorname{Tr}B_f^m$. The ratios of $f$ telescope, yielding
+\[
+ Q_A(ma)=\operatorname{Tr}B_f^m\,
+ \mathbb E_{f,m}^{\rm loop}
+ \exp\left\{\sum_{j=0}^{m-1}\log\frac{R_f(X_j)}{\lambda_0}\right\}. \tag{2}
+\]
+The genuine vacuum scalar is inside the same weighted exponential. Replacing that expectation by one or dropping $\lambda_0$ is not an identity. Formula (2) isolates a possible weighted cancellation even when (1) is poor.
+
+\section*{The natural half-spatial-Wilson trial does not give a small global oscillation}
+Take $f=M$. Gauge invariance implies $PM^2=M^2$, so its exact row ratio is
+\[
+ R_M(X)=\int\prod_e dY_e\,
+ \exp[-\beta\{D(X,Y)+V(Y)\}],\qquad
+ D(X,Y)=\sum_e s(X_eY_e^{-1}).                          \tag{3}
+\]
+This retains the actual spatial potential and the complete original Haar measure.
+
+\begin{proposition}
+For $SU(2)$ on the original periodic $n^3$ spatial lattice, $n\ge3$, $\beta\ge1$, there are constants independent of $n,\beta$ such that
+\[
+ \log\frac{\max_XR_M(X)}{\min_XR_M(X)}
+ \ge \frac{\beta N_{\rm bad}}5-\frac92 n^3\log\beta-Cn^3,
+\]
+where $N_{\rm bad}=n^3$ for even $n$ and $N_{\rm bad}=(n-1)n^2$ for odd $n$.
+\end{proposition}
+\begin{proof}
+At the flat field $X=1$, restrict every one of the $3n^3$ links $Y_e$ to a radius $c\beta^{-1/2}$ group ball. Each temporal link action and each spatial plaquette action is at most $C/\beta$. Each normalized Haar ball has mass at least $c'\beta^{-3/2}$. Thus
+\[
+ R_M(1)\ge\exp[-\tfrac92 n^3\log\beta-Cn^3].           \tag{4}
+\]
+For a second actual configuration set $X_2(x)=(-1)^{x_1}I$ and $X_1=X_3=I$. Its $12$ plaquettes are $-I$ except the wrapping $x_1$ layer when $n$ is odd; all other plaquettes are $I$. Hence it has exactly $N_{\rm bad}$ plaquettes with $s(X_p)=2$.
+
+For ANY $Y$, telescoping four unitary link products gives
+$\|X_p-I\|_{\rm HS}\le\|Y_p-I\|_{\rm HS}+\sum_{e\in\partial p}\|X_e-Y_e\|_{\rm HS}$. Squaring five terms and using $\|U-I\|_{\rm HS}^2=4s(U)$ yields
+\[
+ s(X_p)\le5\{s(Y_p)+\sum_{e\in\partial p}s(X_eY_e^{-1})\}.
+\]
+Each link in this plane belongs to at most two selected plaquettes. Summing gives $2N_{\rm bad}\le5V(Y)+10D(X,Y)\le10[V(Y)+D(X,Y)]$. Since total Haar mass is one, (3) implies $R_M(X)\le e^{-\beta N_{\rm bad}/5}$. Combine this with (4).
+\end{proof}
+
+The row oscillation in this specific trial is thus cutoff-extensive, even after the common temporal scalar cancels. Its supremum-based bound (1) is not a uniform physical-slab estimate. This is not a lower bound on the true thermal trace, not a failure of purity, and not a statement that the rough fields have appreciable weight in (2). The latter distinction is exactly why a weighted estimate could improve the result.
+
+\section*{A genuine improvement step with a still-missing quantitative rate}
+An actual slab-filtered trial can be formed without new coordinates: $f_s=A^s f$. Its row ratio satisfies the exact recursion
+\[
+ R_{f_{s+1}}(X)=(P_{f_s}R_{f_s})(X).
+\]
+Therefore its maximum decreases and its minimum increases. The fixed-cutoff Perron limit is the actual vacuum, but these facts supply no cutoff-uniform rate on $s\asymp t_*/a$. A useful next estimate must control the loop expectation in (2), or the physically filtered row ratio and return trace, on that scale. Global positivity alone does not quantify this smoothing. All continuous holonomies, bath overlap, and original conditional weights remain inside these formulas.
+\end{document}

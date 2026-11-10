@@ -1,0 +1,125 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb}
+\title{The complete constant-curvature coarse sector and its exact residual}\author{}\date{}
+\begin{document}\maketitle
+\paragraph{Full constant-curvature family.}
+Work in the common flat linearized frame on the complete original
+four-dimensional relative cube of side $R$. Let $F_{\mu\nu}^a$ be an
+antisymmetric tensor, with $\mu<\nu$ and $a=1,2,3$ the color index.
+Define the centered affine one-form
+\[
+ (h_F)_\mu^a(x)=\frac1{2R^2}\sum_\nu
+          F_{\nu\mu}^a(x_\nu-R/2).                              \tag{1}
+\]
+It has constant plaquette curl
+$(d_1h_F)_{\mu\nu}^a=F_{\mu\nu}^a/R^2$, zero interior divergence,
+and zero interior Maxwell force. Thus it is the genuine physical
+harmonic extension of its COMPLETE boundary restriction, not a new
+boundary condition assigned to an arbitrary field.
+With $N_R=R^2(R+1)^2$ plaquettes per orientation,
+\[
+ \mathcal E(h_F)=\frac{N_R}{R^4}\sum_{\mu<\nu,a}|F_{\mu\nu}^a|^2
+      =E_R|F|^2,\qquad E_R=(R+1)^2/R^2.                         \tag{2}
+\]
+All fixed-only plaquettes are included. This is an 18-dimensional
+constant-curvature sector modulo its irrelevant gauge choices.
+
+\paragraph{An actual uniform matched coefficient on the entire sector.}
+Let $\widehat K$ be the COMPLETE uncut external-index self-energy of
+the complete harmonic kinetic matching calculation, with original free Haar/ghost support and all boundary
+action indices. Its harmonic matching proves
+$h_F^*\widehat K h_F=F_{\rm quad}''[h_F,h_F]$.
+
+The original cube, action, Haar measure and complete boundary integral
+are invariant under coordinate reflections/permutations and global color
+conjugation. Any change of the convenient tree is restored by exact
+interior gauge fixing and has no effect on the coefficient. Global
+color invariance makes the quadratic color tensor proportional to
+$\delta_{ab}$. For two different coordinate planes, reflection of an
+index in their symmetric difference reverses exactly one flux, so
+their mixed bilinear coefficient is zero. Coordinate permutations
+make all same-plane diagonal coefficients equal.
+A reflected version of (1) may differ by a boundary pure gradient;
+the COMPLETE source Ward removes that difference, with no omitted
+boundary acceleration.
+
+Consequently there is ONE real signed coefficient $c_R$ such that
+\[
+ \boxed{h_F^*\widehat K h_F=c_R E_R|F|^2,\qquad
+                   |c_R|\le C\log(2+R).}                       \tag{3}
+\]
+The bound follows from the already proved single-plane result of
+the mixed boundary magnetic loop bound calculation and the complete harmonic kinetic matching calculation. It is not a new assumption about mixed-color noncommuting
+finite backgrounds: only the Hessian at the flat record is used.
+The kinetic coefficient is retained explicitly; (3) does not replace
+the bare coupling or remove a scalar increment. In canonical source
+curvature its contribution is $B^{-1}$ times (3).
+No analogous bound on the first nonlinear/two-loop coefficient is
+inferred from the symmetry statement.
+
+\paragraph{A genuine complete-boundary coarse projection.}
+For any one-form $w$ on this same block, define
+\[
+ \overline F_{\mu\nu}^a=
+       \frac{R^2}{N_R}\sum_{p\parallel\mu\nu}(d_1w)_p^a.          \tag{4}
+\]
+This is the exact projection coefficient in Maxwell energy:
+\[
+ \langle d_1(w-h_{\overline F}),d_1h_G\rangle=0
+                    \quad\hbox{for every constant tensor }G.
+\]
+Writing $r=w-h_{\overline F}$ therefore gives
+\[
+ \mathcal E(w)=E_R|\overline F|^2+\mathcal E(r).                  \tag{5}
+\]
+Gauge directions remain null directions of the energy; (5) is not a
+Euclidean or probabilistic orthogonality claim.
+
+For each fixed transverse-coordinate slice, the sum of all
+$\mu\nu$ plaquette curls telescopes to the boundary of that slice.
+Those edges lie on the COMPLETE four-dimensional block boundary.
+Hence (4) depends only on the original fixed/retained boundary links,
+not on its free interior links. No collar is renewed and no unobserved
+interior field is used to choose a new gauge.
+
+This has an important exact consequence:
+\[
+ \boxed{w|_{\partial}=0\quad\Longrightarrow\quad
+                           \overline F(w)=0.}                  \tag{6}
+\]
+Thus a zero-boundary internal heat leg of the WHOLE relative block
+has no component in the sector controlled by (3). Applying the complete harmonic kinetic matching calculation directly
+to that leg would not give an estimate. On a genuine subblock of a
+larger field, its inherited boundary skeleton is instead retained;
+(4) is then a well-defined coarse variable in those actual linearized
+boundary coordinates.
+
+\paragraph{The nonharmonic and remaining harmonic terms stay live.}
+For a literal field restriction $w=h_{\overline F}+r$ the completed
+self-energy quadratic form is exactly
+\[
+ w^*\widehat K w
+ =c_R E_R|\overline F|^2
+       +2h_{\overline F}^*\widehat K r+r^*\widehat K r.            \tag{7}
+\]
+The last two terms have NOT been bounded or set to zero. The energy
+orthogonality (5) does not imply $\widehat K$ orthogonality: the
+remainder can contain other harmonic boundary modes in the same
+symmetry representation, as well as zero-boundary modes. Nor does
+(7) reset an induced subblock action to Wilson form.
+Exact block integration must retain its original raw normalizers,
+boundary frames, ghost/cutoff contacts and changing references.
+
+The finite calculation
+checks complete Stokes cancellation, the energy cross term, and
+(6) with exact rational original incidence on $R=2,3$.
+This validates the coarse map, not an induction theorem.
+
+\paragraph{Main-gap scope.}
+Equation(3) controls an actual complete 18-mode coarse kinetic block,
+with its literal boundary map (4). Equations(6)--(7) identify why it
+does not close the internal two-loop packet: its remaining modes and
+cross terms are precisely unestimated. A uniform bound on those
+terms, the marked-ghost/cutoff/source partners, and the ORIGINAL
+differentiated remainder is still necessary for S94.
+\end{document}
